@@ -64,10 +64,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="formLogin.cs">
+    <Compile Include="Forms\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formLogin.Designer.cs">
+    <Compile Include="Forms\formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -99,9 +99,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ViControls\ViControls.csproj">
       <Project>{C8C1975E-C078-4FAD-A978-6F6547CE8BF1}</Project>
