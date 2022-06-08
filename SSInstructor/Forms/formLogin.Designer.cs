@@ -30,6 +30,8 @@ namespace SSInstructor
         private void InitializeComponent()
         {
             this.pnlBackground = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnLogin = new ViControls.ViButton();
             this.txtPassword = new ViControls.ViTextBox();
@@ -38,8 +40,6 @@ namespace SSInstructor
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlBackground.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,6 +57,30 @@ namespace SSInstructor
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(1348, 721);
             this.pnlBackground.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(167, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(361, 72);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "SIMULATOR";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Roboto", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.label1.Location = new System.Drawing.Point(170, 229);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(345, 53);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "SHIP STABILITY";
             // 
             // pnlLogin
             // 
@@ -186,30 +210,6 @@ namespace SSInstructor
             this.lblLogin.Size = new System.Drawing.Size(59, 24);
             this.lblLogin.TabIndex = 1;
             this.lblLogin.Text = "Login";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Roboto", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(170, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(345, 53);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "SHIP STABILITY";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(166, 232);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(361, 72);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "SIMULATOR";
             // 
             // formLogin
             // 
