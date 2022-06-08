@@ -47,6 +47,7 @@ namespace SSInstructor.Forms
             this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.pnlChildForm);
             this.Name = "formMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SHIP STABILITY";
             this.Load += new System.EventHandler(this.formMain_Load);
             this.ResumeLayout(false);
