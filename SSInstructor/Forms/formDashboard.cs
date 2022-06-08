@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SSInstructor.Forms;
 
 namespace SSInstructor
 {
     public partial class formDashboard : Form
     {
-        Form _parent;
+        formMain _parent;
 
-        public formDashboard(Form parent)
+        public formDashboard(formMain parent)
         {
             InitializeComponent();
             customizeDesign();

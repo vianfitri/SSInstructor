@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SSInstructor.Forms;
 
 namespace SSInstructor
 {
     public partial class formLogin : Form
     {
-        Form _parent;
+        formMain _parent;
 
-        public formLogin(Form parent)
+        public formLogin(formMain parent)
         {
             InitializeComponent();
             this._parent = parent;
@@ -24,7 +25,8 @@ namespace SSInstructor
         {
             // Proccess Authenticate
 
-            // Goto Main Form
+            // Goto Main Form if success
+            this._parent.openChildForm(this._parent.fDash);
 
         }
     }

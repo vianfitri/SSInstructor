@@ -15,10 +15,14 @@ namespace SSInstructor.Forms
         private Form activeForm = null;
         private String loginUsername = "";
         private int loginId = -1;
+        public formLogin fLogin = null;
+        public formDashboard fDash = null;
 
         public formMain()
         {
             InitializeComponent();
+            fLogin = new formLogin(this);
+            fDash = new formDashboard(this);
         }
 
         #region Properties
@@ -38,11 +42,15 @@ namespace SSInstructor.Forms
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
+            {
                 activeForm.Close();
+                //activeForm.Dispose();
+            }
 
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
+            pnlChildForm.Controls.Clear();
             pnlChildForm.Controls.Add(childForm);
             pnlChildForm.Tag = childForm;
             childForm.BringToFront();
@@ -54,8 +62,7 @@ namespace SSInstructor.Forms
         {
             if(loginId == -1)
             {
-                Form LoginForm = new formLogin(this);
-                openChildForm(LoginForm);
+               openChildForm(fLogin);
             }
         }
     }
