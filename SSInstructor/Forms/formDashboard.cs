@@ -87,8 +87,11 @@ namespace SSInstructor
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this._parent.LoginId = -1;
-            this._parent.openChildForm(this._parent.fLogin);
+            if (MessageBox.Show("Are you sure to exit application?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this._parent.LoginId = -1;
+                this._parent.openChildForm(this._parent.fLogin);
+            }
         }
     }
 }
