@@ -84,5 +84,11 @@ namespace SSInstructor
         {
             MessageBox.Show("Text Changed");
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this._parent.LoginId = -1;
+            this._parent.openChildForm(this._parent.fLogin);
+        }
     }
 }

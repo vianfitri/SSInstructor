@@ -135,5 +135,8 @@
   <ItemGroup>
     <None Include="Resources\speed-1280x720.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
