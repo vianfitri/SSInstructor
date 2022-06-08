@@ -373,6 +373,7 @@ namespace SSInstructor
             this.btnShipData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShipData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShipData.UseVisualStyleBackColor = true;
+            this.btnShipData.Click += new System.EventHandler(this.btnShipData_Click);
             // 
             // btnMasterData
             // 

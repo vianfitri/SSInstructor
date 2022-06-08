@@ -87,6 +87,7 @@ namespace SSInstructor
             {
                 this._parent.LoginId = -1;
                 this._parent.openChildForm(this._parent.fLogin);
+                openChildForm(new formWelcome());
             }
         }
 
@@ -111,6 +112,16 @@ namespace SSInstructor
         {
             // Load default content
             openChildForm(new formWelcome());
+
+            hideSubmenu();
+        }
+
+        private void btnShipData_Click(object sender, EventArgs e)
+        {
+            // Load Ship Data
+            openChildForm(new fShipData());
+
+            hideSubmenu();
         }
     }
 }
