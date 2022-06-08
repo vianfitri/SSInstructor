@@ -29,66 +29,66 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnImportInstructor = new ViControls.ViButton();
-            this.btnAddInstructor = new ViControls.ViButton();
-            this.dgv_instructor = new System.Windows.Forms.DataGridView();
+            this.btnImportTrainee = new ViControls.ViButton();
+            this.btnAddTrainee = new ViControls.ViButton();
+            this.dgv_trainee = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_trainee)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnImportInstructor
+            // btnImportTrainee
             // 
-            this.btnImportInstructor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImportInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(70)))), ((int)(((byte)(60)))));
-            this.btnImportInstructor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(70)))), ((int)(((byte)(60)))));
-            this.btnImportInstructor.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnImportInstructor.BorderRadius = 10;
-            this.btnImportInstructor.BorderSize = 0;
-            this.btnImportInstructor.FlatAppearance.BorderSize = 0;
-            this.btnImportInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImportInstructor.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportInstructor.ForeColor = System.Drawing.Color.White;
-            this.btnImportInstructor.Location = new System.Drawing.Point(515, 596);
-            this.btnImportInstructor.Name = "btnImportInstructor";
-            this.btnImportInstructor.Size = new System.Drawing.Size(150, 40);
-            this.btnImportInstructor.TabIndex = 16;
-            this.btnImportInstructor.Text = "Import Data";
-            this.btnImportInstructor.TextColor = System.Drawing.Color.White;
-            this.btnImportInstructor.UseVisualStyleBackColor = false;
+            this.btnImportTrainee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImportTrainee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(70)))), ((int)(((byte)(60)))));
+            this.btnImportTrainee.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(70)))), ((int)(((byte)(60)))));
+            this.btnImportTrainee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnImportTrainee.BorderRadius = 10;
+            this.btnImportTrainee.BorderSize = 0;
+            this.btnImportTrainee.FlatAppearance.BorderSize = 0;
+            this.btnImportTrainee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportTrainee.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportTrainee.ForeColor = System.Drawing.Color.White;
+            this.btnImportTrainee.Location = new System.Drawing.Point(515, 596);
+            this.btnImportTrainee.Name = "btnImportTrainee";
+            this.btnImportTrainee.Size = new System.Drawing.Size(150, 40);
+            this.btnImportTrainee.TabIndex = 16;
+            this.btnImportTrainee.Text = "Import Data";
+            this.btnImportTrainee.TextColor = System.Drawing.Color.White;
+            this.btnImportTrainee.UseVisualStyleBackColor = false;
             // 
-            // btnAddInstructor
+            // btnAddTrainee
             // 
-            this.btnAddInstructor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnAddInstructor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnAddInstructor.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddInstructor.BorderRadius = 10;
-            this.btnAddInstructor.BorderSize = 0;
-            this.btnAddInstructor.FlatAppearance.BorderSize = 0;
-            this.btnAddInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddInstructor.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddInstructor.ForeColor = System.Drawing.Color.White;
-            this.btnAddInstructor.Location = new System.Drawing.Point(680, 596);
-            this.btnAddInstructor.Name = "btnAddInstructor";
-            this.btnAddInstructor.Size = new System.Drawing.Size(150, 40);
-            this.btnAddInstructor.TabIndex = 15;
-            this.btnAddInstructor.Text = "Add Data";
-            this.btnAddInstructor.TextColor = System.Drawing.Color.White;
-            this.btnAddInstructor.UseVisualStyleBackColor = false;
+            this.btnAddTrainee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddTrainee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnAddTrainee.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnAddTrainee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddTrainee.BorderRadius = 10;
+            this.btnAddTrainee.BorderSize = 0;
+            this.btnAddTrainee.FlatAppearance.BorderSize = 0;
+            this.btnAddTrainee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTrainee.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTrainee.ForeColor = System.Drawing.Color.White;
+            this.btnAddTrainee.Location = new System.Drawing.Point(680, 596);
+            this.btnAddTrainee.Name = "btnAddTrainee";
+            this.btnAddTrainee.Size = new System.Drawing.Size(150, 40);
+            this.btnAddTrainee.TabIndex = 15;
+            this.btnAddTrainee.Text = "Add Data";
+            this.btnAddTrainee.TextColor = System.Drawing.Color.White;
+            this.btnAddTrainee.UseVisualStyleBackColor = false;
             // 
-            // dgv_instructor
+            // dgv_trainee
             // 
-            this.dgv_instructor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_trainee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_instructor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_instructor.Location = new System.Drawing.Point(61, 160);
-            this.dgv_instructor.Name = "dgv_instructor";
-            this.dgv_instructor.RowHeadersWidth = 51;
-            this.dgv_instructor.RowTemplate.Height = 24;
-            this.dgv_instructor.Size = new System.Drawing.Size(769, 413);
-            this.dgv_instructor.TabIndex = 14;
+            this.dgv_trainee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_trainee.Location = new System.Drawing.Point(61, 160);
+            this.dgv_trainee.Name = "dgv_trainee";
+            this.dgv_trainee.RowHeadersWidth = 51;
+            this.dgv_trainee.RowTemplate.Height = 24;
+            this.dgv_trainee.Size = new System.Drawing.Size(769, 413);
+            this.dgv_trainee.TabIndex = 14;
             // 
             // label2
             // 
@@ -107,23 +107,23 @@ namespace SSInstructor.Forms
             this.label1.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(59, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 29);
+            this.label1.Size = new System.Drawing.Size(94, 29);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Instructor";
+            this.label1.Text = "Trainee";
             // 
             // fTraineeData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
-            this.Controls.Add(this.btnImportInstructor);
-            this.Controls.Add(this.btnAddInstructor);
-            this.Controls.Add(this.dgv_instructor);
+            this.Controls.Add(this.btnImportTrainee);
+            this.Controls.Add(this.btnAddTrainee);
+            this.Controls.Add(this.dgv_trainee);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "fTraineeData";
             this.Text = "fTraineeData";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_trainee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,9 +131,9 @@ namespace SSInstructor.Forms
 
         #endregion
 
-        private ViControls.ViButton btnImportInstructor;
-        private ViControls.ViButton btnAddInstructor;
-        private System.Windows.Forms.DataGridView dgv_instructor;
+        private ViControls.ViButton btnImportTrainee;
+        private ViControls.ViButton btnAddTrainee;
+        private System.Windows.Forms.DataGridView dgv_trainee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

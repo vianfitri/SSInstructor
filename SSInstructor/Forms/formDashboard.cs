@@ -58,7 +58,10 @@ namespace SSInstructor
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
+            // Load Account Data
+            openChildForm(new fAccount());
 
+            hideSubmenu();
         }
 
         private void btnScenario_Click(object sender, EventArgs e)
