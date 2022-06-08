@@ -84,6 +84,9 @@ namespace SSInstructor.Forms
             // 
             // dgv_cargo
             // 
+            this.dgv_cargo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_cargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_cargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_cargo.Location = new System.Drawing.Point(65, 218);
@@ -95,6 +98,7 @@ namespace SSInstructor.Forms
             // 
             // btnAddCargo
             // 
+            this.btnAddCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddCargo.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnAddCargo.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btnAddCargo.BorderColor = System.Drawing.Color.PaleVioletRed;
