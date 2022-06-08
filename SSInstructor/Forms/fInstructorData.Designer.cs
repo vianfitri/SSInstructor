@@ -60,6 +60,9 @@ namespace SSInstructor.Forms
             // 
             // dgv_instructor
             // 
+            this.dgv_instructor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_instructor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_instructor.Location = new System.Drawing.Point(61, 160);
             this.dgv_instructor.Name = "dgv_instructor";
