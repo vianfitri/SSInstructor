@@ -14,6 +14,7 @@ namespace SSInstructor
     public partial class formDashboard : Form
     {
         formMain _parent;
+        private Form activeForm = null;
 
         public formDashboard(formMain parent)
         {
@@ -92,6 +93,29 @@ namespace SSInstructor
                 this._parent.LoginId = -1;
                 this._parent.openChildForm(this._parent.fLogin);
             }
+        }
+
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlContent.Controls.Clear();
+            pnlContent.Controls.Add(childForm);
+            pnlContent.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void formDashboard_Load(object sender, EventArgs e)
+        {
+            // Load default content
+            openChildForm(new formWelcome());
         }
     }
 }
