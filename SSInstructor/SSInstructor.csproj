@@ -93,11 +93,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-    <Folder Include="Controls\" />
-    <Folder Include="Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ViControls\ViControls.csproj">
       <Project>{C8C1975E-C078-4FAD-A978-6F6547CE8BF1}</Project>
