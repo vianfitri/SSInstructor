@@ -1,7 +1,7 @@
 ﻿
 namespace SSInstructor
 {
-    partial class formMain
+    partial class formDashboard
     {
         /// <summary>
         /// Required designer variable.

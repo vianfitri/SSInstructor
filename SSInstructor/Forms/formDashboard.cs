@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SSInstructor
 {
-    public partial class formMain : Form
+    public partial class formDashboard : Form
     {
-        public formMain()
+        public formDashboard()
         {
             InitializeComponent();
             customizeDesign();
