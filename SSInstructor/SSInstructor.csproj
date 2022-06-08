@@ -100,6 +100,18 @@
     <Compile Include="Forms\formWelcome.Designer.cs">
       <DependentUpon>formWelcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fReport.Designer.cs">
+      <DependentUpon>fReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fScenario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fScenario.Designer.cs">
+      <DependentUpon>fScenario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fShipData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formWelcome.resx">
       <DependentUpon>formWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fReport.resx">
+      <DependentUpon>fReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fScenario.resx">
+      <DependentUpon>fScenario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fShipData.resx">
       <DependentUpon>fShipData.cs</DependentUpon>

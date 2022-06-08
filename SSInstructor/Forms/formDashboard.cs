@@ -66,11 +66,17 @@ namespace SSInstructor
 
         private void btnScenario_Click(object sender, EventArgs e)
         {
+            // Load Scenario Page
+            openChildForm(new fScenario());
+
             hideSubmenu();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            // Load Report Page
+            openChildForm(new fReport());
+
             hideSubmenu();
         }
 
