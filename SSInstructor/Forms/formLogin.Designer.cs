@@ -117,6 +117,7 @@ namespace SSInstructor
             this.btnLogin.Text = "Login";
             this.btnLogin.TextColor = System.Drawing.Color.White;
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -217,6 +218,7 @@ namespace SSInstructor
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.pnlBackground);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formLogin";
             this.Text = "formLogin";
             this.pnlBackground.ResumeLayout(false);

@@ -16,5 +16,13 @@ namespace SSInstructor
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // Proccess Authenticate
+
+            // Goto Main Form
+
+        }
     }
 }
