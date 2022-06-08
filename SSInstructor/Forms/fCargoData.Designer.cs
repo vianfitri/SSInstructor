@@ -99,8 +99,8 @@ namespace SSInstructor.Forms
             // btnAddCargo
             // 
             this.btnAddCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddCargo.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddCargo.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnAddCargo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
             this.btnAddCargo.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnAddCargo.BorderRadius = 10;
             this.btnAddCargo.BorderSize = 0;
