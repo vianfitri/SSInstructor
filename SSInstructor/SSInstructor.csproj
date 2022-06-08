@@ -58,6 +58,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\fCargoData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fCargoData.Designer.cs">
+      <DependentUpon>fCargoData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\formDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\fCargoData.resx">
+      <DependentUpon>fCargoData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\formDashboard.resx">
       <DependentUpon>formDashboard.cs</DependentUpon>
     </EmbeddedResource>
