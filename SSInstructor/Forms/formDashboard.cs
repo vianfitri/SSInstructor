@@ -12,10 +12,13 @@ namespace SSInstructor
 {
     public partial class formDashboard : Form
     {
-        public formDashboard()
+        Form _parent;
+
+        public formDashboard(Form parent)
         {
             InitializeComponent();
             customizeDesign();
+            this._parent = parent;
         }
 
         private void customizeDesign()

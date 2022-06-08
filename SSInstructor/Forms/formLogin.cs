@@ -12,9 +12,12 @@ namespace SSInstructor
 {
     public partial class formLogin : Form
     {
-        public formLogin()
+        Form _parent;
+
+        public formLogin(Form parent)
         {
             InitializeComponent();
+            this._parent = parent;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

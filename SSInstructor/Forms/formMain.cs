@@ -54,7 +54,7 @@ namespace SSInstructor.Forms
         {
             if(loginId == -1)
             {
-                Form LoginForm = new formLogin();
+                Form LoginForm = new formLogin(this);
                 openChildForm(LoginForm);
             }
         }
