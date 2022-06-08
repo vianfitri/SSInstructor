@@ -44,17 +44,12 @@ namespace SSInstructor
             this.btnShipData = new FontAwesome.Sharp.IconButton();
             this.btnMasterData = new FontAwesome.Sharp.IconButton();
             this.pnlUserPic = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.viButton2 = new ViControls.ViButton();
-            this.viButton1 = new ViControls.ViButton();
-            this.viTextBox2 = new ViControls.ViTextBox();
-            this.viTextBox1 = new ViControls.ViTextBox();
             this.userPic = new ViControls.CircularPicture();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlMainMenu.SuspendLayout();
             this.pnlUserSubmenu.SuspendLayout();
             this.pnlMasterDataSubmenu.SuspendLayout();
             this.pnlUserPic.SuspendLayout();
-            this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -367,100 +362,6 @@ namespace SSInstructor
             this.pnlUserPic.Size = new System.Drawing.Size(256, 100);
             this.pnlUserPic.TabIndex = 0;
             // 
-            // pnlContent
-            // 
-            this.pnlContent.Controls.Add(this.viButton2);
-            this.pnlContent.Controls.Add(this.viButton1);
-            this.pnlContent.Controls.Add(this.viTextBox2);
-            this.pnlContent.Controls.Add(this.viTextBox1);
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(256, 0);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1092, 721);
-            this.pnlContent.TabIndex = 1;
-            // 
-            // viButton2
-            // 
-            this.viButton2.BackColor = System.Drawing.SystemColors.Control;
-            this.viButton2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.viButton2.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.viButton2.BorderRadius = 40;
-            this.viButton2.BorderSize = 1;
-            this.viButton2.FlatAppearance.BorderSize = 0;
-            this.viButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.viButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.viButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viButton2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.viButton2.Location = new System.Drawing.Point(117, 100);
-            this.viButton2.Name = "viButton2";
-            this.viButton2.Size = new System.Drawing.Size(150, 40);
-            this.viButton2.TabIndex = 5;
-            this.viButton2.Text = "viButton2";
-            this.viButton2.TextColor = System.Drawing.Color.DodgerBlue;
-            this.viButton2.UseVisualStyleBackColor = false;
-            // 
-            // viButton1
-            // 
-            this.viButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.viButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.viButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.viButton1.BorderRadius = 15;
-            this.viButton1.BorderSize = 1;
-            this.viButton1.FlatAppearance.BorderSize = 0;
-            this.viButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viButton1.ForeColor = System.Drawing.Color.White;
-            this.viButton1.Location = new System.Drawing.Point(267, 383);
-            this.viButton1.Name = "viButton1";
-            this.viButton1.Size = new System.Drawing.Size(150, 40);
-            this.viButton1.TabIndex = 4;
-            this.viButton1.Text = "LOGIN";
-            this.viButton1.TextColor = System.Drawing.Color.White;
-            this.viButton1.UseVisualStyleBackColor = false;
-            // 
-            // viTextBox2
-            // 
-            this.viTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox2.BorderRadius = 10;
-            this.viTextBox2.BorderSize = 2;
-            this.viTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox2.Location = new System.Drawing.Point(216, 318);
-            this.viTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox2.Multiline = false;
-            this.viTextBox2.Name = "viTextBox2";
-            this.viTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox2.PasswordChar = true;
-            this.viTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox2.PlaceholderText = "Password";
-            this.viTextBox2.Size = new System.Drawing.Size(250, 35);
-            this.viTextBox2.TabIndex = 3;
-            this.viTextBox2.Texts = "";
-            this.viTextBox2.UnderlinedStyle = false;
-            // 
-            // viTextBox1
-            // 
-            this.viTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox1.BorderRadius = 10;
-            this.viTextBox1.BorderSize = 2;
-            this.viTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox1.Location = new System.Drawing.Point(216, 265);
-            this.viTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox1.Multiline = false;
-            this.viTextBox1.Name = "viTextBox1";
-            this.viTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox1.PasswordChar = false;
-            this.viTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox1.PlaceholderText = "Username";
-            this.viTextBox1.Size = new System.Drawing.Size(250, 35);
-            this.viTextBox1.TabIndex = 2;
-            this.viTextBox1.Texts = "";
-            this.viTextBox1.UnderlinedStyle = false;
-            // 
             // userPic
             // 
             this.userPic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -476,6 +377,14 @@ namespace SSInstructor
             this.userPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userPic.TabIndex = 1;
             this.userPic.TabStop = false;
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(256, 0);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1092, 721);
+            this.pnlContent.TabIndex = 1;
             // 
             // Form1
             // 
@@ -493,7 +402,6 @@ namespace SSInstructor
             this.pnlUserSubmenu.ResumeLayout(false);
             this.pnlMasterDataSubmenu.ResumeLayout(false);
             this.pnlUserPic.ResumeLayout(false);
-            this.pnlContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
             this.ResumeLayout(false);
 
@@ -517,11 +425,7 @@ namespace SSInstructor
         private FontAwesome.Sharp.IconButton btnTrainee;
         private FontAwesome.Sharp.IconButton btnInstructor;
         private System.Windows.Forms.Panel pnlContent;
-        private ViControls.ViTextBox viTextBox1;
-        private ViControls.ViTextBox viTextBox2;
         private ViControls.CircularPicture userPic;
-        private ViControls.ViButton viButton1;
-        private ViControls.ViButton viButton2;
     }
 }
 
