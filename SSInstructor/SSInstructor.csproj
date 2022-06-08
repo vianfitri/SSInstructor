@@ -64,6 +64,12 @@
     <Compile Include="Forms\fCargoData.Designer.cs">
       <DependentUpon>fCargoData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fInstructorData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fInstructorData.Designer.cs">
+      <DependentUpon>fInstructorData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\formDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\fCargoData.resx">
       <DependentUpon>fCargoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fInstructorData.resx">
+      <DependentUpon>fInstructorData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formDashboard.resx">
       <DependentUpon>formDashboard.cs</DependentUpon>
