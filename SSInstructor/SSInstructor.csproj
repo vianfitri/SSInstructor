@@ -70,6 +70,12 @@
     <Compile Include="Forms\fCargoData.Designer.cs">
       <DependentUpon>fCargoData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fClientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fClientList.Designer.cs">
+      <DependentUpon>fClientList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fInstructorData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fCargoData.resx">
       <DependentUpon>fCargoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fClientList.resx">
+      <DependentUpon>fClientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fInstructorData.resx">
       <DependentUpon>fInstructorData.cs</DependentUpon>
@@ -200,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

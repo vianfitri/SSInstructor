@@ -82,6 +82,9 @@ namespace SSInstructor
 
         private void btnClientList_Click(object sender, EventArgs e)
         {
+            // Load Client List
+            openChildForm(new fClientList());
+
             hideSubmenu();
         }
 
