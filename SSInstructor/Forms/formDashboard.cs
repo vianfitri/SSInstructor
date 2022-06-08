@@ -81,11 +81,6 @@ namespace SSInstructor
             hideSubmenu();
         }
 
-        private void roundedTextBox1__TextChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Text Changed");
-        }
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to logout ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
