@@ -139,5 +139,13 @@ namespace SSInstructor
 
             hideSubmenu();
         }
+
+        private void btnTrainee_Click(object sender, EventArgs e)
+        {
+            // Load Trainee Data
+            openChildForm(new fTraineeData());
+
+            hideSubmenu();
+        }
     }
 }

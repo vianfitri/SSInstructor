@@ -280,6 +280,7 @@ namespace SSInstructor
             this.btnTrainee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrainee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTrainee.UseVisualStyleBackColor = true;
+            this.btnTrainee.Click += new System.EventHandler(this.btnTrainee_Click);
             // 
             // btnInstructor
             // 

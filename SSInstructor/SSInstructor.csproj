@@ -100,6 +100,12 @@
     <Compile Include="Forms\fShipData.Designer.cs">
       <DependentUpon>fShipData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fTraineeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fTraineeData.Designer.cs">
+      <DependentUpon>fTraineeData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\fCargoData.resx">
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fShipData.resx">
       <DependentUpon>fShipData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fTraineeData.resx">
+      <DependentUpon>fTraineeData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
