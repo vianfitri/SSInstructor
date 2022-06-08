@@ -303,6 +303,7 @@ namespace SSInstructor
             this.btnInstructor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInstructor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInstructor.UseVisualStyleBackColor = true;
+            this.btnInstructor.Click += new System.EventHandler(this.btnInstructor_Click);
             // 
             // btnUsers
             // 
