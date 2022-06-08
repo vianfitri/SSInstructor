@@ -68,7 +68,7 @@ namespace SSInstructor
             this.pnlMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMainMenu.Name = "pnlMainMenu";
-            this.pnlMainMenu.Size = new System.Drawing.Size(256, 721);
+            this.pnlMainMenu.Size = new System.Drawing.Size(345, 721);
             this.pnlMainMenu.TabIndex = 0;
             // 
             // btnSettings
@@ -83,11 +83,11 @@ namespace SSInstructor
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSettings.IconSize = 24;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 650);
+            this.btnSettings.Location = new System.Drawing.Point(0, 644);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSettings.Size = new System.Drawing.Size(256, 55);
+            this.btnSettings.Size = new System.Drawing.Size(345, 55);
             this.btnSettings.TabIndex = 22;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,11 +107,11 @@ namespace SSInstructor
             this.btnClientList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClientList.IconSize = 24;
             this.btnClientList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientList.Location = new System.Drawing.Point(0, 595);
+            this.btnClientList.Location = new System.Drawing.Point(0, 589);
             this.btnClientList.Name = "btnClientList";
             this.btnClientList.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnClientList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnClientList.Size = new System.Drawing.Size(256, 55);
+            this.btnClientList.Size = new System.Drawing.Size(345, 55);
             this.btnClientList.TabIndex = 21;
             this.btnClientList.Text = "Client List";
             this.btnClientList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,11 +131,11 @@ namespace SSInstructor
             this.btnReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReport.IconSize = 24;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 540);
+            this.btnReport.Location = new System.Drawing.Point(0, 534);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnReport.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnReport.Size = new System.Drawing.Size(256, 55);
+            this.btnReport.Size = new System.Drawing.Size(345, 55);
             this.btnReport.TabIndex = 20;
             this.btnReport.Text = "Report";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,11 +155,11 @@ namespace SSInstructor
             this.btnScenario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnScenario.IconSize = 24;
             this.btnScenario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnScenario.Location = new System.Drawing.Point(0, 485);
+            this.btnScenario.Location = new System.Drawing.Point(0, 479);
             this.btnScenario.Name = "btnScenario";
             this.btnScenario.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnScenario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnScenario.Size = new System.Drawing.Size(256, 55);
+            this.btnScenario.Size = new System.Drawing.Size(345, 55);
             this.btnScenario.TabIndex = 19;
             this.btnScenario.Text = "Scenario";
             this.btnScenario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,9 +173,9 @@ namespace SSInstructor
             this.pnlUserSubmenu.Controls.Add(this.btnTrainee);
             this.pnlUserSubmenu.Controls.Add(this.btnInstructor);
             this.pnlUserSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUserSubmenu.Location = new System.Drawing.Point(0, 320);
+            this.pnlUserSubmenu.Location = new System.Drawing.Point(0, 314);
             this.pnlUserSubmenu.Name = "pnlUserSubmenu";
-            this.pnlUserSubmenu.Size = new System.Drawing.Size(256, 165);
+            this.pnlUserSubmenu.Size = new System.Drawing.Size(345, 165);
             this.pnlUserSubmenu.TabIndex = 16;
             // 
             // btnAccount
@@ -194,7 +194,7 @@ namespace SSInstructor
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(42, 0, 20, 0);
             this.btnAccount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAccount.Size = new System.Drawing.Size(256, 55);
+            this.btnAccount.Size = new System.Drawing.Size(345, 55);
             this.btnAccount.TabIndex = 18;
             this.btnAccount.Text = "Account";
             this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,7 +218,7 @@ namespace SSInstructor
             this.btnTrainee.Name = "btnTrainee";
             this.btnTrainee.Padding = new System.Windows.Forms.Padding(42, 0, 20, 0);
             this.btnTrainee.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnTrainee.Size = new System.Drawing.Size(256, 55);
+            this.btnTrainee.Size = new System.Drawing.Size(345, 55);
             this.btnTrainee.TabIndex = 17;
             this.btnTrainee.Text = "Trainee";
             this.btnTrainee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -241,7 +241,7 @@ namespace SSInstructor
             this.btnInstructor.Name = "btnInstructor";
             this.btnInstructor.Padding = new System.Windows.Forms.Padding(42, 0, 20, 0);
             this.btnInstructor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnInstructor.Size = new System.Drawing.Size(256, 55);
+            this.btnInstructor.Size = new System.Drawing.Size(345, 55);
             this.btnInstructor.TabIndex = 16;
             this.btnInstructor.Text = "Instructor";
             this.btnInstructor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,11 +260,11 @@ namespace SSInstructor
             this.btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUsers.IconSize = 24;
             this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.Location = new System.Drawing.Point(0, 265);
+            this.btnUsers.Location = new System.Drawing.Point(0, 259);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnUsers.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnUsers.Size = new System.Drawing.Size(256, 55);
+            this.btnUsers.Size = new System.Drawing.Size(345, 55);
             this.btnUsers.TabIndex = 15;
             this.btnUsers.Text = "User";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -277,9 +277,9 @@ namespace SSInstructor
             this.pnlMasterDataSubmenu.Controls.Add(this.btnCargoData);
             this.pnlMasterDataSubmenu.Controls.Add(this.btnShipData);
             this.pnlMasterDataSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMasterDataSubmenu.Location = new System.Drawing.Point(0, 155);
+            this.pnlMasterDataSubmenu.Location = new System.Drawing.Point(0, 149);
             this.pnlMasterDataSubmenu.Name = "pnlMasterDataSubmenu";
-            this.pnlMasterDataSubmenu.Size = new System.Drawing.Size(256, 110);
+            this.pnlMasterDataSubmenu.Size = new System.Drawing.Size(345, 110);
             this.pnlMasterDataSubmenu.TabIndex = 2;
             // 
             // btnCargoData
@@ -298,7 +298,7 @@ namespace SSInstructor
             this.btnCargoData.Name = "btnCargoData";
             this.btnCargoData.Padding = new System.Windows.Forms.Padding(42, 0, 20, 0);
             this.btnCargoData.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCargoData.Size = new System.Drawing.Size(256, 55);
+            this.btnCargoData.Size = new System.Drawing.Size(345, 55);
             this.btnCargoData.TabIndex = 14;
             this.btnCargoData.Text = "Cargo";
             this.btnCargoData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -321,7 +321,7 @@ namespace SSInstructor
             this.btnShipData.Name = "btnShipData";
             this.btnShipData.Padding = new System.Windows.Forms.Padding(42, 0, 20, 0);
             this.btnShipData.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnShipData.Size = new System.Drawing.Size(256, 55);
+            this.btnShipData.Size = new System.Drawing.Size(345, 55);
             this.btnShipData.TabIndex = 13;
             this.btnShipData.Text = "Ship";
             this.btnShipData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,11 +340,11 @@ namespace SSInstructor
             this.btnMasterData.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMasterData.IconSize = 24;
             this.btnMasterData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMasterData.Location = new System.Drawing.Point(0, 100);
+            this.btnMasterData.Location = new System.Drawing.Point(0, 94);
             this.btnMasterData.Name = "btnMasterData";
             this.btnMasterData.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnMasterData.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnMasterData.Size = new System.Drawing.Size(256, 55);
+            this.btnMasterData.Size = new System.Drawing.Size(345, 55);
             this.btnMasterData.TabIndex = 1;
             this.btnMasterData.Text = "Master Data";
             this.btnMasterData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -359,7 +359,7 @@ namespace SSInstructor
             this.pnlUserPic.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUserPic.Location = new System.Drawing.Point(0, 0);
             this.pnlUserPic.Name = "pnlUserPic";
-            this.pnlUserPic.Size = new System.Drawing.Size(256, 100);
+            this.pnlUserPic.Size = new System.Drawing.Size(345, 94);
             this.pnlUserPic.TabIndex = 0;
             // 
             // userPic
@@ -381,12 +381,12 @@ namespace SSInstructor
             // pnlContent
             // 
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(256, 0);
+            this.pnlContent.Location = new System.Drawing.Point(345, 0);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1092, 721);
+            this.pnlContent.Size = new System.Drawing.Size(1003, 721);
             this.pnlContent.TabIndex = 1;
             // 
-            // Form1
+            // formDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -395,7 +395,7 @@ namespace SSInstructor
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "formDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SSInstructor";
             this.pnlMainMenu.ResumeLayout(false);
