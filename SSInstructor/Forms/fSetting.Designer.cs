@@ -31,19 +31,19 @@ namespace SSInstructor.Forms
         {
             this.label1 = new System.Windows.Forms.Label();
             this.viPanel1 = new ViControls.ViPanel();
-            this.viButton2 = new ViControls.ViButton();
-            this.viTextBox4 = new ViControls.ViTextBox();
-            this.viTextBox5 = new ViControls.ViTextBox();
-            this.viTextBox6 = new ViControls.ViTextBox();
+            this.btnPassChange = new ViControls.ViButton();
+            this.txtRetypePass = new ViControls.ViTextBox();
+            this.txtNewPass = new ViControls.ViTextBox();
+            this.txtOldPass = new ViControls.ViTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.viPanel2 = new ViControls.ViPanel();
-            this.viButton1 = new ViControls.ViButton();
-            this.viTextBox1 = new ViControls.ViTextBox();
-            this.viTextBox2 = new ViControls.ViTextBox();
-            this.viTextBox3 = new ViControls.ViTextBox();
+            this.btnDBConnChange = new ViControls.ViButton();
+            this.txtDBName = new ViControls.ViTextBox();
+            this.txtDBPass = new ViControls.ViTextBox();
+            this.txtBDUser = new ViControls.ViTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,10 +65,10 @@ namespace SSInstructor.Forms
             // viPanel1
             // 
             this.viPanel1.BackColor = System.Drawing.Color.White;
-            this.viPanel1.Controls.Add(this.viButton2);
-            this.viPanel1.Controls.Add(this.viTextBox4);
-            this.viPanel1.Controls.Add(this.viTextBox5);
-            this.viPanel1.Controls.Add(this.viTextBox6);
+            this.viPanel1.Controls.Add(this.btnPassChange);
+            this.viPanel1.Controls.Add(this.txtRetypePass);
+            this.viPanel1.Controls.Add(this.txtNewPass);
+            this.viPanel1.Controls.Add(this.txtOldPass);
             this.viPanel1.Controls.Add(this.label14);
             this.viPanel1.Controls.Add(this.label15);
             this.viPanel1.Controls.Add(this.label16);
@@ -80,90 +80,91 @@ namespace SSInstructor.Forms
             this.viPanel1.Size = new System.Drawing.Size(337, 413);
             this.viPanel1.TabIndex = 12;
             // 
-            // viButton2
+            // btnPassChange
             // 
-            this.viButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
-            this.viButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
-            this.viButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.viButton2.BorderRadius = 10;
-            this.viButton2.BorderSize = 0;
-            this.viButton2.FlatAppearance.BorderSize = 0;
-            this.viButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viButton2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viButton2.ForeColor = System.Drawing.Color.White;
-            this.viButton2.Location = new System.Drawing.Point(183, 318);
-            this.viButton2.Name = "viButton2";
-            this.viButton2.Size = new System.Drawing.Size(107, 40);
-            this.viButton2.TabIndex = 15;
-            this.viButton2.Text = "Change";
-            this.viButton2.TextColor = System.Drawing.Color.White;
-            this.viButton2.UseVisualStyleBackColor = false;
+            this.btnPassChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
+            this.btnPassChange.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
+            this.btnPassChange.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPassChange.BorderRadius = 10;
+            this.btnPassChange.BorderSize = 0;
+            this.btnPassChange.FlatAppearance.BorderSize = 0;
+            this.btnPassChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPassChange.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPassChange.ForeColor = System.Drawing.Color.White;
+            this.btnPassChange.Location = new System.Drawing.Point(183, 318);
+            this.btnPassChange.Name = "btnPassChange";
+            this.btnPassChange.Size = new System.Drawing.Size(107, 40);
+            this.btnPassChange.TabIndex = 15;
+            this.btnPassChange.Text = "Change";
+            this.btnPassChange.TextColor = System.Drawing.Color.White;
+            this.btnPassChange.UseVisualStyleBackColor = false;
+            this.btnPassChange.Click += new System.EventHandler(this.btnPassChange_Click);
             // 
-            // viTextBox4
+            // txtRetypePass
             // 
-            this.viTextBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox4.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox4.BorderRadius = 8;
-            this.viTextBox4.BorderSize = 1;
-            this.viTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox4.Location = new System.Drawing.Point(37, 262);
-            this.viTextBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox4.Multiline = false;
-            this.viTextBox4.Name = "viTextBox4";
-            this.viTextBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox4.PasswordChar = true;
-            this.viTextBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox4.PlaceholderText = "Re-type Password";
-            this.viTextBox4.Size = new System.Drawing.Size(253, 35);
-            this.viTextBox4.TabIndex = 14;
-            this.viTextBox4.Texts = "";
-            this.viTextBox4.UnderlinedStyle = false;
+            this.txtRetypePass.BackColor = System.Drawing.SystemColors.Window;
+            this.txtRetypePass.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtRetypePass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtRetypePass.BorderRadius = 8;
+            this.txtRetypePass.BorderSize = 1;
+            this.txtRetypePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRetypePass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtRetypePass.Location = new System.Drawing.Point(37, 262);
+            this.txtRetypePass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtRetypePass.Multiline = false;
+            this.txtRetypePass.Name = "txtRetypePass";
+            this.txtRetypePass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtRetypePass.PasswordChar = true;
+            this.txtRetypePass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtRetypePass.PlaceholderText = "Re-type Password";
+            this.txtRetypePass.Size = new System.Drawing.Size(253, 35);
+            this.txtRetypePass.TabIndex = 14;
+            this.txtRetypePass.Texts = "";
+            this.txtRetypePass.UnderlinedStyle = false;
             // 
-            // viTextBox5
+            // txtNewPass
             // 
-            this.viTextBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox5.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox5.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox5.BorderRadius = 8;
-            this.viTextBox5.BorderSize = 1;
-            this.viTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox5.Location = new System.Drawing.Point(37, 186);
-            this.viTextBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox5.Multiline = false;
-            this.viTextBox5.Name = "viTextBox5";
-            this.viTextBox5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox5.PasswordChar = true;
-            this.viTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox5.PlaceholderText = "New Password";
-            this.viTextBox5.Size = new System.Drawing.Size(253, 35);
-            this.viTextBox5.TabIndex = 13;
-            this.viTextBox5.Texts = "";
-            this.viTextBox5.UnderlinedStyle = false;
+            this.txtNewPass.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNewPass.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtNewPass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNewPass.BorderRadius = 8;
+            this.txtNewPass.BorderSize = 1;
+            this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNewPass.Location = new System.Drawing.Point(37, 186);
+            this.txtNewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewPass.Multiline = false;
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNewPass.PasswordChar = true;
+            this.txtNewPass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtNewPass.PlaceholderText = "New Password";
+            this.txtNewPass.Size = new System.Drawing.Size(253, 35);
+            this.txtNewPass.TabIndex = 13;
+            this.txtNewPass.Texts = "";
+            this.txtNewPass.UnderlinedStyle = false;
             // 
-            // viTextBox6
+            // txtOldPass
             // 
-            this.viTextBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox6.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox6.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox6.BorderRadius = 8;
-            this.viTextBox6.BorderSize = 1;
-            this.viTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox6.Location = new System.Drawing.Point(37, 113);
-            this.viTextBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox6.Multiline = false;
-            this.viTextBox6.Name = "viTextBox6";
-            this.viTextBox6.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox6.PasswordChar = true;
-            this.viTextBox6.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox6.PlaceholderText = "Old Password";
-            this.viTextBox6.Size = new System.Drawing.Size(253, 35);
-            this.viTextBox6.TabIndex = 12;
-            this.viTextBox6.Texts = "";
-            this.viTextBox6.UnderlinedStyle = false;
+            this.txtOldPass.BackColor = System.Drawing.SystemColors.Window;
+            this.txtOldPass.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtOldPass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtOldPass.BorderRadius = 8;
+            this.txtOldPass.BorderSize = 1;
+            this.txtOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOldPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtOldPass.Location = new System.Drawing.Point(37, 113);
+            this.txtOldPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtOldPass.Multiline = false;
+            this.txtOldPass.Name = "txtOldPass";
+            this.txtOldPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtOldPass.PasswordChar = true;
+            this.txtOldPass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtOldPass.PlaceholderText = "Old Password";
+            this.txtOldPass.Size = new System.Drawing.Size(253, 35);
+            this.txtOldPass.TabIndex = 12;
+            this.txtOldPass.Texts = "";
+            this.txtOldPass.UnderlinedStyle = false;
             // 
             // label14
             // 
@@ -211,10 +212,10 @@ namespace SSInstructor.Forms
             // 
             // viPanel2
             // 
-            this.viPanel2.Controls.Add(this.viButton1);
-            this.viPanel2.Controls.Add(this.viTextBox1);
-            this.viPanel2.Controls.Add(this.viTextBox2);
-            this.viPanel2.Controls.Add(this.viTextBox3);
+            this.viPanel2.Controls.Add(this.btnDBConnChange);
+            this.viPanel2.Controls.Add(this.txtDBName);
+            this.viPanel2.Controls.Add(this.txtDBPass);
+            this.viPanel2.Controls.Add(this.txtBDUser);
             this.viPanel2.Controls.Add(this.label10);
             this.viPanel2.Controls.Add(this.label11);
             this.viPanel2.Controls.Add(this.label12);
@@ -226,90 +227,90 @@ namespace SSInstructor.Forms
             this.viPanel2.Size = new System.Drawing.Size(337, 413);
             this.viPanel2.TabIndex = 13;
             // 
-            // viButton1
+            // btnDBConnChange
             // 
-            this.viButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
-            this.viButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
-            this.viButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.viButton1.BorderRadius = 10;
-            this.viButton1.BorderSize = 0;
-            this.viButton1.FlatAppearance.BorderSize = 0;
-            this.viButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viButton1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viButton1.ForeColor = System.Drawing.Color.White;
-            this.viButton1.Location = new System.Drawing.Point(183, 318);
-            this.viButton1.Name = "viButton1";
-            this.viButton1.Size = new System.Drawing.Size(107, 40);
-            this.viButton1.TabIndex = 15;
-            this.viButton1.Text = "Change";
-            this.viButton1.TextColor = System.Drawing.Color.White;
-            this.viButton1.UseVisualStyleBackColor = false;
+            this.btnDBConnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
+            this.btnDBConnChange.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(162)))), ((int)(((byte)(220)))));
+            this.btnDBConnChange.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDBConnChange.BorderRadius = 10;
+            this.btnDBConnChange.BorderSize = 0;
+            this.btnDBConnChange.FlatAppearance.BorderSize = 0;
+            this.btnDBConnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDBConnChange.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDBConnChange.ForeColor = System.Drawing.Color.White;
+            this.btnDBConnChange.Location = new System.Drawing.Point(183, 318);
+            this.btnDBConnChange.Name = "btnDBConnChange";
+            this.btnDBConnChange.Size = new System.Drawing.Size(107, 40);
+            this.btnDBConnChange.TabIndex = 15;
+            this.btnDBConnChange.Text = "Change";
+            this.btnDBConnChange.TextColor = System.Drawing.Color.White;
+            this.btnDBConnChange.UseVisualStyleBackColor = false;
             // 
-            // viTextBox1
+            // txtDBName
             // 
-            this.viTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox1.BorderRadius = 8;
-            this.viTextBox1.BorderSize = 1;
-            this.viTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox1.Location = new System.Drawing.Point(37, 262);
-            this.viTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox1.Multiline = false;
-            this.viTextBox1.Name = "viTextBox1";
-            this.viTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox1.PasswordChar = false;
-            this.viTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox1.PlaceholderText = "";
-            this.viTextBox1.Size = new System.Drawing.Size(253, 35);
-            this.viTextBox1.TabIndex = 14;
-            this.viTextBox1.Texts = "Database";
-            this.viTextBox1.UnderlinedStyle = false;
+            this.txtDBName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDBName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDBName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDBName.BorderRadius = 8;
+            this.txtDBName.BorderSize = 1;
+            this.txtDBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDBName.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDBName.Location = new System.Drawing.Point(37, 262);
+            this.txtDBName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDBName.Multiline = false;
+            this.txtDBName.Name = "txtDBName";
+            this.txtDBName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDBName.PasswordChar = false;
+            this.txtDBName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDBName.PlaceholderText = "";
+            this.txtDBName.Size = new System.Drawing.Size(253, 35);
+            this.txtDBName.TabIndex = 14;
+            this.txtDBName.Texts = "Database";
+            this.txtDBName.UnderlinedStyle = false;
             // 
-            // viTextBox2
+            // txtDBPass
             // 
-            this.viTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox2.BorderRadius = 8;
-            this.viTextBox2.BorderSize = 1;
-            this.viTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox2.Location = new System.Drawing.Point(37, 186);
-            this.viTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox2.Multiline = false;
-            this.viTextBox2.Name = "viTextBox2";
-            this.viTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox2.PasswordChar = true;
-            this.viTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox2.PlaceholderText = "Password";
-            this.viTextBox2.Size = new System.Drawing.Size(253, 35);
-            this.viTextBox2.TabIndex = 13;
-            this.viTextBox2.Texts = "";
-            this.viTextBox2.UnderlinedStyle = false;
+            this.txtDBPass.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDBPass.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDBPass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDBPass.BorderRadius = 8;
+            this.txtDBPass.BorderSize = 1;
+            this.txtDBPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDBPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDBPass.Location = new System.Drawing.Point(37, 186);
+            this.txtDBPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDBPass.Multiline = false;
+            this.txtDBPass.Name = "txtDBPass";
+            this.txtDBPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDBPass.PasswordChar = true;
+            this.txtDBPass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDBPass.PlaceholderText = "Password";
+            this.txtDBPass.Size = new System.Drawing.Size(253, 35);
+            this.txtDBPass.TabIndex = 13;
+            this.txtDBPass.Texts = "";
+            this.txtDBPass.UnderlinedStyle = false;
             // 
-            // viTextBox3
+            // txtBDUser
             // 
-            this.viTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.viTextBox3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.viTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.viTextBox3.BorderRadius = 8;
-            this.viTextBox3.BorderSize = 1;
-            this.viTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.viTextBox3.Location = new System.Drawing.Point(37, 113);
-            this.viTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viTextBox3.Multiline = false;
-            this.viTextBox3.Name = "viTextBox3";
-            this.viTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.viTextBox3.PasswordChar = false;
-            this.viTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.viTextBox3.PlaceholderText = "Username";
-            this.viTextBox3.Size = new System.Drawing.Size(253, 35);
-            this.viTextBox3.TabIndex = 12;
-            this.viTextBox3.Texts = "";
-            this.viTextBox3.UnderlinedStyle = false;
+            this.txtBDUser.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBDUser.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtBDUser.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtBDUser.BorderRadius = 8;
+            this.txtBDUser.BorderSize = 1;
+            this.txtBDUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBDUser.ForeColor = System.Drawing.Color.DimGray;
+            this.txtBDUser.Location = new System.Drawing.Point(37, 113);
+            this.txtBDUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBDUser.Multiline = false;
+            this.txtBDUser.Name = "txtBDUser";
+            this.txtBDUser.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBDUser.PasswordChar = false;
+            this.txtBDUser.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBDUser.PlaceholderText = "Username";
+            this.txtBDUser.Size = new System.Drawing.Size(253, 35);
+            this.txtBDUser.TabIndex = 12;
+            this.txtBDUser.Texts = "";
+            this.txtBDUser.UnderlinedStyle = false;
             // 
             // label10
             // 
@@ -379,19 +380,19 @@ namespace SSInstructor.Forms
 
         private System.Windows.Forms.Label label1;
         private ViControls.ViPanel viPanel1;
-        private ViControls.ViButton viButton2;
-        private ViControls.ViTextBox viTextBox4;
-        private ViControls.ViTextBox viTextBox5;
-        private ViControls.ViTextBox viTextBox6;
+        private ViControls.ViButton btnPassChange;
+        private ViControls.ViTextBox txtRetypePass;
+        private ViControls.ViTextBox txtNewPass;
+        private ViControls.ViTextBox txtOldPass;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private ViControls.ViPanel viPanel2;
-        private ViControls.ViButton viButton1;
-        private ViControls.ViTextBox viTextBox1;
-        private ViControls.ViTextBox viTextBox2;
-        private ViControls.ViTextBox viTextBox3;
+        private ViControls.ViButton btnDBConnChange;
+        private ViControls.ViTextBox txtDBName;
+        private ViControls.ViTextBox txtDBPass;
+        private ViControls.ViTextBox txtBDUser;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

@@ -16,5 +16,10 @@ namespace SSInstructor.Forms
         {
             InitializeComponent();
         }
+
+        private void btnPassChange_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Password changed successfuly!");
+        }
     }
 }
