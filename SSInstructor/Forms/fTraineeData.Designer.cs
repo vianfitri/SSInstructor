@@ -31,6 +31,7 @@ namespace SSInstructor.Forms
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnImportTrainee = new ViControls.ViButton();
             this.btnAddTrainee = new ViControls.ViButton();
             this.dgv_trainee = new System.Windows.Forms.DataGridView();
@@ -131,11 +132,12 @@ namespace SSInstructor.Forms
             this.bdgv_Trainee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bdgv_Trainee.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bdgv_Trainee.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bdgv_Trainee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bdgv_Trainee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -147,8 +149,17 @@ namespace SSInstructor.Forms
             this.Column3,
             this.Column4,
             this.Column5});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bdgv_Trainee.DefaultCellStyle = dataGridViewCellStyle3;
             this.bdgv_Trainee.DoubleBuffered = true;
             this.bdgv_Trainee.EnableHeadersVisualStyles = false;
+            this.bdgv_Trainee.GridColor = System.Drawing.Color.White;
             this.bdgv_Trainee.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.bdgv_Trainee.HeaderForeColor = System.Drawing.Color.White;
             this.bdgv_Trainee.Location = new System.Drawing.Point(61, 160);
@@ -157,6 +168,7 @@ namespace SSInstructor.Forms
             this.bdgv_Trainee.RowHeadersVisible = false;
             this.bdgv_Trainee.RowHeadersWidth = 51;
             this.bdgv_Trainee.RowTemplate.Height = 24;
+            this.bdgv_Trainee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bdgv_Trainee.Size = new System.Drawing.Size(769, 413);
             this.bdgv_Trainee.TabIndex = 17;
             // 
