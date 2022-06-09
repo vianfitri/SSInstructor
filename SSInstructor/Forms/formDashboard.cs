@@ -90,6 +90,9 @@ namespace SSInstructor
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            // Load Setting Page
+            openChildForm(new fSetting());
+
             hideSubmenu();
         }
 
