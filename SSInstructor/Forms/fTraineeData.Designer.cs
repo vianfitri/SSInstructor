@@ -128,6 +128,7 @@ namespace SSInstructor.Forms
             this.bdgv_Trainee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.bdgv_Trainee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bdgv_Trainee.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bdgv_Trainee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bdgv_Trainee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -139,7 +140,7 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bdgv_Trainee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bdgv_Trainee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bdgv_Trainee.ColumnHeadersHeight = 50;
             this.bdgv_Trainee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -153,6 +154,7 @@ namespace SSInstructor.Forms
             this.bdgv_Trainee.Location = new System.Drawing.Point(61, 160);
             this.bdgv_Trainee.Name = "bdgv_Trainee";
             this.bdgv_Trainee.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bdgv_Trainee.RowHeadersVisible = false;
             this.bdgv_Trainee.RowHeadersWidth = 51;
             this.bdgv_Trainee.RowTemplate.Height = 24;
             this.bdgv_Trainee.Size = new System.Drawing.Size(769, 413);
@@ -163,35 +165,30 @@ namespace SSInstructor.Forms
             this.Column1.HeaderText = "NO";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "NIT";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Name";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Level";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Action";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
             // 
             // fTraineeData
             // 
