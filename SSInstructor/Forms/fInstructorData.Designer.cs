@@ -29,12 +29,21 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_instructor = new System.Windows.Forms.DataGridView();
             this.btnAddInstructor = new ViControls.ViButton();
             this.btnImportInstructor = new ViControls.ViButton();
+            this.bdgv_Instructor = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -64,12 +73,13 @@ namespace SSInstructor.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_instructor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_instructor.Location = new System.Drawing.Point(61, 160);
+            this.dgv_instructor.Location = new System.Drawing.Point(61, 505);
             this.dgv_instructor.Name = "dgv_instructor";
             this.dgv_instructor.RowHeadersWidth = 51;
             this.dgv_instructor.RowTemplate.Height = 24;
-            this.dgv_instructor.Size = new System.Drawing.Size(769, 413);
+            this.dgv_instructor.Size = new System.Drawing.Size(769, 68);
             this.dgv_instructor.TabIndex = 8;
+            this.dgv_instructor.Visible = false;
             // 
             // btnAddInstructor
             // 
@@ -111,11 +121,83 @@ namespace SSInstructor.Forms
             this.btnImportInstructor.TextColor = System.Drawing.Color.White;
             this.btnImportInstructor.UseVisualStyleBackColor = false;
             // 
+            // bdgv_Instructor
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bdgv_Instructor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bdgv_Instructor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bdgv_Instructor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bdgv_Instructor.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.bdgv_Instructor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bdgv_Instructor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.bdgv_Instructor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bdgv_Instructor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.bdgv_Instructor.ColumnHeadersHeight = 30;
+            this.bdgv_Instructor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.bdgv_Instructor.DoubleBuffered = true;
+            this.bdgv_Instructor.EnableHeadersVisualStyles = false;
+            this.bdgv_Instructor.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.bdgv_Instructor.HeaderForeColor = System.Drawing.Color.White;
+            this.bdgv_Instructor.Location = new System.Drawing.Point(61, 160);
+            this.bdgv_Instructor.Name = "bdgv_Instructor";
+            this.bdgv_Instructor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bdgv_Instructor.RowHeadersVisible = false;
+            this.bdgv_Instructor.RowHeadersWidth = 51;
+            this.bdgv_Instructor.RowTemplate.Height = 24;
+            this.bdgv_Instructor.Size = new System.Drawing.Size(769, 413);
+            this.bdgv_Instructor.TabIndex = 12;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "No";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "NIP";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Name";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Level";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Action";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
             // fInstructorData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
+            this.Controls.Add(this.bdgv_Instructor);
             this.Controls.Add(this.btnImportInstructor);
             this.Controls.Add(this.btnAddInstructor);
             this.Controls.Add(this.dgv_instructor);
@@ -124,6 +206,7 @@ namespace SSInstructor.Forms
             this.Name = "fInstructorData";
             this.Text = "fInstructorData";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +219,11 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridView dgv_instructor;
         private ViControls.ViButton btnAddInstructor;
         private ViControls.ViButton btnImportInstructor;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bdgv_Instructor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
