@@ -60,7 +60,6 @@ namespace SSInstructor
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Nunito", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -72,13 +71,12 @@ namespace SSInstructor
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Nunito", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
             this.label1.Location = new System.Drawing.Point(170, 229);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 59);
+            this.label1.Size = new System.Drawing.Size(474, 79);
             this.label1.TabIndex = 1;
             this.label1.Text = "SHIP STABILITY";
             // 
@@ -222,7 +220,6 @@ namespace SSInstructor
             this.Name = "formLogin";
             this.Text = "formLogin";
             this.pnlBackground.ResumeLayout(false);
-            this.pnlBackground.PerformLayout();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.panel1.ResumeLayout(false);
