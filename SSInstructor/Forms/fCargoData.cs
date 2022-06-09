@@ -16,5 +16,35 @@ namespace SSInstructor.Forms
         {
             InitializeComponent();
         }
+
+        private void fCargoData_Load(object sender, EventArgs e)
+        {
+            dummyCargoData();
+        }
+
+        private void dummyCargoData()
+        {
+            bdgv_cargo.Rows.Add(
+                new object[]
+                {
+                    1,
+                    "Grain",
+                    "1500 TON",
+                    "4500 TMT",
+                    "edit - delete"
+                }
+            );
+
+            bdgv_cargo.Rows.Add(
+                new object[]
+                {
+                    2,
+                    "Coal",
+                    "3500 TON",
+                    "5500 TMT",
+                    "edit - delete"
+                }
+            );
+        }
     }
 }

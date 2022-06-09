@@ -213,6 +213,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.label1);
             this.Name = "fCargoData";
             this.Text = "fCargoData";
+            this.Load += new System.EventHandler(this.fCargoData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cargo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgv_cargo)).EndInit();
             this.ResumeLayout(false);
