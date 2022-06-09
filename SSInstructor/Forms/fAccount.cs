@@ -16,5 +16,24 @@ namespace SSInstructor.Forms
         {
             InitializeComponent();
         }
+
+        private void fAccount_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dummyAccountData()
+        {
+            bdgv_account.Rows.Add(
+                new object[]
+                {
+                    1,
+                    "admintech",
+                    "admintech",
+                    "******",
+                    "edit - delete"
+                }
+                );
+        }
     }
 }
