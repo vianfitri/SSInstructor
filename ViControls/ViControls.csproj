@@ -49,6 +49,9 @@
     <Compile Include="ViButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ViPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ViTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
