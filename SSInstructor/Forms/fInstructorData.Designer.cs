@@ -175,6 +175,7 @@ namespace SSInstructor.Forms
             this.bdgv_Instructor.RowTemplate.DividerHeight = 1;
             this.bdgv_Instructor.RowTemplate.Height = 40;
             this.bdgv_Instructor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.bdgv_Instructor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bdgv_Instructor.Size = new System.Drawing.Size(769, 413);
             this.bdgv_Instructor.TabIndex = 12;
             // 
