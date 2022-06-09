@@ -206,6 +206,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.label1);
             this.Name = "fInstructorData";
             this.Text = "fInstructorData";
+            this.Load += new System.EventHandler(this.fInstructorData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).EndInit();
             this.ResumeLayout(false);

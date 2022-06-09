@@ -16,5 +16,54 @@ namespace SSInstructor.Forms
         {
             InitializeComponent();
         }
+
+        private void fInstructorData_Load(object sender, EventArgs e)
+        {
+            dummyInstructorData();
+        }
+
+        private void dummyInstructorData()
+        {
+            bdgv_Instructor.Rows.Add(
+                new object[]
+                {
+                    1,
+                    "789648399",
+                    "Dodi Sudrajat",
+                    "-",
+                    "edit - delete"
+                }
+            );
+            bdgv_Instructor.Rows.Add(
+                new object[]
+                {
+                    2,
+                    "5647366647",
+                    "Heru Herlambang",
+                    "-",
+                    "edit - delete"
+                }
+            );
+            bdgv_Instructor.Rows.Add(
+                new object[]
+                {
+                    3,
+                    "9837638899",
+                    "Elvin Mudhita",
+                    "-",
+                    "edit - delete"
+                }
+            );
+            bdgv_Instructor.Rows.Add(
+                new object[]
+                {
+                    4,
+                    "87736527726",
+                    "Bayu Sudjatmiko",
+                    "-",
+                    "edit - delete"
+                }
+            );
+        }
     }
 }
