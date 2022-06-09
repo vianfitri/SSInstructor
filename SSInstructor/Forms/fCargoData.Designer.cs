@@ -133,6 +133,8 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_cargo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bdgv_cargo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -164,7 +166,8 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.bdgv_cargo.DefaultCellStyle = dataGridViewCellStyle3;
@@ -175,15 +178,26 @@ namespace SSInstructor.Forms
             this.bdgv_cargo.Location = new System.Drawing.Point(65, 218);
             this.bdgv_cargo.MultiSelect = false;
             this.bdgv_cargo.Name = "bdgv_cargo";
+            this.bdgv_cargo.ReadOnly = true;
             this.bdgv_cargo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bdgv_cargo.RowHeadersVisible = false;
             this.bdgv_cargo.RowHeadersWidth = 51;
             this.bdgv_cargo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_cargo.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.bdgv_cargo.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.bdgv_cargo.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdgv_cargo.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bdgv_cargo.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bdgv_cargo.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            this.bdgv_cargo.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_cargo.RowTemplate.DividerHeight = 1;
-            this.bdgv_cargo.RowTemplate.Height = 30;
+            this.bdgv_cargo.RowTemplate.Height = 40;
             this.bdgv_cargo.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.bdgv_cargo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bdgv_cargo.Size = new System.Drawing.Size(766, 378);
@@ -194,30 +208,35 @@ namespace SSInstructor.Forms
             this.Column1.HeaderText = "No";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Cargo";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Weight";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Volume";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Action";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // fCargoData
             // 

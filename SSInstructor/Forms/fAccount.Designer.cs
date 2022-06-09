@@ -106,9 +106,10 @@ namespace SSInstructor.Forms
             // bdgv_account
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_account.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bdgv_account.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -150,7 +151,9 @@ namespace SSInstructor.Forms
             this.bdgv_account.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.bdgv_account.HeaderForeColor = System.Drawing.Color.White;
             this.bdgv_account.Location = new System.Drawing.Point(61, 160);
+            this.bdgv_account.MultiSelect = false;
             this.bdgv_account.Name = "bdgv_account";
+            this.bdgv_account.ReadOnly = true;
             this.bdgv_account.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -166,15 +169,18 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_account.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.bdgv_account.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.bdgv_account.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdgv_account.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_account.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bdgv_account.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SkyBlue;
             this.bdgv_account.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_account.RowTemplate.DividerHeight = 1;
             this.bdgv_account.RowTemplate.Height = 40;
+            this.bdgv_account.RowTemplate.ReadOnly = true;
             this.bdgv_account.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.bdgv_account.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bdgv_account.Size = new System.Drawing.Size(769, 413);
@@ -185,30 +191,35 @@ namespace SSInstructor.Forms
             this.Column1.HeaderText = "No";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "User ID";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Username";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Password";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Action";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // fAccount
             // 

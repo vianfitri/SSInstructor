@@ -129,6 +129,7 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_Trainee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bdgv_Trainee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -161,7 +162,7 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.bdgv_Trainee.DefaultCellStyle = dataGridViewCellStyle3;
@@ -173,6 +174,7 @@ namespace SSInstructor.Forms
             this.bdgv_Trainee.Location = new System.Drawing.Point(61, 160);
             this.bdgv_Trainee.MultiSelect = false;
             this.bdgv_Trainee.Name = "bdgv_Trainee";
+            this.bdgv_Trainee.ReadOnly = true;
             this.bdgv_Trainee.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bdgv_Trainee.RowHeadersVisible = false;
             this.bdgv_Trainee.RowHeadersWidth = 51;
@@ -180,14 +182,18 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_Trainee.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.bdgv_Trainee.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.bdgv_Trainee.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdgv_Trainee.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bdgv_Trainee.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bdgv_Trainee.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SkyBlue;
             this.bdgv_Trainee.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.bdgv_Trainee.RowTemplate.DividerHeight = 1;
             this.bdgv_Trainee.RowTemplate.Height = 40;
+            this.bdgv_Trainee.RowTemplate.ReadOnly = true;
             this.bdgv_Trainee.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.bdgv_Trainee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bdgv_Trainee.Size = new System.Drawing.Size(769, 413);
@@ -198,30 +204,35 @@ namespace SSInstructor.Forms
             this.Column1.HeaderText = "NO";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "NIT";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Name";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Level";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Action";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // fTraineeData
             // 
