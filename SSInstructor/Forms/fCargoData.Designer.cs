@@ -29,13 +29,22 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_cargo = new System.Windows.Forms.DataGridView();
             this.btnAddCargo = new ViControls.ViButton();
+            this.bdgv_cargo = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cargo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgv_cargo)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -89,12 +98,13 @@ namespace SSInstructor.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_cargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_cargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cargo.Location = new System.Drawing.Point(65, 218);
+            this.dgv_cargo.Location = new System.Drawing.Point(65, 543);
             this.dgv_cargo.Name = "dgv_cargo";
             this.dgv_cargo.RowHeadersWidth = 51;
             this.dgv_cargo.RowTemplate.Height = 24;
-            this.dgv_cargo.Size = new System.Drawing.Size(766, 378);
+            this.dgv_cargo.Size = new System.Drawing.Size(766, 53);
             this.dgv_cargo.TabIndex = 8;
+            this.dgv_cargo.Visible = false;
             // 
             // btnAddCargo
             // 
@@ -116,11 +126,85 @@ namespace SSInstructor.Forms
             this.btnAddCargo.TextColor = System.Drawing.Color.White;
             this.btnAddCargo.UseVisualStyleBackColor = false;
             // 
+            // bdgv_cargo
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bdgv_cargo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bdgv_cargo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bdgv_cargo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bdgv_cargo.BackgroundColor = System.Drawing.Color.White;
+            this.bdgv_cargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bdgv_cargo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.bdgv_cargo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bdgv_cargo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.bdgv_cargo.ColumnHeadersHeight = 40;
+            this.bdgv_cargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.bdgv_cargo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.bdgv_cargo.DoubleBuffered = true;
+            this.bdgv_cargo.EnableHeadersVisualStyles = false;
+            this.bdgv_cargo.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.bdgv_cargo.HeaderForeColor = System.Drawing.Color.White;
+            this.bdgv_cargo.Location = new System.Drawing.Point(65, 218);
+            this.bdgv_cargo.Name = "bdgv_cargo";
+            this.bdgv_cargo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bdgv_cargo.RowHeadersVisible = false;
+            this.bdgv_cargo.RowHeadersWidth = 51;
+            this.bdgv_cargo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.bdgv_cargo.RowTemplate.Height = 24;
+            this.bdgv_cargo.Size = new System.Drawing.Size(766, 378);
+            this.bdgv_cargo.TabIndex = 10;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "No";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Cargo";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Weight";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Volume";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Action";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
             // fCargoData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
+            this.Controls.Add(this.bdgv_cargo);
             this.Controls.Add(this.btnAddCargo);
             this.Controls.Add(this.dgv_cargo);
             this.Controls.Add(this.comboBox1);
@@ -130,6 +214,7 @@ namespace SSInstructor.Forms
             this.Name = "fCargoData";
             this.Text = "fCargoData";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cargo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgv_cargo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +228,11 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_cargo;
         private ViControls.ViButton btnAddCargo;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bdgv_cargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

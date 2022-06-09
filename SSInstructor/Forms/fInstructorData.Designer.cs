@@ -129,7 +129,7 @@ namespace SSInstructor.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bdgv_Instructor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bdgv_Instructor.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.bdgv_Instructor.BackgroundColor = System.Drawing.Color.White;
             this.bdgv_Instructor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bdgv_Instructor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.bdgv_Instructor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -142,7 +142,8 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bdgv_Instructor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bdgv_Instructor.ColumnHeadersHeight = 30;
+            this.bdgv_Instructor.ColumnHeadersHeight = 40;
+            this.bdgv_Instructor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.bdgv_Instructor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
