@@ -62,11 +62,11 @@ namespace SSInstructor
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Nunito", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Nunito", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(166, 306);
+            this.label2.Location = new System.Drawing.Point(166, 297);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(477, 103);
+            this.label2.Size = new System.Drawing.Size(383, 83);
             this.label2.TabIndex = 2;
             this.label2.Text = "SIMULATOR";
             // 
@@ -74,11 +74,11 @@ namespace SSInstructor
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Nunito", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Nunito", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
             this.label1.Location = new System.Drawing.Point(170, 229);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(474, 79);
+            this.label1.Size = new System.Drawing.Size(351, 59);
             this.label1.TabIndex = 1;
             this.label1.Text = "SHIP STABILITY";
             // 
@@ -108,11 +108,11 @@ namespace SSInstructor
             this.btnLogin.BorderSize = 0;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(63, 270);
+            this.btnLogin.Location = new System.Drawing.Point(63, 293);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(250, 40);
+            this.btnLogin.Size = new System.Drawing.Size(250, 46);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextColor = System.Drawing.Color.White;
@@ -128,9 +128,9 @@ namespace SSInstructor
             this.txtPassword.BorderFocusColor = System.Drawing.Color.SkyBlue;
             this.txtPassword.BorderRadius = 8;
             this.txtPassword.BorderSize = 1;
-            this.txtPassword.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(63, 203);
+            this.txtPassword.Location = new System.Drawing.Point(63, 223);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
@@ -138,7 +138,7 @@ namespace SSInstructor
             this.txtPassword.PasswordChar = false;
             this.txtPassword.PlaceholderColor = System.Drawing.Color.Gray;
             this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.Size = new System.Drawing.Size(250, 38);
+            this.txtPassword.Size = new System.Drawing.Size(250, 39);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
@@ -148,10 +148,10 @@ namespace SSInstructor
             this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(59, 179);
+            this.lblPassword.Font = new System.Drawing.Font("Inter", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(59, 191);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(94, 23);
+            this.lblPassword.Size = new System.Drawing.Size(115, 26);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
             // 
@@ -164,9 +164,9 @@ namespace SSInstructor
             this.txtUsername.BorderFocusColor = System.Drawing.Color.SkyBlue;
             this.txtUsername.BorderRadius = 8;
             this.txtUsername.BorderSize = 1;
-            this.txtUsername.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsername.Location = new System.Drawing.Point(63, 127);
+            this.txtUsername.Location = new System.Drawing.Point(63, 135);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
@@ -174,7 +174,7 @@ namespace SSInstructor
             this.txtUsername.PasswordChar = false;
             this.txtUsername.PlaceholderColor = System.Drawing.Color.Gray;
             this.txtUsername.PlaceholderText = "Username";
-            this.txtUsername.Size = new System.Drawing.Size(250, 38);
+            this.txtUsername.Size = new System.Drawing.Size(250, 39);
             this.txtUsername.TabIndex = 3;
             this.txtUsername.Texts = "";
             this.txtUsername.UnderlinedStyle = false;
@@ -184,10 +184,10 @@ namespace SSInstructor
             this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Inter", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(59, 103);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(95, 23);
+            this.lblUsername.Size = new System.Drawing.Size(118, 26);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
             // 
@@ -204,11 +204,11 @@ namespace SSInstructor
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(228)))), ((int)(((byte)(254)))));
-            this.lblLogin.Location = new System.Drawing.Point(21, 6);
+            this.lblLogin.Location = new System.Drawing.Point(21, 9);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(101, 41);
+            this.lblLogin.Size = new System.Drawing.Size(72, 29);
             this.lblLogin.TabIndex = 1;
             this.lblLogin.Text = "Login";
             // 
