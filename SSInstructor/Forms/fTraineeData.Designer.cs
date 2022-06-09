@@ -125,6 +125,9 @@ namespace SSInstructor.Forms
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bdgv_Trainee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bdgv_Trainee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bdgv_Trainee.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bdgv_Trainee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bdgv_Trainee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
