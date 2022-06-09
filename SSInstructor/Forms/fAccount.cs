@@ -34,6 +34,36 @@ namespace SSInstructor.Forms
                     "edit - delete"
                 }
             );
+            bdgv_account.Rows.Add(
+                new object[]
+                {
+                    2,
+                    "imudhita",
+                    "imudhita",
+                    "******",
+                    "edit - delete"
+                }
+            );
+            bdgv_account.Rows.Add(
+                new object[]
+                {
+                    3,
+                    "prkdlx",
+                    "prkdlx",
+                    "*********",
+                    "edit - delete"
+                }
+            );
+            bdgv_account.Rows.Add(
+                new object[]
+                {
+                    4,
+                    "admin022",
+                    "admin022",
+                    "*************",
+                    "edit - delete"
+                }
+            );
         }
     }
 }
