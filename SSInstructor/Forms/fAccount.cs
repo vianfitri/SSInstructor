@@ -19,7 +19,7 @@ namespace SSInstructor.Forms
 
         private void fAccount_Load(object sender, EventArgs e)
         {
-
+            dummyAccountData();
         }
 
         private void dummyAccountData()
@@ -33,7 +33,7 @@ namespace SSInstructor.Forms
                     "******",
                     "edit - delete"
                 }
-                );
+            );
         }
     }
 }
