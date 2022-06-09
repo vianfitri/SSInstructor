@@ -31,6 +31,7 @@ namespace SSInstructor.Forms
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -165,7 +166,9 @@ namespace SSInstructor.Forms
             this.bdgv_cargo.RowHeadersVisible = false;
             this.bdgv_cargo.RowHeadersWidth = 51;
             this.bdgv_cargo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.bdgv_cargo.RowTemplate.Height = 24;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdgv_cargo.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.bdgv_cargo.RowTemplate.Height = 30;
             this.bdgv_cargo.Size = new System.Drawing.Size(766, 378);
             this.bdgv_cargo.TabIndex = 10;
             // 
