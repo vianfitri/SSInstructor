@@ -29,12 +29,21 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnImportTrainee = new ViControls.ViButton();
             this.btnAddTrainee = new ViControls.ViButton();
             this.dgv_trainee = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.bdgv_Trainee = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trainee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgv_Trainee)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImportTrainee
@@ -83,12 +92,13 @@ namespace SSInstructor.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_trainee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_trainee.Location = new System.Drawing.Point(61, 160);
+            this.dgv_trainee.Location = new System.Drawing.Point(61, 461);
             this.dgv_trainee.Name = "dgv_trainee";
             this.dgv_trainee.RowHeadersWidth = 51;
             this.dgv_trainee.RowTemplate.Height = 24;
-            this.dgv_trainee.Size = new System.Drawing.Size(769, 413);
+            this.dgv_trainee.Size = new System.Drawing.Size(769, 112);
             this.dgv_trainee.TabIndex = 14;
+            this.dgv_trainee.Visible = false;
             // 
             // label2
             // 
@@ -111,11 +121,81 @@ namespace SSInstructor.Forms
             this.label1.TabIndex = 12;
             this.label1.Text = "Trainee";
             // 
+            // bdgv_Trainee
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bdgv_Trainee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bdgv_Trainee.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.bdgv_Trainee.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bdgv_Trainee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bdgv_Trainee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.bdgv_Trainee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bdgv_Trainee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.bdgv_Trainee.DoubleBuffered = true;
+            this.bdgv_Trainee.EnableHeadersVisualStyles = false;
+            this.bdgv_Trainee.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.bdgv_Trainee.HeaderForeColor = System.Drawing.Color.White;
+            this.bdgv_Trainee.Location = new System.Drawing.Point(61, 160);
+            this.bdgv_Trainee.Name = "bdgv_Trainee";
+            this.bdgv_Trainee.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bdgv_Trainee.RowHeadersWidth = 51;
+            this.bdgv_Trainee.RowTemplate.Height = 24;
+            this.bdgv_Trainee.Size = new System.Drawing.Size(769, 413);
+            this.bdgv_Trainee.TabIndex = 17;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "NO";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "NIT";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Name";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Level";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Action";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
             // fTraineeData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
+            this.Controls.Add(this.bdgv_Trainee);
             this.Controls.Add(this.btnImportTrainee);
             this.Controls.Add(this.btnAddTrainee);
             this.Controls.Add(this.dgv_trainee);
@@ -124,6 +204,7 @@ namespace SSInstructor.Forms
             this.Name = "fTraineeData";
             this.Text = "fTraineeData";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trainee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgv_Trainee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +217,11 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridView dgv_trainee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bdgv_Trainee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
