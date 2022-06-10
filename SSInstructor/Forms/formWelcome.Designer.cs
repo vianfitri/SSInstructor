@@ -46,15 +46,20 @@ namespace SSInstructor.Forms
             // bunifuDropdown1
             // 
             this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 3;
+            this.bunifuDropdown1.BorderRadius = 5;
+            this.bunifuDropdown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[0];
+            this.bunifuDropdown1.Items = new string[] {
+        "One",
+        "Two",
+        "Three",
+        "Four"};
             this.bunifuDropdown1.Location = new System.Drawing.Point(256, 204);
             this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuDropdown1.NomalColor = System.Drawing.Color.White;
+            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.White;
             this.bunifuDropdown1.selectedIndex = -1;
             this.bunifuDropdown1.Size = new System.Drawing.Size(289, 43);
             this.bunifuDropdown1.TabIndex = 1;
