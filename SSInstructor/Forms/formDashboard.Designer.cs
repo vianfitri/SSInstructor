@@ -30,30 +30,32 @@ namespace SSInstructor
         private void InitializeComponent()
         {
             this.pnlMainMenu = new System.Windows.Forms.Panel();
-            this.pnlUserSubmenu = new System.Windows.Forms.Panel();
-            this.pnlMasterDataSubmenu = new System.Windows.Forms.Panel();
-            this.pnlUserPic = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblPriviledge = new System.Windows.Forms.Label();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnClientList = new FontAwesome.Sharp.IconButton();
             this.btnReport = new FontAwesome.Sharp.IconButton();
             this.btnScenario = new FontAwesome.Sharp.IconButton();
+            this.pnlUserSubmenu = new System.Windows.Forms.Panel();
             this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.btnTrainee = new FontAwesome.Sharp.IconButton();
             this.btnInstructor = new FontAwesome.Sharp.IconButton();
             this.btnUsers = new FontAwesome.Sharp.IconButton();
+            this.pnlMasterDataSubmenu = new System.Windows.Forms.Panel();
             this.btnCargoData = new FontAwesome.Sharp.IconButton();
             this.btnShipData = new FontAwesome.Sharp.IconButton();
             this.btnMasterData = new FontAwesome.Sharp.IconButton();
+            this.pnlUserPic = new System.Windows.Forms.Panel();
             this.btnLogout = new ViControls.ViButton();
+            this.lblPriviledge = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.userPic = new ViControls.CircularPicture();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.pnlMainMenu.SuspendLayout();
             this.pnlUserSubmenu.SuspendLayout();
             this.pnlMasterDataSubmenu.SuspendLayout();
             this.pnlUserPic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMainMenu
@@ -73,70 +75,6 @@ namespace SSInstructor
             this.pnlMainMenu.Name = "pnlMainMenu";
             this.pnlMainMenu.Size = new System.Drawing.Size(345, 721);
             this.pnlMainMenu.TabIndex = 0;
-            // 
-            // pnlUserSubmenu
-            // 
-            this.pnlUserSubmenu.Controls.Add(this.btnAccount);
-            this.pnlUserSubmenu.Controls.Add(this.btnTrainee);
-            this.pnlUserSubmenu.Controls.Add(this.btnInstructor);
-            this.pnlUserSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUserSubmenu.Location = new System.Drawing.Point(0, 318);
-            this.pnlUserSubmenu.Name = "pnlUserSubmenu";
-            this.pnlUserSubmenu.Size = new System.Drawing.Size(345, 165);
-            this.pnlUserSubmenu.TabIndex = 16;
-            // 
-            // pnlMasterDataSubmenu
-            // 
-            this.pnlMasterDataSubmenu.Controls.Add(this.btnCargoData);
-            this.pnlMasterDataSubmenu.Controls.Add(this.btnShipData);
-            this.pnlMasterDataSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMasterDataSubmenu.Location = new System.Drawing.Point(0, 153);
-            this.pnlMasterDataSubmenu.Name = "pnlMasterDataSubmenu";
-            this.pnlMasterDataSubmenu.Size = new System.Drawing.Size(345, 110);
-            this.pnlMasterDataSubmenu.TabIndex = 2;
-            // 
-            // pnlUserPic
-            // 
-            this.pnlUserPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.pnlUserPic.Controls.Add(this.btnLogout);
-            this.pnlUserPic.Controls.Add(this.lblPriviledge);
-            this.pnlUserPic.Controls.Add(this.lblUsername);
-            this.pnlUserPic.Controls.Add(this.userPic);
-            this.pnlUserPic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUserPic.Location = new System.Drawing.Point(0, 0);
-            this.pnlUserPic.Name = "pnlUserPic";
-            this.pnlUserPic.Size = new System.Drawing.Size(345, 98);
-            this.pnlUserPic.TabIndex = 0;
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(345, 0);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1003, 721);
-            this.pnlContent.TabIndex = 1;
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(101, 24);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(99, 24);
-            this.lblUsername.TabIndex = 2;
-            this.lblUsername.Text = "username";
-            // 
-            // lblPriviledge
-            // 
-            this.lblPriviledge.AutoSize = true;
-            this.lblPriviledge.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriviledge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.lblPriviledge.Location = new System.Drawing.Point(102, 48);
-            this.lblPriviledge.Name = "lblPriviledge";
-            this.lblPriviledge.Size = new System.Drawing.Size(90, 18);
-            this.lblPriviledge.TabIndex = 3;
-            this.lblPriviledge.Text = "super admin";
             // 
             // btnSettings
             // 
@@ -234,6 +172,17 @@ namespace SSInstructor
             this.btnScenario.UseVisualStyleBackColor = true;
             this.btnScenario.Click += new System.EventHandler(this.btnScenario_Click);
             // 
+            // pnlUserSubmenu
+            // 
+            this.pnlUserSubmenu.Controls.Add(this.btnAccount);
+            this.pnlUserSubmenu.Controls.Add(this.btnTrainee);
+            this.pnlUserSubmenu.Controls.Add(this.btnInstructor);
+            this.pnlUserSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUserSubmenu.Location = new System.Drawing.Point(0, 318);
+            this.pnlUserSubmenu.Name = "pnlUserSubmenu";
+            this.pnlUserSubmenu.Size = new System.Drawing.Size(345, 165);
+            this.pnlUserSubmenu.TabIndex = 16;
+            // 
             // btnAccount
             // 
             this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
@@ -330,6 +279,16 @@ namespace SSInstructor
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
+            // pnlMasterDataSubmenu
+            // 
+            this.pnlMasterDataSubmenu.Controls.Add(this.btnCargoData);
+            this.pnlMasterDataSubmenu.Controls.Add(this.btnShipData);
+            this.pnlMasterDataSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMasterDataSubmenu.Location = new System.Drawing.Point(0, 153);
+            this.pnlMasterDataSubmenu.Name = "pnlMasterDataSubmenu";
+            this.pnlMasterDataSubmenu.Size = new System.Drawing.Size(345, 110);
+            this.pnlMasterDataSubmenu.TabIndex = 2;
+            // 
             // btnCargoData
             // 
             this.btnCargoData.Dock = System.Windows.Forms.DockStyle.Top;
@@ -402,6 +361,19 @@ namespace SSInstructor
             this.btnMasterData.UseVisualStyleBackColor = true;
             this.btnMasterData.Click += new System.EventHandler(this.btnMasterData_Click);
             // 
+            // pnlUserPic
+            // 
+            this.pnlUserPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.pnlUserPic.Controls.Add(this.btnLogout);
+            this.pnlUserPic.Controls.Add(this.lblPriviledge);
+            this.pnlUserPic.Controls.Add(this.lblUsername);
+            this.pnlUserPic.Controls.Add(this.userPic);
+            this.pnlUserPic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUserPic.Location = new System.Drawing.Point(0, 0);
+            this.pnlUserPic.Name = "pnlUserPic";
+            this.pnlUserPic.Size = new System.Drawing.Size(345, 98);
+            this.pnlUserPic.TabIndex = 0;
+            // 
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -423,6 +395,28 @@ namespace SSInstructor
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // lblPriviledge
+            // 
+            this.lblPriviledge.AutoSize = true;
+            this.lblPriviledge.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriviledge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.lblPriviledge.Location = new System.Drawing.Point(102, 48);
+            this.lblPriviledge.Name = "lblPriviledge";
+            this.lblPriviledge.Size = new System.Drawing.Size(90, 18);
+            this.lblPriviledge.TabIndex = 3;
+            this.lblPriviledge.Text = "super admin";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(101, 24);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(99, 24);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "username";
+            // 
             // userPic
             // 
             this.userPic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -438,6 +432,31 @@ namespace SSInstructor
             this.userPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userPic.TabIndex = 1;
             this.userPic.TabStop = false;
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Controls.Add(this.bunifuDropdown1);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(345, 0);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1003, 721);
+            this.pnlContent.TabIndex = 1;
+            // 
+            // bunifuDropdown1
+            // 
+            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown1.BorderRadius = 3;
+            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdown1.Items = new string[0];
+            this.bunifuDropdown1.Location = new System.Drawing.Point(514, 295);
+            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDropdown1.Name = "bunifuDropdown1";
+            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuDropdown1.selectedIndex = -1;
+            this.bunifuDropdown1.Size = new System.Drawing.Size(289, 43);
+            this.bunifuDropdown1.TabIndex = 0;
             // 
             // formDashboard
             // 
@@ -458,6 +477,7 @@ namespace SSInstructor
             this.pnlUserPic.ResumeLayout(false);
             this.pnlUserPic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
+            this.pnlContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -484,6 +504,7 @@ namespace SSInstructor
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPriviledge;
         private ViControls.ViButton btnLogout;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
     }
 }
 
