@@ -45,11 +45,10 @@ namespace SSInstructor.Forms
             // 
             // bunifuDropdown1
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 5;
-            this.bunifuDropdown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuDropdown1.BackColor = System.Drawing.Color.White;
+            this.bunifuDropdown1.BorderRadius = 10;
             this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdown1.ForeColor = System.Drawing.Color.Black;
             this.bunifuDropdown1.Items = new string[] {
         "One",
         "Two",
