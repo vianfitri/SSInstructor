@@ -61,6 +61,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Machine.cs" />
     <Compile Include="Forms\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,8 +235,6 @@
   <ItemGroup>
     <None Include="Resources\pc.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
