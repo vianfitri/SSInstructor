@@ -102,6 +102,7 @@ namespace SSInstructor.Forms
             this.btnAddInstructor.Text = "Add Data";
             this.btnAddInstructor.TextColor = System.Drawing.Color.White;
             this.btnAddInstructor.UseVisualStyleBackColor = false;
+            this.btnAddInstructor.Click += new System.EventHandler(this.btnAddInstructor_Click);
             // 
             // btnImportInstructor
             // 

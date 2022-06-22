@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SSInstructor.Class;
 
 namespace SSInstructor.Forms
 {
@@ -64,6 +65,11 @@ namespace SSInstructor.Forms
                     "edit - delete"
                 }
             );
+        }
+
+        private void btnAddInstructor_Click(object sender, EventArgs e)
+        {
+            ModalPopup popup = new ModalPopup();
         }
     }
 }
