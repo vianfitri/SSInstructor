@@ -30,7 +30,6 @@ namespace SSInstructor.Forms
         private void InitializeComponent()
         {
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -43,32 +42,11 @@ namespace SSInstructor.Forms
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome to Ship Stability Simulator";
             // 
-            // bunifuDropdown1
-            // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.BorderRadius = 10;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown1.Items = new string[] {
-        "One",
-        "Two",
-        "Three",
-        "Four"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(256, 204);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(289, 43);
-            this.bunifuDropdown1.TabIndex = 1;
-            // 
             // formWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bunifuDropdown1);
             this.Controls.Add(this.lblWelcome);
             this.Name = "formWelcome";
             this.Text = "formWelcome";
@@ -80,6 +58,5 @@ namespace SSInstructor.Forms
         #endregion
 
         private System.Windows.Forms.Label lblWelcome;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
     }
 }
