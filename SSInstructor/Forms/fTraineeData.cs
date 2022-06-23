@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SSInstructor.Forms;
 
 namespace SSInstructor.Forms
 {
@@ -31,7 +32,8 @@ namespace SSInstructor.Forms
                     "122663782763",
                     "Muhammad Ramdan",
                     "ANT IV",
-                    "edit - delete"
+                    null,
+                    null
                 }
             );
             bdgv_Trainee.Rows.Add(
@@ -41,7 +43,8 @@ namespace SSInstructor.Forms
                     "784653648834",
                     "Ahmad Nugraha",
                     "ANT IV",
-                    "edit - delete"
+                    null,
+                    null
                 }
             );
             bdgv_Trainee.Rows.Add(
@@ -51,7 +54,8 @@ namespace SSInstructor.Forms
                     "122664566563",
                     "Budi Santosa",
                     "ANT IV",
-                    "edit - delete"
+                    null,
+                    null
                 }
             );
             bdgv_Trainee.Rows.Add(
@@ -61,7 +65,8 @@ namespace SSInstructor.Forms
                     "128878996763",
                     "Arif Rahman",
                     "ANT IV",
-                    "edit - delete"
+                    null,
+                    null
                 }
             );
             bdgv_Trainee.Rows.Add(
@@ -71,9 +76,17 @@ namespace SSInstructor.Forms
                     "1226638735763",
                     "Dovisioso Albert",
                     "ANT IV",
-                    "edit - delete"
+                    null,
+                    null
                 }
             );
+        }
+
+        private void btnAddTrainee_Click(object sender, EventArgs e)
+        {
+            Form fTraineeAdd = new fAddTrainee();
+            fTraineeAdd.StartPosition = FormStartPosition.CenterParent;
+            fTraineeAdd.ShowDialog();
         }
     }
 }
