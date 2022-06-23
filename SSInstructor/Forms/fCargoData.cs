@@ -48,5 +48,12 @@ namespace SSInstructor.Forms
                 }
             );
         }
+
+        private void btnAddCargo_Click(object sender, EventArgs e)
+        {
+            Form fCargoAdd = new fAddCargo();
+            fCargoAdd.StartPosition = FormStartPosition.CenterParent;
+            fCargoAdd.ShowDialog();
+        }
     }
 }

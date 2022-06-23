@@ -72,6 +72,12 @@
     <Compile Include="Forms\fAccount.Designer.cs">
       <DependentUpon>fAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fAddCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fAddCargo.Designer.cs">
+      <DependentUpon>fAddCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fAddInstructor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fAddCargo.resx">
+      <DependentUpon>fAddCargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fAddInstructor.resx">
       <DependentUpon>fAddInstructor.cs</DependentUpon>
