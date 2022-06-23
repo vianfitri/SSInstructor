@@ -29,7 +29,7 @@ namespace SSInstructor.Forms
                 new object[]
                 {
                     1,
-                    "789648399",
+                    "19781217 200512 2 001",
                     "Dodi Sudrajat",
                     "-",
                     null,
@@ -40,7 +40,7 @@ namespace SSInstructor.Forms
                 new object[]
                 {
                     2,
-                    "5647366647",
+                    "19881217 180512 1 003",
                     "Heru Herlambang",
                     "-",
                     null,
@@ -51,7 +51,7 @@ namespace SSInstructor.Forms
                 new object[]
                 {
                     3,
-                    "9837638899",
+                    "19781312 190512 2 002",
                     "Elvin Mudhita",
                     "-",
                     null,
@@ -62,7 +62,7 @@ namespace SSInstructor.Forms
                 new object[]
                 {
                     4,
-                    "87736527726",
+                    "19861347 182312 1 003",
                     "Bayu Sudjatmiko",
                     "-",
                     null,
