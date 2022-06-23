@@ -31,7 +31,8 @@ namespace SSInstructor.Forms
                     "Grain",
                     "1500 TON",
                     "4500 TMT",
-                    "edit - delete"
+                    null,
+                    null
                 }
             );
 
@@ -42,7 +43,8 @@ namespace SSInstructor.Forms
                     "Coal",
                     "3500 TON",
                     "5500 TMT",
-                    "edit - delete"
+                    null,
+                    null
                 }
             );
         }
