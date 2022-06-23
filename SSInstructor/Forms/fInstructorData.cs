@@ -70,7 +70,9 @@ namespace SSInstructor.Forms
         private void btnAddInstructor_Click(object sender, EventArgs e)
         {
             ModalPopup popup = new ModalPopup();
-            MessageBox.Show("Halo");
+            MessageBox.Show(this.FindForm().FindForm().Name);
+            //popup.Init(this.FindForm().FindForm(), new Label() { Text = "PopUp Test" });
+            //popup.ShowPopup();
         }
     }
 }
