@@ -90,6 +90,12 @@
     <Compile Include="Forms\fAddTrainee.Designer.cs">
       <DependentUpon>fAddTrainee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fBCStowPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fBCStowPlan.Designer.cs">
+      <DependentUpon>fBCStowPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fCargoData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fAddTrainee.resx">
       <DependentUpon>fAddTrainee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fBCStowPlan.resx">
+      <DependentUpon>fBCStowPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fCargoData.resx">
       <DependentUpon>fCargoData.cs</DependentUpon>
