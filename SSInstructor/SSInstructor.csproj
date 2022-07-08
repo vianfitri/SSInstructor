@@ -118,6 +118,18 @@
     <Compile Include="Forms\fClientList.Designer.cs">
       <DependentUpon>fClientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fFCStowPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fFCStowPlan.Designer.cs">
+      <DependentUpon>fFCStowPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fGCStowPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fGCStowPlan.Designer.cs">
+      <DependentUpon>fGCStowPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fInstructorData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fClientList.resx">
       <DependentUpon>fClientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fFCStowPlan.resx">
+      <DependentUpon>fFCStowPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fGCStowPlan.resx">
+      <DependentUpon>fGCStowPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fInstructorData.resx">
       <DependentUpon>fInstructorData.cs</DependentUpon>

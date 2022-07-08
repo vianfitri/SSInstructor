@@ -1,7 +1,7 @@
 ﻿
 namespace SSInstructor.Forms
 {
-    partial class fBCStowPlan
+    partial class fGCStowPlan
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace SSInstructor.Forms
         {
             this.SuspendLayout();
             // 
-            // fBCStowPlan
+            // fGCStowPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
-            this.Name = "fBCStowPlan";
-            this.Text = "fBCStowPlan";
+            this.Name = "fGCStowPlan";
+            this.Text = "fGCStowPlan";
             this.ResumeLayout(false);
 
         }
