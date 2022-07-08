@@ -75,6 +75,7 @@
     <Compile Include="Class\ModalPopup.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Class\moduleMySQL.cs" />
     <Compile Include="Forms\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
