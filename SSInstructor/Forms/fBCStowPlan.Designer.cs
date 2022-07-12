@@ -30,6 +30,7 @@ namespace SSInstructor.Forms
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -42,11 +43,21 @@ namespace SSInstructor.Forms
             this.label1.TabIndex = 1;
             this.label1.Text = "Stowage Plan";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(63, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(763, 380);
+            this.panel1.TabIndex = 2;
+            // 
             // fBCStowPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "fBCStowPlan";
             this.Text = "fBCStowPlan";
@@ -58,5 +69,6 @@ namespace SSInstructor.Forms
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
