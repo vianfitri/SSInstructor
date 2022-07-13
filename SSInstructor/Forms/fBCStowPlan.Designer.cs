@@ -29,8 +29,11 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBCStowPlan));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -47,10 +50,20 @@ namespace SSInstructor.Forms
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(63, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 380);
             this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(20, 79);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(717, 236);
+            this.panel2.TabIndex = 0;
             // 
             // fBCStowPlan
             // 
@@ -61,6 +74,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.label1);
             this.Name = "fBCStowPlan";
             this.Text = "fBCStowPlan";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,5 +84,6 @@ namespace SSInstructor.Forms
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
