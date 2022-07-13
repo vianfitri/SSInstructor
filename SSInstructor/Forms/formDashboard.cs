@@ -75,7 +75,7 @@ namespace SSInstructor
         private void btnReport_Click(object sender, EventArgs e)
         {
             // Load Report Page
-            openChildForm(new fReport());
+            openChildForm(new fBCStowPlan());
 
             hideSubmenu();
         }
