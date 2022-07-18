@@ -77,71 +77,12 @@ namespace SSInstructor.Class
         //---------------------------------------------------------------------------------------------------------------------
         public bool GetAllDatabases(ref string[] DatabaseNameList)
         {
-            bool stat = true;
-
-            switch (eDatabaseType)
-            {
-                case DBase.MySQL:
-                    stat = GetColumnData("SHOW DATABASES", 0, ref DatabaseNameList);
-                    break;
-
-                case DBase.SQLServer:
-                    stat = GetColumnData("SELECT name FROM sys.databases WHERE dbid>4", 0, ref DatabaseNameList);
-                    break;
-
-                default:
-                    DatabaseNameList = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
-            }
-
-            return stat;
+            return GetColumnData("SHOW DATABASES", 0, ref DatabaseNameList);
         }
 
         public bool GetAllTables(string DatabaseName, ref string[] TableNameList)
         {
-            bool stat = true;
-
-            switch (eDatabaseType)
-            {
-                case DBase.Access:
-                    DataTable dt = new DataTable();
-                    string[] restrictions = new string[5];
-
-                    restrictions[3] = "Table";
-                    oAccessConn = new OleDbConnection(sConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        dt = oAccessConn.GetSchema("Tables", restrictions);
-                        oAccessConn.Close();
-
-                        for (int i = 0; i <= dt.Rows.Count - 1; i++)
-                        {
-                            TableNameList[i] = dt.Rows[i][2].ToString();
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        TableNameList = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-                    break;
-
-                case DBase.MySQL:
-                    stat = GetColumnData("SHOW TABLES FROM " + DatabaseName, 0, ref TableNameList);
-                    break;
-
-                case DBase.SQLServer:
-                    stat = GetColumnData("SELECT * FROM " + DatabaseName + ".sys.tables WHERE name<>'sysdiagrams'", 0, ref TableNameList);
-                    break;
-            }
-
-            return stat;
+            return GetColumnData("SHOW TABLES FROM " + DatabaseName, 0, ref TableNameList);
         }
 
         public bool GetColumnData(string Query, int FieldPos, ref double[] ListColData)
@@ -151,104 +92,34 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            switch (eDatabaseType)
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData[idx] = oAccessReader.GetDouble(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData[idx] = oMySqlReader.GetDouble(FieldPos);
+                        idx++;
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData[idx] = oMySqlReader.GetDouble(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData[idx] = oSqlReader.GetDouble(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -259,47 +130,36 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData[idx] = oMySqlReader.GetDouble(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
+                        ListColData[idx] = oMySqlReader.GetDouble(FieldPos);
+                        idx++;
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    ListColData = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                }
+                
+                oMySqlReader.Close();
+            
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -310,106 +170,36 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData[idx] = oAccessReader.GetInt32(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData[idx] = oMySqlReader.GetInt32(FieldPos);
+                        idx++;
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData[idx] = oMySqlReader.GetInt32(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData[idx] = oSqlReader.GetInt32(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
             }
-
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+    
             return stat;
         }
 
@@ -419,47 +209,36 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData[idx] = oMySqlReader.GetInt32(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
+                        ListColData[idx] = oMySqlReader.GetInt32(FieldPos);
+                        idx++;
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    ListColData = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                }
+                
+                oMySqlReader.Close();
+            
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -471,104 +250,34 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            switch (eDatabaseType)
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData[idx] = oAccessReader.GetValue(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData[idx] = oMySqlReader.GetValue(FieldPos);
+                        idx++;
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData[idx] = oMySqlReader.GetValue(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData[idx] = oSqlReader.GetValue(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -580,105 +289,35 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData[idx] = oAccessReader.GetString(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData[idx] = oMySqlReader.GetString(FieldPos);
+                        idx++;
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData[idx] = oMySqlReader.GetString(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData[idx] = oSqlReader.GetString(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
             }
-
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+    
             return stat;
         }
 
@@ -688,47 +327,36 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData[idx] = oMySqlReader.GetString(FieldPos);
-                                idx++;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
+                        ListColData[idx] = oMySqlReader.GetString(FieldPos);
+                        idx++;
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    ListColData = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                }
+                
+                oMySqlReader.Close();
             }
+            
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -738,73 +366,16 @@ namespace SSInstructor.Class
         //---------------------------------------------------------------------------------------------------------------------
         public bool GetAllDatabases(ref List<string> DatabaseNameList)
         {
-            bool stat = true;
-
             DatabaseNameList.Clear();
 
-            switch (eDatabaseType)
-            {
-                case DBase.MySQL:
-                    stat = GetColumnData("SHOW DATABASES", 0, ref DatabaseNameList);
-                    break;
-
-                case DBase.SQLServer:
-                    stat = GetColumnData("SELECT name FROM sys.databases WHERE dbid>4", 0, ref DatabaseNameList);
-                    break;
-
-                default:
-                    DatabaseNameList = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
-            }
-
-            return stat;
+            return GetColumnData("SHOW DATABASES", 0, ref DatabaseNameList);
         }
 
         public bool GetAllTables(string DatabaseName, ref List<string> TableNameList)
         {
-            bool stat = true;
-
             TableNameList.Clear();
 
-            switch (eDatabaseType)
-            {
-                case DBase.Access:
-                    DataTable dt = new DataTable();
-                    string[] restrictions = new string[5];
-
-                    restrictions[3] = "Table";
-                    oAccessConn = new OleDbConnection(sConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        dt = oAccessConn.GetSchema("Tables", restrictions);
-                        oAccessConn.Close();
-
-                        for (int i = 0; i <= dt.Rows.Count - 1; i++)
-                            TableNameList.Add(dt.Rows[i][2].ToString());
-
-                    }
-                    catch (Exception ex)
-                    {
-                        TableNameList = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-                    break;
-
-                case DBase.MySQL:
-                    stat = GetColumnData("SHOW TABLES FROM " + DatabaseName, 0, ref TableNameList);
-                    break;
-
-                case DBase.SQLServer:
-                    stat = GetColumnData("SELECT * FROM " + DatabaseName + ".sys.tables WHERE name<>'sysdiagrams'", 0, ref TableNameList);
-                    break;
-            }
-
-            return stat;
+            return GetColumnData("SHOW TABLES FROM " + DatabaseName, 0, ref TableNameList);
         }
 
         public bool GetColumnData(string Query, int FieldPos, ref List<double> ListColData)
@@ -813,102 +384,35 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData.Add(oAccessReader.GetDouble(FieldPos));
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData.Add(oMySqlReader.GetDouble(FieldPos));
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData.Add(oMySqlReader.GetDouble(FieldPos));
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData.Add(oSqlReader.GetDouble(FieldPos));
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
+            
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -919,46 +423,35 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData.Add(oMySqlReader.GetDouble(FieldPos));
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
+                        ListColData.Add(oMySqlReader.GetDouble(FieldPos));
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
+                }
+                
+                oMySqlReader.Close();
 
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    ListColData = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -969,103 +462,36 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData.Add(oAccessReader.GetInt32(FieldPos));
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData.Add(oMySqlReader.GetInt32(FieldPos));
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData.Add(oMySqlReader.GetInt32(FieldPos));
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData.Add(oSqlReader.GetInt32(FieldPos));
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
+                
             }
-
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -1075,46 +501,35 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData.Add(oMySqlReader.GetInt32(FieldPos));
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
+                        ListColData.Add(oMySqlReader.GetInt32(FieldPos));
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    ListColData = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                }
+                
+                oMySqlReader.Close();
+                
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -1125,103 +540,36 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData.Add(oAccessReader.GetValue(FieldPos));
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData.Add(oMySqlReader.GetValue(FieldPos));
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData.Add(oMySqlReader.GetValue(FieldPos));
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData.Add(oSqlReader.GetValue(FieldPos));
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
+                
             }
-
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -1231,103 +579,36 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
 
-            switch (eDatabaseType)
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                ListColData.Add(oAccessReader.GetString(FieldPos));
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        ListColData.Add(oMySqlReader.GetString(FieldPos));
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData.Add(oMySqlReader.GetString(FieldPos));
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                ListColData.Add(oSqlReader.GetString(FieldPos));
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
+                
             }
-
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -1337,46 +618,35 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);            
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                ListColData.Add(oMySqlReader.GetString(FieldPos));
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
+                        ListColData.Add(oMySqlReader.GetString(FieldPos));
                     }
-                    catch (Exception ex)
-                    {
-                        ListColData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    ListColData = null;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                }
+                
+                oMySqlReader.Close();
+                
             }
+            catch (Exception ex)
+            {
+                ListColData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -1389,96 +659,34 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            oAccessReader.Read();
-                            aData = oAccessReader.GetDouble(FieldPos);
-                        }
-
-                        oAccessReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            oMySqlReader.Read();
-                            aData = oMySqlReader.GetDouble(FieldPos);
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            aData = oSqlReader.GetDouble(FieldPos);
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    oMySqlReader.Read();
+                    aData = oMySqlReader.GetDouble(FieldPos);
+                }
+                
+                oMySqlReader.Close();
+                
             }
-
+            catch (Exception ex)
+            {
+                aData = 0;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -1487,44 +695,33 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            oMySqlReader.Read();
-                            aData = oMySqlReader.GetDouble(FieldPos);
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    aData = 0;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    oMySqlReader.Read();
+                    aData = oMySqlReader.GetDouble(FieldPos);
+                }
+                
+                oMySqlReader.Close();
+            
             }
+            catch (Exception ex)
+            {
+                aData = 0;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -1534,95 +731,33 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            oAccessReader.Read();
-                            aData = (int)(oAccessReader[0]);    //aData = oAccessReader.GetInt32(FieldPos)
-                        }
-
-                        oAccessReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            oMySqlReader.Read();
-                            aData = oMySqlReader.GetInt32(FieldPos);
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            aData = oSqlReader.GetInt32(FieldPos);
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    oMySqlReader.Read();
+                    aData = oMySqlReader.GetInt32(FieldPos);
+                }
+                
+                oMySqlReader.Close();
+                
             }
+            catch (Exception ex)
+            {
+                aData = 0;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -1632,44 +767,33 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            oMySqlReader.Read();
-                            aData = oMySqlReader.GetInt32(FieldPos);
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    aData = 0;
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    oMySqlReader.Read();
+                    aData = oMySqlReader.GetInt32(FieldPos);
+                }
+                
+                oMySqlReader.Close();
+                
             }
+            catch (Exception ex)
+            {
+                aData = 0;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -1679,96 +803,34 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            oAccessReader.Read();
-                            aData = oAccessReader.GetValue(FieldPos);
-                        }
-
-                        oAccessReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            oMySqlReader.Read();
-                            aData = oMySqlReader.GetValue(FieldPos);
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            aData = oSqlReader.GetValue(FieldPos);
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    oMySqlReader.Read();
+                    aData = oMySqlReader.GetValue(FieldPos);
+                }
+                
+                oMySqlReader.Close();
+                
             }
-
+            catch (Exception ex)
+            {
+                aData = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -1777,95 +839,33 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            oAccessReader.Read();
-                            aData = oAccessReader.GetString(FieldPos);
-                        }
-
-                        oAccessReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = "";
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            oMySqlReader.Read();
-                            aData = oMySqlReader.GetString(FieldPos);
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = "";
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            aData = oSqlReader.GetString(FieldPos);
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = "";
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                                
+                if (oMySqlReader.HasRows)
+                {
+                    oMySqlReader.Read();
+                    aData = oMySqlReader.GetString(FieldPos);
+                }
+                
+                oMySqlReader.Close();
+                
             }
+            catch (Exception ex)
+            {
+                aData = "";
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -1875,44 +875,33 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            oMySqlReader.Read();
-                            aData = oMySqlReader.GetString(FieldPos);
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        aData = "";
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                default:
-                    aData = "";
-                    sErrorMessage = "Function is not available for this database type !";
-                    stat = false;
-                    break;
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    oMySqlReader.Read();
+                    aData = oMySqlReader.GetString(FieldPos);
+                }
+                
+                oMySqlReader.Close();
+                
             }
+            catch (Exception ex)
+            {
+                aData = "";
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -1926,85 +915,30 @@ namespace SSInstructor.Class
 
             oDataSet.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlAdapter = new MySqlDataAdapter();
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessAdapter = new OleDbDataAdapter();
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        oAccessCmd.ExecuteNonQuery();
-                        oAccessAdapter.SelectCommand = oAccessCmd;
-                        oAccessAdapter.Fill(oDataSet);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        oDataSet = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessAdapter.Dispose();
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlAdapter = new MySqlDataAdapter();
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlCmd.ExecuteNonQuery();
-                        oMySqlAdapter.SelectCommand = oMySqlCmd;
-                        oMySqlAdapter.Fill(oDataSet);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        oDataSet = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlAdapter.Dispose();
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlAdapter = new SqlDataAdapter();
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlCmd.ExecuteNonQuery();
-                        oSqlAdapter.SelectCommand = oSqlCmd;
-                        oSqlAdapter.Fill(oDataSet);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        oDataSet = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlAdapter.Dispose();
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
+                oMySqlCmd.ExecuteNonQuery();
+                oMySqlAdapter.SelectCommand = oMySqlCmd;
+                oMySqlAdapter.Fill(oDataSet);
+                
             }
-
+            catch (Exception ex)
+            {
+                oDataSet = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlAdapter.Dispose();
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -2014,85 +948,30 @@ namespace SSInstructor.Class
 
             oDataTable.Clear();
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlAdapter = new MySqlDataAdapter();
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessAdapter = new OleDbDataAdapter();
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        oAccessCmd.ExecuteNonQuery();
-                        oAccessAdapter.SelectCommand = oAccessCmd;
-                        oAccessAdapter.Fill(oDataTable);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        oDataTable = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessAdapter.Dispose();
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlAdapter = new MySqlDataAdapter();
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlCmd.ExecuteNonQuery();
-                        oMySqlAdapter.SelectCommand = oMySqlCmd;
-                        oMySqlAdapter.Fill(oDataTable);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        oDataTable = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlAdapter.Dispose();
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlAdapter = new SqlDataAdapter();
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlCmd.ExecuteNonQuery();
-                        oSqlAdapter.SelectCommand = oSqlCmd;
-                        oSqlAdapter.Fill(oDataTable);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        oDataTable = null;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlAdapter.Dispose();
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
+                oMySqlCmd.ExecuteNonQuery();
+                oMySqlAdapter.SelectCommand = oMySqlCmd;
+                oMySqlAdapter.Fill(oDataTable);
+                
             }
-
+            catch (Exception ex)
+            {
+                oDataTable = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlAdapter.Dispose();
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -2103,103 +982,36 @@ namespace SSInstructor.Class
 
             TotalRow = 0;
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
+                oMySqlConn.Open();
+                oMySqlReader = oMySqlCmd.ExecuteReader();
+                
+                if (oMySqlReader.HasRows)
+                {
+                    while (oMySqlReader.Read())
                     {
-                        oAccessConn.Open();
-                        oAccessReader = oAccessCmd.ExecuteReader();
-
-                        if (oAccessReader.HasRows)
-                        {
-                            while (oAccessReader.Read())
-                            {
-                                TotalRow += 1;
-                            }
-                        }
-
-                        oAccessReader.Close();
-
+                        TotalRow += 1;
                     }
-                    catch (Exception ex)
-                    {
-                        TotalRow = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlReader = oMySqlCmd.ExecuteReader();
-
-                        if (oMySqlReader.HasRows)
-                        {
-                            while (oMySqlReader.Read())
-                            {
-                                TotalRow += 1;
-                            }
-                        }
-
-                        oMySqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        TotalRow = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlReader = oSqlCmd.ExecuteReader();
-
-                        if (oSqlReader.HasRows)
-                        {
-                            while (oSqlReader.Read())
-                            {
-                                TotalRow += 1;
-                            }
-                        }
-
-                        oSqlReader.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        TotalRow = 0;
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                }
+                
+                oMySqlReader.Close();
+                
             }
-
+            catch (Exception ex)
+            {
+                TotalRow = 0;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+ 
             return stat;
         }
 
@@ -2209,57 +1021,20 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                    }
-                    catch (Exception ex)
-                    {
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                    }
-                    catch (Exception ex)
-                    {
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                    }
-                    catch (Exception ex)
-                    {
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
             }
+            catch (Exception ex)
+            {
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -2273,69 +1048,24 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-
-            switch (eDatabaseType)
+            
+            oMySqlConn = new MySqlConnection(sConn);
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            
+            try
             {
-                case DBase.Access:
-                    oAccessConn = new OleDbConnection(sConn);
-                    oAccessCmd = new OleDbCommand(Query, oAccessConn);
-
-                    try
-                    {
-                        oAccessConn.Open();
-                        oAccessCmd.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oAccessCmd.Dispose();
-                    oAccessConn.Close();
-                    break;
-
-                case DBase.MySQL:
-                    oMySqlConn = new MySqlConnection(sConn);
-                    oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-                    try
-                    {
-                        oMySqlConn.Open();
-                        oMySqlCmd.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oMySqlCmd.Dispose();
-                    oMySqlConn.Close();
-                    break;
-
-                case DBase.SQLServer:
-                    oSqlConn = new SqlConnection(sConn);
-                    oSqlCmd = new SqlCommand(Query, oSqlConn);
-
-                    try
-                    {
-                        oSqlConn.Open();
-                        oSqlCmd.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        sErrorMessage = ex.Message;
-                        stat = false;
-                    }
-
-                    oSqlCmd.Dispose();
-                    oSqlConn.Close();
-                    break;
+                oMySqlConn.Open();
+                oMySqlCmd.ExecuteNonQuery();
+                
             }
+            catch (Exception ex)
+            {
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+            
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
 
             return stat;
         }
@@ -2366,27 +1096,10 @@ namespace SSInstructor.Class
             sConn = "";
             sErrorMessage = "";
 
-            switch (eDatabaseType)
-            {
-                case DBase.Access:
-                    string access_ext = Path.GetExtension(sAccessFile);
-
-                    if (access_ext.Contains("mdb"))
-                        sConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + sAccessFile + ";Password=" + sPassword + ";";
-                    else if (access_ext.Contains("accdb"))
-                        sConn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + sAccessFile + ";Jet OLEDB:Database Password=" + sPassword + ";";
-                    break;
-
-                case DBase.MySQL:
-                    if (string.IsNullOrEmpty(sPort.Trim()))
-                        sPort = "3306";
-                    sConn = "Server=" + sHost + "; Port=" + sPort + "; Uid=" + sUser + "; Pwd=" + sPassword + ";";
-                    break;
-
-                case DBase.SQLServer:
-                    sConn = "server=" + sHost + "; user id=" + sUser + "; password=" + sPassword + "; Trusted_Connection=yes; connection timeout=30;";
-                    break;
-            }
+            
+            if (string.IsNullOrEmpty(sPort.Trim()))
+                sPort = "3306";
+            sConn = "Server=" + sHost + "; Port=" + sPort + "; Uid=" + sUser + "; Pwd=" + sPassword + ";";
         }
     }
     #endregion
