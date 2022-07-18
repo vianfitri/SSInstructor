@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\ControlExtensions.cs" />
+    <Compile Include="Class\DB.cs" />
     <Compile Include="Class\Machine.cs" />
     <Compile Include="Class\ModalPopup.cs">
       <SubType>UserControl</SubType>
