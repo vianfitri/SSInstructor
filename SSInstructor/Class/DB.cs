@@ -60,6 +60,30 @@ namespace SSInstructor.Class
             set { sConn = value; }
         }
 
+        public string DbHost
+        {
+            get { return sHost; }
+            set { sHost = value; }
+        }
+
+        public string DbPort
+        {
+            get { return sPort;  }
+            set { sPort = value; }
+        }
+
+        public string DbUser
+        {
+            get { return sUser; }
+            set { sUser = value; }
+        }
+
+        public string DbPassword
+        {
+            get { return sPassword; }
+            set { sPassword = value; }
+        }
+
         public DBase DatabaseType
         {
             get { return eDatabaseType; }
