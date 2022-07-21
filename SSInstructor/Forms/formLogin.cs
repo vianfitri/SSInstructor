@@ -24,6 +24,12 @@ namespace SSInstructor
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Proccess Authenticate
+            if(string.IsNullOrEmpty(txtUsername.Texts))
+            {
+                MessageBox.Show("Please insert 'USERNAME'!", "Info...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtUsername.Select();
+                txtUsername.Focus();
+            }
 
             // Goto Main Form if success
             this._parent.openChildForm(this._parent.fDash);
