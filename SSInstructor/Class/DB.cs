@@ -1073,7 +1073,7 @@ namespace SSInstructor.Class
 
         #endregion
 
-        #region "Init"
+        #region "Constructor"
 
         public DB()
         {
