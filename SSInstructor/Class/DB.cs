@@ -18,7 +18,6 @@ namespace SSInstructor.Class
         private MySqlDataAdapter oMySqlAdapter;
         private MySqlConnection oMySqlConn;
         private MySqlCommand oMySqlCmd;
-
         private MySqlDataReader oMySqlReader;
 
         private string sHost;
