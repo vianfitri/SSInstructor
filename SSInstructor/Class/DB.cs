@@ -29,13 +29,6 @@ namespace SSInstructor.Class
 
         private string sErrorMessage;
 
-        public enum DBase
-        {
-            Access,
-            MySQL,
-            SQLServer
-        }
-        private DBase eDatabaseType;
         #endregion
 
         #region "Properties"
@@ -73,12 +66,6 @@ namespace SSInstructor.Class
         {
             get { return sPassword; }
             set { sPassword = value; }
-        }
-
-        public DBase DatabaseType
-        {
-            get { return eDatabaseType; }
-            set { eDatabaseType = value; }
         }
 
         #endregion
