@@ -1178,8 +1178,15 @@ namespace SSInstructor.Class
         }
 
         public bool DeleteData(string dbName, string tblName, string[] clauseField) 
-        { 
-            return false; 
+        {
+            string clause_data = string.Empty;
+
+            for (int i = 0; i < clauseField.Length - 1; i++)
+                clause_data = clause_data + dbName + "." + tblName + "." + clauseField[i] + ", ";
+
+            clause_data = clause_data + dbName + "." + tblName + "." + clauseField[clauseField.Length - 1];
+            string sq = "DELETE FROM " + dbName + "." + tblName + " WHERE " + clause_data;
+            return SetCommand(sq); 
         }
 
         #endregion
