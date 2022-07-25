@@ -1160,9 +1160,27 @@ namespace SSInstructor.Class
             return SetCommand(sq);  
         }
 
-        public bool UpdateData(string dbName, string tblName, string[] filedName, string[] dataField, string[] clauseField) { return false; }
+        public bool UpdateData(string dbName, string tblName, string[] fieldName, string[] dataField, string[] clauseField) 
+        {
+            string clause_data = string.Empty, update_data = string.Empty;
 
-        public bool DeleteData(string dbName, string tblName, string[] clauseField) { return false; }
+            for (int i = 0; i < dataField.Length - 1; i++)
+                update_data = update_data + "a." + fieldName[i] + "=" + dataField[i] + ",";
+
+            for (int i = 0; i < clauseField.Length - 1; i++)
+                clause_data = clause_data + "a." + clauseField[i] + ",";
+
+            update_data = update_data + "a." + fieldName[fieldName.Length - 1] + "=" + dataField[dataField.Length - 1];
+            clause_data = clause_data + "a." + clauseField[clauseField.Length - 1];
+
+            string sq = "UPDATE " + dbName + "." + tblName + " a SET " + update_data + " WHERE " + clause_data;
+            return SetCommand(sq); 
+        }
+
+        public bool DeleteData(string dbName, string tblName, string[] clauseField) 
+        { 
+            return false; 
+        }
 
         #endregion
 
