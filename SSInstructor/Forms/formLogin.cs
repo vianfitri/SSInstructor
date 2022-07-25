@@ -44,6 +44,7 @@ namespace SSInstructor
 
             // Check MySQL State
 
+
             // Goto Main Form if success
             this._parent.openChildForm(this._parent.fDash);
 
