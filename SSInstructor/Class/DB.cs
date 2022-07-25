@@ -15,21 +15,12 @@ namespace SSInstructor.Class
     public class DB
     {
         #region Field
-        private OleDbDataAdapter oAccessAdapter;
-        private OleDbConnection oAccessConn;
-        private OleDbCommand oAccessCmd;
-        private OleDbDataReader oAccessReader;
         private MySqlDataAdapter oMySqlAdapter;
         private MySqlConnection oMySqlConn;
         private MySqlCommand oMySqlCmd;
 
         private MySqlDataReader oMySqlReader;
-        private SqlDataAdapter oSqlAdapter;
-        private SqlConnection oSqlConn;
-        private SqlCommand oSqlCmd;
 
-        private SqlDataReader oSqlReader;
-        private string sAccessFile;
         private string sHost;
         private string sPort;
         private string sUser;
@@ -1100,7 +1091,6 @@ namespace SSInstructor.Class
 
         public DB()
         {
-            sAccessFile = "";
             sHost = "";
             sPort = "";
             sUser = "";
@@ -1109,10 +1099,8 @@ namespace SSInstructor.Class
             sErrorMessage = "";
         }
 
-        public DB(DBase DatabaseType, string AccessFile, string Hostname, string Port, string Username, string Password)
+        public DB(string Hostname, string Port, string Username, string Password)
         {
-            eDatabaseType = DatabaseType;
-            sAccessFile = AccessFile;
             sHost = Hostname;
             sPort = Port;
             sUser = Username;
