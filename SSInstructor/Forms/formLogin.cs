@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SSInstructor.Forms;
+using SSInstructor.Class;
 
 namespace SSInstructor
 {
     public partial class formLogin : Form
     {
         formMain _parent;
+        private DB mysqlDBConn;
 
         public formLogin(formMain parent)
         {
