@@ -69,6 +69,34 @@ namespace SSInstructor.Class
 
         #endregion
 
+        #region "Constructor"
+
+        public DB()
+        {
+            sHost = "";
+            sPort = "";
+            sUser = "";
+            sPassword = "";
+            sConn = "";
+            sErrorMessage = "";
+        }
+
+        public DB(string Hostname, string Port, string Username, string Password)
+        {
+            sHost = Hostname;
+            sPort = Port;
+            sUser = Username;
+            sPassword = Password;
+            sConn = "";
+            sErrorMessage = "";
+
+
+            if (string.IsNullOrEmpty(sPort.Trim()))
+                sPort = "3306";
+            sConn = "Server=" + sHost + "; Port=" + sPort + "; Uid=" + sUser + "; Pwd=" + sPassword + ";";
+        }
+        #endregion
+
         #region "Functions"
 
         #region "Data Collections"
@@ -95,12 +123,12 @@ namespace SSInstructor.Class
 
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -109,7 +137,7 @@ namespace SSInstructor.Class
                         idx++;
                     }
                 }
-                
+
                 oMySqlReader.Close();
             }
             catch (Exception ex)
@@ -118,7 +146,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -131,15 +159,15 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -148,9 +176,9 @@ namespace SSInstructor.Class
                         idx++;
                     }
                 }
-                
+
                 oMySqlReader.Close();
-            
+
             }
             catch (Exception ex)
             {
@@ -158,7 +186,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -171,15 +199,15 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -188,7 +216,7 @@ namespace SSInstructor.Class
                         idx++;
                     }
                 }
-                
+
                 oMySqlReader.Close();
             }
             catch (Exception ex)
@@ -197,10 +225,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
-    
+
             return stat;
         }
 
@@ -210,15 +238,15 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -227,9 +255,9 @@ namespace SSInstructor.Class
                         idx++;
                     }
                 }
-                
+
                 oMySqlReader.Close();
-            
+
             }
             catch (Exception ex)
             {
@@ -237,7 +265,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -253,12 +281,12 @@ namespace SSInstructor.Class
 
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -267,7 +295,7 @@ namespace SSInstructor.Class
                         idx++;
                     }
                 }
-                
+
                 oMySqlReader.Close();
             }
             catch (Exception ex)
@@ -276,7 +304,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -290,14 +318,14 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -306,7 +334,7 @@ namespace SSInstructor.Class
                         idx++;
                     }
                 }
-                
+
                 oMySqlReader.Close();
             }
             catch (Exception ex)
@@ -315,10 +343,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
-    
+
             return stat;
         }
 
@@ -328,15 +356,15 @@ namespace SSInstructor.Class
             int idx = 0;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -345,17 +373,17 @@ namespace SSInstructor.Class
                         idx++;
                     }
                 }
-                
+
                 oMySqlReader.Close();
             }
-            
+
             catch (Exception ex)
             {
                 ListColData = null;
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -385,15 +413,15 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -401,9 +429,9 @@ namespace SSInstructor.Class
                         ListColData.Add(oMySqlReader.GetDouble(FieldPos));
                     }
                 }
-                
+
                 oMySqlReader.Close();
-            
+
             }
             catch (Exception ex)
             {
@@ -411,7 +439,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -424,15 +452,15 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -440,7 +468,7 @@ namespace SSInstructor.Class
                         ListColData.Add(oMySqlReader.GetDouble(FieldPos));
                     }
                 }
-                
+
                 oMySqlReader.Close();
 
             }
@@ -450,7 +478,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -463,15 +491,15 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -479,9 +507,9 @@ namespace SSInstructor.Class
                         ListColData.Add(oMySqlReader.GetInt32(FieldPos));
                     }
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -489,10 +517,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -502,15 +530,15 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -518,9 +546,9 @@ namespace SSInstructor.Class
                         ListColData.Add(oMySqlReader.GetInt32(FieldPos));
                     }
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -528,7 +556,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -541,15 +569,15 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -557,9 +585,9 @@ namespace SSInstructor.Class
                         ListColData.Add(oMySqlReader.GetValue(FieldPos));
                     }
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -567,10 +595,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -580,7 +608,7 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
 
@@ -588,7 +616,7 @@ namespace SSInstructor.Class
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -596,9 +624,9 @@ namespace SSInstructor.Class
                         ListColData.Add(oMySqlReader.GetString(FieldPos));
                     }
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -606,10 +634,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -619,15 +647,15 @@ namespace SSInstructor.Class
 
             ListColData.Clear();
             sErrorMessage = "";
-            
-            oMySqlConn = new MySqlConnection(sConn);            
+
+            oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -635,9 +663,9 @@ namespace SSInstructor.Class
                         ListColData.Add(oMySqlReader.GetString(FieldPos));
                     }
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -645,7 +673,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -660,23 +688,23 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     oMySqlReader.Read();
                     aData = oMySqlReader.GetDouble(FieldPos);
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -684,10 +712,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -696,23 +724,23 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     oMySqlReader.Read();
                     aData = oMySqlReader.GetDouble(FieldPos);
                 }
-                
+
                 oMySqlReader.Close();
-            
+
             }
             catch (Exception ex)
             {
@@ -720,7 +748,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -732,23 +760,23 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     oMySqlReader.Read();
                     aData = oMySqlReader.GetInt32(FieldPos);
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -756,7 +784,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -768,23 +796,23 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     oMySqlReader.Read();
                     aData = oMySqlReader.GetInt32(FieldPos);
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -792,7 +820,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -804,23 +832,23 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     oMySqlReader.Read();
                     aData = oMySqlReader.GetValue(FieldPos);
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -828,10 +856,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -840,23 +868,23 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                                
+
                 if (oMySqlReader.HasRows)
                 {
                     oMySqlReader.Read();
                     aData = oMySqlReader.GetString(FieldPos);
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -864,7 +892,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -876,23 +904,23 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     oMySqlReader.Read();
                     aData = oMySqlReader.GetString(FieldPos);
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -900,7 +928,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
 
@@ -916,18 +944,18 @@ namespace SSInstructor.Class
 
             oDataSet.Clear();
             sErrorMessage = "";
-            
+
             oMySqlAdapter = new MySqlDataAdapter();
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlCmd.ExecuteNonQuery();
                 oMySqlAdapter.SelectCommand = oMySqlCmd;
                 oMySqlAdapter.Fill(oDataSet);
-                
+
             }
             catch (Exception ex)
             {
@@ -935,11 +963,11 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlAdapter.Dispose();
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -949,18 +977,18 @@ namespace SSInstructor.Class
 
             oDataTable.Clear();
             sErrorMessage = "";
-            
+
             oMySqlAdapter = new MySqlDataAdapter();
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlCmd.ExecuteNonQuery();
                 oMySqlAdapter.SelectCommand = oMySqlCmd;
                 oMySqlAdapter.Fill(oDataTable);
-                
+
             }
             catch (Exception ex)
             {
@@ -968,11 +996,11 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlAdapter.Dispose();
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -983,15 +1011,15 @@ namespace SSInstructor.Class
 
             TotalRow = 0;
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
             oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlReader = oMySqlCmd.ExecuteReader();
-                
+
                 if (oMySqlReader.HasRows)
                 {
                     while (oMySqlReader.Read())
@@ -999,9 +1027,9 @@ namespace SSInstructor.Class
                         TotalRow += 1;
                     }
                 }
-                
+
                 oMySqlReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -1009,10 +1037,10 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlCmd.Dispose();
             oMySqlConn.Close();
- 
+
             return stat;
         }
 
@@ -1022,9 +1050,9 @@ namespace SSInstructor.Class
             bool stat = true;
 
             sErrorMessage = "";
-            
+
             oMySqlConn = new MySqlConnection(sConn);
-            
+
             try
             {
                 oMySqlConn.Open();
@@ -1034,7 +1062,7 @@ namespace SSInstructor.Class
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
+
             oMySqlConn.Close();
 
             return stat;
@@ -1042,64 +1070,106 @@ namespace SSInstructor.Class
 
         #endregion
 
-        #region "Insert, Update, Delete"
+        #region "General"
+        private string SetConnectionString()
+        {
+            if (string.IsNullOrEmpty(sConn)) return sConn = "Server=" + sHost + "; Port=" + sPort + "; Uid=" + sUser + "; Pwd=" + sPassword + ";";
+            else return sConn;
+        }
+
+        private void closeConnection(bool useAdapter)
+        {
+            if (useAdapter)
+                oMySqlAdapter.Dispose();
+
+            oMySqlCmd.Dispose();
+            oMySqlConn.Close();
+        }
+        
+        private void openConnection(bool useAdapter, string Query)
+        {
+            SetConnectionString();
+
+            if (useAdapter)
+                oMySqlAdapter = new MySqlDataAdapter();
+
+            oMySqlConn = new MySqlConnection();
+            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+        }
+
+        public bool GetDBStatus()
+        {
+            bool stat = true;
+
+            SetConnectionString();
+            sErrorMessage = string.Empty;
+            oMySqlConn = new MySqlConnection(sConn);
+
+            try { oMySqlConn.Open(); }
+            catch(Exception ex)
+            {
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+
+            oMySqlConn.Close();
+            return stat;
+        }
 
         public bool SetCommand(string Query)
         {
             bool stat = true;
 
             sErrorMessage = "";
-            
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-            
+            openConnection(false, Query);
+
             try
             {
                 oMySqlConn.Open();
                 oMySqlCmd.ExecuteNonQuery();
-                
+
             }
             catch (Exception ex)
             {
                 sErrorMessage = ex.Message;
                 stat = false;
             }
-            
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
 
+            closeConnection(false);
             return stat;
         }
 
         #endregion
 
-        #region "Constructor"
-
-        public DB()
+        #region IUD
+        public bool InsertData(string dbName, string tblName, string[] fieldName, string[] dataField) 
         {
-            sHost = "";
-            sPort = "";
-            sUser = "";
-            sPassword = "";
-            sConn = "";
-            sErrorMessage = "";
+            string field_name = string.Empty, insert_data = string.Empty;
+
+            for (int i = 0; i < fieldName.Length - 1; i++)
+                field_name = field_name + fieldName[i] + ",";
+
+            for (int i = 0; i < dataField.Length - 1; i++)
+                insert_data = insert_data + dataField[i] + ",";
+
+            field_name = field_name + fieldName[fieldName.Length - 1];
+            insert_data = insert_data + dataField[dataField.Length - 1];
+
+            string sq = "INSERT INTO " + dbName + "." + tblName + " (" + field_name + ") VALUES(" + insert_data + ")";
+
+            return SetCommand(sq);  
         }
 
-        public DB(string Hostname, string Port, string Username, string Password)
-        {
-            sHost = Hostname;
-            sPort = Port;
-            sUser = Username;
-            sPassword = Password;
-            sConn = "";
-            sErrorMessage = "";
+        public bool UpdateData(string dbName, string tblName, string[] filedName, string[] dataField, string[] clauseField) { return false; }
 
-            
-            if (string.IsNullOrEmpty(sPort.Trim()))
-                sPort = "3306";
-            sConn = "Server=" + sHost + "; Port=" + sPort + "; Uid=" + sUser + "; Pwd=" + sPassword + ";";
-        }
+        public bool DeleteData(string dbName, string tblName, string[] clauseField) { return false; }
+
+        #endregion
+
+        #endregion
     }
-    #endregion
-    #endregion
+
+
+
+
 }
