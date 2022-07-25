@@ -14,7 +14,7 @@ namespace SSInstructor.Class
 {
     public class DB
     {
-        #region Field
+        #region "Field"
         private MySqlDataAdapter oMySqlAdapter;
         private MySqlConnection oMySqlConn;
         private MySqlCommand oMySqlCmd;
@@ -101,9 +101,69 @@ namespace SSInstructor.Class
 
         #region "Data Collections"
 
-        //---------------------------------------------------------------------------------------------------------------------
-        // Multiple data in array
-        //---------------------------------------------------------------------------------------------------------------------
+        #region "DataSet / DataTable"
+        public bool GetTableData(string Query, ref DataSet oDataSet)
+        {
+            bool stat = true;
+
+            oDataSet.Clear();
+            sErrorMessage = "";
+
+            openConnection(true, Query);
+
+            try
+            {
+                oMySqlConn.Open();
+                oMySqlCmd.ExecuteNonQuery();
+                oMySqlAdapter.SelectCommand = oMySqlCmd;
+                oMySqlAdapter.Fill(oDataSet);
+
+            }
+            catch (Exception ex)
+            {
+                oDataSet = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+
+            closeConnection(true);
+
+            return stat;
+        }
+
+        public bool GetTableData(string Query, ref DataTable oDataTable)
+        {
+            bool stat = true;
+
+            oDataTable.Clear();
+            sErrorMessage = "";
+
+            openConnection(true, Query);
+
+            try
+            {
+                oMySqlConn.Open();
+                oMySqlCmd.ExecuteNonQuery();
+                oMySqlAdapter.SelectCommand = oMySqlCmd;
+                oMySqlAdapter.Fill(oDataTable);
+
+            }
+            catch (Exception ex)
+            {
+                oDataTable = null;
+                sErrorMessage = ex.Message;
+                stat = false;
+            }
+
+            closeConnection(true);
+
+            return stat;
+        }
+
+        #endregion
+
+        #region "Multiple data in array"
+
         public bool GetAllDatabases(ref string[] DatabaseNameList)
         {
             return GetColumnData("SHOW DATABASES", 0, ref DatabaseNameList);
@@ -121,8 +181,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -147,8 +206,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -160,8 +218,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -187,8 +244,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -200,8 +256,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -226,8 +281,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -239,8 +293,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -266,8 +319,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -279,8 +331,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -305,8 +356,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -318,9 +368,8 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
+            openConnection(false, Query);
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
             try
             {
                 oMySqlConn.Open();
@@ -344,8 +393,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -357,8 +405,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -384,15 +431,15 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
 
-        //---------------------------------------------------------------------------------------------------------------------
-        // Multiple data in List
-        //---------------------------------------------------------------------------------------------------------------------
+        #endregion
+
+        #region "Multiple data in List"
+
         public bool GetAllDatabases(ref List<string> DatabaseNameList)
         {
             DatabaseNameList.Clear();
@@ -414,8 +461,7 @@ namespace SSInstructor.Class
             ListColData.Clear();
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -440,8 +486,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -453,8 +498,7 @@ namespace SSInstructor.Class
             ListColData.Clear();
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -479,8 +523,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -492,8 +535,7 @@ namespace SSInstructor.Class
             ListColData.Clear();
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -518,8 +560,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -531,8 +572,7 @@ namespace SSInstructor.Class
             ListColData.Clear();
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -557,8 +597,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -570,8 +609,7 @@ namespace SSInstructor.Class
             ListColData.Clear();
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -596,8 +634,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -609,8 +646,7 @@ namespace SSInstructor.Class
             ListColData.Clear();
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -635,8 +671,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -648,8 +683,7 @@ namespace SSInstructor.Class
             ListColData.Clear();
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -674,23 +708,22 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
 
-        //---------------------------------------------------------------------------------------------------------------------
-        // Single data
-        //---------------------------------------------------------------------------------------------------------------------
+        #endregion
+
+        #region "Single data"
+
         public bool GetData(string Query, int FieldPos, ref double aData)
         {
             bool stat = true;
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -713,8 +746,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -725,8 +757,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -749,8 +780,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -761,8 +791,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -785,8 +814,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -797,8 +825,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -821,8 +848,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -833,8 +859,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -857,8 +882,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -869,8 +893,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -893,8 +916,7 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
@@ -905,8 +927,7 @@ namespace SSInstructor.Class
 
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -929,82 +950,11 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
 
-        //---------------------------------------------------------------------------------------------------------------------
-        // DataTable / DataSet
-        //---------------------------------------------------------------------------------------------------------------------
-        public bool GetTableData(string Query, ref DataSet oDataSet)
-        {
-            bool stat = true;
-
-            oDataSet.Clear();
-            sErrorMessage = "";
-
-            oMySqlAdapter = new MySqlDataAdapter();
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-            try
-            {
-                oMySqlConn.Open();
-                oMySqlCmd.ExecuteNonQuery();
-                oMySqlAdapter.SelectCommand = oMySqlCmd;
-                oMySqlAdapter.Fill(oDataSet);
-
-            }
-            catch (Exception ex)
-            {
-                oDataSet = null;
-                sErrorMessage = ex.Message;
-                stat = false;
-            }
-
-            oMySqlAdapter.Dispose();
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
-
-            return stat;
-        }
-
-        public bool GetTableData(string Query, ref DataTable oDataTable)
-        {
-            bool stat = true;
-
-            oDataTable.Clear();
-            sErrorMessage = "";
-
-            oMySqlAdapter = new MySqlDataAdapter();
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
-
-            try
-            {
-                oMySqlConn.Open();
-                oMySqlCmd.ExecuteNonQuery();
-                oMySqlAdapter.SelectCommand = oMySqlCmd;
-                oMySqlAdapter.Fill(oDataTable);
-
-            }
-            catch (Exception ex)
-            {
-                oDataTable = null;
-                sErrorMessage = ex.Message;
-                stat = false;
-            }
-
-            oMySqlAdapter.Dispose();
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
-
-            return stat;
-        }
-
-        //---------------------------------------------------------------------------------------------------------------------
         public bool GetTotalRow(string Query, ref int TotalRow)
         {
             bool stat = true;
@@ -1012,8 +962,7 @@ namespace SSInstructor.Class
             TotalRow = 0;
             sErrorMessage = "";
 
-            oMySqlConn = new MySqlConnection(sConn);
-            oMySqlCmd = new MySqlCommand(Query, oMySqlConn);
+            openConnection(false, Query);
 
             try
             {
@@ -1038,35 +987,11 @@ namespace SSInstructor.Class
                 stat = false;
             }
 
-            oMySqlCmd.Dispose();
-            oMySqlConn.Close();
+            closeConnection(false);
 
             return stat;
         }
-
-        //---------------------------------------------------------------------------------------------------------------------
-        public bool GetDatabaseStatus()
-        {
-            bool stat = true;
-
-            sErrorMessage = "";
-
-            oMySqlConn = new MySqlConnection(sConn);
-
-            try
-            {
-                oMySqlConn.Open();
-            }
-            catch (Exception ex)
-            {
-                sErrorMessage = ex.Message;
-                stat = false;
-            }
-
-            oMySqlConn.Close();
-
-            return stat;
-        }
+        #endregion
 
         #endregion
 
@@ -1141,7 +1066,7 @@ namespace SSInstructor.Class
 
         #endregion
 
-        #region IUD
+        #region "IUD"
         public bool InsertData(string dbName, string tblName, string[] fieldName, string[] dataField) 
         {
             string field_name = string.Empty, insert_data = string.Empty;
