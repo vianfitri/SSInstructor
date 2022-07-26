@@ -21,17 +21,27 @@ namespace SSInstructor
 
         private string[] dataString = new string[4];
         private string[] identifiedString = { "[MySQL]", "Server=", "Port=", "Uid=", "Pwd="};
+        private string dbServer, dbPort, dbUid, dbPwd;
+
+        private string configDir =
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\ShipStab";
         #endregion
 
         #region "Constructor"
         public formLogin(formMain parent)
         {
             InitializeComponent();
+
+            // init
+            mysqlDBConn = new DB();
+            appConf = new ReadWriteFile();
+
             this._parent = parent;
         }
         #endregion
 
         #region "Methods"
+
         #endregion
 
         #region "Events"
