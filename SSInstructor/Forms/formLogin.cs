@@ -99,7 +99,12 @@ namespace SSInstructor
 
         private void formLogin_Load(object sender, EventArgs e)
         {
-
+            // Load D Configuration
+            if(!LoadConfig())
+            {
+                MessageBox.Show("Cannot load current configuration!\r\nPlease set up configuration.", "Info...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
         }
         #endregion
 
