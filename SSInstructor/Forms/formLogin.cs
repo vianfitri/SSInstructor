@@ -14,15 +14,24 @@ namespace SSInstructor
 {
     public partial class formLogin : Form
     {
+        #region "Fields"
         formMain _parent;
         private DB mysqlDBConn;
+        private ReadWriteFile appConf;
+        #endregion
 
+        #region "Constructor"
         public formLogin(formMain parent)
         {
             InitializeComponent();
             this._parent = parent;
         }
+        #endregion
 
+        #region "Methods"
+        #endregion
+
+        #region "Events"
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Proccess Authenticate
@@ -51,6 +60,7 @@ namespace SSInstructor
             this._parent.openChildForm(this._parent.fDash);
 
         }
+        #endregion
 
     }
 }
