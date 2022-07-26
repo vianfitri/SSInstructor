@@ -18,6 +18,9 @@ namespace SSInstructor
         formMain _parent;
         private DB mysqlDBConn;
         private ReadWriteFile appConf;
+
+        private string[] dataString = new string[4];
+        private string[] identifiedString = { "[MySQL]", "Server=", "=", "=", "="};
         #endregion
 
         #region "Constructor"
