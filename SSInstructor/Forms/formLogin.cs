@@ -41,7 +41,30 @@ namespace SSInstructor
         #endregion
 
         #region "Methods"
+        private bool LoadConfig()
+        {
+            bool stat = appConf.LoadConfig(configDir, "db.ini", identifiedString, ref dataString);
 
+            if (stat)
+            {
+                dbServer = dataString[0];
+                dbPort = dataString[1];
+                dbUid = dataString[2];
+                dbPwd = dataString[3];
+            }
+
+            return stat;
+        }
+
+        private bool SaveConfig()
+        {
+            bool stat = appConf.SaveConfig(configDir, "db.ini", identifiedString, ref dataString);
+
+            if (!stat)
+                MessageBox.Show(appConf.ErrorMessage, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return stat;
+        }
         #endregion
 
         #region "Events"
@@ -71,6 +94,11 @@ namespace SSInstructor
 
             // Goto Main Form if success
             this._parent.openChildForm(this._parent.fDash);
+
+        }
+
+        private void formLogin_Load(object sender, EventArgs e)
+        {
 
         }
         #endregion

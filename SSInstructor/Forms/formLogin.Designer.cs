@@ -219,6 +219,7 @@ namespace SSInstructor
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formLogin";
             this.Text = "formLogin";
+            this.Load += new System.EventHandler(this.formLogin_Load);
             this.pnlBackground.ResumeLayout(false);
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
