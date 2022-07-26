@@ -20,7 +20,7 @@ namespace SSInstructor
         private ReadWriteFile appConf;
 
         private string[] dataString = new string[4];
-        private string[] identifiedString = { "[MySQL]", "Server=", "=", "=", "="};
+        private string[] identifiedString = { "[MySQL]", "Server=", "Port=", "Uid=", "Pwd="};
         #endregion
 
         #region "Constructor"
