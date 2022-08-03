@@ -68,6 +68,25 @@ namespace SSInstructor.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pbPC = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pnlClientList.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -93,6 +112,19 @@ namespace SSInstructor.Forms
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPC)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel21.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -505,11 +537,213 @@ namespace SSInstructor.Forms
             this.pbPC.TabIndex = 0;
             this.pbPC.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel1.Controls.Add(this.panel18);
+            this.flowLayoutPanel1.Controls.Add(this.panel21);
+            this.flowLayoutPanel1.Controls.Add(this.panel24);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 119);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(769, 474);
+            this.flowLayoutPanel1.TabIndex = 11;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.panel19);
+            this.panel18.Controls.Add(this.panel20);
+            this.panel18.Controls.Add(this.pictureBox6);
+            this.panel18.Location = new System.Drawing.Point(50, 50);
+            this.panel18.Margin = new System.Windows.Forms.Padding(40);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(113, 144);
+            this.panel18.TabIndex = 1;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panel19.Controls.Add(this.label15);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel19.Location = new System.Drawing.Point(0, 94);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(113, 25);
+            this.panel19.TabIndex = 2;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(23, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 20);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "PC - 01";
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(113)))));
+            this.panel20.Controls.Add(this.label16);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel20.Location = new System.Drawing.Point(0, 119);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(113, 25);
+            this.panel20.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(15, 2);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(80, 18);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Connected";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::SSInstructor.Properties.Resources.pc;
+            this.pictureBox6.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(82, 65);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.panel22);
+            this.panel21.Controls.Add(this.panel23);
+            this.panel21.Controls.Add(this.pictureBox7);
+            this.panel21.Location = new System.Drawing.Point(243, 50);
+            this.panel21.Margin = new System.Windows.Forms.Padding(40);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(113, 144);
+            this.panel21.TabIndex = 2;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panel22.Controls.Add(this.label17);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel22.Location = new System.Drawing.Point(0, 94);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(113, 25);
+            this.panel22.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(23, 3);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 20);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "PC - 01";
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(113)))));
+            this.panel23.Controls.Add(this.label18);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel23.Location = new System.Drawing.Point(0, 119);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(113, 25);
+            this.panel23.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(15, 2);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(80, 18);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Connected";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SSInstructor.Properties.Resources.pc;
+            this.pictureBox7.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(82, 65);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.panel25);
+            this.panel24.Controls.Add(this.panel26);
+            this.panel24.Controls.Add(this.pictureBox8);
+            this.panel24.Location = new System.Drawing.Point(436, 50);
+            this.panel24.Margin = new System.Windows.Forms.Padding(40);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(113, 144);
+            this.panel24.TabIndex = 3;
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panel25.Controls.Add(this.label19);
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel25.Location = new System.Drawing.Point(0, 94);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(113, 25);
+            this.panel25.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(23, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(66, 20);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "PC - 01";
+            // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(113)))));
+            this.panel26.Controls.Add(this.label20);
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel26.Location = new System.Drawing.Point(0, 119);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(113, 25);
+            this.panel26.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(15, 2);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(80, 18);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Connected";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SSInstructor.Properties.Resources.pc;
+            this.pictureBox8.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(82, 65);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
+            // 
             // fClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnlClientList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -552,6 +786,25 @@ namespace SSInstructor.Forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPC)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel21.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panel24.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,5 +851,24 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
