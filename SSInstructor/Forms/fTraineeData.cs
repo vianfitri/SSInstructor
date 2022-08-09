@@ -88,5 +88,16 @@ namespace SSInstructor.Forms
             fTraineeAdd.StartPosition = FormStartPosition.CenterParent;
             fTraineeAdd.ShowDialog();
         }
+
+        private void bdgv_Trainee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (bdgv_Trainee.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    MessageBox.Show("Delete Succesfully");
+                }
+            }
+        }
     }
 }
