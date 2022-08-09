@@ -16,5 +16,10 @@ namespace SSInstructor.Forms
         {
             InitializeComponent();
         }
+
+        private void btnTraineeAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

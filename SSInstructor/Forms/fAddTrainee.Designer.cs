@@ -56,6 +56,7 @@ namespace SSInstructor.Forms
             this.btnTraineeAdd.Text = "ADD";
             this.btnTraineeAdd.TextColor = System.Drawing.Color.White;
             this.btnTraineeAdd.UseVisualStyleBackColor = false;
+            this.btnTraineeAdd.Click += new System.EventHandler(this.btnTraineeAdd_Click);
             // 
             // txtTraineeName
             // 
