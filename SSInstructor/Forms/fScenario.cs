@@ -16,5 +16,79 @@ namespace SSInstructor.Forms
         {
             InitializeComponent();
         }
+
+        private void dummyScenData()
+        {
+            bdgv_scenlist.Rows.Add(
+                new object[]
+                {
+                    1,
+                    "Skenario 1",
+                    "3650 DWT General Cargo",
+                    null,
+                    null
+                }
+            );
+
+            bdgv_scenlist.Rows.Add(
+                new object[]
+                {
+                    2,
+                    "Skenario 1",
+                    "3650 DWT General Cargo",
+                    null,
+                    null
+                }
+            );
+
+            bdgv_scenlist.Rows.Add(
+                new object[]
+                {
+                    3,
+                    "Stability GenCar",
+                    "3650 DWT General Cargo",
+                    null,
+                    null
+                }
+            );
+
+            bdgv_scenlist.Rows.Add(
+                new object[]
+                {
+                    4,
+                    "Containership Stability",
+                    "4180 DWT Full Container",
+                    null,
+                    null
+                }
+            );
+
+            bdgv_scenlist.Rows.Add(
+                new object[]
+                {
+                    5,
+                    "Stabilitas Bulkcarrier",
+                    "50000 DWT Bulk Carrier",
+                    null,
+                    null
+                }
+            );
+
+            bdgv_scenlist.Rows.Add(
+                new object[]
+                {
+                    6,
+                    "Skenario kapal bulk",
+                    "50000 DWT Bulk Carrier",
+                    null,
+                    null
+                }
+            );
+        }
+
+        private void fScenario_Load(object sender, EventArgs e)
+        {
+            dummyScenData();
+        }
     }
 }
