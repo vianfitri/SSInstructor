@@ -34,7 +34,7 @@ namespace SSInstructor.Forms
                 new object[]
                 {
                     2,
-                    "Skenario 1",
+                    "General Cargo ship",
                     "3650 DWT General Cargo",
                     null,
                     null
