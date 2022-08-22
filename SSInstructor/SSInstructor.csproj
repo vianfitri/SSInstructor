@@ -137,6 +137,12 @@
     <Compile Include="Forms\fInstructorData.Designer.cs">
       <DependentUpon>fInstructorData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fLoadPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fLoadPos.Designer.cs">
+      <DependentUpon>fLoadPos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\formDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fInstructorData.resx">
       <DependentUpon>fInstructorData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fLoadPos.resx">
+      <DependentUpon>fLoadPos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formDashboard.resx">
       <DependentUpon>formDashboard.cs</DependentUpon>
