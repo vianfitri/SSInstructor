@@ -40,6 +40,7 @@ namespace SSInstructor
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.btnConfig = new ViControls.ViButton();
             this.pnlBackground.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -49,6 +50,7 @@ namespace SSInstructor
             // 
             this.pnlBackground.BackgroundImage = global::SSInstructor.Properties.Resources.Maritime_Safety;
             this.pnlBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlBackground.Controls.Add(this.btnConfig);
             this.pnlBackground.Controls.Add(this.label2);
             this.pnlBackground.Controls.Add(this.label1);
             this.pnlBackground.Controls.Add(this.pnlLogin);
@@ -210,6 +212,26 @@ namespace SSInstructor
             this.lblLogin.TabIndex = 1;
             this.lblLogin.Text = "Login";
             // 
+            // btnConfig
+            // 
+            this.btnConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfig.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConfig.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConfig.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConfig.BorderRadius = 4;
+            this.btnConfig.BorderSize = 0;
+            this.btnConfig.Enabled = false;
+            this.btnConfig.FlatAppearance.BorderSize = 0;
+            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig.ForeColor = System.Drawing.Color.White;
+            this.btnConfig.Location = new System.Drawing.Point(1316, 12);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(20, 20);
+            this.btnConfig.TabIndex = 3;
+            this.btnConfig.TextColor = System.Drawing.Color.White;
+            this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Visible = false;
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,5 +264,6 @@ namespace SSInstructor
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private ViControls.ViButton btnConfig;
     }
 }

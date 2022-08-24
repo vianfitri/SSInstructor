@@ -102,9 +102,14 @@ namespace SSInstructor
             // Load D Configuration
             if(!LoadConfig())
             {
-                SetDefaultConfig(); 
+                SetDefaultConfig();
+
+                btnConfig.Enabled = true;
+                btnConfig.Visible = true;
 
                 MessageBox.Show("Cannot load current configuration!\r\nPlease set up configuration.", "Info...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                this.Activate();
                 return;
             }
 
