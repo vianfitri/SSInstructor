@@ -102,9 +102,30 @@ namespace SSInstructor
             // Load D Configuration
             if(!LoadConfig())
             {
+                SetDefaultConfig(); 
+
                 MessageBox.Show("Cannot load current configuration!\r\nPlease set up configuration.", "Info...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            // Set configuration for MySql
+            SetMySqlConfig();
+        }
+
+        private void SetMySqlConfig()
+        {
+            mysqlDBConn.DbHost = dbServer;
+            mysqlDBConn.DbPort = dbPort;
+            mysqlDBConn.DbUser = dbUid;
+            mysqlDBConn.DbPassword = dbPwd;
+        }
+
+        private void SetDefaultConfig()
+        {
+            dbServer = "localhost";
+            dbPort = "3306";
+            dbUid = "root";
+            dbPwd = "admin123!";
         }
         #endregion
 
