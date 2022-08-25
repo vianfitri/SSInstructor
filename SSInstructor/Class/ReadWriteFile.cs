@@ -55,7 +55,7 @@ namespace SSInstructor.Class
                 {
                     if(str_part[i].Contains(identifierString[0]))
                     {
-                        for(int j=0; j<identifierString.Length; j++)
+                        for(int j=1; j<identifierString.Length; j++)
                         {
                             if(str_part[i+j].Contains(identifierString[i+j]))
                             {

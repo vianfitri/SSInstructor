@@ -90,11 +90,88 @@ namespace SSInstructor
             this.Cursor = Cursors.WaitCursor;
 
             // Check MySQL State
+            if (!mysqlDBConn.GetDBStatus())
+            {
+                btnConfig.Enabled = true;
+                btnConfig.Visible = true;
 
+                this.Cursor = Cursors.Default;
+
+                MessageBox.Show(mysqlDBConn.ErrorMessage +
+                    "\r\nPlease check whether database server is active? Or set up new configuration for database server!",
+                    "Info...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            // Get Login Pass
+            int num = 0;
+
+            string queryString = "SELECT * FROM shp_stability.ss_user a " +
+                "WHERE a.u_name = '" + txtUsername.Texts +
+                "' AND a.u_pass = MD5('" + txtPassword.Texts +
+                "') LIMIT 0, 1";
+
+            if(mysqlDBConn.GetTotalRow(queryString, ref num))
+            {
+                if(num == 1)
+                {
+                    MessageBox.Show("Login Success");
+                } 
+                else
+                {
+                    this.Cursor = Cursors.Default;
+                    MessageBox.Show("Please check your username/password!", "Login failed...",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtUsername.Select();
+                    txtUsername.Focus();
+
+                    return;
+                }
+            } 
+            else
+            {
+                this.Cursor = Cursors.Default;
+                MessageBox.Show(mysqlDBConn.ErrorMessage, "Info...",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
 
             // Goto Main Form if success
             this._parent.openChildForm(this._parent.fDash);
 
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            using(fDbConfig fConfigDb = new fDbConfig())
+            {
+                fConfigDb.DbServer = dbServer;
+                fConfigDb.DbPort = dbPort;
+                fConfigDb.DbUsername = dbUid;
+                fConfigDb.DbPassword = dbPwd;
+
+                if(fConfigDb.ShowDialog() == DialogResult.OK)
+                {
+                    dbServer = fConfigDb.DbServer;
+                    dbPort = fConfigDb.DbPort;
+                    dbUid = fConfigDb.DbUsername;
+                    dbPwd = fConfigDb.DbPassword;
+
+                    dataString[0] = dbServer;
+                    dataString[1] = dbPort;
+                    dataString[2] = dbUid;
+                    dataString[3] = dbPwd;
+
+                    if(!SaveConfig())
+                    {
+                        MessageBox.Show(appConf.ErrorMessage, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    SetMySqlConfig();
+                }
+            }
         }
 
         private void formLogin_Load(object sender, EventArgs e)

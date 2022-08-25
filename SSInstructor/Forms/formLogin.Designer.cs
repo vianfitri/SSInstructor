@@ -30,6 +30,7 @@ namespace SSInstructor
         private void InitializeComponent()
         {
             this.pnlBackground = new System.Windows.Forms.Panel();
+            this.btnConfig = new ViControls.ViButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
@@ -40,7 +41,6 @@ namespace SSInstructor
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.btnConfig = new ViControls.ViButton();
             this.pnlBackground.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,6 +59,27 @@ namespace SSInstructor
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(1348, 721);
             this.pnlBackground.TabIndex = 0;
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfig.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConfig.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConfig.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConfig.BorderRadius = 4;
+            this.btnConfig.BorderSize = 0;
+            this.btnConfig.Enabled = false;
+            this.btnConfig.FlatAppearance.BorderSize = 0;
+            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig.ForeColor = System.Drawing.Color.White;
+            this.btnConfig.Location = new System.Drawing.Point(1316, 12);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(20, 20);
+            this.btnConfig.TabIndex = 3;
+            this.btnConfig.TextColor = System.Drawing.Color.White;
+            this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Visible = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // label2
             // 
@@ -211,26 +232,6 @@ namespace SSInstructor
             this.lblLogin.Size = new System.Drawing.Size(72, 29);
             this.lblLogin.TabIndex = 1;
             this.lblLogin.Text = "Login";
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfig.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConfig.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConfig.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConfig.BorderRadius = 4;
-            this.btnConfig.BorderSize = 0;
-            this.btnConfig.Enabled = false;
-            this.btnConfig.FlatAppearance.BorderSize = 0;
-            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(1316, 12);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(20, 20);
-            this.btnConfig.TabIndex = 3;
-            this.btnConfig.TextColor = System.Drawing.Color.White;
-            this.btnConfig.UseVisualStyleBackColor = false;
-            this.btnConfig.Visible = false;
             // 
             // formLogin
             // 

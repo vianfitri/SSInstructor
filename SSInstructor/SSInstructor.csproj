@@ -119,6 +119,12 @@
     <Compile Include="Forms\fClientList.Designer.cs">
       <DependentUpon>fClientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fDbConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fDbConfig.Designer.cs">
+      <DependentUpon>fDbConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fFCStowPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fClientList.resx">
       <DependentUpon>fClientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fDbConfig.resx">
+      <DependentUpon>fDbConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fFCStowPlan.resx">
       <DependentUpon>fFCStowPlan.cs</DependentUpon>
