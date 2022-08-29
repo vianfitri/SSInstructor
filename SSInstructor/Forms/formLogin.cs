@@ -117,6 +117,8 @@ namespace SSInstructor
                 if(num == 1)
                 {
                     MessageBox.Show("Login Success");
+
+                    // fetch login data
                 } 
                 else
                 {
