@@ -1030,7 +1030,9 @@ namespace SSInstructor.Class
             sErrorMessage = string.Empty;
             oMySqlConn = new MySqlConnection(sConn);
 
-            try { oMySqlConn.Open(); }
+            try { 
+                oMySqlConn.Open(); 
+            }
             catch(Exception ex)
             {
                 sErrorMessage = ex.Message;
