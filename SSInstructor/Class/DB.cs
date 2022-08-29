@@ -967,7 +967,6 @@ namespace SSInstructor.Class
             try
             {
                 oMySqlConn.Open();
-                stat = false;
                 oMySqlReader = oMySqlCmd.ExecuteReader();
 
                 if (oMySqlReader.HasRows)
@@ -1041,6 +1040,7 @@ namespace SSInstructor.Class
             }
 
             oMySqlConn.Close();
+            oMySqlConn.Dispose();
             return stat;
         }
 
