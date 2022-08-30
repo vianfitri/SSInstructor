@@ -176,6 +176,14 @@ namespace SSInstructor
             }
         }
 
+        private void txtPassword__TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPassword.Texts))
+            {
+                txtPassword.PasswordChar = false;
+            } else { txtPassword.PasswordChar = true; }
+        }
+
         private void formLogin_Load(object sender, EventArgs e)
         {
             // Load D Configuration

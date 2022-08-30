@@ -163,6 +163,7 @@ namespace SSInstructor
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
+            this.txtPassword._TextChanged += new System.EventHandler(this.txtPassword__TextChanged);
             // 
             // lblPassword
             // 
