@@ -127,7 +127,7 @@ namespace SSInstructor
         {
             // Load default content
             openChildForm(new formWelcome());
-
+            MessageBox.Show("LogId : " + this._parent.LoginId.ToString());
             hideSubmenu();
         }
 

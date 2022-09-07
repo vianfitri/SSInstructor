@@ -125,9 +125,9 @@ namespace SSInstructor
                     mysqlDBConn.GetData(queryString, "id_subject", ref logId);
                     mysqlDBConn.GetData(queryString, "u_name", ref uName);
                     mysqlDBConn.GetData(queryString, "u_pass", ref uPass);
-                    MessageBox.Show("LoginID :" + logId.ToString() + 
-                        "\r\nUsername : " + uName +
-                        "\r\nPassword : " + uPass);
+                    //MessageBox.Show("LoginID :" + logId.ToString() + 
+                    //    "\r\nUsername : " + uName +
+                    //    "\r\nPassword : " + uPass);
                     this._parent.LoginId = logId;
                     
                 } 
