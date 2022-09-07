@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SSInstructor.Forms;
+using SSInstructor.Class;
 
 namespace SSInstructor
 {
@@ -15,6 +16,7 @@ namespace SSInstructor
     {
         formMain _parent;
         private Form activeForm = null;
+        private DB mysqlDbConn;
 
         public formDashboard(formMain parent)
         {
@@ -127,6 +129,13 @@ namespace SSInstructor
         {
             // Load default content
             openChildForm(new formWelcome());
+
+            // set mysql data connector
+            mysqlDbConn = this._parent.DBConn;
+
+            // fetch login user information
+            int currentLogId = this._parent.LoginId;
+
             MessageBox.Show("LogId : " + this._parent.LoginId.ToString());
             hideSubmenu();
         }

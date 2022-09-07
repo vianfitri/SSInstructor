@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SSInstructor.Class;
 
 namespace SSInstructor.Forms
 {
@@ -15,6 +16,7 @@ namespace SSInstructor.Forms
         private Form activeForm = null;
         private String loginUsername = "";
         private int loginId = -1;
+        private DB mysqlDbConn;
         public formLogin fLogin = null;
         public formDashboard fDash = null;
 
@@ -34,6 +36,12 @@ namespace SSInstructor.Forms
         public int LoginId {
             get { return loginId; }
             set { loginId = value; }
+        }
+
+        public DB DBConn
+        {
+            get { return mysqlDbConn; }
+            set { mysqlDbConn = value; }
         }
         #endregion
 

@@ -128,6 +128,7 @@ namespace SSInstructor
                     //MessageBox.Show("LoginID :" + logId.ToString() + 
                     //    "\r\nUsername : " + uName +
                     //    "\r\nPassword : " + uPass);
+                    this._parent.DBConn = mysqlDBConn;
                     this._parent.LoginId = logId;
                     
                 } 
