@@ -77,6 +77,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Class\ReadWriteFile.cs" />
+    <Compile Include="Class\StabilityCalculator.cs" />
     <Compile Include="Forms\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -50,7 +50,7 @@ namespace SSInstructor
 
         private void loadLoginInfo(int logId)
         {
-            DataTable dtLoginInfo = null;
+            DataTable dtLoginInfo = new DataTable();
             string qrStr = "SELECT a.idss_user, " +
                 "b.first_name, b.last_name, b.birthday, b.sex, b.email, b.photos, " +
                 "c.typename " +
@@ -63,7 +63,8 @@ namespace SSInstructor
 
             if(mysqlDbConn.GetTableData(qrStr, ref dtLoginInfo))
             {
-
+                lblUsername.Text = dtLoginInfo.Rows[0]["first_name"].ToString();
+                lblPriviledge.Text = dtLoginInfo.Rows[0]["typename"].ToString();
             }
         }
 
@@ -155,7 +156,8 @@ namespace SSInstructor
             // fetch login user information
             int currentLogId = this._parent.LoginId;
 
-            MessageBox.Show("LogId : " + this._parent.LoginId.ToString());
+            loadLoginInfo(currentLogId);
+
             hideSubmenu();
         }
 
