@@ -51,10 +51,10 @@ namespace SSInstructor
         private void loadLoginInfo(int logId)
         {
             DataTable dtLoginInfo;
-            string qrStr = "SELECT * FROM shp_stability.ss_user a, " + 
+            string qrStr = "SELECT * FROM shp_stability.ss_user a, " +
                 "shp_stability.ss_subject b " +
                 "WHERE a.idss_user = " + logId +
-                "AND a."
+                "AND a.";
         }
 
         private void btnMasterData_Click(object sender, EventArgs e)
