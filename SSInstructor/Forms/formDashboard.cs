@@ -50,11 +50,21 @@ namespace SSInstructor
 
         private void loadLoginInfo(int logId)
         {
-            DataTable dtLoginInfo;
-            string qrStr = "SELECT * FROM shp_stability.ss_user a, " +
-                "shp_stability.ss_subject b " +
-                "WHERE a.idss_user = " + logId +
-                "AND a.";
+            DataTable dtLoginInfo = null;
+            string qrStr = "SELECT a.idss_user, " +
+                "b.first_name, b.last_name, b.birthday, b.sex, b.email, b.photos, " +
+                "c.typename " +
+                "FROM shp_stability.ss_user a " +
+                "INNER JOIN shp_stability.ss_subject b " +
+                "ON a.id_subject = b.idsubject " +
+                "INNER JOIN shp_stability.ss_usertype c " +
+                "ON b.type = c.id " +
+                "WHERE a.idss_user = " + logId + " LIMIT 0, 1";
+
+            if(mysqlDbConn.GetTableData(qrStr, ref dtLoginInfo))
+            {
+
+            }
         }
 
         private void btnMasterData_Click(object sender, EventArgs e)
