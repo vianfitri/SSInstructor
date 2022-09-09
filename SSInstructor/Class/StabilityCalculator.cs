@@ -1,4 +1,6 @@
-﻿public static class StabilityCalculator {
+﻿using System;
+
+public static class StabilityCalculator {
     // function for interpolate lookup table 2D
     public static double Interpolate2D(double xs, double ys, double[] x, double[] y, double[,] z)
     {
@@ -103,5 +105,23 @@
         double zs = zA + dx / delx * (zB - zA);
 
         return zs;
+    }
+
+    public static void rotate_point(ref double px, ref double py, double cx, double cy, double angle_deg)
+    {
+        double s = Math.Sin(angle_deg * Math.PI / 180);
+        double c = Math.Cos(angle_deg * Math.PI / 180);
+
+        // translate point back to origin:
+        px -= cx;
+        py -= cy;
+
+        // rotate point
+        double xnew = px * c - py * s;
+        double ynew = px * s + py * c;
+
+        // translate point back:
+        px = xnew + cx;
+        py = ynew + cy;
     }
 }
