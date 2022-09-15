@@ -78,6 +78,17 @@ namespace SSInstructor.Forms
             fInstAdd.ShowDialog();
         }
 
+        private void bdgv_Instructor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (bdgv_Instructor.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                if (MessageBox.Show("Are you sure want to delete this instructor data?", "Delete Instructor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    MessageBox.Show("Delete Succesfully");
+                }
+            }
+        }
+
         // Merge Column Action
         /*
         private void bdgv_Instructor_Paint(object sender, PaintEventArgs e)

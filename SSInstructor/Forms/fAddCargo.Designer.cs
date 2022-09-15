@@ -151,7 +151,7 @@ namespace SSInstructor.Forms
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 40);
             this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "ADD";
+            this.btnAdd.Text = "SAVE";
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 

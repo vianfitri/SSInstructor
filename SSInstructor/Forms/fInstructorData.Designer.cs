@@ -207,6 +207,7 @@ namespace SSInstructor.Forms
             this.bdgv_Instructor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bdgv_Instructor.Size = new System.Drawing.Size(769, 413);
             this.bdgv_Instructor.TabIndex = 12;
+            this.bdgv_Instructor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bdgv_Instructor_CellContentClick);
             // 
             // Column1
             // 
