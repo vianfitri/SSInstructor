@@ -57,6 +57,12 @@ namespace SSInstructor.Class
             }
             return mac_dest;
         }
+
+        public static void WakeUP()
+        {
+
+        }
+
         #endregion
     }
 }
