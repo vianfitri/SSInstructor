@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -60,7 +61,35 @@ namespace SSInstructor.Class
 
         public static void Wake(string macaddress)
         {
+            UdpClient udpClient = new UdpClient();
 
+            // enable UDP broadcasting for UdpClient
+            udpClient.EnableBroadcast = true;
+
+            var dgram = new byte[1024];
+
+            // 6 magic bytes
+            for (int i = 0; i < 6; i++)
+            {
+                dgram[i] = 255;
+            }
+
+            // convert MAC-address to bytes
+            byte[] address_bytes = new byte[6];
+            for (int i = 0; i < 6; i++)
+            {
+                address_bytes[i] = byte.Parse(macaddress.Substring(3 * i, 2), NumberStyles.HexNumber);
+            }
+
+            // repeat MAC-address 16 times in the datagram
+            for (int i = 0; i < 16; i++)
+            {
+                address_bytes.CopyTo(dgram, (i + 1) * 6);
+            }
+
+            // send datagram using UDP and port 0
+            udpClient.Send(dgram, dgram.Length, new System.Net.IPEndPoint(IPAddress.Broadcast, 0));
+            udpClient.Close();
         }
 
         #endregion
