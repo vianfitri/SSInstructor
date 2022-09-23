@@ -62,6 +62,26 @@ namespace Machines
                 return;
             _backgroundWorker.RunWorkerAsync(IP);
         }
+
+        public bool IsBusy()
+        {
+            return _backgroundWorker.IsBusy;
+        }
+
+        public void Cancel()
+        {
+            _backgroundWorker.CancelAsync();
+        }
+
+        public override string ToString()
+        {
+            return "Machine : " + Name;
+        }
+
+        private void DoWork()
+        {
+
+        }
         #endregion
 
         #region "Events"
