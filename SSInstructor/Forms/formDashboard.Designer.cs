@@ -377,7 +377,7 @@ namespace SSInstructor
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.btnLogout.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnLogout.BackgroundImage = global::SSInstructor.Properties.Resources.logout;
+            this.btnLogout.BackgroundImage = global::SSInstructor.Properties.Resources.logout1;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogout.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnLogout.BorderRadius = 35;
