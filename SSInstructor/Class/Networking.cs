@@ -58,7 +58,7 @@ namespace SSInstructor.Class
             return mac_dest;
         }
 
-        public static void WakeUP()
+        public static void Wake(string macaddress)
         {
 
         }
