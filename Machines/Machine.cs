@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
@@ -17,6 +18,13 @@ namespace Machines
     [Serializable()]
     public class Machine
     {
+        #region "External Library"
+
+        [DllImport("Iphlpapi.dll")]
+        private static extern int SendARP(Int32 dest, Int32 host, ref Int64 mac, ref Int32 length);
+
+        #endregion
+
         #region "Fields"
         private BackgroundWorker _backgroundWorker = new BackgroundWorker();
         private Ping ping = new Ping();
