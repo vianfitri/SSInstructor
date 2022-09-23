@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSInstructor", "SSInstructo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViControls", "ViControls\ViControls.csproj", "{C8C1975E-C078-4FAD-A978-6F6547CE8BF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Machines", "Machines\Machines.csproj", "{6D7C3789-BCA5-427C-97BB-0C733E1BCBCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C8C1975E-C078-4FAD-A978-6F6547CE8BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8C1975E-C078-4FAD-A978-6F6547CE8BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8C1975E-C078-4FAD-A978-6F6547CE8BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D7C3789-BCA5-427C-97BB-0C733E1BCBCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D7C3789-BCA5-427C-97BB-0C733E1BCBCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D7C3789-BCA5-427C-97BB-0C733E1BCBCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D7C3789-BCA5-427C-97BB-0C733E1BCBCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
