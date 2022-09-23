@@ -36,6 +36,9 @@ namespace Machines
         [NonSerialized()] public StatusCodes Status = StatusCodes.Uninitialized;
         [NonSerialized()] public PingReply Reply;
         [NonSerialized()] public Semaphore Pool;
+        [NonSerialized()] const string data = "abcdefghijklmnopqrstuvwabcdefghi";
+        [NonSerialized()] private byte[] buffer = Encoding.ASCII.GetBytes(data);
+        [NonSerialized()] public string message;
 
         #endregion
 
@@ -43,7 +46,9 @@ namespace Machines
         public Machine()
         {
             _backgroundWorker.WorkerSupportsCancellation = true;
+            _backgroundWorker.DoWork += DoWork;
         }
+
         #endregion
 
         #region "Properties"
@@ -78,9 +83,27 @@ namespace Machines
             return "Machine : " + Name;
         }
 
-        private void DoWork()
+        private void DoWork(object sender, DoWorkEventArgs e)
         {
-
+            do
+            {
+                try
+                {
+                    PingOptions options = new PingOptions();
+                    Pool.WaitOne();
+                    Reply = ping.Send(e.Argument, 10000, buffer, options);
+                } 
+                catch(Exception ex)
+                {
+                    message = ex.Message;
+                    _backgroundWorker.ReportProgress((int)StatusCodes.Fail);
+                }
+                finally
+                {
+                    Pool.Release();
+                    Thread.Sleep(2000);
+                }
+            } while (!_backgroundWorker.CancellationPending);
         }
         #endregion
 
