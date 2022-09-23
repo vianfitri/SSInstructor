@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -19,7 +20,7 @@ namespace Machines
         #region "Fields"
         private BackgroundWorker _backgroundWorker = new BackgroundWorker();
         private Ping ping = new Ping();
-        
+
         public enum StatusCodes
         {
             Online,
@@ -53,7 +54,7 @@ namespace Machines
 
         #region "Properties"
         public string Name { get => name; set => name = value; }
-        public string Mac { get => mac; set => mac = value; }
+        public string MAC { get => mac; set => mac = value; }
         public string IP { get => ip; set => ip = value; }
         #endregion
 
@@ -89,11 +90,26 @@ namespace Machines
             {
                 try
                 {
-                    PingOptions options = new PingOptions();
+                    PingOptions options = new PingOptions(128, true);
                     Pool.WaitOne();
-                    Reply = ping.Send(e.Argument, 10000, buffer, options);
-                } 
-                catch(Exception ex)
+                    Reply = ping.Send(IPAddress.Parse((string)e.Argument), 10000, buffer, options);
+
+                    switch (Reply.Status)
+                    {
+                        case IPStatus.Success:
+                            _backgroundWorker.ReportProgress((int)StatusCodes.Online);
+                            break;
+                        case IPStatus.TimedOut:
+                        case IPStatus.DestinationNetworkUnreachable:
+                        case IPStatus.DestinationHostUnreachable:
+                            _backgroundWorker.ReportProgress((int)StatusCodes.Offline);
+                            break;
+                        default:
+                            _backgroundWorker.ReportProgress((int)StatusCodes.Unknown);
+                            break;
+                    }
+                }
+                catch (Exception ex)
                 {
                     message = ex.Message;
                     _backgroundWorker.ReportProgress((int)StatusCodes.Fail);
@@ -105,10 +121,28 @@ namespace Machines
                 }
             } while (!_backgroundWorker.CancellationPending);
         }
+
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
+        }
+
+        private void RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            try
+            {
+                Status = StatusCodes.Unknown;
+                StatusChange(Name, Status, string.Empty);
+            }
+            catch (Exception ex)
+            {
+                Debug.Fail(ex.Message);
+            }
+        }
         #endregion
 
         #region "Events"
-
+        public event StatusChange(string Name, StatusCodes status, string IpAddress);
         #endregion
     }
 }
