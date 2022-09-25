@@ -25,7 +25,7 @@ namespace Machines
         #region "External Library"
 
         [DllImport("Iphlpapi.dll")]
-        private static extern int SendARP(Int32 dest, Int32 host, ref Int64 mac, ref Int32 length);
+        private static extern int SendARP(Int32 dest, Int32 host, ref byte[] mac, ref Int32 length);
 
         #endregion
 
@@ -166,6 +166,7 @@ namespace Machines
 
                                     int remoteIp;
                                     byte[] remoteMac = new byte[6];
+                                    int len = 6;
                                     int dWord;
 
                                     try
@@ -174,7 +175,7 @@ namespace Machines
 
                                         if (remoteIp != 0)
                                         {
-                                            dWord = SendARP(remoteIp, 0, remoteMac, ref remoteMac.Length);
+                                            dWord = SendARP(remoteIp, 0, ref remoteMac, ref len);
                                             if (dWord == 0 | dWord == 67)
                                             {
                                                 // 
