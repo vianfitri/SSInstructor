@@ -19,7 +19,7 @@ namespace Machines
     public class Machine
     {
         #region "Delegates"
-        public delegate void StatusChangeHandler(string Name, StatusCodes status, string IpAddress);
+        public delegate void StatusChangeEventHandler(string Name, StatusCodes status, string IpAddress);
         #endregion
 
         #region "External Library"
@@ -33,7 +33,7 @@ namespace Machines
         private BackgroundWorker _backgroundWorker = new BackgroundWorker();
         private Ping ping = new Ping();
 
-        public enum StatusCodes
+        public enum StatusCodes : int
         {
             Online,
             Offline,
@@ -41,10 +41,6 @@ namespace Machines
             Fail,
             Uninitialized
         }
-
-        private string name = string.Empty;
-        private string mac = string.Empty;
-        private string ip = string.Empty;
 
         [NonSerialized()] public StatusCodes Status = StatusCodes.Uninitialized;
         [NonSerialized()] public PingReply Reply;
@@ -60,14 +56,17 @@ namespace Machines
         {
             _backgroundWorker.WorkerSupportsCancellation = true;
             _backgroundWorker.DoWork += DoWork;
+            _backgroundWorker.ProgressChanged += backgroundWorker_ProgressChanged;
+            _backgroundWorker.RunWorkerCompleted += RunWorkerCompleted;
         }
 
         #endregion
 
         #region "Properties"
-        public string Name { get => name; set => name = value; }
-        public string MAC { get => mac; set => mac = value; }
-        public string IP { get => ip; set => ip = value; }
+        public string Name { get; set; } = string.Empty;
+        public string MAC { get; set; } = string.Empty;
+        public string IP { get; set; }= string.Empty;
+        public string Netbios { get; set; } = string.Empty;
         #endregion
 
         #region "Methode"
@@ -136,7 +135,97 @@ namespace Machines
 
         private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            StatusCodes newStatus;
+            string newIpAddress = string.Empty;
 
+            try
+            {
+                if (_backgroundWorker.CancellationPending)
+                    return;
+
+                switch (e.ProgressPercentage)
+                {
+                    case (int)StatusCodes.Online:
+                        newStatus = StatusCodes.Online;
+                        foreach (IPAddress ipAddress in from IPA1 in Dns.GetHostAddresses(Netbios)
+                                                        where IPA1.AddressFamily.ToString() == "InterNetwork"
+                                                        select IPA1)
+                        {
+                            if (IP == string.Empty)
+                                newIpAddress = ipAddress.ToString();
+                            else
+                                newIpAddress = IP;
+
+                            if (Status == StatusCodes.Uninitialized)
+                            {
+                                // if the host is DHCP, try to resolve the correct IP and verify the MAC.
+                                // if we cannot find a matching interface with our MAC, assume the host is OFFLINE.
+                                if (IP == string.Empty)
+                                {
+                                    newStatus = StatusCodes.Offline;
+
+                                    int remoteIp;
+                                    byte[] remoteMac = new byte[6];
+                                    int dWord;
+
+                                    try
+                                    {
+                                        remoteIp = ipAddress.GetHashCode();
+
+                                        if (remoteIp != 0)
+                                        {
+                                            dWord = SendARP(remoteIp, 0, remoteMac, ref remoteMac.Length);
+                                            if (dWord == 0 | dWord == 67)
+                                            {
+                                                // 
+                                                // we found a matching MAC, the host is officially ONLINE
+                                                // 67 = ERROR_BAD_NET_NAME: if host on another subnet, just ignore the error
+                                                // 
+                                                if (CompareMac(BitConverter.ToString(remoteMac, 0, remoteMac.Length), MAC) == 0 | dWord == 67)
+                                                {
+                                                    newStatus = StatusCodes.Online;
+                                                    newIpAddress = ipAddress.ToString();
+
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    catch
+                                    {
+                                    }
+                                }
+                            }
+                        }
+
+                        if ((Status != newStatus))
+                        {
+                            Status = newStatus;
+                            StatusChange?.Invoke(Name, Status, newIpAddress);
+                        }
+                        break;
+                    case (int)StatusCodes.Offline:
+                        if(Status != StatusCodes.Offline)
+                        {
+                            Status = StatusCodes.Offline;
+                            StatusChange?.Invoke(Name, Status, string.Empty);
+                        }
+                        break;
+                    case (int)StatusCodes.Unknown:
+                    case (int)StatusCodes.Fail:
+                    case (int)StatusCodes.Uninitialized:
+                        if(Status != StatusCodes.Unknown)
+                        {
+                            Status = StatusCodes.Unknown;
+                            StatusChange?.Invoke(Name, Status, message);
+                        }
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.Fail(ex.Message);
+            }
         }
 
         private void RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -144,17 +233,28 @@ namespace Machines
             try
             {
                 Status = StatusCodes.Unknown;
-                StatusChange(Name, Status, string.Empty);
+                StatusChange?.Invoke(Name, Status, string.Empty);
             }
             catch (Exception ex)
             {
                 Debug.Fail(ex.Message);
             }
         }
+
+        private Int32 CompareMac(string mac1, string mac2)
+        {
+            string _mac1 = mac1.Replace(":", string.Empty);
+            _mac1 = _mac1.Replace("-", string.Empty);
+
+            string _mac2 = mac2.Replace(":", string.Empty);
+            _mac2 = _mac2.Replace("-", string.Empty);
+
+            return string.Compare(_mac1, _mac2);
+        }
         #endregion
 
         #region "Events"
-        public event StatusChangeHandler StatusChanged;
+        public event StatusChangeEventHandler StatusChange;
         #endregion
     }
 }
