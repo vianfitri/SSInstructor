@@ -18,6 +18,10 @@ namespace Machines
     [Serializable()]
     public class Machine
     {
+        #region "Delegates"
+        public delegate void StatusChangeHandler(string Name, StatusCodes status, string IpAddress);
+        #endregion
+
         #region "External Library"
 
         [DllImport("Iphlpapi.dll")]
@@ -150,7 +154,7 @@ namespace Machines
         #endregion
 
         #region "Events"
-        public event StatusChange(string Name, StatusCodes status, string IpAddress);
+        public event StatusChangeHandler StatusChanged;
         #endregion
     }
 }
