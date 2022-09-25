@@ -34,6 +34,7 @@ namespace SSInstructor
             this.btnClientList = new FontAwesome.Sharp.IconButton();
             this.btnReport = new FontAwesome.Sharp.IconButton();
             this.btnScenario = new FontAwesome.Sharp.IconButton();
+            this.btnStability = new FontAwesome.Sharp.IconButton();
             this.pnlUserSubmenu = new System.Windows.Forms.Panel();
             this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.btnTrainee = new FontAwesome.Sharp.IconButton();
@@ -62,6 +63,7 @@ namespace SSInstructor
             this.pnlMainMenu.Controls.Add(this.btnSettings);
             this.pnlMainMenu.Controls.Add(this.btnClientList);
             this.pnlMainMenu.Controls.Add(this.btnReport);
+            this.pnlMainMenu.Controls.Add(this.btnStability);
             this.pnlMainMenu.Controls.Add(this.btnScenario);
             this.pnlMainMenu.Controls.Add(this.pnlUserSubmenu);
             this.pnlMainMenu.Controls.Add(this.btnUsers);
@@ -86,7 +88,7 @@ namespace SSInstructor
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSettings.IconSize = 24;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 648);
+            this.btnSettings.Location = new System.Drawing.Point(0, 703);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -110,7 +112,7 @@ namespace SSInstructor
             this.btnClientList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClientList.IconSize = 24;
             this.btnClientList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientList.Location = new System.Drawing.Point(0, 593);
+            this.btnClientList.Location = new System.Drawing.Point(0, 648);
             this.btnClientList.Name = "btnClientList";
             this.btnClientList.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnClientList.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -134,7 +136,7 @@ namespace SSInstructor
             this.btnReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReport.IconSize = 24;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 538);
+            this.btnReport.Location = new System.Drawing.Point(0, 593);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.btnReport.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -145,6 +147,30 @@ namespace SSInstructor
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // btnStability
+            // 
+            this.btnStability.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStability.FlatAppearance.BorderSize = 0;
+            this.btnStability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStability.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStability.ForeColor = System.Drawing.Color.White;
+            this.btnStability.IconChar = FontAwesome.Sharp.IconChar.Scroll;
+            this.btnStability.IconColor = System.Drawing.Color.White;
+            this.btnStability.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnStability.IconSize = 24;
+            this.btnStability.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStability.Location = new System.Drawing.Point(0, 538);
+            this.btnStability.Name = "btnStability";
+            this.btnStability.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btnStability.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnStability.Size = new System.Drawing.Size(345, 55);
+            this.btnStability.TabIndex = 19;
+            this.btnStability.Text = "Stability";
+            this.btnStability.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStability.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStability.UseVisualStyleBackColor = true;
+            this.btnStability.Click += new System.EventHandler(this.btnScenario_Click);
             // 
             // btnScenario
             // 
@@ -475,6 +501,7 @@ namespace SSInstructor
         private FontAwesome.Sharp.IconButton btnClientList;
         private FontAwesome.Sharp.IconButton btnReport;
         private FontAwesome.Sharp.IconButton btnScenario;
+        private FontAwesome.Sharp.IconButton btnStability;
         private System.Windows.Forms.Panel pnlUserSubmenu;
         private FontAwesome.Sharp.IconButton btnAccount;
         private FontAwesome.Sharp.IconButton btnTrainee;
