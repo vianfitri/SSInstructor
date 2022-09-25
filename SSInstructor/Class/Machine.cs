@@ -13,29 +13,8 @@ using System.Xml.Serialization;
 
 namespace SSInstructor.Class
 {
-    [DebuggerDisplay("{Name,nq}")]
-    [Serializable]
     public class Machine
     {
-        public enum ShutdownMethods
-        {
-            WMI,
-            Custom,
-            Legacy
-        }
 
-        public enum StatusCodes {
-            Online,
-            Offline,
-            Unknown,
-            Fail,
-            Uninitialized
-        }
-
-        public enum TraceMethods {
-            WriteLine,
-            Indent,
-            UnIndent
-        }
     }
 }

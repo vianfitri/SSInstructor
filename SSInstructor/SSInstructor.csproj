@@ -298,6 +298,10 @@
     <None Include="Resources\Maritime Safety.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Machines\Machines.csproj">
+      <Project>{6d7c3789-bca5-427c-97bb-0c733e1bcbce}</Project>
+      <Name>Machines</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViControls\ViControls.csproj">
       <Project>{C8C1975E-C078-4FAD-A978-6F6547CE8BF1}</Project>
       <Name>ViControls</Name>
