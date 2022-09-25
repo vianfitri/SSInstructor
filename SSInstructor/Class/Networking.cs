@@ -88,7 +88,7 @@ namespace SSInstructor.Class
             }
 
             // send datagram using UDP and port 0
-            udpClient.Send(dgram, dgram.Length, new System.Net.IPEndPoint(IPAddress.Broadcast, 0));
+            udpClient.Send(dgram, dgram.Length, new System.Net.IPEndPoint(IPAddress.Broadcast, 9));
             udpClient.Close();
         }
 
