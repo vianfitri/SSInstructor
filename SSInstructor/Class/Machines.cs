@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -13,8 +14,16 @@ using System.Xml.Serialization;
 
 namespace SSInstructor.Class
 {
-    public class Machine
+    static class MachineModule
     {
+        public static MachinesClass Machines = new MachinesClass();
+    }
+
+    public class MachinesClass : CollectionBase
+    {
+        public bool Dirty = false;
+        private static Semaphore _pool;
+
 
     }
 }
