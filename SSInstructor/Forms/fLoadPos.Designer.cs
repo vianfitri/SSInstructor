@@ -29,15 +29,15 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea52 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend52 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series52 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea53 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend53 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series53 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea54 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend54 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series54 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -67,6 +67,21 @@ namespace SSInstructor.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txbGmy = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txbGmz = new System.Windows.Forms.TextBox();
+            this.txbGmx = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txbGy = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txbGz = new System.Windows.Forms.TextBox();
+            this.txbGx = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLoadSideView)).BeginInit();
@@ -79,6 +94,7 @@ namespace SSInstructor.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nudLoad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLongPos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVertcPos)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -99,10 +115,10 @@ namespace SSInstructor.Forms
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(64, 613);
+            this.tabControl1.Location = new System.Drawing.Point(451, 86);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(768, 404);
+            this.tabControl1.Size = new System.Drawing.Size(502, 597);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
@@ -112,23 +128,23 @@ namespace SSInstructor.Forms
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(760, 375);
+            this.tabPage1.Size = new System.Drawing.Size(494, 568);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SIDE VIEW";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // chartLoadSideView
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartLoadSideView.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartLoadSideView.Legends.Add(legend7);
+            chartArea52.Name = "ChartArea1";
+            this.chartLoadSideView.ChartAreas.Add(chartArea52);
+            legend52.Name = "Legend1";
+            this.chartLoadSideView.Legends.Add(legend52);
             this.chartLoadSideView.Location = new System.Drawing.Point(29, 21);
             this.chartLoadSideView.Name = "chartLoadSideView";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartLoadSideView.Series.Add(series7);
+            series52.ChartArea = "ChartArea1";
+            series52.Legend = "Legend1";
+            series52.Name = "Series1";
+            this.chartLoadSideView.Series.Add(series52);
             this.chartLoadSideView.Size = new System.Drawing.Size(703, 315);
             this.chartLoadSideView.TabIndex = 0;
             // 
@@ -146,16 +162,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadTopView
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartLoadTopView.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartLoadTopView.Legends.Add(legend8);
+            chartArea53.Name = "ChartArea1";
+            this.chartLoadTopView.ChartAreas.Add(chartArea53);
+            legend53.Name = "Legend1";
+            this.chartLoadTopView.Legends.Add(legend53);
             this.chartLoadTopView.Location = new System.Drawing.Point(29, 19);
             this.chartLoadTopView.Name = "chartLoadTopView";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartLoadTopView.Series.Add(series8);
+            series53.ChartArea = "ChartArea1";
+            series53.Legend = "Legend1";
+            series53.Name = "Series1";
+            this.chartLoadTopView.Series.Add(series53);
             this.chartLoadTopView.Size = new System.Drawing.Size(700, 311);
             this.chartLoadTopView.TabIndex = 0;
             this.chartLoadTopView.Text = "chart2";
@@ -173,16 +189,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadFrontView
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartLoadFrontView.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartLoadFrontView.Legends.Add(legend9);
+            chartArea54.Name = "ChartArea1";
+            this.chartLoadFrontView.ChartAreas.Add(chartArea54);
+            legend54.Name = "Legend1";
+            this.chartLoadFrontView.Legends.Add(legend54);
             this.chartLoadFrontView.Location = new System.Drawing.Point(26, 21);
             this.chartLoadFrontView.Name = "chartLoadFrontView";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartLoadFrontView.Series.Add(series9);
+            series54.ChartArea = "ChartArea1";
+            series54.Legend = "Legend1";
+            series54.Name = "Series1";
+            this.chartLoadFrontView.Series.Add(series54);
             this.chartLoadFrontView.Size = new System.Drawing.Size(709, 311);
             this.chartLoadFrontView.TabIndex = 0;
             this.chartLoadFrontView.Text = "chart1";
@@ -210,7 +226,7 @@ namespace SSInstructor.Forms
             this.groupBox1.Controls.Add(this.label94);
             this.groupBox1.Controls.Add(this.nudLoad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(64, 98);
+            this.groupBox1.Location = new System.Drawing.Point(64, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(357, 296);
             this.groupBox1.TabIndex = 19;
@@ -270,23 +286,18 @@ namespace SSInstructor.Forms
             this.nudTransvPos.Location = new System.Drawing.Point(208, 104);
             this.nudTransvPos.Margin = new System.Windows.Forms.Padding(4);
             this.nudTransvPos.Maximum = new decimal(new int[] {
-            1100,
+            150,
             0,
             0,
             0});
             this.nudTransvPos.Minimum = new decimal(new int[] {
-            300,
+            150,
             0,
             0,
-            0});
+            -2147483648});
             this.nudTransvPos.Name = "nudTransvPos";
             this.nudTransvPos.Size = new System.Drawing.Size(75, 22);
             this.nudTransvPos.TabIndex = 87;
-            this.nudTransvPos.Value = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
             // 
             // label94
             // 
@@ -341,7 +352,7 @@ namespace SSInstructor.Forms
             this.nudLongPos.Location = new System.Drawing.Point(208, 161);
             this.nudLongPos.Margin = new System.Windows.Forms.Padding(4);
             this.nudLongPos.Maximum = new decimal(new int[] {
-            1100,
+            2000,
             0,
             0,
             0});
@@ -383,11 +394,6 @@ namespace SSInstructor.Forms
             this.nudVertcPos.Location = new System.Drawing.Point(208, 218);
             this.nudVertcPos.Margin = new System.Windows.Forms.Padding(4);
             this.nudVertcPos.Maximum = new decimal(new int[] {
-            1100,
-            0,
-            0,
-            0});
-            this.nudVertcPos.Minimum = new decimal(new int[] {
             300,
             0,
             0,
@@ -395,11 +401,6 @@ namespace SSInstructor.Forms
             this.nudVertcPos.Name = "nudVertcPos";
             this.nudVertcPos.Size = new System.Drawing.Size(75, 22);
             this.nudVertcPos.TabIndex = 96;
-            this.nudVertcPos.Value = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
             // 
             // label5
             // 
@@ -461,11 +462,175 @@ namespace SSInstructor.Forms
             this.label10.TabIndex = 103;
             this.label10.Text = "( m )";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txbGy);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.txbGz);
+            this.groupBox2.Controls.Add(this.txbGx);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.txbGmy);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.txbGmz);
+            this.groupBox2.Controls.Add(this.txbGmx);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Location = new System.Drawing.Point(64, 401);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(357, 282);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = " CENTER OF GRAVITY";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(27, 29);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 17);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "CG of Load";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(24, 155);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(128, 17);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "CG of Ship Total";
+            // 
+            // txbGmy
+            // 
+            this.txbGmy.Location = new System.Drawing.Point(133, 83);
+            this.txbGmy.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGmy.Name = "txbGmy";
+            this.txbGmy.ReadOnly = true;
+            this.txbGmy.Size = new System.Drawing.Size(100, 22);
+            this.txbGmy.TabIndex = 60;
+            this.txbGmy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(54, 116);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 17);
+            this.label13.TabIndex = 63;
+            this.label13.Text = "Gmz (mm)";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(54, 87);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(73, 17);
+            this.label14.TabIndex = 59;
+            this.label14.Text = "Gmy (mm)";
+            // 
+            // txbGmz
+            // 
+            this.txbGmz.Location = new System.Drawing.Point(133, 113);
+            this.txbGmz.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGmz.Name = "txbGmz";
+            this.txbGmz.ReadOnly = true;
+            this.txbGmz.Size = new System.Drawing.Size(100, 22);
+            this.txbGmz.TabIndex = 64;
+            this.txbGmz.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txbGmx
+            // 
+            this.txbGmx.Location = new System.Drawing.Point(133, 54);
+            this.txbGmx.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGmx.Name = "txbGmx";
+            this.txbGmx.ReadOnly = true;
+            this.txbGmx.Size = new System.Drawing.Size(100, 22);
+            this.txbGmx.TabIndex = 62;
+            this.txbGmx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(54, 57);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 17);
+            this.label15.TabIndex = 61;
+            this.label15.Text = "Gmx (mm)";
+            // 
+            // txbGy
+            // 
+            this.txbGy.Location = new System.Drawing.Point(133, 212);
+            this.txbGy.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGy.Name = "txbGy";
+            this.txbGy.ReadOnly = true;
+            this.txbGy.Size = new System.Drawing.Size(100, 22);
+            this.txbGy.TabIndex = 67;
+            this.txbGy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(54, 245);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 17);
+            this.label16.TabIndex = 70;
+            this.label16.Text = "Gz (mm)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(54, 216);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 17);
+            this.label17.TabIndex = 66;
+            this.label17.Text = "Gy (mm)";
+            // 
+            // txbGz
+            // 
+            this.txbGz.Location = new System.Drawing.Point(133, 242);
+            this.txbGz.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGz.Name = "txbGz";
+            this.txbGz.ReadOnly = true;
+            this.txbGz.Size = new System.Drawing.Size(100, 22);
+            this.txbGz.TabIndex = 71;
+            this.txbGz.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txbGx
+            // 
+            this.txbGx.Location = new System.Drawing.Point(133, 183);
+            this.txbGx.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGx.Name = "txbGx";
+            this.txbGx.ReadOnly = true;
+            this.txbGx.Size = new System.Drawing.Size(100, 22);
+            this.txbGx.TabIndex = 69;
+            this.txbGx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(54, 186);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(61, 17);
+            this.label18.TabIndex = 68;
+            this.label18.Text = "Gx (mm)";
+            // 
             // fLoadPos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 721);
+            this.ClientSize = new System.Drawing.Size(1003, 721);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
@@ -484,6 +649,8 @@ namespace SSInstructor.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nudLoad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLongPos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVertcPos)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +687,20 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txbGmy;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txbGmz;
+        private System.Windows.Forms.TextBox txbGmx;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txbGy;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txbGz;
+        private System.Windows.Forms.TextBox txbGx;
+        private System.Windows.Forms.Label label18;
     }
 }
