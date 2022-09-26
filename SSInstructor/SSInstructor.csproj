@@ -54,6 +54,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -72,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Class\ControlExtensions.cs" />
     <Compile Include="Class\DB.cs" />
+    <Compile Include="Class\IniFiles.cs" />
     <Compile Include="Class\Machines.cs" />
     <Compile Include="Class\ModalPopup.cs">
       <SubType>UserControl</SubType>
