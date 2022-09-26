@@ -10,23 +10,14 @@ namespace SSInstructor.Class
 	/// <summary>
 	/// Create a New INI file to store or load data
 	/// </summary>
-	public class IniFile
+	public static class IniFile
 	{
-		public string path;
 
 		[DllImport("kernel32")]
 		private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
 		[DllImport("kernel32")]
 		private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 
-		/// <summary>
-		/// INIFile Constructor.
-		/// </summary>
-		/// <param name="INIPath"></param>
-		public IniFile(string INIPath)
-		{
-			path = INIPath;
-		}
 		/// <summary>
 		/// Write Data to the INI File
 		/// </summary>
@@ -36,9 +27,9 @@ namespace SSInstructor.Class
 		/// Key Name
 		/// <param name="Value"></param>
 		/// Value Name
-		public void IniWriteValue(string Section, string Key, string Value)
+		public static void IniWriteValue(string Section, string Key, string Value, string path)
 		{
-			WritePrivateProfileString(Section, Key, Value, this.path);
+			WritePrivateProfileString(Section, Key, Value, path);
 		}
 
 		/// <summary>
@@ -48,10 +39,10 @@ namespace SSInstructor.Class
 		/// <param name="Key"></param>
 		/// <param name="Path"></param>
 		/// <returns></returns>
-		public string IniReadValue(string Section, string Key)
+		public static string IniReadValue(string Section, string Key, string path)
 		{
 			StringBuilder temp = new StringBuilder(255);
-			int i = GetPrivateProfileString(Section, Key, "", temp, 255, this.path);
+			int i = GetPrivateProfileString(Section, Key, "", temp, 255, path);
 			return temp.ToString();
 		}
 	}

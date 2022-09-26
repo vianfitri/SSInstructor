@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Linq;
 using System.Windows.Forms;
+using SSInstructor.Class;
 
 public static class StabilityCalculator {
 
@@ -13,6 +15,7 @@ public static class StabilityCalculator {
     static double[] lbtData_BC; // Kolom 10 = LCB (mm), at transversal mode // used      
     static double[] lflData_BC; // Kolom 11 = LCF (mm), at longitudinal mode // used	     
     static double[] wtiData_BC; // Kolom 12 = WTI (kgf/cm) // used  
+    static double[] mttData_BC; // Kolom 13 = MTT (kgf.m/cm) // used
     static double[] cobData_BC; // Kolom 23 = Cb // used	   
     static double[] copData_BC; // Kolom 24 = Cp // used	 
 
@@ -205,7 +208,223 @@ public static class StabilityCalculator {
     static double dX0Val_Real = 0;     // X0, x position of origin point (analysis frame), from AP (after perpendiculat)
     #endregion
 
+    #region "CG DATA"
+    static double dWeightLightShip; // 20151230
+    static double dWeightTotalLoad;
+    static double dWeightTotalShip;
+    static double dWeightLightShip_Real; // 20150219
+    static double dWeightTotalLoad_Real; // 20150219
+    static double dWeightTotalShip_Real; // 20150219
+
+    //double xCGLightShip =  90.0; // LCG =  90 mm, hasil praktikum 20151230
+    static double xCGLightShip; // LCG =  60 mm, hasil praktikum 20160128
+    static double yCGLightShip; // TKG =   0.2 mm, hasil praktikum 20151230
+    static double zCGLightShip; // KG  = 110 mm, hasil praktikum 20151230
+    static double xCGTotalLoad;
+    static double yCGTotalLoad;
+    static double zCGTotalLoad;
+    static double xCGTotalShip;
+    static double yCGTotalShip;
+    static double zCGTotalShip;
+    #endregion
+
+    #region "ShipPoint"
+    struct Point2D
+    {
+        public double x, y;
+    }
+
+    // point double value
+    struct Point3D
+    {
+        public double x, y, z;
+    }
+
+    static Point2D[] shippoints = new Point2D[26];
+    static Point2D[] shippoints_init = new Point2D[26];
+    static Point2D[] shippoints_BC = new Point2D[26]
+    {
+            new Point2D{x =  -57.5  ,   y =  459.8}, // point 0
+            new Point2D{x = -80.5   ,   y =  390.8}, // point 1
+            new Point2D{x = -143.7  ,   y =  390.8}, // point 2
+            new Point2D{x = -143.7  ,   y =  344.8}, // point 3
+            new Point2D{x = -114.9  ,   y =  333.3}, // point 4
+            new Point2D{x = -114.9  ,   y =  203.4}, // point 5
+            new Point2D{x = -182.1  ,   y =  203.4}, // point 6
+            new Point2D{x = -182.1  ,   y =   22.4}, // point 7
+            new Point2D{x = -179.9  ,   y =   14.9}, // point 8
+            new Point2D{x = -176.4  ,   y =   10.0}, // point 9
+            new Point2D{x = -171.0  ,   y =    3.5}, // point 10
+            new Point2D{x = -158.0  ,   y =    0.0}, // point 11 
+            new Point2D{x =  0.0    ,   y =    0.0}, // point 12
+            new Point2D{x =  158.0  ,   y =    0.0}, // point 13
+            new Point2D{x =  171.0  ,   y =    3.5}, // point 14
+            new Point2D{x =  176.4  ,   y =   10.0}, // point 15
+            new Point2D{x =  179.9  ,   y =   14.9}, // point 16
+            new Point2D{x =  182.1  ,   y =   22.4}, // point 17
+            new Point2D{x =  182.1  ,   y =  203.4}, // point 18
+            new Point2D{x =  114.9  ,   y =  203.4}, // point 19
+            new Point2D{x =  114.9  ,   y =  333.3}, // point 20
+            new Point2D{x =  143.7  ,   y =  344.8}, // point 21 
+            new Point2D{x =  143.7  ,   y =  390.8}, // point 22
+            new Point2D{x =  80.5   ,   y =  390.8}, // point 23
+            new Point2D{x =  57.5   ,   y =  459.8}, // point 24
+            new Point2D{x = -57.5   ,   y =  459.8}  // point 25
+    };
+
+    static Point2D[] shippointslon = new Point2D[33]; // longitudinal hull coordinate
+    static Point2D[] shippointslon_init = new Point2D[33];
+    static Point2D[] shippointslon_BC = new Point2D[33]  // Bulk Carrier
+    {
+            new Point2D{x = -1096.5,    y = 204.0}, // point 0
+            new Point2D{x = -1096.5,    y = 128.3}, // point 1
+            new Point2D{x =  -970.2,    y =  90.4}, // point 2
+            new Point2D{x =  -970.2,    y =  23.1}, // point 3
+            new Point2D{x =  -963.9,    y =  14.7}, // point 4
+            new Point2D{x =  -953.4,    y =   6.3}, // point 5
+            new Point2D{x =  -945.0,    y =   0.0}, // point 6
+            new Point2D{x =   -35.6,    y =   0.0}, // point 7
+            new Point2D{x =  1080.0,    y =   0.0}, // point 8
+            new Point2D{x =  1109.5,    y =   8.4}, // point 9
+            new Point2D{x =  1128.5,    y =  25.2}, // point 10
+            new Point2D{x =  1145.3,    y =  42.1}, // point 11 
+            new Point2D{x =  1151.6,    y =  67.3}, // point 12
+            new Point2D{x =  1141.1,    y =  96.7}, // point 13
+            new Point2D{x =  1092.7,    y = 136.7}, // point 14
+            new Point2D{x =  1090.6,    y = 149.3}, // point 15
+            new Point2D{x =  1092.7,    y = 155.6}, // point 16
+            new Point2D{x =  1132.7,    y = 231.3}, // point 17
+            new Point2D{x =   949.5,    y = 231.3}, // point 18
+            new Point2D{x =   924.3,    y = 204.0}, // point 19
+            new Point2D{x =  -610.3,    y = 204.0}, // point 20
+            new Point2D{x =  -610.3,    y = 402.3}, // point 21
+            new Point2D{x =  -667.8,    y = 402.3}, // point 22
+            new Point2D{x =  -667.8,    y = 459.8}, // point 23
+            new Point2D{x =  -782.7,    y = 459.8}, // point 24
+            new Point2D{x =  -782.7,    y = 344.8}, // point 25
+            new Point2D{x =  -840.2,    y = 344.8}, // point 26
+            new Point2D{x =  -840.2,    y = 459.8}, // point 27
+            new Point2D{x =  -897.7,    y = 459.8}, // point 28
+            new Point2D{x =  -955.1,    y = 287.4}, // point 29
+            new Point2D{x = -1012.6,    y = 287.4}, // point 30
+            new Point2D{x = -1012.6,    y = 204.0}, // point 31 
+            new Point2D{x = -1096.5,    y = 204.0}  // point 32
+    };
+
+    static Point2D[] shippointsTopView_BC = new Point2D[30] {  // Bulk Carrier Scale 1:87, top view, 20151223
+            new Point2D{x = -1096.5,    y =    0.0}, // point 0
+            new Point2D{x = -1096.5,    y = -131.1}, // point 1
+            new Point2D{x = -1023.4,    y = -149.9}, // point 2
+            new Point2D{x =  -971.0,    y = -163.0}, // point 3
+            new Point2D{x =  -903.5,    y = -170.5}, // point 4
+            new Point2D{x =  -854.8,    y = -174.2}, // point 5
+            new Point2D{x =   580.2,    y = -174.2}, // point 6
+            new Point2D{x =   726.3,    y = -168.6}, // point 7
+            new Point2D{x =   842.5,    y = -157.4}, // point 8
+            new Point2D{x =   956.8,    y = -134.9}, // point 9
+            new Point2D{x =   981.1,    y = -148.0}, // point 10
+            new Point2D{x =  1044.8,    y = -123.6}, // point 11 
+            new Point2D{x =  1091.7,    y =  -97.4}, // point 12
+            new Point2D{x =  1127.2,    y =  -65.6}, // point 13
+            new Point2D{x =  1151.6,    y =  -16.9}, // point 14
+            new Point2D{x =  1151.6,    y =   16.9}, // point 15
+            new Point2D{x =  1127.2,    y =   65.6}, // point 16
+            new Point2D{x =  1091.7,    y =   97.4}, // point 17
+            new Point2D{x =  1044.8,    y =  123.6}, // point 18
+            new Point2D{x =   981.1,    y =  148.0}, // point 19
+            new Point2D{x =   956.8,    y =  134.9}, // point 20
+            new Point2D{x =   842.5,    y =  157.4}, // point 21
+            new Point2D{x =   726.3,    y =  168.6}, // point 22
+            new Point2D{x =   580.2,    y =  174.2}, // point 23
+            new Point2D{x =  -854.8,    y =  174.2}, // point 24
+            new Point2D{x =  -903.5,    y =  170.5}, // point 25
+            new Point2D{x =  -971.0,    y =  163.0}, // point 26
+            new Point2D{x = -1023.4,    y =  149.9}, // point 27
+            new Point2D{x = -1096.5,    y =  131.1}, // point 28
+            new Point2D{x = -1096.5,    y =    0.0}  // point 29
+        };
+    #endregion
+
     #region "Method"
+    // Configuration Load
+    public static void LoadConfiguration(string fileName)
+    {
+        try
+        {
+            string strLCG_LS = IniFile.IniReadValue("CG LightShip", "LCG_LS", fileName);
+            string strTCG_LS = IniFile.IniReadValue("CG LightShip", "TCG_LS", fileName);
+            string strKG_LS = IniFile.IniReadValue("CG LightShip", "KG_LS", fileName);
+
+            string strDIS_LS = IniFile.IniReadValue("Displacement", "DIS_LS", fileName);
+            string strDIS_LOD = IniFile.IniReadValue("Displacement", "DIS_LOD", fileName);
+            string strDIS_TOT = IniFile.IniReadValue("Displacement", "DIS_TOT", fileName);
+
+            xCGLightShip = Convert.ToDouble(strLCG_LS); // LCG =  60 mm, hasil praktikum 20160128
+            yCGLightShip = Convert.ToDouble(strTCG_LS); // TKG =   0.2 mm, hasil praktikum 20151230
+            zCGLightShip = Convert.ToDouble(strKG_LS);  // KG  = 110 mm, hasil praktikum 20151230
+
+            dWeightLightShip = Convert.ToDouble(strDIS_LS);  // Displacement of Light Ship
+            dWeightTotalLoad = Convert.ToDouble(strDIS_LOD); // Displacement of Total Load
+            dWeightTotalShip = Convert.ToDouble(strDIS_TOT); // Displacement of Total Ship
+        }
+        catch(Exception ex)
+        {
+            
+        }
+    }
+
+    // Initialize Ship Data
+    public static void InitializeShipData()
+    {
+        ReadCSV_HS_Data(Application.StartupPath + "\\Data\\HS_BC", 81);
+
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KN_BC.csv", 28, 16, ref kntData_2D_BC);
+        for (int j = 0; j < heel_KMT_BC.Count(); j++)
+        {
+            for (int i = 0; i < disp_KMT_BC.Count(); i++)
+            {
+                kntData_2D_BC[j, i] = -kntData_2D_BC[j, i];
+            }
+        }
+
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCB_BC.csv", 28, 16, ref lbtData_2D_BC); // not used
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\TCB_BC.csv", 28, 16, ref tbtData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCB_BC.csv", 28, 16, ref vbtData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KMT_BC.csv", 28, 16, ref kmtData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BMT_BC.csv", 28, 16, ref bmtData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KML_BC.csv", 11, 16, ref kmlData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BML_BC.csv", 11, 16, ref bmlData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LBL_BC.csv", 11, 16, ref lblData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VBL_BC.csv", 11, 16, ref vblData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCF_BC.csv", 11, 16, ref lflData_2D_BC);
+        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCF_BC.csv", 11, 16, ref kflData_2D_BC);
+
+        T2D_kntData = (double[,])kntData_2D_BC.Clone();
+        T2D_tbtData = (double[,])tbtData_2D_BC.Clone();
+        T2D_vbtData = (double[,])vbtData_2D_BC.Clone(); // 20160217
+        T2D_kmtData = (double[,])kmtData_2D_BC.Clone();
+        T2D_bmtData = (double[,])bmtData_2D_BC.Clone();
+        T2D_lblData = (double[,])lblData_2D_BC.Clone();
+        T2D_vblData = (double[,])vblData_2D_BC.Clone(); // 20160218
+        T2D_kmlData = (double[,])kmlData_2D_BC.Clone();
+        T2D_bmlData = (double[,])bmlData_2D_BC.Clone();
+        T2D_lflData = (double[,])lflData_2D_BC.Clone();
+        T2D_kflData = (double[,])kflData_2D_BC.Clone();
+        T1D_drfData = (double[])drfData_BC.Clone();
+        T1D_helData = (double[])heel_KMT_BC.Clone();
+        T1D_dspData = (double[])disp_KMT_BC.Clone();
+        T1D_trmData = (double[])trim_KML_BC.Clone();
+        T1D_wtiData = (double[])wtiData_BC.Clone(); // 20150901
+        T1D_mttData = (double[])mttData_BC.Clone(); // 20150901
+        T1D_cobData = (double[])cobData_BC.Clone(); // 20150907
+        T1D_copData = (double[])copData_BC.Clone(); // 20150907
+
+        dX0Val = LCG_BC;
+
+        // initialize ship longitudinal plane 
+        shippointslon_init = (Point2D[])shippointslon_BC.Clone();
+    }
+
     // Read Hydrostatic Data CSV File
     public static void ReadCSV_HS_Data(string strFileName, int row)
     {
@@ -217,6 +436,7 @@ public static class StabilityCalculator {
         lbtData_BC = new double[row]; // Kolom 10 = LCB (mm), at transversal mode // used      
         lflData_BC = new double[row]; // Kolom 11 = LCF (mm), at longitudinal mode // used	     
         wtiData_BC = new double[row]; // Kolom 12 = WTI (kgf/cm) // used  
+        mttData_BC = new double[row]; // Kolom 13 = MTT (kgf.m/cm) // used
         cobData_BC = new double[row]; // Kolom 23 = Cb // used	   
         copData_BC = new double[row]; // Kolom 24 = Cp // used
 
@@ -234,9 +454,10 @@ public static class StabilityCalculator {
                 kmtData_BC[i] = Convert.ToDouble(values[3]); // Kolom 8  = KMT (mm)	// used  
                 lbtData_BC[i] = Convert.ToDouble(values[4]); // Kolom 10 = LCB (mm), at transversal mode // used      
                 lflData_BC[i] = Convert.ToDouble(values[5]); // Kolom 11 = LCF (mm), at longitudinal mode // used	     
-                wtiData_BC[i] = Convert.ToDouble(values[6]); // Kolom 12 = WTI (kgf/cm) // used  
-                cobData_BC[i] = Convert.ToDouble(values[7]); // Kolom 23 = Cb // used	   
-                copData_BC[i] = Convert.ToDouble(values[8]); // Kolom 24 = Cp // used
+                wtiData_BC[i] = Convert.ToDouble(values[6]); // Kolom 12 = WTI (kgf/cm) // used
+                mttData_BC[i] = Convert.ToDouble(values[7]); // Kolom 13 = MTT (kgf.m/cm) // used
+                cobData_BC[i] = Convert.ToDouble(values[8]); // Kolom 23 = Cb // used	   
+                copData_BC[i] = Convert.ToDouble(values[9]); // Kolom 24 = Cp // used
             }
         }
     }
