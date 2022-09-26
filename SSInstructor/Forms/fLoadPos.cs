@@ -432,7 +432,6 @@ namespace SSInstructor.Forms
         double dVFLVal = 0;    // VCF longitudinal value in mm 
         double dX0Val = 0;     // X0, x position of origin point (analysis frame), from AP (after perpendiculat)
 
-
         double dDispVal_Real = 0;   // displacement value in kgf
         //double dHeelVal_Real = 0;   // heel angle in deg
         //double dTrimVal_Real = 0;   // trim angle in deg, 20150822
