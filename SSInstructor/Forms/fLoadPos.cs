@@ -15,7 +15,6 @@ namespace SSInstructor.Forms
 {
     public partial class fLoadPos : Form
     {
-
         #region "Hydrostatic Data of Bulk Carrier"
         double[] dspData_BC; // Kolom 1  = Displacement Weight (kgf) // used
         double[] drfData_BC; // Kolom 2  = Draft, T (mm) // used	            
