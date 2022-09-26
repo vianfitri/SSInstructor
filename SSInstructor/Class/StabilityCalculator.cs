@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 public static class StabilityCalculator {
 
@@ -205,7 +206,62 @@ public static class StabilityCalculator {
     #endregion
 
     #region "Method"
-    
+    // Read Hydrostatic Data CSV File
+    public static void ReadCSV_HS_Data(string strFileName, int row)
+    {
+        var reader = new StreamReader(File.OpenRead(Application.StartupPath + "\\" + strFileName));
+        dspData_BC = new double[row]; // Kolom 1  = Displacement Weight (kgf) // used
+        drfData_BC = new double[row]; // Kolom 2  = Draft, T (mm) // used	            
+        kbtData_BC = new double[row]; // Kolom 7  = KBT (mm)	// used       
+        kmtData_BC = new double[row]; // Kolom 8  = KMT (mm)	// used  
+        lbtData_BC = new double[row]; // Kolom 10 = LCB (mm), at transversal mode // used      
+        lflData_BC = new double[row]; // Kolom 11 = LCF (mm), at longitudinal mode // used	     
+        wtiData_BC = new double[row]; // Kolom 12 = WTI (kgf/cm) // used  
+        cobData_BC = new double[row]; // Kolom 23 = Cb // used	   
+        copData_BC = new double[row]; // Kolom 24 = Cp // used
+
+        int i = 0;
+        while (!reader.EndOfStream)
+        {
+            var line = reader.ReadLine();
+            var values = line.Split(',');
+
+            if (values.Length >= 9)
+            {
+                dspData_BC[i] = Convert.ToDouble(values[0]); // Kolom 1  = Displacement Weight (kgf) // used
+                drfData_BC[i] = Convert.ToDouble(values[1]); // Kolom 2  = Draft, T (mm) // used	            
+                kbtData_BC[i] = Convert.ToDouble(values[2]); // Kolom 7  = KBT (mm)	// used       
+                kmtData_BC[i] = Convert.ToDouble(values[3]); // Kolom 8  = KMT (mm)	// used  
+                lbtData_BC[i] = Convert.ToDouble(values[4]); // Kolom 10 = LCB (mm), at transversal mode // used      
+                lflData_BC[i] = Convert.ToDouble(values[5]); // Kolom 11 = LCF (mm), at longitudinal mode // used	     
+                wtiData_BC[i] = Convert.ToDouble(values[6]); // Kolom 12 = WTI (kgf/cm) // used  
+                cobData_BC[i] = Convert.ToDouble(values[7]); // Kolom 23 = Cb // used	   
+                copData_BC[i] = Convert.ToDouble(values[8]); // Kolom 24 = Cp // used
+            }
+        }
+    }
+
+    public static void ReadCSV_2D_Data(string strFileName, int row, int col, ref double[,] z)
+    {
+         z = new double[row, col];
+
+        var reader = new StreamReader(File.OpenRead(Application.StartupPath + "\\" + strFileName));
+        int i = 0;
+        while (!reader.EndOfStream)
+        {
+            string line = reader.ReadLine();
+            string[] values = line.Split(',');
+            if (values.Length >= col)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    z[i, j] = Convert.ToDouble(values[j]);
+                }
+            }
+            i += 1;
+        }
+    }
+
     // function for interpolate lookup table 2D
     public static double Interpolate2D(double xs, double ys, double[] x, double[] y, double[,] z)
     {
