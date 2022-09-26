@@ -29,15 +29,15 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea52 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend52 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series52 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea53 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend53 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series53 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea54 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend54 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series54 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea55 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend55 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series55 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea56 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend56 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series56 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea57 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend57 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series57 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -135,16 +135,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadSideView
             // 
-            chartArea52.Name = "ChartArea1";
-            this.chartLoadSideView.ChartAreas.Add(chartArea52);
-            legend52.Name = "Legend1";
-            this.chartLoadSideView.Legends.Add(legend52);
+            chartArea55.Name = "ChartArea1";
+            this.chartLoadSideView.ChartAreas.Add(chartArea55);
+            legend55.Name = "Legend1";
+            this.chartLoadSideView.Legends.Add(legend55);
             this.chartLoadSideView.Location = new System.Drawing.Point(29, 21);
             this.chartLoadSideView.Name = "chartLoadSideView";
-            series52.ChartArea = "ChartArea1";
-            series52.Legend = "Legend1";
-            series52.Name = "Series1";
-            this.chartLoadSideView.Series.Add(series52);
+            series55.ChartArea = "ChartArea1";
+            series55.Legend = "Legend1";
+            series55.Name = "Series1";
+            this.chartLoadSideView.Series.Add(series55);
             this.chartLoadSideView.Size = new System.Drawing.Size(703, 315);
             this.chartLoadSideView.TabIndex = 0;
             // 
@@ -162,16 +162,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadTopView
             // 
-            chartArea53.Name = "ChartArea1";
-            this.chartLoadTopView.ChartAreas.Add(chartArea53);
-            legend53.Name = "Legend1";
-            this.chartLoadTopView.Legends.Add(legend53);
+            chartArea56.Name = "ChartArea1";
+            this.chartLoadTopView.ChartAreas.Add(chartArea56);
+            legend56.Name = "Legend1";
+            this.chartLoadTopView.Legends.Add(legend56);
             this.chartLoadTopView.Location = new System.Drawing.Point(29, 19);
             this.chartLoadTopView.Name = "chartLoadTopView";
-            series53.ChartArea = "ChartArea1";
-            series53.Legend = "Legend1";
-            series53.Name = "Series1";
-            this.chartLoadTopView.Series.Add(series53);
+            series56.ChartArea = "ChartArea1";
+            series56.Legend = "Legend1";
+            series56.Name = "Series1";
+            this.chartLoadTopView.Series.Add(series56);
             this.chartLoadTopView.Size = new System.Drawing.Size(700, 311);
             this.chartLoadTopView.TabIndex = 0;
             this.chartLoadTopView.Text = "chart2";
@@ -189,16 +189,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadFrontView
             // 
-            chartArea54.Name = "ChartArea1";
-            this.chartLoadFrontView.ChartAreas.Add(chartArea54);
-            legend54.Name = "Legend1";
-            this.chartLoadFrontView.Legends.Add(legend54);
+            chartArea57.Name = "ChartArea1";
+            this.chartLoadFrontView.ChartAreas.Add(chartArea57);
+            legend57.Name = "Legend1";
+            this.chartLoadFrontView.Legends.Add(legend57);
             this.chartLoadFrontView.Location = new System.Drawing.Point(26, 21);
             this.chartLoadFrontView.Name = "chartLoadFrontView";
-            series54.ChartArea = "ChartArea1";
-            series54.Legend = "Legend1";
-            series54.Name = "Series1";
-            this.chartLoadFrontView.Series.Add(series54);
+            series57.ChartArea = "ChartArea1";
+            series57.Legend = "Legend1";
+            series57.Name = "Series1";
+            this.chartLoadFrontView.Series.Add(series57);
             this.chartLoadFrontView.Size = new System.Drawing.Size(709, 311);
             this.chartLoadFrontView.TabIndex = 0;
             this.chartLoadFrontView.Text = "chart1";
@@ -507,7 +507,7 @@ namespace SSInstructor.Forms
             // 
             // txbGmy
             // 
-            this.txbGmy.Location = new System.Drawing.Point(133, 83);
+            this.txbGmy.Location = new System.Drawing.Point(165, 83);
             this.txbGmy.Margin = new System.Windows.Forms.Padding(4);
             this.txbGmy.Name = "txbGmy";
             this.txbGmy.ReadOnly = true;
@@ -537,7 +537,7 @@ namespace SSInstructor.Forms
             // 
             // txbGmz
             // 
-            this.txbGmz.Location = new System.Drawing.Point(133, 113);
+            this.txbGmz.Location = new System.Drawing.Point(165, 113);
             this.txbGmz.Margin = new System.Windows.Forms.Padding(4);
             this.txbGmz.Name = "txbGmz";
             this.txbGmz.ReadOnly = true;
@@ -547,7 +547,7 @@ namespace SSInstructor.Forms
             // 
             // txbGmx
             // 
-            this.txbGmx.Location = new System.Drawing.Point(133, 54);
+            this.txbGmx.Location = new System.Drawing.Point(165, 54);
             this.txbGmx.Margin = new System.Windows.Forms.Padding(4);
             this.txbGmx.Name = "txbGmx";
             this.txbGmx.ReadOnly = true;
@@ -567,7 +567,7 @@ namespace SSInstructor.Forms
             // 
             // txbGy
             // 
-            this.txbGy.Location = new System.Drawing.Point(133, 212);
+            this.txbGy.Location = new System.Drawing.Point(165, 212);
             this.txbGy.Margin = new System.Windows.Forms.Padding(4);
             this.txbGy.Name = "txbGy";
             this.txbGy.ReadOnly = true;
@@ -597,7 +597,7 @@ namespace SSInstructor.Forms
             // 
             // txbGz
             // 
-            this.txbGz.Location = new System.Drawing.Point(133, 242);
+            this.txbGz.Location = new System.Drawing.Point(165, 242);
             this.txbGz.Margin = new System.Windows.Forms.Padding(4);
             this.txbGz.Name = "txbGz";
             this.txbGz.ReadOnly = true;
@@ -607,7 +607,7 @@ namespace SSInstructor.Forms
             // 
             // txbGx
             // 
-            this.txbGx.Location = new System.Drawing.Point(133, 183);
+            this.txbGx.Location = new System.Drawing.Point(165, 183);
             this.txbGx.Margin = new System.Windows.Forms.Padding(4);
             this.txbGx.Name = "txbGx";
             this.txbGx.ReadOnly = true;
