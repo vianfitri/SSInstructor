@@ -495,6 +495,8 @@ namespace SSInstructor.Forms
 
         #endregion
 
+        #region "Heel Trim Calculation"
+        #endregion
 
         public fLoadPos()
         {
