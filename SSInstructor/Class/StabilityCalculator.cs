@@ -393,9 +393,10 @@ public static class StabilityCalculator {
     // Initialize Ship Data
     public static void InitializeShipData()
     {
-        ReadCSV_HS_Data(Application.StartupPath + "\\Data\\HS_BC", 81);
+        ReadCSV_HS_Data(Application.StartupPath + "\\Data\\HS_BC.csv", 81);
 
         ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KN_BC.csv", 28, 16, ref kntData_2D_BC);
+
         for (int j = 0; j < heel_KMT_BC.Count(); j++)
         {
             for (int i = 0; i < disp_KMT_BC.Count(); i++)
@@ -427,6 +428,7 @@ public static class StabilityCalculator {
         T2D_bmlData = (double[,])bmlData_2D_BC.Clone();
         T2D_lflData = (double[,])lflData_2D_BC.Clone();
         T2D_kflData = (double[,])kflData_2D_BC.Clone();
+
         T1D_drfData = (double[])drfData_BC.Clone();
         T1D_helData = (double[])heel_KMT_BC.Clone();
         T1D_dspData = (double[])disp_KMT_BC.Clone();
@@ -445,7 +447,7 @@ public static class StabilityCalculator {
     // Read Hydrostatic Data CSV File
     public static void ReadCSV_HS_Data(string strFileName, int row)
     {
-        var reader = new StreamReader(File.OpenRead(Application.StartupPath + "\\" + strFileName));
+        var reader = new StreamReader(File.OpenRead(strFileName));
         dspData_BC = new double[row]; // Kolom 1  = Displacement Weight (kgf) // used
         drfData_BC = new double[row]; // Kolom 2  = Draft, T (mm) // used	            
         kbtData_BC = new double[row]; // Kolom 7  = KBT (mm)	// used       
@@ -483,7 +485,7 @@ public static class StabilityCalculator {
     {
          z = new double[row, col];
 
-        var reader = new StreamReader(File.OpenRead(Application.StartupPath + "\\" + strFileName));
+        var reader = new StreamReader(File.OpenRead(strFileName));
         int i = 0;
         while (!reader.EndOfStream)
         {
@@ -606,7 +608,7 @@ public static class StabilityCalculator {
         return zs;
     }
 
-    public static void rotate_point(ref double px, ref double py, double cx, double cy, double angle_deg)
+    public static void Rotate_point(ref double px, ref double py, double cx, double cy, double angle_deg)
     {
         double s = Math.Sin(angle_deg * Math.PI / 180);
         double c = Math.Cos(angle_deg * Math.PI / 180);
@@ -689,6 +691,7 @@ public static class StabilityCalculator {
             heelrad = heelradold - f_phi / df_phi;
             heeldeg = heelrad * 180 / Math.PI;
             deltaphi = Math.Abs(heelrad - heelradold);
+
             if (deltaphi <= errHeel)
             {
                 break;
@@ -763,11 +766,21 @@ public static class StabilityCalculator {
         dWeightTotalShip_Real = dWeightTotalShip * weight_scale;
 
         // load position
+        LoadPos.x = 1100 - 1096.5;
+        LoadPos.y = 0;
+        LoadPos.z = 275 + 0.5 * mLoad * 10;
 
         // load position real
-        LoadPos_Real.x = LoadPos.x * ship_scale / 1000; // in meter 
-        LoadPos_Real.y = LoadPos.y * ship_scale / 1000; // in meter 
+        LoadPos_Real.x = LoadPos.x * ship_scale / 1000; // in meter
+        LoadPos_Real.y = LoadPos.y * ship_scale / 1000; // in meter
         LoadPos_Real.z = LoadPos.z * ship_scale / 1000; // in meter
+
+        if (dWeightTotalLoad > 0)
+        {
+            xCGTotalLoad = (LoadPos.x * mLoad) / dWeightTotalLoad;
+            yCGTotalLoad = (LoadPos.y * mLoad) / dWeightTotalLoad;
+            zCGTotalLoad = (LoadPos.z * mLoad) / dWeightTotalLoad;
+        }
 
         xCGTotalShip = (xCGTotalLoad * dWeightTotalLoad + xCGLightShip * dWeightLightShip) / dWeightTotalShip;
         yCGTotalShip = (yCGTotalLoad * dWeightTotalLoad + yCGLightShip * dWeightLightShip) / dWeightTotalShip;

@@ -84,6 +84,22 @@ namespace SSInstructor.Forms
         {
             StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
 
+            StabilityCalculator.InitializeShipData();
+        }
+
+        // calculate 
+        private void nudLoad_ValueChanged(object sender, EventArgs e)
+        {
+            StabilityCalculator.mLoad = (double)nudLoad.Value;
+            StabilityCalculator.CalculateCG_and_Attitude();
+
+            txbGmx.Text = StabilityCalculator.xCGTotalLoad.ToString("F1");
+            txbGmy.Text = StabilityCalculator.yCGTotalLoad.ToString("F1");
+            txbGmz.Text = StabilityCalculator.zCGTotalLoad.ToString("F1");
+
+            txbGx.Text = StabilityCalculator.xCGTotalShip.ToString("F1");
+            txbGy.Text = StabilityCalculator.yCGTotalShip.ToString("F1");
+            txbGz.Text = StabilityCalculator.zCGTotalShip.ToString("F1");
         }
     }
 }
