@@ -225,7 +225,7 @@ public static class StabilityCalculator {
     static double dX0Val_Real = 0;     // X0, x position of origin point (analysis frame), from AP (after perpendiculat)
     #endregion
 
-    #region "CG DATA"
+    #region "CG Data"
     public static double dWeightLightShip; // 20151230
     public static double dWeightTotalLoad;
     public static double dWeightTotalShip;
