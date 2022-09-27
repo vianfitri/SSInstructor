@@ -774,7 +774,6 @@ public static class StabilityCalculator {
         zCGTotalShip = (zCGTotalLoad * dWeightTotalLoad + zCGLightShip * dWeightLightShip) / dWeightTotalShip;
 
         CalculationHeelAndTrim(dWeightTotalShip, xCGTotalShip, yCGTotalShip, zCGTotalShip, ref heel_angle, ref trim_angle);
-
     }
     #endregion
 }

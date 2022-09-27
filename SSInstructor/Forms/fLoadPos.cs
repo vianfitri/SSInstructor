@@ -83,6 +83,7 @@ namespace SSInstructor.Forms
         private void fLoadPos_Load(object sender, EventArgs e)
         {
             StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
+
         }
     }
 }
