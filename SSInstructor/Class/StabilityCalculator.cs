@@ -6,6 +6,23 @@ using System.Windows.Forms;
 using SSInstructor.Class;
 
 public static class StabilityCalculator {
+    #region "Struct"
+    public struct Point2D
+    {
+        public double x, y;
+    }
+
+    // point double value
+    public struct Point3D
+    {
+        /*
+         * x = longitudinal position
+         * y = transversal position
+         * z = vertical position
+         */
+        public double x, y, z;
+    }
+    #endregion
 
     #region "Hydrostatic Data"
     static double[] dspData_BC; // Kolom 1  = Displacement Weight (kgf) // used
@@ -209,40 +226,40 @@ public static class StabilityCalculator {
     #endregion
 
     #region "CG DATA"
-    static double dWeightLightShip; // 20151230
-    static double dWeightTotalLoad;
-    static double dWeightTotalShip;
-    static double dWeightLightShip_Real; // 20150219
-    static double dWeightTotalLoad_Real; // 20150219
-    static double dWeightTotalShip_Real; // 20150219
+    public static double dWeightLightShip; // 20151230
+    public static double dWeightTotalLoad;
+    public static double dWeightTotalShip;
+    public static double dWeightLightShip_Real; // 20150219
+    public static double dWeightTotalLoad_Real; // 20150219
+    public static double dWeightTotalShip_Real; // 20150219
 
     //double xCGLightShip =  90.0; // LCG =  90 mm, hasil praktikum 20151230
-    static double xCGLightShip; // LCG =  60 mm, hasil praktikum 20160128
-    static double yCGLightShip; // TKG =   0.2 mm, hasil praktikum 20151230
-    static double zCGLightShip; // KG  = 110 mm, hasil praktikum 20151230
-    static double xCGTotalLoad;
-    static double yCGTotalLoad;
-    static double zCGTotalLoad;
-    static double xCGTotalShip;
-    static double yCGTotalShip;
-    static double zCGTotalShip;
+    public static double xCGLightShip; // LCG =  60 mm, hasil praktikum 20160128
+    public static double yCGLightShip; // TKG =   0.2 mm, hasil praktikum 20151230
+    public static double zCGLightShip; // KG  = 110 mm, hasil praktikum 20151230
+    public static double xCGTotalLoad;
+    public static double yCGTotalLoad;
+    public static double zCGTotalLoad;
+    public static double xCGTotalShip;
+    public static double yCGTotalShip;
+    public static double zCGTotalShip;
+
+    static double ship_scale = 87.0;
+    public static double heel_angle = 0; // in deg
+    public static double trim_angle = 0; // in deg
+
+    public static double mLoad = 0;
+    public static double mLoadReal = 0;
+
+    public static Point3D LoadPos = new Point3D { x = 0, y = 0, z = 0 };
+    public static Point3D LoadPos_Real = new Point3D();
     #endregion
 
     #region "ShipPoint"
-    struct Point2D
-    {
-        public double x, y;
-    }
 
-    // point double value
-    struct Point3D
-    {
-        public double x, y, z;
-    }
-
-    static Point2D[] shippoints = new Point2D[26];
-    static Point2D[] shippoints_init = new Point2D[26];
-    static Point2D[] shippoints_BC = new Point2D[26]
+    public static Point2D[] shippoints = new Point2D[26];
+    public static Point2D[] shippoints_init = new Point2D[26];
+    public static Point2D[] shippoints_BC = new Point2D[26]
     {
             new Point2D{x =  -57.5  ,   y =  459.8}, // point 0
             new Point2D{x = -80.5   ,   y =  390.8}, // point 1
@@ -272,9 +289,9 @@ public static class StabilityCalculator {
             new Point2D{x = -57.5   ,   y =  459.8}  // point 25
     };
 
-    static Point2D[] shippointslon = new Point2D[33]; // longitudinal hull coordinate
-    static Point2D[] shippointslon_init = new Point2D[33];
-    static Point2D[] shippointslon_BC = new Point2D[33]  // Bulk Carrier
+    public static Point2D[] shippointslon = new Point2D[33]; // longitudinal hull coordinate
+    public static Point2D[] shippointslon_init = new Point2D[33];
+    public static Point2D[] shippointslon_BC = new Point2D[33]  // Bulk Carrier
     {
             new Point2D{x = -1096.5,    y = 204.0}, // point 0
             new Point2D{x = -1096.5,    y = 128.3}, // point 1
@@ -311,7 +328,7 @@ public static class StabilityCalculator {
             new Point2D{x = -1096.5,    y = 204.0}  // point 32
     };
 
-    static Point2D[] shippointsTopView_BC = new Point2D[30] {  // Bulk Carrier Scale 1:87, top view, 20151223
+    public static Point2D[] shippointsTopView_BC = new Point2D[30] {  // Bulk Carrier Scale 1:87, top view, 20151223
             new Point2D{x = -1096.5,    y =    0.0}, // point 0
             new Point2D{x = -1096.5,    y = -131.1}, // point 1
             new Point2D{x = -1023.4,    y = -149.9}, // point 2
@@ -732,6 +749,33 @@ public static class StabilityCalculator {
         outTrim = trimdeg;
     }
 
-    // Calculation CG
+    // Calculation CG and Ship Attitude
+    public static void CalculateCG_and_Attitude()
+    {
+        double weight_scale = ship_scale * ship_scale * ship_scale / 1000; // in ton
+
+        mLoadReal = mLoad * weight_scale; // in ton
+        dWeightTotalLoad = mLoad;
+        dWeightTotalShip = dWeightLightShip + dWeightTotalLoad;
+
+        dWeightLightShip_Real = dWeightLightShip * weight_scale;
+        dWeightTotalLoad_Real = dWeightTotalLoad * weight_scale;
+        dWeightTotalShip_Real = dWeightTotalShip * weight_scale;
+
+        // load position
+
+        // load position real
+        LoadPos_Real.x = LoadPos.x * ship_scale / 1000; // in meter 
+        LoadPos_Real.y = LoadPos.y * ship_scale / 1000; // in meter 
+        LoadPos_Real.z = LoadPos.z * ship_scale / 1000; // in meter
+
+        xCGTotalShip = (xCGTotalLoad * dWeightTotalLoad + xCGLightShip * dWeightLightShip) / dWeightTotalShip;
+        yCGTotalShip = (yCGTotalLoad * dWeightTotalLoad + yCGLightShip * dWeightLightShip) / dWeightTotalShip;
+        zCGTotalShip = (zCGTotalLoad * dWeightTotalLoad + zCGLightShip * dWeightLightShip) / dWeightTotalShip;
+
+        CalculationHeelAndTrim(dWeightTotalShip, xCGTotalShip, yCGTotalShip, zCGTotalShip, ref heel_angle, ref trim_angle);
+
+
+    }
     #endregion
 }
