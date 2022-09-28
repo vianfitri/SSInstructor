@@ -57,6 +57,11 @@ namespace SSInstructor.Class
         #endregion
 
         #region "Method"
+        public void Update(Machine machine)
+        {
+            Dirty = true;
+        }
+
         public void Add(Machine machine)
         {
             List.Add(machine);
