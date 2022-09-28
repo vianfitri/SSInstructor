@@ -29,15 +29,15 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -82,6 +82,7 @@ namespace SSInstructor.Forms
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnView3D = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLoadSideView)).BeginInit();
@@ -135,16 +136,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadSideView
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartLoadSideView.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartLoadSideView.Legends.Add(legend1);
+            chartArea10.Name = "ChartArea1";
+            this.chartLoadSideView.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chartLoadSideView.Legends.Add(legend10);
             this.chartLoadSideView.Location = new System.Drawing.Point(29, 21);
             this.chartLoadSideView.Name = "chartLoadSideView";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartLoadSideView.Series.Add(series1);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chartLoadSideView.Series.Add(series10);
             this.chartLoadSideView.Size = new System.Drawing.Size(676, 315);
             this.chartLoadSideView.TabIndex = 0;
             // 
@@ -162,16 +163,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadTopView
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartLoadTopView.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartLoadTopView.Legends.Add(legend2);
+            chartArea11.Name = "ChartArea1";
+            this.chartLoadTopView.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.chartLoadTopView.Legends.Add(legend11);
             this.chartLoadTopView.Location = new System.Drawing.Point(29, 21);
             this.chartLoadTopView.Name = "chartLoadTopView";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartLoadTopView.Series.Add(series2);
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.Name = "Series1";
+            this.chartLoadTopView.Series.Add(series11);
             this.chartLoadTopView.Size = new System.Drawing.Size(672, 311);
             this.chartLoadTopView.TabIndex = 0;
             this.chartLoadTopView.Text = "chart2";
@@ -189,16 +190,16 @@ namespace SSInstructor.Forms
             // 
             // chartLoadFrontView
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartLoadFrontView.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartLoadFrontView.Legends.Add(legend3);
+            chartArea12.Name = "ChartArea1";
+            this.chartLoadFrontView.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            this.chartLoadFrontView.Legends.Add(legend12);
             this.chartLoadFrontView.Location = new System.Drawing.Point(26, 21);
             this.chartLoadFrontView.Name = "chartLoadFrontView";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartLoadFrontView.Series.Add(series3);
+            series12.ChartArea = "ChartArea1";
+            series12.Legend = "Legend1";
+            series12.Name = "Series1";
+            this.chartLoadFrontView.Series.Add(series12);
             this.chartLoadFrontView.Size = new System.Drawing.Size(680, 311);
             this.chartLoadFrontView.TabIndex = 0;
             this.chartLoadFrontView.Text = "chart1";
@@ -626,11 +627,23 @@ namespace SSInstructor.Forms
             this.label11.TabIndex = 0;
             this.label11.Text = "CG of Load";
             // 
+            // btnView3D
+            // 
+            this.btnView3D.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnView3D.Location = new System.Drawing.Point(1085, 38);
+            this.btnView3D.Name = "btnView3D";
+            this.btnView3D.Size = new System.Drawing.Size(98, 42);
+            this.btnView3D.TabIndex = 21;
+            this.btnView3D.Text = "3D View";
+            this.btnView3D.UseVisualStyleBackColor = true;
+            this.btnView3D.Click += new System.EventHandler(this.btnView3D_Click);
+            // 
             // fLoadPos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 853);
+            this.Controls.Add(this.btnView3D);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
@@ -704,5 +717,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.TextBox txbGz;
         private System.Windows.Forms.TextBox txbGx;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnView3D;
     }
 }

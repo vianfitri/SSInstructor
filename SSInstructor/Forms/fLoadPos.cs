@@ -100,5 +100,11 @@ namespace SSInstructor.Forms
             txbGy.Text = StabilityCalculator.yCGTotalShip.ToString("F1");
             txbGz.Text = StabilityCalculator.zCGTotalShip.ToString("F1");
         }
+
+        private void btnView3D_Click(object sender, EventArgs e)
+        {
+            View3D f3DView = new View3D();
+            f3DView.Show();
+        }
     }
 }
