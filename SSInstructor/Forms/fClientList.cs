@@ -49,5 +49,16 @@ namespace SSInstructor.Forms
             Pool.Release(10);
         }
         #endregion
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+            ClientProperties cp = new ClientProperties();
+            cp.Create();
+
+            if (cp.DialogResult == DialogResult.OK)
+                Console.WriteLine("Add Client Success");
+
+            cp.Dispose();
+        }
     }
 }

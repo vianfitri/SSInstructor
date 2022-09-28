@@ -35,11 +35,14 @@ namespace SSInstructor.Class
         {
             get
             {
-                foreach (Machine m in from m1 in List as Machine[]
-                                      where m1.Name == Name
-                                      select m1)
+                if (List.Count > 0)
                 {
-                    return m;
+                    foreach (Machine m in from m1 in List as Machine[]
+                                          where m1.Name == Name
+                                          select m1)
+                    {
+                        return m;
+                    }
                 }
                 return null;
             }
@@ -130,6 +133,7 @@ namespace SSInstructor.Class
 
             machine.Pool = _pool;
             machine.Run();
+            Dirty = true;
         }
 
         public void Remove(string name)
