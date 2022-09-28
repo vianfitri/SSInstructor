@@ -68,6 +68,7 @@ namespace SSInstructor.Forms
             this.panel32 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.btnAddClient = new ViControls.ViButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -121,6 +122,7 @@ namespace SSInstructor.Forms
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.panel18);
@@ -513,11 +515,32 @@ namespace SSInstructor.Forms
             this.pictureBox10.TabIndex = 0;
             this.pictureBox10.TabStop = false;
             // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnAddClient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnAddClient.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddClient.BorderRadius = 10;
+            this.btnAddClient.BorderSize = 0;
+            this.btnAddClient.FlatAppearance.BorderSize = 0;
+            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddClient.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddClient.ForeColor = System.Drawing.Color.White;
+            this.btnAddClient.Location = new System.Drawing.Point(680, 652);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(150, 40);
+            this.btnAddClient.TabIndex = 13;
+            this.btnAddClient.Text = "Add Client";
+            this.btnAddClient.TextColor = System.Drawing.Color.White;
+            this.btnAddClient.UseVisualStyleBackColor = false;
+            // 
             // fClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 721);
+            this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -608,5 +631,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private ViControls.ViButton btnAddClient;
     }
 }
