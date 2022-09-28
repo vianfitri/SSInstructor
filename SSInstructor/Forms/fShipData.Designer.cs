@@ -91,6 +91,7 @@ namespace SSInstructor.Forms
             this.pnlShipView.Name = "pnlShipView";
             this.pnlShipView.Size = new System.Drawing.Size(727, 454);
             this.pnlShipView.TabIndex = 4;
+            this.pnlShipView.Resize += new System.EventHandler(this.fShipData_Resize);
             // 
             // fShipData
             // 
@@ -104,6 +105,9 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.label1);
             this.Name = "fShipData";
             this.Text = "fShipData";
+            this.Activated += new System.EventHandler(this.fShipData_Activated);
+            this.Deactivate += new System.EventHandler(this.fShipData_Deactivate);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fShipData_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
