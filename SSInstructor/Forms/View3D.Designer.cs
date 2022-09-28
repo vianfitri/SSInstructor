@@ -49,7 +49,6 @@ namespace SSInstructor.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 853);
             this.Controls.Add(this.pnl3DView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MinimizeBox = false;
             this.Name = "View3D";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
