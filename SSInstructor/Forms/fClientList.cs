@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Machines;
@@ -14,6 +15,10 @@ namespace SSInstructor.Forms
 {
     public partial class fClientList : Form
     {
+        #region "Fields"
+        public static Semaphore Pool = new Semaphore(0, 10);
+        #endregion
+
         #region "Constructor"
         public fClientList()
         {
@@ -27,5 +32,10 @@ namespace SSInstructor.Forms
             Console.WriteLine("Hostname : " + hostname + " => Status : " + status + " => IP Address : " + IPAddress);
         }
         #endregion
+
+        private void fClientList_Load(object sender, EventArgs e)
+        {
+            MachineModule.Machines.Dirty = false;
+        }
     }
 }

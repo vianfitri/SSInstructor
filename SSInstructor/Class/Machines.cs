@@ -57,6 +57,61 @@ namespace SSInstructor.Class
         #endregion
 
         #region "Method"
+        public void Load(Semaphore pool)
+        {
+            _pool = pool;
+
+        }
+
+        public void Save()
+        {
+
+        }
+
+        public string GetFile()
+        {
+            return "";
+        }
+
+        public void Import(string filename)
+        {
+
+        }
+
+//    Public Sub Save()
+//        If Not Dirty Then Exit Sub
+//        Export(GetFile)
+//        Dirty = False
+//    End Sub
+
+//    Public Function GetFile() As String
+//        If String.IsNullOrEmpty(My.Settings.dbPath) Then
+//            My.Settings.dbPath = IO.Path.Combine(IO.Directory.GetParent(My.Computer.FileSystem.SpecialDirectories.AllUsersApplicationData.ToString).ToString, "machines.xml")
+//        End If
+
+//        Return My.Settings.dbPath
+//    End Function
+
+//    Public Sub Import(filename As String)
+//        Try
+//            Dim serializer As New XmlSerializer(GetType(MachinesClass))
+
+//            Dim fileStream As FileStream = New FileStream(filename, FileMode.Open, FileAccess.Read)
+//            Machines = CType(serializer.Deserialize(fileStream), MachinesClass)
+//            fileStream.Close()
+//            CheckUpgrade()
+
+//        Catch ex As Exception
+
+//            Tracelog.WriteLine("Machines::Import " & ex.Message)
+//#If DEBUG Then
+//			Debugger.Break()
+//#End If
+
+//        End Try
+
+//    End Sub
+
         public void Update(Machine machine)
         {
             Dirty = true;
