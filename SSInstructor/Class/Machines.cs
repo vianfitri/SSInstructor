@@ -11,6 +11,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Windows.Forms;
+using SSInstructor.Class;
+using SSInstructor.Forms;
+using Machines;
 
 namespace SSInstructor.Class
 {
@@ -24,6 +28,49 @@ namespace SSInstructor.Class
         public bool Dirty = false;
         private static Semaphore _pool;
 
+        #region "Property"
+        public Machine this[string Name]
+        {
+            get
+            {
+                foreach (Machine m in from m1 in List.
+                                      where m1.Name == Name
+                                      select m1)
+                {
+                    return m;
+                }
+                return null;
+            }
+            set
+            {
+                List = value;
+            }
+        }
+        #endregion
 
+        #region "Method"
+        public void Add(Machine machine)
+        {
+            List.Add(machine);
+            machine.StatusChange += fClientList.StatusChange;
+
+            machine.Pool = _pool;
+            machine.Run();
+        }
+
+        public void Remove(string name)
+        {
+
+        }
+
+        public void Close()
+        {
+            foreach(Machine machine in List)
+            {
+                machine.Cancel();
+                machine.StatusChange -= fClientList.StatusChange;
+            }
+        }
+        #endregion
     }
 }
