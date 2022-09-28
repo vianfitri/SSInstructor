@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Machines
 {
@@ -30,8 +31,8 @@ namespace Machines
         #endregion
 
         #region "Fields"
-        private BackgroundWorker _backgroundWorker = new BackgroundWorker();
-        private Ping ping = new Ping();
+        [NonSerialized] private BackgroundWorker _backgroundWorker = new BackgroundWorker();
+        [NonSerialized] private Ping ping = new Ping();
 
         public enum StatusCodes : int
         {
@@ -42,12 +43,12 @@ namespace Machines
             Uninitialized
         }
 
-        [NonSerialized()] public StatusCodes Status = StatusCodes.Uninitialized;
-        [NonSerialized()] public PingReply Reply;
-        [NonSerialized()] public Semaphore Pool;
-        [NonSerialized()] const string data = "abcdefghijklmnopqrstuvwabcdefghi";
-        [NonSerialized()] private byte[] buffer = Encoding.ASCII.GetBytes(data);
-        [NonSerialized()] public string message;
+        [XmlIgnore()] public StatusCodes Status = StatusCodes.Uninitialized;
+        [NonSerialized] [XmlIgnore()] public PingReply Reply;
+        [NonSerialized] [XmlIgnore()] public Semaphore Pool;
+        [NonSerialized] [XmlIgnore()] const string data = "abcdefghijklmnopqrstuvwabcdefghi";
+        [NonSerialized] [XmlIgnore()] private byte[] buffer = Encoding.ASCII.GetBytes(data);
+        [NonSerialized] [XmlIgnore()] public string message;
 
         #endregion
 
