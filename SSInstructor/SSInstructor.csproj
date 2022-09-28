@@ -227,6 +227,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ClientPanel.resx">
+      <DependentUpon>ClientPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientProperties.resx">
       <DependentUpon>ClientProperties.cs</DependentUpon>
     </EmbeddedResource>
