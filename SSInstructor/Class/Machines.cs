@@ -33,7 +33,7 @@ namespace SSInstructor.Class
         {
             get
             {
-                foreach (Machine m in from m1 in List.
+                foreach (Machine m in from m1 in List as Machine[]
                                       where m1.Name == Name
                                       select m1)
                 {
@@ -43,7 +43,15 @@ namespace SSInstructor.Class
             }
             set
             {
-                List = value;
+                MachineModule.Machines[Name] = value;
+            }
+        }
+
+        public Machine this[int Index]
+        {
+            get
+            {
+                return (Machine)List[Index];
             }
         }
         #endregion
@@ -60,7 +68,14 @@ namespace SSInstructor.Class
 
         public void Remove(string name)
         {
+            Machine machine = MachineModule.Machines[name];
 
+            if (machine == null)
+                return;
+            machine.Cancel();
+            machine.StatusChange -= fClientList.StatusChange;
+            List.Remove(machine);
+            Dirty = true;
         }
 
         public void Close()
