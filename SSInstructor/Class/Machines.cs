@@ -62,12 +62,15 @@ namespace SSInstructor.Class
         public void Load(Semaphore pool)
         {
             _pool = pool;
+            Import(GetFile());
         }
 
         public void Save()
         {
             if (!Dirty)
                 return;
+
+            Export(GetFile());
             Dirty = false;
         }
 
@@ -90,57 +93,30 @@ namespace SSInstructor.Class
             catch(Exception ex)
             {
                 Console.WriteLine("Machines::Import " + ex.Message);
-                Debug.Fail(ex.Message);
             }
         }
 
-        public void Export()
-        //    Public Sub Save()
-        //        If Not Dirty Then Exit Sub
-        //        Export(GetFile)
-        //        Dirty = False
-        //    End Sub
+        public void Export(string filename)
+        {
+            var serializer = new XmlSerializer(typeof(MachinesClass));
+            StreamWriter writer;
 
-        //    Public Sub Import(filename As String)
-        //        Try
-        //            Dim serializer As New XmlSerializer(GetType(MachinesClass))
-
-        //            Dim fileStream As FileStream = New FileStream(filename, FileMode.Open, FileAccess.Read)
-        //            Machines = CType(serializer.Deserialize(fileStream), MachinesClass)
-        //            fileStream.Close()
-        //            CheckUpgrade()
-
-        //        Catch ex As Exception
-
-        //            Tracelog.WriteLine("Machines::Import " & ex.Message)
-        //#If DEBUG Then
-        //			Debugger.Break()
-        //#End If
-
-        //        End Try
-
-        //    End Sub
-
-    //    Public Sub Export(ByVal filename As String)
-    //    Dim serializer As New XmlSerializer(GetType(MachinesClass))
-    //    Dim writer As StreamWriter
-
-    //    Try
-    //        writer = New StreamWriter(filename)
-    //        serializer.Serialize(writer, Machines)
-    //        writer.Close()
-
-    //    Catch ex As UnauthorizedAccessException
-    //        If(MessageBox.Show(ex.Message, My.Resources.Strings.ChangesNotSaved, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error) = DialogResult.Retry) Then
-    //           Export(filename)
-    //        End If
-
-    //    Catch ex As Exception
-    //        MessageBox.Show(ex.Message, My.Resources.Strings.ChangesNotSaved, MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-    //    End Try
-
-    //End Sub
+            try
+            {
+                writer = new StreamWriter(filename);
+                serializer.Serialize(writer, MachineModule.Machines);
+                writer.Close();
+            }
+            catch(UnauthorizedAccessException uaex)
+            {
+                if (MessageBox.Show(uaex.Message, "Changes have not been saved", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error) == DialogResult.Retry)
+                    Export(filename);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Changes have not been saved", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         public void Update(Machine machine)
         {

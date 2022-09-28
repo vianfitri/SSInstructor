@@ -31,11 +31,23 @@ namespace SSInstructor.Forms
         {
             Console.WriteLine("Hostname : " + hostname + " => Status : " + status + " => IP Address : " + IPAddress);
         }
-        #endregion
+        
+        private void SaveChanges()
+        {
+            MachineModule.Machines.Save();
+            MachineModule.Machines.Close();
+        }
 
         private void fClientList_Load(object sender, EventArgs e)
         {
+            MachineModule.Machines.Load(Pool);
             MachineModule.Machines.Dirty = false;
         }
+
+        private void fClientList_Shown(object sender, EventArgs e)
+        {
+            Pool.Release(10);
+        }
+        #endregion
     }
 }
