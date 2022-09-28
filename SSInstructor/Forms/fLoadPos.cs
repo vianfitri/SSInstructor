@@ -52,7 +52,6 @@ namespace SSInstructor.Forms
         Series loadline_series = new Series();          // for showing load distribution 
         Series shearline_series = new Series();         // for showing shear force 
         Series bmomentline_series = new Series();       // for showing bending moment 
-
         Series topview_lat_shipform_series = new Series();  // for showing ship form, top view plane
 
         Series[] gzcrosscurve_series;
