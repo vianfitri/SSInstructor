@@ -62,13 +62,14 @@ namespace SSInstructor.Forms
             this.label23 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.btnAddClient = new ViControls.ViButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.btnAddClient = new ViControls.ViButton();
+            this.clientPanel1 = new SSInstructor.Controls.ClientPanel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -99,21 +100,21 @@ namespace SSInstructor.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(118)))), ((int)(((byte)(159)))));
             this.label2.Location = new System.Drawing.Point(60, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 23);
+            this.label2.Size = new System.Drawing.Size(37, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "List";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(59, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 29);
+            this.label1.Size = new System.Drawing.Size(81, 29);
             this.label1.TabIndex = 8;
             this.label1.Text = "Client";
             // 
@@ -128,6 +129,7 @@ namespace SSInstructor.Forms
             this.flowLayoutPanel1.Controls.Add(this.panel18);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel21);
+            this.flowLayoutPanel1.Controls.Add(this.clientPanel1);
             this.flowLayoutPanel1.Controls.Add(this.panel24);
             this.flowLayoutPanel1.Controls.Add(this.panel27);
             this.flowLayoutPanel1.Controls.Add(this.panel30);
@@ -161,11 +163,11 @@ namespace SSInstructor.Forms
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(23, 3);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 20);
+            this.label15.Size = new System.Drawing.Size(83, 20);
             this.label15.TabIndex = 0;
             this.label15.Text = "VIAN-PC";
             // 
@@ -182,7 +184,7 @@ namespace SSInstructor.Forms
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(15, 2);
             this.label16.Name = "label16";
@@ -214,11 +216,11 @@ namespace SSInstructor.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(23, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 20);
+            this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "PC - 02";
             // 
@@ -235,7 +237,7 @@ namespace SSInstructor.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(15, 2);
             this.label6.Name = "label6";
@@ -267,11 +269,11 @@ namespace SSInstructor.Forms
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(23, 3);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 20);
+            this.label17.Size = new System.Drawing.Size(73, 20);
             this.label17.TabIndex = 0;
             this.label17.Text = "PC - 03";
             // 
@@ -288,11 +290,11 @@ namespace SSInstructor.Forms
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(9, 2);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(100, 18);
+            this.label18.Size = new System.Drawing.Size(99, 18);
             this.label18.TabIndex = 1;
             this.label18.Text = "Disconnected";
             // 
@@ -320,11 +322,11 @@ namespace SSInstructor.Forms
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(23, 3);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(66, 20);
+            this.label19.Size = new System.Drawing.Size(73, 20);
             this.label19.TabIndex = 0;
             this.label19.Text = "PC - 04";
             // 
@@ -341,7 +343,7 @@ namespace SSInstructor.Forms
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(15, 2);
             this.label20.Name = "label20";
@@ -373,11 +375,11 @@ namespace SSInstructor.Forms
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Location = new System.Drawing.Point(23, 3);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 20);
+            this.label21.Size = new System.Drawing.Size(73, 20);
             this.label21.TabIndex = 0;
             this.label21.Text = "PC - 05";
             // 
@@ -394,11 +396,11 @@ namespace SSInstructor.Forms
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(9, 2);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(100, 18);
+            this.label22.Size = new System.Drawing.Size(99, 18);
             this.label22.TabIndex = 1;
             this.label22.Text = "Disconnected";
             // 
@@ -426,11 +428,11 @@ namespace SSInstructor.Forms
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(23, 3);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(66, 20);
+            this.label23.Size = new System.Drawing.Size(73, 20);
             this.label23.TabIndex = 0;
             this.label23.Text = "PC - 06";
             // 
@@ -447,34 +449,13 @@ namespace SSInstructor.Forms
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(14, 2);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(80, 18);
             this.label24.TabIndex = 1;
             this.label24.Text = "Connected";
-            // 
-            // btnAddClient
-            // 
-            this.btnAddClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnAddClient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnAddClient.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddClient.BorderRadius = 10;
-            this.btnAddClient.BorderSize = 0;
-            this.btnAddClient.FlatAppearance.BorderSize = 0;
-            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddClient.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.ForeColor = System.Drawing.Color.White;
-            this.btnAddClient.Location = new System.Drawing.Point(680, 652);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(150, 40);
-            this.btnAddClient.TabIndex = 13;
-            this.btnAddClient.Text = "Add Client";
-            this.btnAddClient.TextColor = System.Drawing.Color.White;
-            this.btnAddClient.UseVisualStyleBackColor = false;
-            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // pictureBox6
             // 
@@ -535,6 +516,42 @@ namespace SSInstructor.Forms
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 0;
             this.pictureBox10.TabStop = false;
+            // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnAddClient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnAddClient.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddClient.BorderRadius = 10;
+            this.btnAddClient.BorderSize = 0;
+            this.btnAddClient.FlatAppearance.BorderSize = 0;
+            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddClient.ForeColor = System.Drawing.Color.White;
+            this.btnAddClient.Location = new System.Drawing.Point(680, 652);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(150, 40);
+            this.btnAddClient.TabIndex = 13;
+            this.btnAddClient.Text = "Add Client";
+            this.btnAddClient.TextColor = System.Drawing.Color.White;
+            this.btnAddClient.UseVisualStyleBackColor = false;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            // 
+            // clientPanel1
+            // 
+            this.clientPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clientPanel1.IpAddress = null;
+            this.clientPanel1.Location = new System.Drawing.Point(592, 13);
+            this.clientPanel1.LoginState = false;
+            this.clientPanel1.MacAddress = null;
+            this.clientPanel1.Name = "clientPanel1";
+            this.clientPanel1.PcName = null;
+            this.clientPanel1.PowerState = false;
+            this.clientPanel1.RemoteState = false;
+            this.clientPanel1.Size = new System.Drawing.Size(143, 184);
+            this.clientPanel1.TabIndex = 7;
+            this.clientPanel1.UserId = 0;
             // 
             // fClientList
             // 
@@ -633,5 +650,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.PictureBox pictureBox10;
         private ViControls.ViButton btnAddClient;
+        private Controls.ClientPanel clientPanel1;
     }
 }

@@ -51,7 +51,7 @@ namespace SSInstructor.Controls
             // 
             // lblLogin
             // 
-            this.lblLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(174)))), ((int)(((byte)(113)))));
+            this.lblLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.lblLogin.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,7 +60,7 @@ namespace SSInstructor.Controls
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(143, 25);
             this.lblLogin.TabIndex = 2;
-            this.lblLogin.Text = "Connected";
+            this.lblLogin.Text = "Disconnected";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbStatus
