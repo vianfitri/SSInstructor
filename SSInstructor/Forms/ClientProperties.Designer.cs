@@ -30,15 +30,15 @@ namespace SSInstructor.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gbPing = new System.Windows.Forms.GroupBox();
+            this.txtIPAddress = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMacAddress = new System.Windows.Forms.TextBox();
+            this.lbMAC = new System.Windows.Forms.Label();
+            this.txtMachineName = new System.Windows.Forms.TextBox();
+            this.lbName = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lbName = new System.Windows.Forms.Label();
-            this.txtMachineName = new System.Windows.Forms.TextBox();
-            this.lbMAC = new System.Windows.Forms.Label();
-            this.txtMacAddress = new System.Windows.Forms.TextBox();
-            this.gbPing = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIPAddress = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.gbPing.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,74 @@ namespace SSInstructor.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(491, 214);
             this.panel1.TabIndex = 0;
+            // 
+            // gbPing
+            // 
+            this.gbPing.Controls.Add(this.txtIPAddress);
+            this.gbPing.Controls.Add(this.label1);
+            this.gbPing.Location = new System.Drawing.Point(34, 113);
+            this.gbPing.Name = "gbPing";
+            this.gbPing.Size = new System.Drawing.Size(418, 70);
+            this.gbPing.TabIndex = 7;
+            this.gbPing.TabStop = false;
+            this.gbPing.Text = "Ping";
+            // 
+            // txtIPAddress
+            // 
+            this.txtIPAddress.Location = new System.Drawing.Point(179, 30);
+            this.txtIPAddress.Name = "txtIPAddress";
+            this.txtIPAddress.Size = new System.Drawing.Size(171, 22);
+            this.txtIPAddress.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Local IP Address";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMacAddress
+            // 
+            this.txtMacAddress.Location = new System.Drawing.Point(153, 72);
+            this.txtMacAddress.Name = "txtMacAddress";
+            this.txtMacAddress.Size = new System.Drawing.Size(172, 22);
+            this.txtMacAddress.TabIndex = 6;
+            // 
+            // lbMAC
+            // 
+            this.lbMAC.AutoSize = true;
+            this.lbMAC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMAC.Location = new System.Drawing.Point(31, 75);
+            this.lbMAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMAC.Name = "lbMAC";
+            this.lbMAC.Size = new System.Drawing.Size(93, 17);
+            this.lbMAC.TabIndex = 5;
+            this.lbMAC.Text = "MAC Address";
+            this.lbMAC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMachineName
+            // 
+            this.txtMachineName.Location = new System.Drawing.Point(153, 29);
+            this.txtMachineName.Name = "txtMachineName";
+            this.txtMachineName.Size = new System.Drawing.Size(299, 22);
+            this.txtMachineName.TabIndex = 4;
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbName.Location = new System.Drawing.Point(79, 32);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(45, 17);
+            this.lbName.TabIndex = 3;
+            this.lbName.Text = "Name";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnOK
             // 
@@ -76,74 +144,6 @@ namespace SSInstructor.Forms
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbName.Location = new System.Drawing.Point(31, 34);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(45, 17);
-            this.lbName.TabIndex = 3;
-            this.lbName.Text = "Name";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtMachineName
-            // 
-            this.txtMachineName.Location = new System.Drawing.Point(153, 29);
-            this.txtMachineName.Name = "txtMachineName";
-            this.txtMachineName.Size = new System.Drawing.Size(299, 22);
-            this.txtMachineName.TabIndex = 4;
-            // 
-            // lbMAC
-            // 
-            this.lbMAC.AutoSize = true;
-            this.lbMAC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbMAC.Location = new System.Drawing.Point(31, 75);
-            this.lbMAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbMAC.Name = "lbMAC";
-            this.lbMAC.Size = new System.Drawing.Size(93, 17);
-            this.lbMAC.TabIndex = 5;
-            this.lbMAC.Text = "MAC Address";
-            this.lbMAC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtMacAddress
-            // 
-            this.txtMacAddress.Location = new System.Drawing.Point(153, 72);
-            this.txtMacAddress.Name = "txtMacAddress";
-            this.txtMacAddress.Size = new System.Drawing.Size(172, 22);
-            this.txtMacAddress.TabIndex = 6;
-            // 
-            // gbPing
-            // 
-            this.gbPing.Controls.Add(this.txtIPAddress);
-            this.gbPing.Controls.Add(this.label1);
-            this.gbPing.Location = new System.Drawing.Point(34, 113);
-            this.gbPing.Name = "gbPing";
-            this.gbPing.Size = new System.Drawing.Size(418, 70);
-            this.gbPing.TabIndex = 7;
-            this.gbPing.TabStop = false;
-            this.gbPing.Text = "Ping";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(24, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Local IP Address";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtIPAddress
-            // 
-            this.txtIPAddress.Location = new System.Drawing.Point(159, 30);
-            this.txtIPAddress.Name = "txtIPAddress";
-            this.txtIPAddress.Size = new System.Drawing.Size(171, 22);
-            this.txtIPAddress.TabIndex = 7;
             // 
             // ClientProperties
             // 
