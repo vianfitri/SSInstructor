@@ -74,6 +74,7 @@ namespace SSInstructor.Forms
             this.txtIPAddress.Name = "txtIPAddress";
             this.txtIPAddress.Size = new System.Drawing.Size(171, 22);
             this.txtIPAddress.TabIndex = 7;
+            this.txtIPAddress.TextChanged += new System.EventHandler(this.txtIPAddress_TextChanged);
             // 
             // label1
             // 
@@ -93,6 +94,7 @@ namespace SSInstructor.Forms
             this.txtMacAddress.Name = "txtMacAddress";
             this.txtMacAddress.Size = new System.Drawing.Size(172, 22);
             this.txtMacAddress.TabIndex = 6;
+            this.txtMacAddress.TextChanged += new System.EventHandler(this.txtMacAddress_TextChanged);
             // 
             // lbMAC
             // 
@@ -112,6 +114,7 @@ namespace SSInstructor.Forms
             this.txtMachineName.Name = "txtMachineName";
             this.txtMachineName.Size = new System.Drawing.Size(299, 22);
             this.txtMachineName.TabIndex = 4;
+            this.txtMachineName.TextChanged += new System.EventHandler(this.txtMachineName_TextChanged);
             // 
             // lbName
             // 
@@ -155,6 +158,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.panel1);
             this.Name = "ClientProperties";
             this.Text = "Properties";
+            this.Load += new System.EventHandler(this.ClientProperties_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gbPing.ResumeLayout(false);

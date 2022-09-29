@@ -57,6 +57,26 @@ namespace SSInstructor.Forms
             Close();
         }
 
+        private void txtMachineName_TextChanged(object sender, EventArgs e)
+        {
+            btnOK.Enabled = IsTextNotEmpty();
+        }
+
+        private void txtMacAddress_TextChanged(object sender, EventArgs e)
+        {
+            btnOK.Enabled = IsTextNotEmpty();
+        }
+
+        private void txtIPAddress_TextChanged(object sender, EventArgs e)
+        {
+            btnOK.Enabled = IsTextNotEmpty();
+        }
+
+        private void ClientProperties_Load(object sender, EventArgs e)
+        {
+            btnOK.Enabled = IsTextNotEmpty();
+        }
+
         public void Create()
         {
             try
@@ -89,8 +109,13 @@ namespace SSInstructor.Forms
 
             ShowDialog();
         }
+
+        private bool IsTextNotEmpty()
+        {
+            return txtMachineName.Text != string.Empty && txtIPAddress.Text != string.Empty && txtMacAddress.Text != string.Empty;
+        }
         #endregion
 
-
+        
     }
 }

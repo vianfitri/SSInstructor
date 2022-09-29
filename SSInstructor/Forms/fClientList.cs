@@ -135,6 +135,7 @@ namespace SSInstructor.Forms
                 clientObj.PcName = machine.Name;
                 clientObj.Margin = new Padding(40, 40, 40, 40);
                 clientObj.BorderStyle = BorderStyle.FixedSingle;
+                clientObj.ContextMenuStrip = contextMenuStrip_Machines;
 
                 if (machine.Status == Machine.StatusCodes.Online)
                     clientObj.PowerState = true;
@@ -153,6 +154,109 @@ namespace SSInstructor.Forms
             }
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Get Client Panel
+            ClientPanel cpn = GetClient(sender);
+
+            if(MessageBox.Show("Are You Sure?", "Delete Client", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Machine m = MachineModule.Machines[cpn.PcName];
+                m.StatusChange -= StatusChange;
+                MachineModule.Machines.Remove(cpn.PcName);
+                flowLayoutPanel1.Controls.Remove(cpn);
+                MachineModule.Machines.Save();
+                flowLayoutPanel1.Invalidate();
+            }
+        }
+
+        private void wakeUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Get Client Panel
+            ClientPanel cpn = GetClient(sender);
+
+            Networking.Wake(cpn.MacAddress);
+        }
+
+        private void newHostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Unregister Client Handle
+            UnregisterHandle();
+
+            ClientProperties cp = new ClientProperties();
+            cp.Create();
+
+            if (cp.DialogResult == DialogResult.OK)
+            {
+                // Clear flowLayoutPanel Child Control
+                flowLayoutPanel1.Controls.Clear();
+
+                // Register Client Handle
+                RegisterHandle();
+
+                // Populate Client List
+                PopulateClient();
+
+                flowLayoutPanel1.Invalidate();
+
+                cp.Dispose();
+
+                return;
+            }
+
+            RegisterHandle();
+        }
+
+        private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Get Client Panel
+            ClientPanel cpn = GetClient(sender);
+
+            ClientProperties cp = new ClientProperties();
+            cp.Edit(cpn.PcName);
+
+            Machine m = MachineModule.Machines[cpn.PcName];
+            m.StatusChange -= StatusChange;
+
+            if(cp.DialogResult == DialogResult.OK)
+            {
+                int newLength = MachineModule.Machines.Count;
+
+                Machine nm = MachineModule.Machines[newLength - 1];
+                nm.StatusChange += StatusChange;
+
+                cpn.IpAddress = nm.IP;
+                cpn.MacAddress = nm.MAC;
+                cpn.PcName = nm.Name;
+
+                if (nm.Status == Machine.StatusCodes.Online)
+                    cpn.PowerState = true;
+
+                flowLayoutPanel1.Invalidate();
+            }
+        }
+
+        private ClientPanel GetClient(object sender)
+        {
+            // Try to cast the sender to a ToolStripItem
+            ToolStripItem menuItem = sender as ToolStripItem;
+            if (menuItem != null)
+            {
+                // Retrieve the ContextMenuStrip that owns this ToolStripItem
+                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+                if (owner != null)
+                {
+                    // Get the control that is displaying this context menu
+                    Control sourceControl = owner.SourceControl;
+                    return (ClientPanel)sourceControl;
+                }
+            }
+            return null;
+        }
+
+
         #endregion
+
+        
     }
 }

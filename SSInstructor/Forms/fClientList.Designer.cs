@@ -113,14 +113,15 @@ namespace SSInstructor.Forms
             this.propertiesToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip_Machines.Name = "contextMenuStrip_Machines";
-            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(155, 140);
+            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(215, 168);
             // 
             // newHostToolStripMenuItem
             // 
             this.newHostToolStripMenuItem.Image = global::SSInstructor.Properties.Resources._new;
             this.newHostToolStripMenuItem.Name = "newHostToolStripMenuItem";
-            this.newHostToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.newHostToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.newHostToolStripMenuItem.Text = "New host";
+            this.newHostToolStripMenuItem.Click += new System.EventHandler(this.newHostToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -131,15 +132,17 @@ namespace SSInstructor.Forms
             // 
             this.propertiesToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Settings_16x16;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.propertiesToolStripMenuItem.Text = "Properties";
+            this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.deletered;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // btnWakeUpAll
             // 
@@ -188,8 +191,9 @@ namespace SSInstructor.Forms
             // 
             this.wakeUpToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Stock_Index_Up_16x16;
             this.wakeUpToolStripMenuItem.Name = "wakeUpToolStripMenuItem";
-            this.wakeUpToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.wakeUpToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.wakeUpToolStripMenuItem.Text = "Wake Up";
+            this.wakeUpToolStripMenuItem.Click += new System.EventHandler(this.wakeUpToolStripMenuItem_Click);
             // 
             // shutdownToolStripMenuItem
             // 
