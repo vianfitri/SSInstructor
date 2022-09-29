@@ -197,10 +197,7 @@ namespace SSInstructor
         private void btnStability_Click(object sender, EventArgs e)
         {
             // Call Another Application
-            Process proc = new Process();
-            proc.StartInfo.UseShellExecute = true;
-            proc.StartInfo.WorkingDirectory = Application.StartupPath + "\\SSS\\ShipStability.exe";
-            proc.Start();
+            Process.Start(Application.StartupPath + "\\SSS\\ShipStability.exe");
         }
     }
 }
