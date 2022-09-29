@@ -77,6 +77,11 @@ namespace SSInstructor.Forms
 
         private void formMain_Load(object sender, EventArgs e)
         {
+            // Get Screen Working Resolution
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+            Console.WriteLine(string.Format("Screen Working Area : {0}x{1}",screenWidth,screenHeight));
+
             // Load PC Client List
             MachineModule.Machines.Load(Pool);
             MachineModule.Machines.Dirty = false;

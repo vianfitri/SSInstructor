@@ -57,7 +57,7 @@ namespace SSInstructor
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 0);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(1348, 721);
+            this.pnlBackground.Size = new System.Drawing.Size(1920, 1080);
             this.pnlBackground.TabIndex = 0;
             // 
             // btnConfig
@@ -72,7 +72,7 @@ namespace SSInstructor
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(1316, 12);
+            this.btnConfig.Location = new System.Drawing.Point(1888, 12);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(20, 20);
             this.btnConfig.TabIndex = 3;
@@ -113,7 +113,7 @@ namespace SSInstructor
             this.pnlLogin.Controls.Add(this.txtUsername);
             this.pnlLogin.Controls.Add(this.lblUsername);
             this.pnlLogin.Controls.Add(this.panel1);
-            this.pnlLogin.Location = new System.Drawing.Point(770, 127);
+            this.pnlLogin.Location = new System.Drawing.Point(1342, 127);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(377, 414);
             this.pnlLogin.TabIndex = 0;
@@ -238,12 +238,13 @@ namespace SSInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.pnlBackground);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formLogin";
             this.Text = "formLogin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formLogin_Load);
             this.pnlBackground.ResumeLayout(false);
             this.pnlLogin.ResumeLayout(false);
