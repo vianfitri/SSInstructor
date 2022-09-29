@@ -135,8 +135,8 @@ namespace SSInstructor.Forms
 
             chartLoadSideView.ChartAreas[0].AxisX.Minimum = -600;
             chartLoadSideView.ChartAreas[0].AxisX.Maximum = 600;
-            chartLoadSideView.ChartAreas[0].AxisY.Minimum = -600;
-            chartLoadSideView.ChartAreas[0].AxisY.Maximum = 600;
+            chartLoadSideView.ChartAreas[0].AxisY.Minimum = -300;
+            chartLoadSideView.ChartAreas[0].AxisY.Maximum = 900;
         }
 
         private void chartLoadSideView_PrePaint(object sender, ChartPaintEventArgs e)
