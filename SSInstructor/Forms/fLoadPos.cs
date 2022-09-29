@@ -88,6 +88,9 @@ namespace SSInstructor.Forms
 
             StabilityCalculator.InitializeShipData();
 
+            // Setting Longitudinal Ship form Hull Series
+            settingLongHullSerries();
+
             // Load Side View Chart
             settingChartLoadSide();
         }
@@ -112,6 +115,14 @@ namespace SSInstructor.Forms
         {
             View3D f3DView = new View3D();
             f3DView.Show();
+        }
+
+        private void settingLongHullSerries()
+        {
+            lon_shipform_series.Name = "";
+            lon_shipform_series.Color = Color.FromArgb(0, 0, 0);
+            lon_shipform_series.ChartType = SeriesChartType.Line;
+            lon_shipform_series.BorderWidth = 2;
         }
 
         private void settingChartLoadSide()
