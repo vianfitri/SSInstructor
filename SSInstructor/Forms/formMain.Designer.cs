@@ -50,6 +50,7 @@ namespace SSInstructor.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SHIP STABILITY";
             this.Load += new System.EventHandler(this.formMain_Load);
+            this.Shown += new System.EventHandler(this.formMain_Shown);
             this.ResumeLayout(false);
 
         }
