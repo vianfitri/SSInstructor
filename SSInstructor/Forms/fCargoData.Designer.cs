@@ -184,7 +184,7 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.bdgv_cargo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.bdgv_cargo.DoubleBuffered = true;
+            //this.bdgv_cargo.DoubleBuffered = true;
             this.bdgv_cargo.EnableHeadersVisualStyles = false;
             this.bdgv_cargo.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.bdgv_cargo.HeaderForeColor = System.Drawing.Color.White;
