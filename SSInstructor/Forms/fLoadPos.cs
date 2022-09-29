@@ -141,7 +141,30 @@ namespace SSInstructor.Forms
 
         private void chartLoadSideView_PrePaint(object sender, ChartPaintEventArgs e)
         {
+            // algorithm to make chart always in correct aspect ratio
+            float GraphX = chartLoadSideView.ChartAreas[0].InnerPlotPosition.X * chartLoadSideView.Width / 100;
+            float GraphY = chartLoadSideView.ChartAreas[0].InnerPlotPosition.Y * chartLoadSideView.Height / 100;
+            float GraphR = chartLoadSideView.ChartAreas[0].InnerPlotPosition.Right * chartLoadSideView.Width / 100;
+            float GraphB = chartLoadSideView.ChartAreas[0].InnerPlotPosition.Bottom * chartLoadSideView.Height / 100;
 
+            float TitleHeight = 0;
+            if (chartLoadSideView.Titles.Count > 1)
+            {
+                for (int i = 0; i < chartLoadSideView.Titles.Count; i++)
+                {
+                    TitleHeight += chartLoadSideView.Titles[i].Font.Height;
+                }
+            }
+
+            float GraphWidth = chartLoadSideView.ChartAreas[0].InnerPlotPosition.Width * chartLoadSideView.Width / 100;
+            float GraphHeight = chartLoadSideView.ChartAreas[0].InnerPlotPosition.Height * chartLoadSideView.Height / 100 - TitleHeight;
+            double AxisYLength = chartLoadSideView.ChartAreas[0].AxisY.Maximum - chartLoadSideView.ChartAreas[0].AxisY.Minimum;
+            double AxisXLength = 100 * Math.Round(GraphWidth / GraphHeight * AxisYLength / 100);
+
+            chartLoadSideView.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
+            chartLoadSideView.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
+
+            chartLoadSideView.ChartAreas[0].AxisX.Interval = 100;
         }
         #endregion
 
