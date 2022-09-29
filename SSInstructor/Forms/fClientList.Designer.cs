@@ -180,6 +180,7 @@ namespace SSInstructor.Forms
             this.btnShutdownAll.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnShutdownAll.BorderRadius = 10;
             this.btnShutdownAll.BorderSize = 0;
+            this.btnShutdownAll.Enabled = false;
             this.btnShutdownAll.FlatAppearance.BorderSize = 0;
             this.btnShutdownAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdownAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,6 +192,7 @@ namespace SSInstructor.Forms
             this.btnShutdownAll.Text = "Shut Down All";
             this.btnShutdownAll.TextColor = System.Drawing.Color.White;
             this.btnShutdownAll.UseVisualStyleBackColor = false;
+            this.btnShutdownAll.Visible = false;
             // 
             // fClientList
             // 
