@@ -74,16 +74,22 @@ namespace SSInstructor.Forms
 
         #endregion
 
+        #region "Constructor"
         public fLoadPos()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region "Method"
         private void fLoadPos_Load(object sender, EventArgs e)
         {
             StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
 
             StabilityCalculator.InitializeShipData();
+
+            // Load Side View Chart
+            settingChartLoadSide();
         }
 
         // calculate 
@@ -92,6 +98,7 @@ namespace SSInstructor.Forms
             StabilityCalculator.mLoad = (double)nudLoad.Value;
             StabilityCalculator.CalculateCG_and_Attitude();
 
+            // Show Center of Gravity Position
             txbGmx.Text = StabilityCalculator.xCGTotalLoad.ToString("F1");
             txbGmy.Text = StabilityCalculator.yCGTotalLoad.ToString("F1");
             txbGmz.Text = StabilityCalculator.zCGTotalLoad.ToString("F1");
@@ -106,5 +113,38 @@ namespace SSInstructor.Forms
             View3D f3DView = new View3D();
             f3DView.Show();
         }
+
+        private void settingChartLoadSide()
+        {
+            chartLoadSideView.Titles.Clear();
+            chartLoadSideView.Titles.Add("Load, Side View");
+            chartLoadSideView.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
+
+            chartLoadSideView.Series.Clear();
+
+            // load shippoint hull longitudinal
+            for(int i=0; i<StabilityCalculator.shippointslon_BC.Length; i++)
+            {
+                lon_initshipform_series.Points.AddXY(
+                    StabilityCalculator.shippointslon_BC[i].x, 
+                    StabilityCalculator.shippointslon_BC[i].y
+                );
+            }
+
+            chartLoadSideView.Series.Add(lon_initshipform_series);
+
+            chartLoadSideView.ChartAreas[0].AxisX.Minimum = -600;
+            chartLoadSideView.ChartAreas[0].AxisX.Maximum = 600;
+            chartLoadSideView.ChartAreas[0].AxisY.Minimum = -600;
+            chartLoadSideView.ChartAreas[0].AxisY.Maximum = 600;
+        }
+
+        private void chartLoadSideView_PrePaint(object sender, ChartPaintEventArgs e)
+        {
+
+        }
+        #endregion
+
+
     }
 }
