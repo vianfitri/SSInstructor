@@ -186,7 +186,7 @@ namespace SSInstructor.Forms
             this.btnShutdownAll.ForeColor = System.Drawing.Color.White;
             this.btnShutdownAll.Location = new System.Drawing.Point(260, 652);
             this.btnShutdownAll.Name = "btnShutdownAll";
-            this.btnShutdownAll.Size = new System.Drawing.Size(177, 40);
+            this.btnShutdownAll.Size = new System.Drawing.Size(198, 40);
             this.btnShutdownAll.TabIndex = 16;
             this.btnShutdownAll.Text = "Shut Down All";
             this.btnShutdownAll.TextColor = System.Drawing.Color.White;
