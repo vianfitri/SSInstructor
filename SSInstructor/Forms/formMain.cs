@@ -28,13 +28,14 @@ namespace SSInstructor.Forms
 
         #endregion
 
-
+        #region "Constructor"
         public formMain()
         {
             InitializeComponent();
             fLogin = new formLogin(this);
             fDash = new formDashboard(this);
         }
+        #endregion
 
         #region Properties
         public string LoginUsername {
