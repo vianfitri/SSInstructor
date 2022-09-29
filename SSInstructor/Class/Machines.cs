@@ -35,14 +35,19 @@ namespace SSInstructor.Class
         {
             get
             {
-                if (List.Count > 0)
+                //if (List.Count > 0)
+                //{
+                //    foreach (Machine m in from m1 in List as Machine[]
+                //                          where m1.Name == Name
+                //                          select m1)
+                //    {
+                //        return m;
+                //    }
+                //}
+                foreach(Machine m in List)
                 {
-                    foreach (Machine m in from m1 in List as Machine[]
-                                          where m1.Name == Name
-                                          select m1)
-                    {
+                    if (m.Name == Name)
                         return m;
-                    }
                 }
                 return null;
             }
