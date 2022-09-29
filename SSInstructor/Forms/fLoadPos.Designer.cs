@@ -30,15 +30,13 @@ namespace SSInstructor.Forms
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -137,20 +135,24 @@ namespace SSInstructor.Forms
             // 
             // chartLoadSideView
             // 
+            chartArea1.AxisX.LabelStyle.Format = "F0";
+            chartArea1.AxisX.Title = "X, Longitudinal (mm)";
+            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea1.AxisY.Title = "Z, Vertical (mm)";
             chartArea1.BackColor = System.Drawing.Color.White;
+            chartArea1.InnerPlotPosition.Auto = false;
+            chartArea1.InnerPlotPosition.Height = 100F;
+            chartArea1.InnerPlotPosition.Width = 100F;
             chartArea1.Name = "ChartArea1";
             chartArea1.ShadowColor = System.Drawing.Color.White;
             this.chartLoadSideView.ChartAreas.Add(chartArea1);
             this.chartLoadSideView.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartLoadSideView.Legends.Add(legend1);
             this.chartLoadSideView.Location = new System.Drawing.Point(3, 3);
             this.chartLoadSideView.Margin = new System.Windows.Forms.Padding(4);
             this.chartLoadSideView.Name = "chartLoadSideView";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartLoadSideView.Series.Add(series1);
             this.chartLoadSideView.Size = new System.Drawing.Size(722, 694);
             this.chartLoadSideView.TabIndex = 0;
             this.chartLoadSideView.Text = "Load, Side View";
@@ -176,14 +178,14 @@ namespace SSInstructor.Forms
             // 
             chartArea2.Name = "ChartArea1";
             this.chartLoadTopView.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartLoadTopView.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chartLoadTopView.Legends.Add(legend1);
             this.chartLoadTopView.Location = new System.Drawing.Point(29, 21);
             this.chartLoadTopView.Name = "chartLoadTopView";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartLoadTopView.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartLoadTopView.Series.Add(series1);
             this.chartLoadTopView.Size = new System.Drawing.Size(672, 311);
             this.chartLoadTopView.TabIndex = 0;
             this.chartLoadTopView.Text = "chart2";
@@ -203,14 +205,14 @@ namespace SSInstructor.Forms
             // 
             chartArea3.Name = "ChartArea1";
             this.chartLoadFrontView.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartLoadFrontView.Legends.Add(legend3);
+            legend2.Name = "Legend1";
+            this.chartLoadFrontView.Legends.Add(legend2);
             this.chartLoadFrontView.Location = new System.Drawing.Point(26, 21);
             this.chartLoadFrontView.Name = "chartLoadFrontView";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartLoadFrontView.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartLoadFrontView.Series.Add(series2);
             this.chartLoadFrontView.Size = new System.Drawing.Size(680, 311);
             this.chartLoadFrontView.TabIndex = 0;
             this.chartLoadFrontView.Text = "chart1";
