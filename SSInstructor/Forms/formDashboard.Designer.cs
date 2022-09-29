@@ -33,8 +33,8 @@ namespace SSInstructor
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnClientList = new FontAwesome.Sharp.IconButton();
             this.btnReport = new FontAwesome.Sharp.IconButton();
-            this.btnScenario = new FontAwesome.Sharp.IconButton();
             this.btnStability = new FontAwesome.Sharp.IconButton();
+            this.btnScenario = new FontAwesome.Sharp.IconButton();
             this.pnlUserSubmenu = new System.Windows.Forms.Panel();
             this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.btnTrainee = new FontAwesome.Sharp.IconButton();
@@ -170,7 +170,7 @@ namespace SSInstructor
             this.btnStability.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStability.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStability.UseVisualStyleBackColor = true;
-            this.btnStability.Click += new System.EventHandler(this.btnScenario_Click);
+            this.btnStability.Click += new System.EventHandler(this.btnStability_Click);
             // 
             // btnScenario
             // 
@@ -422,22 +422,22 @@ namespace SSInstructor
             // lblPriviledge
             // 
             this.lblPriviledge.AutoSize = true;
-            this.lblPriviledge.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriviledge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriviledge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
             this.lblPriviledge.Location = new System.Drawing.Point(102, 48);
             this.lblPriviledge.Name = "lblPriviledge";
-            this.lblPriviledge.Size = new System.Drawing.Size(90, 18);
+            this.lblPriviledge.Size = new System.Drawing.Size(89, 18);
             this.lblPriviledge.TabIndex = 3;
             this.lblPriviledge.Text = "super admin";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
             this.lblUsername.Location = new System.Drawing.Point(101, 24);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(99, 24);
+            this.lblUsername.Size = new System.Drawing.Size(107, 25);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "username";
             // 
