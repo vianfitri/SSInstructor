@@ -233,7 +233,11 @@ namespace SSInstructor.Forms
                     cpn.PowerState = true;
 
                 flowLayoutPanel1.Invalidate();
+
+                return;
             }
+
+            m.StatusChange += StatusChange;
         }
 
         private ClientPanel GetClient(object sender)
