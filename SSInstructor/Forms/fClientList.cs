@@ -58,23 +58,9 @@ namespace SSInstructor.Forms
             // populate client list and create control
             if (MachineModule.Machines.Count > 0)
             {
-                foreach (Machine machine in MachineModule.Machines)
-                {
-                    ClientPanel clientObj = new ClientPanel();
+                RegisterHandle();
 
-                    machine.StatusChange += StatusChange;
-
-                    clientObj.IpAddress = machine.IP;
-                    clientObj.MacAddress = machine.MAC;
-                    clientObj.PcName = machine.Name;
-                    clientObj.Margin = new Padding(40, 40, 40, 40);
-                    clientObj.BorderStyle = BorderStyle.FixedSingle;
-
-                    if(machine.Status == Machine.StatusCodes.Online)
-                        clientObj.PowerState = true;
-
-                    flowLayoutPanel1.Controls.Add(clientObj);
-                }
+                PopulateClient();
 
                 flowLayoutPanel1.Invalidate();
             }
@@ -84,27 +70,78 @@ namespace SSInstructor.Forms
         {
             //Pool.Release(10);
         }
-        #endregion
-
+        
         private void btnAddClient_Click(object sender, EventArgs e)
         {
+            // Unregister Client Handle
+            UnregisterHandle();
+
             ClientProperties cp = new ClientProperties();
             cp.Create();
 
             if (cp.DialogResult == DialogResult.OK)
-                Console.WriteLine("Add Client Success");
+            {
+                // Clear flowLayoutPanel Child Control
+                flowLayoutPanel1.Controls.Clear();
 
-            cp.Dispose();
+                // Register Client Handle
+                RegisterHandle();
+
+                // Populate Client List
+                PopulateClient();
+
+                flowLayoutPanel1.Invalidate();
+
+                cp.Dispose();
+
+                return;
+            }
+
+            RegisterHandle();
         }
 
         private void fClientList_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Unload Event Handler for Machine
+            UnregisterHandle();
+
+            flowLayoutPanel1.Controls.Clear();
+        }
+
+        private void UnregisterHandle()
+        {
             foreach(Machine machine in MachineModule.Machines)
             {
                 machine.StatusChange -= StatusChange;
             }
-            flowLayoutPanel1.Controls.Clear();
         }
+
+        private void RegisterHandle()
+        {
+            foreach(Machine machine in MachineModule.Machines)
+            {
+                machine.StatusChange += StatusChange;
+            }
+        }
+
+        private void PopulateClient()
+        {
+            foreach (Machine machine in MachineModule.Machines)
+            {
+                ClientPanel clientObj = new ClientPanel();
+
+                clientObj.IpAddress = machine.IP;
+                clientObj.MacAddress = machine.MAC;
+                clientObj.PcName = machine.Name;
+                clientObj.Margin = new Padding(40, 40, 40, 40);
+                clientObj.BorderStyle = BorderStyle.FixedSingle;
+
+                if (machine.Status == Machine.StatusCodes.Online)
+                    clientObj.PowerState = true;
+
+                flowLayoutPanel1.Controls.Add(clientObj);
+            }
+        }
+        #endregion
     }
 }
