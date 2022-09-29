@@ -170,6 +170,7 @@ namespace SSInstructor.Forms
             this.btnWakeUpAll.Text = "Wake Up All";
             this.btnWakeUpAll.TextColor = System.Drawing.Color.White;
             this.btnWakeUpAll.UseVisualStyleBackColor = false;
+            this.btnWakeUpAll.Click += new System.EventHandler(this.btnWakeUpAll_Click);
             // 
             // btnShutdownAll
             // 

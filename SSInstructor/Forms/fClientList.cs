@@ -142,6 +142,18 @@ namespace SSInstructor.Forms
                 flowLayoutPanel1.Controls.Add(clientObj);
             }
         }
+
+        private void btnWakeUpAll_Click(object sender, EventArgs e)
+        {
+            foreach(ClientPanel cp in flowLayoutPanel1.Controls)
+            {
+                Networking.Wake(cp.MacAddress);
+                Application.DoEvents();
+                Thread.Sleep(750);
+            }
+        }
         #endregion
+
+
     }
 }
