@@ -150,11 +150,10 @@ namespace SSInstructor.Forms
             chartArea1.Name = "ChartArea1";
             chartArea1.ShadowColor = System.Drawing.Color.White;
             this.chartLoadSideView.ChartAreas.Add(chartArea1);
-            this.chartLoadSideView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartLoadSideView.Location = new System.Drawing.Point(3, 3);
             this.chartLoadSideView.Margin = new System.Windows.Forms.Padding(4);
             this.chartLoadSideView.Name = "chartLoadSideView";
-            this.chartLoadSideView.Size = new System.Drawing.Size(722, 694);
+            this.chartLoadSideView.Size = new System.Drawing.Size(718, 371);
             this.chartLoadSideView.TabIndex = 0;
             this.chartLoadSideView.Text = "Load, Side View";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);

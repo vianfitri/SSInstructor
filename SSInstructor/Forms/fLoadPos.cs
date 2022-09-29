@@ -119,10 +119,10 @@ namespace SSInstructor.Forms
 
         private void settingLongHullSerries()
         {
-            lon_shipform_series.Name = "";
-            lon_shipform_series.Color = Color.FromArgb(0, 0, 0);
-            lon_shipform_series.ChartType = SeriesChartType.Line;
-            lon_shipform_series.BorderWidth = 2;
+            lon_initshipform_series.Name = "Initial Ship Longitudinal Field";
+            lon_initshipform_series.Color = Color.FromArgb(0, 0, 0);
+            lon_initshipform_series.ChartType = SeriesChartType.Line;
+            lon_initshipform_series.BorderWidth = 2;
         }
 
         private void settingChartLoadSide()
