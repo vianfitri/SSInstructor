@@ -60,7 +60,7 @@ namespace SSInstructor.Controls
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(143, 25);
             this.lblLogin.TabIndex = 2;
-            this.lblLogin.Text = "Disconnected";
+            this.lblLogin.Text = "Not Logged In Yet";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbStatus

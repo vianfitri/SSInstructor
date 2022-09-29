@@ -55,12 +55,12 @@ namespace SSInstructor.Controls
                 loginState = value;
                 if (loginState)
                 {
-                    lblLogin.Text = "Connected";
+                    lblLogin.Text = "Logged In";
                     lblLogin.BackColor = Color.FromArgb(60, 174, 113);
                 }
                 else
                 {
-                    lblLogin.Text = "Disconnected";
+                    lblLogin.Text = "Not Logged In Yet";
                     lblLogin.BackColor = Color.FromArgb(171, 171, 171);
                 }
                     
