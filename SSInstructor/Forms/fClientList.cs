@@ -152,8 +152,7 @@ namespace SSInstructor.Forms
                 Thread.Sleep(750);
             }
         }
+
         #endregion
-
-
     }
 }

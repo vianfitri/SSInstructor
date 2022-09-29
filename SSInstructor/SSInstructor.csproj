@@ -363,5 +363,20 @@
   <ItemGroup>
     <None Include="Resources\computer-idle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stock_Index_Up_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stock_Index_Down_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletered.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,14 +35,14 @@ namespace SSInstructor.Forms
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddClient = new ViControls.ViButton();
             this.contextMenuStrip_Machines = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.wakeUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newHostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shutdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWakeUpAll = new ViControls.ViButton();
             this.btnShutdownAll = new ViControls.ViButton();
+            this.wakeUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shutdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Machines.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,43 +113,33 @@ namespace SSInstructor.Forms
             this.propertiesToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip_Machines.Name = "contextMenuStrip_Machines";
-            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(151, 130);
-            // 
-            // wakeUpToolStripMenuItem
-            // 
-            this.wakeUpToolStripMenuItem.Name = "wakeUpToolStripMenuItem";
-            this.wakeUpToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.wakeUpToolStripMenuItem.Text = "Wake Up";
+            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(155, 140);
             // 
             // newHostToolStripMenuItem
             // 
+            this.newHostToolStripMenuItem.Image = global::SSInstructor.Properties.Resources._new;
             this.newHostToolStripMenuItem.Name = "newHostToolStripMenuItem";
-            this.newHostToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
+            this.newHostToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.newHostToolStripMenuItem.Text = "New host";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(147, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // propertiesToolStripMenuItem
             // 
+            this.propertiesToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Settings_16x16;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.propertiesToolStripMenuItem.Text = "Properties";
             // 
             // deleteToolStripMenuItem
             // 
+            this.deleteToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.deletered;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // shutdownToolStripMenuItem
-            // 
-            this.shutdownToolStripMenuItem.Enabled = false;
-            this.shutdownToolStripMenuItem.Name = "shutdownToolStripMenuItem";
-            this.shutdownToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.shutdownToolStripMenuItem.Text = "Shut Down";
             // 
             // btnWakeUpAll
             // 
@@ -193,6 +183,21 @@ namespace SSInstructor.Forms
             this.btnShutdownAll.TextColor = System.Drawing.Color.White;
             this.btnShutdownAll.UseVisualStyleBackColor = false;
             this.btnShutdownAll.Visible = false;
+            // 
+            // wakeUpToolStripMenuItem
+            // 
+            this.wakeUpToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Stock_Index_Up_16x16;
+            this.wakeUpToolStripMenuItem.Name = "wakeUpToolStripMenuItem";
+            this.wakeUpToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.wakeUpToolStripMenuItem.Text = "Wake Up";
+            // 
+            // shutdownToolStripMenuItem
+            // 
+            this.shutdownToolStripMenuItem.Enabled = false;
+            this.shutdownToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Stock_Index_Down_16x16;
+            this.shutdownToolStripMenuItem.Name = "shutdownToolStripMenuItem";
+            this.shutdownToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.shutdownToolStripMenuItem.Text = "Shut Down";
             // 
             // fClientList
             // 
