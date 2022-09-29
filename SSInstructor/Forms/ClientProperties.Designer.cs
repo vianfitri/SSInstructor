@@ -157,6 +157,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.panel1);
             this.Name = "ClientProperties";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Properties";
             this.Load += new System.EventHandler(this.ClientProperties_Load);
             this.panel1.ResumeLayout(false);

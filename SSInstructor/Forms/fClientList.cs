@@ -212,32 +212,31 @@ namespace SSInstructor.Forms
             // Get Client Panel
             ClientPanel cpn = GetClient(sender);
 
+            // Unregister Client Handle
+            UnregisterHandle();
+
             ClientProperties cp = new ClientProperties();
             cp.Edit(cpn.PcName);
 
-            Machine m = MachineModule.Machines[cpn.PcName];
-            m.StatusChange -= StatusChange;
-
-            if(cp.DialogResult == DialogResult.OK)
+            if (cp.DialogResult == DialogResult.OK)
             {
-                int newLength = MachineModule.Machines.Count;
+                // Clear flowLayoutPanel Child Control
+                flowLayoutPanel1.Controls.Clear();
 
-                Machine nm = MachineModule.Machines[newLength - 1];
-                nm.StatusChange += StatusChange;
+                // Register Client Handle
+                RegisterHandle();
 
-                cpn.IpAddress = nm.IP;
-                cpn.MacAddress = nm.MAC;
-                cpn.PcName = nm.Name;
-
-                if (nm.Status == Machine.StatusCodes.Online)
-                    cpn.PowerState = true;
+                // Populate Client List
+                PopulateClient();
 
                 flowLayoutPanel1.Invalidate();
+
+                cp.Dispose();
 
                 return;
             }
 
-            m.StatusChange += StatusChange;
+            RegisterHandle();
         }
 
         private ClientPanel GetClient(object sender)
