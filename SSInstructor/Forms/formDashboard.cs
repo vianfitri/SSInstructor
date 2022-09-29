@@ -36,9 +36,11 @@ namespace SSInstructor
         private void hideSubmenu()
         {
             // Killl Another Application If Exist
-            Process[] proc = Process.GetProcessesByName("ShipStability.exe");
-            if (proc.Length > 0)
-                proc[0].CloseMainWindow();
+            Process[] procs = Process.GetProcessesByName("ShipStability");
+            foreach(Process proc in procs)
+            {
+                proc.Kill();
+            }
 
             if (pnlMasterDataSubmenu.Visible) pnlMasterDataSubmenu.Visible = false;
             if (pnlUserSubmenu.Visible) pnlUserSubmenu.Visible = false;
