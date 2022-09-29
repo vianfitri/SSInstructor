@@ -89,6 +89,12 @@ namespace SSInstructor
 
         private void btnScenario_Click(object sender, EventArgs e)
         {
+            // Call Another Application
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = true;
+            proc.StartInfo.WorkingDirectory = Application.StartupPath + "\\SSS\\ShipStability.exe";
+            proc.Start();
+
             // Load Scenario Page
             //openChildForm(new fLoadPos());
 
