@@ -102,6 +102,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.label1);
             this.Name = "fClientList";
             this.Text = "fClientList";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fClientList_FormClosing);
             this.Load += new System.EventHandler(this.fClientList_Load);
             this.Shown += new System.EventHandler(this.fClientList_Shown);
             this.ResumeLayout(false);

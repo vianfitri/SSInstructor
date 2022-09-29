@@ -129,7 +129,6 @@ namespace SSInstructor.Class
         public void Add(Machine machine)
         {
             List.Add(machine);
-            //machine.StatusChange += fClientList.StatusChange;
 
             machine.Pool = _pool;
             machine.Run();
@@ -143,7 +142,7 @@ namespace SSInstructor.Class
             if (machine == null)
                 return;
             machine.Cancel();
-            //machine.StatusChange -= fClientList.StatusChange;
+
             List.Remove(machine);
             Dirty = true;
         }
@@ -153,7 +152,6 @@ namespace SSInstructor.Class
             foreach(Machine machine in List)
             {
                 machine.Cancel();
-                //machine.StatusChange -= fClientList.StatusChange;
             }
         }
         #endregion

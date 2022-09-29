@@ -68,6 +68,7 @@ namespace SSInstructor.Forms
                     clientObj.MacAddress = machine.MAC;
                     clientObj.PcName = machine.Name;
                     clientObj.Margin = new Padding(40, 40, 40, 40);
+                    clientObj.BorderStyle = BorderStyle.FixedSingle;
 
                     if(machine.Status == Machine.StatusCodes.Online)
                         clientObj.PowerState = true;
@@ -94,6 +95,16 @@ namespace SSInstructor.Forms
                 Console.WriteLine("Add Client Success");
 
             cp.Dispose();
+        }
+
+        private void fClientList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Unload Event Handler for Machine
+            foreach(Machine machine in MachineModule.Machines)
+            {
+                machine.StatusChange -= StatusChange;
+            }
+            flowLayoutPanel1.Controls.Clear();
         }
     }
 }
