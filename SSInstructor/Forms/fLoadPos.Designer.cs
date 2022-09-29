@@ -40,6 +40,7 @@ namespace SSInstructor.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.chartLoadSideView = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chartLoadTopView = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -84,6 +85,8 @@ namespace SSInstructor.Forms
             this.btnView3D = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLoadSideView)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLoadTopView)).BeginInit();
@@ -101,9 +104,10 @@ namespace SSInstructor.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 43);
+            this.label1.Location = new System.Drawing.Point(44, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 29);
+            this.label1.Size = new System.Drawing.Size(190, 24);
             this.label1.TabIndex = 17;
             this.label1.Text = "Stability Calculation";
             // 
@@ -115,26 +119,49 @@ namespace SSInstructor.Forms
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(451, 86);
+            this.tabControl1.Location = new System.Drawing.Point(338, 70);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(736, 729);
+            this.tabControl1.Size = new System.Drawing.Size(552, 592);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Controls.Add(this.chartLoadSideView);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(728, 700);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(544, 566);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SIDE VIEW";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(4, 271);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DimGray;
+            this.splitContainer1.Panel1MinSize = 332;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Maroon;
+            this.splitContainer1.Panel2MinSize = 379;
+            this.splitContainer1.Size = new System.Drawing.Size(716, 293);
+            this.splitContainer1.SplitterDistance = 332;
+            this.splitContainer1.TabIndex = 1;
+            // 
             // chartLoadSideView
             // 
+            this.chartLoadSideView.BackColor = System.Drawing.SystemColors.Control;
             chartArea1.AxisX.LabelStyle.Format = "F0";
             chartArea1.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             chartArea1.AxisX.Title = "X, Longitudinal (mm)";
@@ -146,12 +173,10 @@ namespace SSInstructor.Forms
             chartArea1.BackColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             chartArea1.ShadowColor = System.Drawing.Color.White;
-            this.chartLoadSideView.BackColor = System.Drawing.SystemColors.Control;
             this.chartLoadSideView.ChartAreas.Add(chartArea1);
             this.chartLoadSideView.Location = new System.Drawing.Point(0, 0);
-            this.chartLoadSideView.Margin = new System.Windows.Forms.Padding(4);
             this.chartLoadSideView.Name = "chartLoadSideView";
-            this.chartLoadSideView.Size = new System.Drawing.Size(628, 326);
+            this.chartLoadSideView.Size = new System.Drawing.Size(471, 265);
             this.chartLoadSideView.TabIndex = 0;
             this.chartLoadSideView.Text = "Load, Side View";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
@@ -164,10 +189,11 @@ namespace SSInstructor.Forms
             // 
             this.tabPage2.Controls.Add(this.chartLoadTopView);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(728, 700);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(544, 566);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "TOP VIEW";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -178,13 +204,14 @@ namespace SSInstructor.Forms
             this.chartLoadTopView.ChartAreas.Add(chartArea2);
             legend1.Name = "Legend1";
             this.chartLoadTopView.Legends.Add(legend1);
-            this.chartLoadTopView.Location = new System.Drawing.Point(29, 21);
+            this.chartLoadTopView.Location = new System.Drawing.Point(22, 17);
+            this.chartLoadTopView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartLoadTopView.Name = "chartLoadTopView";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartLoadTopView.Series.Add(series1);
-            this.chartLoadTopView.Size = new System.Drawing.Size(672, 311);
+            this.chartLoadTopView.Size = new System.Drawing.Size(504, 253);
             this.chartLoadTopView.TabIndex = 0;
             this.chartLoadTopView.Text = "chart2";
             // 
@@ -192,9 +219,10 @@ namespace SSInstructor.Forms
             // 
             this.tabPage3.Controls.Add(this.chartLoadFrontView);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(728, 700);
+            this.tabPage3.Size = new System.Drawing.Size(544, 566);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "FRONT VIEW";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -205,13 +233,14 @@ namespace SSInstructor.Forms
             this.chartLoadFrontView.ChartAreas.Add(chartArea3);
             legend2.Name = "Legend1";
             this.chartLoadFrontView.Legends.Add(legend2);
-            this.chartLoadFrontView.Location = new System.Drawing.Point(26, 21);
+            this.chartLoadFrontView.Location = new System.Drawing.Point(20, 17);
+            this.chartLoadFrontView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartLoadFrontView.Name = "chartLoadFrontView";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartLoadFrontView.Series.Add(series2);
-            this.chartLoadFrontView.Size = new System.Drawing.Size(680, 311);
+            this.chartLoadFrontView.Size = new System.Drawing.Size(510, 253);
             this.chartLoadFrontView.TabIndex = 0;
             this.chartLoadFrontView.Text = "chart1";
             // 
@@ -238,9 +267,11 @@ namespace SSInstructor.Forms
             this.groupBox1.Controls.Add(this.label94);
             this.groupBox1.Controls.Add(this.nudLoad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(64, 86);
+            this.groupBox1.Location = new System.Drawing.Point(48, 70);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(357, 296);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(268, 240);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " LOAD ";
@@ -248,118 +279,106 @@ namespace SSInstructor.Forms
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(289, 220);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(217, 179);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 17);
+            this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 104;
             this.label9.Text = "( mm )";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(289, 248);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(217, 202);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 17);
+            this.label10.Size = new System.Drawing.Size(27, 13);
             this.label10.TabIndex = 103;
             this.label10.Text = "( m )";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(289, 163);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(217, 132);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 17);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 102;
             this.label7.Text = "( mm )";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(289, 191);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(217, 155);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 17);
+            this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 101;
             this.label8.Text = "( m )";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(289, 106);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(217, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 17);
+            this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 100;
             this.label6.Text = "( mm )";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(289, 49);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(217, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 17);
+            this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 99;
             this.label5.Text = "( kg )";
             // 
             // txtVertcPosM
             // 
-            this.txtVertcPosM.Location = new System.Drawing.Point(208, 245);
-            this.txtVertcPosM.Margin = new System.Windows.Forms.Padding(4);
+            this.txtVertcPosM.Location = new System.Drawing.Point(156, 199);
             this.txtVertcPosM.Name = "txtVertcPosM";
             this.txtVertcPosM.ReadOnly = true;
-            this.txtVertcPosM.Size = new System.Drawing.Size(73, 22);
+            this.txtVertcPosM.Size = new System.Drawing.Size(56, 19);
             this.txtVertcPosM.TabIndex = 98;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 220);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(20, 179);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 97;
             this.label4.Text = "Vertical Position";
             // 
             // nudVertcPos
             // 
-            this.nudVertcPos.Location = new System.Drawing.Point(208, 218);
-            this.nudVertcPos.Margin = new System.Windows.Forms.Padding(4);
+            this.nudVertcPos.Location = new System.Drawing.Point(156, 177);
             this.nudVertcPos.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
             this.nudVertcPos.Name = "nudVertcPos";
-            this.nudVertcPos.Size = new System.Drawing.Size(75, 22);
+            this.nudVertcPos.Size = new System.Drawing.Size(56, 19);
             this.nudVertcPos.TabIndex = 96;
             // 
             // txtLongPosMtr
             // 
-            this.txtLongPosMtr.Location = new System.Drawing.Point(208, 188);
-            this.txtLongPosMtr.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLongPosMtr.Location = new System.Drawing.Point(156, 153);
             this.txtLongPosMtr.Name = "txtLongPosMtr";
             this.txtLongPosMtr.ReadOnly = true;
-            this.txtLongPosMtr.Size = new System.Drawing.Size(73, 22);
+            this.txtLongPosMtr.Size = new System.Drawing.Size(56, 19);
             this.txtLongPosMtr.TabIndex = 95;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 163);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(20, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 17);
+            this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 94;
             this.label3.Text = "Longitudinal Position";
             // 
             // nudLongPos
             // 
-            this.nudLongPos.Location = new System.Drawing.Point(208, 161);
-            this.nudLongPos.Margin = new System.Windows.Forms.Padding(4);
+            this.nudLongPos.Location = new System.Drawing.Point(156, 131);
             this.nudLongPos.Maximum = new decimal(new int[] {
             2000,
             0,
@@ -371,7 +390,7 @@ namespace SSInstructor.Forms
             0,
             0});
             this.nudLongPos.Name = "nudLongPos";
-            this.nudLongPos.Size = new System.Drawing.Size(75, 22);
+            this.nudLongPos.Size = new System.Drawing.Size(56, 19);
             this.nudLongPos.TabIndex = 93;
             this.nudLongPos.Value = new decimal(new int[] {
             300,
@@ -382,55 +401,49 @@ namespace SSInstructor.Forms
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(289, 134);
-            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label52.Location = new System.Drawing.Point(217, 109);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(37, 17);
+            this.label52.Size = new System.Drawing.Size(27, 13);
             this.label52.TabIndex = 92;
             this.label52.Text = "( m )";
             // 
             // txtTransvPosMtr
             // 
-            this.txtTransvPosMtr.Location = new System.Drawing.Point(208, 131);
-            this.txtTransvPosMtr.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTransvPosMtr.Location = new System.Drawing.Point(156, 106);
             this.txtTransvPosMtr.Name = "txtTransvPosMtr";
             this.txtTransvPosMtr.ReadOnly = true;
-            this.txtTransvPosMtr.Size = new System.Drawing.Size(73, 22);
+            this.txtTransvPosMtr.Size = new System.Drawing.Size(56, 19);
             this.txtTransvPosMtr.TabIndex = 91;
             // 
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(289, 79);
-            this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label48.Location = new System.Drawing.Point(217, 64);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(46, 17);
+            this.label48.Size = new System.Drawing.Size(34, 13);
             this.label48.TabIndex = 90;
             this.label48.Text = "( ton )";
             // 
             // txtLoadTon
             // 
-            this.txtLoadTon.Location = new System.Drawing.Point(208, 76);
-            this.txtLoadTon.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLoadTon.Location = new System.Drawing.Point(156, 62);
             this.txtLoadTon.Name = "txtLoadTon";
             this.txtLoadTon.ReadOnly = true;
-            this.txtLoadTon.Size = new System.Drawing.Size(73, 22);
+            this.txtLoadTon.Size = new System.Drawing.Size(56, 19);
             this.txtLoadTon.TabIndex = 89;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 106);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(20, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 17);
+            this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 88;
             this.label2.Text = "Transversal Position";
             // 
             // nudTransvPos
             // 
-            this.nudTransvPos.Location = new System.Drawing.Point(208, 104);
-            this.nudTransvPos.Margin = new System.Windows.Forms.Padding(4);
+            this.nudTransvPos.Location = new System.Drawing.Point(156, 84);
             this.nudTransvPos.Maximum = new decimal(new int[] {
             150,
             0,
@@ -442,16 +455,15 @@ namespace SSInstructor.Forms
             0,
             -2147483648});
             this.nudTransvPos.Name = "nudTransvPos";
-            this.nudTransvPos.Size = new System.Drawing.Size(75, 22);
+            this.nudTransvPos.Size = new System.Drawing.Size(56, 19);
             this.nudTransvPos.TabIndex = 87;
             // 
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(27, 51);
-            this.label94.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label94.Location = new System.Drawing.Point(20, 41);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(88, 17);
+            this.label94.Size = new System.Drawing.Size(68, 13);
             this.label94.TabIndex = 86;
             this.label94.Text = "Load Weight";
             // 
@@ -463,15 +475,14 @@ namespace SSInstructor.Forms
             0,
             0,
             65536});
-            this.nudLoad.Location = new System.Drawing.Point(208, 49);
-            this.nudLoad.Margin = new System.Windows.Forms.Padding(4);
+            this.nudLoad.Location = new System.Drawing.Point(156, 40);
             this.nudLoad.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
             this.nudLoad.Name = "nudLoad";
-            this.nudLoad.Size = new System.Drawing.Size(75, 22);
+            this.nudLoad.Size = new System.Drawing.Size(56, 19);
             this.nudLoad.TabIndex = 85;
             this.nudLoad.ValueChanged += new System.EventHandler(this.nudLoad_ValueChanged);
             // 
@@ -491,130 +502,120 @@ namespace SSInstructor.Forms
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Location = new System.Drawing.Point(64, 401);
+            this.groupBox2.Location = new System.Drawing.Point(48, 326);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(357, 282);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(268, 229);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " CENTER OF GRAVITY";
             // 
             // txbGy
             // 
-            this.txbGy.Location = new System.Drawing.Point(165, 212);
-            this.txbGy.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGy.Location = new System.Drawing.Point(124, 172);
             this.txbGy.Name = "txbGy";
             this.txbGy.ReadOnly = true;
-            this.txbGy.Size = new System.Drawing.Size(100, 22);
+            this.txbGy.Size = new System.Drawing.Size(76, 20);
             this.txbGy.TabIndex = 67;
             this.txbGy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(54, 245);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(40, 199);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 17);
+            this.label16.Size = new System.Drawing.Size(45, 13);
             this.label16.TabIndex = 70;
             this.label16.Text = "Gz (mm)";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(54, 216);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(40, 176);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 17);
+            this.label17.Size = new System.Drawing.Size(45, 13);
             this.label17.TabIndex = 66;
             this.label17.Text = "Gy (mm)";
             // 
             // txbGz
             // 
-            this.txbGz.Location = new System.Drawing.Point(165, 242);
-            this.txbGz.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGz.Location = new System.Drawing.Point(124, 197);
             this.txbGz.Name = "txbGz";
             this.txbGz.ReadOnly = true;
-            this.txbGz.Size = new System.Drawing.Size(100, 22);
+            this.txbGz.Size = new System.Drawing.Size(76, 20);
             this.txbGz.TabIndex = 71;
             this.txbGz.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbGx
             // 
-            this.txbGx.Location = new System.Drawing.Point(165, 183);
-            this.txbGx.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGx.Location = new System.Drawing.Point(124, 149);
             this.txbGx.Name = "txbGx";
             this.txbGx.ReadOnly = true;
-            this.txbGx.Size = new System.Drawing.Size(100, 22);
+            this.txbGx.Size = new System.Drawing.Size(76, 20);
             this.txbGx.TabIndex = 69;
             this.txbGx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(54, 186);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(40, 151);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(61, 17);
+            this.label18.Size = new System.Drawing.Size(45, 13);
             this.label18.TabIndex = 68;
             this.label18.Text = "Gx (mm)";
             // 
             // txbGmy
             // 
-            this.txbGmy.Location = new System.Drawing.Point(165, 83);
-            this.txbGmy.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGmy.Location = new System.Drawing.Point(124, 67);
             this.txbGmy.Name = "txbGmy";
             this.txbGmy.ReadOnly = true;
-            this.txbGmy.Size = new System.Drawing.Size(100, 22);
+            this.txbGmy.Size = new System.Drawing.Size(76, 20);
             this.txbGmy.TabIndex = 60;
             this.txbGmy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(54, 116);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(40, 94);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 17);
+            this.label13.Size = new System.Drawing.Size(53, 13);
             this.label13.TabIndex = 63;
             this.label13.Text = "Gmz (mm)";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(54, 87);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(40, 71);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 17);
+            this.label14.Size = new System.Drawing.Size(53, 13);
             this.label14.TabIndex = 59;
             this.label14.Text = "Gmy (mm)";
             // 
             // txbGmz
             // 
-            this.txbGmz.Location = new System.Drawing.Point(165, 113);
-            this.txbGmz.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGmz.Location = new System.Drawing.Point(124, 92);
             this.txbGmz.Name = "txbGmz";
             this.txbGmz.ReadOnly = true;
-            this.txbGmz.Size = new System.Drawing.Size(100, 22);
+            this.txbGmz.Size = new System.Drawing.Size(76, 20);
             this.txbGmz.TabIndex = 64;
             this.txbGmz.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbGmx
             // 
-            this.txbGmx.Location = new System.Drawing.Point(165, 54);
-            this.txbGmx.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGmx.Location = new System.Drawing.Point(124, 44);
             this.txbGmx.Name = "txbGmx";
             this.txbGmx.ReadOnly = true;
-            this.txbGmx.Size = new System.Drawing.Size(100, 22);
+            this.txbGmx.Size = new System.Drawing.Size(76, 20);
             this.txbGmx.TabIndex = 62;
             this.txbGmx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(54, 57);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(40, 46);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 17);
+            this.label15.Size = new System.Drawing.Size(53, 13);
             this.label15.TabIndex = 61;
             this.label15.Text = "Gmx (mm)";
             // 
@@ -622,9 +623,10 @@ namespace SSInstructor.Forms
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(24, 155);
+            this.label12.Location = new System.Drawing.Point(18, 126);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(128, 17);
+            this.label12.Size = new System.Drawing.Size(101, 13);
             this.label12.TabIndex = 1;
             this.label12.Text = "CG of Ship Total";
             // 
@@ -632,18 +634,20 @@ namespace SSInstructor.Forms
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(27, 29);
+            this.label11.Location = new System.Drawing.Point(20, 24);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 17);
+            this.label11.Size = new System.Drawing.Size(71, 13);
             this.label11.TabIndex = 0;
             this.label11.Text = "CG of Load";
             // 
             // btnView3D
             // 
             this.btnView3D.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnView3D.Location = new System.Drawing.Point(1085, 38);
+            this.btnView3D.Location = new System.Drawing.Point(814, 31);
+            this.btnView3D.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnView3D.Name = "btnView3D";
-            this.btnView3D.Size = new System.Drawing.Size(98, 42);
+            this.btnView3D.Size = new System.Drawing.Size(74, 34);
             this.btnView3D.TabIndex = 21;
             this.btnView3D.Text = "3D View";
             this.btnView3D.UseVisualStyleBackColor = true;
@@ -651,19 +655,22 @@ namespace SSInstructor.Forms
             // 
             // fLoadPos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 853);
+            this.ClientSize = new System.Drawing.Size(928, 687);
             this.Controls.Add(this.btnView3D);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fLoadPos";
             this.Text = "fLoadPos";
             this.Load += new System.EventHandler(this.fLoadPos_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLoadSideView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLoadTopView)).EndInit();
@@ -729,5 +736,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.TextBox txbGx;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnView3D;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
