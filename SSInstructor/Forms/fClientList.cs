@@ -34,7 +34,7 @@ namespace SSInstructor.Forms
 
             foreach(ClientPanel clientObj in flowLayoutPanel1.Controls)
             {
-                if(clientObj.PcName == hostname && clientObj.IpAddress == IPAddress)
+                if(clientObj.PcName == hostname)
                 {
                     if (status == Machine.StatusCodes.Online)
                     {
@@ -42,6 +42,7 @@ namespace SSInstructor.Forms
                     }
                     else
                         clientObj.PowerState = false;
+                    return;
                 }
             }
         }
@@ -54,9 +55,6 @@ namespace SSInstructor.Forms
 
         private void fClientList_Load(object sender, EventArgs e)
         {
-            //MachineModule.Machines.Load(Pool);
-            //MachineModule.Machines.Dirty = false;
-
             // populate client list and create control
             if (MachineModule.Machines.Count > 0)
             {
@@ -70,6 +68,9 @@ namespace SSInstructor.Forms
                     clientObj.MacAddress = machine.MAC;
                     clientObj.PcName = machine.Name;
                     clientObj.Margin = new Padding(40, 40, 40, 40);
+
+                    if(machine.Status == Machine.StatusCodes.Online)
+                        clientObj.PowerState = true;
 
                     flowLayoutPanel1.Controls.Add(clientObj);
                 }

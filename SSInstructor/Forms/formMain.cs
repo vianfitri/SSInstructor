@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -72,7 +73,6 @@ namespace SSInstructor.Forms
             childForm.BringToFront();
             childForm.Show();
         }
-        #endregion
 
         private void formMain_Load(object sender, EventArgs e)
         {
@@ -82,7 +82,7 @@ namespace SSInstructor.Forms
 
             if (loginId == -1)
             {
-               openChildForm(fLogin);
+                openChildForm(fLogin);
             }
         }
 
@@ -91,5 +91,15 @@ namespace SSInstructor.Forms
             // Release PC Client Pool
             Pool.Release(10);
         }
+
+        private void formMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Save and Close PC Client
+            MachineModule.Machines.Save();
+            MachineModule.Machines.Close();
+        }
+        #endregion
+
+
     }
 }
