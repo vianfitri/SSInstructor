@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -89,9 +90,9 @@ namespace SSInstructor
         private void btnScenario_Click(object sender, EventArgs e)
         {
             // Load Scenario Page
-            openChildForm(new fLoadPos());
+            //openChildForm(new fLoadPos());
 
-            hideSubmenu();
+            //hideSubmenu();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
