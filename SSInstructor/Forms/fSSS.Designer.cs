@@ -551,6 +551,7 @@ namespace SSInstructor.Forms
             title5.Name = "Title1";
             title5.Text = "Ship Longitudinal Section";
             this.crtLongitudinal.Titles.Add(title5);
+            this.crtLongitudinal.PrePaint += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ChartPaintEventArgs>(this.crtLongitudinal_PrePaint);
             // 
             // tabHydrostaticCurve
             // 
@@ -630,6 +631,7 @@ namespace SSInstructor.Forms
             this.rbnGZatGivenDispAndKG.TabStop = true;
             this.rbnGZatGivenDispAndKG.Text = "Kestabilan Statik GZ (GZ vs Heel), sesuai Input Bobot dan KG";
             this.rbnGZatGivenDispAndKG.UseVisualStyleBackColor = true;
+            this.rbnGZatGivenDispAndKG.CheckedChanged += new System.EventHandler(this.rbnGZatGivenDispAndKG_CheckedChanged);
             // 
             // rbnGZCrossCurve
             // 
@@ -642,6 +644,7 @@ namespace SSInstructor.Forms
             this.rbnGZCrossCurve.TabStop = true;
             this.rbnGZCrossCurve.Text = "Kurva Silang GZ (GZ vs Disp)";
             this.rbnGZCrossCurve.UseVisualStyleBackColor = true;
+            this.rbnGZCrossCurve.CheckedChanged += new System.EventHandler(this.rbnGZCrossCurve_CheckedChanged);
             // 
             // rbnGZStaticStability
             // 
@@ -654,6 +657,7 @@ namespace SSInstructor.Forms
             this.rbnGZStaticStability.TabStop = true;
             this.rbnGZStaticStability.Text = "Kestabilan Statik GZ (GZ vs Heel)";
             this.rbnGZStaticStability.UseVisualStyleBackColor = true;
+            this.rbnGZStaticStability.CheckedChanged += new System.EventHandler(this.rbnGZStaticStability_CheckedChanged);
             // 
             // crtGZCrossCurve
             // 
@@ -716,6 +720,7 @@ namespace SSInstructor.Forms
             this.rbnKNatGivenDispAndKG.TabStop = true;
             this.rbnKNatGivenDispAndKG.Text = "Kestabilan Statik KN (KN vs Heel), sesuai Input Bobot dan KG";
             this.rbnKNatGivenDispAndKG.UseVisualStyleBackColor = true;
+            this.rbnKNatGivenDispAndKG.CheckedChanged += new System.EventHandler(this.rbnKNatGivenDispAndKG_CheckedChanged);
             // 
             // rbnKNCrossCurve
             // 
@@ -728,6 +733,7 @@ namespace SSInstructor.Forms
             this.rbnKNCrossCurve.TabStop = true;
             this.rbnKNCrossCurve.Text = "Kurva Silang KN (KN vs Disp)";
             this.rbnKNCrossCurve.UseVisualStyleBackColor = true;
+            this.rbnKNCrossCurve.CheckedChanged += new System.EventHandler(this.rbnKNCrossCurve_CheckedChanged);
             // 
             // rbnKNStaticStability
             // 
@@ -740,6 +746,7 @@ namespace SSInstructor.Forms
             this.rbnKNStaticStability.TabStop = true;
             this.rbnKNStaticStability.Text = "Kestabilan Statik KN (KN vs Heel)";
             this.rbnKNStaticStability.UseVisualStyleBackColor = true;
+            this.rbnKNStaticStability.CheckedChanged += new System.EventHandler(this.rbnKNStaticStability_CheckedChanged);
             // 
             // crtKNCrossCurve
             // 
@@ -994,6 +1001,7 @@ namespace SSInstructor.Forms
             this.scbPosisiTKK.Name = "scbPosisiTKK";
             this.scbPosisiTKK.Size = new System.Drawing.Size(180, 20);
             this.scbPosisiTKK.TabIndex = 162;
+            this.scbPosisiTKK.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbPosisiTKK_Scroll);
             // 
             // label53
             // 
@@ -1151,6 +1159,7 @@ namespace SSInstructor.Forms
             this.nudPosisiTNT.Name = "nudPosisiTNT";
             this.nudPosisiTNT.Size = new System.Drawing.Size(56, 20);
             this.nudPosisiTNT.TabIndex = 144;
+            this.nudPosisiTNT.ValueChanged += new System.EventHandler(this.nudPosisiTNT_ValueChanged);
             // 
             // label3
             // 
@@ -1177,6 +1186,7 @@ namespace SSInstructor.Forms
             this.nudPosisiTKK.Name = "nudPosisiTKK";
             this.nudPosisiTKK.Size = new System.Drawing.Size(56, 20);
             this.nudPosisiTKK.TabIndex = 142;
+            this.nudPosisiTKK.ValueChanged += new System.EventHandler(this.nudPosisiTKK_ValueChanged);
             // 
             // label2
             // 
@@ -1208,6 +1218,7 @@ namespace SSInstructor.Forms
             0,
             0,
             0});
+            this.nudPosisiTMMD.ValueChanged += new System.EventHandler(this.nudPosisiTMMD_ValueChanged);
             // 
             // label1
             // 
@@ -1239,6 +1250,7 @@ namespace SSInstructor.Forms
             0,
             0,
             0});
+            this.nudPosisiTMMB.ValueChanged += new System.EventHandler(this.nudPosisiTMMB_ValueChanged);
             // 
             // label96
             // 
@@ -1267,6 +1279,7 @@ namespace SSInstructor.Forms
             this.scbPosisiTMMD.Size = new System.Drawing.Size(180, 20);
             this.scbPosisiTMMD.TabIndex = 135;
             this.scbPosisiTMMD.Value = 1100;
+            this.scbPosisiTMMD.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbPosisiTMMD_Scroll);
             // 
             // scbPosisiTMMB
             // 
@@ -1277,6 +1290,7 @@ namespace SSInstructor.Forms
             this.scbPosisiTMMB.Size = new System.Drawing.Size(180, 20);
             this.scbPosisiTMMB.TabIndex = 134;
             this.scbPosisiTMMB.Value = 300;
+            this.scbPosisiTMMB.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbPosisiTMMB_Scroll);
             // 
             // label94
             // 
@@ -1304,6 +1318,7 @@ namespace SSInstructor.Forms
             this.scbPosisiTNT.Size = new System.Drawing.Size(20, 140);
             this.scbPosisiTNT.TabIndex = 130;
             this.scbPosisiTNT.Value = 300;
+            this.scbPosisiTNT.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbPosisiTNT_Scroll);
             // 
             // nudBebanTMMD
             // 
@@ -1551,6 +1566,7 @@ namespace SSInstructor.Forms
             this.cbxUseDispOrDraftReal.TabIndex = 117;
             this.cbxUseDispOrDraftReal.Text = "Gunakan Bobot/Draft Sesungguhnya";
             this.cbxUseDispOrDraftReal.UseVisualStyleBackColor = false;
+            this.cbxUseDispOrDraftReal.CheckedChanged += new System.EventHandler(this.cbxUseDispOrDraftReal_CheckedChanged);
             // 
             // cbxUseHeelReal
             // 
@@ -1561,6 +1577,7 @@ namespace SSInstructor.Forms
             this.cbxUseHeelReal.TabIndex = 116;
             this.cbxUseHeelReal.Text = "Gunakan Oleng Sesungguhnya";
             this.cbxUseHeelReal.UseVisualStyleBackColor = true;
+            this.cbxUseHeelReal.CheckedChanged += new System.EventHandler(this.cbxUseHeelReal_CheckedChanged);
             // 
             // cbxUseTrimReal
             // 
@@ -1571,6 +1588,7 @@ namespace SSInstructor.Forms
             this.cbxUseTrimReal.TabIndex = 115;
             this.cbxUseTrimReal.Text = "Gunakan Trim Sesungguhnya";
             this.cbxUseTrimReal.UseVisualStyleBackColor = true;
+            this.cbxUseTrimReal.CheckedChanged += new System.EventHandler(this.cbxUseTrimReal_CheckedChanged);
             // 
             // label27
             // 
@@ -1590,6 +1608,7 @@ namespace SSInstructor.Forms
             this.cbxUseKGReal.TabIndex = 113;
             this.cbxUseKGReal.Text = "Gunakan KG Sesungguhnya";
             this.cbxUseKGReal.UseVisualStyleBackColor = true;
+            this.cbxUseKGReal.CheckedChanged += new System.EventHandler(this.cbxUseKGReal_CheckedChanged);
             // 
             // scbKGVal
             // 
@@ -2797,6 +2816,7 @@ namespace SSInstructor.Forms
             0,
             0,
             0});
+            this.nudHSLineWidth.ValueChanged += new System.EventHandler(this.nudHSLineWidth_ValueChanged);
             // 
             // cbbHSLineSelect
             // 
@@ -2805,6 +2825,7 @@ namespace SSInstructor.Forms
             this.cbbHSLineSelect.Name = "cbbHSLineSelect";
             this.cbbHSLineSelect.Size = new System.Drawing.Size(130, 21);
             this.cbbHSLineSelect.TabIndex = 69;
+            this.cbbHSLineSelect.SelectedIndexChanged += new System.EventHandler(this.cbbHSLineSelect_SelectedIndexChanged);
             // 
             // label31
             // 

@@ -867,6 +867,144 @@ namespace SSInstructor.Forms
             crtLoadTopView.ChartAreas[0].AxisX.Interval = 100;
         }
 
+        private void crtLongitudinal_PrePaint(object sender, ChartPaintEventArgs e)
+        {
+            // algorithm to make chart always in correct aspect ratio, ssw 20140809
+            float GraphX = crtLongitudinal.ChartAreas[0].InnerPlotPosition.X * crtLongitudinal.Width / 100;
+            float GraphY = crtLongitudinal.ChartAreas[0].InnerPlotPosition.Y * crtLongitudinal.Height / 100;
+            float GraphR = crtLongitudinal.ChartAreas[0].InnerPlotPosition.Right * crtLongitudinal.Width / 100;
+            float GraphB = crtLongitudinal.ChartAreas[0].InnerPlotPosition.Bottom * crtLongitudinal.Height / 100;
+
+            float TitleHeight = 0;
+            if (crtLongitudinal.Titles.Count > 1)
+            {
+                for (int i = 0; i < crtLongitudinal.Titles.Count; i++)
+                {
+                    TitleHeight += crtLongitudinal.Titles[i].Font.Height;
+                }
+            }
+
+            float GraphWidth = crtLongitudinal.ChartAreas[0].InnerPlotPosition.Width * crtLongitudinal.Width / 100;
+            float GraphHeight = crtLongitudinal.ChartAreas[0].InnerPlotPosition.Height * crtLongitudinal.Height / 100 - TitleHeight;
+            double AxisYLength = crtLongitudinal.ChartAreas[0].AxisY.Maximum - crtLongitudinal.ChartAreas[0].AxisY.Minimum;
+            double AxisXLength = 100 * Math.Round(GraphWidth / GraphHeight * AxisYLength / 100);
+
+            crtLongitudinal.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
+            crtLongitudinal.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
+
+            crtLongitudinal.ChartAreas[0].AxisX.Interval = 100;
+        }
+
+        private void nudBebanTMMB_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudBebanTMMD_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudBebanTKK_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudBebanTNT_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void scbPosisiTMMB_Scroll(object sender, ScrollEventArgs e)
+        {
+            nudPosisiTMMB.Value = scbPosisiTMMB.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void scbPosisiTMMD_Scroll(object sender, ScrollEventArgs e)
+        {
+            nudPosisiTMMD.Value = scbPosisiTMMD.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void scbPosisiTKK_Scroll(object sender, ScrollEventArgs e)
+        {
+            nudPosisiTKK.Value = scbPosisiTKK.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void scbPosisiTNT_Scroll(object sender, ScrollEventArgs e)
+        {
+            nudPosisiTNT.Value = scbPosisiTNT.Minimum + scbPosisiTNT.Maximum - scbPosisiTNT.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudPosisiTMMB_ValueChanged(object sender, EventArgs e)
+        {
+            scbPosisiTMMB.Value = (int)nudPosisiTMMB.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudPosisiTMMD_ValueChanged(object sender, EventArgs e)
+        {
+            scbPosisiTMMD.Value = (int)nudPosisiTMMD.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudPosisiTKK_ValueChanged(object sender, EventArgs e)
+        {
+            scbPosisiTKK.Value = (int)nudPosisiTKK.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudPosisiTNT_ValueChanged(object sender, EventArgs e)
+        {
+            scbPosisiTNT.Value = scbPosisiTNT.Minimum + scbPosisiTNT.Maximum - (int)nudPosisiTNT.Value;
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void nudHSLineWidth_ValueChanged(object sender, EventArgs e)
+        {
+            int i = cbbHSLineSelect.SelectedIndex;
+            crtHydrostaticCurve.Series[i].BorderWidth = (int)nudHSLineWidth.Value;
+        }
+
+        private void cbxUseDispOrDraftReal_CheckedChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void cbxUseHeelReal_CheckedChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void cbxUseTrimReal_CheckedChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
+        private void cbxUseKGReal_CheckedChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKNCurve();
+        }
+
         private void pnlHSBGColor_Click(object sender, EventArgs e)
         {
             colorDialog1.Color = pnlHSBGColor.BackColor;
@@ -900,6 +1038,42 @@ namespace SSInstructor.Forms
             colorDialog1.ShowDialog();
             pnlHSLegendTextColor.BackColor = colorDialog1.Color;
             crtHydrostaticCurve.Legends[0].ForeColor = colorDialog1.Color;
+        }
+
+        private void cbbHSLineSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = cbbHSLineSelect.SelectedIndex;
+            pnlHSLineColor.BackColor = crtHydrostaticCurve.Series[i].Color;
+        }
+
+        private void rbnGZStaticStability_CheckedChanged(object sender, EventArgs e)
+        {
+            //DrawGZandKNCurves();
+        }
+
+        private void rbnKNStaticStability_CheckedChanged(object sender, EventArgs e)
+        {
+            //DrawGZandKNCurves();
+        }
+
+        private void rbnGZCrossCurve_CheckedChanged(object sender, EventArgs e)
+        {
+            //DrawGZandKNCurves();
+        }
+
+        private void rbnKNCrossCurve_CheckedChanged(object sender, EventArgs e)
+        {
+            //DrawGZandKNCurves();
+        }
+
+        private void rbnGZatGivenDispAndKG_CheckedChanged(object sender, EventArgs e)
+        {
+            //DrawGZandKNCurves();
+        }
+
+        private void rbnKNatGivenDispAndKG_CheckedChanged(object sender, EventArgs e)
+        {
+            //DrawGZandKNCurves();
         }
 
         private void SettingInputValue()
@@ -1107,28 +1281,5 @@ namespace SSInstructor.Forms
 
         #endregion
 
-        private void nudBebanTMMB_ValueChanged(object sender, EventArgs e)
-        {
-            CalculateCG_and_Attitude();
-            //DrawGZandKN
-        }
-
-        private void nudBebanTMMD_ValueChanged(object sender, EventArgs e)
-        {
-            CalculateCG_and_Attitude();
-            //DrawGZandKN
-        }
-
-        private void nudBebanTKK_ValueChanged(object sender, EventArgs e)
-        {
-            CalculateCG_and_Attitude();
-            //DrawGZandKN
-        }
-
-        private void nudBebanTNT_ValueChanged(object sender, EventArgs e)
-        {
-            CalculateCG_and_Attitude();
-            //DrawGZandKN
-        }
     }
 }
