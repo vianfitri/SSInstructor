@@ -74,6 +74,45 @@ namespace SSInstructor.Forms
             this.nudHSLineWidth = new System.Windows.Forms.NumericUpDown();
             this.cbbHSLineSelect = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.scbPosisiTKK = new System.Windows.Forms.HScrollBar();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txbPosisiTMMD = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.txbPosisiTMMB = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.txbPosisiTNT = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.txbBebanTMMD = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.txbBebanTNT = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txbBebanTMMB = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.txbPosisiTKK = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txbBebanTKK = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudPosisiTNT = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nudPosisiTKK = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nudPosisiTMMD = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudPosisiTMMB = new System.Windows.Forms.NumericUpDown();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.scbPosisiTMMD = new System.Windows.Forms.HScrollBar();
+            this.scbPosisiTMMB = new System.Windows.Forms.HScrollBar();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.scbPosisiTNT = new System.Windows.Forms.VScrollBar();
+            this.nudBebanTMMD = new System.Windows.Forms.NumericUpDown();
+            this.nudBebanTNT = new System.Windows.Forms.NumericUpDown();
+            this.nudBebanTMMB = new System.Windows.Forms.NumericUpDown();
+            this.nudBebanTKK = new System.Windows.Forms.NumericUpDown();
+            this.txbInfoMuatan = new System.Windows.Forms.TextBox();
+            this.txbBobotTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcShipStability)).BeginInit();
             this.spcShipStability.Panel1.SuspendLayout();
             this.spcShipStability.Panel2.SuspendLayout();
@@ -90,12 +129,21 @@ namespace SSInstructor.Forms
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tabControlInput.SuspendLayout();
+            this.tabMovingLoad.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabGraphTransversal.SuspendLayout();
             this.tabGraphHSCurve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMarkerSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTNT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTKK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTMMD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTMMB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTMMD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTNT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTMMB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTKK)).BeginInit();
             this.SuspendLayout();
             // 
             // spcShipStability
@@ -261,11 +309,50 @@ namespace SSInstructor.Forms
             // tabMovingLoad
             // 
             this.tabMovingLoad.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabMovingLoad.Controls.Add(this.txbInfoMuatan);
+            this.tabMovingLoad.Controls.Add(this.txbBobotTotal);
+            this.tabMovingLoad.Controls.Add(this.scbPosisiTKK);
+            this.tabMovingLoad.Controls.Add(this.label53);
+            this.tabMovingLoad.Controls.Add(this.txbPosisiTMMD);
+            this.tabMovingLoad.Controls.Add(this.label52);
+            this.tabMovingLoad.Controls.Add(this.txbPosisiTMMB);
+            this.tabMovingLoad.Controls.Add(this.label51);
+            this.tabMovingLoad.Controls.Add(this.txbPosisiTNT);
+            this.tabMovingLoad.Controls.Add(this.label50);
+            this.tabMovingLoad.Controls.Add(this.txbBebanTMMD);
+            this.tabMovingLoad.Controls.Add(this.label49);
+            this.tabMovingLoad.Controls.Add(this.txbBebanTNT);
+            this.tabMovingLoad.Controls.Add(this.label48);
+            this.tabMovingLoad.Controls.Add(this.txbBebanTMMB);
+            this.tabMovingLoad.Controls.Add(this.label47);
+            this.tabMovingLoad.Controls.Add(this.txbPosisiTKK);
+            this.tabMovingLoad.Controls.Add(this.label36);
+            this.tabMovingLoad.Controls.Add(this.txbBebanTKK);
+            this.tabMovingLoad.Controls.Add(this.richTextBox1);
+            this.tabMovingLoad.Controls.Add(this.label4);
+            this.tabMovingLoad.Controls.Add(this.nudPosisiTNT);
+            this.tabMovingLoad.Controls.Add(this.label3);
+            this.tabMovingLoad.Controls.Add(this.nudPosisiTKK);
+            this.tabMovingLoad.Controls.Add(this.label2);
+            this.tabMovingLoad.Controls.Add(this.nudPosisiTMMD);
+            this.tabMovingLoad.Controls.Add(this.label1);
+            this.tabMovingLoad.Controls.Add(this.nudPosisiTMMB);
+            this.tabMovingLoad.Controls.Add(this.label96);
+            this.tabMovingLoad.Controls.Add(this.label95);
+            this.tabMovingLoad.Controls.Add(this.scbPosisiTMMD);
+            this.tabMovingLoad.Controls.Add(this.scbPosisiTMMB);
+            this.tabMovingLoad.Controls.Add(this.label94);
+            this.tabMovingLoad.Controls.Add(this.label89);
+            this.tabMovingLoad.Controls.Add(this.scbPosisiTNT);
+            this.tabMovingLoad.Controls.Add(this.nudBebanTMMD);
+            this.tabMovingLoad.Controls.Add(this.nudBebanTNT);
+            this.tabMovingLoad.Controls.Add(this.nudBebanTMMB);
+            this.tabMovingLoad.Controls.Add(this.nudBebanTKK);
             this.tabMovingLoad.Location = new System.Drawing.Point(4, 25);
             this.tabMovingLoad.Margin = new System.Windows.Forms.Padding(4);
             this.tabMovingLoad.Name = "tabMovingLoad";
             this.tabMovingLoad.Padding = new System.Windows.Forms.Padding(4);
-            this.tabMovingLoad.Size = new System.Drawing.Size(442, 621);
+            this.tabMovingLoad.Size = new System.Drawing.Size(511, 621);
             this.tabMovingLoad.TabIndex = 0;
             this.tabMovingLoad.Text = "Shear Load";
             // 
@@ -657,6 +744,469 @@ namespace SSInstructor.Forms
             this.label31.TabIndex = 68;
             this.label31.Text = "Line";
             // 
+            // scbPosisiTKK
+            // 
+            this.scbPosisiTKK.Location = new System.Drawing.Point(47, 302);
+            this.scbPosisiTKK.Maximum = 150;
+            this.scbPosisiTKK.Minimum = -150;
+            this.scbPosisiTKK.Name = "scbPosisiTKK";
+            this.scbPosisiTKK.Size = new System.Drawing.Size(206, 20);
+            this.scbPosisiTKK.TabIndex = 124;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(376, 109);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(37, 17);
+            this.label53.TabIndex = 123;
+            this.label53.Text = "( m )";
+            // 
+            // txbPosisiTMMD
+            // 
+            this.txbPosisiTMMD.Location = new System.Drawing.Point(420, 105);
+            this.txbPosisiTMMD.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPosisiTMMD.Name = "txbPosisiTMMD";
+            this.txbPosisiTMMD.ReadOnly = true;
+            this.txbPosisiTMMD.Size = new System.Drawing.Size(73, 22);
+            this.txbPosisiTMMD.TabIndex = 122;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(137, 109);
+            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(37, 17);
+            this.label52.TabIndex = 121;
+            this.label52.Text = "( m )";
+            // 
+            // txbPosisiTMMB
+            // 
+            this.txbPosisiTMMB.Location = new System.Drawing.Point(180, 105);
+            this.txbPosisiTMMB.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPosisiTMMB.Name = "txbPosisiTMMB";
+            this.txbPosisiTMMB.ReadOnly = true;
+            this.txbPosisiTMMB.Size = new System.Drawing.Size(73, 22);
+            this.txbPosisiTMMB.TabIndex = 120;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(376, 262);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(37, 17);
+            this.label51.TabIndex = 119;
+            this.label51.Text = "( m )";
+            // 
+            // txbPosisiTNT
+            // 
+            this.txbPosisiTNT.Location = new System.Drawing.Point(420, 257);
+            this.txbPosisiTNT.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPosisiTNT.Name = "txbPosisiTNT";
+            this.txbPosisiTNT.ReadOnly = true;
+            this.txbPosisiTNT.Size = new System.Drawing.Size(73, 22);
+            this.txbPosisiTNT.TabIndex = 118;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(366, 54);
+            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(46, 17);
+            this.label50.TabIndex = 117;
+            this.label50.Text = "( ton )";
+            // 
+            // txbBebanTMMD
+            // 
+            this.txbBebanTMMD.Location = new System.Drawing.Point(420, 50);
+            this.txbBebanTMMD.Margin = new System.Windows.Forms.Padding(4);
+            this.txbBebanTMMD.Name = "txbBebanTMMD";
+            this.txbBebanTMMD.ReadOnly = true;
+            this.txbBebanTMMD.Size = new System.Drawing.Size(73, 22);
+            this.txbBebanTMMD.TabIndex = 116;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(366, 206);
+            this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(46, 17);
+            this.label49.TabIndex = 115;
+            this.label49.Text = "( ton )";
+            // 
+            // txbBebanTNT
+            // 
+            this.txbBebanTNT.Location = new System.Drawing.Point(420, 201);
+            this.txbBebanTNT.Margin = new System.Windows.Forms.Padding(4);
+            this.txbBebanTNT.Name = "txbBebanTNT";
+            this.txbBebanTNT.ReadOnly = true;
+            this.txbBebanTNT.Size = new System.Drawing.Size(73, 22);
+            this.txbBebanTNT.TabIndex = 114;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(128, 54);
+            this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(46, 17);
+            this.label48.TabIndex = 113;
+            this.label48.Text = "( ton )";
+            // 
+            // txbBebanTMMB
+            // 
+            this.txbBebanTMMB.Location = new System.Drawing.Point(180, 50);
+            this.txbBebanTMMB.Margin = new System.Windows.Forms.Padding(4);
+            this.txbBebanTMMB.Name = "txbBebanTMMB";
+            this.txbBebanTMMB.ReadOnly = true;
+            this.txbBebanTMMB.Size = new System.Drawing.Size(73, 22);
+            this.txbBebanTMMB.TabIndex = 112;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(137, 262);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(37, 17);
+            this.label47.TabIndex = 111;
+            this.label47.Text = "( m )";
+            // 
+            // txbPosisiTKK
+            // 
+            this.txbPosisiTKK.Location = new System.Drawing.Point(180, 258);
+            this.txbPosisiTKK.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPosisiTKK.Name = "txbPosisiTKK";
+            this.txbPosisiTKK.ReadOnly = true;
+            this.txbPosisiTKK.Size = new System.Drawing.Size(73, 22);
+            this.txbPosisiTKK.TabIndex = 110;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(128, 206);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(46, 17);
+            this.label36.TabIndex = 109;
+            this.label36.Text = "( ton )";
+            // 
+            // txbBebanTKK
+            // 
+            this.txbBebanTKK.Location = new System.Drawing.Point(180, 202);
+            this.txbBebanTKK.Margin = new System.Windows.Forms.Padding(4);
+            this.txbBebanTKK.Name = "txbBebanTKK";
+            this.txbBebanTKK.ReadOnly = true;
+            this.txbBebanTKK.Size = new System.Drawing.Size(73, 22);
+            this.txbBebanTKK.TabIndex = 108;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(14, 359);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(480, 80);
+            this.richTextBox1.TabIndex = 107;
+            this.richTextBox1.Text = "TMMB = Troli Maju Mundur Belakang \nTMMD = Troli Maju Mundur Depan\nTKK  = Troli Ki" +
+    "ri Kanan\nTNT  = Troli Naik Turun";
+            this.richTextBox1.WordWrap = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(302, 234);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 17);
+            this.label4.TabIndex = 106;
+            this.label4.Text = "Posisi TNT (mm)";
+            // 
+            // nudPosisiTNT
+            // 
+            this.nudPosisiTNT.Location = new System.Drawing.Point(418, 232);
+            this.nudPosisiTNT.Margin = new System.Windows.Forms.Padding(4);
+            this.nudPosisiTNT.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudPosisiTNT.Name = "nudPosisiTNT";
+            this.nudPosisiTNT.Size = new System.Drawing.Size(75, 22);
+            this.nudPosisiTNT.TabIndex = 105;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(62, 234);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 17);
+            this.label3.TabIndex = 104;
+            this.label3.Text = "Posisi TKK (mm)";
+            // 
+            // nudPosisiTKK
+            // 
+            this.nudPosisiTKK.Location = new System.Drawing.Point(178, 232);
+            this.nudPosisiTKK.Margin = new System.Windows.Forms.Padding(4);
+            this.nudPosisiTKK.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.nudPosisiTKK.Minimum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            -2147483648});
+            this.nudPosisiTKK.Name = "nudPosisiTKK";
+            this.nudPosisiTKK.Size = new System.Drawing.Size(75, 22);
+            this.nudPosisiTKK.TabIndex = 103;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(285, 82);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 17);
+            this.label2.TabIndex = 102;
+            this.label2.Text = "Posisi TMMD (mm)";
+            // 
+            // nudPosisiTMMD
+            // 
+            this.nudPosisiTMMD.Location = new System.Drawing.Point(418, 79);
+            this.nudPosisiTMMD.Margin = new System.Windows.Forms.Padding(4);
+            this.nudPosisiTMMD.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.nudPosisiTMMD.Minimum = new decimal(new int[] {
+            1100,
+            0,
+            0,
+            0});
+            this.nudPosisiTMMD.Name = "nudPosisiTMMD";
+            this.nudPosisiTMMD.Size = new System.Drawing.Size(75, 22);
+            this.nudPosisiTMMD.TabIndex = 101;
+            this.nudPosisiTMMD.Value = new decimal(new int[] {
+            1100,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 82);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 17);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "Posisi TMMB (mm)";
+            // 
+            // nudPosisiTMMB
+            // 
+            this.nudPosisiTMMB.Location = new System.Drawing.Point(178, 79);
+            this.nudPosisiTMMB.Margin = new System.Windows.Forms.Padding(4);
+            this.nudPosisiTMMB.Maximum = new decimal(new int[] {
+            1100,
+            0,
+            0,
+            0});
+            this.nudPosisiTMMB.Minimum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudPosisiTMMB.Name = "nudPosisiTMMB";
+            this.nudPosisiTMMB.Size = new System.Drawing.Size(75, 22);
+            this.nudPosisiTMMB.TabIndex = 99;
+            this.nudPosisiTMMB.Value = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(62, 179);
+            this.label96.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(109, 17);
+            this.label96.TabIndex = 98;
+            this.label96.Text = "Beban TKK (kg)";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(302, 179);
+            this.label95.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(110, 17);
+            this.label95.TabIndex = 97;
+            this.label95.Text = "Beban TNT (kg)";
+            // 
+            // scbPosisiTMMD
+            // 
+            this.scbPosisiTMMD.Location = new System.Drawing.Point(287, 137);
+            this.scbPosisiTMMD.Maximum = 2000;
+            this.scbPosisiTMMD.Minimum = 1100;
+            this.scbPosisiTMMD.Name = "scbPosisiTMMD";
+            this.scbPosisiTMMD.Size = new System.Drawing.Size(206, 20);
+            this.scbPosisiTMMD.TabIndex = 96;
+            this.scbPosisiTMMD.Value = 1100;
+            // 
+            // scbPosisiTMMB
+            // 
+            this.scbPosisiTMMB.Location = new System.Drawing.Point(47, 137);
+            this.scbPosisiTMMB.Maximum = 1100;
+            this.scbPosisiTMMB.Minimum = 300;
+            this.scbPosisiTMMB.Name = "scbPosisiTMMB";
+            this.scbPosisiTMMB.Size = new System.Drawing.Size(206, 20);
+            this.scbPosisiTMMB.TabIndex = 95;
+            this.scbPosisiTMMB.Value = 300;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(49, 26);
+            this.label94.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(122, 17);
+            this.label94.TabIndex = 94;
+            this.label94.Text = "Beban TMMB (kg)";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(285, 26);
+            this.label89.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(123, 17);
+            this.label89.TabIndex = 93;
+            this.label89.Text = "Beban TMMD (kg)";
+            // 
+            // scbPosisiTNT
+            // 
+            this.scbPosisiTNT.Location = new System.Drawing.Point(273, 177);
+            this.scbPosisiTNT.Maximum = 300;
+            this.scbPosisiTNT.Name = "scbPosisiTNT";
+            this.scbPosisiTNT.Size = new System.Drawing.Size(20, 145);
+            this.scbPosisiTNT.TabIndex = 91;
+            this.scbPosisiTNT.Value = 300;
+            // 
+            // nudBebanTMMD
+            // 
+            this.nudBebanTMMD.DecimalPlaces = 1;
+            this.nudBebanTMMD.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudBebanTMMD.Location = new System.Drawing.Point(418, 24);
+            this.nudBebanTMMD.Margin = new System.Windows.Forms.Padding(4);
+            this.nudBebanTMMD.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudBebanTMMD.Name = "nudBebanTMMD";
+            this.nudBebanTMMD.Size = new System.Drawing.Size(75, 22);
+            this.nudBebanTMMD.TabIndex = 92;
+            // 
+            // nudBebanTNT
+            // 
+            this.nudBebanTNT.DecimalPlaces = 1;
+            this.nudBebanTNT.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudBebanTNT.Location = new System.Drawing.Point(418, 177);
+            this.nudBebanTNT.Margin = new System.Windows.Forms.Padding(4);
+            this.nudBebanTNT.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudBebanTNT.Name = "nudBebanTNT";
+            this.nudBebanTNT.Size = new System.Drawing.Size(75, 22);
+            this.nudBebanTNT.TabIndex = 90;
+            // 
+            // nudBebanTMMB
+            // 
+            this.nudBebanTMMB.DecimalPlaces = 1;
+            this.nudBebanTMMB.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudBebanTMMB.Location = new System.Drawing.Point(178, 24);
+            this.nudBebanTMMB.Margin = new System.Windows.Forms.Padding(4);
+            this.nudBebanTMMB.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudBebanTMMB.Name = "nudBebanTMMB";
+            this.nudBebanTMMB.Size = new System.Drawing.Size(75, 22);
+            this.nudBebanTMMB.TabIndex = 88;
+            // 
+            // nudBebanTKK
+            // 
+            this.nudBebanTKK.DecimalPlaces = 1;
+            this.nudBebanTKK.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudBebanTKK.Location = new System.Drawing.Point(178, 177);
+            this.nudBebanTKK.Margin = new System.Windows.Forms.Padding(4);
+            this.nudBebanTKK.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudBebanTKK.Name = "nudBebanTKK";
+            this.nudBebanTKK.Size = new System.Drawing.Size(75, 22);
+            this.nudBebanTKK.TabIndex = 89;
+            // 
+            // txbInfoMuatan
+            // 
+            this.txbInfoMuatan.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txbInfoMuatan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbInfoMuatan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbInfoMuatan.Location = new System.Drawing.Point(4, 545);
+            this.txbInfoMuatan.Margin = new System.Windows.Forms.Padding(4);
+            this.txbInfoMuatan.Name = "txbInfoMuatan";
+            this.txbInfoMuatan.ReadOnly = true;
+            this.txbInfoMuatan.Size = new System.Drawing.Size(503, 36);
+            this.txbInfoMuatan.TabIndex = 126;
+            this.txbInfoMuatan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txbBobotTotal
+            // 
+            this.txbBobotTotal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txbBobotTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbBobotTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBobotTotal.Location = new System.Drawing.Point(4, 581);
+            this.txbBobotTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txbBobotTotal.Name = "txbBobotTotal";
+            this.txbBobotTotal.ReadOnly = true;
+            this.txbBobotTotal.Size = new System.Drawing.Size(503, 36);
+            this.txbBobotTotal.TabIndex = 125;
+            this.txbBobotTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // fSSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -681,6 +1231,8 @@ namespace SSInstructor.Forms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tabControlInput.ResumeLayout(false);
+            this.tabMovingLoad.ResumeLayout(false);
+            this.tabMovingLoad.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabGraphTransversal.ResumeLayout(false);
             this.tabGraphTransversal.PerformLayout();
@@ -689,6 +1241,14 @@ namespace SSInstructor.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nudLineWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMarkerSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTNT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTKK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTMMD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPosisiTMMB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTMMD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTNT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTMMB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBebanTKK)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -740,5 +1300,44 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.NumericUpDown nudHSLineWidth;
         private System.Windows.Forms.ComboBox cbbHSLineSelect;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.HScrollBar scbPosisiTKK;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox txbPosisiTMMD;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox txbPosisiTMMB;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox txbPosisiTNT;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox txbBebanTMMD;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox txbBebanTNT;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox txbBebanTMMB;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox txbPosisiTKK;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txbBebanTKK;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nudPosisiTNT;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nudPosisiTKK;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown nudPosisiTMMD;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown nudPosisiTMMB;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.HScrollBar scbPosisiTMMD;
+        private System.Windows.Forms.HScrollBar scbPosisiTMMB;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.VScrollBar scbPosisiTNT;
+        private System.Windows.Forms.NumericUpDown nudBebanTMMD;
+        private System.Windows.Forms.NumericUpDown nudBebanTNT;
+        private System.Windows.Forms.NumericUpDown nudBebanTMMB;
+        private System.Windows.Forms.NumericUpDown nudBebanTKK;
+        private System.Windows.Forms.TextBox txbInfoMuatan;
+        private System.Windows.Forms.TextBox txbBobotTotal;
     }
 }
