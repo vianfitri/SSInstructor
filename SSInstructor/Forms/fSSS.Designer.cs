@@ -1322,6 +1322,7 @@ namespace SSInstructor.Forms
             this.nudBebanTMMD.Name = "nudBebanTMMD";
             this.nudBebanTMMD.Size = new System.Drawing.Size(56, 20);
             this.nudBebanTMMD.TabIndex = 131;
+            this.nudBebanTMMD.ValueChanged += new System.EventHandler(this.nudBebanTMMD_ValueChanged);
             // 
             // nudBebanTNT
             // 
@@ -1340,6 +1341,7 @@ namespace SSInstructor.Forms
             this.nudBebanTNT.Name = "nudBebanTNT";
             this.nudBebanTNT.Size = new System.Drawing.Size(56, 20);
             this.nudBebanTNT.TabIndex = 129;
+            this.nudBebanTNT.ValueChanged += new System.EventHandler(this.nudBebanTNT_ValueChanged);
             // 
             // nudBebanTMMB
             // 
@@ -1358,6 +1360,7 @@ namespace SSInstructor.Forms
             this.nudBebanTMMB.Name = "nudBebanTMMB";
             this.nudBebanTMMB.Size = new System.Drawing.Size(56, 20);
             this.nudBebanTMMB.TabIndex = 127;
+            this.nudBebanTMMB.ValueChanged += new System.EventHandler(this.nudBebanTMMB_ValueChanged);
             // 
             // nudBebanTKK
             // 
@@ -1376,6 +1379,7 @@ namespace SSInstructor.Forms
             this.nudBebanTKK.Name = "nudBebanTKK";
             this.nudBebanTKK.Size = new System.Drawing.Size(56, 20);
             this.nudBebanTKK.TabIndex = 128;
+            this.nudBebanTKK.ValueChanged += new System.EventHandler(this.nudBebanTKK_ValueChanged);
             // 
             // txbInfoMuatan
             // 

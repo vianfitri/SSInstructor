@@ -1104,8 +1104,31 @@ namespace SSInstructor.Forms
             txbPosisiTNT.Text = TNT_Pos_Real.z.ToString("F2");
 
         }
+
         #endregion
 
+        private void nudBebanTMMB_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKN
+        }
 
+        private void nudBebanTMMD_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKN
+        }
+
+        private void nudBebanTKK_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKN
+        }
+
+        private void nudBebanTNT_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateCG_and_Attitude();
+            //DrawGZandKN
+        }
     }
 }
