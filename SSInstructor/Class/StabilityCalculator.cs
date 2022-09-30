@@ -25,140 +25,140 @@ public static class StabilityCalculator {
     #endregion
 
     #region "Hydrostatic Data"
-    static double[] dspData_BC; // Kolom 1  = Displacement Weight (kgf) // used
-    static double[] drfData_BC; // Kolom 2  = Draft, T (mm) // used	            
-    static double[] kbtData_BC; // Kolom 7  = KBT (mm)	// used       
-    static double[] kmtData_BC; // Kolom 8  = KMT (mm)	// used  
-    static double[] lbtData_BC; // Kolom 10 = LCB (mm), at transversal mode // used      
-    static double[] lflData_BC; // Kolom 11 = LCF (mm), at longitudinal mode // used	     
-    static double[] wtiData_BC; // Kolom 12 = WTI (kgf/cm) // used  
-    static double[] mttData_BC; // Kolom 13 = MTT (kgf.m/cm) // used
-    static double[] cobData_BC; // Kolom 23 = Cb // used	   
-    static double[] copData_BC; // Kolom 24 = Cp // used	 
+    public static double[] dspData_BC; // Kolom 1  = Displacement Weight (kgf) // used
+    public static double[] drfData_BC; // Kolom 2  = Draft, T (mm) // used	            
+    public static double[] kbtData_BC; // Kolom 7  = KBT (mm)	// used       
+    public static double[] kmtData_BC; // Kolom 8  = KMT (mm)	// used  
+    public static double[] lbtData_BC; // Kolom 10 = LCB (mm), at transversal mode // used      
+    public static double[] lflData_BC; // Kolom 11 = LCF (mm), at longitudinal mode // used	     
+    public static double[] wtiData_BC; // Kolom 12 = WTI (kgf/cm) // used  
+    public static double[] mttData_BC; // Kolom 13 = MTT (kgf.m/cm) // used
+    public static double[] cobData_BC; // Kolom 23 = Cb // used	   
+    public static double[] copData_BC; // Kolom 24 = Cp // used	 
 
-    static double[] disp_KMT_BC = new double[16] { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80 };
+    public static double[] disp_KMT_BC = new double[16] { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80 };
     //double[] heel_KMT_BC = new double[13] { 0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90 };
-    static double[] heel_KMT_BC = new double[28] { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 }; // 20160113
+    public static double[] heel_KMT_BC = new double[28] { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 }; // 20160113
 
     // trim angle (deg), new Bulk Carrier model scale 1:87, 20150827
-    static double[] trim_KML_BC = new double[11] { -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10 };
+    public static double[] trim_KML_BC = new double[11] { -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10 };
 
     // new data, new Bulk Carrier model scale 1:87, 20150827
     //double KG_BC_LS = 110;    // mm, light-ship KG (INCLINING TEST DATA, 20151230); 
     //double KG_BC_REAL = 110;  // mm from Keel (INCLINING TEST DATA, 20160102); 
     //double KG_BC_LS = 100;    // mm, light-ship KG (INCLINING TEST DATA, 20151230); 
     //double KG_BC_REAL = 100;  // mm from Keel (INCLINING TEST DATA, 20160102); 
-    static double LCG_BC = 1096.5;   // mm from AP = X0 (CATIA DATA, 20160102); 
-    static double KG_BC_ORCA3D = 0;  // mm from Keel (vertical position of Zero point in ORCA3D, 20160102); 
+    public static double LCG_BC = 1096.5;   // mm from AP = X0 (CATIA DATA, 20160102); 
+    public static double KG_BC_ORCA3D = 0;  // mm from Keel (vertical position of Zero point in ORCA3D, 20160102); 
 
     // knt = KN at Transversal Mode
     // lookup table data : kntData(row, column), new Bulk Carrier model scale 1:87, 20160107
     // row   = heel_KMT_BC
     // colum = disp_KMT_BC
-    static double[,] kntData_2D_BC;
+    public static double[,] kntData_2D_BC;
 
     // tbt = Tranverse CB at Tranversal Mode, ORCA3D = TCB
     // lookup table data : tbtData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = heel_KMT_BC
     // colum = disp_KMT_BC
-    static double[,] tbtData_2D_BC;
+    public static double[,] tbtData_2D_BC;
 
     // vbt = Vertical CB at Tranversal Mode, ORCA3D = VCB
     // lookup table data : vbtData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = heel_KMT_BC
     // colum = disp_KMT_BC
-    static double[,] vbtData_2D_BC;
+    public static double[,] vbtData_2D_BC;
 
     // kbt = KB at Tranversal Mode
     // lookup table data : kbtData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = heel_KMT_BC
     // colum = disp_KMT_BC
-    static double[,] kbtData_2D_BC;
+    public static double[,] kbtData_2D_BC;
 
     // kmt = KM at Tranversal Mode 
     // lookup table data : kmtData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = heel_KMT_BC
     // colum = disp_KMT_BC
-    static double[,] kmtData_2D_BC;
+    public static double[,] kmtData_2D_BC;
 
     // bmt = BM at Tranversal Mode 
     // lookup table data : kmtData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = heel_KMT_BC
     // colum = disp_KMT_BC
-    static double[,] bmtData_2D_BC;
+    public static double[,] bmtData_2D_BC;
 
     // lbt = LCB at Tranversal Mode
     // lookup table data : lbtData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = heel_KMT_BC
     // colum = disp_KMT_BC
-    static double[,] lbtData_2D_BC;
+    public static double[,] lbtData_2D_BC;
 
 
     // lbl = LCB at Longitudinal Mode
     // lookup table data : lbtData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = trim_KML_BC
     // colum = disp_KMT_BC
-    static double[,] lblData_2D_BC;
+    public static double[,] lblData_2D_BC;
 
     // kbl = KB at Longitudinal Mode 
     // lookup table data : kblData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = trim_KML_BC
     // colum = disp_KMT_BC
-    static double[,] kblData_2D_BC;
+    public static double[,] kblData_2D_BC;
 
     // vbl = Vertical CB at Longitudinal Mode, ORCA3D = VCB
     // lookup table data : vblData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = trim_KML_BC
     // colum = disp_KMT_BC
-    static double[,] vblData_2D_BC;
+    public static double[,] vblData_2D_BC;
 
     // kml = KM at Longitudinal Mode 
     // lookup table data : kmlData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = trim_KML_BC
     // colum = disp_KMT_BC
-    static double[,] kmlData_2D_BC;
+    public static double[,] kmlData_2D_BC;
 
     // bml = BM at Longitudinal Mode 
     // lookup table data : kmlData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = trim_KML_BC
     // colum = disp_KMT_BC
-    static double[,] bmlData_2D_BC;
+    public static double[,] bmlData_2D_BC;
 
     // lfl = LCF at Longitudinal Mode
     // lookup table data : lflData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = trim_KML_BC
     // colum = disp_KMT_BC
-    static double[,] lflData_2D_BC;
+    public static double[,] lflData_2D_BC;
 
     // kfl = KF at Longitudinal Mode 
     // lookup table data : kflData(row, column), new Bulk Carrier model scale 1:87, 20150827
     // row   = trim_KML_BC
     // colum = disp_KMT_BC
-    static double[,] kflData_2D_BC;
+    public static double[,] kflData_2D_BC;
 
     // Other Data
     //double[,] T2D_gztData;  // GZT table, transversal GZ, 2D look-up table 
-    static double[,] T2D_kntData;  // KNT table, transversal KN, 2D look-up table 
-    static double[,] T2D_tbtData;  // TCB table, transversal CB, 2D look-up table
-    static double[,] T2D_lblData;  // LCB table, longitudinal CB, 2D look-up table
-                                   //double[,] T2D_kbtData;  // KBT table, transversal KB, 2D look-up table
-    static double[,] T2D_vbtData;  // VCB table, vertical CB, lateral mode, 2D look-up table
-                                   //double[,] T2D_kblData;  // KBL table, longitudinal KB, 2D look-up table
-    static double[,] T2D_vblData;  // VCB table, vertical CB, longitudinal mode, 2D look-up table
-    static double[,] T2D_kmtData;  // KMT table, transversal KM, 2D look-up table
-    static double[,] T2D_bmtData;  // BMT table, transversal BM, 2D look-up table
-    static double[,] T2D_kmlData;  // KML table, longitudinal KM, 2D look-up table
-    static double[,] T2D_bmlData;  // BML table, longitudinal BM, 2D look-up table
-    static double[,] T2D_kflData;  // KCF table, longitudinal KF, 2D look-tup table
-    static double[,] T2D_lflData;  // LCF table, longitudinal CF, 2D look-up table
-    static double[] T1D_drfData;  // draught (draft), 1D look-up table (1D Table = Vector)
-    static double[] T1D_dspData;  // displacement, 1D look-up table (1D Table = Vector)
-    static double[] T1D_helData;  // heel angle, 1D look-up table (1D Table = Vector)
-    static double[] T1D_trmData;  // trim angle, 1D look-up table (1D Table = Vector)
-    static double[] T1D_wtiData;  // Weight To Immerse, Ton Per Centimeter, 1D look-up table (1D Table = Vector)
-    static double[] T1D_mttData;  // Moment To Trim, Moment to Change Trim, 1D look-up table (1D Table = Vector)
-    static double[] T1D_cobData;  // Coefficient of Block, Cb, 1D look-up table (1D Table = Vector)
-    static double[] T1D_copData;  // Coefficient of Prismatic, Cp, 1D look-up table (1D Table = Vector)
+    public static double[,] T2D_kntData;  // KNT table, transversal KN, 2D look-up table 
+    public static double[,] T2D_tbtData;  // TCB table, transversal CB, 2D look-up table
+    public static double[,] T2D_lblData;  // LCB table, longitudinal CB, 2D look-up table
+                                          //double[,] T2D_kbtData;  // KBT table, transversal KB, 2D look-up table
+    public static double[,] T2D_vbtData;  // VCB table, vertical CB, lateral mode, 2D look-up table
+                                          //double[,] T2D_kblData;  // KBL table, longitudinal KB, 2D look-up table
+    public static double[,] T2D_vblData;  // VCB table, vertical CB, longitudinal mode, 2D look-up table
+    public static double[,] T2D_kmtData;  // KMT table, transversal KM, 2D look-up table
+    public static double[,] T2D_bmtData;  // BMT table, transversal BM, 2D look-up table
+    public static double[,] T2D_kmlData;  // KML table, longitudinal KM, 2D look-up table
+    public static double[,] T2D_bmlData;  // BML table, longitudinal BM, 2D look-up table
+    public static double[,] T2D_kflData;  // KCF table, longitudinal KF, 2D look-tup table
+    public static double[,] T2D_lflData;  // LCF table, longitudinal CF, 2D look-up table
+    public static double[] T1D_drfData;  // draught (draft), 1D look-up table (1D Table = Vector)
+    public static double[] T1D_dspData;  // displacement, 1D look-up table (1D Table = Vector)
+    public static double[] T1D_helData;  // heel angle, 1D look-up table (1D Table = Vector)
+    public static double[] T1D_trmData;  // trim angle, 1D look-up table (1D Table = Vector)
+    public static double[] T1D_wtiData;  // Weight To Immerse, Ton Per Centimeter, 1D look-up table (1D Table = Vector)
+    public static double[] T1D_mttData;  // Moment To Trim, Moment to Change Trim, 1D look-up table (1D Table = Vector)
+    public static double[] T1D_cobData;  // Coefficient of Block, Cb, 1D look-up table (1D Table = Vector)
+    public static double[] T1D_copData;  // Coefficient of Prismatic, Cp, 1D look-up table (1D Table = Vector)
 
     //double kgDataOrca3D; // KG Data at ORCA3D,  
     // kgDataOrca3D is vertical position of Zero Point at ORCA3D measured from Keel
