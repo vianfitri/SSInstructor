@@ -126,7 +126,7 @@ namespace SSInstructor.Forms
             StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
 
             // SplitContainer Setting
-            spcShipStability.SplitterDistance = Screen.PrimaryScreen.Bounds.Width - 670;
+            spcShipStability.SplitterDistance = Screen.PrimaryScreen.Bounds.Width - 690;
 
             // initialize amidship points, then translate each point 
             StabilityCalculator.shippoints_init = (StabilityCalculator.Point2D[])StabilityCalculator.shippoints_BC.Clone();
@@ -755,6 +755,90 @@ namespace SSInstructor.Forms
             cbxUseDispOrDraftReal.Checked = true;
         }
 
+        private void crtLoadSideView_PrePaint(object sender, ChartPaintEventArgs e)
+        {
+            // algorithm to make chart always in correct aspect ratio, ssw 20140809
+            float GraphX = crtLoadSideView.ChartAreas[0].InnerPlotPosition.X * crtLoadSideView.Width / 100;
+            float GraphY = crtLoadSideView.ChartAreas[0].InnerPlotPosition.Y * crtLoadSideView.Height / 100;
+            float GraphR = crtLoadSideView.ChartAreas[0].InnerPlotPosition.Right * crtLoadSideView.Width / 100;
+            float GraphB = crtLoadSideView.ChartAreas[0].InnerPlotPosition.Bottom * crtLoadSideView.Height / 100;
+
+            float TitleHeight = 0;
+            if (crtLoadSideView.Titles.Count > 1)
+            {
+                for (int i = 0; i < crtLoadSideView.Titles.Count; i++)
+                {
+                    TitleHeight += crtLoadSideView.Titles[i].Font.Height;
+                }
+            }
+
+            float GraphWidth = crtLoadSideView.ChartAreas[0].InnerPlotPosition.Width * crtLoadSideView.Width / 100;
+            float GraphHeight = crtLoadSideView.ChartAreas[0].InnerPlotPosition.Height * crtLoadSideView.Height / 100 - TitleHeight;
+            double AxisYLength = crtLoadSideView.ChartAreas[0].AxisY.Maximum - crtLoadSideView.ChartAreas[0].AxisY.Minimum;
+            double AxisXLength = 100 * Math.Round(GraphWidth / GraphHeight * AxisYLength / 100);
+
+            crtLoadSideView.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
+            crtLoadSideView.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
+
+            crtLoadSideView.ChartAreas[0].AxisX.Interval = 100;
+        }
+
+        private void crtLoadFrontView_PrePaint(object sender, ChartPaintEventArgs e)
+        {
+            // algorithm to make chart always in correct aspect ratio, ssw 20140809
+            float GraphX = crtLoadFrontView.ChartAreas[0].InnerPlotPosition.X * crtLoadFrontView.Width / 100;
+            float GraphY = crtLoadFrontView.ChartAreas[0].InnerPlotPosition.Y * crtLoadFrontView.Height / 100;
+            float GraphR = crtLoadFrontView.ChartAreas[0].InnerPlotPosition.Right * crtLoadFrontView.Width / 100;
+            float GraphB = crtLoadFrontView.ChartAreas[0].InnerPlotPosition.Bottom * crtLoadFrontView.Height / 100;
+
+            float TitleHeight = 0;
+            if (crtLoadFrontView.Titles.Count > 1)
+            {
+                for (int i = 0; i < crtLoadFrontView.Titles.Count; i++)
+                {
+                    TitleHeight += crtLoadFrontView.Titles[i].Font.Height;
+                }
+            }
+
+            float GraphWidth = crtLoadFrontView.ChartAreas[0].InnerPlotPosition.Width * crtLoadFrontView.Width / 100;
+            float GraphHeight = crtLoadFrontView.ChartAreas[0].InnerPlotPosition.Height * crtLoadFrontView.Height / 100 - TitleHeight;
+            double AxisYLength = crtLoadFrontView.ChartAreas[0].AxisY.Maximum - crtLoadFrontView.ChartAreas[0].AxisY.Minimum;
+            double AxisXLength = 50 * Math.Round(GraphWidth / GraphHeight * AxisYLength / 50);
+
+            crtLoadFrontView.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
+            crtLoadFrontView.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
+
+            crtLoadFrontView.ChartAreas[0].AxisX.Interval = 50;
+        }
+
+        private void crtLoadTopView_PrePaint(object sender, ChartPaintEventArgs e)
+        {
+            // algorithm to make chart always in correct aspect ratio, ssw 20140809
+            float GraphX = crtLoadTopView.ChartAreas[0].InnerPlotPosition.X * crtLoadTopView.Width / 100;
+            float GraphY = crtLoadTopView.ChartAreas[0].InnerPlotPosition.Y * crtLoadTopView.Height / 100;
+            float GraphR = crtLoadTopView.ChartAreas[0].InnerPlotPosition.Right * crtLoadTopView.Width / 100;
+            float GraphB = crtLoadTopView.ChartAreas[0].InnerPlotPosition.Bottom * crtLoadTopView.Height / 100;
+
+            float TitleHeight = 0;
+            if (crtLoadTopView.Titles.Count > 1)
+            {
+                for (int i = 0; i < crtLoadTopView.Titles.Count; i++)
+                {
+                    TitleHeight += crtLoadTopView.Titles[i].Font.Height;
+                }
+            }
+
+            float GraphWidth = crtLoadTopView.ChartAreas[0].InnerPlotPosition.Width * crtLoadTopView.Width / 100;
+            float GraphHeight = crtLoadTopView.ChartAreas[0].InnerPlotPosition.Height * crtLoadTopView.Height / 100 - TitleHeight;
+            double AxisYLength = crtLoadTopView.ChartAreas[0].AxisY.Maximum - crtLoadTopView.ChartAreas[0].AxisY.Minimum;
+            double AxisXLength = 100 * Math.Round(GraphWidth / GraphHeight * AxisYLength / 100);
+
+            crtLoadTopView.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
+            crtLoadTopView.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
+
+            crtLoadTopView.ChartAreas[0].AxisX.Interval = 100;
+        }
+
         private void SettingInputValue()
         {
             if (cbbDispOrDraft.SelectedIndex == 0) // input = displacement (kgf)
@@ -794,6 +878,8 @@ namespace SSInstructor.Forms
                 cop_series.Points.AddXY(StabilityCalculator.copData_BC[i] * K_cop, StabilityCalculator.drfData_BC[i]); // Cp = Prismatic Coefficient
             }
         }
+
         #endregion
+
     }
 }
