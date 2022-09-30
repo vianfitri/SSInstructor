@@ -29,6 +29,22 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.spcShipStability = new System.Windows.Forms.SplitContainer();
             this.tabControlGraph = new System.Windows.Forms.TabControl();
             this.tabLoad = new System.Windows.Forms.TabPage();
@@ -209,6 +225,22 @@ namespace SSInstructor.Forms
             this.cbbDispOrDraft = new System.Windows.Forms.ComboBox();
             this.nudHeelVal = new System.Windows.Forms.NumericUpDown();
             this.nudDispOrDraftVal = new System.Windows.Forms.NumericUpDown();
+            this.crtLoadSideView = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crtLoadFrontView = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crtLoadTopView = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crtTransversal = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crtLongitudinal = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crtHydrostaticCurve = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crtGZCrossCurve = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.gbxGZCurve = new System.Windows.Forms.GroupBox();
+            this.rbnGZatGivenDispAndKG = new System.Windows.Forms.RadioButton();
+            this.rbnGZCrossCurve = new System.Windows.Forms.RadioButton();
+            this.rbnGZStaticStability = new System.Windows.Forms.RadioButton();
+            this.crtKNCrossCurve = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.gbxKNCurve = new System.Windows.Forms.GroupBox();
+            this.rbnKNatGivenDispAndKG = new System.Windows.Forms.RadioButton();
+            this.rbnKNCrossCurve = new System.Windows.Forms.RadioButton();
+            this.rbnKNStaticStability = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.spcShipStability)).BeginInit();
             this.spcShipStability.Panel1.SuspendLayout();
             this.spcShipStability.Panel2.SuspendLayout();
@@ -217,9 +249,17 @@ namespace SSInstructor.Forms
             this.tabLoad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcLoad1)).BeginInit();
             this.spcLoad1.Panel1.SuspendLayout();
+            this.spcLoad1.Panel2.SuspendLayout();
             this.spcLoad1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcLoad2)).BeginInit();
+            this.spcLoad2.Panel1.SuspendLayout();
+            this.spcLoad2.Panel2.SuspendLayout();
             this.spcLoad2.SuspendLayout();
+            this.tabTransversal.SuspendLayout();
+            this.tabLongitudinal.SuspendLayout();
+            this.tabHydrostaticCurve.SuspendLayout();
+            this.tabGZCrossCurve.SuspendLayout();
+            this.tabKNCrossCurve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -248,6 +288,16 @@ namespace SSInstructor.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nudTrimVal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeelVal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDispOrDraftVal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLoadSideView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLoadFrontView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLoadTopView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtTransversal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLongitudinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtHydrostaticCurve)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtGZCrossCurve)).BeginInit();
+            this.gbxGZCurve.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.crtKNCrossCurve)).BeginInit();
+            this.gbxKNCurve.SuspendLayout();
             this.SuspendLayout();
             // 
             // spcShipStability
@@ -308,6 +358,10 @@ namespace SSInstructor.Forms
             // spcLoad1.Panel1
             // 
             this.spcLoad1.Panel1.Controls.Add(this.spcLoad2);
+            // 
+            // spcLoad1.Panel2
+            // 
+            this.spcLoad1.Panel2.Controls.Add(this.crtLoadTopView);
             this.spcLoad1.Size = new System.Drawing.Size(1017, 936);
             this.spcLoad1.SplitterDistance = 362;
             this.spcLoad1.SplitterWidth = 5;
@@ -318,61 +372,76 @@ namespace SSInstructor.Forms
             this.spcLoad2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spcLoad2.Location = new System.Drawing.Point(0, 0);
             this.spcLoad2.Name = "spcLoad2";
+            // 
+            // spcLoad2.Panel1
+            // 
+            this.spcLoad2.Panel1.Controls.Add(this.crtLoadSideView);
+            // 
+            // spcLoad2.Panel2
+            // 
+            this.spcLoad2.Panel2.Controls.Add(this.crtLoadFrontView);
             this.spcLoad2.Size = new System.Drawing.Size(1017, 362);
             this.spcLoad2.SplitterDistance = 622;
             this.spcLoad2.TabIndex = 0;
             // 
             // tabTransversal
             // 
+            this.tabTransversal.Controls.Add(this.crtTransversal);
             this.tabTransversal.Location = new System.Drawing.Point(4, 25);
             this.tabTransversal.Margin = new System.Windows.Forms.Padding(4);
             this.tabTransversal.Name = "tabTransversal";
             this.tabTransversal.Padding = new System.Windows.Forms.Padding(4);
-            this.tabTransversal.Size = new System.Drawing.Size(1094, 944);
+            this.tabTransversal.Size = new System.Drawing.Size(1025, 944);
             this.tabTransversal.TabIndex = 1;
             this.tabTransversal.Text = "Transversal Diagram";
             this.tabTransversal.UseVisualStyleBackColor = true;
             // 
             // tabLongitudinal
             // 
+            this.tabLongitudinal.Controls.Add(this.crtLongitudinal);
             this.tabLongitudinal.Location = new System.Drawing.Point(4, 25);
             this.tabLongitudinal.Margin = new System.Windows.Forms.Padding(4);
             this.tabLongitudinal.Name = "tabLongitudinal";
             this.tabLongitudinal.Padding = new System.Windows.Forms.Padding(4);
-            this.tabLongitudinal.Size = new System.Drawing.Size(1094, 944);
+            this.tabLongitudinal.Size = new System.Drawing.Size(1025, 944);
             this.tabLongitudinal.TabIndex = 2;
             this.tabLongitudinal.Text = "Longitudinal Diagram";
             this.tabLongitudinal.UseVisualStyleBackColor = true;
             // 
             // tabHydrostaticCurve
             // 
+            this.tabHydrostaticCurve.Controls.Add(this.crtHydrostaticCurve);
             this.tabHydrostaticCurve.Location = new System.Drawing.Point(4, 25);
             this.tabHydrostaticCurve.Margin = new System.Windows.Forms.Padding(4);
             this.tabHydrostaticCurve.Name = "tabHydrostaticCurve";
             this.tabHydrostaticCurve.Padding = new System.Windows.Forms.Padding(4);
-            this.tabHydrostaticCurve.Size = new System.Drawing.Size(1094, 944);
+            this.tabHydrostaticCurve.Size = new System.Drawing.Size(1025, 944);
             this.tabHydrostaticCurve.TabIndex = 3;
             this.tabHydrostaticCurve.Text = "Hydrostatic Curve";
             this.tabHydrostaticCurve.UseVisualStyleBackColor = true;
             // 
             // tabGZCrossCurve
             // 
+            this.tabGZCrossCurve.Controls.Add(this.gbxGZCurve);
+            this.tabGZCrossCurve.Controls.Add(this.crtGZCrossCurve);
             this.tabGZCrossCurve.Location = new System.Drawing.Point(4, 25);
             this.tabGZCrossCurve.Margin = new System.Windows.Forms.Padding(4);
             this.tabGZCrossCurve.Name = "tabGZCrossCurve";
             this.tabGZCrossCurve.Padding = new System.Windows.Forms.Padding(4);
-            this.tabGZCrossCurve.Size = new System.Drawing.Size(1094, 944);
+            this.tabGZCrossCurve.Size = new System.Drawing.Size(1025, 944);
             this.tabGZCrossCurve.TabIndex = 4;
             this.tabGZCrossCurve.Text = "GZ Cross Curve";
             this.tabGZCrossCurve.UseVisualStyleBackColor = true;
             // 
             // tabKNCrossCurve
             // 
+            this.tabKNCrossCurve.Controls.Add(this.gbxKNCurve);
+            this.tabKNCrossCurve.Controls.Add(this.crtKNCrossCurve);
             this.tabKNCrossCurve.Location = new System.Drawing.Point(4, 25);
             this.tabKNCrossCurve.Margin = new System.Windows.Forms.Padding(4);
             this.tabKNCrossCurve.Name = "tabKNCrossCurve";
             this.tabKNCrossCurve.Padding = new System.Windows.Forms.Padding(4);
-            this.tabKNCrossCurve.Size = new System.Drawing.Size(1094, 944);
+            this.tabKNCrossCurve.Size = new System.Drawing.Size(1025, 944);
             this.tabKNCrossCurve.TabIndex = 5;
             this.tabKNCrossCurve.Text = "KN Cross Curve";
             this.tabKNCrossCurve.UseVisualStyleBackColor = true;
@@ -2439,6 +2508,332 @@ namespace SSInstructor.Forms
             this.nudDispOrDraftVal.Size = new System.Drawing.Size(91, 22);
             this.nudDispOrDraftVal.TabIndex = 92;
             // 
+            // crtLoadSideView
+            // 
+            this.crtLoadSideView.BackColor = System.Drawing.SystemColors.Control;
+            chartArea9.AxisX.LabelStyle.Format = "F0";
+            chartArea9.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea9.AxisX.Title = "X, Longitudinal (mm)";
+            chartArea9.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea9.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea9.AxisY.Minimum = 0D;
+            chartArea9.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea9.AxisY.Title = "Z, Vertical (mm)";
+            chartArea9.BackColor = System.Drawing.Color.White;
+            chartArea9.Name = "ChartArea1";
+            chartArea9.ShadowColor = System.Drawing.Color.White;
+            this.crtLoadSideView.ChartAreas.Add(chartArea9);
+            this.crtLoadSideView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtLoadSideView.Location = new System.Drawing.Point(0, 0);
+            this.crtLoadSideView.Margin = new System.Windows.Forms.Padding(4);
+            this.crtLoadSideView.Name = "crtLoadSideView";
+            this.crtLoadSideView.Size = new System.Drawing.Size(622, 362);
+            this.crtLoadSideView.TabIndex = 73;
+            this.crtLoadSideView.Text = "Load, Side View";
+            title9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title9.Name = "Title1";
+            title9.Text = "Load, Side View";
+            this.crtLoadSideView.Titles.Add(title9);
+            // 
+            // crtLoadFrontView
+            // 
+            this.crtLoadFrontView.BackColor = System.Drawing.SystemColors.Control;
+            chartArea10.AxisX.LabelStyle.Format = "F0";
+            chartArea10.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea10.AxisX.Title = "Y, Lateral (mm)";
+            chartArea10.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea10.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea10.AxisY.Minimum = 0D;
+            chartArea10.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea10.AxisY.Title = "Z, Vertical (mm)";
+            chartArea10.BackColor = System.Drawing.Color.White;
+            chartArea10.Name = "ChartArea1";
+            chartArea10.ShadowColor = System.Drawing.Color.White;
+            this.crtLoadFrontView.ChartAreas.Add(chartArea10);
+            this.crtLoadFrontView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtLoadFrontView.Location = new System.Drawing.Point(0, 0);
+            this.crtLoadFrontView.Margin = new System.Windows.Forms.Padding(4);
+            this.crtLoadFrontView.Name = "crtLoadFrontView";
+            this.crtLoadFrontView.Size = new System.Drawing.Size(391, 362);
+            this.crtLoadFrontView.TabIndex = 73;
+            this.crtLoadFrontView.Text = "Load, Front View";
+            title10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title10.Name = "Title1";
+            title10.Text = "Load, Front View";
+            this.crtLoadFrontView.Titles.Add(title10);
+            // 
+            // crtLoadTopView
+            // 
+            this.crtLoadTopView.BackColor = System.Drawing.SystemColors.Control;
+            chartArea11.AxisX.LabelStyle.Format = "F0";
+            chartArea11.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea11.AxisX.Title = "X, Longitudinal (mm)";
+            chartArea11.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea11.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea11.AxisY.Minimum = 0D;
+            chartArea11.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea11.AxisY.Title = "Y, Lateral (mm)";
+            chartArea11.BackColor = System.Drawing.Color.White;
+            chartArea11.Name = "ChartArea1";
+            chartArea11.ShadowColor = System.Drawing.Color.White;
+            this.crtLoadTopView.ChartAreas.Add(chartArea11);
+            this.crtLoadTopView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtLoadTopView.Location = new System.Drawing.Point(0, 0);
+            this.crtLoadTopView.Margin = new System.Windows.Forms.Padding(4);
+            this.crtLoadTopView.Name = "crtLoadTopView";
+            this.crtLoadTopView.Size = new System.Drawing.Size(1017, 569);
+            this.crtLoadTopView.TabIndex = 73;
+            this.crtLoadTopView.Text = "Load, Top View";
+            title11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title11.Name = "Title1";
+            title11.Text = "Load, Top View";
+            this.crtLoadTopView.Titles.Add(title11);
+            // 
+            // crtTransversal
+            // 
+            this.crtTransversal.BackColor = System.Drawing.SystemColors.Control;
+            chartArea12.AxisX.IsLabelAutoFit = false;
+            chartArea12.AxisX.LabelStyle.Format = "F0";
+            chartArea12.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea12.AxisX.Title = "Y (mm)";
+            chartArea12.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea12.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea12.AxisY.Minimum = 0D;
+            chartArea12.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea12.BackColor = System.Drawing.Color.White;
+            chartArea12.Name = "ChartArea1";
+            chartArea12.ShadowColor = System.Drawing.Color.White;
+            this.crtTransversal.ChartAreas.Add(chartArea12);
+            this.crtTransversal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtTransversal.Location = new System.Drawing.Point(4, 4);
+            this.crtTransversal.Margin = new System.Windows.Forms.Padding(4);
+            this.crtTransversal.Name = "crtTransversal";
+            this.crtTransversal.Size = new System.Drawing.Size(1017, 936);
+            this.crtTransversal.TabIndex = 70;
+            this.crtTransversal.Text = "chart1";
+            title12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title12.Name = "Title1";
+            title12.Text = "Ship Cross Section, Amidship";
+            this.crtTransversal.Titles.Add(title12);
+            // 
+            // crtLongitudinal
+            // 
+            this.crtLongitudinal.BackColor = System.Drawing.SystemColors.Control;
+            chartArea13.AxisX.LabelStyle.Format = "F0";
+            chartArea13.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea13.AxisX.Title = "X (mm)";
+            chartArea13.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea13.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea13.AxisY.Minimum = 0D;
+            chartArea13.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea13.BackColor = System.Drawing.Color.White;
+            chartArea13.Name = "ChartArea1";
+            chartArea13.ShadowColor = System.Drawing.Color.White;
+            this.crtLongitudinal.ChartAreas.Add(chartArea13);
+            this.crtLongitudinal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtLongitudinal.Location = new System.Drawing.Point(4, 4);
+            this.crtLongitudinal.Margin = new System.Windows.Forms.Padding(4);
+            this.crtLongitudinal.Name = "crtLongitudinal";
+            this.crtLongitudinal.Size = new System.Drawing.Size(1017, 936);
+            this.crtLongitudinal.TabIndex = 71;
+            this.crtLongitudinal.Text = "Chart Longitudinal";
+            title13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title13.Name = "Title1";
+            title13.Text = "Ship Longitudinal Section";
+            this.crtLongitudinal.Titles.Add(title13);
+            // 
+            // crtHydrostaticCurve
+            // 
+            this.crtHydrostaticCurve.BackColor = System.Drawing.SystemColors.Control;
+            chartArea14.AxisX.Interval = 500D;
+            chartArea14.AxisX.LabelStyle.Format = "F0";
+            chartArea14.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea14.AxisX.Maximum = 5000D;
+            chartArea14.AxisX.Minimum = 0D;
+            chartArea14.AxisX.Title = "Hydrostatic Data Value";
+            chartArea14.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            chartArea14.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea14.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea14.AxisY.Maximum = 140D;
+            chartArea14.AxisY.Minimum = 0D;
+            chartArea14.AxisY.Title = "Draft (mm)";
+            chartArea14.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            chartArea14.BackColor = System.Drawing.Color.White;
+            chartArea14.Name = "ChartArea1";
+            chartArea14.ShadowColor = System.Drawing.Color.White;
+            this.crtHydrostaticCurve.ChartAreas.Add(chartArea14);
+            this.crtHydrostaticCurve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtHydrostaticCurve.Location = new System.Drawing.Point(4, 4);
+            this.crtHydrostaticCurve.Margin = new System.Windows.Forms.Padding(4);
+            this.crtHydrostaticCurve.Name = "crtHydrostaticCurve";
+            this.crtHydrostaticCurve.Size = new System.Drawing.Size(1017, 936);
+            this.crtHydrostaticCurve.TabIndex = 71;
+            this.crtHydrostaticCurve.Text = "chart1";
+            title14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title14.Name = "Title1";
+            title14.Text = "Hydrostatic Curve";
+            this.crtHydrostaticCurve.Titles.Add(title14);
+            // 
+            // crtGZCrossCurve
+            // 
+            this.crtGZCrossCurve.BackColor = System.Drawing.SystemColors.Control;
+            chartArea15.AxisX.LabelStyle.Format = "F0";
+            chartArea15.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea15.AxisX.Title = "Displacement (kg)";
+            chartArea15.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea15.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea15.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea15.AxisY.Title = "GZ (mm)";
+            chartArea15.BackColor = System.Drawing.Color.White;
+            chartArea15.Name = "ChartArea1";
+            chartArea15.ShadowColor = System.Drawing.Color.White;
+            this.crtGZCrossCurve.ChartAreas.Add(chartArea15);
+            this.crtGZCrossCurve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtGZCrossCurve.Location = new System.Drawing.Point(4, 4);
+            this.crtGZCrossCurve.Margin = new System.Windows.Forms.Padding(4);
+            this.crtGZCrossCurve.Name = "crtGZCrossCurve";
+            this.crtGZCrossCurve.Size = new System.Drawing.Size(1017, 936);
+            this.crtGZCrossCurve.TabIndex = 72;
+            this.crtGZCrossCurve.Text = "chart1";
+            title15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title15.Name = "Title1";
+            title15.Text = "GZ Cross Curve";
+            this.crtGZCrossCurve.Titles.Add(title15);
+            // 
+            // gbxGZCurve
+            // 
+            this.gbxGZCurve.BackColor = System.Drawing.SystemColors.Control;
+            this.gbxGZCurve.Controls.Add(this.rbnGZatGivenDispAndKG);
+            this.gbxGZCurve.Controls.Add(this.rbnGZCrossCurve);
+            this.gbxGZCurve.Controls.Add(this.rbnGZStaticStability);
+            this.gbxGZCurve.Location = new System.Drawing.Point(9, 8);
+            this.gbxGZCurve.Margin = new System.Windows.Forms.Padding(4);
+            this.gbxGZCurve.Name = "gbxGZCurve";
+            this.gbxGZCurve.Padding = new System.Windows.Forms.Padding(4);
+            this.gbxGZCurve.Size = new System.Drawing.Size(432, 85);
+            this.gbxGZCurve.TabIndex = 73;
+            this.gbxGZCurve.TabStop = false;
+            this.gbxGZCurve.Text = "Pilih Tampilan GZ";
+            // 
+            // rbnGZatGivenDispAndKG
+            // 
+            this.rbnGZatGivenDispAndKG.AutoSize = true;
+            this.rbnGZatGivenDispAndKG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbnGZatGivenDispAndKG.Location = new System.Drawing.Point(4, 61);
+            this.rbnGZatGivenDispAndKG.Margin = new System.Windows.Forms.Padding(4);
+            this.rbnGZatGivenDispAndKG.Name = "rbnGZatGivenDispAndKG";
+            this.rbnGZatGivenDispAndKG.Size = new System.Drawing.Size(424, 20);
+            this.rbnGZatGivenDispAndKG.TabIndex = 2;
+            this.rbnGZatGivenDispAndKG.TabStop = true;
+            this.rbnGZatGivenDispAndKG.Text = "Kestabilan Statik GZ (GZ vs Heel), sesuai Input Bobot dan KG";
+            this.rbnGZatGivenDispAndKG.UseVisualStyleBackColor = true;
+            // 
+            // rbnGZCrossCurve
+            // 
+            this.rbnGZCrossCurve.AutoSize = true;
+            this.rbnGZCrossCurve.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbnGZCrossCurve.Location = new System.Drawing.Point(4, 40);
+            this.rbnGZCrossCurve.Margin = new System.Windows.Forms.Padding(4);
+            this.rbnGZCrossCurve.Name = "rbnGZCrossCurve";
+            this.rbnGZCrossCurve.Size = new System.Drawing.Size(424, 21);
+            this.rbnGZCrossCurve.TabIndex = 1;
+            this.rbnGZCrossCurve.TabStop = true;
+            this.rbnGZCrossCurve.Text = "Kurva Silang GZ (GZ vs Disp)";
+            this.rbnGZCrossCurve.UseVisualStyleBackColor = true;
+            // 
+            // rbnGZStaticStability
+            // 
+            this.rbnGZStaticStability.AutoSize = true;
+            this.rbnGZStaticStability.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbnGZStaticStability.Location = new System.Drawing.Point(4, 19);
+            this.rbnGZStaticStability.Margin = new System.Windows.Forms.Padding(4);
+            this.rbnGZStaticStability.Name = "rbnGZStaticStability";
+            this.rbnGZStaticStability.Size = new System.Drawing.Size(424, 21);
+            this.rbnGZStaticStability.TabIndex = 0;
+            this.rbnGZStaticStability.TabStop = true;
+            this.rbnGZStaticStability.Text = "Kestabilan Statik GZ (GZ vs Heel)";
+            this.rbnGZStaticStability.UseVisualStyleBackColor = true;
+            // 
+            // crtKNCrossCurve
+            // 
+            this.crtKNCrossCurve.BackColor = System.Drawing.SystemColors.Control;
+            chartArea8.AxisX.LabelStyle.Format = "F0";
+            chartArea8.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea8.AxisX.Title = "Displacement (kg)";
+            chartArea8.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea8.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea8.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea8.AxisY.Title = "KN (mm)";
+            chartArea8.BackColor = System.Drawing.Color.White;
+            chartArea8.Name = "ChartArea1";
+            chartArea8.ShadowColor = System.Drawing.Color.White;
+            this.crtKNCrossCurve.ChartAreas.Add(chartArea8);
+            this.crtKNCrossCurve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crtKNCrossCurve.Location = new System.Drawing.Point(4, 4);
+            this.crtKNCrossCurve.Margin = new System.Windows.Forms.Padding(4);
+            this.crtKNCrossCurve.Name = "crtKNCrossCurve";
+            this.crtKNCrossCurve.Size = new System.Drawing.Size(1017, 936);
+            this.crtKNCrossCurve.TabIndex = 73;
+            this.crtKNCrossCurve.Text = "chart1";
+            title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title8.Name = "Title1";
+            title8.Text = "KN Cross Curve";
+            this.crtKNCrossCurve.Titles.Add(title8);
+            // 
+            // gbxKNCurve
+            // 
+            this.gbxKNCurve.BackColor = System.Drawing.SystemColors.Control;
+            this.gbxKNCurve.Controls.Add(this.rbnKNatGivenDispAndKG);
+            this.gbxKNCurve.Controls.Add(this.rbnKNCrossCurve);
+            this.gbxKNCurve.Controls.Add(this.rbnKNStaticStability);
+            this.gbxKNCurve.Location = new System.Drawing.Point(9, 10);
+            this.gbxKNCurve.Margin = new System.Windows.Forms.Padding(4);
+            this.gbxKNCurve.Name = "gbxKNCurve";
+            this.gbxKNCurve.Padding = new System.Windows.Forms.Padding(4);
+            this.gbxKNCurve.Size = new System.Drawing.Size(433, 86);
+            this.gbxKNCurve.TabIndex = 74;
+            this.gbxKNCurve.TabStop = false;
+            this.gbxKNCurve.Text = "Pilih Tampilan KN";
+            // 
+            // rbnKNatGivenDispAndKG
+            // 
+            this.rbnKNatGivenDispAndKG.AutoSize = true;
+            this.rbnKNatGivenDispAndKG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbnKNatGivenDispAndKG.Location = new System.Drawing.Point(4, 61);
+            this.rbnKNatGivenDispAndKG.Margin = new System.Windows.Forms.Padding(4);
+            this.rbnKNatGivenDispAndKG.Name = "rbnKNatGivenDispAndKG";
+            this.rbnKNatGivenDispAndKG.Size = new System.Drawing.Size(425, 21);
+            this.rbnKNatGivenDispAndKG.TabIndex = 3;
+            this.rbnKNatGivenDispAndKG.TabStop = true;
+            this.rbnKNatGivenDispAndKG.Text = "Kestabilan Statik KN (KN vs Heel), sesuai Input Bobot dan KG";
+            this.rbnKNatGivenDispAndKG.UseVisualStyleBackColor = true;
+            // 
+            // rbnKNCrossCurve
+            // 
+            this.rbnKNCrossCurve.AutoSize = true;
+            this.rbnKNCrossCurve.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbnKNCrossCurve.Location = new System.Drawing.Point(4, 40);
+            this.rbnKNCrossCurve.Margin = new System.Windows.Forms.Padding(4);
+            this.rbnKNCrossCurve.Name = "rbnKNCrossCurve";
+            this.rbnKNCrossCurve.Size = new System.Drawing.Size(425, 21);
+            this.rbnKNCrossCurve.TabIndex = 1;
+            this.rbnKNCrossCurve.TabStop = true;
+            this.rbnKNCrossCurve.Text = "Kurva Silang KN (KN vs Disp)";
+            this.rbnKNCrossCurve.UseVisualStyleBackColor = true;
+            // 
+            // rbnKNStaticStability
+            // 
+            this.rbnKNStaticStability.AutoSize = true;
+            this.rbnKNStaticStability.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbnKNStaticStability.Location = new System.Drawing.Point(4, 19);
+            this.rbnKNStaticStability.Margin = new System.Windows.Forms.Padding(4);
+            this.rbnKNStaticStability.Name = "rbnKNStaticStability";
+            this.rbnKNStaticStability.Size = new System.Drawing.Size(425, 21);
+            this.rbnKNStaticStability.TabIndex = 0;
+            this.rbnKNStaticStability.TabStop = true;
+            this.rbnKNStaticStability.Text = "Kestabilan Statik KN (KN vs Heel)";
+            this.rbnKNStaticStability.UseVisualStyleBackColor = true;
+            // 
             // fSSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2454,10 +2849,18 @@ namespace SSInstructor.Forms
             this.tabControlGraph.ResumeLayout(false);
             this.tabLoad.ResumeLayout(false);
             this.spcLoad1.Panel1.ResumeLayout(false);
+            this.spcLoad1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcLoad1)).EndInit();
             this.spcLoad1.ResumeLayout(false);
+            this.spcLoad2.Panel1.ResumeLayout(false);
+            this.spcLoad2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcLoad2)).EndInit();
             this.spcLoad2.ResumeLayout(false);
+            this.tabTransversal.ResumeLayout(false);
+            this.tabLongitudinal.ResumeLayout(false);
+            this.tabHydrostaticCurve.ResumeLayout(false);
+            this.tabGZCrossCurve.ResumeLayout(false);
+            this.tabKNCrossCurve.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -2492,6 +2895,18 @@ namespace SSInstructor.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nudTrimVal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeelVal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDispOrDraftVal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLoadSideView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLoadFrontView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLoadTopView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtTransversal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtLongitudinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtHydrostaticCurve)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crtGZCrossCurve)).EndInit();
+            this.gbxGZCurve.ResumeLayout(false);
+            this.gbxGZCurve.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.crtKNCrossCurve)).EndInit();
+            this.gbxKNCurve.ResumeLayout(false);
+            this.gbxKNCurve.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2678,5 +3093,21 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.ComboBox cbbDispOrDraft;
         private System.Windows.Forms.NumericUpDown nudHeelVal;
         private System.Windows.Forms.NumericUpDown nudDispOrDraftVal;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtTransversal;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtLongitudinal;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtHydrostaticCurve;
+        private System.Windows.Forms.GroupBox gbxGZCurve;
+        private System.Windows.Forms.RadioButton rbnGZatGivenDispAndKG;
+        private System.Windows.Forms.RadioButton rbnGZCrossCurve;
+        private System.Windows.Forms.RadioButton rbnGZStaticStability;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtGZCrossCurve;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtLoadSideView;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtLoadFrontView;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtLoadTopView;
+        private System.Windows.Forms.GroupBox gbxKNCurve;
+        private System.Windows.Forms.RadioButton rbnKNatGivenDispAndKG;
+        private System.Windows.Forms.RadioButton rbnKNCrossCurve;
+        private System.Windows.Forms.RadioButton rbnKNStaticStability;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crtKNCrossCurve;
     }
 }
