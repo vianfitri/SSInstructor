@@ -299,6 +299,9 @@
     <EmbeddedResource Include="Forms\fShipData.resx">
       <DependentUpon>fShipData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fSSS.resx">
+      <DependentUpon>fSSS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fTraineeData.resx">
       <DependentUpon>fTraineeData.cs</DependentUpon>
     </EmbeddedResource>
