@@ -2016,7 +2016,7 @@ namespace SSInstructor.Forms
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(471, 222);
+            this.label75.Location = new System.Drawing.Point(458, 222);
             this.label75.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(42, 17);
@@ -2027,7 +2027,7 @@ namespace SSInstructor.Forms
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(471, 149);
+            this.label74.Location = new System.Drawing.Point(458, 149);
             this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(42, 17);
@@ -2038,7 +2038,7 @@ namespace SSInstructor.Forms
             // label72
             // 
             this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(473, 319);
+            this.label72.Location = new System.Drawing.Point(460, 319);
             this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(29, 17);
@@ -2049,7 +2049,7 @@ namespace SSInstructor.Forms
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(472, 292);
+            this.label73.Location = new System.Drawing.Point(459, 292);
             this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(40, 17);
@@ -2059,7 +2059,7 @@ namespace SSInstructor.Forms
             // 
             // txbKGVal_Real
             // 
-            this.txbKGVal_Real.Location = new System.Drawing.Point(380, 315);
+            this.txbKGVal_Real.Location = new System.Drawing.Point(367, 315);
             this.txbKGVal_Real.Margin = new System.Windows.Forms.Padding(4);
             this.txbKGVal_Real.Name = "txbKGVal_Real";
             this.txbKGVal_Real.ReadOnly = true;
@@ -2069,7 +2069,7 @@ namespace SSInstructor.Forms
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(475, 104);
+            this.label55.Location = new System.Drawing.Point(462, 104);
             this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(38, 17);
@@ -2080,7 +2080,7 @@ namespace SSInstructor.Forms
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(478, 77);
+            this.label54.Location = new System.Drawing.Point(465, 77);
             this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(33, 17);
@@ -2090,7 +2090,7 @@ namespace SSInstructor.Forms
             // 
             // txbDispOrDraftVal_Real
             // 
-            this.txbDispOrDraftVal_Real.Location = new System.Drawing.Point(380, 100);
+            this.txbDispOrDraftVal_Real.Location = new System.Drawing.Point(367, 100);
             this.txbDispOrDraftVal_Real.Margin = new System.Windows.Forms.Padding(4);
             this.txbDispOrDraftVal_Real.Name = "txbDispOrDraftVal_Real";
             this.txbDispOrDraftVal_Real.ReadOnly = true;
@@ -2169,7 +2169,7 @@ namespace SSInstructor.Forms
             0,
             0,
             65536});
-            this.nudKGVal.Location = new System.Drawing.Point(380, 289);
+            this.nudKGVal.Location = new System.Drawing.Point(367, 289);
             this.nudKGVal.Margin = new System.Windows.Forms.Padding(4);
             this.nudKGVal.Maximum = new decimal(new int[] {
             300,
@@ -2217,7 +2217,7 @@ namespace SSInstructor.Forms
             0,
             0,
             131072});
-            this.nudTrimVal.Location = new System.Drawing.Point(380, 219);
+            this.nudTrimVal.Location = new System.Drawing.Point(367, 219);
             this.nudTrimVal.Margin = new System.Windows.Forms.Padding(4);
             this.nudTrimVal.Maximum = new decimal(new int[] {
             10,
@@ -2404,7 +2404,7 @@ namespace SSInstructor.Forms
             0,
             0,
             131072});
-            this.nudHeelVal.Location = new System.Drawing.Point(380, 147);
+            this.nudHeelVal.Location = new System.Drawing.Point(367, 147);
             this.nudHeelVal.Margin = new System.Windows.Forms.Padding(4);
             this.nudHeelVal.Maximum = new decimal(new int[] {
             90,
@@ -2428,7 +2428,7 @@ namespace SSInstructor.Forms
             0,
             0,
             65536});
-            this.nudDispOrDraftVal.Location = new System.Drawing.Point(380, 74);
+            this.nudDispOrDraftVal.Location = new System.Drawing.Point(367, 74);
             this.nudDispOrDraftVal.Margin = new System.Windows.Forms.Padding(4);
             this.nudDispOrDraftVal.Maximum = new decimal(new int[] {
             90,
