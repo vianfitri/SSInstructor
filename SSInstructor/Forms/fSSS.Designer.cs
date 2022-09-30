@@ -376,7 +376,7 @@ namespace SSInstructor.Forms
             // spcLoad2.Panel1
             // 
             this.spcLoad2.Panel1.Controls.Add(this.crtLoadSideView);
-            this.spcLoad2.Panel1MinSize = 300;
+            this.spcLoad2.Panel1MinSize = 200;
             // 
             // spcLoad2.Panel2
             // 

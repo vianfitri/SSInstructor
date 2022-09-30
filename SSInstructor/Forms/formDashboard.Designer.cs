@@ -496,7 +496,7 @@ namespace SSInstructor
             this.hiddenPannel.Name = "hiddenPannel";
             this.hiddenPannel.Size = new System.Drawing.Size(345, 22);
             this.hiddenPannel.TabIndex = 23;
-            this.hiddenPannel.Paint += new System.Windows.Forms.PaintEventHandler(this.hiddenPannel_Paint);
+            this.hiddenPannel.Click += new System.EventHandler(this.hiddenPannel_Click);
             // 
             // formDashboard
             // 

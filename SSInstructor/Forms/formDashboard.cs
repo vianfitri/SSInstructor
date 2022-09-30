@@ -213,7 +213,7 @@ namespace SSInstructor
             Process.Start(Application.StartupPath + "\\SSS\\ShipStability.exe");
         }
 
-        private void hiddenPannel_Paint(object sender, PaintEventArgs e)
+        private void hiddenPannel_Click(object sender, EventArgs e)
         {
             // Load Instructor Data
             openChildForm(new fSSS());
