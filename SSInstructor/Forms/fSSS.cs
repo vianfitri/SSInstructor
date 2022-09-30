@@ -1279,6 +1279,10 @@ namespace SSInstructor.Forms
 
         }
 
+        private void CalculateTransverseHydrostatic()
+        {
+
+        }
         #endregion
 
     }
