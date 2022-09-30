@@ -29,22 +29,22 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title17 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title18 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title19 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title20 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title21 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title22 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title23 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title24 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.spcShipStability = new System.Windows.Forms.SplitContainer();
             this.tabControlGraph = new System.Windows.Forms.TabControl();
             this.tabLoad = new System.Windows.Forms.TabPage();
@@ -376,11 +376,12 @@ namespace SSInstructor.Forms
             // spcLoad2.Panel1
             // 
             this.spcLoad2.Panel1.Controls.Add(this.crtLoadSideView);
-            this.spcLoad2.Panel1MinSize = 500;
+            this.spcLoad2.Panel1MinSize = 300;
             // 
             // spcLoad2.Panel2
             // 
             this.spcLoad2.Panel2.Controls.Add(this.crtLoadFrontView);
+            this.spcLoad2.Panel2MinSize = 100;
             this.spcLoad2.Size = new System.Drawing.Size(1017, 362);
             this.spcLoad2.SplitterDistance = 577;
             this.spcLoad2.TabIndex = 0;
@@ -388,18 +389,18 @@ namespace SSInstructor.Forms
             // crtLoadSideView
             // 
             this.crtLoadSideView.BackColor = System.Drawing.SystemColors.Control;
-            chartArea9.AxisX.LabelStyle.Format = "F0";
-            chartArea9.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea9.AxisX.Title = "X, Longitudinal (mm)";
-            chartArea9.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea9.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea9.AxisY.Minimum = 0D;
-            chartArea9.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
-            chartArea9.AxisY.Title = "Z, Vertical (mm)";
-            chartArea9.BackColor = System.Drawing.Color.White;
-            chartArea9.Name = "ChartArea1";
-            chartArea9.ShadowColor = System.Drawing.Color.White;
-            this.crtLoadSideView.ChartAreas.Add(chartArea9);
+            chartArea17.AxisX.LabelStyle.Format = "F0";
+            chartArea17.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea17.AxisX.Title = "X, Longitudinal (mm)";
+            chartArea17.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea17.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea17.AxisY.Minimum = 0D;
+            chartArea17.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea17.AxisY.Title = "Z, Vertical (mm)";
+            chartArea17.BackColor = System.Drawing.Color.White;
+            chartArea17.Name = "ChartArea1";
+            chartArea17.ShadowColor = System.Drawing.Color.White;
+            this.crtLoadSideView.ChartAreas.Add(chartArea17);
             this.crtLoadSideView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtLoadSideView.Location = new System.Drawing.Point(0, 0);
             this.crtLoadSideView.Margin = new System.Windows.Forms.Padding(4);
@@ -407,26 +408,26 @@ namespace SSInstructor.Forms
             this.crtLoadSideView.Size = new System.Drawing.Size(577, 362);
             this.crtLoadSideView.TabIndex = 73;
             this.crtLoadSideView.Text = "Load, Side View";
-            title9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title9.Name = "Title1";
-            title9.Text = "Load, Side View";
-            this.crtLoadSideView.Titles.Add(title9);
+            title17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title17.Name = "Title1";
+            title17.Text = "Load, Side View";
+            this.crtLoadSideView.Titles.Add(title17);
             // 
             // crtLoadFrontView
             // 
             this.crtLoadFrontView.BackColor = System.Drawing.SystemColors.Control;
-            chartArea10.AxisX.LabelStyle.Format = "F0";
-            chartArea10.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea10.AxisX.Title = "Y, Lateral (mm)";
-            chartArea10.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea10.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea10.AxisY.Minimum = 0D;
-            chartArea10.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
-            chartArea10.AxisY.Title = "Z, Vertical (mm)";
-            chartArea10.BackColor = System.Drawing.Color.White;
-            chartArea10.Name = "ChartArea1";
-            chartArea10.ShadowColor = System.Drawing.Color.White;
-            this.crtLoadFrontView.ChartAreas.Add(chartArea10);
+            chartArea18.AxisX.LabelStyle.Format = "F0";
+            chartArea18.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea18.AxisX.Title = "Y, Lateral (mm)";
+            chartArea18.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea18.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea18.AxisY.Minimum = 0D;
+            chartArea18.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea18.AxisY.Title = "Z, Vertical (mm)";
+            chartArea18.BackColor = System.Drawing.Color.White;
+            chartArea18.Name = "ChartArea1";
+            chartArea18.ShadowColor = System.Drawing.Color.White;
+            this.crtLoadFrontView.ChartAreas.Add(chartArea18);
             this.crtLoadFrontView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtLoadFrontView.Location = new System.Drawing.Point(0, 0);
             this.crtLoadFrontView.Margin = new System.Windows.Forms.Padding(4);
@@ -434,26 +435,26 @@ namespace SSInstructor.Forms
             this.crtLoadFrontView.Size = new System.Drawing.Size(436, 362);
             this.crtLoadFrontView.TabIndex = 73;
             this.crtLoadFrontView.Text = "Load, Front View";
-            title10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title10.Name = "Title1";
-            title10.Text = "Load, Front View";
-            this.crtLoadFrontView.Titles.Add(title10);
+            title18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title18.Name = "Title1";
+            title18.Text = "Load, Front View";
+            this.crtLoadFrontView.Titles.Add(title18);
             // 
             // crtLoadTopView
             // 
             this.crtLoadTopView.BackColor = System.Drawing.SystemColors.Control;
-            chartArea11.AxisX.LabelStyle.Format = "F0";
-            chartArea11.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea11.AxisX.Title = "X, Longitudinal (mm)";
-            chartArea11.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea11.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea11.AxisY.Minimum = 0D;
-            chartArea11.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
-            chartArea11.AxisY.Title = "Y, Lateral (mm)";
-            chartArea11.BackColor = System.Drawing.Color.White;
-            chartArea11.Name = "ChartArea1";
-            chartArea11.ShadowColor = System.Drawing.Color.White;
-            this.crtLoadTopView.ChartAreas.Add(chartArea11);
+            chartArea19.AxisX.LabelStyle.Format = "F0";
+            chartArea19.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea19.AxisX.Title = "X, Longitudinal (mm)";
+            chartArea19.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea19.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea19.AxisY.Minimum = 0D;
+            chartArea19.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea19.AxisY.Title = "Y, Lateral (mm)";
+            chartArea19.BackColor = System.Drawing.Color.White;
+            chartArea19.Name = "ChartArea1";
+            chartArea19.ShadowColor = System.Drawing.Color.White;
+            this.crtLoadTopView.ChartAreas.Add(chartArea19);
             this.crtLoadTopView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtLoadTopView.Location = new System.Drawing.Point(0, 0);
             this.crtLoadTopView.Margin = new System.Windows.Forms.Padding(4);
@@ -461,10 +462,10 @@ namespace SSInstructor.Forms
             this.crtLoadTopView.Size = new System.Drawing.Size(1017, 569);
             this.crtLoadTopView.TabIndex = 73;
             this.crtLoadTopView.Text = "Load, Top View";
-            title11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title11.Name = "Title1";
-            title11.Text = "Load, Top View";
-            this.crtLoadTopView.Titles.Add(title11);
+            title19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title19.Name = "Title1";
+            title19.Text = "Load, Top View";
+            this.crtLoadTopView.Titles.Add(title19);
             // 
             // tabTransversal
             // 
@@ -481,18 +482,18 @@ namespace SSInstructor.Forms
             // crtTransversal
             // 
             this.crtTransversal.BackColor = System.Drawing.SystemColors.Control;
-            chartArea12.AxisX.IsLabelAutoFit = false;
-            chartArea12.AxisX.LabelStyle.Format = "F0";
-            chartArea12.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea12.AxisX.Title = "Y (mm)";
-            chartArea12.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea12.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea12.AxisY.Minimum = 0D;
-            chartArea12.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea12.BackColor = System.Drawing.Color.White;
-            chartArea12.Name = "ChartArea1";
-            chartArea12.ShadowColor = System.Drawing.Color.White;
-            this.crtTransversal.ChartAreas.Add(chartArea12);
+            chartArea20.AxisX.IsLabelAutoFit = false;
+            chartArea20.AxisX.LabelStyle.Format = "F0";
+            chartArea20.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea20.AxisX.Title = "Y (mm)";
+            chartArea20.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea20.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea20.AxisY.Minimum = 0D;
+            chartArea20.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea20.BackColor = System.Drawing.Color.White;
+            chartArea20.Name = "ChartArea1";
+            chartArea20.ShadowColor = System.Drawing.Color.White;
+            this.crtTransversal.ChartAreas.Add(chartArea20);
             this.crtTransversal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtTransversal.Location = new System.Drawing.Point(4, 4);
             this.crtTransversal.Margin = new System.Windows.Forms.Padding(4);
@@ -500,10 +501,10 @@ namespace SSInstructor.Forms
             this.crtTransversal.Size = new System.Drawing.Size(1017, 936);
             this.crtTransversal.TabIndex = 70;
             this.crtTransversal.Text = "chart1";
-            title12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title12.Name = "Title1";
-            title12.Text = "Ship Cross Section, Amidship";
-            this.crtTransversal.Titles.Add(title12);
+            title20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title20.Name = "Title1";
+            title20.Text = "Ship Cross Section, Amidship";
+            this.crtTransversal.Titles.Add(title20);
             // 
             // tabLongitudinal
             // 
@@ -520,17 +521,17 @@ namespace SSInstructor.Forms
             // crtLongitudinal
             // 
             this.crtLongitudinal.BackColor = System.Drawing.SystemColors.Control;
-            chartArea13.AxisX.LabelStyle.Format = "F0";
-            chartArea13.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea13.AxisX.Title = "X (mm)";
-            chartArea13.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea13.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea13.AxisY.Minimum = 0D;
-            chartArea13.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea13.BackColor = System.Drawing.Color.White;
-            chartArea13.Name = "ChartArea1";
-            chartArea13.ShadowColor = System.Drawing.Color.White;
-            this.crtLongitudinal.ChartAreas.Add(chartArea13);
+            chartArea21.AxisX.LabelStyle.Format = "F0";
+            chartArea21.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea21.AxisX.Title = "X (mm)";
+            chartArea21.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea21.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea21.AxisY.Minimum = 0D;
+            chartArea21.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea21.BackColor = System.Drawing.Color.White;
+            chartArea21.Name = "ChartArea1";
+            chartArea21.ShadowColor = System.Drawing.Color.White;
+            this.crtLongitudinal.ChartAreas.Add(chartArea21);
             this.crtLongitudinal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtLongitudinal.Location = new System.Drawing.Point(4, 4);
             this.crtLongitudinal.Margin = new System.Windows.Forms.Padding(4);
@@ -538,10 +539,10 @@ namespace SSInstructor.Forms
             this.crtLongitudinal.Size = new System.Drawing.Size(1017, 936);
             this.crtLongitudinal.TabIndex = 71;
             this.crtLongitudinal.Text = "Chart Longitudinal";
-            title13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title13.Name = "Title1";
-            title13.Text = "Ship Longitudinal Section";
-            this.crtLongitudinal.Titles.Add(title13);
+            title21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title21.Name = "Title1";
+            title21.Text = "Ship Longitudinal Section";
+            this.crtLongitudinal.Titles.Add(title21);
             // 
             // tabHydrostaticCurve
             // 
@@ -558,23 +559,23 @@ namespace SSInstructor.Forms
             // crtHydrostaticCurve
             // 
             this.crtHydrostaticCurve.BackColor = System.Drawing.SystemColors.Control;
-            chartArea14.AxisX.Interval = 500D;
-            chartArea14.AxisX.LabelStyle.Format = "F0";
-            chartArea14.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea14.AxisX.Maximum = 5000D;
-            chartArea14.AxisX.Minimum = 0D;
-            chartArea14.AxisX.Title = "Hydrostatic Data Value";
-            chartArea14.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            chartArea14.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea14.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea14.AxisY.Maximum = 140D;
-            chartArea14.AxisY.Minimum = 0D;
-            chartArea14.AxisY.Title = "Draft (mm)";
-            chartArea14.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            chartArea14.BackColor = System.Drawing.Color.White;
-            chartArea14.Name = "ChartArea1";
-            chartArea14.ShadowColor = System.Drawing.Color.White;
-            this.crtHydrostaticCurve.ChartAreas.Add(chartArea14);
+            chartArea22.AxisX.Interval = 500D;
+            chartArea22.AxisX.LabelStyle.Format = "F0";
+            chartArea22.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea22.AxisX.Maximum = 5000D;
+            chartArea22.AxisX.Minimum = 0D;
+            chartArea22.AxisX.Title = "Hydrostatic Data Value";
+            chartArea22.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            chartArea22.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea22.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea22.AxisY.Maximum = 140D;
+            chartArea22.AxisY.Minimum = 0D;
+            chartArea22.AxisY.Title = "Draft (mm)";
+            chartArea22.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            chartArea22.BackColor = System.Drawing.Color.White;
+            chartArea22.Name = "ChartArea1";
+            chartArea22.ShadowColor = System.Drawing.Color.White;
+            this.crtHydrostaticCurve.ChartAreas.Add(chartArea22);
             this.crtHydrostaticCurve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtHydrostaticCurve.Location = new System.Drawing.Point(4, 4);
             this.crtHydrostaticCurve.Margin = new System.Windows.Forms.Padding(4);
@@ -582,10 +583,10 @@ namespace SSInstructor.Forms
             this.crtHydrostaticCurve.Size = new System.Drawing.Size(1017, 936);
             this.crtHydrostaticCurve.TabIndex = 71;
             this.crtHydrostaticCurve.Text = "chart1";
-            title14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title14.Name = "Title1";
-            title14.Text = "Hydrostatic Curve";
-            this.crtHydrostaticCurve.Titles.Add(title14);
+            title22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title22.Name = "Title1";
+            title22.Text = "Hydrostatic Curve";
+            this.crtHydrostaticCurve.Titles.Add(title22);
             // 
             // tabGZCrossCurve
             // 
@@ -657,17 +658,17 @@ namespace SSInstructor.Forms
             // crtGZCrossCurve
             // 
             this.crtGZCrossCurve.BackColor = System.Drawing.SystemColors.Control;
-            chartArea15.AxisX.LabelStyle.Format = "F0";
-            chartArea15.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea15.AxisX.Title = "Displacement (kg)";
-            chartArea15.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea15.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea15.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea15.AxisY.Title = "GZ (mm)";
-            chartArea15.BackColor = System.Drawing.Color.White;
-            chartArea15.Name = "ChartArea1";
-            chartArea15.ShadowColor = System.Drawing.Color.White;
-            this.crtGZCrossCurve.ChartAreas.Add(chartArea15);
+            chartArea23.AxisX.LabelStyle.Format = "F0";
+            chartArea23.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea23.AxisX.Title = "Displacement (kg)";
+            chartArea23.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea23.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea23.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea23.AxisY.Title = "GZ (mm)";
+            chartArea23.BackColor = System.Drawing.Color.White;
+            chartArea23.Name = "ChartArea1";
+            chartArea23.ShadowColor = System.Drawing.Color.White;
+            this.crtGZCrossCurve.ChartAreas.Add(chartArea23);
             this.crtGZCrossCurve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtGZCrossCurve.Location = new System.Drawing.Point(4, 4);
             this.crtGZCrossCurve.Margin = new System.Windows.Forms.Padding(4);
@@ -675,10 +676,10 @@ namespace SSInstructor.Forms
             this.crtGZCrossCurve.Size = new System.Drawing.Size(1017, 936);
             this.crtGZCrossCurve.TabIndex = 72;
             this.crtGZCrossCurve.Text = "chart1";
-            title15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title15.Name = "Title1";
-            title15.Text = "GZ Cross Curve";
-            this.crtGZCrossCurve.Titles.Add(title15);
+            title23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title23.Name = "Title1";
+            title23.Text = "GZ Cross Curve";
+            this.crtGZCrossCurve.Titles.Add(title23);
             // 
             // tabKNCrossCurve
             // 
@@ -750,17 +751,17 @@ namespace SSInstructor.Forms
             // crtKNCrossCurve
             // 
             this.crtKNCrossCurve.BackColor = System.Drawing.SystemColors.Control;
-            chartArea16.AxisX.LabelStyle.Format = "F0";
-            chartArea16.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea16.AxisX.Title = "Displacement (kg)";
-            chartArea16.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea16.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea16.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea16.AxisY.Title = "KN (mm)";
-            chartArea16.BackColor = System.Drawing.Color.White;
-            chartArea16.Name = "ChartArea1";
-            chartArea16.ShadowColor = System.Drawing.Color.White;
-            this.crtKNCrossCurve.ChartAreas.Add(chartArea16);
+            chartArea24.AxisX.LabelStyle.Format = "F0";
+            chartArea24.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea24.AxisX.Title = "Displacement (kg)";
+            chartArea24.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea24.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea24.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea24.AxisY.Title = "KN (mm)";
+            chartArea24.BackColor = System.Drawing.Color.White;
+            chartArea24.Name = "ChartArea1";
+            chartArea24.ShadowColor = System.Drawing.Color.White;
+            this.crtKNCrossCurve.ChartAreas.Add(chartArea24);
             this.crtKNCrossCurve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtKNCrossCurve.Location = new System.Drawing.Point(4, 4);
             this.crtKNCrossCurve.Margin = new System.Windows.Forms.Padding(4);
@@ -768,10 +769,10 @@ namespace SSInstructor.Forms
             this.crtKNCrossCurve.Size = new System.Drawing.Size(1017, 936);
             this.crtKNCrossCurve.TabIndex = 73;
             this.crtKNCrossCurve.Text = "chart1";
-            title16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title16.Name = "Title1";
-            title16.Text = "KN Cross Curve";
-            this.crtKNCrossCurve.Titles.Add(title16);
+            title24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title24.Name = "Title1";
+            title24.Text = "KN Cross Curve";
+            this.crtKNCrossCurve.Titles.Add(title24);
             // 
             // splitContainer1
             // 
