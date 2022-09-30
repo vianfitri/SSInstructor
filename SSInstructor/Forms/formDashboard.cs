@@ -16,17 +16,22 @@ namespace SSInstructor
 {
     public partial class formDashboard : Form
     {
+        #region "Fields"
         formMain _parent;
         private Form activeForm = null;
         private DB mysqlDbConn;
+        #endregion
 
+        #region "Constructor"
         public formDashboard(formMain parent)
         {
             InitializeComponent();
             customizeDesign();
             this._parent = parent;
         }
+        #endregion
 
+        #region "Methods"
         private void customizeDesign()
         {
             pnlMasterDataSubmenu.Visible = false;
@@ -207,5 +212,14 @@ namespace SSInstructor
             // Call Another Application
             Process.Start(Application.StartupPath + "\\SSS\\ShipStability.exe");
         }
+
+        private void hiddenPannel_Paint(object sender, PaintEventArgs e)
+        {
+            // Load Instructor Data
+            openChildForm(new fSSS());
+
+            hideSubmenu();
+        }
+        #endregion
     }
 }
