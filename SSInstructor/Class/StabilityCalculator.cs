@@ -386,7 +386,7 @@ public static class StabilityCalculator {
         }
         catch(Exception ex)
         {
-            
+            Console.WriteLine("Error StabilityCalculator Load : " + ex.Message);
         }
     }
 

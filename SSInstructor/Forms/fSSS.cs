@@ -12,9 +12,26 @@ namespace SSInstructor.Forms
 {
     public partial class fSSS : Form
     {
+        #region "Fields"
+        #endregion
+
+        #region "Constructor"
         public fSSS()
         {
             InitializeComponent();
         }
+        #endregion
+
+        #region "Properties"
+        #endregion
+
+        #region "Method"
+        private void fSSS_Load(object sender, EventArgs e)
+        {
+            StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
+
+
+        }
+        #endregion
     }
 }
