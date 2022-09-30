@@ -348,6 +348,7 @@ namespace SSInstructor.Forms
             this.tabControlGraph.SelectedIndex = 0;
             this.tabControlGraph.Size = new System.Drawing.Size(909, 782);
             this.tabControlGraph.TabIndex = 0;
+            this.tabControlGraph.SelectedIndexChanged += new System.EventHandler(this.tabControlGraph_SelectedIndexChanged);
             // 
             // tabLoad
             // 
@@ -1619,6 +1620,7 @@ namespace SSInstructor.Forms
             this.scbKGVal.Size = new System.Drawing.Size(275, 20);
             this.scbKGVal.TabIndex = 111;
             this.scbKGVal.Value = 200;
+            this.scbKGVal.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbKGVal_Scroll);
             // 
             // nudKGVal
             // 
@@ -1647,6 +1649,7 @@ namespace SSInstructor.Forms
             0,
             0,
             0});
+            this.nudKGVal.ValueChanged += new System.EventHandler(this.nudKGVal_ValueChanged);
             // 
             // label16
             // 
@@ -1789,6 +1792,7 @@ namespace SSInstructor.Forms
             this.scbDispOrDraftVal.Name = "scbDispOrDraftVal";
             this.scbDispOrDraftVal.Size = new System.Drawing.Size(275, 20);
             this.scbDispOrDraftVal.TabIndex = 90;
+            this.scbDispOrDraftVal.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbDispOrDraftVal_Scroll);
             // 
             // lblInput1UpperVal
             // 
@@ -1817,6 +1821,7 @@ namespace SSInstructor.Forms
             this.scbHeelVal.Name = "scbHeelVal";
             this.scbHeelVal.Size = new System.Drawing.Size(275, 20);
             this.scbHeelVal.TabIndex = 91;
+            this.scbHeelVal.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbHeelVal_Scroll);
             // 
             // lblVectorInput1
             // 
@@ -1860,6 +1865,7 @@ namespace SSInstructor.Forms
             this.nudHeelVal.Name = "nudHeelVal";
             this.nudHeelVal.Size = new System.Drawing.Size(68, 20);
             this.nudHeelVal.TabIndex = 93;
+            this.nudHeelVal.ValueChanged += new System.EventHandler(this.nudHeelVal_ValueChanged);
             // 
             // nudDispOrDraftVal
             // 
@@ -1878,6 +1884,7 @@ namespace SSInstructor.Forms
             this.nudDispOrDraftVal.Name = "nudDispOrDraftVal";
             this.nudDispOrDraftVal.Size = new System.Drawing.Size(68, 20);
             this.nudDispOrDraftVal.TabIndex = 92;
+            this.nudDispOrDraftVal.ValueChanged += new System.EventHandler(this.nudDispOrDraftVal_ValueChanged);
             // 
             // tabHSData
             // 

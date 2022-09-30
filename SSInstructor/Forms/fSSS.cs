@@ -42,7 +42,62 @@ namespace SSInstructor.Forms
 
         double heel_angle = 0; // in deg
         double trim_angle = 0; // in deg
-        #endregion 
+        #endregion
+
+        #region "Hydrostatic Data"
+        double dDispVal = 0;   // displacement value in kgf
+        double dHeelVal = 0;   // heel angle in deg
+        double dTrimVal = 0;   // trim angle in deg, 20150822
+        double dGZVal = 0;     // GZ value in mm
+        double dKNVal = 0;     // KN value in mm
+        double dKBTVal = 0;    // KB transversal value in mm
+        double dKMTVal = 0;    // KM transversal value in mm
+        double dBMTVal = 0;    // BM transversal value in mm
+        double dTCBVal = 0;    // CB transversal value in mm
+        double dVCBVal = 0;    // VCB transversal value in mm
+        double dDraftVal = 0;  // draft value in mm
+        double dInputVal = 0;  // Input value = Displacement or Draft
+        double dOutputVal = 0; // Output value = Displacement or Draft
+
+        double dWTIVal = 0;   // Weight To Immerse value in kgf/cm, 20150901
+        double dMTTVal = 0;   // Moment To Trim value in kgf.m/cm, 20150901
+        double dCOBVal = 0;   // Coefficient of Block, 20150907
+        double dCOPVal = 0;   // Coefficient of Prismatic, 20150907
+
+        double dVBLVal = 0;    // VCB longitudinal value in mm
+        double dKMLVal = 0;    // KM longitudinal value in mm
+        double dBMLVal = 0;    // BM longitudinal value in mm
+        double dLBLVal = 0;    // CB longitudinal value in mm
+        double dLFLVal = 0;    // LCF longitudinal value in mm 
+        double dVFLVal = 0;    // VCF longitudinal value in mm 
+        double dX0Val = 0;     // X0, x position of origin point (analysis frame), from AP (after perpendiculat)
+
+        double dDispVal_Real = 0;   // displacement value in kgf
+        double dGZVal_Real = 0;     // GZ value in mm
+        double dKNVal_Real = 0;     // KN value in mm
+        double dKGVal_Real = 0;     // KG value in mm
+        double dKBTVal_Real = 0;    // KB transversal value in mm
+        double dVCBVal_Real = 0;    // CB vertical value in mm
+        double dKMTVal_Real = 0;    // KM transversal value in mm
+        double dBMTVal_Real = 0;    // BM transversal value in mm
+        double dTCBVal_Real = 0;    // CB transversal value in mm
+        double dDraftVal_Real = 0;  // draft value in mm
+        double dInputVal_Real = 0;  // Input value = Displacement or Draft
+        double dOutputVal_Real = 0; // Output value = Displacement or Draft
+
+        double dWTIVal_Real = 0;   // Weight To Immerse value in kgf/cm, 20150901
+        double dMTTVal_Real = 0;   // Moment To Trim value in kgf.m/cm, 20150901
+        double dCOBVal_Real = 0;   // Coefficient of Block, 20150907
+        double dCOPVal_Real = 0;   // Coefficient of Prismatic, 20150907
+
+        double dKBLVal_Real = 0;    // KB longitudinal value in mm
+        double dKMLVal_Real = 0;    // KM longitudinal value in mm
+        double dBMLVal_Real = 0;    // BM longitudinal value in mm
+        double dLBLVal_Real = 0;    // CB longitudinal value in mm
+        double dLFLVal_Real = 0;    // LCF longitudinal value in mm 
+        double dVFLVal_Real = 0;    // KCF longitudinal value in mm 
+        double dX0Val_Real = 0;     // X0, x position of origin point (analysis frame), from AP (after perpendiculat)
+        #endregion
 
         #region "Chart Series"
         // ChartSeries
@@ -1076,6 +1131,128 @@ namespace SSInstructor.Forms
             //DrawGZandKNCurves();
         }
 
+        private void scbDispOrDraftVal_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (cbxUseDispOrDraftReal.Checked)
+            {
+                scbDispOrDraftVal.Value = (int)(dWeightTotalShip * 10);
+                dInputVal = (double)scbDispOrDraftVal.Value / 10;
+            }
+            else
+            {
+                dInputVal = (double)scbDispOrDraftVal.Value / 10;
+                dWeightTotalShip = dInputVal;
+            }
+            nudDispOrDraftVal.Value = (decimal)dInputVal;
+            CalculateTransverseHydrostatic();
+            //CalculateLongitudinalHydrostatic();
+            //DrawGZandKNCurves(); // 20150908
+        }
+
+        private void scbHeelVal_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (cbxUseHeelReal.Checked)
+            {
+                scbHeelVal.Value = (int)(heel_angle * 100);
+                dHeelVal = heel_angle;
+            }
+            else
+            {
+                dHeelVal = (double)scbHeelVal.Value / 100;
+            }
+            nudHeelVal.Value = (decimal)dHeelVal;
+            CalculateTransverseHydrostatic();
+            //DrawGZandKNCurves(); // 20150908
+        }
+
+        private void nudDispOrDraftVal_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxUseDispOrDraftReal.Checked)
+            {
+                nudDispOrDraftVal.Value = (decimal)dWeightTotalShip;
+                dInputVal = (double)nudDispOrDraftVal.Value;
+            }
+            else
+            {
+                dInputVal = (double)nudDispOrDraftVal.Value;
+                dWeightTotalShip = dInputVal;
+            }
+            scbDispOrDraftVal.Value = (int)(dInputVal * 10);
+            CalculateTransverseHydrostatic();
+            //CalculateLongitudinalHydrostatic();
+            //DrawGZandKNCurves(); // 20150908
+
+            //Kirim();
+        }
+
+        private void nudHeelVal_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxUseHeelReal.Checked)
+            {
+                nudHeelVal.Value = (decimal)(heel_angle);
+                dHeelVal = heel_angle;
+            }
+            else
+            {
+                dHeelVal = (double)nudHeelVal.Value;
+            }
+            scbHeelVal.Value = (int)(dHeelVal * 100);
+            CalculateTransverseHydrostatic();
+            //DrawGZandKNCurves(); // 20150908
+
+            //Kirim();
+        }
+
+        private void tabControlGraph_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlGraph.SelectedIndex == 1) // tab transversal
+            {
+                if (!cbxUseHeelReal.Checked) scbHeelVal.Enabled = true;
+                CalculateTransverseHydrostatic();
+            }
+            else if (tabControlGraph.SelectedIndex == 2) // tab Longitudinal
+            {
+                if (!cbxUseTrimReal.Checked) scbTrimVal.Enabled = true;
+                //CalculateLongitudinalHydrostatic();
+            }
+        }
+
+        private void scbKGVal_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (cbxUseKGReal.Checked)
+            {
+                scbKGVal.Value = (int)(zCGTotalShip * 10);
+            }
+            else
+            {
+                zCGTotalShip = (double)scbKGVal.Value / 10;
+            }
+
+            nudKGVal.Value = (decimal)zCGTotalShip;
+
+            CalculateTransverseHydrostatic();
+            //CalculateLongitudinalHydrostatic();
+            //DrawGZandKNCurves(); // 20150908
+        }
+
+        private void nudKGVal_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxUseKGReal.Checked)
+            {
+                nudKGVal.Value = (decimal)(zCGTotalShip);
+            }
+            else
+            {
+                zCGTotalShip = (double)nudKGVal.Value;
+            }
+
+            scbKGVal.Value = (int)(zCGTotalShip * 10);
+
+            CalculateTransverseHydrostatic();
+            //CalculateLongitudinalHydrostatic();
+            //DrawGZandKNCurves(); // 20150908
+        }
+
         private void SettingInputValue()
         {
             if (cbbDispOrDraft.SelectedIndex == 0) // input = displacement (kgf)
@@ -1194,9 +1371,9 @@ namespace SSInstructor.Forms
                 zCGTotalLoad = (TMMB_Pos.z * mTMMB + TMMB_Pos.z * mTMMD + TKK_Pos.z * mTKK + TNT_Pos.z * mTNT) / dWeightTotalLoad;
             }
 
-            xCGTotalShip = (xCGTotalLoad * dWeightTotalLoad + xCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
-            yCGTotalShip = (yCGTotalLoad * dWeightTotalLoad + yCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
-            zCGTotalShip = (zCGTotalLoad * dWeightTotalLoad + zCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
+            xCGTotalShip = (xCGTotalLoad * dWeightTotalLoad + StabilityCalculator.xCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
+            yCGTotalShip = (yCGTotalLoad * dWeightTotalLoad + StabilityCalculator.yCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
+            zCGTotalShip = (zCGTotalLoad * dWeightTotalLoad + StabilityCalculator.zCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
 
             StabilityCalculator.CalculationHeelAndTrim(dWeightTotalShip, xCGTotalShip, yCGTotalShip, zCGTotalShip, ref heel_angle, ref trim_angle);
 
@@ -1281,7 +1458,199 @@ namespace SSInstructor.Forms
 
         private void CalculateTransverseHydrostatic()
         {
+            double ship_scale = StabilityCalculator.ship_scale;
+            double weight_scale = ship_scale * ship_scale * ship_scale / 1000;
 
+            dInputVal = (double)scbDispOrDraftVal.Value / 10;
+            if (cbbDispOrDraft.SelectedIndex == 0) // input1 = displacement
+            {
+                dDispVal = dInputVal;
+                dInputVal_Real = dInputVal * weight_scale; // 20160201
+                dDraftVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.dspData_BC, StabilityCalculator.T1D_drfData);
+                dWTIVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.dspData_BC, StabilityCalculator.T1D_wtiData);
+                dMTTVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.dspData_BC, StabilityCalculator.T1D_mttData);
+                dCOBVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.dspData_BC, StabilityCalculator.T1D_cobData);
+                dCOPVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.dspData_BC, StabilityCalculator.T1D_copData);
+                dOutputVal = dDraftVal;
+                dOutputVal_Real = dOutputVal * ship_scale / 1000; // 20160128
+            }
+            else // input1 = draft
+            {
+                dDraftVal = dInputVal;
+                dInputVal_Real = dInputVal * ship_scale / 1000; // 20160201
+                dDispVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.dspData_BC);
+                dWTIVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.T1D_wtiData);
+                dMTTVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.T1D_mttData);
+                dCOBVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.T1D_cobData);
+                dCOPVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.T1D_copData);
+                dOutputVal = dDispVal;
+                dOutputVal_Real = dOutputVal * ship_scale * ship_scale * ship_scale / 1000; // 20160128
+            }
+
+            dTCBVal = Math.Sign(dHeelVal) * StabilityCalculator.Interpolate2D(Math.Abs(dHeelVal), dDispVal, StabilityCalculator.T1D_helData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_tbtData);
+            dVCBVal = StabilityCalculator.Interpolate2D(Math.Abs(dHeelVal), dDispVal, StabilityCalculator.T1D_helData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_vbtData);
+            dKMTVal = StabilityCalculator.Interpolate2D(Math.Abs(dHeelVal), dDispVal, StabilityCalculator.T1D_helData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_kmtData);
+            dBMTVal = StabilityCalculator.Interpolate2D(Math.Abs(dHeelVal), dDispVal, StabilityCalculator.T1D_helData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_bmtData);
+
+            for (int i = 0; i < crtTransversal.Series.Count; i++)
+            {
+                crtTransversal.Series[i].Points.Clear();
+            }
+
+            // define reference points: center of rotation
+            double cX = 0;
+            double cY = 0; // ini adalah titik yang tepat, ssw 20160217
+
+            // define G point, in Ship coordinate, if cbxUseKGReal.Checked,ssw 20160106
+            double Gx = yCGTotalShip;
+            double Gy = zCGTotalShip;
+
+            if (!cbxUseKGReal.Checked & !cbxUseHeelReal.Checked)
+            {
+                Gx = 0;
+                Gy = StabilityCalculator.zCGLightShip;
+            }
+
+            // define K point, in Ship coordinate, point C as center of rotation, 20140819
+            double Kx = 0;
+            double Ky = 0;
+
+            // define B point, in Ship coordinate
+            double dHeelRad = dHeelVal * Math.PI / 180;
+            double Bx = dTCBVal;
+            double By = dVCBVal;
+
+            // define N Point, in Ship coordinate
+            dKNVal = Bx * Math.Cos(-dHeelRad) + By * Math.Sin(-dHeelRad);
+            double Nx = dKNVal * Math.Cos(-dHeelRad);
+            double Ny = dKNVal * Math.Sin(-dHeelRad);
+
+            // define M point, in Ship coordinate, point C as center of rotation, 20140819
+            double Mx = dKNVal * Math.Cos(-dHeelRad) - dKMTVal * Math.Sin(-dHeelRad);
+            double My = dKNVal * Math.Sin(-dHeelRad) + dKMTVal * Math.Cos(-dHeelRad);
+
+            // calculate KBT
+            dKBTVal = -Bx * Math.Sin(-dHeelRad) + By * Math.Cos(-dHeelRad);
+
+            // define G0 point (G lightship) in Ship coordinate, 20150827
+            double G0x = StabilityCalculator.yCGLightShip;
+            double G0y = StabilityCalculator.zCGLightShip;
+
+            // define Gm point (G total load) in Ship coordinate, 20150827
+            double Gmx = yCGTotalLoad;
+            double Gmy = zCGTotalLoad;
+
+            // calculate and draw GZ, calculate KN correction
+            // note: if we calculate KN directly from kntData,
+            // we will get inconsisten position of KN, so we need to correct it
+            // ssw, 20150824
+            // ssw, 20160111
+            dGZVal = Gy * Math.Sin(-dHeelRad) - Bx * Math.Cos(-dHeelRad) - By * Math.Sin(-dHeelRad);
+            double Zx = -dGZVal * Math.Cos(-dHeelRad);
+            double Zy = Gy - dGZVal * Math.Sin(-dHeelRad);
+
+            // point CLP (Center Line Plane)
+            double Px = Kx;
+            double Py = StabilityCalculator.shippoints_init[0].y;
+
+            // do rotational transformation, point C as center of rotation
+            StabilityCalculator.Rotate_point(ref Gx, ref Gy, cX, cY, dHeelVal);
+            StabilityCalculator.Rotate_point(ref Mx, ref My, cX, cY, dHeelVal);
+            StabilityCalculator.Rotate_point(ref Bx, ref By, cX, cY, dHeelVal);
+            StabilityCalculator.Rotate_point(ref Nx, ref Ny, cX, cY, dHeelVal);
+            StabilityCalculator.Rotate_point(ref Kx, ref Ky, cX, cY, dHeelVal);
+            StabilityCalculator.Rotate_point(ref G0x, ref G0y, cX, cY, dHeelVal); // 20150827
+            StabilityCalculator.Rotate_point(ref Gmx, ref Gmy, cX, cY, dHeelVal); // 20150827
+            StabilityCalculator.Rotate_point(ref Zx, ref Zy, cX, cY, dHeelVal);   // 20160111
+            StabilityCalculator.Rotate_point(ref Px, ref Py, cX, cY, dHeelVal);   // 20160217
+
+            // draw rotated amidship, series 1, HULL FORM LINE
+            StabilityCalculator.Point2D[] shippoints = (StabilityCalculator.Point2D[])StabilityCalculator.shippoints_init.Clone();
+            for (int i = 0; i < shippoints.Length; i++)
+            {
+                StabilityCalculator.Rotate_point(ref shippoints[i].x, ref shippoints[i].y, cX, cY, dHeelVal);
+                lat_shipform_series.Points.AddXY(shippoints[i].x, shippoints[i].y);
+            }
+
+            // draw WL (waterline), series 2, WL line
+            crtTransversal.Series[1].Points.AddXY(0.9 * crtTransversal.ChartAreas[0].AxisX.Minimum, dDraftVal); // series 4, waterline
+            crtTransversal.Series[1].Points.AddXY(0.9 * crtTransversal.ChartAreas[0].AxisX.Maximum, dDraftVal); // series 4, waterline
+
+            // draw KM line, series 3
+            crtTransversal.Series[2].Points.AddXY(Mx, My);    // series 3, M point
+            crtTransversal.Series[2].Points.AddXY(Kx, Ky);    // series 3, K point
+
+            // draw BM line, series 4
+            crtTransversal.Series[3].Points.AddXY(Mx, My);    // series 4, M point
+            crtTransversal.Series[3].Points.AddXY(Bx, By);    // series 4, B point
+
+            // draw GZ line, series 5
+            crtTransversal.Series[4].Points.AddXY(Gx, Gy);    // series 5, G point
+            crtTransversal.Series[4].Points.AddXY(Zx, Zy);    // series 5, Z point
+
+            // draw KN line, series 6
+            crtTransversal.Series[5].Points.AddXY(Kx, Ky);    // series 6, K point
+            crtTransversal.Series[5].Points.AddXY(Nx, Ny);    // series 6, N point
+
+            // draw KG line = Center Line Plane (CLP), 20160217, series 7
+            crtTransversal.Series[6].Points.AddXY(Kx, Ky);    // series 7, K point
+            crtTransversal.Series[6].Points.AddXY(Px, Py);    // series 7, P point
+
+            // Draw G, B, M, Z point
+            crtTransversal.Series[7].Points.AddXY(Gx, Gy);    // series 8, K point
+            crtTransversal.Series[8].Points.AddXY(Bx, By);    // series 9, B point
+            crtTransversal.Series[9].Points.AddXY(Mx, My);    // series 10, M point
+            crtTransversal.Series[10].Points.AddXY(Zx, Zy);   // series 11, Z point
+            crtTransversal.Series[11].Points.AddXY(Kx, Ky);   // series 12, K point
+            crtTransversal.Series[12].Points.AddXY(Nx, Ny);   // series 13, N point
+            crtTransversal.Series[13].Points.AddXY(G0x, G0y); // series 14, G0 point, 20150827
+            crtTransversal.Series[14].Points.AddXY(Gmx, Gmy); // series 15, Gm point, 20150827
+
+            txbGZValue.Text = dGZVal.ToString("F2"); // 20150929
+            txbKNValue.Text = dKNVal.ToString("F2"); // 20150929
+
+            txbKBValue.Text = dKBTVal.ToString("F2");
+            txbKMValue.Text = dKMTVal.ToString("F2");
+            txbDraftValue.Text = dOutputVal.ToString("F2");
+            txbTCBValue.Text = dTCBVal.ToString("F2");
+
+            txbMTTValue.Text = dMTTVal.ToString("F2"); // 20150901
+            txbWTIValue.Text = dWTIVal.ToString("F2"); // 20150901
+            txbCOBValue.Text = dCOBVal.ToString("F2"); // 20150907
+            txbCOPValue.Text = dCOPVal.ToString("F2"); // 20150907
+
+            // real ship
+            dGZVal_Real = dGZVal * ship_scale / 1000; // 20160128
+            dKNVal_Real = dKNVal * ship_scale / 1000; // 20160128
+
+            dKBTVal_Real = dKBTVal * ship_scale / 1000; // 20160128
+            dKMTVal_Real = dKMTVal * ship_scale / 1000; // 20160128
+            //dOutputVal_Real = dOutputVal * ship_scale; // 20160128
+            dTCBVal_Real = dTCBVal * ship_scale / 1000; // 20160128
+
+            dMTTVal_Real = dMTTVal * ship_scale * ship_scale * ship_scale / 1000; // 20160128
+            dWTIVal_Real = dWTIVal * ship_scale * ship_scale / 1000; // 20160128
+            dCOBVal_Real = dCOBVal; // 20160128
+            dCOPVal_Real = dCOPVal; // 20160128
+
+            //dKGVal_Real = KG_BC_REAL * ship_scale / 1000; // 20160201
+            dKGVal_Real = zCGTotalShip * ship_scale / 1000; // 20160201
+
+            txbGZValue_Real.Text = (dGZVal_Real).ToString("F2"); // 20160128
+            txbKNValue_Real.Text = (dKNVal_Real).ToString("F2"); // 20160128
+
+            txbKBValue_Real.Text = (dKBTVal_Real).ToString("F2"); // 20160128
+            txbKMValue_Real.Text = (dKMTVal_Real).ToString("F2");// 20160128
+            txbDraftValue_Real.Text = (dOutputVal_Real).ToString("F2"); // 20160128 
+            txbTCBValue_Real.Text = (dTCBVal_Real).ToString("F2"); // 20160128
+
+            txbMTTValue_Real.Text = (dMTTVal_Real).ToString("F2"); // 20160128
+            txbWTIValue_Real.Text = (dWTIVal_Real).ToString("F2"); // 20160128
+            txbCOBValue_Real.Text = (dCOBVal_Real).ToString("F2"); // 20160128
+            txbCOPValue_Real.Text = (dCOPVal_Real).ToString("F2"); // 20160128
+
+            txbDispOrDraftVal_Real.Text = dInputVal_Real.ToString("F2"); // 20160201
+            txbKGVal_Real.Text = dKGVal_Real.ToString("F2"); // 20160201
         }
         #endregion
 
