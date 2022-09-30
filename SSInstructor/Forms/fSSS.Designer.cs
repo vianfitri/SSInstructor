@@ -2701,6 +2701,7 @@ namespace SSInstructor.Forms
             this.pnlHSLegendTextColor.Name = "pnlHSLegendTextColor";
             this.pnlHSLegendTextColor.Size = new System.Drawing.Size(68, 21);
             this.pnlHSLegendTextColor.TabIndex = 78;
+            this.pnlHSLegendTextColor.Click += new System.EventHandler(this.pnlHSLegendTextColor_Click);
             // 
             // label32
             // 
@@ -2720,6 +2721,7 @@ namespace SSInstructor.Forms
             this.pnlHSGridColor.Name = "pnlHSGridColor";
             this.pnlHSGridColor.Size = new System.Drawing.Size(68, 21);
             this.pnlHSGridColor.TabIndex = 76;
+            this.pnlHSGridColor.Click += new System.EventHandler(this.pnlHSGridColor_Click);
             // 
             // label13
             // 
@@ -2739,6 +2741,7 @@ namespace SSInstructor.Forms
             this.pnlHSLineColor.Name = "pnlHSLineColor";
             this.pnlHSLineColor.Size = new System.Drawing.Size(68, 21);
             this.pnlHSLineColor.TabIndex = 74;
+            this.pnlHSLineColor.Click += new System.EventHandler(this.pnlHSLineColor_Click);
             // 
             // label14
             // 
@@ -2758,6 +2761,7 @@ namespace SSInstructor.Forms
             this.pnlHSBGColor.Name = "pnlHSBGColor";
             this.pnlHSBGColor.Size = new System.Drawing.Size(68, 21);
             this.pnlHSBGColor.TabIndex = 72;
+            this.pnlHSBGColor.Click += new System.EventHandler(this.pnlHSBGColor_Click);
             // 
             // label29
             // 

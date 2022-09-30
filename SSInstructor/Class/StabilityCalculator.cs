@@ -478,6 +478,7 @@ public static class StabilityCalculator {
                 cobData_BC[i] = Convert.ToDouble(values[8]); // Kolom 23 = Cb // used	   
                 copData_BC[i] = Convert.ToDouble(values[9]); // Kolom 24 = Cp // used
             }
+            i += 1;
         }
     }
 

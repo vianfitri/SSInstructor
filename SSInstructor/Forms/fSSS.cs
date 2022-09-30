@@ -16,6 +16,34 @@ namespace SSInstructor.Forms
     {
         #region "Fields"
 
+        #region "Load"
+        double dWeightTotalShip;
+        double dWeightTotalShip_Real;
+
+        double xCGLightShip; // LCG =  60 mm, hasil praktikum 20160128
+        double yCGLightShip; // TKG =   0.2 mm, hasil praktikum 20151230
+        double zCGLightShip; // KG  = 110 mm, hasil praktikum 20151230
+        double xCGTotalLoad;
+        double yCGTotalLoad;
+        double zCGTotalLoad;
+        double xCGTotalShip;
+        double yCGTotalShip;
+        double zCGTotalShip;
+
+        double mTMMB;
+        double mTMMD;
+        double mTKK;
+        double mTNT;
+
+        double mTMMB_real;
+        double mTMMD_real;
+        double mTKK_real;
+        double mTNT_real;
+
+        double heel_angle = 0; // in deg
+        double trim_angle = 0; // in deg
+        #endregion 
+
         #region "Chart Series"
         // ChartSeries
         Series lat_shipform_series = new Series();   // for showing ship form (amidship)
@@ -839,6 +867,41 @@ namespace SSInstructor.Forms
             crtLoadTopView.ChartAreas[0].AxisX.Interval = 100;
         }
 
+        private void pnlHSBGColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.Color = pnlHSBGColor.BackColor;
+            colorDialog1.ShowDialog();
+            pnlHSBGColor.BackColor = colorDialog1.Color;
+            crtHydrostaticCurve.ChartAreas[0].BackColor = colorDialog1.Color;
+            crtHydrostaticCurve.Legends[0].BackColor = colorDialog1.Color;
+        }
+
+        private void pnlHSLineColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.Color = pnlHSLineColor.BackColor;
+            colorDialog1.ShowDialog();
+            pnlHSLineColor.BackColor = colorDialog1.Color;
+            int i = cbbHSLineSelect.SelectedIndex;
+            crtHydrostaticCurve.Series[i].Color = colorDialog1.Color;
+        }
+
+        private void pnlHSGridColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.Color = pnlHSGridColor.BackColor;
+            colorDialog1.ShowDialog();
+            pnlHSGridColor.BackColor = colorDialog1.Color;
+            crtHydrostaticCurve.ChartAreas[0].Axes[0].MajorGrid.LineColor = colorDialog1.Color;
+            crtHydrostaticCurve.ChartAreas[0].Axes[1].MajorGrid.LineColor = colorDialog1.Color;
+        }
+
+        private void pnlHSLegendTextColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.Color = pnlHSLegendTextColor.BackColor;
+            colorDialog1.ShowDialog();
+            pnlHSLegendTextColor.BackColor = colorDialog1.Color;
+            crtHydrostaticCurve.Legends[0].ForeColor = colorDialog1.Color;
+        }
+
         private void SettingInputValue()
         {
             if (cbbDispOrDraft.SelectedIndex == 0) // input = displacement (kgf)
@@ -879,7 +942,170 @@ namespace SSInstructor.Forms
             }
         }
 
+        private void CalculateCG_and_Attitude()
+        {
+            mTMMB = (double)nudBebanTMMB.Value;
+            mTMMD = (double)nudBebanTMMD.Value;
+            mTKK = (double)nudBebanTKK.Value;
+            mTNT = (double)nudBebanTNT.Value;
+
+            double ship_scale = StabilityCalculator.ship_scale;
+            double weight_scale = ship_scale * ship_scale * ship_scale / 1000;
+            mTMMB_real = mTMMB * weight_scale; // in ton
+            mTMMD_real = mTMMD * weight_scale; // in ton
+            mTKK_real = mTKK * weight_scale; // in ton
+            mTNT_real = mTNT * weight_scale; // in ton
+
+            double dWeightTotalLoad = mTMMB + mTMMD + mTKK + mTNT;
+            dWeightTotalShip = StabilityCalculator.dWeightLightShip + dWeightTotalLoad;
+
+            double dWeightLightShip_Real = StabilityCalculator.dWeightLightShip * weight_scale;
+            double dWeightTotalLoad_Real = dWeightTotalLoad * weight_scale;
+            double dWeightTotalShip_Real = dWeightTotalShip * weight_scale;
+
+            // Check total load
+            if (dWeightTotalLoad <= 0)
+            {
+                txbInfoMuatan.ForeColor = Color.Red;
+                txbInfoMuatan.Text = "Muatan Kosong !!!";
+            }
+            else
+            {
+                txbInfoMuatan.ForeColor = Color.Green;
+                txbInfoMuatan.Text = "Muatan Total = " + dWeightTotalLoad.ToString("F1") + " kg = "
+                    + dWeightTotalLoad_Real.ToString("F1") + " ton";
+            }
+            txbBobotTotal.ForeColor = Color.Blue;
+            txbBobotTotal.Text = "Bobot Total Kapal = " + dWeightTotalShip.ToString("F1") + " kg = "
+                + dWeightTotalShip_Real.ToString("F1") + " ton";
+
+            TMMB_Pos.x = (double)nudPosisiTMMB.Value - 1096.5;
+            TMMB_Pos.y = 0;
+            TMMB_Pos.z = 106 + 0.5 * mTMMB * 10;
+
+            TMMD_Pos.x = (double)nudPosisiTMMD.Value - 1096.5;
+            TMMD_Pos.y = 0;
+            TMMD_Pos.z = 106 + 0.5 * mTMMD * 10;
+
+            TKK_Pos.x = 1100 - 1096.5;
+            TKK_Pos.y = (double)nudPosisiTKK.Value;
+            TKK_Pos.z = 275 + 0.5 * mTKK * 10;
+
+            TNT_Pos.x = 1225 - 1096.5;
+            TNT_Pos.y = 0;
+            TNT_Pos.z = (double)nudPosisiTNT.Value + 43 + 0.5 * mTNT * 15;
+
+            //TMMB_Pos_Real.x = TMMB_Pos.x * ship_scale / 1000; // in meter
+            TMMB_Pos_Real.x = (double)nudPosisiTMMB.Value * ship_scale / 1000; // in meter
+            TMMB_Pos_Real.y = TMMB_Pos.y * ship_scale / 1000; // in meter
+            TMMB_Pos_Real.z = TMMB_Pos.z * ship_scale / 1000; // in meter
+
+            //TMMD_Pos_Real.x = TMMD_Pos.x * ship_scale / 1000; // in meter
+            TMMD_Pos_Real.x = (double)nudPosisiTMMD.Value * ship_scale / 1000; // in meter
+            TMMD_Pos_Real.y = TMMD_Pos.y * ship_scale / 1000; // in meter
+            TMMD_Pos_Real.z = TMMD_Pos.z * ship_scale / 1000; // in meter
+
+            TKK_Pos_Real.x = TKK_Pos.x * ship_scale / 1000; // in meter
+            TKK_Pos_Real.y = TKK_Pos.y * ship_scale / 1000; // in meter
+            TKK_Pos_Real.z = TKK_Pos.z * ship_scale / 1000; // in meter
+
+            TNT_Pos_Real.x = TNT_Pos.x * ship_scale / 1000; // in meter
+            TNT_Pos_Real.y = TNT_Pos.y * ship_scale / 1000; // in meter
+            TNT_Pos_Real.z = TNT_Pos.z * ship_scale / 1000; // in meter
+
+            if (dWeightTotalLoad > 0)
+            {
+                xCGTotalLoad = (TMMB_Pos.x * mTMMB + TMMD_Pos.x * mTMMD + TKK_Pos.x * mTKK + TNT_Pos.x * mTNT) / dWeightTotalLoad;
+                yCGTotalLoad = (TMMB_Pos.y * mTMMB + TMMD_Pos.y * mTMMD + TKK_Pos.y * mTKK + TNT_Pos.y * mTNT) / dWeightTotalLoad;
+                zCGTotalLoad = (TMMB_Pos.z * mTMMB + TMMB_Pos.z * mTMMD + TKK_Pos.z * mTKK + TNT_Pos.z * mTNT) / dWeightTotalLoad;
+            }
+
+            xCGTotalShip = (xCGTotalLoad * dWeightTotalLoad + xCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
+            yCGTotalShip = (yCGTotalLoad * dWeightTotalLoad + yCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
+            zCGTotalShip = (zCGTotalLoad * dWeightTotalLoad + zCGLightShip * StabilityCalculator.dWeightLightShip) / dWeightTotalShip;
+
+            StabilityCalculator.CalculationHeelAndTrim(dWeightTotalShip, xCGTotalShip, yCGTotalShip, zCGTotalShip, ref heel_angle, ref trim_angle);
+
+            // calculate transverse and longitudinal stability
+            if (cbxUseDispOrDraftReal.Checked)
+            {
+                scbDispOrDraftVal.Value = (int)(dWeightTotalShip * 10);
+                nudDispOrDraftVal.Value = (decimal)(scbDispOrDraftVal.Value / 10);
+            }
+
+            if (cbxUseHeelReal.Checked)
+            {
+                scbHeelVal.Value = (int)(heel_angle * 100);
+                nudHeelVal.Value = (decimal)(heel_angle);
+            }
+
+            if (cbxUseTrimReal.Checked)
+            {
+                scbTrimVal.Value = (int)(trim_angle * 100);
+                nudTrimVal.Value = (decimal)(trim_angle);
+            }
+
+            if (cbxUseKGReal.Checked)
+            {
+                scbKGVal.Value = (int)(zCGTotalShip * 10);
+                nudKGVal.Value = (decimal)zCGTotalShip;
+            }
+
+            // Show Results
+            txbGmx.Text = xCGTotalLoad.ToString("F1");
+            txbGmy.Text = yCGTotalLoad.ToString("F1");
+            txbGmz.Text = zCGTotalLoad.ToString("F1");
+
+            txbGx.Text = xCGTotalShip.ToString("F1");
+            txbGy.Text = yCGTotalShip.ToString("F1");
+            txbGz.Text = zCGTotalShip.ToString("F1");
+
+            // Draw position
+            tmmb_xy_point_series.Points.Clear();
+            tmmb_xz_point_series.Points.Clear();
+            tmmb_yz_point_series.Points.Clear();
+
+            tmmb_xy_point_series.Points.AddXY(TMMB_Pos.x, TMMB_Pos.y);
+            tmmb_xz_point_series.Points.AddXY(TMMB_Pos.x, TMMB_Pos.z);
+            tmmb_yz_point_series.Points.AddXY(TMMB_Pos.y, TMMB_Pos.z);
+
+            tmmd_xy_point_series.Points.Clear();
+            tmmd_xz_point_series.Points.Clear();
+            tmmd_yz_point_series.Points.Clear();
+
+            tmmd_xy_point_series.Points.AddXY(TMMD_Pos.x, TMMD_Pos.y);
+            tmmd_xz_point_series.Points.AddXY(TMMD_Pos.x, TMMD_Pos.z);
+            tmmd_yz_point_series.Points.AddXY(TMMD_Pos.y, TMMD_Pos.z);
+
+            tkk_xy_point_series.Points.Clear();
+            tkk_xz_point_series.Points.Clear();
+            tkk_yz_point_series.Points.Clear();
+
+            tkk_xy_point_series.Points.AddXY(TKK_Pos.x, TKK_Pos.y);
+            tkk_xz_point_series.Points.AddXY(TKK_Pos.x, TKK_Pos.z);
+            tkk_yz_point_series.Points.AddXY(TKK_Pos.y, TKK_Pos.z);
+
+            tnt_xy_point_series.Points.Clear();
+            tnt_xz_point_series.Points.Clear();
+            tnt_yz_point_series.Points.Clear();
+
+            tnt_xy_point_series.Points.AddXY(TNT_Pos.x, TNT_Pos.y);
+            tnt_xz_point_series.Points.AddXY(TNT_Pos.x, TNT_Pos.z);
+            tnt_yz_point_series.Points.AddXY(TNT_Pos.y, TNT_Pos.z);
+
+            // show real ship values
+            txbBebanTMMB.Text = mTMMB_real.ToString("F2");
+            txbPosisiTMMB.Text = TMMB_Pos_Real.x.ToString("F2");
+            txbBebanTMMD.Text = mTMMD_real.ToString("F2");
+            txbPosisiTMMD.Text = TMMD_Pos_Real.x.ToString("F2");
+            txbBebanTKK.Text = mTKK_real.ToString("F2");
+            txbPosisiTKK.Text = TKK_Pos_Real.y.ToString("F2");
+            txbBebanTNT.Text = mTNT_real.ToString("F2");
+            txbPosisiTNT.Text = TNT_Pos_Real.z.ToString("F2");
+
+        }
         #endregion
+
 
     }
 }
