@@ -75,11 +75,11 @@ namespace SSInstructor.Forms
             // 
             // spcShipStability.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tabControlGraph);
+            this.spcShipStability.Panel1.Controls.Add(this.tabControlGraph);
             // 
             // spcShipStability.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer1);
+            this.spcShipStability.Panel2.Controls.Add(this.splitContainer1);
             this.spcShipStability.Size = new System.Drawing.Size(1557, 973);
             this.spcShipStability.SplitterDistance = 1102;
             this.spcShipStability.SplitterWidth = 5;
@@ -179,7 +179,7 @@ namespace SSInstructor.Forms
             // 
             // spcLoad1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.spcLoad2);
+            this.spcLoad1.Panel1.Controls.Add(this.spcLoad2);
             this.spcLoad1.Size = new System.Drawing.Size(1086, 936);
             this.spcLoad1.SplitterDistance = 362;
             this.spcLoad1.SplitterWidth = 5;
