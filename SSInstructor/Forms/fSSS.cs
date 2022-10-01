@@ -950,84 +950,112 @@ namespace SSInstructor.Forms
             crtLongitudinal.ChartAreas[0].AxisX.Interval = 100;
         }
 
+        private void crtTransversal_PrePaint(object sender, ChartPaintEventArgs e)
+        {
+            // algorithm to make chart always in correct aspect ratio, ssw 20140809
+            float GraphX = crtTransversal.ChartAreas[0].InnerPlotPosition.X * crtTransversal.Width / 100;
+            float GraphY = crtTransversal.ChartAreas[0].InnerPlotPosition.Y * crtTransversal.Height / 100;
+            float GraphR = crtTransversal.ChartAreas[0].InnerPlotPosition.Right * crtTransversal.Width / 100;
+            float GraphB = crtTransversal.ChartAreas[0].InnerPlotPosition.Bottom * crtTransversal.Height / 100;
+
+            float TitleHeight = 0;
+            if (crtTransversal.Titles.Count > 1)
+            {
+                for (int i = 0; i < crtTransversal.Titles.Count; i++)
+                {
+                    TitleHeight += crtTransversal.Titles[i].Font.Height;
+                }
+            }
+
+            float GraphWidth = crtTransversal.ChartAreas[0].InnerPlotPosition.Width * crtTransversal.Width / 100;
+            float GraphHeight = crtTransversal.ChartAreas[0].InnerPlotPosition.Height * crtTransversal.Height / 100 - TitleHeight;
+            double AxisYLength = crtTransversal.ChartAreas[0].AxisY.Maximum - crtTransversal.ChartAreas[0].AxisY.Minimum;
+            double AxisXLength = 50 * Math.Round(GraphWidth / GraphHeight * AxisYLength / 50);
+
+            crtTransversal.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
+            crtTransversal.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
+
+            crtTransversal.ChartAreas[0].AxisX.Interval = 50;
+        }
+
         private void nudBebanTMMB_ValueChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudBebanTMMD_ValueChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudBebanTKK_ValueChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudBebanTNT_ValueChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void scbPosisiTMMB_Scroll(object sender, ScrollEventArgs e)
         {
             nudPosisiTMMB.Value = scbPosisiTMMB.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void scbPosisiTMMD_Scroll(object sender, ScrollEventArgs e)
         {
             nudPosisiTMMD.Value = scbPosisiTMMD.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void scbPosisiTKK_Scroll(object sender, ScrollEventArgs e)
         {
             nudPosisiTKK.Value = scbPosisiTKK.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void scbPosisiTNT_Scroll(object sender, ScrollEventArgs e)
         {
             nudPosisiTNT.Value = scbPosisiTNT.Minimum + scbPosisiTNT.Maximum - scbPosisiTNT.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudPosisiTMMB_ValueChanged(object sender, EventArgs e)
         {
             scbPosisiTMMB.Value = (int)nudPosisiTMMB.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudPosisiTMMD_ValueChanged(object sender, EventArgs e)
         {
             scbPosisiTMMD.Value = (int)nudPosisiTMMD.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudPosisiTKK_ValueChanged(object sender, EventArgs e)
         {
             scbPosisiTKK.Value = (int)nudPosisiTKK.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudPosisiTNT_ValueChanged(object sender, EventArgs e)
         {
             scbPosisiTNT.Value = scbPosisiTNT.Minimum + scbPosisiTNT.Maximum - (int)nudPosisiTNT.Value;
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void nudHSLineWidth_ValueChanged(object sender, EventArgs e)
@@ -1036,28 +1064,56 @@ namespace SSInstructor.Forms
             crtHydrostaticCurve.Series[i].BorderWidth = (int)nudHSLineWidth.Value;
         }
 
+        private void cbbDispOrDraft_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbDispOrDraft.SelectedIndex == 0) // input = displacement (kgf)
+            {
+                nudDispOrDraftVal.Minimum = 1;   // disp min =    1 kg
+                nudDispOrDraftVal.Maximum = 90; // disp max =  150 kg
+                scbDispOrDraftVal.Minimum = (int)nudDispOrDraftVal.Minimum * 10;
+                scbDispOrDraftVal.Maximum = (int)nudDispOrDraftVal.Maximum * 10;
+                lblInput1LowerVal.Text = (scbDispOrDraftVal.Minimum / 10).ToString() + " kg";
+                lblInput1MiddleVal.Text = (scbDispOrDraftVal.Maximum / 20).ToString() + " kg";
+                lblInput1UpperVal.Text = (scbDispOrDraftVal.Maximum / 10).ToString() + " kg";
+                lblDraftValue.Text = "Draft (mm)";
+                lblDraftRealValue.Text = "Draft (m)";
+            }
+            else // input = draft (mm)
+            {
+                nudDispOrDraftVal.Minimum = 1;   // draft min =    1 mm
+                nudDispOrDraftVal.Maximum = 150; // draft max =  170 mm
+                scbDispOrDraftVal.Minimum = (int)nudDispOrDraftVal.Minimum * 10;
+                scbDispOrDraftVal.Maximum = (int)nudDispOrDraftVal.Maximum * 10;
+                lblInput1LowerVal.Text = (scbDispOrDraftVal.Minimum / 10).ToString() + " mm";
+                lblInput1MiddleVal.Text = (scbDispOrDraftVal.Maximum / 20).ToString() + " mm";
+                lblInput1UpperVal.Text = (scbDispOrDraftVal.Maximum / 10).ToString() + " mm";
+                lblDraftValue.Text = "Displ. (kgf)";
+                lblDraftRealValue.Text = "Displ. (ton)";
+            }
+        }
+
         private void cbxUseDispOrDraftReal_CheckedChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void cbxUseHeelReal_CheckedChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void cbxUseTrimReal_CheckedChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void cbxUseKGReal_CheckedChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
-            //DrawGZandKNCurve();
+            DrawGZandKNCurves();
         }
 
         private void pnlHSBGColor_Click(object sender, EventArgs e)
@@ -1103,32 +1159,32 @@ namespace SSInstructor.Forms
 
         private void rbnGZStaticStability_CheckedChanged(object sender, EventArgs e)
         {
-            //DrawGZandKNCurves();
+            DrawGZandKNCurves();
         }
 
         private void rbnKNStaticStability_CheckedChanged(object sender, EventArgs e)
         {
-            //DrawGZandKNCurves();
+            DrawGZandKNCurves();
         }
 
         private void rbnGZCrossCurve_CheckedChanged(object sender, EventArgs e)
         {
-            //DrawGZandKNCurves();
+            DrawGZandKNCurves();
         }
 
         private void rbnKNCrossCurve_CheckedChanged(object sender, EventArgs e)
         {
-            //DrawGZandKNCurves();
+            DrawGZandKNCurves();
         }
 
         private void rbnGZatGivenDispAndKG_CheckedChanged(object sender, EventArgs e)
         {
-            //DrawGZandKNCurves();
+            DrawGZandKNCurves();
         }
 
         private void rbnKNatGivenDispAndKG_CheckedChanged(object sender, EventArgs e)
         {
-            //DrawGZandKNCurves();
+            DrawGZandKNCurves();
         }
 
         private void scbDispOrDraftVal_Scroll(object sender, ScrollEventArgs e)
@@ -1145,8 +1201,8 @@ namespace SSInstructor.Forms
             }
             nudDispOrDraftVal.Value = (decimal)dInputVal;
             CalculateTransverseHydrostatic();
-            //CalculateLongitudinalHydrostatic();
-            //DrawGZandKNCurves(); // 20150908
+            CalculateLongitudinalHydrostatic();
+            DrawGZandKNCurves(); // 20150908
         }
 
         private void scbHeelVal_Scroll(object sender, ScrollEventArgs e)
@@ -1162,7 +1218,7 @@ namespace SSInstructor.Forms
             }
             nudHeelVal.Value = (decimal)dHeelVal;
             CalculateTransverseHydrostatic();
-            //DrawGZandKNCurves(); // 20150908
+            DrawGZandKNCurves(); // 20150908
         }
 
         private void nudDispOrDraftVal_ValueChanged(object sender, EventArgs e)
@@ -1179,8 +1235,8 @@ namespace SSInstructor.Forms
             }
             scbDispOrDraftVal.Value = (int)(dInputVal * 10);
             CalculateTransverseHydrostatic();
-            //CalculateLongitudinalHydrostatic();
-            //DrawGZandKNCurves(); // 20150908
+            CalculateLongitudinalHydrostatic();
+            DrawGZandKNCurves(); // 20150908
 
             //Kirim();
         }
@@ -1198,9 +1254,39 @@ namespace SSInstructor.Forms
             }
             scbHeelVal.Value = (int)(dHeelVal * 100);
             CalculateTransverseHydrostatic();
-            //DrawGZandKNCurves(); // 20150908
+            DrawGZandKNCurves(); // 20150908
 
             //Kirim();
+        }
+
+        private void scbTrimVal_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (cbxUseTrimReal.Checked)
+            {
+                scbTrimVal.Value = (int)(trim_angle * 100);
+                dTrimVal = trim_angle;
+            }
+            else
+            {
+                dTrimVal = (double)scbTrimVal.Value / 100;
+            }
+            nudTrimVal.Value = (decimal)dTrimVal;
+            CalculateLongitudinalHydrostatic();
+        }
+
+        private void nudTrimVal_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxUseTrimReal.Checked)
+            {
+                nudTrimVal.Value = (decimal)(trim_angle);
+                dTrimVal = trim_angle;
+            }
+            else
+            {
+                dTrimVal = (double)nudTrimVal.Value;
+            }
+            scbTrimVal.Value = (int)(dTrimVal * 100);
+            CalculateLongitudinalHydrostatic();
         }
 
         private void tabControlGraph_SelectedIndexChanged(object sender, EventArgs e)
@@ -1213,7 +1299,7 @@ namespace SSInstructor.Forms
             else if (tabControlGraph.SelectedIndex == 2) // tab Longitudinal
             {
                 if (!cbxUseTrimReal.Checked) scbTrimVal.Enabled = true;
-                //CalculateLongitudinalHydrostatic();
+                CalculateLongitudinalHydrostatic();
             }
         }
 
@@ -1231,8 +1317,8 @@ namespace SSInstructor.Forms
             nudKGVal.Value = (decimal)zCGTotalShip;
 
             CalculateTransverseHydrostatic();
-            //CalculateLongitudinalHydrostatic();
-            //DrawGZandKNCurves(); // 20150908
+            CalculateLongitudinalHydrostatic();
+            DrawGZandKNCurves(); // 20150908
         }
 
         private void nudKGVal_ValueChanged(object sender, EventArgs e)
@@ -1249,8 +1335,96 @@ namespace SSInstructor.Forms
             scbKGVal.Value = (int)(zCGTotalShip * 10);
 
             CalculateTransverseHydrostatic();
-            //CalculateLongitudinalHydrostatic();
-            //DrawGZandKNCurves(); // 20150908
+            CalculateLongitudinalHydrostatic();
+            DrawGZandKNCurves(); // 20150908
+        }
+
+        private void cbxMarkerShow_CheckedChanged(object sender, EventArgs e)
+        {
+            int i = cbbMarkerSelect.SelectedIndex + 6;
+            if (cbxMarkerShow.Checked)
+            {
+                crtTransversal.Series[i].MarkerSize = (int)nudMarkerSize.Value;
+            }
+            else
+            {
+                crtTransversal.Series[i].MarkerSize = 0;
+            }
+        }
+
+        private void cbbMarkerSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = cbbMarkerSelect.SelectedIndex + 6;
+            if (crtTransversal.Series[i].MarkerSize == 0)
+            {
+                cbxMarkerShow.Checked = false;
+            }
+            else
+            {
+                nudMarkerSize.Value = (decimal)crtTransversal.Series[i].MarkerSize;
+                cbxMarkerShow.Checked = true;
+            }
+
+            pnlMarkerColor.BackColor = crtTransversal.Series[i].Color;
+        }
+
+        private void nudMarkerSize_ValueChanged(object sender, EventArgs e)
+        {
+            int i = cbbMarkerSelect.SelectedIndex + 6;
+            crtTransversal.Series[i].MarkerSize = (int)nudMarkerSize.Value;
+        }
+
+        private void cbbLineSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = cbbLineSelect.SelectedIndex;
+            if (crtTransversal.Series[i].BorderWidth == 0)
+            {
+                cbxLineShow.Checked = false;
+            }
+            else
+            {
+                nudLineWidth.Value = (decimal)crtTransversal.Series[i].BorderWidth;
+                cbxLineShow.Checked = true;
+            }
+            pnlLineColor.BackColor = crtTransversal.Series[i].Color;
+        }
+
+        private void cbxLineShow_CheckedChanged(object sender, EventArgs e)
+        {
+            int i = cbbLineSelect.SelectedIndex;
+            if (cbxLineShow.Checked)
+            {
+                crtTransversal.Series[i].BorderWidth = (int)nudLineWidth.Value;
+            }
+            else
+            {
+                crtTransversal.Series[i].BorderWidth = 0;
+            }
+        }
+
+        private void nudLineWidth_ValueChanged(object sender, EventArgs e)
+        {
+            int i = cbbLineSelect.SelectedIndex;
+            crtTransversal.Series[i].BorderWidth = (int)nudLineWidth.Value;
+        }
+
+        private void pnlMarkerColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.Color = pnlMarkerColor.BackColor;
+            colorDialog1.ShowDialog();
+            pnlMarkerColor.BackColor = colorDialog1.Color;
+            int i = cbbMarkerSelect.SelectedIndex + 6;
+            crtTransversal.Series[i].MarkerColor = colorDialog1.Color;
+            crtTransversal.Series[i].LabelForeColor = colorDialog1.Color;
+        }
+
+        private void pnlLineColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.Color = pnlLineColor.BackColor;
+            colorDialog1.ShowDialog();
+            pnlLineColor.BackColor = colorDialog1.Color;
+            int i = cbbLineSelect.SelectedIndex;
+            crtTransversal.Series[i].Color = colorDialog1.Color;
         }
 
         private void SettingInputValue()
@@ -1484,7 +1658,7 @@ namespace SSInstructor.Forms
                 dCOBVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.T1D_cobData);
                 dCOPVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.T1D_copData);
                 dOutputVal = dDispVal;
-                dOutputVal_Real = dOutputVal * ship_scale * ship_scale * ship_scale / 1000; // 20160128
+                dOutputVal_Real = dOutputVal * weight_scale; // 20160128
             }
 
             dTCBVal = Math.Sign(dHeelVal) * StabilityCalculator.Interpolate2D(Math.Abs(dHeelVal), dDispVal, StabilityCalculator.T1D_helData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_tbtData);
@@ -1628,7 +1802,7 @@ namespace SSInstructor.Forms
             //dOutputVal_Real = dOutputVal * ship_scale; // 20160128
             dTCBVal_Real = dTCBVal * ship_scale / 1000; // 20160128
 
-            dMTTVal_Real = dMTTVal * ship_scale * ship_scale * ship_scale / 1000; // 20160128
+            dMTTVal_Real = dMTTVal * weight_scale; // 20160128
             dWTIVal_Real = dWTIVal * ship_scale * ship_scale / 1000; // 20160128
             dCOBVal_Real = dCOBVal; // 20160128
             dCOPVal_Real = dCOPVal; // 20160128
@@ -1652,7 +1826,453 @@ namespace SSInstructor.Forms
             txbDispOrDraftVal_Real.Text = dInputVal_Real.ToString("F2"); // 20160201
             txbKGVal_Real.Text = dKGVal_Real.ToString("F2"); // 20160201
         }
+
+        private void CalculateLongitudinalHydrostatic()
+        {
+            double ship_scale = StabilityCalculator.ship_scale;
+            double weight_scale = ship_scale * ship_scale * ship_scale / 1000;
+
+            dInputVal = (double)scbDispOrDraftVal.Value / 10;
+            if (cbbDispOrDraft.SelectedIndex == 0) // input1 = displacement
+            {
+                dDispVal = dInputVal;
+                dDraftVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.dspData_BC, StabilityCalculator.T1D_drfData);
+                dOutputVal = dDraftVal;
+                dOutputVal_Real = dOutputVal * ship_scale / 1000; // 20160128
+            }
+            else // input1 = draft
+            {
+                dDraftVal = dInputVal;
+                dDispVal = StabilityCalculator.Interpolate1D(dInputVal, StabilityCalculator.T1D_drfData, StabilityCalculator.dspData_BC);
+                dDispVal_Real = dDispVal * weight_scale; // 20160218
+                dOutputVal = dDispVal;
+                dOutputVal_Real = dDispVal_Real; // 20160128, 20160218
+            }
+
+            dVBLVal = StabilityCalculator.Interpolate2D(dTrimVal, dDispVal, StabilityCalculator.T1D_trmData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_vblData);
+            dKMLVal = StabilityCalculator.Interpolate2D(dTrimVal, dDispVal, StabilityCalculator.T1D_trmData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_kmlData);
+            dBMLVal = StabilityCalculator.Interpolate2D(dTrimVal, dDispVal, StabilityCalculator.T1D_trmData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_bmlData);
+            dLBLVal = StabilityCalculator.Interpolate2D(dTrimVal, dDispVal, StabilityCalculator.T1D_trmData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_lblData);
+            dLFLVal = StabilityCalculator.Interpolate2D(dTrimVal, dDispVal, StabilityCalculator.T1D_trmData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_lflData);
+            dVFLVal = StabilityCalculator.Interpolate2D(dTrimVal, dDispVal, StabilityCalculator.T1D_trmData, StabilityCalculator.T1D_dspData, StabilityCalculator.T2D_kflData);
+
+            // clear all series
+            for (int i = 0; i < crtLongitudinal.Series.Count; i++)
+            {
+                crtLongitudinal.Series[i].Points.Clear();
+            }
+
+            double cX = 0;
+            double cY = 0; // ini adalah titik yang tepat, ssw 20160217
+
+            // define G point, in Ship coordinate, if cbxUseKGReal.Checked,ssw 20160106
+            double Gx = xCGTotalShip;
+            double Gy = zCGTotalShip;
+
+            if (!cbxUseKGReal.Checked & !cbxUseTrimReal.Checked)
+            {
+                Gx = 0;
+                Gy = StabilityCalculator.zCGLightShip;
+            }
+
+            // set K point, in Ship coordinate, 
+            double Kx = 0;
+            double Ky = 0;
+
+            // define B point, in Ship coordinate
+            double dTrimRad = dTrimVal * Math.PI / 180;
+            double Bx = dLBLVal;
+            double By = dVBLVal;
+
+            // define N Point, in Ship coordinate
+            dKNVal = Bx * Math.Cos(dTrimRad) + By * Math.Sin(dTrimRad);
+            double Nx = dKNVal * Math.Cos(dTrimRad);
+            double Ny = dKNVal * Math.Sin(dTrimRad);
+
+            // define M point, in Ship coordinate, point C as center of rotation, 20140819
+            double Mx = dKNVal * Math.Cos(dTrimRad) - dKMLVal * Math.Sin(dTrimRad);
+            double My = dKNVal * Math.Sin(dTrimRad) + dKMLVal * Math.Cos(dTrimRad);
+
+            // set COF point, in Ship coordinate
+            double COFx = dLFLVal;
+            double COFy = dVFLVal;
+
+            // set rotable WL point, in Ship coordinate
+            double WL1x = 0.9 * crtLongitudinal.ChartAreas[0].AxisX.Minimum;
+            double WL2x = 0.9 * crtLongitudinal.ChartAreas[0].AxisX.Maximum;
+            double WL1y = dDraftVal;
+            double WL2y = dDraftVal;
+
+            // draw rotated longitudinal plane of the ship
+            StabilityCalculator.Point2D[] shippointslon = (StabilityCalculator.Point2D[])StabilityCalculator.shippointslon_init.Clone();
+            for (int i = 0; i < shippointslon.Length; i++)
+            {
+                StabilityCalculator.Rotate_point(ref shippointslon[i].x, ref shippointslon[i].y, 0, dDraftVal, -dTrimVal);
+                crtLongitudinal.Series[0].Points.AddXY(shippointslon[i].x, shippointslon[i].y);
+                // Kirim();
+            }
+
+            // define G0 point (G lightship) in Ship coordinate, 20150827
+            double G0x = StabilityCalculator.xCGLightShip;
+            double G0y = StabilityCalculator.zCGLightShip;
+
+            // define Gm point (G total load) in Ship coordinate, 20150827
+            double Gmx = xCGTotalLoad;
+            double Gmy = zCGTotalLoad;
+
+            StabilityCalculator.Rotate_point(ref Gx, ref Gy, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref Kx, ref Ky, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref Mx, ref My, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref Bx, ref By, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref COFx, ref COFy, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref WL1x, ref WL1y, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref WL2x, ref WL2y, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref G0x, ref G0y, cX, cY, -dTrimVal);
+            StabilityCalculator.Rotate_point(ref Gmx, ref Gmy, cX, cY, -dTrimVal);
+
+            // draw static WL (waterline)
+            crtLongitudinal.Series[1].Points.AddXY(0.9 * crtLongitudinal.ChartAreas[0].AxisX.Minimum, dDraftVal); // series 4, waterline
+            crtLongitudinal.Series[1].Points.AddXY(0.9 * crtLongitudinal.ChartAreas[0].AxisX.Maximum, dDraftVal); // series 4, waterline
+
+            // draw rotated WL line
+            crtLongitudinal.Series[2].Points.AddXY(WL1x, WL1y);
+            crtLongitudinal.Series[2].Points.AddXY(WL2x, WL2y);
+
+            // draw KML line
+            crtLongitudinal.Series[3].Points.AddXY(Mx, My); // series 3, M point
+            crtLongitudinal.Series[3].Points.AddXY(Kx, Ky); // series 3, K point
+
+            // draw BM line
+            crtLongitudinal.Series[4].Points.AddXY(Mx, My); // series 4, M point
+            crtLongitudinal.Series[4].Points.AddXY(Bx, By); // series 4, B point
+
+            // Draw G, B, M, COF point
+            crtLongitudinal.Series[5].Points.AddXY(Gx, Gy);
+            crtLongitudinal.Series[6].Points.AddXY(Bx, By);
+            crtLongitudinal.Series[7].Points.AddXY(Mx, My);
+            crtLongitudinal.Series[8].Points.AddXY(COFx, COFy);
+            crtLongitudinal.Series[9].Points.AddXY(G0x, G0y);  // 20150827
+            crtLongitudinal.Series[10].Points.AddXY(Gmx, Gmy); // 20150827  
+
+            // Show values in textbox
+            txbKMLValue.Text = dKMLVal.ToString("F2");
+            txbLCBValue.Text = dLBLVal.ToString("F2");
+            txbLCFValue.Text = dLFLVal.ToString("F2");
+
+            // Show real ship values in textbox, 20160128
+            dKMLVal_Real = dKMLVal * ship_scale / 1000;
+            dLBLVal_Real = dLBLVal * ship_scale / 1000;
+            dLFLVal_Real = dLFLVal * ship_scale / 1000;
+            //dKGVal_Real = KG_BC_REAL * ship_scale / 1000; // 20160201
+            dKGVal_Real = zCGTotalShip * ship_scale / 1000; // 20160201
+
+            txbKMLValue_Real.Text = dKMLVal_Real.ToString("F2");
+            txbLCBValue_Real.Text = dLBLVal_Real.ToString("F2");
+            txbLCFValue_Real.Text = dLFLVal_Real.ToString("F2");
+
+            txbDispOrDraftVal_Real.Text = dInputVal_Real.ToString("F2"); // 20160201
+            txbKGVal_Real.Text = dKGVal_Real.ToString("F2"); // 20160201
+        }
+
+        private void DrawGZandKNCurves()
+        {
+            crtGZCrossCurve.Series.Clear();
+            crtKNCrossCurve.Series.Clear();
+            crtGZCrossCurve.ChartAreas[0].AxisY.Maximum = 100;
+            crtGZCrossCurve.ChartAreas[0].AxisY.Minimum = -100;
+            crtKNCrossCurve.ChartAreas[0].AxisY.Maximum = 150;
+            crtKNCrossCurve.ChartAreas[0].AxisY.Minimum = -150;
+
+            // GZ Curve Chart
+            if (rbnGZCrossCurve.Checked)
+            {
+                crtGZCrossCurve.Titles[1].Text = "Kestabilan Statik GZ (KG = 100 mm)";
+
+                gzcrosscurve_series = new Series[StabilityCalculator.heel_KMT_BC.Count()];
+                gzcrosspoint_series = new Series[StabilityCalculator.heel_KMT_BC.Count()];
+                crtGZCrossCurve.ChartAreas[0].AxisX.Title = "Displacement (kg)";
+
+                for (int i = 0; i < StabilityCalculator.heel_KMT_BC.Count(); i++)
+                {
+                    Series lineSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    lineSeries.Color = clr;
+                    lineSeries.ChartType = SeriesChartType.FastLine;
+                    lineSeries.BorderWidth = 2;
+                    gzcrosscurve_series[i] = lineSeries;
+                    crtGZCrossCurve.Series.Add(gzcrosscurve_series[i]);
+                }
+                for (int i = 0; i < StabilityCalculator.heel_KMT_BC.Count(); i++)
+                {
+                    Series pointSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    pointSeries.Color = clr;
+                    pointSeries.ChartType = SeriesChartType.Point;
+                    pointSeries.MarkerStyle = MarkerStyle.Circle;
+                    pointSeries.MarkerSize = 5;
+                    pointSeries.Label = StabilityCalculator.heel_KMT_BC[i].ToString() + " deg";
+                    pointSeries.LabelForeColor = clr;
+                    pointSeries.BorderWidth = 2;
+                    pointSeries.Font = new Font("Microsoft Sans Serif", 14);
+                    gzcrosspoint_series[i] = pointSeries;
+                    crtGZCrossCurve.Series.Add(gzcrosspoint_series[i]);
+                }
+
+                for (int j = 0; j < StabilityCalculator.heel_KMT_BC.Count(); j++)
+                {
+                    for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                    {
+                        double w = StabilityCalculator.disp_KMT_BC[i];
+                        double Bx = StabilityCalculator.tbtData_2D_BC[j, i];
+                        double By = StabilityCalculator.vbtData_2D_BC[j, i];
+
+                        double dHeelRad = StabilityCalculator.heel_KMT_BC[j] * Math.PI / 180;
+                        double Gy = zCGTotalShip;
+                        dGZVal = Gy * Math.Sin(-dHeelRad) - Bx * Math.Cos(-dHeelRad) - By * Math.Sin(-dHeelRad);
+
+                        gzcrosscurve_series[j].Points.AddXY(w, dGZVal);
+                    }
+                    int iPoint = j;
+                    if (iPoint >= gzcrosscurve_series[j].Points.Count()) iPoint = gzcrosscurve_series[j].Points.Count() - 1;
+                    double x = gzcrosscurve_series[j].Points[iPoint].XValue;
+                    double y = gzcrosscurve_series[j].Points[iPoint].YValues[0];
+
+                    gzcrosspoint_series[j].Points.AddXY(x, y);
+                }
+
+            }
+            else if (rbnGZStaticStability.Checked)
+            {
+                crtGZCrossCurve.Titles[1].Text = "Kurva Silang GZ (KG = 110 mm)";
+                gzcrosscurve_series = new Series[StabilityCalculator.disp_KMT_BC.Count()];
+                gzcrosspoint_series = new Series[StabilityCalculator.disp_KMT_BC.Count()];
+                crtGZCrossCurve.ChartAreas[0].AxisX.Title = "Heel (deg)";
+
+                for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                {
+                    Series lineSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    lineSeries.Color = clr;
+                    lineSeries.ChartType = SeriesChartType.FastLine;
+                    lineSeries.BorderWidth = 2;
+                    gzcrosscurve_series[i] = lineSeries;
+                    crtGZCrossCurve.Series.Add(gzcrosscurve_series[i]);
+                }
+                for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                {
+                    Series pointSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    pointSeries.Color = clr;
+                    pointSeries.ChartType = SeriesChartType.Point;
+                    pointSeries.MarkerStyle = MarkerStyle.Circle;
+                    pointSeries.MarkerSize = 5;
+                    pointSeries.Label = StabilityCalculator.disp_KMT_BC[i].ToString() + " kgf";
+                    pointSeries.LabelForeColor = clr;
+                    pointSeries.BorderWidth = 2;
+                    pointSeries.Font = new Font("Microsoft Sans Serif", 14);
+                    gzcrosspoint_series[i] = pointSeries;
+                    crtGZCrossCurve.Series.Add(gzcrosspoint_series[i]);
+                }
+                for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                {
+                    for (int j = 0; j < StabilityCalculator.heel_KMT_BC.Count(); j++)
+                    {
+                        double w = StabilityCalculator.disp_KMT_BC[i];
+                        double Bx = StabilityCalculator.tbtData_2D_BC[j, i];
+                        double By = StabilityCalculator.vbtData_2D_BC[j, i];
+
+                        double dHeelRad = StabilityCalculator.heel_KMT_BC[j] * Math.PI / 180;
+                        double Gy = zCGTotalShip;
+                        dGZVal = Gy * Math.Sin(-dHeelRad) - Bx * Math.Cos(-dHeelRad) - By * Math.Sin(-dHeelRad);
+
+                        gzcrosscurve_series[i].Points.AddXY(StabilityCalculator.heel_KMT_BC[j], dGZVal);
+                    }
+                    int jPoint = i;
+                    if (jPoint >= gzcrosscurve_series[i].Points.Count()) jPoint = gzcrosscurve_series[i].Points.Count() - 1;
+                    double x = gzcrosscurve_series[i].Points[jPoint].XValue;
+                    double y = gzcrosscurve_series[i].Points[jPoint].YValues[0];
+                    gzcrosspoint_series[i].Points.AddXY(x, y);
+                }
+            }
+            else if (rbnGZatGivenDispAndKG.Checked)
+            {
+                crtGZCrossCurve.Titles[1].Text = "Kestabilan Statik GZ (KG = " + zCGTotalShip.ToString("F0") + " mm, Disp = " + dWeightTotalShip.ToString("F1") + " kg)";
+                gzcrosscurve_series = new Series[1];
+                gzcrosspoint_series = new Series[1];
+                crtGZCrossCurve.ChartAreas[0].AxisX.Title = "Heel (deg)";
+
+                for (int i = 0; i < 1; i++)
+                {
+                    Series lineSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    lineSeries.Color = clr;
+                    lineSeries.ChartType = SeriesChartType.FastLine;
+                    lineSeries.BorderWidth = 2;
+                    gzcrosscurve_series[i] = lineSeries;
+                    crtGZCrossCurve.Series.Add(gzcrosscurve_series[i]);
+                }
+                for (int j = 0; j < StabilityCalculator.heel_KMT_BC.Count(); j++)
+                {
+                    double dHeelDeg = StabilityCalculator.heel_KMT_BC[j];
+                    double dHeelRad = dHeelDeg * Math.PI / 180;
+
+                    double Bx = Math.Sign(dHeelDeg) * StabilityCalculator.Interpolate2D(
+                        Math.Abs(dHeelDeg), 
+                        dWeightTotalShip, 
+                        StabilityCalculator.T1D_helData, 
+                        StabilityCalculator.T1D_dspData, 
+                        StabilityCalculator.T2D_tbtData
+                    );
+
+                    double By = StabilityCalculator.Interpolate2D(
+                        Math.Abs(dHeelDeg), 
+                        dWeightTotalShip, 
+                        StabilityCalculator.T1D_helData, 
+                        StabilityCalculator.T1D_dspData, 
+                        StabilityCalculator.T2D_vbtData
+                    );
+
+                    double Gy = zCGTotalShip;
+                    dGZVal = Gy * Math.Sin(-dHeelRad) - Bx * Math.Cos(-dHeelRad) - By * Math.Sin(-dHeelRad);
+                    gzcrosscurve_series[0].Points.AddXY(dHeelDeg, dGZVal);
+                }
+            }
+
+            // KN Curve Chart
+            if (rbnKNCrossCurve.Checked)
+            {
+                crtKNCrossCurve.Titles[1].Text = "Kestabilan Statik KN (KG = 110 mm)";
+                kncrosscurve_series = new Series[StabilityCalculator.heel_KMT_BC.Count()];
+                kncrosspoint_series = new Series[StabilityCalculator.heel_KMT_BC.Count()];
+                crtKNCrossCurve.ChartAreas[0].AxisX.Title = "Displacement (kg)";
+
+                for (int i = 0; i < StabilityCalculator.heel_KMT_BC.Count(); i++)
+                {
+                    Series lineSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    lineSeries.Color = clr;
+                    lineSeries.ChartType = SeriesChartType.FastLine;
+                    lineSeries.BorderWidth = 2;
+                    kncrosscurve_series[i] = lineSeries;
+                    crtKNCrossCurve.Series.Add(kncrosscurve_series[i]);
+                }
+                for (int i = 0; i < StabilityCalculator.heel_KMT_BC.Count(); i++)
+                {
+                    Series pointSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    pointSeries.Color = clr;
+                    pointSeries.ChartType = SeriesChartType.Point;
+                    pointSeries.MarkerStyle = MarkerStyle.Circle;
+                    pointSeries.MarkerSize = 5;
+                    pointSeries.Label = StabilityCalculator.heel_KMT_BC[i].ToString() + " deg";
+                    pointSeries.LabelForeColor = clr;
+                    pointSeries.BorderWidth = 2;
+                    pointSeries.Font = new Font("Microsoft Sans Serif", 14);
+                    kncrosspoint_series[i] = pointSeries;
+                    crtKNCrossCurve.Series.Add(kncrosspoint_series[i]);
+                }
+
+                for (int j = 0; j < StabilityCalculator.heel_KMT_BC.Count(); j++)
+                {
+                    for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                    {
+                        double w = StabilityCalculator.disp_KMT_BC[i];
+                        double kn = StabilityCalculator.kntData_2D_BC[j, i];
+                        kncrosscurve_series[j].Points.AddXY(w, kn);
+                    }
+                    int iPoint = j;
+                    if (iPoint >= kncrosscurve_series[j].Points.Count()) iPoint = kncrosscurve_series[j].Points.Count() - 1;
+                    double x = kncrosscurve_series[j].Points[iPoint].XValue;
+                    double y = kncrosscurve_series[j].Points[iPoint].YValues[0];
+                    kncrosspoint_series[j].Points.AddXY(x, y);
+                }
+            }
+            else if (rbnKNStaticStability.Checked)
+            {
+                crtKNCrossCurve.Titles[1].Text = "Kurva Silang KN (KG = 110 mm)";
+                kncrosscurve_series = new Series[StabilityCalculator.disp_KMT_BC.Count()];
+                kncrosspoint_series = new Series[StabilityCalculator.disp_KMT_BC.Count()];
+                crtKNCrossCurve.ChartAreas[0].AxisX.Title = "Heel (deg)";
+
+                for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                {
+                    Series lineSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    lineSeries.Color = clr;
+                    lineSeries.ChartType = SeriesChartType.FastLine;
+                    lineSeries.BorderWidth = 2;
+                    kncrosscurve_series[i] = lineSeries;
+                    crtKNCrossCurve.Series.Add(kncrosscurve_series[i]);
+                }
+                for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                {
+                    Series pointSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    pointSeries.Color = clr;
+                    pointSeries.ChartType = SeriesChartType.Point;
+                    pointSeries.MarkerStyle = MarkerStyle.Circle;
+                    pointSeries.MarkerSize = 5;
+                    pointSeries.Label = StabilityCalculator.disp_KMT_BC[i].ToString() + " kgf";
+                    pointSeries.LabelForeColor = clr;
+                    pointSeries.BorderWidth = 2;
+                    pointSeries.Font = new Font("Microsoft Sans Serif", 14);
+                    kncrosspoint_series[i] = pointSeries;
+                    crtKNCrossCurve.Series.Add(kncrosspoint_series[i]);
+                }
+
+                for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                {
+                    for (int j = 0; j < StabilityCalculator.heel_KMT_BC.Count(); j++)
+                    {
+                        double w = StabilityCalculator.disp_KMT_BC[i];
+                        double kn = StabilityCalculator.kntData_2D_BC[j, i];
+                        kncrosscurve_series[i].Points.AddXY(StabilityCalculator.heel_KMT_BC[j], kn);
+                    }
+                    int jPoint = i;
+                    if (jPoint >= kncrosscurve_series[i].Points.Count()) jPoint = kncrosscurve_series[i].Points.Count() - 1;
+                    double x = kncrosscurve_series[i].Points[jPoint].XValue;
+                    double y = kncrosscurve_series[i].Points[jPoint].YValues[0];
+
+                    kncrosspoint_series[i].Points.AddXY(x, y);
+                }
+            }
+            else if (rbnKNatGivenDispAndKG.Checked)
+            {
+                crtKNCrossCurve.Titles[1].Text = "Kestabilan Statik KN (KG = " + zCGTotalShip.ToString("F0") + " mm, Disp = " + dWeightTotalShip.ToString("F1") + " kg)";
+                kncrosscurve_series = new Series[1];
+                kncrosspoint_series = new Series[1];
+                crtKNCrossCurve.ChartAreas[0].AxisX.Title = "Heel (deg)";
+
+                for (int i = 0; i < 1; i++)
+                {
+                    Series lineSeries = new Series();
+                    Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);
+                    lineSeries.Color = clr;
+                    lineSeries.ChartType = SeriesChartType.FastLine;
+                    lineSeries.BorderWidth = 2;
+                    kncrosscurve_series[i] = lineSeries;
+                    crtKNCrossCurve.Series.Add(kncrosscurve_series[i]);
+                }
+
+                for (int j = 0; j < StabilityCalculator.heel_KMT_BC.Count(); j++)
+                {
+                    double kn = StabilityCalculator.Interpolate2D(
+                        StabilityCalculator.heel_KMT_BC[j], 
+                        dWeightTotalShip,
+                        StabilityCalculator.heel_KMT_BC,
+                        StabilityCalculator.disp_KMT_BC,
+                        StabilityCalculator.kntData_2D_BC
+                    );
+                    kncrosscurve_series[0].Points.AddXY(StabilityCalculator.heel_KMT_BC[j], kn);
+                }
+            }
+
+            txbX0Value.Text = StabilityCalculator.LCG_BC.ToString("F1");
+            txbX0Value_Real.Text = (StabilityCalculator.LCG_BC * StabilityCalculator.ship_scale / 1000).ToString("F1");
+        }
+
         #endregion
 
+        
     }
 }

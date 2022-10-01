@@ -516,6 +516,7 @@ namespace SSInstructor.Forms
             title4.Name = "Title1";
             title4.Text = "Ship Cross Section, Amidship";
             this.crtTransversal.Titles.Add(title4);
+            this.crtTransversal.PrePaint += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ChartPaintEventArgs>(this.crtTransversal_PrePaint);
             // 
             // tabLongitudinal
             // 
@@ -1668,6 +1669,7 @@ namespace SSInstructor.Forms
             this.scbTrimVal.Name = "scbTrimVal";
             this.scbTrimVal.Size = new System.Drawing.Size(275, 20);
             this.scbTrimVal.TabIndex = 105;
+            this.scbTrimVal.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scbTrimVal_Scroll);
             // 
             // nudTrimVal
             // 
@@ -1691,6 +1693,7 @@ namespace SSInstructor.Forms
             this.nudTrimVal.Name = "nudTrimVal";
             this.nudTrimVal.Size = new System.Drawing.Size(68, 20);
             this.nudTrimVal.TabIndex = 106;
+            this.nudTrimVal.ValueChanged += new System.EventHandler(this.nudTrimVal_ValueChanged);
             // 
             // label40
             // 
@@ -1842,6 +1845,7 @@ namespace SSInstructor.Forms
             this.cbbDispOrDraft.Name = "cbbDispOrDraft";
             this.cbbDispOrDraft.Size = new System.Drawing.Size(140, 21);
             this.cbbDispOrDraft.TabIndex = 102;
+            this.cbbDispOrDraft.SelectedIndexChanged += new System.EventHandler(this.cbbDispOrDraft_SelectedIndexChanged);
             // 
             // nudHeelVal
             // 
@@ -2552,6 +2556,7 @@ namespace SSInstructor.Forms
             this.pnlLineColor.Name = "pnlLineColor";
             this.pnlLineColor.Size = new System.Drawing.Size(68, 21);
             this.pnlLineColor.TabIndex = 67;
+            this.pnlLineColor.Click += new System.EventHandler(this.pnlLineColor_Click);
             // 
             // label37
             // 
@@ -2570,6 +2575,7 @@ namespace SSInstructor.Forms
             this.pnlMarkerColor.Name = "pnlMarkerColor";
             this.pnlMarkerColor.Size = new System.Drawing.Size(68, 21);
             this.pnlMarkerColor.TabIndex = 65;
+            this.pnlMarkerColor.Click += new System.EventHandler(this.pnlMarkerColor_Click);
             // 
             // label24
             // 
@@ -2601,6 +2607,7 @@ namespace SSInstructor.Forms
             0,
             0,
             0});
+            this.nudLineWidth.ValueChanged += new System.EventHandler(this.nudLineWidth_ValueChanged);
             // 
             // label20
             // 
@@ -2632,6 +2639,7 @@ namespace SSInstructor.Forms
             0,
             0,
             0});
+            this.nudMarkerSize.ValueChanged += new System.EventHandler(this.nudMarkerSize_ValueChanged);
             // 
             // cbxLineShow
             // 
@@ -2644,6 +2652,7 @@ namespace SSInstructor.Forms
             this.cbxLineShow.TabIndex = 60;
             this.cbxLineShow.Text = "Show Line";
             this.cbxLineShow.UseVisualStyleBackColor = true;
+            this.cbxLineShow.CheckedChanged += new System.EventHandler(this.cbxLineShow_CheckedChanged);
             // 
             // cbxMarkerShow
             // 
@@ -2656,6 +2665,7 @@ namespace SSInstructor.Forms
             this.cbxMarkerShow.TabIndex = 59;
             this.cbxMarkerShow.Text = "Show Marker";
             this.cbxMarkerShow.UseVisualStyleBackColor = true;
+            this.cbxMarkerShow.CheckedChanged += new System.EventHandler(this.cbxMarkerShow_CheckedChanged);
             // 
             // cbbLineSelect
             // 
@@ -2664,6 +2674,7 @@ namespace SSInstructor.Forms
             this.cbbLineSelect.Name = "cbbLineSelect";
             this.cbbLineSelect.Size = new System.Drawing.Size(130, 21);
             this.cbbLineSelect.TabIndex = 58;
+            this.cbbLineSelect.SelectedIndexChanged += new System.EventHandler(this.cbbLineSelect_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -2681,6 +2692,7 @@ namespace SSInstructor.Forms
             this.cbbMarkerSelect.Name = "cbbMarkerSelect";
             this.cbbMarkerSelect.Size = new System.Drawing.Size(130, 21);
             this.cbbMarkerSelect.TabIndex = 56;
+            this.cbbMarkerSelect.SelectedIndexChanged += new System.EventHandler(this.cbbMarkerSelect_SelectedIndexChanged);
             // 
             // label18
             // 
