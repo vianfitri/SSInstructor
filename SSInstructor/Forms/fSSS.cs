@@ -709,7 +709,7 @@ namespace SSInstructor.Forms
             // Chart Load, Side View
             crtLoadSideView.Titles.Clear();
             crtLoadSideView.Titles.Add("Muatan, Tampak Samping");
-            crtLoadSideView.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
+            crtLoadSideView.Titles[0].Font = new Font("Microsoft Sans Serif", 14);
 
             crtLoadSideView.Series.Clear();
             for (int i = 0; i < StabilityCalculator.shippointslon_BC.Length; i++)
@@ -733,7 +733,7 @@ namespace SSInstructor.Forms
             // Chart Load, Front View
             crtLoadFrontView.Titles.Clear();
             crtLoadFrontView.Titles.Add("Muatan, Tampak Depan");
-            crtLoadFrontView.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
+            crtLoadFrontView.Titles[0].Font = new Font("Microsoft Sans Serif", 14);
 
             crtLoadFrontView.Series.Clear();
             lat_initshipform_series.Points.Clear();
@@ -758,7 +758,7 @@ namespace SSInstructor.Forms
             // Chart Load, Top View
             crtLoadTopView.Titles.Clear();
             crtLoadTopView.Titles.Add("Muatan, Tampak Atas");
-            crtLoadTopView.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
+            crtLoadTopView.Titles[0].Font = new Font("Microsoft Sans Serif", 14);
             crtLoadTopView.Series.Clear();
 
             topview_lat_shipform_series.Points.Clear();
@@ -775,10 +775,10 @@ namespace SSInstructor.Forms
             crtLoadTopView.Series.Add(tkk_xy_point_series);     // series[3]  = TKK
             crtLoadTopView.Series.Add(tnt_xy_point_series);     // series[4]  = TNT
 
-            crtLoadTopView.ChartAreas[0].AxisX.Minimum = -500;
-            crtLoadTopView.ChartAreas[0].AxisX.Maximum = 500;
+            crtLoadTopView.ChartAreas[0].AxisX.Minimum = -900;
+            crtLoadTopView.ChartAreas[0].AxisX.Maximum = 900;
             crtLoadTopView.ChartAreas[0].AxisY.Minimum = -500;
-            crtLoadTopView.ChartAreas[0].AxisY.Maximum = 500;
+            crtLoadTopView.ChartAreas[0].AxisY.Maximum = 900;
 
             // Chart Hydrostatic Curve
             crtHydrostaticCurve.Titles.Clear();
