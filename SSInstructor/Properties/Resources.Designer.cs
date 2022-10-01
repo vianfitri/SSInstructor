@@ -163,6 +163,26 @@ namespace SSInstructor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PIP_LOGO_03 {
+            get {
+                object obj = ResourceManager.GetObject("PIP-LOGO-03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PIP_SEMARANG_LOGO {
+            get {
+                object obj = ResourceManager.GetObject("PIP_SEMARANG_LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Settings_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Settings_16x16", resourceCulture);

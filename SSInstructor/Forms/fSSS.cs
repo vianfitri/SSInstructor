@@ -2284,8 +2284,12 @@ namespace SSInstructor.Forms
             txbX0Value_Real.Text = (StabilityCalculator.LCG_BC * StabilityCalculator.ship_scale / 1000).ToString("F1");
         }
 
+
         #endregion
 
-        
+        private void btnReloadCFG_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

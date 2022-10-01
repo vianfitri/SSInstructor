@@ -387,5 +387,11 @@
   <ItemGroup>
     <None Include="Resources\deletered.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PIP-LOGO-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PIP_SEMARANG_LOGO.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
