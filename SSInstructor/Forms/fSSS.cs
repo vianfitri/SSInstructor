@@ -727,7 +727,7 @@ namespace SSInstructor.Forms
 
             crtLoadSideView.ChartAreas[0].AxisX.Minimum = -600;
             crtLoadSideView.ChartAreas[0].AxisX.Maximum = 600;
-            crtLoadSideView.ChartAreas[0].AxisY.Minimum = -300;
+            crtLoadSideView.ChartAreas[0].AxisY.Minimum = -500;
             crtLoadSideView.ChartAreas[0].AxisY.Maximum = 900;
 
             // Chart Load, Front View
@@ -775,10 +775,10 @@ namespace SSInstructor.Forms
             crtLoadTopView.Series.Add(tkk_xy_point_series);     // series[3]  = TKK
             crtLoadTopView.Series.Add(tnt_xy_point_series);     // series[4]  = TNT
 
-            crtLoadTopView.ChartAreas[0].AxisX.Minimum = -900;
-            crtLoadTopView.ChartAreas[0].AxisX.Maximum = 900;
-            crtLoadTopView.ChartAreas[0].AxisY.Minimum = -500;
-            crtLoadTopView.ChartAreas[0].AxisY.Maximum = 900;
+            crtLoadTopView.ChartAreas[0].AxisX.Minimum = -700;
+            crtLoadTopView.ChartAreas[0].AxisX.Maximum = 700;
+            crtLoadTopView.ChartAreas[0].AxisY.Minimum = -700;
+            crtLoadTopView.ChartAreas[0].AxisY.Maximum = 700;
 
             // Chart Hydrostatic Curve
             crtHydrostaticCurve.Titles.Clear();
@@ -876,7 +876,7 @@ namespace SSInstructor.Forms
             crtLoadSideView.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
             crtLoadSideView.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
 
-            crtLoadSideView.ChartAreas[0].AxisX.Interval = 100;
+            crtLoadSideView.ChartAreas[0].AxisX.Interval = 150;
         }
 
         private void crtLoadFrontView_PrePaint(object sender, ChartPaintEventArgs e)
@@ -932,7 +932,7 @@ namespace SSInstructor.Forms
             crtLoadTopView.ChartAreas[0].AxisX.Minimum = (int)(-1 * AxisXLength / 2);
             crtLoadTopView.ChartAreas[0].AxisX.Maximum = (int)(+1 * AxisXLength / 2);
 
-            crtLoadTopView.ChartAreas[0].AxisX.Interval = 100;
+            crtLoadTopView.ChartAreas[0].AxisX.Interval = 150;
         }
 
         private void crtLongitudinal_PrePaint(object sender, ChartPaintEventArgs e)
