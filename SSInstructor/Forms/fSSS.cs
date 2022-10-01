@@ -805,6 +805,19 @@ namespace SSInstructor.Forms
             crtHydrostaticCurve.Legends[0].Docking = Docking.Right;
             crtHydrostaticCurve.Legends[0].BackColor = Color.White;
             crtHydrostaticCurve.Legends[0].ForeColor = Color.Black;
+
+            // Chart GZ and KN Curve
+            crtGZCrossCurve.Titles.Clear();
+            crtGZCrossCurve.Titles.Add("Kapal Bulk Carrier - MV TIRAM");
+            crtGZCrossCurve.Titles.Add("Kurva Silang GZ");
+            crtGZCrossCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
+            crtGZCrossCurve.Titles[1].Font = new Font("Microsoft Sans Serif", 16);
+
+            crtKNCrossCurve.Titles.Clear();
+            crtKNCrossCurve.Titles.Add("Kapal Bulk Carrier - MV TIRAM");
+            crtKNCrossCurve.Titles.Add("Kurva Silang KN");
+            crtKNCrossCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
+            crtKNCrossCurve.Titles[1].Font = new Font("Microsoft Sans Serif", 16);
             #endregion
 
             // Initialize Ship Data
