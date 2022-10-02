@@ -85,6 +85,8 @@ namespace SSInstructor.Class
 
                     broadcastStream.Write(broadcastBytes, 0, broadcastBytes.Length);
                     broadcastStream.Flush();
+                    
+                    // Remove broadcastSocket from list
                     chat.Clear();
                 }
             }
@@ -96,7 +98,20 @@ namespace SSInstructor.Class
 
         public static void ShutdownClient(string Name)
         {
+            try
+            {                    
+                chat.Clear();
+                chat.Add("gPower");
+                byte[] byData = ObjectToByteArray(chat);
+                TcpClient workerSocket = null;
+                workerSocket = (TcpClient)clientList.FirstOrDefault(x => x.Key == Name).Value; //find the client by username in dictionary
 
+                NetworkStream stm = workerSocket.GetStream();
+                stm.Write(byData, 0, byData.Length);
+                stm.Flush();
+                chat.Clear();
+            }
+            catch (Exception er) { }
         }
 
         public static byte[] ObjectToByteArray(Object obj)
