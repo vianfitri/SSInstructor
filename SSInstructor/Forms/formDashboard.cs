@@ -209,16 +209,18 @@ namespace SSInstructor
 
         private void btnStability_Click(object sender, EventArgs e)
         {
-            // Call Another Application
-            Process.Start(Application.StartupPath + "\\SSS\\ShipStability.exe");
+            // Load Instructor Data
+            openChildForm(new fSSS());
+
+            hideSubmenu();
         }
 
         private void hiddenPannel_Click(object sender, EventArgs e)
         {
             // Load Instructor Data
-            openChildForm(new fSSS());
+            //openChildForm(new fSSS());
 
-            hideSubmenu();
+            //hideSubmenu();
         }
         #endregion
     }
