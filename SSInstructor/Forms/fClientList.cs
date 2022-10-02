@@ -239,6 +239,19 @@ namespace SSInstructor.Forms
             RegisterHandle();
         }
 
+        private void shutdownToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Get Client Panel
+            ClientPanel cpn = GetClient(sender);
+
+            ShutdownServer.ShutdownClient(cpn.PcName);
+        }
+
+        private void btnShutdownAll_Click(object sender, EventArgs e)
+        {
+            ShutdownServer.ShutdownAll();
+        }
+
         private ClientPanel GetClient(object sender)
         {
             // Try to cast the sender to a ToolStripItem
@@ -258,8 +271,7 @@ namespace SSInstructor.Forms
         }
 
 
-        #endregion
 
-        
+        #endregion
     }
 }
