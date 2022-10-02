@@ -117,7 +117,7 @@ namespace SSInstructor.Forms
             this.propertiesToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip_Machines.Name = "contextMenuStrip_Machines";
-            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(185, 162);
+            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(137, 140);
             // 
             // wakeUpToolStripMenuItem
             // 
