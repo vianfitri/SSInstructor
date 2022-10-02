@@ -86,6 +86,9 @@ namespace SSInstructor.Forms
             MachineModule.Machines.Load(Pool);
             MachineModule.Machines.Dirty = false;
 
+            // Initiate ShutdownServer
+            ShutdownServer.Initiate();
+
             if (loginId == -1)
             {
                 openChildForm(fLogin);
