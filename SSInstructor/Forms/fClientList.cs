@@ -270,8 +270,6 @@ namespace SSInstructor.Forms
             return null;
         }
 
-
-
         #endregion
     }
 }
