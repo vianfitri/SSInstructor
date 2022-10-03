@@ -91,10 +91,11 @@ namespace SSInstructor.Class
                     clientList.Remove(Item.Key);
                     chat.Clear();
                 }
+                Console.WriteLine("Clientlist Count : " + clientList.Count);
             }
             catch (Exception er)
             {
-
+                Console.WriteLine("Error ShutdownAll : " + er.Message);
             }
         }
 
