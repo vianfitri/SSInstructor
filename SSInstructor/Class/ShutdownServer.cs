@@ -85,8 +85,10 @@ namespace SSInstructor.Class
 
                     broadcastStream.Write(broadcastBytes, 0, broadcastBytes.Length);
                     broadcastStream.Flush();
-                    
+
                     // Remove broadcastSocket from list
+                    broadcastSocket.Close();
+                    clientList.Remove(Item.Key);
                     chat.Clear();
                 }
             }
