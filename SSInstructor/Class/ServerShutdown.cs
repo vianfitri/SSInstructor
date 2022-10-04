@@ -18,7 +18,7 @@ namespace SSInstructor.Class
         private bool active = false;
         private Thread listener = null;
         private long id = 0;
-        private struct MyClient
+        public struct MyClient
         {
             public long id;
             public StringBuilder ipaddress;
@@ -28,7 +28,7 @@ namespace SSInstructor.Class
             public StringBuilder data;
             public EventWaitHandle handle;
         };
-        private ConcurrentDictionary<long, MyClient> clients = new ConcurrentDictionary<long, MyClient>();
+        public ConcurrentDictionary<long, MyClient> clients = new ConcurrentDictionary<long, MyClient>();
         private Task send = null;
         private Thread disconnect = null;
         private bool exit = false;
@@ -327,7 +327,7 @@ namespace SSInstructor.Class
             }
         }
 
-        private void Send(string msg, MyClient obj)
+        public void Send(string msg, MyClient obj)
         {
             if (send == null || send.IsCompleted)
             {
@@ -411,6 +411,13 @@ namespace SSInstructor.Class
                     listener.Start();
                 }
             }
+        }
+
+        public void ClosingServer()
+        {
+            exit = true;
+            active = false;
+            Disconnect();
         }
         #endregion
     }
