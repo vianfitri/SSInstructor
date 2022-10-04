@@ -243,13 +243,11 @@ namespace SSInstructor.Forms
         {
             // Get Client Panel
             ClientPanel cpn = GetClient(sender);
-
-            ShutdownServer.ShutdownClient(cpn.PcName);
         }
 
         private void btnShutdownAll_Click(object sender, EventArgs e)
         {
-            ShutdownServer.ShutdownAll();
+            ShutdownServer.svrShutdown.Send("gPower");
         }
 
         private ClientPanel GetClient(object sender)
