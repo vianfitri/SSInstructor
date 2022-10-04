@@ -70,8 +70,7 @@ namespace SSInstructor.Class
                 }
                 catch (Exception ex)
                 {
-                    //Log(ErrorMsg(ex.Message));
-                    Console.WriteLine("Read : " + ErrorMsg(ex.Message));
+                    Console.WriteLine("Read : " + ex.Message);
                 }
             }
             if (bytes > 0)
@@ -85,8 +84,7 @@ namespace SSInstructor.Class
                     }
                     else
                     {
-                        string msg = string.Format("{0}: {1}", obj.username, obj.data);
-                        //Log(msg);
+                        string msg = string.Format("{0}: {1}", obj.ipaddress, obj.data);
                         Console.WriteLine("Read : " + msg);
                         Send(msg, obj.id);
                         obj.data.Clear();
@@ -96,8 +94,7 @@ namespace SSInstructor.Class
                 catch (Exception ex)
                 {
                     obj.data.Clear();
-                    //Log(ErrorMsg(ex.Message));
-                    Console.WriteLine(ErrorMsg(ex.Message));
+                    Console.WriteLine(ex.Message);
                     obj.handle.Set();
                 }
             }
@@ -120,7 +117,6 @@ namespace SSInstructor.Class
                 }
                 catch (Exception ex)
                 {
-                    //Log(ErrorMsg(ex.Message));
                     Console.WriteLine("ReadAuth : " + ex.Message);
                 }
             }
@@ -143,8 +139,19 @@ namespace SSInstructor.Class
                         }
                         else
                         {
-                            obj.ipaddress.Append(data["ipaddress"]);
-                            Send("{\"status\": \"ack\"}", obj);
+                            bool accepted = false;
+                            foreach (Machine m in MachineModule.Machines)
+                            {
+                                if (m.IP == data["ipaddress"].ToString())
+                                {
+                                    accepted = true;
+                                    obj.ipaddress.Append(data["ipaddress"]);
+                                    Send("{\"status\": \"ack\"}", obj);
+                                }
+                            }
+
+                            if (!accepted)
+                                obj.client.Close();
                         }
                         obj.data.Clear();
                         obj.handle.Set();
@@ -153,7 +160,6 @@ namespace SSInstructor.Class
                 catch (Exception ex)
                 {
                     obj.data.Clear();
-                    //Log(ErrorMsg(ex.Message));
                     Console.WriteLine("ReadAuth : " + ex.Message);
                     obj.handle.Set();
                 }
@@ -280,8 +286,7 @@ namespace SSInstructor.Class
                     obj.stream.EndWrite(result);
                 }
                 catch (Exception ex)
-                {
-                    //Log(ErrorMsg(ex.Message));
+                { 
                     Console.WriteLine("Write : " + ex.Message);
                 }
             }
@@ -298,7 +303,6 @@ namespace SSInstructor.Class
                 }
                 catch (Exception ex)
                 {
-                    //Log(ErrorMsg(ex.Message));
                     Console.WriteLine("BeginWrite : " + ex.Message);
                 }
             }
@@ -317,7 +321,6 @@ namespace SSInstructor.Class
                     }
                     catch (Exception ex)
                     {
-                        //Log(ErrorMsg(ex.Message));
                         Console.WriteLine("BeginWrite : " + ex.Message);
                     }
                 }
@@ -358,14 +361,12 @@ namespace SSInstructor.Class
                     {
                         clients.TryGetValue(id, out MyClient obj);
                         obj.client.Close();
-                        //RemoveFromGrid(obj.id);
                     }
                     else
                     {
                         foreach (KeyValuePair<long, MyClient> obj in clients)
                         {
                             obj.Value.client.Close();
-                            //RemoveFromGrid(obj.Value.id);
                         }
                     }
                 })
@@ -386,7 +387,6 @@ namespace SSInstructor.Class
             {
                 string address = "127.0.0.1";
                 string number = "9000";
-                string username = "ServerShutdown";
                 bool error = false;
                 IPAddress ip = null;
 
