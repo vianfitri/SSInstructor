@@ -87,7 +87,7 @@ namespace SSInstructor.Forms
             MachineModule.Machines.Dirty = false;
 
             // Initiate ShutdownServer
-            ShutdownServer.Initiate();
+            ShutdownServer.svrShutdown.StartServer();
 
             if (loginId == -1)
             {
