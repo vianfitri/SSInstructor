@@ -28,6 +28,18 @@ namespace SSInstructor.Forms
         #endregion
 
         #region "Method"
+        public void RemoteStatus(bool status, string IPAddress)
+        {
+            foreach (ClientPanel clientObj in flowLayoutPanel1.Controls)
+            {
+                if (clientObj.IpAddress == IPAddress)
+                {
+                    clientObj.RemoteState = status;
+                    return;
+                }
+            }
+        }
+
         public void StatusChange(string hostname, Machine.StatusCodes status, string IPAddress)
         {
             Console.WriteLine("Hostname : " + hostname + " => Status : " + status + " => IP Address : " + IPAddress);
@@ -64,6 +76,8 @@ namespace SSInstructor.Forms
 
                 flowLayoutPanel1.Invalidate();
             }
+
+            ShutdownServer.svrShutdown.StatusChange += RemoteStatus;
         }
 
         private void fClientList_Shown(object sender, EventArgs e)

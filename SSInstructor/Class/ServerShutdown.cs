@@ -14,6 +14,10 @@ namespace SSInstructor.Class
 {
     public class ServerShutdown
     {
+        #region "Delegate"
+        public delegate void StatusChangeEventHandler(bool status, string IpAddress);
+        #endregion
+
         #region "Fields"
         private bool active = false;
         private Thread listener = null;
@@ -200,6 +204,7 @@ namespace SSInstructor.Class
             if (Authorize(obj))
             {
                 clients.TryAdd(obj.id, obj);
+                StatusChange?.Invoke(true, obj.ipaddress.ToString());
                 string msg = string.Format("Machine {0} has connected", obj.ipaddress);
                 Console.WriteLine(msg);
 
@@ -217,6 +222,7 @@ namespace SSInstructor.Class
                 }
                 obj.client.Close();
                 clients.TryRemove(obj.id, out MyClient tmp);
+                StatusChange?.Invoke(false, tmp.ipaddress.ToString());
                 msg = string.Format("Machine {0} has disconnected", tmp.ipaddress);
                 Console.WriteLine(msg);
             }
@@ -419,6 +425,10 @@ namespace SSInstructor.Class
             active = false;
             Disconnect();
         }
+        #endregion
+
+        #region "Event"
+        public event StatusChangeEventHandler StatusChange;
         #endregion
     }
 }
