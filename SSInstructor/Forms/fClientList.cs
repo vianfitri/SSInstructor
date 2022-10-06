@@ -35,8 +35,7 @@ namespace SSInstructor.Forms
                 if (clientObj.IpAddress == IPAddress)
                 {
                     clientObj.RemoteState = status;
-                    if (status)
-                        clientObj.ContextMenuStrip.Items["shutdownToolStripMenuItem"].Enabled = status;
+                    clientObj.ContextMenuStrip.Items["shutdownToolStripMenuItem"].Enabled = status;
                     return;
                 }
             }
