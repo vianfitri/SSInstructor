@@ -35,6 +35,8 @@ namespace SSInstructor.Forms
                 if (clientObj.IpAddress == IPAddress)
                 {
                     clientObj.RemoteState = status;
+                    if (status)
+                        clientObj.ContextMenuStrip.Items["shutdownToolStripMenuItem"].Enabled = status;
                     return;
                 }
             }
@@ -257,6 +259,15 @@ namespace SSInstructor.Forms
         {
             // Get Client Panel
             ClientPanel cpn = GetClient(sender);
+
+            foreach (KeyValuePair<long, ServerShutdown.MyClient> entry in ShutdownServer.svrShutdown.clients)
+            {
+                if(entry.Value.ipaddress.ToString() == cpn.IpAddress)
+                {
+                    ShutdownServer.svrShutdown.Send("gPower", entry.Value);
+                    break;
+                }
+            }
         }
 
         private void btnShutdownAll_Click(object sender, EventArgs e)
