@@ -51,9 +51,10 @@ namespace SSInstructor.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(118)))), ((int)(((byte)(159)))));
-            this.label2.Location = new System.Drawing.Point(60, 81);
+            this.label2.Location = new System.Drawing.Point(45, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 24);
+            this.label2.Size = new System.Drawing.Size(31, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "List";
             // 
@@ -61,9 +62,10 @@ namespace SSInstructor.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 43);
+            this.label1.Location = new System.Drawing.Point(44, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 29);
+            this.label1.Size = new System.Drawing.Size(63, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Client";
             // 
@@ -75,11 +77,11 @@ namespace SSInstructor.Forms
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 160);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 130);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(769, 475);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(577, 386);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // btnAddClient
@@ -94,10 +96,10 @@ namespace SSInstructor.Forms
             this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.White;
-            this.btnAddClient.Location = new System.Drawing.Point(680, 652);
-            this.btnAddClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddClient.Location = new System.Drawing.Point(510, 530);
+            this.btnAddClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(149, 39);
+            this.btnAddClient.Size = new System.Drawing.Size(112, 32);
             this.btnAddClient.TabIndex = 13;
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.TextColor = System.Drawing.Color.White;
@@ -115,13 +117,14 @@ namespace SSInstructor.Forms
             this.propertiesToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip_Machines.Name = "contextMenuStrip_Machines";
-            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(155, 140);
+            this.contextMenuStrip_Machines.Size = new System.Drawing.Size(185, 162);
+            this.contextMenuStrip_Machines.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Machines_Opening);
             // 
             // wakeUpToolStripMenuItem
             // 
             this.wakeUpToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Stock_Index_Up_16x16;
             this.wakeUpToolStripMenuItem.Name = "wakeUpToolStripMenuItem";
-            this.wakeUpToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.wakeUpToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.wakeUpToolStripMenuItem.Text = "Wake Up";
             this.wakeUpToolStripMenuItem.Click += new System.EventHandler(this.wakeUpToolStripMenuItem_Click);
             // 
@@ -130,20 +133,20 @@ namespace SSInstructor.Forms
             this.shutdownToolStripMenuItem.Enabled = false;
             this.shutdownToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Stock_Index_Down_16x16;
             this.shutdownToolStripMenuItem.Name = "shutdownToolStripMenuItem";
-            this.shutdownToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.shutdownToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.shutdownToolStripMenuItem.Text = "Shut Down";
             this.shutdownToolStripMenuItem.Click += new System.EventHandler(this.shutdownToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // newHostToolStripMenuItem
             // 
             this.newHostToolStripMenuItem.Image = global::SSInstructor.Properties.Resources._new;
             this.newHostToolStripMenuItem.Name = "newHostToolStripMenuItem";
-            this.newHostToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.newHostToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.newHostToolStripMenuItem.Text = "New host";
             this.newHostToolStripMenuItem.Click += new System.EventHandler(this.newHostToolStripMenuItem_Click);
             // 
@@ -151,7 +154,7 @@ namespace SSInstructor.Forms
             // 
             this.propertiesToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.Settings_16x16;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.propertiesToolStripMenuItem.Text = "Properties";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
@@ -159,7 +162,7 @@ namespace SSInstructor.Forms
             // 
             this.deleteToolStripMenuItem.Image = global::SSInstructor.Properties.Resources.deletered;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -175,10 +178,10 @@ namespace SSInstructor.Forms
             this.btnWakeUpAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWakeUpAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWakeUpAll.ForeColor = System.Drawing.Color.White;
-            this.btnWakeUpAll.Location = new System.Drawing.Point(61, 652);
-            this.btnWakeUpAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnWakeUpAll.Location = new System.Drawing.Point(46, 530);
+            this.btnWakeUpAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnWakeUpAll.Name = "btnWakeUpAll";
-            this.btnWakeUpAll.Size = new System.Drawing.Size(177, 39);
+            this.btnWakeUpAll.Size = new System.Drawing.Size(133, 32);
             this.btnWakeUpAll.TabIndex = 15;
             this.btnWakeUpAll.Text = "Wake Up All";
             this.btnWakeUpAll.TextColor = System.Drawing.Color.White;
@@ -197,10 +200,10 @@ namespace SSInstructor.Forms
             this.btnShutdownAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdownAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShutdownAll.ForeColor = System.Drawing.Color.White;
-            this.btnShutdownAll.Location = new System.Drawing.Point(260, 652);
-            this.btnShutdownAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnShutdownAll.Location = new System.Drawing.Point(195, 530);
+            this.btnShutdownAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShutdownAll.Name = "btnShutdownAll";
-            this.btnShutdownAll.Size = new System.Drawing.Size(197, 39);
+            this.btnShutdownAll.Size = new System.Drawing.Size(148, 32);
             this.btnShutdownAll.TabIndex = 16;
             this.btnShutdownAll.Text = "Shut Down All";
             this.btnShutdownAll.TextColor = System.Drawing.Color.White;
@@ -209,16 +212,16 @@ namespace SSInstructor.Forms
             // 
             // fClientList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 721);
+            this.ClientSize = new System.Drawing.Size(672, 586);
             this.Controls.Add(this.btnShutdownAll);
             this.Controls.Add(this.btnWakeUpAll);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fClientList";
             this.Text = "fClientList";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fClientList_FormClosing);

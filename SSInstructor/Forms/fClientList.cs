@@ -114,6 +114,11 @@ namespace SSInstructor.Forms
             RegisterHandle();
         }
 
+        private void clientObject_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(((ClientPanel)sender).PcName);
+        }
+
         private void fClientList_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Unload Event Handler for Machine
@@ -150,6 +155,7 @@ namespace SSInstructor.Forms
                 clientObj.Margin = new Padding(40, 40, 40, 40);
                 clientObj.BorderStyle = BorderStyle.FixedSingle;
                 clientObj.ContextMenuStrip = contextMenuStrip_Machines;
+                clientObj.Click += clientObject_Click; 
 
                 if (machine.Status == Machine.StatusCodes.Online)
                     clientObj.PowerState = true;
@@ -168,10 +174,16 @@ namespace SSInstructor.Forms
             }
         }
 
+        private void contextMenuStrip_Machines_Opening(object sender, CancelEventArgs e)
+        {
+            ClientPanel cpn = GetClient((ContextMenuStrip)sender);
+            cpn.ContextMenuStrip.Items["shutdownToolStripMenuItem"].Enabled = cpn.RemoteState;
+        }
+
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Get Client Panel
-            ClientPanel cpn = GetClient(sender);
+            ClientPanel cpn = GetClient((ToolStripItem)sender);
 
             if(MessageBox.Show("Are You Sure?", "Delete Client", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
@@ -187,7 +199,7 @@ namespace SSInstructor.Forms
         private void wakeUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Get Client Panel
-            ClientPanel cpn = GetClient(sender);
+            ClientPanel cpn = GetClient((ToolStripItem)sender);
 
             Networking.Wake(cpn.MacAddress);
         }
@@ -224,7 +236,7 @@ namespace SSInstructor.Forms
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Get Client Panel
-            ClientPanel cpn = GetClient(sender);
+            ClientPanel cpn = GetClient((ToolStripItem)sender);
 
             // Unregister Client Handle
             UnregisterHandle();
@@ -256,7 +268,7 @@ namespace SSInstructor.Forms
         private void shutdownToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Get Client Panel
-            ClientPanel cpn = GetClient(sender);
+            ClientPanel cpn = GetClient((ToolStripItem)sender);
 
             foreach (KeyValuePair<long, ServerShutdown.MyClient> entry in ShutdownServer.svrShutdown.clients)
             {
@@ -273,7 +285,7 @@ namespace SSInstructor.Forms
             ShutdownServer.svrShutdown.Send("gPower");
         }
 
-        private ClientPanel GetClient(object sender)
+        private ClientPanel GetClient(ToolStripItem sender)
         {
             // Try to cast the sender to a ToolStripItem
             ToolStripItem menuItem = sender as ToolStripItem;
@@ -291,6 +303,10 @@ namespace SSInstructor.Forms
             return null;
         }
 
+        private ClientPanel GetClient(ContextMenuStrip sender)
+        {
+            return (ClientPanel)sender.SourceControl;
+        }
         #endregion
     }
 }
