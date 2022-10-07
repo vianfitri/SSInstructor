@@ -391,7 +391,7 @@ namespace SSInstructor.Class
             }
             else if (listener == null || !listener.IsAlive)
             {
-                string address = "192.168.10.200";
+                string address = "192.168.1.47";
                 string number = "9000";
                 bool error = false;
                 IPAddress ip = null;
