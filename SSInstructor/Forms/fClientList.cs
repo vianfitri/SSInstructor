@@ -114,11 +114,6 @@ namespace SSInstructor.Forms
             RegisterHandle();
         }
 
-        private void clientObject_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(((ClientPanel)sender).PcName);
-        }
-
         private void fClientList_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Unload Event Handler for Machine
@@ -155,7 +150,6 @@ namespace SSInstructor.Forms
                 clientObj.Margin = new Padding(40, 40, 40, 40);
                 clientObj.BorderStyle = BorderStyle.FixedSingle;
                 clientObj.ContextMenuStrip = contextMenuStrip_Machines;
-                clientObj.Click += clientObject_Click; 
 
                 if (machine.Status == Machine.StatusCodes.Online)
                     clientObj.PowerState = true;
