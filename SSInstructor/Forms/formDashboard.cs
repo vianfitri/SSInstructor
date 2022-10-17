@@ -223,5 +223,13 @@ namespace SSInstructor
             //hideSubmenu();
         }
         #endregion
+
+        private void hiddenPannel_Click_1(object sender, EventArgs e)
+        {
+            // Load Scenario Page
+            openChildForm(new fFCStowPlan());
+
+            hideSubmenu();
+        }
     }
 }

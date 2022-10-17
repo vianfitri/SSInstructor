@@ -87,6 +87,7 @@ namespace SSInstructor
             this.hiddenPannel.Name = "hiddenPannel";
             this.hiddenPannel.Size = new System.Drawing.Size(250, 18);
             this.hiddenPannel.TabIndex = 23;
+            this.hiddenPannel.Click += new System.EventHandler(this.hiddenPannel_Click_1);
             // 
             // btnSettings
             // 
