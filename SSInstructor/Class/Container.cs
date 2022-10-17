@@ -20,7 +20,10 @@ namespace SSInstructor.Class
         #endregion
 
         #region "Properties"
-
+        public float Weight { get => weight; set => weight = value; }
+        public float Posx { get => posx; set => posx = value; }
+        public float Posy { get => posy; set => posy = value; }
+        public float Posz { get => posz; set => posz = value; }
         #endregion
 
         #region "Method"
