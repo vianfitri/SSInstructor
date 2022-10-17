@@ -109,7 +109,7 @@ namespace SSInstructor.Forms
             this.bdgv_scenlist.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.bdgv_scenlist.HeaderForeColor = System.Drawing.Color.White;
             this.bdgv_scenlist.Location = new System.Drawing.Point(49, 82);
-            this.bdgv_scenlist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bdgv_scenlist.Margin = new System.Windows.Forms.Padding(2);
             this.bdgv_scenlist.MultiSelect = false;
             this.bdgv_scenlist.Name = "bdgv_scenlist";
             this.bdgv_scenlist.ReadOnly = true;
@@ -150,7 +150,7 @@ namespace SSInstructor.Forms
             this.btnDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.Color.White;
             this.btnDetail.Location = new System.Drawing.Point(1173, 767);
-            this.btnDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(112, 32);
             this.btnDetail.TabIndex = 19;
@@ -166,6 +166,7 @@ namespace SSInstructor.Forms
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column2
             // 
@@ -219,7 +220,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.bdgv_scenlist);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fScenario";
             this.Text = "fScenario";
             this.Load += new System.EventHandler(this.fScenario_Load);
