@@ -103,7 +103,7 @@ namespace SSInstructor
         private void btnScenario_Click(object sender, EventArgs e)
         {
             // Load Scenario Page
-            openChildForm(new fLoadPos());
+            openChildForm(new fScenario());
 
             hideSubmenu();
         }

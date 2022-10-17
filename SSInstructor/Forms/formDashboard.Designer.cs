@@ -214,7 +214,6 @@ namespace SSInstructor
             this.btnScenario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnScenario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnScenario.UseVisualStyleBackColor = true;
-            this.btnScenario.Visible = false;
             this.btnScenario.Click += new System.EventHandler(this.btnScenario_Click);
             // 
             // pnlUserSubmenu
