@@ -44,15 +44,26 @@ namespace SSInstructor.Forms
                     List<ScenarioModel> listscen = JsonConvert.DeserializeObject<List<ScenarioModel>>(scens);
 
                     // build datagrid view content
-                    //dgv_ScenList.Rows.Clear();
-                    
+                    dgv_ScenList.Rows.Clear();
+
+                    int ids = 0;
                     foreach(ScenarioModel item in listscen)
                     {
-                        Console.WriteLine("<========");
-                        Console.WriteLine(string.Format("id:{0}", item.Id));
-                        Console.WriteLine(string.Format("scenario_name:{0}", item.ScenarioName));
-                        Console.WriteLine(string.Format("create_time:{0}", item.CreateTime));
-                        Console.WriteLine("========>");
+                        ids++;
+                        dgv_ScenList.Rows.Add(
+                            new object[]
+                            {
+                                ids,
+                                item.Id,
+                                item.Scenario_Name,
+                                item.Db_Name,
+                                item.Create_Time,
+                                item.Is_Active,
+                                item.Is_Exist,
+                                null,
+                                null
+                            }
+                        ); ;
                     }
                 } 
                 else

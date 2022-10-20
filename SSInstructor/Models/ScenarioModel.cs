@@ -11,15 +11,15 @@ namespace SSInstructor.Models
         #region "Fields"
         public string Id { get; set; }
 
-        public string ScenarioName { get; set; }
+        public string Scenario_Name { get; set; }
 
-        public string DbName { get; set; }
+        public string Db_Name { get; set; }
 
-        public string CreateTime { get; set; }
+        public string Create_Time { get; set; }
 
-        public string IsActive { get; set; }
+        public string Is_Active { get; set; }
 
-        public string IsExist { get; set; }
+        public string Is_Exist { get; set; }
         #endregion
     }
 }
