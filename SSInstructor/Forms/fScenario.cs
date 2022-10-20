@@ -12,11 +12,20 @@ namespace SSInstructor.Forms
 {
     public partial class fScenario : Form
     {
+        #region "Fields"
+        #endregion
+
+        #region "Constructor"
         public fScenario()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region "Properties"
+        #endregion
+
+        #region "Method"
         private void dummyScenData()
         {
             bdgv_scenlist.Rows.Add(
@@ -85,10 +94,17 @@ namespace SSInstructor.Forms
                 }
             );
         }
+        private void loadScenario()
+        {
 
+        }
+        #endregion
+
+        #region "Events"
         private void fScenario_Load(object sender, EventArgs e)
         {
             dummyScenData();
         }
+        #endregion
     }
 }

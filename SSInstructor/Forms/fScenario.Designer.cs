@@ -283,7 +283,7 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             this.dgv_ScenList.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ScenList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ScenList.Size = new System.Drawing.Size(1236, 215);
+            this.dgv_ScenList.Size = new System.Drawing.Size(1236, 221);
             this.dgv_ScenList.TabIndex = 20;
             // 
             // No
@@ -348,6 +348,7 @@ namespace SSInstructor.Forms
             // 
             this.scenDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.scenDelete.HeaderText = "";
+            this.scenDelete.Image = ((System.Drawing.Image)(resources.GetObject("scenDelete.Image")));
             this.scenDelete.Name = "scenDelete";
             this.scenDelete.ReadOnly = true;
             this.scenDelete.Width = 17;
