@@ -288,9 +288,12 @@ namespace SSInstructor.Forms
             // 
             // No
             // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.FillWeight = 80F;
             this.No.HeaderText = "No";
             this.No.Name = "No";
             this.No.ReadOnly = true;
+            this.No.Width = 80;
             // 
             // scenid
             // 
@@ -301,6 +304,7 @@ namespace SSInstructor.Forms
             // 
             // scenname
             // 
+            this.scenname.FillWeight = 64.52919F;
             this.scenname.HeaderText = "Scenario Name";
             this.scenname.Name = "scenname";
             this.scenname.ReadOnly = true;
@@ -314,6 +318,7 @@ namespace SSInstructor.Forms
             // 
             // createtime
             // 
+            this.createtime.FillWeight = 64.52919F;
             this.createtime.HeaderText = "Create Time";
             this.createtime.Name = "createtime";
             this.createtime.ReadOnly = true;
@@ -334,15 +339,18 @@ namespace SSInstructor.Forms
             // 
             // scenAction
             // 
+            this.scenAction.FillWeight = 64.52919F;
             this.scenAction.HeaderText = "";
             this.scenAction.Name = "scenAction";
             this.scenAction.ReadOnly = true;
             // 
             // scenDelete
             // 
+            this.scenDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.scenDelete.HeaderText = "";
             this.scenDelete.Name = "scenDelete";
             this.scenDelete.ReadOnly = true;
+            this.scenDelete.Width = 17;
             // 
             // fScenario
             // 
