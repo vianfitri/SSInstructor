@@ -4,9 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SSInstructor.Models;
+using SSInstructor.Class;
 
 namespace SSInstructor.Forms
 {
@@ -26,84 +31,43 @@ namespace SSInstructor.Forms
         #endregion
 
         #region "Method"
-        private void dummyScenData()
+        private async Task LoadScenario()
         {
-            bdgv_scenlist.Rows.Add(
-                new object[]
-                {
-                    1,
-                    "Skenario 1",
-                    "3650 DWT General Cargo",
-                    null,
-                    null
-                }
-            );
+            string uri = "http://localhost/s3-api/api/scenario/GetSce";
 
-            bdgv_scenlist.Rows.Add(
-                new object[]
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(uri))
+            {
+                if (response.IsSuccessStatusCode)
                 {
-                    2,
-                    "General Cargo ship",
-                    "3650 DWT General Cargo",
-                    null,
-                    null
-                }
-            );
+                    string scens = await response.Content.ReadAsStringAsync();
 
-            bdgv_scenlist.Rows.Add(
-                new object[]
+                    List<ScenarioModel> listscen = JsonConvert.DeserializeObject<List<ScenarioModel>>(scens);
+
+                    // build datagrid view content
+                    //dgv_ScenList.Rows.Clear();
+                    
+                    foreach(ScenarioModel item in listscen)
+                    {
+                        Console.WriteLine("<========");
+                        Console.WriteLine(string.Format("id:{0}", item.Id));
+                        Console.WriteLine(string.Format("scenario_name:{0}", item.ScenarioName));
+                        Console.WriteLine(string.Format("create_time:{0}", item.CreateTime));
+                        Console.WriteLine("========>");
+                    }
+                } 
+                else
                 {
-                    3,
-                    "Stability GenCar",
-                    "3650 DWT General Cargo",
-                    null,
-                    null
+                    throw new Exception(response.ReasonPhrase);
                 }
-            );
-
-            bdgv_scenlist.Rows.Add(
-                new object[]
-                {
-                    4,
-                    "Containership Stability",
-                    "4180 DWT Full Container",
-                    null,
-                    null
-                }
-            );
-
-            bdgv_scenlist.Rows.Add(
-                new object[]
-                {
-                    5,
-                    "Stabilitas Bulkcarrier",
-                    "50000 DWT Bulk Carrier",
-                    null,
-                    null
-                }
-            );
-
-            bdgv_scenlist.Rows.Add(
-                new object[]
-                {
-                    6,
-                    "Skenario kapal bulk",
-                    "50000 DWT Bulk Carrier",
-                    null,
-                    null
-                }
-            );
-        }
-        private void loadScenario()
-        {
-
+            }
         }
         #endregion
 
         #region "Events"
-        private void fScenario_Load(object sender, EventArgs e)
+        private async void fScenario_Load(object sender, EventArgs e)
         {
-            dummyScenData();
+            // load data scenario
+            await LoadScenario();
         }
         #endregion
     }

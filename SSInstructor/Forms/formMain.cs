@@ -89,6 +89,9 @@ namespace SSInstructor.Forms
             // Initiate ShutdownServer
             ShutdownServer.svrShutdown.StartServer();
 
+            // Initialize API Client
+            ApiHelper.InitializeClient();
+
             if (loginId == -1)
             {
                 openChildForm(fLogin);
@@ -107,8 +110,7 @@ namespace SSInstructor.Forms
             MachineModule.Machines.Save();
             MachineModule.Machines.Close();
         }
+
         #endregion
-
-
     }
 }

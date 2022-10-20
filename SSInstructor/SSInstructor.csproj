@@ -247,6 +247,7 @@
     <Compile Include="Forms\View3D.Designer.cs">
       <DependentUpon>View3D.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ScenarioModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\ClientPanel.resx">

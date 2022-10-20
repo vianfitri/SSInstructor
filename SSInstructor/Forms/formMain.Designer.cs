@@ -37,7 +37,7 @@ namespace SSInstructor.Forms
             // 
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(0, 0);
-            this.pnlChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlChildForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(1584, 841);
             this.pnlChildForm.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace SSInstructor.Forms
             this.ClientSize = new System.Drawing.Size(1584, 841);
             this.Controls.Add(this.pnlChildForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SHIP STABILITY";
