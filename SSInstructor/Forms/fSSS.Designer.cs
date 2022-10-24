@@ -74,6 +74,7 @@ namespace SSInstructor.Forms
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControlInput = new System.Windows.Forms.TabControl();
             this.tabMovingLoad = new System.Windows.Forms.TabPage();
+            this.btnSaveScen = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txbGy = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -225,6 +226,20 @@ namespace SSInstructor.Forms
             this.label71 = new System.Windows.Forms.Label();
             this.txbGZInfo = new System.Windows.Forms.TextBox();
             this.tabInfo = new System.Windows.Forms.TabPage();
+            this.label82 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabGraphTransversal = new System.Windows.Forms.TabPage();
             this.label38 = new System.Windows.Forms.Label();
@@ -255,20 +270,6 @@ namespace SSInstructor.Forms
             this.cbbHSLineSelect = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcShipStability)).BeginInit();
             this.spcShipStability.Panel1.SuspendLayout();
             this.spcShipStability.Panel2.SuspendLayout();
@@ -321,13 +322,13 @@ namespace SSInstructor.Forms
             this.tabHydroModel.SuspendLayout();
             this.tabHydroReal.SuspendLayout();
             this.tabInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabGraphTransversal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMarkerSize)).BeginInit();
             this.tabGraphHSCurve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // spcShipStability
@@ -825,6 +826,7 @@ namespace SSInstructor.Forms
             // tabMovingLoad
             // 
             this.tabMovingLoad.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabMovingLoad.Controls.Add(this.btnSaveScen);
             this.tabMovingLoad.Controls.Add(this.label9);
             this.tabMovingLoad.Controls.Add(this.txbGy);
             this.tabMovingLoad.Controls.Add(this.label10);
@@ -884,6 +886,17 @@ namespace SSInstructor.Forms
             this.tabMovingLoad.Size = new System.Drawing.Size(412, 584);
             this.tabMovingLoad.TabIndex = 0;
             this.tabMovingLoad.Text = "Shear Load";
+            // 
+            // btnSaveScen
+            // 
+            this.btnSaveScen.Location = new System.Drawing.Point(139, 486);
+            this.btnSaveScen.Name = "btnSaveScen";
+            this.btnSaveScen.Size = new System.Drawing.Size(136, 23);
+            this.btnSaveScen.TabIndex = 177;
+            this.btnSaveScen.Text = "Save Scenario Settings";
+            this.btnSaveScen.UseVisualStyleBackColor = true;
+            this.btnSaveScen.Visible = false;
+            this.btnSaveScen.Click += new System.EventHandler(this.btnSaveScen_Click);
             // 
             // label9
             // 
@@ -2534,6 +2547,130 @@ namespace SSInstructor.Forms
             this.tabInfo.TabIndex = 2;
             this.tabInfo.Text = "Info";
             // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(96, 200);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(226, 13);
+            this.label82.TabIndex = 106;
+            this.label82.Text = ".:.....................................................................:.";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SSInstructor.Properties.Resources.PIP_SEMARANG_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 271);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 168);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 100;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(170, 243);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(75, 13);
+            this.label80.TabIndex = 105;
+            this.label80.Text = "PIP Semarang";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(174, 484);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(73, 13);
+            this.label79.TabIndex = 104;
+            this.label79.Text = "(c) TMU 2022";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(32, 460);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(348, 13);
+            this.label78.TabIndex = 103;
+            this.label78.Text = "Referensi lambung : Kapal bulk carrier 50.000 DWT, dengan  skala 1:87";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(33, 223);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(341, 13);
+            this.label77.TabIndex = 102;
+            this.label77.Text = "Software Stabilitas Kapal ini dibuat oleh PT Techno Multi Utama untuk ";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(25, 92);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(240, 13);
+            this.label76.TabIndex = 101;
+            this.label76.Text = "perhitungan, diukur dari AP yaitu X0 = 1096.5 mm";
+            // 
+            // label58
+            // 
+            this.label58.Location = new System.Drawing.Point(10, 154);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(392, 19);
+            this.label58.TabIndex = 99;
+            this.label58.Text = "(7) G LightShip, KG = 110 mm, LCG = 24.09 mm, TCB = -0.2 mm";
+            // 
+            // label30
+            // 
+            this.label30.Location = new System.Drawing.Point(10, 129);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(392, 19);
+            this.label30.TabIndex = 98;
+            this.label30.Text = "(6) KB = NB, positif jika B di atas N, tetapi negatif jika B di bawah N";
+            // 
+            // label28
+            // 
+            this.label28.Location = new System.Drawing.Point(10, 110);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(392, 19);
+            this.label28.TabIndex = 97;
+            this.label28.Text = "(5) 1 kgf MODEL muatan = 658.5 ton riil. Panjang Model 1 cm = 0.87 mtr  riil.";
+            // 
+            // label57
+            // 
+            this.label57.Location = new System.Drawing.Point(10, 75);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(392, 17);
+            this.label57.TabIndex = 96;
+            this.label57.Text = "(4) X0 adalah posisi arah membujur titik asal, titik O (0,0,0) sebagai acuan semu" +
+    "a ";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(10, 52);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(272, 13);
+            this.label56.TabIndex = 95;
+            this.label56.Text = "(3) Kapal Model, memiliki skala 1:87 terhadap Kapal Asli ";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(10, 12);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(353, 13);
+            this.label35.TabIndex = 94;
+            this.label35.Text = "(1) Sudut Oleng = Heel Angle (deg), Positif miring kanan, negatif miring kiri";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(10, 32);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(288, 13);
+            this.label34.TabIndex = 93;
+            this.label34.Text = "(2) Sudut Trim (deg), Positif Menunduk, Negatif Mendongak";
+            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabGraphTransversal);
@@ -2885,130 +3022,6 @@ namespace SSInstructor.Forms
             this.label31.TabIndex = 68;
             this.label31.Text = "Line";
             // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(96, 200);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(226, 13);
-            this.label82.TabIndex = 106;
-            this.label82.Text = ".:.....................................................................:.";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(170, 243);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(75, 13);
-            this.label80.TabIndex = 105;
-            this.label80.Text = "PIP Semarang";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(174, 484);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(73, 13);
-            this.label79.TabIndex = 104;
-            this.label79.Text = "(c) TMU 2022";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(32, 460);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(348, 13);
-            this.label78.TabIndex = 103;
-            this.label78.Text = "Referensi lambung : Kapal bulk carrier 50.000 DWT, dengan  skala 1:87";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(33, 223);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(341, 13);
-            this.label77.TabIndex = 102;
-            this.label77.Text = "Software Stabilitas Kapal ini dibuat oleh PT Techno Multi Utama untuk ";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(25, 92);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(240, 13);
-            this.label76.TabIndex = 101;
-            this.label76.Text = "perhitungan, diukur dari AP yaitu X0 = 1096.5 mm";
-            // 
-            // label58
-            // 
-            this.label58.Location = new System.Drawing.Point(10, 154);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(392, 19);
-            this.label58.TabIndex = 99;
-            this.label58.Text = "(7) G LightShip, KG = 110 mm, LCG = 24.09 mm, TCB = -0.2 mm";
-            // 
-            // label30
-            // 
-            this.label30.Location = new System.Drawing.Point(10, 129);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(392, 19);
-            this.label30.TabIndex = 98;
-            this.label30.Text = "(6) KB = NB, positif jika B di atas N, tetapi negatif jika B di bawah N";
-            // 
-            // label28
-            // 
-            this.label28.Location = new System.Drawing.Point(10, 110);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(392, 19);
-            this.label28.TabIndex = 97;
-            this.label28.Text = "(5) 1 kgf MODEL muatan = 658.5 ton riil. Panjang Model 1 cm = 0.87 mtr  riil.";
-            // 
-            // label57
-            // 
-            this.label57.Location = new System.Drawing.Point(10, 75);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(392, 17);
-            this.label57.TabIndex = 96;
-            this.label57.Text = "(4) X0 adalah posisi arah membujur titik asal, titik O (0,0,0) sebagai acuan semu" +
-    "a ";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(10, 52);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(272, 13);
-            this.label56.TabIndex = 95;
-            this.label56.Text = "(3) Kapal Model, memiliki skala 1:87 terhadap Kapal Asli ";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(10, 12);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(353, 13);
-            this.label35.TabIndex = 94;
-            this.label35.Text = "(1) Sudut Oleng = Heel Angle (deg), Positif miring kanan, negatif miring kiri";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(10, 32);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(288, 13);
-            this.label34.TabIndex = 93;
-            this.label34.Text = "(2) Sudut Trim (deg), Positif Menunduk, Negatif Mendongak";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SSInstructor.Properties.Resources.PIP_SEMARANG_LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 271);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 168);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 100;
-            this.pictureBox1.TabStop = false;
-            // 
             // fSSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3078,6 +3091,7 @@ namespace SSInstructor.Forms
             this.tabHydroReal.PerformLayout();
             this.tabInfo.ResumeLayout(false);
             this.tabInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabGraphTransversal.ResumeLayout(false);
             this.tabGraphTransversal.PerformLayout();
@@ -3086,7 +3100,6 @@ namespace SSInstructor.Forms
             this.tabGraphHSCurve.ResumeLayout(false);
             this.tabGraphHSCurve.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3317,5 +3330,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btnSaveScen;
     }
 }

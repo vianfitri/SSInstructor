@@ -19,6 +19,17 @@ namespace SSInstructor.Forms
         formDashboard _parent;
         private DB mysqlConn = null;
 
+        #region "Scen Variables To Save"
+        float tmmb_weight = 0f;
+        float tmmb_pos = 0f;
+        float tmmd_weight = 0f;
+        float tmmd_pos = 0f;
+        float tkk_weight = 0f;
+        float tkk_pos = 0f;
+        float tnt_weight = 0f;
+        float tnt_pos = 0f;
+        #endregion
+
         #region "Load"
         double dWeightTotalShip;
         double dWeightTotalShip_Real;
@@ -200,7 +211,8 @@ namespace SSInstructor.Forms
         public fSSS(formDashboard parent)
         {
             InitializeComponent();
-            this._parent = parent;        }
+            this._parent = parent;
+        }
         #endregion
 
         #region "Properties"
@@ -214,6 +226,14 @@ namespace SSInstructor.Forms
         #region "Method"
         private void fSSS_Load(object sender, EventArgs e)
         {
+            // Set MySQL Connector
+            MySQLConn = this._parent.MySQLConn;
+
+            if (ParamsGlobal.CurrentScenario != null)
+            {
+                btnSaveScen.Visible = true;
+            }
+
             StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
 
             // SplitContainer Setting
@@ -1003,24 +1023,32 @@ namespace SSInstructor.Forms
         {
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
         }
 
         private void nudBebanTMMD_ValueChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
         }
 
         private void nudBebanTKK_ValueChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
         }
 
         private void nudBebanTNT_ValueChanged(object sender, EventArgs e)
         {
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
         }
 
         private void scbPosisiTMMB_Scroll(object sender, ScrollEventArgs e)
@@ -1028,6 +1056,9 @@ namespace SSInstructor.Forms
             nudPosisiTMMB.Value = scbPosisiTMMB.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void scbPosisiTMMD_Scroll(object sender, ScrollEventArgs e)
@@ -1035,6 +1066,9 @@ namespace SSInstructor.Forms
             nudPosisiTMMD.Value = scbPosisiTMMD.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void scbPosisiTKK_Scroll(object sender, ScrollEventArgs e)
@@ -1042,6 +1076,9 @@ namespace SSInstructor.Forms
             nudPosisiTKK.Value = scbPosisiTKK.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void scbPosisiTNT_Scroll(object sender, ScrollEventArgs e)
@@ -1049,6 +1086,9 @@ namespace SSInstructor.Forms
             nudPosisiTNT.Value = scbPosisiTNT.Minimum + scbPosisiTNT.Maximum - scbPosisiTNT.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void nudPosisiTMMB_ValueChanged(object sender, EventArgs e)
@@ -1056,6 +1096,9 @@ namespace SSInstructor.Forms
             scbPosisiTMMB.Value = (int)nudPosisiTMMB.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void nudPosisiTMMD_ValueChanged(object sender, EventArgs e)
@@ -1063,6 +1106,9 @@ namespace SSInstructor.Forms
             scbPosisiTMMD.Value = (int)nudPosisiTMMD.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void nudPosisiTKK_ValueChanged(object sender, EventArgs e)
@@ -1070,6 +1116,9 @@ namespace SSInstructor.Forms
             scbPosisiTKK.Value = (int)nudPosisiTKK.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void nudPosisiTNT_ValueChanged(object sender, EventArgs e)
@@ -1077,6 +1126,9 @@ namespace SSInstructor.Forms
             scbPosisiTNT.Value = scbPosisiTNT.Minimum + scbPosisiTNT.Maximum - (int)nudPosisiTNT.Value;
             CalculateCG_and_Attitude();
             DrawGZandKNCurves();
+
+            SetScenValue();
+            
         }
 
         private void nudHSLineWidth_ValueChanged(object sender, EventArgs e)
@@ -2292,12 +2344,46 @@ namespace SSInstructor.Forms
             txbX0Value_Real.Text = (StabilityCalculator.LCG_BC * StabilityCalculator.ship_scale / 1000).ToString("F1");
         }
 
-
         #endregion
 
         private void btnReloadCFG_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveScen_Click(object sender, EventArgs e)
+        {
+            // Get Current Scenario for Set
+            string dbNameUse = "";
+            string qData = "SELECT * FROM shp_assets.ss_scenario";
+            if(MySQLConn.GetData(qData, "db_name", ref dbNameUse))
+            {
+                // Insert database with value init
+                string qScenSet = "INSERT INTO `" + dbNameUse + "`.`ss_practicum`" +
+                    "(`tmmb_weight`, `tmmb_position`, `tmmd_wight`, `tmmd_position`," +
+                    "`tkk_weight`, `tkk_position`, `tnt_weight`, `tnt_position`, `duration`) " +
+                    "VALUES (" + tmmb_weight + ", " + tmmb_pos + ", " + tmmd_weight + ", " + tmmd_pos +
+                    ", " + tkk_weight + ", " + tkk_pos + ", " + tnt_weight + ", " + tnt_pos + ", 0)";
+
+                if (MySQLConn.SetCommand(qScenSet))
+                {
+                    btnSaveScen.Visible = false;
+                }
+            }
+        }
+
+        // Set Value For Scenario
+        private void SetScenValue()
+        {
+            tmmb_weight = (float)mTMMB;
+            tmmd_weight = (float)mTMMD;
+            tkk_weight = (float)mTKK;
+            tnt_weight = (float)mTNT;
+
+            tmmb_pos = (float)nudPosisiTMMB.Value;
+            tmmd_pos = (float)nudPosisiTMMD.Value;
+            tkk_pos = (float)nudPosisiTKK.Value;
+            tnt_pos = (float)nudPosisiTNT.Value;
         }
     }
 }
