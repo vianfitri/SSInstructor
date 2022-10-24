@@ -35,7 +35,7 @@ namespace SSInstructor
         public DB MySQLConn
         {
             get { return mysqlDbConn; }
-            set { mysqlDbConn = value;MySQLConn }
+            set { mysqlDbConn = value; }
         }
         #endregion
 
