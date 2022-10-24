@@ -81,5 +81,11 @@ namespace SSInstructor.Forms
             await LoadScenario();
         }
         #endregion
+
+        // Add Scenario
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            FormAddScen faddScen = new FormAddScen();
+        }
     }
 }
