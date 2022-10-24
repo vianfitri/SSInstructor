@@ -68,7 +68,8 @@ namespace SSInstructor.Forms
                 } 
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    //throw new Exception(response.ReasonPhrase);
+                    Console.WriteLine(response.ReasonPhrase);
                 }
             }
         }
@@ -86,6 +87,7 @@ namespace SSInstructor.Forms
         private void btnDetail_Click(object sender, EventArgs e)
         {
             FormAddScen faddScen = new FormAddScen();
+            faddScen.create();
         }
     }
 }

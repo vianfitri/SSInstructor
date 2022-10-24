@@ -99,6 +99,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAdd);
             this.Name = "FormAddScen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddScen";
             this.Load += new System.EventHandler(this.FormAddScen_Load);
             this.ResumeLayout(false);
