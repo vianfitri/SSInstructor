@@ -218,7 +218,7 @@ namespace SSInstructor
         private void btnStability_Click(object sender, EventArgs e)
         {
             // Load Instructor Data
-            openChildForm(new fSSS());
+            openChildForm(new fSSS(this));
 
             hideSubmenu();
         }
