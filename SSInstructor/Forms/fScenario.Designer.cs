@@ -45,8 +45,9 @@ namespace SSInstructor.Forms
             this.isactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,14 +212,6 @@ namespace SSInstructor.Forms
             this.scenAction.Name = "scenAction";
             this.scenAction.ReadOnly = true;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 17;
-            // 
             // scenDelete
             // 
             this.scenDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -228,11 +221,29 @@ namespace SSInstructor.Forms
             this.scenDelete.ReadOnly = true;
             this.scenDelete.Width = 17;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(48, 739);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 34);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // fScenario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 841);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv_ScenList);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.label1);
@@ -261,5 +272,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridViewImageColumn scenAction;
         private System.Windows.Forms.DataGridViewImageColumn scenDelete;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -89,5 +89,10 @@ namespace SSInstructor.Forms
             FormAddScen faddScen = new FormAddScen();
             faddScen.create();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string dbnew = "CobaDuplicate"
+        }
     }
 }
