@@ -21,5 +21,20 @@ namespace SSInstructor.Forms
         {
 
         }
+
+        private bool IsTextNotEmpty()
+        {
+            return txtScenName.Texts != string.Empty;
+        }
+
+        private void FormAddScen_Load(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = IsTextNotEmpty();
+        }
+
+        public void create()
+        {
+
+        }
     }
 }

@@ -99,6 +99,7 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.btnAdd);
             this.Name = "FormAddScen";
             this.Text = "FormAddScen";
+            this.Load += new System.EventHandler(this.FormAddScen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
