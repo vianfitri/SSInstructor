@@ -95,10 +95,15 @@ namespace SSInstructor.Forms
         #endregion
 
         // Add Scenario
-        private void btnDetail_Click(object sender, EventArgs e)
+        private async void btnDetail_Click(object sender, EventArgs e)
         {
             FormAddScen faddScen = new FormAddScen();
             faddScen.create();
+
+            if(faddScen.DialogResult == DialogResult.OK)
+            {
+                await LoadScenario();
+            }
         }
     }
 }

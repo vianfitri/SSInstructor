@@ -37,7 +37,13 @@ namespace SSInstructor.Forms
                 {
                     string resp = await response.Content.ReadAsStringAsync();
 
-                    Console.WriteLine(resp);
+                    Dictionary<string, object> respdict = JsonConvert.DeserializeObject<Dictionary<string, object>>(resp);
+
+                    if(respdict.ContainsKey("status") && (bool)respdict["status"] == true)
+                    {
+                        ParamsGlobal.CurrentScenario = txtScenName.Texts;
+                        DialogResult = DialogResult.OK;
+                    }
                 }
                 else
                 {
@@ -51,7 +57,6 @@ namespace SSInstructor.Forms
         {
             await CreateScenario();
 
-            DialogResult = DialogResult.OK;
             Close();
         }
 
