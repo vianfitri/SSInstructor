@@ -37,8 +37,6 @@ namespace SSInstructor.Forms
                 {
                     string resp = await response.Content.ReadAsStringAsync();
 
-                    Console.WriteLine(resp);
-                    //string strResponse = JsonConvert.DeserializeObject(resp);
                 }
                 else
                 {
