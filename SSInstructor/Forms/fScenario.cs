@@ -92,7 +92,9 @@ namespace SSInstructor.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string dbnew = "CobaDuplicate"
+            string dbnew = "CobaDuplicate_"+DateTime.Now.ToString("yyyyMMdd");
+
+
         }
     }
 }

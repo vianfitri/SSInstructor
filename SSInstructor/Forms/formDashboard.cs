@@ -19,7 +19,7 @@ namespace SSInstructor
         #region "Fields"
         formMain _parent;
         private Form activeForm = null;
-        private DB mysqlDbConn;
+        private DB mysqlDbConn = null;
         #endregion
 
         #region "Constructor"
@@ -28,6 +28,14 @@ namespace SSInstructor
             InitializeComponent();
             customizeDesign();
             this._parent = parent;
+        }
+        #endregion
+
+        #region "Properties"
+        public DB MySQLConn
+        {
+            get { return mysqlDbConn; }
+            set { mysqlDbConn = value;MySQLConn }
         }
         #endregion
 
@@ -165,7 +173,7 @@ namespace SSInstructor
             openChildForm(new formWelcome());
 
             // set mysql data connector
-            mysqlDbConn = this._parent.DBConn;
+            MySQLConn = this._parent.DBConn;
 
             // fetch login user information
             int currentLogId = this._parent.LoginId;
