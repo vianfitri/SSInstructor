@@ -19,11 +19,7 @@ namespace SSInstructor.Forms
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtScenName.Texts))
-            {
-                MessageBox.Show("Scenario Name Cannot be empty");
-                txtScenName.Focus();
-            }
+
         }
     }
 }
