@@ -88,6 +88,7 @@ namespace SSInstructor.Forms
             this.txtScenName.TabIndex = 14;
             this.txtScenName.Texts = "";
             this.txtScenName.UnderlinedStyle = false;
+            this.txtScenName._TextChanged += new System.EventHandler(this.txtScenName__TextChanged);
             // 
             // FormAddScen
             // 

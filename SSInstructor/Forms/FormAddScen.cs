@@ -19,7 +19,9 @@ namespace SSInstructor.Forms
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-
+            
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private bool IsTextNotEmpty()
@@ -32,9 +34,14 @@ namespace SSInstructor.Forms
             btnAdd.Enabled = IsTextNotEmpty();
         }
 
+        private void txtScenName__TextChanged(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = IsTextNotEmpty();
+        }
+
         public void create()
         {
-
+            ShowDialog();
         }
     }
 }
