@@ -33,13 +33,21 @@ namespace SSInstructor.Forms
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsync(uri, content))
             {
-
+                if (response.IsSuccessStatusCode)
+                {
+                    string scens = await response.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
             }
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            await CreateScenario();
+
             DialogResult = DialogResult.OK;
             Close();
         }
