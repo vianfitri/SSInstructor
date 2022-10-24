@@ -4,9 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using System.Windows.Forms;
+using SSInstructor.Class;
 
 namespace SSInstructor.Forms
 {
@@ -15,6 +19,22 @@ namespace SSInstructor.Forms
         public FormAddScen()
         {
             InitializeComponent();
+        }
+
+        private async Task CreateScenario()
+        {
+            string uri = "http://localhost/s3-api/api/scenario/StoreSce";
+
+            string payload = JsonConvert.SerializeObject(new
+            {
+                scenario_name = txtScenName.Texts
+            });
+            var content = new StringContent(payload, Encoding.UTF8, "application/json");
+
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsync(uri, content))
+            {
+
+            }
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
