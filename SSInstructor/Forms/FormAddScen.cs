@@ -41,7 +41,8 @@ namespace SSInstructor.Forms
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    //throw new Exception(response.ReasonPhrase);
+                    Console.WriteLine(response.ReasonPhrase);
                 }
             }
         }
