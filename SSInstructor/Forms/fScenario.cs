@@ -18,16 +18,24 @@ namespace SSInstructor.Forms
     public partial class fScenario : Form
     {
         #region "Fields"
+        formDashboard _parent;
+        private DB mysqlConn = null;
         #endregion
 
         #region "Constructor"
-        public fScenario()
+        public fScenario(formDashboard parent)
         {
             InitializeComponent();
+            this._parent = parent;
         }
         #endregion
 
         #region "Properties"
+        public DB MySQLConn
+        {
+            get { return mysqlConn; }
+            set { mysqlConn = value; }
+        }
         #endregion
 
         #region "Method"
@@ -78,6 +86,9 @@ namespace SSInstructor.Forms
         #region "Events"
         private async void fScenario_Load(object sender, EventArgs e)
         {
+            // Set MySQL Connector
+            MySQLConn = this._parent.MySQLConn;
+
             // load data scenario
             await LoadScenario();
         }
@@ -88,13 +99,6 @@ namespace SSInstructor.Forms
         {
             FormAddScen faddScen = new FormAddScen();
             faddScen.create();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string dbnew = "CobaDuplicate_"+DateTime.Now.ToString("yyyyMMdd");
-
-
         }
     }
 }

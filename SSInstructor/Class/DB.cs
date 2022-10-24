@@ -1072,13 +1072,13 @@ namespace SSInstructor.Class
             bool stat = true;
             sErrorMessage = "";
 
-            string[] listTableSource = null;
+            List<string> listTableSource = new List<string>();
 
             string qCreateDB = "CREATE DATABASE `" + toDB + "`";
             SetCommand(qCreateDB);
 
             if(GetAllTables(fromDB, ref listTableSource)){
-                if(listTableSource.Length > 0)
+                if(listTableSource.Count > 0)
                 {
                     foreach(string tbl_name in listTableSource)
                     {
