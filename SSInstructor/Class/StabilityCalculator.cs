@@ -259,7 +259,7 @@ public static class StabilityCalculator {
 
     public static Point2D[] shippoints = new Point2D[26];
     public static Point2D[] shippoints_init = new Point2D[26];
-    public static Point2D[] shippoints_BC = new Point2D[26]
+    public static Point2D[] shippoints_BC = new Point2D[26] // Transversal hull coordinate
     {
             new Point2D{x =  -57.5  ,   y =  459.8}, // point 0
             new Point2D{x = -80.5   ,   y =  390.8}, // point 1
@@ -291,7 +291,7 @@ public static class StabilityCalculator {
 
     public static Point2D[] shippointslon = new Point2D[33]; // longitudinal hull coordinate
     public static Point2D[] shippointslon_init = new Point2D[33];
-    public static Point2D[] shippointslon_BC = new Point2D[33]  // Bulk Carrier
+    public static Point2D[] shippointslon_BC = new Point2D[33]  // Longitudinal Hull Coordinate
     {
             new Point2D{x = -1096.5,    y = 204.0}, // point 0
             new Point2D{x = -1096.5,    y = 128.3}, // point 1
