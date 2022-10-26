@@ -89,6 +89,9 @@ namespace SSInstructor.Forms
             // Initiate ShutdownServer
             ShutdownServer.svrShutdown.StartServer();
 
+            // Initialize Visual Server
+            VisualServer.visualconn.StartServer();
+
             // Initialize API Client
             ApiHelper.InitializeClient();
 
