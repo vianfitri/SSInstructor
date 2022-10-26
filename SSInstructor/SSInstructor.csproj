@@ -87,6 +87,7 @@
     <Compile Include="Class\Container.cs" />
     <Compile Include="Class\ControlExtensions.cs" />
     <Compile Include="Class\DB.cs" />
+    <Compile Include="Class\ExerciseController.cs" />
     <Compile Include="Class\IniFiles.cs" />
     <Compile Include="Class\Machines.cs" />
     <Compile Include="Class\ModalPopup.cs">
@@ -98,6 +99,8 @@
     <Compile Include="Class\ShutdownServer.cs" />
     <Compile Include="Class\Stability.cs" />
     <Compile Include="Class\StabilityCalculator.cs" />
+    <Compile Include="Class\UserController.cs" />
+    <Compile Include="Class\VisualizationController.cs" />
     <Compile Include="Controls\ClientPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
