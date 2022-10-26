@@ -92,6 +92,7 @@ namespace SSInstructor.Class
                     {
                         // get data from visual application
                         string msg = string.Format("{0}", obj.data);
+                        Console.WriteLine(msg);
                         obj.data.Clear();
                         obj.handle.Set();
                     }

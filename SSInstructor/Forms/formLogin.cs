@@ -196,6 +196,11 @@ namespace SSInstructor
             } else { txtPassword.PasswordChar = true; }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VisualServer.visualconn.Send("Halo ini dari server");
+        }
+
         private void formLogin_Load(object sender, EventArgs e)
         {
             // Load D Configuration
