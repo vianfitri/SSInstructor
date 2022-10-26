@@ -100,7 +100,6 @@
     <Compile Include="Class\Stability.cs" />
     <Compile Include="Class\StabilityCalculator.cs" />
     <Compile Include="Class\UserController.cs" />
-    <Compile Include="Class\VisualizationController.cs" />
     <Compile Include="Class\VisualServer.cs" />
     <Compile Include="Controls\ClientPanel.cs">
       <SubType>UserControl</SubType>
