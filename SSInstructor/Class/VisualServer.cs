@@ -76,7 +76,7 @@ namespace SSInstructor.Class
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Read : " + ex.Message);
+                    Console.WriteLine("Visual Read Error : " + ex.Message);
                 }
             }
             if (bytes > 0)
@@ -90,9 +90,8 @@ namespace SSInstructor.Class
                     }
                     else
                     {
-                        string msg = string.Format("{0}: {1}", obj.ipaddress, obj.data);
-                        Console.WriteLine("Read : " + msg);
-                        Send(msg, obj.id);
+                        // get data from visual application
+                        string msg = string.Format("{0}", obj.data);
                         obj.data.Clear();
                         obj.handle.Set();
                     }
