@@ -18,6 +18,7 @@ namespace SSInstructor.Forms
 
         formDashboard _parent;
         private DB mysqlConn = null;
+        ASCIIEncoding encoder = new ASCIIEncoding();
 
         #region "Scen Variables To Save"
         float tmmb_weight = 0f;
