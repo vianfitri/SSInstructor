@@ -17,7 +17,7 @@ namespace SSInstructor.Class
         #endregion
 
         #region "Fields"
-
+        static ExerciseMode eMode;
         #endregion
 
         #region "Properties"
