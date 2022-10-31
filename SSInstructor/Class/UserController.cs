@@ -9,6 +9,7 @@ namespace SSInstructor.Class
     public static class UserController
     {
         #region "Fields"
+        static int currentUser = 0;
         #endregion
 
         #region "Properties"
