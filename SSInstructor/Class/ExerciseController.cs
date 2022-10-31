@@ -9,7 +9,11 @@ namespace SSInstructor.Class
     public static class ExerciseController
     {
         #region "Enum"
-
+        public enum ExerciseMode
+        {
+            Training=0,
+            Test=1,
+        }
         #endregion
 
         #region "Fields"
