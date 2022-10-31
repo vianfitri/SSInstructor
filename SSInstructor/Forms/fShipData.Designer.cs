@@ -34,7 +34,6 @@ namespace SSInstructor.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlShipView = new System.Windows.Forms.Panel();
-            this.pbShipImage = new System.Windows.Forms.PictureBox();
             this.pnlShipDetail = new System.Windows.Forms.Panel();
             this.lblDraft = new System.Windows.Forms.Label();
             this.lblDepth = new System.Windows.Forms.Label();
@@ -47,9 +46,10 @@ namespace SSInstructor.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblShipType = new System.Windows.Forms.Label();
+            this.pbShipImage = new System.Windows.Forms.PictureBox();
             this.pnlShipView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShipImage)).BeginInit();
             this.pnlShipDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShipImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,15 +116,6 @@ namespace SSInstructor.Forms
             this.pnlShipView.Size = new System.Drawing.Size(1220, 565);
             this.pnlShipView.TabIndex = 4;
             this.pnlShipView.Resize += new System.EventHandler(this.fShipData_Resize);
-            // 
-            // pbShipImage
-            // 
-            this.pbShipImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbShipImage.Location = new System.Drawing.Point(0, 0);
-            this.pbShipImage.Name = "pbShipImage";
-            this.pbShipImage.Size = new System.Drawing.Size(936, 563);
-            this.pbShipImage.TabIndex = 1;
-            this.pbShipImage.TabStop = false;
             // 
             // pnlShipDetail
             // 
@@ -272,6 +263,17 @@ namespace SSInstructor.Forms
             this.lblShipType.Text = "BULK CARRIER 50000 DWT";
             this.lblShipType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pbShipImage
+            // 
+            this.pbShipImage.BackgroundImage = global::SSInstructor.Properties.Resources.GC3650;
+            this.pbShipImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbShipImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbShipImage.Location = new System.Drawing.Point(0, 0);
+            this.pbShipImage.Name = "pbShipImage";
+            this.pbShipImage.Size = new System.Drawing.Size(936, 563);
+            this.pbShipImage.TabIndex = 1;
+            this.pbShipImage.TabStop = false;
+            // 
             // fShipData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,9 +292,9 @@ namespace SSInstructor.Forms
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fShipData_FormClosed);
             this.Load += new System.EventHandler(this.fShipData_Load);
             this.pnlShipView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbShipImage)).EndInit();
             this.pnlShipDetail.ResumeLayout(false);
             this.pnlShipDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShipImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
