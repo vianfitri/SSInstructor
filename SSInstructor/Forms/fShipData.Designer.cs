@@ -265,7 +265,6 @@ namespace SSInstructor.Forms
             // 
             // pbShipImage
             // 
-            this.pbShipImage.BackgroundImage = global::SSInstructor.Properties.Resources.GC3650;
             this.pbShipImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbShipImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbShipImage.Location = new System.Drawing.Point(0, 0);

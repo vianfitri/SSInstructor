@@ -135,7 +135,16 @@ namespace SSInstructor.Forms
 				lblDepth.Text = string.Format("{0} M", dataShip[comboBox1.SelectedIndex].Depth.ToString("F3"));
 				lblDraft.Text = string.Format("{0} M", dataShip[comboBox1.SelectedIndex].Draft.ToString("F3"));
 
-
+				if(comboBox1.SelectedIndex == 0)
+                {
+					pbShipImage.BackgroundImage = SSInstructor.Properties.Resources.BC50000;
+                } else if(comboBox1.SelectedIndex == 1)
+                {
+					pbShipImage.BackgroundImage = SSInstructor.Properties.Resources.GC3650;
+                } else if(comboBox1.SelectedIndex == 2)
+                {
+					pbShipImage.BackgroundImage = SSInstructor.Properties.Resources.FC4180;
+                }
 			}
 		}
 
