@@ -18,6 +18,7 @@ namespace SSInstructor.Class
 
         #region "Fields"
         static ExerciseMode eMode;
+        static string currScenUC;
         #endregion
 
         #region "Properties"
@@ -25,6 +26,12 @@ namespace SSInstructor.Class
         {
             get { return eMode; }
             set { eMode = value; }
+        }
+
+        public static string CurrentUCScen
+        {
+            get { return currScenUC; }
+            set { currScenUC = value; }
         }
         #endregion
 
