@@ -90,9 +90,6 @@
     <Compile Include="Class\ExerciseController.cs" />
     <Compile Include="Class\IniFiles.cs" />
     <Compile Include="Class\Machines.cs" />
-    <Compile Include="Class\ModalPopup.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Class\Networking.cs" />
     <Compile Include="Class\ParamsGlobal.cs" />
     <Compile Include="Class\ReadWriteFile.cs" />
