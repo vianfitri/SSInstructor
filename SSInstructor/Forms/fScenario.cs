@@ -39,6 +39,12 @@ namespace SSInstructor.Forms
         #endregion
 
         #region "Method"
+
+        private void LoadScenList()
+        {
+
+        }
+
         private async Task LoadScenario()
         {
             string uri = "http://localhost/s3-api/api/scenario/GetSce";
@@ -92,7 +98,6 @@ namespace SSInstructor.Forms
             // load data scenario
             await LoadScenario();
         }
-        #endregion
 
         // Add Scenario
         private async void btnDetail_Click(object sender, EventArgs e)
@@ -100,10 +105,11 @@ namespace SSInstructor.Forms
             FormAddScen faddScen = new FormAddScen();
             faddScen.create();
 
-            if(faddScen.DialogResult == DialogResult.OK)
+            if (faddScen.DialogResult == DialogResult.OK)
             {
                 await LoadScenario();
             }
         }
+        #endregion
     }
 }
