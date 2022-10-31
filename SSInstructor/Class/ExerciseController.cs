@@ -21,6 +21,11 @@ namespace SSInstructor.Class
         #endregion
 
         #region "Properties"
+        public static ExerciseMode EMode
+        {
+            get { return eMode; }
+            set { eMode = value; }
+        }
         #endregion
 
         #region "Method"
