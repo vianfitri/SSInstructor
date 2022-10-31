@@ -10,11 +10,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SSInstructor.Class;
 
 namespace SSInstructor.Forms
 {
     public partial class fShipData : Form
     {
+		#region "Import Library"
 		[DllImport("User32.dll")]
 		static extern bool MoveWindow(IntPtr handle, int x, int y, int width, int height, bool redraw);
 
@@ -24,7 +26,9 @@ namespace SSInstructor.Forms
 
 		[DllImport("user32.dll")]
 		static extern int SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+		#endregion
 
+		#region "Fields"
 		private Process process;
 		private IntPtr modelshipHWND = IntPtr.Zero;
 
@@ -32,6 +36,10 @@ namespace SSInstructor.Forms
 		private readonly IntPtr WA_ACTIVE = new IntPtr(1);
 		private readonly IntPtr WA_INACTIVE = new IntPtr(0);
 
+		ShipData[] dataShip;
+		#endregion
+
+		#region "Constructor"
 		public fShipData()
         {
             InitializeComponent();
@@ -56,16 +64,18 @@ namespace SSInstructor.Forms
 			//	MessageBox.Show(ex.Message + ".\nCheck if Container.exe is placed next to Child.exe.");
 			//}
 		}
+		#endregion
 
-		//private void ActivateUnityWindow()
-		//{
+		#region "Method"
+		private void ActivateUnityWindow()
+		{
 		//	SendMessage(modelshipHWND, WM_ACTIVATE, WA_ACTIVE, IntPtr.Zero);
-		//}
+		}
 
-		//private void DeactivateUnityWindow()
-		//{
+		private void DeactivateUnityWindow()
+		{
 		//	SendMessage(modelshipHWND, WM_ACTIVATE, WA_INACTIVE, IntPtr.Zero);
-		//}
+		}
 
 		//private int WindowEnum(IntPtr hwnd, IntPtr lparam)
 		//{
@@ -106,5 +116,65 @@ namespace SSInstructor.Forms
 		{
 			//DeactivateUnityWindow();
 		}
-	}
+
+		private void fShipData_Load(object sender, EventArgs e)
+		{
+			InitShipData();
+
+			comboBox1.SelectedIndex = 0;
+		}
+
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if(comboBox1.SelectedIndex != -1)
+            {
+				lblShipType.Text = dataShip[comboBox1.SelectedIndex].Name;
+				lblLoa.Text = string.Format("{0} M", dataShip[comboBox1.SelectedIndex].LOA.ToString("F3"));
+				lblLbp.Text = string.Format("{0} M", dataShip[comboBox1.SelectedIndex].LPP.ToString("F3"));
+				lblBreadth.Text = string.Format("{0} M", dataShip[comboBox1.SelectedIndex].Breadth.ToString("F3"));
+				lblDepth.Text = string.Format("{0} M", dataShip[comboBox1.SelectedIndex].Depth.ToString("F3"));
+				lblDraft.Text = string.Format("{0} M", dataShip[comboBox1.SelectedIndex].Draft.ToString("F3"));
+
+
+			}
+		}
+
+		private void InitShipData()
+        {
+			dataShip = new ShipData[]
+			{
+				new ShipData()
+				{
+					Name = "BULK CARRIER 50000 DWT",
+					LOA = 189.998f,
+					LPP = 182.300f,
+					Breadth = 30.500f,
+					Depth = 17.500f,
+					Draft = 12.800f
+                },
+				new ShipData()
+                {
+					Name = "GENERAL CARGO 3650 DWT",
+					LOA = 98.0f,
+					LPP = 92.0f,
+					Breadth = 16.5f,
+					Depth = 7.8f,
+					Draft = 5.5f
+				},
+				new ShipData()
+                {
+					Name = "CONTAINER 4180 DWT",
+					LOA = 98.0f,
+					LPP = 92.0f,
+					Breadth = 16.5f,
+					Depth = 7.8f,
+					Draft = 5.5f
+				}
+			};
+        }
+
+        #endregion
+
+        
+    }
 }

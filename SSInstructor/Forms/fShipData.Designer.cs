@@ -34,22 +34,22 @@ namespace SSInstructor.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlShipView = new System.Windows.Forms.Panel();
-            this.pnlShipDetail = new System.Windows.Forms.Panel();
-            this.lblShipType = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblLoa = new System.Windows.Forms.Label();
-            this.lblLbp = new System.Windows.Forms.Label();
-            this.lblBreadth = new System.Windows.Forms.Label();
-            this.lblDepth = new System.Windows.Forms.Label();
-            this.lblDraft = new System.Windows.Forms.Label();
             this.pbShipImage = new System.Windows.Forms.PictureBox();
+            this.pnlShipDetail = new System.Windows.Forms.Panel();
+            this.lblDraft = new System.Windows.Forms.Label();
+            this.lblDepth = new System.Windows.Forms.Label();
+            this.lblBreadth = new System.Windows.Forms.Label();
+            this.lblLbp = new System.Windows.Forms.Label();
+            this.lblLoa = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblShipType = new System.Windows.Forms.Label();
             this.pnlShipView.SuspendLayout();
-            this.pnlShipDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbShipImage)).BeginInit();
+            this.pnlShipDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -94,11 +94,12 @@ namespace SSInstructor.Forms
             "3650 DWT General Cargo",
             "4180 DWT Full Container"});
             this.comboBox1.Location = new System.Drawing.Point(145, 131);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 21);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = "-- Choose --";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // pnlShipView
             // 
@@ -110,11 +111,20 @@ namespace SSInstructor.Forms
             this.pnlShipView.Controls.Add(this.pbShipImage);
             this.pnlShipView.Controls.Add(this.pnlShipDetail);
             this.pnlShipView.Location = new System.Drawing.Point(49, 170);
-            this.pnlShipView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlShipView.Margin = new System.Windows.Forms.Padding(2);
             this.pnlShipView.Name = "pnlShipView";
             this.pnlShipView.Size = new System.Drawing.Size(1220, 565);
             this.pnlShipView.TabIndex = 4;
             this.pnlShipView.Resize += new System.EventHandler(this.fShipData_Resize);
+            // 
+            // pbShipImage
+            // 
+            this.pbShipImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbShipImage.Location = new System.Drawing.Point(0, 0);
+            this.pbShipImage.Name = "pbShipImage";
+            this.pbShipImage.Size = new System.Drawing.Size(936, 563);
+            this.pbShipImage.TabIndex = 1;
+            this.pbShipImage.TabStop = false;
             // 
             // pnlShipDetail
             // 
@@ -136,60 +146,65 @@ namespace SSInstructor.Forms
             this.pnlShipDetail.Size = new System.Drawing.Size(282, 563);
             this.pnlShipDetail.TabIndex = 0;
             // 
-            // lblShipType
+            // lblDraft
             // 
-            this.lblShipType.AutoSize = true;
-            this.lblShipType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShipType.Location = new System.Drawing.Point(24, 20);
-            this.lblShipType.Name = "lblShipType";
-            this.lblShipType.Size = new System.Drawing.Size(222, 18);
-            this.lblShipType.TabIndex = 0;
-            this.lblShipType.Text = "BULK CARRIER 50000 DWT";
-            this.lblShipType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDraft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDraft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDraft.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDraft.Location = new System.Drawing.Point(185, 192);
+            this.lblDraft.Name = "lblDraft";
+            this.lblDraft.Size = new System.Drawing.Size(76, 16);
+            this.lblDraft.TabIndex = 10;
+            this.lblDraft.Text = "12.800 M";
+            this.lblDraft.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
+            // lblDepth
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "L.O.A";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDepth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDepth.Location = new System.Drawing.Point(185, 160);
+            this.lblDepth.Name = "lblDepth";
+            this.lblDepth.Size = new System.Drawing.Size(76, 16);
+            this.lblDepth.TabIndex = 9;
+            this.lblDepth.Text = "17.500 M";
+            this.lblDepth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label5
+            // lblBreadth
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "L.B.P";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblBreadth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBreadth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBreadth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblBreadth.Location = new System.Drawing.Point(185, 128);
+            this.lblBreadth.Name = "lblBreadth";
+            this.lblBreadth.Size = new System.Drawing.Size(76, 16);
+            this.lblBreadth.TabIndex = 8;
+            this.lblBreadth.Text = "30.500 M";
+            this.lblBreadth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label6
+            // lblLbp
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "BREADTH";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblLbp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLbp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLbp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblLbp.Location = new System.Drawing.Point(185, 98);
+            this.lblLbp.Name = "lblLbp";
+            this.lblLbp.Size = new System.Drawing.Size(76, 16);
+            this.lblLbp.TabIndex = 7;
+            this.lblLbp.Text = "182.300 M";
+            this.lblLbp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label7
+            // lblLoa
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 16);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "DEPTH";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblLoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblLoa.Location = new System.Drawing.Point(185, 65);
+            this.lblLoa.Name = "lblLoa";
+            this.lblLoa.Size = new System.Drawing.Size(76, 16);
+            this.lblLoa.TabIndex = 6;
+            this.lblLoa.Text = "189.998 M";
+            this.lblLoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
@@ -202,74 +217,60 @@ namespace SSInstructor.Forms
             this.label8.Text = "DRAFT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblLoa
+            // label7
             // 
-            this.lblLoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLoa.AutoSize = true;
-            this.lblLoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblLoa.Location = new System.Drawing.Point(185, 65);
-            this.lblLoa.Name = "lblLoa";
-            this.lblLoa.Size = new System.Drawing.Size(76, 16);
-            this.lblLoa.TabIndex = 6;
-            this.lblLoa.Text = "189.998 M";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 16);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "DEPTH";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblLbp
+            // label6
             // 
-            this.lblLbp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLbp.AutoSize = true;
-            this.lblLbp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLbp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblLbp.Location = new System.Drawing.Point(185, 98);
-            this.lblLbp.Name = "lblLbp";
-            this.lblLbp.Size = new System.Drawing.Size(76, 16);
-            this.lblLbp.TabIndex = 7;
-            this.lblLbp.Text = "182.300 M";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "BREADTH";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblBreadth
+            // label5
             // 
-            this.lblBreadth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBreadth.AutoSize = true;
-            this.lblBreadth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBreadth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblBreadth.Location = new System.Drawing.Point(193, 128);
-            this.lblBreadth.Name = "lblBreadth";
-            this.lblBreadth.Size = new System.Drawing.Size(68, 16);
-            this.lblBreadth.TabIndex = 8;
-            this.lblBreadth.Text = "30.500 M";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "LENGTH (P.P.)";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblDepth
+            // label4
             // 
-            this.lblDepth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDepth.AutoSize = true;
-            this.lblDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDepth.Location = new System.Drawing.Point(193, 160);
-            this.lblDepth.Name = "lblDepth";
-            this.lblDepth.Size = new System.Drawing.Size(68, 16);
-            this.lblDepth.TabIndex = 9;
-            this.lblDepth.Text = "17.500 M";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "LENGTH (O.A.)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblDraft
+            // lblShipType
             // 
-            this.lblDraft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDraft.AutoSize = true;
-            this.lblDraft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDraft.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDraft.Location = new System.Drawing.Point(193, 192);
-            this.lblDraft.Name = "lblDraft";
-            this.lblDraft.Size = new System.Drawing.Size(68, 16);
-            this.lblDraft.TabIndex = 10;
-            this.lblDraft.Text = "12.800 M";
-            // 
-            // pbShipImage
-            // 
-            this.pbShipImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbShipImage.Location = new System.Drawing.Point(0, 0);
-            this.pbShipImage.Name = "pbShipImage";
-            this.pbShipImage.Size = new System.Drawing.Size(936, 563);
-            this.pbShipImage.TabIndex = 1;
-            this.pbShipImage.TabStop = false;
+            this.lblShipType.AutoSize = true;
+            this.lblShipType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShipType.Location = new System.Drawing.Point(24, 20);
+            this.lblShipType.Name = "lblShipType";
+            this.lblShipType.Size = new System.Drawing.Size(222, 18);
+            this.lblShipType.TabIndex = 0;
+            this.lblShipType.Text = "BULK CARRIER 50000 DWT";
+            this.lblShipType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fShipData
             // 
@@ -281,16 +282,17 @@ namespace SSInstructor.Forms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fShipData";
             this.Text = "fShipData";
             this.Activated += new System.EventHandler(this.fShipData_Activated);
             this.Deactivate += new System.EventHandler(this.fShipData_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fShipData_FormClosed);
+            this.Load += new System.EventHandler(this.fShipData_Load);
             this.pnlShipView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbShipImage)).EndInit();
             this.pnlShipDetail.ResumeLayout(false);
             this.pnlShipDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShipImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
