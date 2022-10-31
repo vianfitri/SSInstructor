@@ -8,7 +8,12 @@ namespace SSInstructor.Class
 {
     public static class ExerciseController
     {
+        #region "Enum"
+
+        #endregion
+
         #region "Fields"
+
         #endregion
 
         #region "Properties"
