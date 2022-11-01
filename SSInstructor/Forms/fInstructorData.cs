@@ -56,7 +56,7 @@ namespace SSInstructor.Forms
                 "ON a.id_subject = b.idsubject " +
                 "INNER JOIN shp_assets.ss_usertype c " +
                 "ON b.type = c.id " +
-                "WHERE b.type = 3";
+                "WHERE b.type = 2";
 
             if(MySQLConn.GetTableData(qListInst, ref dtInstructor)){
                 // Reset Rows First
