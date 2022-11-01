@@ -37,6 +37,9 @@ namespace SSInstructor.Forms
         #region "Method"
         private void fInstructorData_Load(object sender, EventArgs e)
         {
+            // Set MySQL Connector
+            MySQLConn = this._parent.MySQLConn;
+
             dummyInstructorData();
         }
 
