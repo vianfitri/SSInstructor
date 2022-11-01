@@ -42,9 +42,9 @@ namespace SSInstructor.Forms
 
             // Load Instructor List Data
             LoadInstructorListData();
-            //dummyInstructorData();
         }
 
+        // Load Instructor List Data
         private void LoadInstructorListData()
         {
             DataTable dtInstructor = new DataTable();
