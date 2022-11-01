@@ -46,7 +46,34 @@ namespace SSInstructor.Forms
 
         private void LoadInstructorListData()
         {
+            DataTable dtInstructor = new DataTable();
+            string qListInst = "SELECT a.idss_user, " +
+                "b.first_name, b.last_name, b.id_number, b.birthday, b.sex, b.email, b.photos, " +
+                "c.typename " +
+                "FROM shp_assets.ss_user a " +
+                "INNER JOIN shp_assets.ss_subject b " +
+                "ON a.id_subject = b.idsubject " +
+                "INNER JOIN shp_assets.ss_usertype c " +
+                "ON b.type = c.id " +
+                "WHERE b.type = 2";
 
+            if(MySQLConn.GetTableData(qListInst, ref dtInstructor)){
+                // Reset Rows First
+                bdgv_Instructor.Rows.Clear();
+
+                int iddata = 0;
+                foreach(DataRow row in dtInstructor.Rows)
+                {
+                    iddata++;
+                    bdgv_Instructor.Rows.Add(
+                        new object[]{
+                            iddata,
+                            row["id_number"],
+                            row["first_name"],
+                        }
+                    );
+                }
+            }
         }
 
         private void dummyInstructorData()
