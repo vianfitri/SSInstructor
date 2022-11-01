@@ -56,12 +56,13 @@ namespace SSInstructor.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNIP = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSaveInstructor = new ViControls.ViButton();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).BeginInit();
             this.pnlAddInstructor.SuspendLayout();
@@ -309,12 +310,13 @@ namespace SSInstructor.Forms
             // 
             // pnlAddInstructor
             // 
+            this.pnlAddInstructor.Controls.Add(this.label8);
             this.pnlAddInstructor.Controls.Add(this.btnSaveInstructor);
-            this.pnlAddInstructor.Controls.Add(this.textBox3);
+            this.pnlAddInstructor.Controls.Add(this.txtEmail);
             this.pnlAddInstructor.Controls.Add(this.rbFemale);
             this.pnlAddInstructor.Controls.Add(this.rbMale);
-            this.pnlAddInstructor.Controls.Add(this.textBox2);
-            this.pnlAddInstructor.Controls.Add(this.textBox1);
+            this.pnlAddInstructor.Controls.Add(this.txtName);
+            this.pnlAddInstructor.Controls.Add(this.txtNIP);
             this.pnlAddInstructor.Controls.Add(this.label7);
             this.pnlAddInstructor.Controls.Add(this.label6);
             this.pnlAddInstructor.Controls.Add(this.label5);
@@ -376,21 +378,21 @@ namespace SSInstructor.Forms
             this.label7.TabIndex = 11;
             this.label7.Text = "Email";
             // 
-            // textBox1
+            // txtNIP
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(171, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 22);
-            this.textBox1.TabIndex = 12;
+            this.txtNIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIP.Location = new System.Drawing.Point(171, 87);
+            this.txtNIP.Name = "txtNIP";
+            this.txtNIP.Size = new System.Drawing.Size(222, 22);
+            this.txtNIP.TabIndex = 12;
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(171, 125);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(281, 22);
-            this.textBox2.TabIndex = 13;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(171, 125);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(281, 22);
+            this.txtName.TabIndex = 13;
             // 
             // rbMale
             // 
@@ -414,13 +416,13 @@ namespace SSInstructor.Forms
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(171, 202);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(235, 22);
-            this.textBox3.TabIndex = 16;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(171, 202);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(235, 22);
+            this.txtEmail.TabIndex = 16;
             // 
             // btnSaveInstructor
             // 
@@ -434,7 +436,7 @@ namespace SSInstructor.Forms
             this.btnSaveInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveInstructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveInstructor.ForeColor = System.Drawing.Color.White;
-            this.btnSaveInstructor.Location = new System.Drawing.Point(48, 278);
+            this.btnSaveInstructor.Location = new System.Drawing.Point(48, 256);
             this.btnSaveInstructor.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveInstructor.Name = "btnSaveInstructor";
             this.btnSaveInstructor.Size = new System.Drawing.Size(112, 32);
@@ -442,6 +444,16 @@ namespace SSInstructor.Forms
             this.btnSaveInstructor.Text = "Save";
             this.btnSaveInstructor.TextColor = System.Drawing.Color.White;
             this.btnSaveInstructor.UseVisualStyleBackColor = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 318);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(225, 15);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Standard password is NIP number";
             // 
             // fInstructorData
             // 
@@ -489,12 +501,13 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.RadioButton rbMale;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtNIP;
         private System.Windows.Forms.Label label7;
         private ViControls.ViButton btnSaveInstructor;
+        private System.Windows.Forms.Label label8;
     }
 }
