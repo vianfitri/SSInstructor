@@ -41,7 +41,8 @@ namespace SSInstructor.Forms
             MySQLConn = this._parent.MySQLConn;
 
             // Load Instructor List Data
-            dummyInstructorData();
+            LoadInstructorListData();
+            //dummyInstructorData();
         }
 
         private void LoadInstructorListData()
@@ -55,7 +56,7 @@ namespace SSInstructor.Forms
                 "ON a.id_subject = b.idsubject " +
                 "INNER JOIN shp_assets.ss_usertype c " +
                 "ON b.type = c.id " +
-                "WHERE b.type = 2";
+                "WHERE b.type = 3";
 
             if(MySQLConn.GetTableData(qListInst, ref dtInstructor)){
                 // Reset Rows First
@@ -68,8 +69,11 @@ namespace SSInstructor.Forms
                     bdgv_Instructor.Rows.Add(
                         new object[]{
                             iddata,
+                            row["idss_user"],
                             row["id_number"],
                             row["first_name"],
+                            null,
+                            null
                         }
                     );
                 }
