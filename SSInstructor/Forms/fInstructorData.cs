@@ -185,6 +185,34 @@ namespace SSInstructor.Forms
 
         }
         */
+        private void btnSaveInstructor_Click(object sender, EventArgs e)
+        {
+            // validate textbox
+            if(string.IsNullOrEmpty(txtNIP.Text))
+            {
+                MessageBox.Show("NIP Number cannot be empty!", "Emplty NIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNIP.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                MessageBox.Show("Name cannot be empty!", "Emplty Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtName.Focus();
+                return;
+            }
+            string nip = txtNIP.Text;
+            string name = txtName.Text;
+
+            int gender = 0;
+            if (rbMale.Checked) gender = 0;
+            else if (rbFemale.Checked) gender = 1;
+
+            string email = txtEmail.Text;
+            
+            string qInputInstructor = "INSERT INTO ss_assets."
+        }
         #endregion
+
+
     }
 }
