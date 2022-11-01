@@ -362,6 +362,7 @@ namespace SSInstructor
             this.btnCargoData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCargoData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCargoData.UseVisualStyleBackColor = true;
+            this.btnCargoData.Visible = false;
             this.btnCargoData.Click += new System.EventHandler(this.btnCargoData_Click);
             // 
             // btnShipData

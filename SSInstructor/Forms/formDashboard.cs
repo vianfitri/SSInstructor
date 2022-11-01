@@ -70,18 +70,18 @@ namespace SSInstructor
                 subMenu.Visible = false;
         }
 
-        private void loadLoginInfo(int logId)
+        private void loadLoginInfo(string logId)
         {
             DataTable dtLoginInfo = new DataTable();
-            string qrStr = "SELECT a.idss_user, " +
+            string qrStr = "SELECT a.uc, " +
                 "b.first_name, b.last_name, b.birthday, b.sex, b.email, b.photos, " +
                 "c.typename " +
                 "FROM shp_assets.ss_user a " +
                 "INNER JOIN shp_assets.ss_subject b " +
-                "ON a.id_subject = b.idsubject " +
+                "ON a.uc_subject = b.uc " +
                 "INNER JOIN shp_assets.ss_usertype c " +
                 "ON b.type = c.id " +
-                "WHERE a.idss_user = " + logId + " LIMIT 0, 1";
+                "WHERE a.uc = " + logId + " LIMIT 0, 1";
 
             if(mysqlDbConn.GetTableData(qrStr, ref dtLoginInfo))
             {
@@ -144,7 +144,7 @@ namespace SSInstructor
         {
             if (MessageBox.Show("Are you sure to logout ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this._parent.LoginId = -1;
+                this._parent.LoginId = "";
                 this._parent.openChildForm(this._parent.fLogin);
                 openChildForm(new formWelcome());
             }
@@ -176,7 +176,7 @@ namespace SSInstructor
             MySQLConn = this._parent.DBConn;
 
             // fetch login user information
-            int currentLogId = this._parent.LoginId;
+            string currentLogId = this._parent.LoginId;
 
             loadLoginInfo(currentLogId);
 

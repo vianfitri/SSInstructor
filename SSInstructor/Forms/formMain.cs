@@ -20,7 +20,7 @@ namespace SSInstructor.Forms
 
         private Form activeForm = null;
         private String loginUsername = "";
-        private int loginId = -1;
+        private string loginId = "";
         private DB mysqlDbConn;
         public formLogin fLogin = null;
         public formDashboard fDash = null;
@@ -43,7 +43,7 @@ namespace SSInstructor.Forms
             set { loginUsername = value; }
         }
 
-        public int LoginId {
+        public string LoginId {
             get { return loginId; }
             set { loginId = value; }
         }
