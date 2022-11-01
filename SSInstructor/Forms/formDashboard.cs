@@ -202,7 +202,7 @@ namespace SSInstructor
         private void btnInstructor_Click(object sender, EventArgs e)
         {
             // Load Instructor Data
-            openChildForm(new fInstructorData());
+            openChildForm(new fInstructorData(this));
 
             hideSubmenu();
         }
