@@ -2345,8 +2345,6 @@ namespace SSInstructor.Forms
             txbX0Value_Real.Text = (StabilityCalculator.LCG_BC * StabilityCalculator.ship_scale / 1000).ToString("F1");
         }
 
-        #endregion
-
         private void btnReloadCFG_Click(object sender, EventArgs e)
         {
 
@@ -2357,7 +2355,7 @@ namespace SSInstructor.Forms
             // Get Current Scenario for Set
             string dbNameUse = "";
             string qData = "SELECT * FROM shp_assets.ss_scenario";
-            if(MySQLConn.GetData(qData, "db_name", ref dbNameUse))
+            if (MySQLConn.GetData(qData, "db_name", ref dbNameUse))
             {
                 // Insert database with value init
                 string qScenSet = "INSERT INTO `" + dbNameUse + "`.`ss_practicum`" +
@@ -2386,5 +2384,8 @@ namespace SSInstructor.Forms
             tkk_pos = (float)nudPosisiTKK.Value;
             tnt_pos = (float)nudPosisiTNT.Value;
         }
+        #endregion
+
+
     }
 }

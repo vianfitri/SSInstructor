@@ -42,9 +42,10 @@ namespace SSInstructor.Controls
             this.lblPCName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPCName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPCName.ForeColor = System.Drawing.Color.White;
-            this.lblPCName.Location = new System.Drawing.Point(0, 134);
+            this.lblPCName.Location = new System.Drawing.Point(0, 110);
+            this.lblPCName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPCName.Name = "lblPCName";
-            this.lblPCName.Size = new System.Drawing.Size(143, 25);
+            this.lblPCName.Size = new System.Drawing.Size(107, 20);
             this.lblPCName.TabIndex = 1;
             this.lblPCName.Text = "PC Name";
             this.lblPCName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,32 +57,36 @@ namespace SSInstructor.Controls
             this.lblLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.White;
-            this.lblLogin.Location = new System.Drawing.Point(0, 159);
+            this.lblLogin.Location = new System.Drawing.Point(0, 130);
+            this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(143, 25);
+            this.lblLogin.Size = new System.Drawing.Size(107, 20);
             this.lblLogin.TabIndex = 2;
             this.lblLogin.Text = "Not Logged In Yet";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLogin.Visible = false;
             // 
             // pbStatus
             // 
             this.pbStatus.Image = global::SSInstructor.Properties.Resources.computer_off;
-            this.pbStatus.Location = new System.Drawing.Point(21, 11);
+            this.pbStatus.Location = new System.Drawing.Point(16, 9);
+            this.pbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbStatus.Name = "pbStatus";
-            this.pbStatus.Size = new System.Drawing.Size(100, 100);
+            this.pbStatus.Size = new System.Drawing.Size(75, 81);
             this.pbStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStatus.TabIndex = 0;
             this.pbStatus.TabStop = false;
             // 
             // ClientPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblPCName);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.pbStatus);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ClientPanel";
-            this.Size = new System.Drawing.Size(143, 184);
+            this.Size = new System.Drawing.Size(107, 150);
             ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).EndInit();
             this.ResumeLayout(false);
 
