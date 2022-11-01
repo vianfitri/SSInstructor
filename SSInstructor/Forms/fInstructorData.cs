@@ -40,7 +40,13 @@ namespace SSInstructor.Forms
             // Set MySQL Connector
             MySQLConn = this._parent.MySQLConn;
 
+            // Load Instructor List Data
             dummyInstructorData();
+        }
+
+        private void LoadInstructorListData()
+        {
+
         }
 
         private void dummyInstructorData()
