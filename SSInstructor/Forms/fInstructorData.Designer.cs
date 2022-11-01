@@ -50,7 +50,7 @@ namespace SSInstructor.Forms
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlAddInstructor = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@ namespace SSInstructor.Forms
             this.btnSaveInstructor = new ViControls.ViButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlAddInstructor.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -307,23 +307,23 @@ namespace SSInstructor.Forms
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn1.Width = 128;
             // 
-            // panel1
+            // pnlAddInstructor
             // 
-            this.panel1.Controls.Add(this.btnSaveInstructor);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.rbFemale);
-            this.panel1.Controls.Add(this.rbMale);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(33, 106);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 373);
-            this.panel1.TabIndex = 13;
+            this.pnlAddInstructor.Controls.Add(this.btnSaveInstructor);
+            this.pnlAddInstructor.Controls.Add(this.textBox3);
+            this.pnlAddInstructor.Controls.Add(this.rbFemale);
+            this.pnlAddInstructor.Controls.Add(this.rbMale);
+            this.pnlAddInstructor.Controls.Add(this.textBox2);
+            this.pnlAddInstructor.Controls.Add(this.textBox1);
+            this.pnlAddInstructor.Controls.Add(this.label7);
+            this.pnlAddInstructor.Controls.Add(this.label6);
+            this.pnlAddInstructor.Controls.Add(this.label5);
+            this.pnlAddInstructor.Controls.Add(this.label3);
+            this.pnlAddInstructor.Controls.Add(this.label4);
+            this.pnlAddInstructor.Location = new System.Drawing.Point(33, 106);
+            this.pnlAddInstructor.Name = "pnlAddInstructor";
+            this.pnlAddInstructor.Size = new System.Drawing.Size(600, 373);
+            this.pnlAddInstructor.TabIndex = 13;
             // 
             // label4
             // 
@@ -448,7 +448,7 @@ namespace SSInstructor.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 586);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlAddInstructor);
             this.Controls.Add(this.bdgv_Instructor);
             this.Controls.Add(this.btnImportInstructor);
             this.Controls.Add(this.btnAddInstructor);
@@ -461,8 +461,8 @@ namespace SSInstructor.Forms
             this.Load += new System.EventHandler(this.fInstructorData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlAddInstructor.ResumeLayout(false);
+            this.pnlAddInstructor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,7 +484,7 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlAddInstructor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
