@@ -69,7 +69,7 @@ namespace SSInstructor.Forms
                 }
                 else rbMale.Checked = true;
                 lblPnlAddEdit.Text = "Edit Trainee";
-                dgv_TraineeList.Dock = DockStyle.Fill;
+                pnlAddTrainee.Dock = DockStyle.Fill;
                 pnlAddTrainee.Visible = true;
             }
         }
@@ -117,56 +117,57 @@ namespace SSInstructor.Forms
             // validate textbox
             if (string.IsNullOrEmpty(txtNIT.Text))
             {
-                MessageBox.Show("NIT Number cannot be empty!", "Emplty NIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("NIT Number cannot be empty!", "Emplty NIT", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNIT.Focus();
                 return;
-                if (string.IsNullOrEmpty(txtName.Text))
-                {
-                    MessageBox.Show("Name cannot be empty!", "Emplty Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtName.Focus();
-                    return;
-                }
-                string nit = txtNIT.Text;
-                string name = txtName.Text;
+            }
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                MessageBox.Show("Name cannot be empty!", "Emplty Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtName.Focus();
+                return;
+            }
+            string nit = txtNIT.Text;
+            string name = txtName.Text;
 
-                char gender = 'L';
-                if (rbMale.Checked) gender = 'L';
-                else if (rbFemale.Checked) gender = 'P';
+            char gender = 'L';
+            if (rbMale.Checked) gender = 'L';
+            else if (rbFemale.Checked) gender = 'P';
 
-                string email = txtEmail.Text;
-                string qCombine = "";
-                if (formMode == 0)
-                {
-                    string ucgen = Utility.GenerateUC();
-                    string qInputTraineeSubject = "INSERT INTO shp_assets.ss_subject " +
-                        "(`uc`, `first_name`, `id_number`, `sex`, `email`, `type`) " +
-                        "VALUES ('" + ucgen + "', '" + name + "', '" + nit + "', '" + gender + "', '" + email + "', '3');";
-                    string qInputUserLogin = "INSERT INTO shp_assets.ss_user " +
-                        "(`uc`, `u_name`, `u_pass`, `uc_subject`) " +
-                        "VALUES ('" + ucgen + "', '" + nit + "', MD5('" + nit + "'), '" + ucgen + "');";
-                    qCombine = qInputTraineeSubject + qInputUserLogin;
-                }
-                else if (formMode == 1)
-                {
-                    string qUpdateSubject = "UPDATE shp_assets.ss_subject SET " +
-                        "`first_name`='" + name + "', `id_number`='" + nit + "', `sex`='" + gender + "', `email`='" + email + "' " +
-                        "WHERE `uc`='" + idData + "';";
-                    string qUpdateLogin = "UPDATE shp_assets.ss_user SET " +
-                        "`u_name`='" + nit + "', `u_pass`= MD5('" + nit + "') " +
-                        "WHERE `uc`='" + idData + "';";
-                    qCombine = qUpdateSubject + qUpdateLogin;
-                }
-
-                if (ConnectorDB.MySQLConn.SetCommand(qCombine))
-                {
-                    pnlAddTrainee.Visible = false;
-                    txtName.Text = string.Empty;
-                    txtNIT.Text = string.Empty;
-                    txtEmail.Text = string.Empty;
-
-                    // Reload List Table
-                    LoadTraineeListData();
-                }
+            string email = txtEmail.Text;
+            string qCombine = "";
+            
+            if (formMode == 0)
+            {
+                string ucgen = Utility.GenerateUC();
+                string qInputTraineeSubject = "INSERT INTO shp_assets.ss_subject " +
+                    "(`uc`, `first_name`, `id_number`, `sex`, `email`, `type`) " +
+                    "VALUES ('" + ucgen + "', '" + name + "', '" + nit + "', '" + gender + "', '" + email + "', '3');";
+                string qInputUserLogin = "INSERT INTO shp_assets.ss_user " +
+                    "(`uc`, `u_name`, `u_pass`, `uc_subject`) " +
+                    "VALUES ('" + ucgen + "', '" + nit + "', MD5('" + nit + "'), '" + ucgen + "');";
+                qCombine = qInputTraineeSubject + qInputUserLogin;
+            }
+            else if (formMode == 1)
+            {
+                string qUpdateSubject = "UPDATE shp_assets.ss_subject SET " +
+                    "`first_name`='" + name + "', `id_number`='" + nit + "', `sex`='" + gender + "', `email`='" + email + "' " +
+                    "WHERE `uc`='" + idData + "';";
+                string qUpdateLogin = "UPDATE shp_assets.ss_user SET " +
+                    "`u_name`='" + nit + "', `u_pass`= MD5('" + nit + "') " +
+                    "WHERE `uc`='" + idData + "';";
+                qCombine = qUpdateSubject + qUpdateLogin;
+            }
+            
+            if (ConnectorDB.MySQLConn.SetCommand(qCombine))
+            {
+                pnlAddTrainee.Visible = false;
+                txtName.Text = string.Empty;
+                txtNIT.Text = string.Empty;
+                txtEmail.Text = string.Empty;
+                
+                // Reload List Table
+                LoadTraineeListData();
             }
         }
 
@@ -188,6 +189,9 @@ namespace SSInstructor.Forms
             if (ConnectorDB.MySQLConn.SetCommand(qCombine))
             {
                 MessageBox.Show("Trainee data deleted successfully!!!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Reload List Table
+                LoadTraineeListData();
             }
         }
         #endregion

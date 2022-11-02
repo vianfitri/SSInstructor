@@ -89,6 +89,7 @@ namespace SSInstructor.Forms
                 if (MessageBox.Show("Are you sure want to delete this instructor data?", "Delete Instructor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     RemoveData(dgv_InstructorList["instID", idCell].Value.ToString());
+
                 }
             }
 
@@ -188,6 +189,9 @@ namespace SSInstructor.Forms
             if (ConnectorDB.MySQLConn.SetCommand(qCombine))
             {
                 MessageBox.Show("Instructor data deleted successfully!!!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Reload List Table
+                LoadInstructorListData();
             }
         }
         #endregion

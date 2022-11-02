@@ -39,14 +39,6 @@ namespace SSInstructor.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_TraineeList = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraineeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraineeNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraineeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraineeEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlAddTrainee = new System.Windows.Forms.Panel();
             this.btnCancel = new ViControls.ViButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,6 +53,14 @@ namespace SSInstructor.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblPnlAddEdit = new System.Windows.Forms.Label();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraineeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraineeNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraineeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraineeEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TraineeList)).BeginInit();
             this.pnlAddTrainee.SuspendLayout();
             this.SuspendLayout();
@@ -171,8 +171,8 @@ namespace SSInstructor.Forms
             this.TraineeName,
             this.TraineeEmail,
             this.Gender,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewImageColumn2});
+            this.Edit,
+            this.Delete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,70 +202,6 @@ namespace SSInstructor.Forms
             this.dgv_TraineeList.Size = new System.Drawing.Size(577, 366);
             this.dgv_TraineeList.TabIndex = 22;
             this.dgv_TraineeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TraineeList_CellContentClick);
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.FillWeight = 80F;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 80;
-            // 
-            // TraineeID
-            // 
-            this.TraineeID.HeaderText = "id";
-            this.TraineeID.Name = "TraineeID";
-            this.TraineeID.ReadOnly = true;
-            this.TraineeID.Visible = false;
-            // 
-            // TraineeNIT
-            // 
-            this.TraineeNIT.FillWeight = 73.92908F;
-            this.TraineeNIT.HeaderText = "NIT";
-            this.TraineeNIT.Name = "TraineeNIT";
-            this.TraineeNIT.ReadOnly = true;
-            // 
-            // TraineeName
-            // 
-            this.TraineeName.FillWeight = 114.5669F;
-            this.TraineeName.HeaderText = "Name";
-            this.TraineeName.Name = "TraineeName";
-            this.TraineeName.ReadOnly = true;
-            // 
-            // TraineeEmail
-            // 
-            this.TraineeEmail.HeaderText = "Email";
-            this.TraineeEmail.Name = "TraineeEmail";
-            this.TraineeEmail.ReadOnly = true;
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            this.Gender.Visible = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.FillWeight = 40.56242F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::SSInstructor.Properties.Resources.pencil;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 17;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 17;
             // 
             // pnlAddTrainee
             // 
@@ -438,6 +374,70 @@ namespace SSInstructor.Forms
             this.lblPnlAddEdit.TabIndex = 7;
             this.lblPnlAddEdit.Text = "Add Trainee";
             // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.FillWeight = 80F;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 80;
+            // 
+            // TraineeID
+            // 
+            this.TraineeID.HeaderText = "id";
+            this.TraineeID.Name = "TraineeID";
+            this.TraineeID.ReadOnly = true;
+            this.TraineeID.Visible = false;
+            // 
+            // TraineeNIT
+            // 
+            this.TraineeNIT.FillWeight = 73.92908F;
+            this.TraineeNIT.HeaderText = "NIT";
+            this.TraineeNIT.Name = "TraineeNIT";
+            this.TraineeNIT.ReadOnly = true;
+            // 
+            // TraineeName
+            // 
+            this.TraineeName.FillWeight = 114.5669F;
+            this.TraineeName.HeaderText = "Name";
+            this.TraineeName.Name = "TraineeName";
+            this.TraineeName.ReadOnly = true;
+            // 
+            // TraineeEmail
+            // 
+            this.TraineeEmail.HeaderText = "Email";
+            this.TraineeEmail.Name = "TraineeEmail";
+            this.TraineeEmail.ReadOnly = true;
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Visible = false;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Edit.FillWeight = 40.56242F;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::SSInstructor.Properties.Resources.pencil;
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 17;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 17;
+            // 
             // fTraineeData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,14 +468,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_TraineeList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeNIT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Panel pnlAddTrainee;
         private ViControls.ViButton btnCancel;
         private System.Windows.Forms.Label label8;
@@ -490,5 +482,13 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblPnlAddEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeNIT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TraineeEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
