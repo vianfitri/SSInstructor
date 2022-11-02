@@ -34,7 +34,7 @@ namespace SSInstructor.Forms
         {
             string scen_name = txtScenarioName.Text;
             int vessel_type = cbVesselType.SelectedIndex;
-            string db_scen_name = "ss_" + scen_name.ToLower().Replace(' ', '_') + DateTime.Now.ToString("yyyyMMdd");
+            string db_scen_name = "ss_" + scen_name.ToLower().Replace(' ', '_') + "_" + DateTime.Now.ToString("yyyyMMdd");
             string db_from = "shp_master";
             string create_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -50,7 +50,8 @@ namespace SSInstructor.Forms
                 // duplicate master data
                 if (ConnectorDB.MySQLConn.DuplicateDB(db_from, db_scen_name))
                 {
-
+                    ParamsGlobal.CurrentScenario = txtScenarioName.Text;
+                    DialogResult = DialogResult.OK;
                 }
             }
         }
@@ -102,6 +103,8 @@ namespace SSInstructor.Forms
         private void FormAddScen_Load(object sender, EventArgs e)
         {
             btnAdd.Enabled = IsTextNotEmpty();
+
+            btnScenSave.Enabled = IsNotEmptyTextName();
         }
 
         private void txtScenName__TextChanged(object sender, EventArgs e)
@@ -109,10 +112,28 @@ namespace SSInstructor.Forms
             btnAdd.Enabled = IsTextNotEmpty();
         }
 
+        private void btnScenSave_Click(object sender, EventArgs e)
+        {
+            AddScenario();
+
+            Close();
+        }
+
+        private void txtScenarioName_TextChanged(object sender, EventArgs e)
+        {
+            btnScenSave.Enabled = IsNotEmptyTextName();
+        }
+
+        private bool IsNotEmptyTextName()
+        {
+            return (txtScenarioName.Text != string.Empty);
+        }
+
         public void create()
         {
             ShowDialog();
         }
+
         #endregion
     }
 }

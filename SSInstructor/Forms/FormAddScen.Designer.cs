@@ -105,6 +105,7 @@ namespace SSInstructor.Forms
             this.txtScenarioName.Name = "txtScenarioName";
             this.txtScenarioName.Size = new System.Drawing.Size(233, 29);
             this.txtScenarioName.TabIndex = 25;
+            this.txtScenarioName.TextChanged += new System.EventHandler(this.txtScenarioName_TextChanged);
             // 
             // groupBox1
             // 
@@ -142,6 +143,7 @@ namespace SSInstructor.Forms
             this.btnScenSave.Text = "Save";
             this.btnScenSave.TextColor = System.Drawing.Color.White;
             this.btnScenSave.UseVisualStyleBackColor = false;
+            this.btnScenSave.Click += new System.EventHandler(this.btnScenSave_Click);
             // 
             // cbVesselType
             // 
