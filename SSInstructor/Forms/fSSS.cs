@@ -226,13 +226,17 @@ namespace SSInstructor.Forms
                 btnSaveScen.Visible = true;
             }
 
-            StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
+            if (ExerciseController.VesselType == 0)
+                StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
+            else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+                StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\GC.cfg");
 
             // SplitContainer Setting
             spcShipStability.SplitterDistance = Screen.PrimaryScreen.Bounds.Width - 690;
 
             // initialize amidship points, then translate each point 
             StabilityCalculator.shippoints_init = (StabilityCalculator.Point2D[])StabilityCalculator.shippoints_BC.Clone();
+            StabilityCalculator.shippointsgc_init = (StabilityCalculator.Point2D[])StabilityCalculator.shippointsgc_GC.Clone();
 
             #region "Series SetUp"
             lat_shipform_series.Name = "Bidang Melintang Kapal";
@@ -676,7 +680,14 @@ namespace SSInstructor.Forms
 
             // Chart Transversal
             crtTransversal.Titles.Clear();
-            crtTransversal.Titles.Add("Kapal Bulk Carrier");
+
+            if (ExerciseController.VesselType == 0)
+                crtTransversal.Titles.Add("Kapal Bulk Carrier");
+            else if (ExerciseController.VesselType == 1)
+                crtTransversal.Titles.Add("Kapal General Cargo");
+            else if (ExerciseController.VesselType == 2)
+                crtTransversal.Titles.Add("Kapal Container");
+
             crtTransversal.Titles.Add("Penampang Kapal, Amidship, Tampak Depan");
             crtTransversal.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
             crtTransversal.Titles[1].Font = new Font("Microsoft Sans Serif", 16);
@@ -704,7 +715,14 @@ namespace SSInstructor.Forms
 
             // Chart Longitudinal
             crtLongitudinal.Titles.Clear();
-            crtLongitudinal.Titles.Add("Kapal Bulk Carrier");
+
+            if (ExerciseController.VesselType == 0)
+                crtLongitudinal.Titles.Add("Kapal Bulk Carrier");
+            else if (ExerciseController.VesselType == 1)
+                crtLongitudinal.Titles.Add("Kapal General Cargo");
+            else if (ExerciseController.VesselType == 2)
+                crtLongitudinal.Titles.Add("Kapal Container");
+
             crtLongitudinal.Titles.Add("Bidang Membujur Kapal");
             crtLongitudinal.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
             crtLongitudinal.Titles[1].Font = new Font("Microsoft Sans Serif", 16);
@@ -732,13 +750,28 @@ namespace SSInstructor.Forms
             crtLoadSideView.Titles[0].Font = new Font("Microsoft Sans Serif", 14);
 
             crtLoadSideView.Series.Clear();
-            for (int i = 0; i < StabilityCalculator.shippointslon_BC.Length; i++)
+
+            if (ExerciseController.VesselType == 0)
             {
-                lon_initshipform_series.Points.AddXY(
-                    StabilityCalculator.shippointslon_BC[i].x, 
-                    StabilityCalculator.shippointslon_BC[i].y
-                );
+                for (int i = 0; i < StabilityCalculator.shippointslon_BC.Length; i++)
+                {
+                    lon_initshipform_series.Points.AddXY(
+                        StabilityCalculator.shippointslon_BC[i].x,
+                        StabilityCalculator.shippointslon_BC[i].y
+                    );
+                }
             }
+            else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            {
+                for (int i = 0; i < StabilityCalculator.shippointsgclon_GC.Length; i++)
+                {
+                    lon_initshipform_series.Points.AddXY(
+                        StabilityCalculator.shippointsgclon_GC[i].x,
+                        StabilityCalculator.shippointsgclon_GC[i].y
+                    );
+                }
+            }
+
             crtLoadSideView.Series.Add(lon_initshipform_series);  // series[0]  = hull ship
             crtLoadSideView.Series.Add(tmmb_xz_point_series);    // series[1]  = TMMB
             crtLoadSideView.Series.Add(tmmd_xz_point_series);    // series[2]  = TMMD
@@ -757,13 +790,28 @@ namespace SSInstructor.Forms
 
             crtLoadFrontView.Series.Clear();
             lat_initshipform_series.Points.Clear();
-            for (int i = 0; i < StabilityCalculator.shippoints_init.Length; i++)
+
+            if (ExerciseController.VesselType == 0)
             {
-                lat_initshipform_series.Points.AddXY(
-                    StabilityCalculator.shippoints_init[i].x,
-                    StabilityCalculator.shippoints_init[i].y
-                );
+                for (int i = 0; i < StabilityCalculator.shippoints_init.Length; i++)
+                {
+                    lat_initshipform_series.Points.AddXY(
+                        StabilityCalculator.shippoints_init[i].x,
+                        StabilityCalculator.shippoints_init[i].y
+                    );
+                }
             }
+            else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            {
+                for (int i = 0; i < StabilityCalculator.shippointsgc_init.Length; i++)
+                {
+                    lat_initshipform_series.Points.AddXY(
+                        StabilityCalculator.shippointsgc_init[i].x,
+                        StabilityCalculator.shippointsgc_init[i].y
+                    );
+                }
+            }
+
             crtLoadFrontView.Series.Add(lat_initshipform_series); // series[0]  = hull ship
             crtLoadFrontView.Series.Add(tmmb_yz_point_series);    // series[1]  = TMMB
             crtLoadFrontView.Series.Add(tmmd_yz_point_series);    // series[2]  = TMMD
@@ -782,12 +830,26 @@ namespace SSInstructor.Forms
             crtLoadTopView.Series.Clear();
 
             topview_lat_shipform_series.Points.Clear();
-            for (int i = 0; i < StabilityCalculator.shippointsTopView_BC.Length; i++)
+
+            if (ExerciseController.VesselType == 0)
             {
-                topview_lat_shipform_series.Points.AddXY(
-                    StabilityCalculator.shippointsTopView_BC[i].x,
-                    StabilityCalculator.shippointsTopView_BC[i].y
-                );
+                for (int i = 0; i < StabilityCalculator.shippointsTopView_BC.Length; i++)
+                {
+                    topview_lat_shipform_series.Points.AddXY(
+                        StabilityCalculator.shippointsTopView_BC[i].x,
+                        StabilityCalculator.shippointsTopView_BC[i].y
+                    );
+                }
+            }
+            else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 0)
+            {
+                for (int i = 0; i < StabilityCalculator.shippointsgcTopView_GC.Length; i++)
+                {
+                    topview_lat_shipform_series.Points.AddXY(
+                        StabilityCalculator.shippointsgcTopView_GC[i].x,
+                        StabilityCalculator.shippointsgcTopView_GC[i].y
+                    );
+                }
             }
             crtLoadTopView.Series.Add(topview_lat_shipform_series);  // series[0]  = hull ship, top view
             crtLoadTopView.Series.Add(tmmb_xy_point_series);    // series[1]  = TMMB
@@ -802,7 +864,13 @@ namespace SSInstructor.Forms
 
             // Chart Hydrostatic Curve
             crtHydrostaticCurve.Titles.Clear();
-            crtHydrostaticCurve.Titles.Add("Kapal Bulk Carrier");
+            if (ExerciseController.VesselType == 0)
+                crtHydrostaticCurve.Titles.Add("Kapal Bulk Carrier");
+            else if (ExerciseController.VesselType == 1)
+                crtHydrostaticCurve.Titles.Add("Kapal General Cargo");
+            else if (ExerciseController.VesselType == 2)
+                crtHydrostaticCurve.Titles.Add("Kapal Container");
+
             crtHydrostaticCurve.Titles.Add("Kurva Hidrostatik");
             crtHydrostaticCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
             crtHydrostaticCurve.Titles[1].Font = new Font("Microsoft Sans Serif", 16);
@@ -828,20 +896,37 @@ namespace SSInstructor.Forms
 
             // Chart GZ and KN Curve
             crtGZCrossCurve.Titles.Clear();
-            crtGZCrossCurve.Titles.Add("Kapal Bulk Carrier");
+
+            if (ExerciseController.VesselType == 0)
+                crtGZCrossCurve.Titles.Add("Kapal Bulk Carrier");
+            else if (ExerciseController.VesselType == 1)
+                crtGZCrossCurve.Titles.Add("Kapal General Cargo");
+            else if (ExerciseController.VesselType == 2)
+                crtGZCrossCurve.Titles.Add("Kapal Container");
+
             crtGZCrossCurve.Titles.Add("Kurva Silang GZ");
             crtGZCrossCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
             crtGZCrossCurve.Titles[1].Font = new Font("Microsoft Sans Serif", 16);
 
             crtKNCrossCurve.Titles.Clear();
-            crtKNCrossCurve.Titles.Add("Kapal Bulk Carrier");
+
+            if (ExerciseController.VesselType == 0)
+                crtKNCrossCurve.Titles.Add("Kapal Bulk Carrier");
+            else if (ExerciseController.VesselType == 1)
+                crtKNCrossCurve.Titles.Add("Kapal General Cargo");
+            else if (ExerciseController.VesselType == 2)
+                crtKNCrossCurve.Titles.Add("Kapal Container");
+
             crtKNCrossCurve.Titles.Add("Kurva Silang KN");
             crtKNCrossCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
             crtKNCrossCurve.Titles[1].Font = new Font("Microsoft Sans Serif", 16);
             #endregion
 
             // Initialize Ship Data
-            StabilityCalculator.InitializeShipData();
+            if (ExerciseController.VesselType == 0)
+                StabilityCalculator.InitializeShipData();
+            else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+                StabilityCalculator.InitializeShipData(1);
 
             SettingInputValue();
 
@@ -1539,7 +1624,12 @@ namespace SSInstructor.Forms
             mTKK = (double)nudBebanTKK.Value;
             mTNT = (double)nudBebanTNT.Value;
 
-            double ship_scale = StabilityCalculator.ship_scale;
+            double ship_scale = 87.0;
+            if (ExerciseController.VesselType == 0)
+                ship_scale = StabilityCalculator.ship_scale;
+            else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+                ship_scale = StabilityCalculator.ship_gc_scale;
+
             double weight_scale = ship_scale * ship_scale * ship_scale / 1000;
             mTMMB_real = mTMMB * weight_scale; // in ton
             mTMMD_real = mTMMD * weight_scale; // in ton
@@ -1697,7 +1787,12 @@ namespace SSInstructor.Forms
 
         private void CalculateTransverseHydrostatic()
         {
-            double ship_scale = StabilityCalculator.ship_scale;
+            double ship_scale = 87.0;
+            if (ExerciseController.VesselType == 0)
+                ship_scale = StabilityCalculator.ship_scale;
+            else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+                ship_scale == StabilityCalculator.ship_gc_scale;
+
             double weight_scale = ship_scale * ship_scale * ship_scale / 1000;
 
             dInputVal = (double)scbDispOrDraftVal.Value / 10;
