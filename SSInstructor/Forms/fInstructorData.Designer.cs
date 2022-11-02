@@ -29,43 +29,41 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fInstructorData));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_instructor = new System.Windows.Forms.DataGridView();
             this.btnAddInstructor = new ViControls.ViButton();
             this.btnImportInstructor = new ViControls.ViButton();
-            this.bdgv_Instructor = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlAddInstructor = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNIP = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnSaveInstructor = new ViControls.ViButton();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).BeginInit();
+            this.btnSaveInstructor = new ViControls.ViButton();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNIP = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblPnlAddEdit = new System.Windows.Forms.Label();
+            this.dgv_InstructorList = new System.Windows.Forms.DataGridView();
+            this.btnCancel = new ViControls.ViButton();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instNip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InstEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlAddInstructor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_InstructorList)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -90,21 +88,6 @@ namespace SSInstructor.Forms
             this.label1.Size = new System.Drawing.Size(96, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "Instructor";
-            // 
-            // dgv_instructor
-            // 
-            this.dgv_instructor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_instructor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_instructor.Location = new System.Drawing.Point(46, 410);
-            this.dgv_instructor.Margin = new System.Windows.Forms.Padding(2);
-            this.dgv_instructor.Name = "dgv_instructor";
-            this.dgv_instructor.RowHeadersWidth = 51;
-            this.dgv_instructor.RowTemplate.Height = 24;
-            this.dgv_instructor.Size = new System.Drawing.Size(577, 55);
-            this.dgv_instructor.TabIndex = 8;
-            this.dgv_instructor.Visible = false;
             // 
             // btnAddInstructor
             // 
@@ -150,154 +133,6 @@ namespace SSInstructor.Forms
             this.btnImportInstructor.UseVisualStyleBackColor = false;
             this.btnImportInstructor.Visible = false;
             // 
-            // bdgv_Instructor
-            // 
-            this.bdgv_Instructor.AllowUserToAddRows = false;
-            this.bdgv_Instructor.AllowUserToDeleteRows = false;
-            this.bdgv_Instructor.AllowUserToResizeColumns = false;
-            this.bdgv_Instructor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.bdgv_Instructor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
-            this.bdgv_Instructor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bdgv_Instructor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bdgv_Instructor.BackgroundColor = System.Drawing.Color.White;
-            this.bdgv_Instructor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bdgv_Instructor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.bdgv_Instructor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bdgv_Instructor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
-            this.bdgv_Instructor.ColumnHeadersHeight = 40;
-            this.bdgv_Instructor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.bdgv_Instructor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Id,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Edit,
-            this.Delete});
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bdgv_Instructor.DefaultCellStyle = dataGridViewCellStyle29;
-            this.bdgv_Instructor.DoubleBuffered = true;
-            this.bdgv_Instructor.EnableHeadersVisualStyles = false;
-            this.bdgv_Instructor.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
-            this.bdgv_Instructor.HeaderForeColor = System.Drawing.Color.White;
-            this.bdgv_Instructor.Location = new System.Drawing.Point(46, 130);
-            this.bdgv_Instructor.Margin = new System.Windows.Forms.Padding(2);
-            this.bdgv_Instructor.MultiSelect = false;
-            this.bdgv_Instructor.Name = "bdgv_Instructor";
-            this.bdgv_Instructor.ReadOnly = true;
-            this.bdgv_Instructor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bdgv_Instructor.RowHeadersVisible = false;
-            this.bdgv_Instructor.RowHeadersWidth = 51;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.bdgv_Instructor.RowsDefaultCellStyle = dataGridViewCellStyle30;
-            this.bdgv_Instructor.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.bdgv_Instructor.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdgv_Instructor.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bdgv_Instructor.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bdgv_Instructor.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            this.bdgv_Instructor.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.bdgv_Instructor.RowTemplate.DividerHeight = 1;
-            this.bdgv_Instructor.RowTemplate.Height = 40;
-            this.bdgv_Instructor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.bdgv_Instructor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bdgv_Instructor.Size = new System.Drawing.Size(577, 336);
-            this.bdgv_Instructor.TabIndex = 12;
-            this.bdgv_Instructor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bdgv_Instructor_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "NIP";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Name";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Level";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle27.NullValue")));
-            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(4);
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle27;
-            this.Edit.FillWeight = 32F;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.Width = 17;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle28.NullValue")));
-            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(4);
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle28;
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 17;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Edit";
@@ -310,6 +145,7 @@ namespace SSInstructor.Forms
             // 
             // pnlAddInstructor
             // 
+            this.pnlAddInstructor.Controls.Add(this.btnCancel);
             this.pnlAddInstructor.Controls.Add(this.label8);
             this.pnlAddInstructor.Controls.Add(this.btnSaveInstructor);
             this.pnlAddInstructor.Controls.Add(this.txtEmail);
@@ -321,78 +157,62 @@ namespace SSInstructor.Forms
             this.pnlAddInstructor.Controls.Add(this.label6);
             this.pnlAddInstructor.Controls.Add(this.label5);
             this.pnlAddInstructor.Controls.Add(this.label3);
-            this.pnlAddInstructor.Controls.Add(this.label4);
-            this.pnlAddInstructor.Location = new System.Drawing.Point(33, 106);
+            this.pnlAddInstructor.Controls.Add(this.lblPnlAddEdit);
+            this.pnlAddInstructor.Location = new System.Drawing.Point(25, 26);
             this.pnlAddInstructor.Name = "pnlAddInstructor";
             this.pnlAddInstructor.Size = new System.Drawing.Size(600, 373);
             this.pnlAddInstructor.TabIndex = 13;
+            this.pnlAddInstructor.Visible = false;
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 35);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 24);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Add Instructor";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 318);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(225, 15);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Standard password is NIP number";
             // 
-            // label3
+            // btnSaveInstructor
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "NIP";
+            this.btnSaveInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnSaveInstructor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnSaveInstructor.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSaveInstructor.BorderRadius = 10;
+            this.btnSaveInstructor.BorderSize = 0;
+            this.btnSaveInstructor.FlatAppearance.BorderSize = 0;
+            this.btnSaveInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveInstructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveInstructor.ForeColor = System.Drawing.Color.White;
+            this.btnSaveInstructor.Location = new System.Drawing.Point(48, 246);
+            this.btnSaveInstructor.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveInstructor.Name = "btnSaveInstructor";
+            this.btnSaveInstructor.Size = new System.Drawing.Size(112, 32);
+            this.btnSaveInstructor.TabIndex = 17;
+            this.btnSaveInstructor.Text = "Save";
+            this.btnSaveInstructor.TextColor = System.Drawing.Color.White;
+            this.btnSaveInstructor.UseVisualStyleBackColor = false;
+            this.btnSaveInstructor.Click += new System.EventHandler(this.btnSaveInstructor_Click);
             // 
-            // label5
+            // txtEmail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Name";
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(171, 202);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(235, 22);
+            this.txtEmail.TabIndex = 16;
             // 
-            // label6
+            // rbFemale
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 163);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Gender";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(45, 205);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 16);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Email";
-            // 
-            // txtNIP
-            // 
-            this.txtNIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIP.Location = new System.Drawing.Point(171, 87);
-            this.txtNIP.Name = "txtNIP";
-            this.txtNIP.Size = new System.Drawing.Size(222, 22);
-            this.txtNIP.TabIndex = 12;
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(171, 125);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(281, 22);
-            this.txtName.TabIndex = 13;
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(246, 163);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(59, 17);
+            this.rbFemale.TabIndex = 15;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
             // 
             // rbMale
             // 
@@ -406,56 +226,224 @@ namespace SSInstructor.Forms
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
             // 
-            // rbFemale
+            // txtName
             // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(246, 163);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rbFemale.TabIndex = 15;
-            this.rbFemale.TabStop = true;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(171, 125);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(281, 22);
+            this.txtName.TabIndex = 13;
             // 
-            // txtEmail
+            // txtNIP
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(171, 202);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(235, 22);
-            this.txtEmail.TabIndex = 16;
+            this.txtNIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIP.Location = new System.Drawing.Point(171, 87);
+            this.txtNIP.Name = "txtNIP";
+            this.txtNIP.Size = new System.Drawing.Size(222, 22);
+            this.txtNIP.TabIndex = 12;
             // 
-            // btnSaveInstructor
+            // label7
             // 
-            this.btnSaveInstructor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnSaveInstructor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnSaveInstructor.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSaveInstructor.BorderRadius = 10;
-            this.btnSaveInstructor.BorderSize = 0;
-            this.btnSaveInstructor.FlatAppearance.BorderSize = 0;
-            this.btnSaveInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveInstructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveInstructor.ForeColor = System.Drawing.Color.White;
-            this.btnSaveInstructor.Location = new System.Drawing.Point(48, 256);
-            this.btnSaveInstructor.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSaveInstructor.Name = "btnSaveInstructor";
-            this.btnSaveInstructor.Size = new System.Drawing.Size(112, 32);
-            this.btnSaveInstructor.TabIndex = 17;
-            this.btnSaveInstructor.Text = "Save";
-            this.btnSaveInstructor.TextColor = System.Drawing.Color.White;
-            this.btnSaveInstructor.UseVisualStyleBackColor = false;
-            this.btnSaveInstructor.Click += new System.EventHandler(this.btnSaveInstructor_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(45, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Email";
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 318);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(225, 15);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Standard password is NIP number";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(45, 163);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Gender";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(45, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(45, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "NIP";
+            // 
+            // lblPnlAddEdit
+            // 
+            this.lblPnlAddEdit.AutoSize = true;
+            this.lblPnlAddEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPnlAddEdit.Location = new System.Drawing.Point(44, 35);
+            this.lblPnlAddEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPnlAddEdit.Name = "lblPnlAddEdit";
+            this.lblPnlAddEdit.Size = new System.Drawing.Size(140, 24);
+            this.lblPnlAddEdit.TabIndex = 7;
+            this.lblPnlAddEdit.Text = "Add Instructor";
+            // 
+            // dgv_InstructorList
+            // 
+            this.dgv_InstructorList.AllowUserToAddRows = false;
+            this.dgv_InstructorList.AllowUserToDeleteRows = false;
+            this.dgv_InstructorList.AllowUserToResizeColumns = false;
+            this.dgv_InstructorList.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_InstructorList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_InstructorList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_InstructorList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_InstructorList.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_InstructorList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_InstructorList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_InstructorList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_InstructorList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_InstructorList.ColumnHeadersHeight = 40;
+            this.dgv_InstructorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_InstructorList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.No,
+            this.instID,
+            this.instNip,
+            this.InstName,
+            this.InstEmail,
+            this.Gender,
+            this.Edit,
+            this.Delete});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_InstructorList.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_InstructorList.EnableHeadersVisualStyles = false;
+            this.dgv_InstructorList.Location = new System.Drawing.Point(48, 102);
+            this.dgv_InstructorList.MultiSelect = false;
+            this.dgv_InstructorList.Name = "dgv_InstructorList";
+            this.dgv_InstructorList.ReadOnly = true;
+            this.dgv_InstructorList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_InstructorList.RowHeadersVisible = false;
+            this.dgv_InstructorList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_InstructorList.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_InstructorList.RowTemplate.Height = 40;
+            this.dgv_InstructorList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_InstructorList.Size = new System.Drawing.Size(577, 366);
+            this.dgv_InstructorList.TabIndex = 21;
+            this.dgv_InstructorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_InstructorList_CellContentClick);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(70)))), ((int)(((byte)(60)))));
+            this.btnCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(70)))), ((int)(((byte)(60)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancel.BorderRadius = 10;
+            this.btnCancel.BorderSize = 0;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(181, 246);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(112, 32);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextColor = System.Drawing.Color.White;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.FillWeight = 80F;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 80;
+            // 
+            // instID
+            // 
+            this.instID.HeaderText = "id";
+            this.instID.Name = "instID";
+            this.instID.ReadOnly = true;
+            this.instID.Visible = false;
+            // 
+            // instNip
+            // 
+            this.instNip.FillWeight = 73.92908F;
+            this.instNip.HeaderText = "NIP";
+            this.instNip.Name = "instNip";
+            this.instNip.ReadOnly = true;
+            // 
+            // InstName
+            // 
+            this.InstName.FillWeight = 114.5669F;
+            this.InstName.HeaderText = "Name";
+            this.InstName.Name = "InstName";
+            this.InstName.ReadOnly = true;
+            // 
+            // InstEmail
+            // 
+            this.InstEmail.HeaderText = "Email";
+            this.InstEmail.Name = "InstEmail";
+            this.InstEmail.ReadOnly = true;
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Visible = false;
+            // 
+            // Edit
+            // 
+            this.Edit.FillWeight = 40.56242F;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::SSInstructor.Properties.Resources.pencil;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 17;
             // 
             // fInstructorData
             // 
@@ -463,20 +451,18 @@ namespace SSInstructor.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 586);
             this.Controls.Add(this.pnlAddInstructor);
-            this.Controls.Add(this.bdgv_Instructor);
+            this.Controls.Add(this.dgv_InstructorList);
             this.Controls.Add(this.btnImportInstructor);
             this.Controls.Add(this.btnAddInstructor);
-            this.Controls.Add(this.dgv_instructor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fInstructorData";
             this.Text = "fInstructorData";
             this.Load += new System.EventHandler(this.fInstructorData_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_instructor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdgv_Instructor)).EndInit();
             this.pnlAddInstructor.ResumeLayout(false);
             this.pnlAddInstructor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_InstructorList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,22 +472,13 @@ namespace SSInstructor.Forms
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_instructor;
         private ViControls.ViButton btnAddInstructor;
         private ViControls.ViButton btnImportInstructor;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bdgv_Instructor;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Panel pnlAddInstructor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPnlAddEdit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.RadioButton rbFemale;
@@ -511,5 +488,15 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label7;
         private ViControls.ViButton btnSaveInstructor;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgv_InstructorList;
+        private ViControls.ViButton btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instNip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InstEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

@@ -16,6 +16,8 @@ namespace SSInstructor.Forms
         #region "Fields"
         formDashboard _parent;
         private DB mysqlConn = null;
+        int formMode = 0; // 0 = Add, 1 = Edit
+        string idData = "";
         #endregion
 
         #region "Constructor"
@@ -48,30 +50,32 @@ namespace SSInstructor.Forms
         private void LoadInstructorListData()
         {
             DataTable dtInstructor = new DataTable();
-            string qListInst = "SELECT a.idss_user, " +
+            string qListInst = "SELECT a.uc, " +
                 "b.first_name, b.last_name, b.id_number, b.birthday, b.sex, b.email, b.photos, " +
                 "c.typename " +
                 "FROM shp_assets.ss_user a " +
                 "INNER JOIN shp_assets.ss_subject b " +
-                "ON a.id_subject = b.idsubject " +
+                "ON a.uc_subject = b.uc " +
                 "INNER JOIN shp_assets.ss_usertype c " +
                 "ON b.type = c.id " +
                 "WHERE b.type = 2";
 
             if(MySQLConn.GetTableData(qListInst, ref dtInstructor)){
                 // Reset Rows First
-                bdgv_Instructor.Rows.Clear();
+                dgv_InstructorList.Rows.Clear();
 
                 int iddata = 0;
                 foreach(DataRow row in dtInstructor.Rows)
                 {
                     iddata++;
-                    bdgv_Instructor.Rows.Add(
+                    dgv_InstructorList.Rows.Add(
                         new object[]{
                             iddata,
-                            row["idss_user"],
+                            row["uc"],
                             row["id_number"],
                             row["first_name"],
+                            row["email"],
+                            row["sex"],
                             null,
                             null
                         }
@@ -82,109 +86,50 @@ namespace SSInstructor.Forms
 
         private void dummyInstructorData()
         {
-            bdgv_Instructor.Rows.Add(
-                new object[]
-                {
-                    1,
-                    "19781217 200512 2 001",
-                    "Dodi Sudrajat",
-                    "-",
-                    null,
-                    null
-                }
-            );
-            bdgv_Instructor.Rows.Add(
-                new object[]
-                {
-                    2,
-                    "19881217 180512 1 003",
-                    "Heru Herlambang",
-                    "-",
-                    null,
-                    null
-                }
-            );
-            bdgv_Instructor.Rows.Add(
-                new object[]
-                {
-                    3,
-                    "19781312 190512 2 002",
-                    "Elvin Mudhita",
-                    "-",
-                    null,
-                    null
-                }
-            );
-            bdgv_Instructor.Rows.Add(
-                new object[]
-                {
-                    4,
-                    "19861347 182312 1 003",
-                    "Bayu Sudjatmiko",
-                    "-",
-                    null,
-                    null
-                }
-            );
+            
         }
 
         private void btnAddInstructor_Click(object sender, EventArgs e)
         {
-            Form fInstAdd = new fAddInstructor();
-            fInstAdd.StartPosition = FormStartPosition.CenterParent;
-            fInstAdd.ShowDialog();
+            formMode = 0;
+            pnlAddInstructor.Dock = DockStyle.Fill;
+            lblPnlAddEdit.Text = "Add Instructor";
+            pnlAddInstructor.Visible = true;
+            //Form fInstAdd = new fAddInstructor();
+            //fInstAdd.StartPosition = FormStartPosition.CenterParent;
+            //fInstAdd.ShowDialog();
         }
 
-        private void bdgv_Instructor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_InstructorList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (bdgv_Instructor.Columns[e.ColumnIndex].Name == "Delete")
+            if (dgv_InstructorList.Columns[e.ColumnIndex].Name == "Delete")
             {
                 if (MessageBox.Show("Are you sure want to delete this instructor data?", "Delete Instructor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     MessageBox.Show("Delete Succesfully");
                 }
             }
+
+            if(dgv_InstructorList.Columns[e.ColumnIndex].Name == "Edit")
+            {
+                formMode = 1;
+                int idCell = e.RowIndex;
+
+                idData = dgv_InstructorList["instID", idCell].Value.ToString();
+                txtName.Text = dgv_InstructorList["InstName", idCell].Value.ToString();
+                txtNIP.Text = dgv_InstructorList["instNip", idCell].Value.ToString();
+                txtEmail.Text = dgv_InstructorList["InstEmail", idCell].Value.ToString();
+                if (dgv_InstructorList["Gender", idCell].Value.ToString() == "P")
+                {
+                    rbFemale.Checked = true;
+                }
+                else rbMale.Checked = true;
+                lblPnlAddEdit.Text = "Edit Instructor";
+                pnlAddInstructor.Dock = DockStyle.Fill;
+                pnlAddInstructor.Visible = true;
+            }
         }
 
-        // Merge Column Action
-        /*
-        private void bdgv_Instructor_Paint(object sender, PaintEventArgs e)
-        {
-            //Offsets to adjust the position of the merged Header.
-            int heightOffset = -1;
-            int widthOffset = -1;
-            int xOffset = 0;
-            int yOffset = 1;
-
-            //Index of Header column from where the merging will start.
-            int columnIndex = 4;
-
-            //Number of Header columns to be merged.
-            int columnCount = 2;
-
-            //Get the position of the Header Cell.
-            Rectangle headerCellRectangle = bdgv_Instructor.GetCellDisplayRectangle(columnIndex, 0, true);
-
-            //X coordinate of the merged Header Column.
-            int xCord = headerCellRectangle.Location.X + xOffset;
-
-            //Y coordinate of the merged Header Column.
-            int yCord = headerCellRectangle.Location.Y - headerCellRectangle.Height + yOffset;
-
-            //Calculate Width of merged Header Column by adding the widths of all Columns to be merged.
-            int mergedHeaderWidth = bdgv_Instructor.Columns[columnIndex].Width + bdgv_Instructor.Columns[columnIndex + columnCount - 1].Width + widthOffset;
-
-            //Generate the merged Header Column Rectangle.
-            Rectangle mergedHeaderRect = new Rectangle(xCord, yCord, mergedHeaderWidth, headerCellRectangle.Height + heightOffset);
-
-            //Draw the merged Header Column Rectangle.
-            e.Graphics.FillRectangle(new SolidBrush(bdgv_Instructor.ColumnHeadersDefaultCellStyle.BackColor), mergedHeaderRect);
-
-            //Draw the merged Header Column Text.
-            e.Graphics.DrawString("Action", bdgv_Instructor.ColumnHeadersDefaultCellStyle.Font, Brushes.Black, xCord + 2, yCord + 3);
-
-        }
-        */
         private void btnSaveInstructor_Click(object sender, EventArgs e)
         {
             // validate textbox
@@ -203,13 +148,54 @@ namespace SSInstructor.Forms
             string nip = txtNIP.Text;
             string name = txtName.Text;
 
-            int gender = 0;
-            if (rbMale.Checked) gender = 0;
-            else if (rbFemale.Checked) gender = 1;
+            char gender = 'L';
+            if (rbMale.Checked) gender = 'L';
+            else if (rbFemale.Checked) gender = 'P';
 
             string email = txtEmail.Text;
-            
-            string qInputInstructor = "INSERT INTO ss_assets."
+            string qCombine = "";
+            if (formMode == 0)
+            {
+                string ucgen = Utility.GenerateUC();
+                string qInputInstructorSubject = "INSERT INTO shp_assets.ss_subject " +
+                    "(`uc`, `first_name`, `id_number`, `sex`, `email`, `type`) " +
+                    "VALUES ('" + ucgen + "', '" + name + "', '" + nip + "', '" + gender + "', '" + email + "', '2');";
+                string qInputUserLogin = "INSERT INTO shp_assets.ss_user " +
+                    "(`uc`, `u_name`, `u_pass`, `uc_subject`) " +
+                    "VALUES ('" + ucgen + "', '" + nip + "', MD5('" + nip + "'), '" + ucgen + "');";
+                qCombine = qInputInstructorSubject + qInputUserLogin;
+            } 
+            else if(formMode == 1)
+            {
+                string qUpdateSubject = "UPDATE shp_assets.ss_subject SET " +
+                    "`first_name`='" + name + "', `id_number`='" + nip + "', `sex`='" + gender + "', `email`='" + email + "' " +
+                    "WHERE `uc`='" + idData + "';";
+                string qUpdateLogin = "UPDATE shp_assets.ss_user SET " +
+                    "`u_name`='" + nip + "', `u_pass`= MD5('" + nip + "') " +
+                    "WHERE `uc`='" + idData + "';";
+                qCombine = qUpdateSubject + qUpdateLogin;
+            }
+
+            if (MySQLConn.SetCommand(qCombine))
+            {
+                pnlAddInstructor.Visible = false;
+                txtName.Text = string.Empty;
+                txtNIP.Text = string.Empty;
+                txtEmail.Text = string.Empty;
+
+                // Reload List Table
+                LoadInstructorListData();
+            }
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            pnlAddInstructor.Visible = false;
+            txtNIP.Text = "";
+            txtName.Text = "";
+            txtEmail.Text = "";
+            rbMale.Checked = true;
         }
         #endregion
 

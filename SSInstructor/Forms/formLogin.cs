@@ -116,13 +116,11 @@ namespace SSInstructor
             {
                 if(num == 1)
                 {
-                    MessageBox.Show("Login Success");
-
                     // fetch login id
-                    int logId = -1;
+                    string logId = "";
                     string uName = "";
                     string uPass = "";
-                    mysqlDBConn.GetData(queryString, "id_subject", ref logId);
+                    mysqlDBConn.GetData(queryString, "uc_subject", ref logId);
                     mysqlDBConn.GetData(queryString, "u_name", ref uName);
                     mysqlDBConn.GetData(queryString, "u_pass", ref uPass);
                     //MessageBox.Show("LoginID :" + logId.ToString() + 

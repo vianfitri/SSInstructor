@@ -81,7 +81,7 @@ namespace SSInstructor
                 "ON a.uc_subject = b.uc " +
                 "INNER JOIN shp_assets.ss_usertype c " +
                 "ON b.type = c.id " +
-                "WHERE a.uc = " + logId + " LIMIT 0, 1";
+                "WHERE a.uc = '" + logId + "' LIMIT 0, 1";
 
             if(mysqlDbConn.GetTableData(qrStr, ref dtLoginInfo))
             {

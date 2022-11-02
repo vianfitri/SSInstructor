@@ -95,7 +95,7 @@ namespace SSInstructor.Forms
             // Initialize API Client
             ApiHelper.InitializeClient();
 
-            if (loginId == -1)
+            if (string.IsNullOrEmpty(loginId))
             {
                 openChildForm(fLogin);
             }
