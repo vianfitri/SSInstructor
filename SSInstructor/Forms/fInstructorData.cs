@@ -84,10 +84,6 @@ namespace SSInstructor.Forms
             }
         }
 
-        private void dummyInstructorData()
-        {
-            
-        }
 
         private void btnAddInstructor_Click(object sender, EventArgs e)
         {
@@ -95,9 +91,6 @@ namespace SSInstructor.Forms
             pnlAddInstructor.Dock = DockStyle.Fill;
             lblPnlAddEdit.Text = "Add Instructor";
             pnlAddInstructor.Visible = true;
-            //Form fInstAdd = new fAddInstructor();
-            //fInstAdd.StartPosition = FormStartPosition.CenterParent;
-            //fInstAdd.ShowDialog();
         }
 
         private void dgv_InstructorList_CellContentClick(object sender, DataGridViewCellEventArgs e)
