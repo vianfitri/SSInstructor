@@ -911,11 +911,17 @@ namespace SSInstructor.Forms
             crtKNCrossCurve.Titles.Clear();
 
             if (ExerciseController.VesselType == 0)
+            {
                 crtKNCrossCurve.Titles.Add("Kapal Bulk Carrier");
+            }
             else if (ExerciseController.VesselType == 1)
+            {
                 crtKNCrossCurve.Titles.Add("Kapal General Cargo");
+            }
             else if (ExerciseController.VesselType == 2)
+            {
                 crtKNCrossCurve.Titles.Add("Kapal Container");
+            }
 
             crtKNCrossCurve.Titles.Add("Kurva Silang KN");
             crtKNCrossCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
