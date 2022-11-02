@@ -1782,16 +1782,20 @@ namespace SSInstructor.Forms
             txbPosisiTKK.Text = TKK_Pos_Real.y.ToString("F2");
             txbBebanTNT.Text = mTNT_real.ToString("F2");
             txbPosisiTNT.Text = TNT_Pos_Real.z.ToString("F2");
-
         }
 
         private void CalculateTransverseHydrostatic()
         {
             double ship_scale = 87.0;
+
             if (ExerciseController.VesselType == 0)
+            {
                 ship_scale = StabilityCalculator.ship_scale;
+            }
             else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            {
                 ship_scale = StabilityCalculator.ship_gc_scale;
+            }
 
             double weight_scale = ship_scale * ship_scale * ship_scale / 1000;
 
