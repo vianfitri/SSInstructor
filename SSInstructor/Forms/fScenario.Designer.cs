@@ -37,6 +37,8 @@ namespace SSInstructor.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.btnDetail = new ViControls.ViButton();
             this.dgv_ScenList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pnlAddScenario = new System.Windows.Forms.Panel();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +48,6 @@ namespace SSInstructor.Forms
             this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
             this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pnlAddScenario = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,6 +155,21 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.Size = new System.Drawing.Size(1236, 646);
             this.dgv_ScenList.TabIndex = 20;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // pnlAddScenario
+            // 
+            this.pnlAddScenario.Location = new System.Drawing.Point(1306, 60);
+            this.pnlAddScenario.Name = "pnlAddScenario";
+            this.pnlAddScenario.Size = new System.Drawing.Size(659, 403);
+            this.pnlAddScenario.TabIndex = 21;
+            this.pnlAddScenario.Visible = false;
+            // 
             // No
             // 
             this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -208,10 +223,12 @@ namespace SSInstructor.Forms
             // 
             // scenAction
             // 
+            this.scenAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.scenAction.FillWeight = 64.52919F;
             this.scenAction.HeaderText = "";
             this.scenAction.Name = "scenAction";
             this.scenAction.ReadOnly = true;
+            this.scenAction.Width = 17;
             // 
             // scenDelete
             // 
@@ -221,21 +238,6 @@ namespace SSInstructor.Forms
             this.scenDelete.Name = "scenDelete";
             this.scenDelete.ReadOnly = true;
             this.scenDelete.Width = 17;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // pnlAddScenario
-            // 
-            this.pnlAddScenario.Location = new System.Drawing.Point(1306, 60);
-            this.pnlAddScenario.Name = "pnlAddScenario";
-            this.pnlAddScenario.Size = new System.Drawing.Size(659, 403);
-            this.pnlAddScenario.TabIndex = 21;
-            this.pnlAddScenario.Visible = false;
             // 
             // fScenario
             // 
@@ -261,6 +263,8 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label1;
         private ViControls.ViButton btnDetail;
         private System.Windows.Forms.DataGridView dgv_ScenList;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Panel pnlAddScenario;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn scenid;
         private System.Windows.Forms.DataGridViewTextBoxColumn scenname;
@@ -270,7 +274,5 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn isexist;
         private System.Windows.Forms.DataGridViewImageColumn scenAction;
         private System.Windows.Forms.DataGridViewImageColumn scenDelete;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.Panel pnlAddScenario;
     }
 }

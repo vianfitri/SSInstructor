@@ -19,7 +19,6 @@ namespace SSInstructor.Forms
     {
         #region "Fields"
         formDashboard _parent;
-        private DB mysqlConn = null;
         #endregion
 
         #region "Constructor"
