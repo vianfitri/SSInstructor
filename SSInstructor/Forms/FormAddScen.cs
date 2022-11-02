@@ -36,11 +36,22 @@ namespace SSInstructor.Forms
             int vessel_type = cbVesselType.SelectedIndex;
             string db_scen_name = "ss_" + scen_name.ToLower().Replace(' ', '_') + DateTime.Now.ToString("yyyyMMdd");
             string db_from = "shp_master";
+            string create_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
+            string ucData = Utility.GenerateUC();
 
-            if(ConnectorDB.MySQLConn.DuplicateDB(db_from, db_scen_name))
+            // insert data to scenario table
+            string qNewScen = "INSERT INTO `shp_assets`.`ss_scenario` " +
+                "(`uc`, `scenario_name`, `db_name`, `vessel_type`, `create_time`, `is_active`, `is_exist`) VALUES " +
+                "('"+ ucData +"', '"+ scen_name +"', '"+ db_scen_name +"', "+ vessel_type +", '"+ create_time +"', 0, 1);";
+
+            if (ConnectorDB.MySQLConn.SetCommand(qNewScen))
             {
+                // duplicate master data
+                if (ConnectorDB.MySQLConn.DuplicateDB(db_from, db_scen_name))
+                {
 
+                }
             }
         }
 
