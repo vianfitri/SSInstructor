@@ -259,6 +259,7 @@ public static class StabilityCalculator {
 
     #region "ShipPoint"
 
+    #region "Bulk Carrier Shippoint"
     public static Point2D[] shippoints = new Point2D[26];
     public static Point2D[] shippoints_init = new Point2D[26];
     public static Point2D[] shippoints_BC = new Point2D[26] // Transversal hull coordinate
@@ -362,6 +363,133 @@ public static class StabilityCalculator {
             new Point2D{x = -1096.5,    y =  131.1}, // point 28
             new Point2D{x = -1096.5,    y =    0.0}  // point 29
         };
+    #endregion
+
+    #region "General Cargo Shippoint"
+    // longitudinal hull side genearal cargo and containe
+    public static Point2D[] shippointsgc = new Point2D[34];
+    public static Point2D[] shippointsgc_init = new Point2D[34];
+    public static Point2D[] shippointsgc_GC = new Point2D[34]
+    {
+            new Point2D { x = -165, y = 156 },
+            new Point2D { x = -165, y = 17.3 },
+            new Point2D { x = -162.3, y = 9.9 },
+            new Point2D { x = -158.4, y = 4.9 },
+            new Point2D { x = -151.9, y = 0 },
+            new Point2D { x = 0, y = 0 },
+            new Point2D { x = 151.9, y = 0 },
+            new Point2D { x = 158.4, y = 4.9 },
+            new Point2D { x = 162.3, y = 9.9 },
+            new Point2D { x = 165, y = 17.3 },
+            new Point2D { x = 165, y = 156 },
+            new Point2D { x = 148, y = 156 },
+            new Point2D { x = 148, y = 206.7 },
+            new Point2D { x = 124.3, y = 206.7 },
+            new Point2D { x = 123.8, y = 256.5 },
+            new Point2D { x = 101.5, y = 256.5 },
+            new Point2D { x = 101.5, y = 331.5 },
+            new Point2D { x = 138, y = 349.1 },
+            new Point2D { x = 166.6, y = 349.1 },
+            new Point2D { x = 166.6, y = 377.6 },
+            new Point2D { x = 66.3, y = 377.6 },
+            new Point2D { x = 66.3, y = 403.2 },
+            new Point2D { x = -66.3, y = 403.2 },
+            new Point2D { x = -66.3, y = 377.6 },
+            new Point2D { x = -166.6, y = 377.6 },
+            new Point2D { x = -166.6, y = 349.1 },
+            new Point2D { x = -138, y = 349.1 },
+            new Point2D { x = -101.5, y = 331.5 },
+            new Point2D { x = -101.5, y = 256.5 },
+            new Point2D { x = -123.8, y = 256.5 },
+            new Point2D { x = -124.3, y = 206.7 },
+            new Point2D { x = -148, y = 206.7 },
+            new Point2D { x = -148, y = 156 },
+            new Point2D { x = -165, y = 156 },
+    };
+
+    public static Point2D[] shippointsgclon = new Point2D[48]; // longitudinal hull coordinate
+    public static Point2D[] shippointsgclon_init = new Point2D[48];
+    public static Point2D[] shippointsgclon_GC = new Point2D[48]
+    {
+            new Point2D { x = - 958, y = 176 },
+            new Point2D { x = -947.4, y = 94.8 },
+            new Point2D { x = -870.1, y = 80.2 },
+            new Point2D { x = -854.2, y = 74.2 },
+            new Point2D { x = -843.2, y = 65.3 },
+            new Point2D { x = -840, y = 54 },
+            new Point2D { x = -843.7, y = 43.3 },
+            new Point2D { x = -849.4, y = 38.6 },
+            new Point2D { x = -849.6, y = 30.2 },
+            new Point2D { x = -826.5, y = 0 },
+            new Point2D { x = 864.3, y = 0 },
+            new Point2D { x = 879, y = 3.4 },
+            new Point2D { x = 889.6, y = 8.1 },
+            new Point2D { x = 898.8, y = 14 },
+            new Point2D { x = 907.4, y = 21.7 },
+            new Point2D { x = 914.7, y = 33.5 },
+            new Point2D { x = 928.1, y = 69.1 },
+            new Point2D { x = 934.1, y = 85.7 },
+            new Point2D { x = 943.6, y = 102.9 },
+            new Point2D { x = 954.5, y = 123.7 },
+            new Point2D { x = 970.5, y = 147.9 },
+            new Point2D { x = 1006.7, y = 201.8 },
+            new Point2D { x = 1003.3, y = 205.4 },
+            new Point2D { x = 795.4, y = 198.6 },
+            new Point2D { x = 785.6, y = 195.6 },
+            new Point2D { x = 780.6, y = 190.3 },
+            new Point2D { x = 744.2, y = 159.6 },
+            new Point2D { x = 739.2, y = 156 },
+            new Point2D { x = 732.9, y = 153.1 },
+            new Point2D { x = 724.5, y = 153.1 },
+            new Point2D { x = -495, y = 155.3 },
+            new Point2D { x = -501.9, y = 156.5 },
+            new Point2D { x = -508.9, y = 158.9 },
+            new Point2D { x = -537.1, y = 176.2 },
+            new Point2D { x = -543.4, y = 178 },
+            new Point2D { x = -540.1, y = 319.4 },
+            new Point2D { x = -532.6, y = 342.5 },
+            new Point2D { x = -650.8, y = 342.4 },
+            new Point2D { x = -655.2, y = 391.1 },
+            new Point2D { x = -724.6, y = 383.1 },
+            new Point2D { x = -741.3, y = 299.4 },
+            new Point2D { x = -778.3, y = 300.2 },
+            new Point2D { x = -780, y = 258 },
+            new Point2D { x = -804.5, y = 257.5 },
+            new Point2D { x = -806.1, y = 217.2 },
+            new Point2D { x = -828.5, y = 216.1 },
+            new Point2D { x = -830.2, y = 175.1 },
+            new Point2D { x = -958, y = 176 },
+    };
+
+    public static Point2D[] shippointsgcTopView_GC = new Point2D[25] {  // General Cargo Scale 1:50, top view, 20151223
+            new Point2D { x = -1000.0,  y = 0.0     }, // Point 0
+            new Point2D { x = -1000.0,  y = 108.1   }, // Point 1
+            new Point2D { x = -936.5,   y = 132.1   }, // Point2
+            new Point2D { x = -873.1,   y = 149.2   }, // Point3
+            new Point2D { x = -819.9,   y = 162.9   }, // Point4
+            new Point2D { x = 591.6,    y = 162.9   }, // Point5
+            new Point2D { x = 673.9,    y = 145.8   }, // Point6
+            new Point2D { x = 730.5,    y = 156.1   }, // Point7
+            new Point2D { x = 809.4,    y = 130.3   }, // Point8
+            new Point2D { x = 866.0,    y = 101.2   }, // Point9
+            new Point2D { x = 929.5,    y = 56.6    }, // Point10
+            new Point2D { x = 963.8,    y = 13.7    }, // Point11
+            new Point2D { x = 963.8,    y = 0.0     }, // Point12
+            new Point2D { x = 963.8,    y = -13.7   }, // Point13
+            new Point2D { x = 929.5,    y = -56.6   }, // Point14
+            new Point2D { x = 866.0,    y = -101.2  }, // Point15
+            new Point2D { x = 809.4,    y = -130.3  }, // Point16
+            new Point2D { x = 730.5,    y = -156.1  }, // Point17
+            new Point2D { x = 673.9,    y = -145.8  }, // Point18
+            new Point2D { x = 591.6,    y = -162.9  }, // Point19
+            new Point2D { x = -819.9,   y = -162.9  }, // Point20
+            new Point2D { x = -873.1,   y = -149.2  }, // Point21
+            new Point2D { x = -936.5,   y = -132.1  }, // Point22
+            new Point2D { x = -1000.0,  y = -108.1  }, // Point23
+            new Point2D { x = -1000.0,  y = 0.0     }, // Point24
+        };
+    #endregion
+
     #endregion
 
     #region "Method"
