@@ -558,9 +558,9 @@ public static class StabilityCalculator {
 
             ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KN_GC.csv", 28, 16, ref kntData_2D_BC);
 
-            for (int j = 0; j < heel_KMT_BC.Count(); j++)
+            for (int j = 0; j < heel_KMT_GC.Count(); j++)
             {
-                for (int i = 0; i < disp_KMT_BC.Count(); i++)
+                for (int i = 0; i < disp_KMT_GC.Count(); i++)
                 {
                     kntData_2D_BC[j, i] = -kntData_2D_BC[j, i];
                 }
