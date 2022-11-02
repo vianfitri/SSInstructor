@@ -924,9 +924,13 @@ namespace SSInstructor.Forms
 
             // Initialize Ship Data
             if (ExerciseController.VesselType == 0)
+            {
                 StabilityCalculator.InitializeShipData();
+            }
             else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            {
                 StabilityCalculator.InitializeShipData(1);
+            }
 
             SettingInputValue();
 
