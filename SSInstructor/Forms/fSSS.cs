@@ -1625,10 +1625,15 @@ namespace SSInstructor.Forms
             mTNT = (double)nudBebanTNT.Value;
 
             double ship_scale = 87.0;
+
             if (ExerciseController.VesselType == 0)
+            {
                 ship_scale = StabilityCalculator.ship_scale;
+            }
             else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            {
                 ship_scale = StabilityCalculator.ship_gc_scale;
+            }
 
             double weight_scale = ship_scale * ship_scale * ship_scale / 1000;
             mTMMB_real = mTMMB * weight_scale; // in ton
@@ -1659,21 +1664,42 @@ namespace SSInstructor.Forms
             txbBobotTotal.Text = "Bobot Total Kapal = " + dWeightTotalShip.ToString("F1") + " kg = "
                 + dWeightTotalShip_Real.ToString("F1") + " ton";
 
-            TMMB_Pos.x = (double)nudPosisiTMMB.Value - 1096.5;
-            TMMB_Pos.y = 0;
-            TMMB_Pos.z = 106 + 0.5 * mTMMB * 10;
+            if (ExerciseController.VesselType == 0)
+            {
+                TMMB_Pos.x = (double)nudPosisiTMMB.Value - 1096.5;
+                TMMB_Pos.y = 0;
+                TMMB_Pos.z = 106 + 0.5 * mTMMB * 10;
 
-            TMMD_Pos.x = (double)nudPosisiTMMD.Value - 1096.5;
-            TMMD_Pos.y = 0;
-            TMMD_Pos.z = 106 + 0.5 * mTMMD * 10;
+                TMMD_Pos.x = (double)nudPosisiTMMD.Value - 1096.5;
+                TMMD_Pos.y = 0;
+                TMMD_Pos.z = 106 + 0.5 * mTMMD * 10;
 
-            TKK_Pos.x = 1100 - 1096.5;
-            TKK_Pos.y = (double)nudPosisiTKK.Value;
-            TKK_Pos.z = 275 + 0.5 * mTKK * 10;
+                TKK_Pos.x = 1100 - 1096.5;
+                TKK_Pos.y = (double)nudPosisiTKK.Value;
+                TKK_Pos.z = 275 + 0.5 * mTKK * 10;
 
-            TNT_Pos.x = 1225 - 1096.5;
-            TNT_Pos.y = 0;
-            TNT_Pos.z = (double)nudPosisiTNT.Value + 43 + 0.5 * mTNT * 15;
+                TNT_Pos.x = 1225 - 1096.5;
+                TNT_Pos.y = 0;
+                TNT_Pos.z = (double)nudPosisiTNT.Value + 43 + 0.5 * mTNT * 15;
+            } 
+            else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            {
+                TMMB_Pos.x = (double)nudPosisiTMMB.Value - 958;
+                TMMB_Pos.y = 0;
+                TMMB_Pos.z = 106 + 0.5 * mTMMB * 10;
+
+                TMMD_Pos.x = (double)nudPosisiTMMD.Value - 958;
+                TMMD_Pos.y = 0;
+                TMMD_Pos.z = 106 + 0.5 * mTMMD * 10;
+
+                TKK_Pos.x = 1100 - 958;
+                TKK_Pos.y = (double)nudPosisiTKK.Value;
+                TKK_Pos.z = 275 + 0.5 * mTKK * 10;
+
+                TNT_Pos.x = 1225 - 958;
+                TNT_Pos.y = 0;
+                TNT_Pos.z = (double)nudPosisiTNT.Value + 43 + 0.5 * mTNT * 15;
+            }
 
             //TMMB_Pos_Real.x = TMMB_Pos.x * ship_scale / 1000; // in meter
             TMMB_Pos_Real.x = (double)nudPosisiTMMB.Value * ship_scale / 1000; // in meter
