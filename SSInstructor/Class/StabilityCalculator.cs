@@ -36,6 +36,8 @@ public static class StabilityCalculator {
     public static double[] cobData_BC; // Kolom 23 = Cb // used	   
     public static double[] copData_BC; // Kolom 24 = Cp // used	 
 
+    // Hold Hydrostatic data for General Cargo and container
+
     public static double[] disp_KMT_BC = new double[16] { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80 };
     //double[] heel_KMT_BC = new double[13] { 0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90 };
     public static double[] heel_KMT_BC = new double[28] { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 }; // 20160113
