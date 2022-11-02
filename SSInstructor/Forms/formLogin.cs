@@ -70,10 +70,12 @@ namespace SSInstructor
             // Get Login Pass
             int num = 0;
 
-            string queryString = "SELECT * FROM shp_assets.ss_user a " +
-                "WHERE a.u_name = '" + txtUsername.Texts +
-                "' AND a.u_pass = MD5('" + txtPassword.Texts +
-                "') LIMIT 0, 1";
+            string queryString = "SELECT * FROM shp_assets.ss_user a "+
+                "INNER JOIN shp_assets.ss_subject b " +
+                "ON a.uc_subject = b.uc " +
+                "WHERE a.u_name = '" + txtUsername.Texts + "' " +
+                "AND a.u_pass = MD5('" + txtPassword.Texts + "') " +
+                "AND (b.type = 1 OR b.type = 2) LIMIT 0, 1";
 
             if(ConnectorDB.MySQLConn.GetTotalRow(queryString, ref num))
             {
