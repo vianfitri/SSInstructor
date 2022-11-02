@@ -898,11 +898,17 @@ namespace SSInstructor.Forms
             crtGZCrossCurve.Titles.Clear();
 
             if (ExerciseController.VesselType == 0)
+            {
                 crtGZCrossCurve.Titles.Add("Kapal Bulk Carrier");
+            }
             else if (ExerciseController.VesselType == 1)
+            {
                 crtGZCrossCurve.Titles.Add("Kapal General Cargo");
+            }
             else if (ExerciseController.VesselType == 2)
+            {
                 crtGZCrossCurve.Titles.Add("Kapal Container");
+            }
 
             crtGZCrossCurve.Titles.Add("Kurva Silang GZ");
             crtGZCrossCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
