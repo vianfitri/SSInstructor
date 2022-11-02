@@ -609,9 +609,13 @@ public static class StabilityCalculator {
         T1D_copData = (double[])copData_BC.Clone(); // 20150907
 
         if (ship_type == 0)
+        {
             dX0Val = LCG_BC;
+        }
         else if (ship_type == 1 || ship_type == 2)
+        {
             dX0Val = LCG_GC;
+        }
 
 
         // initialize ship longitudinal plane 
