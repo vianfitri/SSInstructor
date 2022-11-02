@@ -227,9 +227,13 @@ namespace SSInstructor.Forms
             }
 
             if (ExerciseController.VesselType == 0)
+            {
                 StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\BC.cfg");
+            }
             else if (ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            {
                 StabilityCalculator.LoadConfiguration(Application.StartupPath + "\\Data\\GC.cfg");
+            }
 
             // SplitContainer Setting
             spcShipStability.SplitterDistance = Screen.PrimaryScreen.Bounds.Width - 690;
@@ -682,11 +686,17 @@ namespace SSInstructor.Forms
             crtTransversal.Titles.Clear();
 
             if (ExerciseController.VesselType == 0)
+            {
                 crtTransversal.Titles.Add("Kapal Bulk Carrier");
+            }
             else if (ExerciseController.VesselType == 1)
+            {
                 crtTransversal.Titles.Add("Kapal General Cargo");
+            }
             else if (ExerciseController.VesselType == 2)
+            {
                 crtTransversal.Titles.Add("Kapal Container");
+            }
 
             crtTransversal.Titles.Add("Penampang Kapal, Amidship, Tampak Depan");
             crtTransversal.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
