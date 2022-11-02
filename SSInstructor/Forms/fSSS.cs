@@ -717,11 +717,17 @@ namespace SSInstructor.Forms
             crtLongitudinal.Titles.Clear();
 
             if (ExerciseController.VesselType == 0)
+            {
                 crtLongitudinal.Titles.Add("Kapal Bulk Carrier");
+            }
             else if (ExerciseController.VesselType == 1)
+            {
                 crtLongitudinal.Titles.Add("Kapal General Cargo");
+            }
             else if (ExerciseController.VesselType == 2)
+            {
                 crtLongitudinal.Titles.Add("Kapal Container");
+            }
 
             crtLongitudinal.Titles.Add("Bidang Membujur Kapal");
             crtLongitudinal.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
@@ -865,11 +871,17 @@ namespace SSInstructor.Forms
             // Chart Hydrostatic Curve
             crtHydrostaticCurve.Titles.Clear();
             if (ExerciseController.VesselType == 0)
+            {
                 crtHydrostaticCurve.Titles.Add("Kapal Bulk Carrier");
+            }
             else if (ExerciseController.VesselType == 1)
+            {
                 crtHydrostaticCurve.Titles.Add("Kapal General Cargo");
+            }
             else if (ExerciseController.VesselType == 2)
+            {
                 crtHydrostaticCurve.Titles.Add("Kapal Container");
+            }
 
             crtHydrostaticCurve.Titles.Add("Kurva Hidrostatik");
             crtHydrostaticCurve.Titles[0].Font = new Font("Microsoft Sans Serif", 16);
