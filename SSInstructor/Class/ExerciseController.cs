@@ -19,6 +19,7 @@ namespace SSInstructor.Class
         #region "Fields"
         static ExerciseMode eMode;
         static string currScenUC;
+        static int vessel_type = 0; // 0 = bulk carrier, 1=general cargo, 2=container
         #endregion
 
         #region "Properties"
@@ -32,6 +33,12 @@ namespace SSInstructor.Class
         {
             get { return currScenUC; }
             set { currScenUC = value; }
+        }
+
+        public static int VesselType
+        {
+            get { return vessel_type; }
+            set { vessel_type = value; }
         }
         #endregion
 
