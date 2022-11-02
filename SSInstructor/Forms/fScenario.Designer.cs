@@ -29,10 +29,10 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fScenario));
             this.label1 = new System.Windows.Forms.Label();
             this.btnDetail = new ViControls.ViButton();
@@ -43,12 +43,22 @@ namespace SSInstructor.Forms
             this.scenid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dbname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shiptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
             this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblAddScen = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnScenSave = new ViControls.ViButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).BeginInit();
+            this.pnlAddScenario.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,13 +100,13 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.AllowUserToDeleteRows = false;
             this.dgv_ScenList.AllowUserToResizeColumns = false;
             this.dgv_ScenList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_ScenList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_ScenList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ScenList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -105,15 +115,15 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ScenList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_ScenList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ScenList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ScenList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_ScenList.ColumnHeadersHeight = 40;
             this.dgv_ScenList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ScenList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -121,20 +131,21 @@ namespace SSInstructor.Forms
             this.scenid,
             this.scenname,
             this.dbname,
+            this.shiptype,
             this.createtime,
             this.isactive,
             this.isexist,
             this.scenAction,
             this.scenDelete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ScenList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ScenList.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_ScenList.EnableHeadersVisualStyles = false;
             this.dgv_ScenList.Location = new System.Drawing.Point(48, 91);
             this.dgv_ScenList.MultiSelect = false;
@@ -143,13 +154,13 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_ScenList.RowHeadersVisible = false;
             this.dgv_ScenList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_ScenList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_ScenList.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_ScenList.RowTemplate.Height = 40;
             this.dgv_ScenList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ScenList.Size = new System.Drawing.Size(1236, 646);
@@ -164,9 +175,11 @@ namespace SSInstructor.Forms
             // 
             // pnlAddScenario
             // 
-            this.pnlAddScenario.Location = new System.Drawing.Point(1306, 60);
+            this.pnlAddScenario.Controls.Add(this.groupBox1);
+            this.pnlAddScenario.Controls.Add(this.lblAddScen);
+            this.pnlAddScenario.Location = new System.Drawing.Point(181, 185);
             this.pnlAddScenario.Name = "pnlAddScenario";
-            this.pnlAddScenario.Size = new System.Drawing.Size(659, 403);
+            this.pnlAddScenario.Size = new System.Drawing.Size(690, 403);
             this.pnlAddScenario.TabIndex = 21;
             this.pnlAddScenario.Visible = false;
             // 
@@ -199,6 +212,12 @@ namespace SSInstructor.Forms
             this.dbname.Name = "dbname";
             this.dbname.ReadOnly = true;
             this.dbname.Visible = false;
+            // 
+            // shiptype
+            // 
+            this.shiptype.HeaderText = "Vessel Type";
+            this.shiptype.Name = "shiptype";
+            this.shiptype.ReadOnly = true;
             // 
             // createtime
             // 
@@ -239,6 +258,95 @@ namespace SSInstructor.Forms
             this.scenDelete.ReadOnly = true;
             this.scenDelete.Width = 17;
             // 
+            // lblAddScen
+            // 
+            this.lblAddScen.AutoSize = true;
+            this.lblAddScen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddScen.Location = new System.Drawing.Point(44, 35);
+            this.lblAddScen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddScen.Name = "lblAddScen";
+            this.lblAddScen.Size = new System.Drawing.Size(160, 24);
+            this.lblAddScen.TabIndex = 18;
+            this.lblAddScen.Text = "Create Scenario";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnScenSave);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(48, 84);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(596, 265);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Bulk Carrier 50000 DWT",
+            "General Cargo 3650 DWT",
+            "Containership 4180 DWT"});
+            this.comboBox1.Location = new System.Drawing.Point(208, 85);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(195, 32);
+            this.comboBox1.TabIndex = 26;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(208, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(233, 29);
+            this.textBox1.TabIndex = 25;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 18);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Vessel Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 18);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Scenario Name";
+            // 
+            // btnScenSave
+            // 
+            this.btnScenSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnScenSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnScenSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnScenSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnScenSave.BorderRadius = 10;
+            this.btnScenSave.BorderSize = 0;
+            this.btnScenSave.FlatAppearance.BorderSize = 0;
+            this.btnScenSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScenSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScenSave.ForeColor = System.Drawing.Color.White;
+            this.btnScenSave.Location = new System.Drawing.Point(35, 155);
+            this.btnScenSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnScenSave.Name = "btnScenSave";
+            this.btnScenSave.Size = new System.Drawing.Size(121, 32);
+            this.btnScenSave.TabIndex = 27;
+            this.btnScenSave.Text = "Save";
+            this.btnScenSave.TextColor = System.Drawing.Color.White;
+            this.btnScenSave.UseVisualStyleBackColor = false;
+            // 
             // fScenario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,6 +361,10 @@ namespace SSInstructor.Forms
             this.Text = "fScenario";
             this.Load += new System.EventHandler(this.fScenario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).EndInit();
+            this.pnlAddScenario.ResumeLayout(false);
+            this.pnlAddScenario.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,10 +381,18 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn scenid;
         private System.Windows.Forms.DataGridViewTextBoxColumn scenname;
         private System.Windows.Forms.DataGridViewTextBoxColumn dbname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shiptype;
         private System.Windows.Forms.DataGridViewTextBoxColumn createtime;
         private System.Windows.Forms.DataGridViewTextBoxColumn isactive;
         private System.Windows.Forms.DataGridViewTextBoxColumn isexist;
         private System.Windows.Forms.DataGridViewImageColumn scenAction;
         private System.Windows.Forms.DataGridViewImageColumn scenDelete;
+        private System.Windows.Forms.Label lblAddScen;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private ViControls.ViButton btnScenSave;
     }
 }

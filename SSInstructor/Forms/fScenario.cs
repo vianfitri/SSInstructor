@@ -30,80 +30,67 @@ namespace SSInstructor.Forms
         #endregion
 
         #region "Properties"
-        public DB MySQLConn
-        {
-            get { return mysqlConn; }
-            set { mysqlConn = value; }
-        }
         #endregion
 
         #region "Method"
 
         private void LoadScenList()
         {
+            DataTable dtScenList = new DataTable();
+            string qListScen = "SELECT * FROM `shp_assets`.`ss_scenario`";
 
-        }
-
-        private async Task LoadScenario()
-        {
-            string uri = "http://localhost/s3-api/api/scenario/GetSce";
-
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(uri))
+            if(ConnectorDB.MySQLConn.GetTableData(qListScen, ref dtScenList))
             {
-                if (response.IsSuccessStatusCode)
+                dgv_ScenList.Rows.Clear();
+
+                int idData = 0;
+                foreach(DataRow row in dtScenList.Rows)
                 {
-                    string scens = await response.Content.ReadAsStringAsync();
+                    string vessel_type = "";
+                    if (row["vessel_type"].ToString() == "0")
+                        vessel_type = "Bulk Carrier 50000 DWT";
+                    else if (row["vessel_type"].ToString() == "1")
+                        vessel_type = "General Cargo 3650 DWT";
+                    else if (row["vessel_type"].ToString() == "2")
+                        vessel_type = "Containership 4180 DWT";
 
-                    List<ScenarioModel> listscen = JsonConvert.DeserializeObject<List<ScenarioModel>>(scens);
-
-                    // build datagrid view content
-                    dgv_ScenList.Rows.Clear();
-
-                    int ids = 0;
-                    foreach(ScenarioModel item in listscen)
-                    {
-                        ids++;
-                        dgv_ScenList.Rows.Add(
-                            new object[]
-                            {
-                                ids,
-                                item.Id,
-                                item.Scenario_Name,
-                                item.Db_Name,
-                                item.Create_Time,
-                                item.Is_Active,
-                                item.Is_Exist,
-                                null,
-                                null
-                            }
-                        ); ;
-                    }
-                } 
-                else
-                {
-                    //throw new Exception(response.ReasonPhrase);
-                    Console.WriteLine(response.ReasonPhrase);
+                    idData++;
+                    dgv_ScenList.Rows.Add(
+                        new object[]
+                        {
+                            idData,
+                            row["uc"],
+                            row["scenario_name"],
+                            row["db_name"],
+                            vessel_type,
+                            row["create_time"],
+                            row["is_active"],
+                            row["is_exist"],
+                            null,
+                            null
+                        }
+                    );
                 }
             }
         }
         #endregion
 
         #region "Events"
-        private async void fScenario_Load(object sender, EventArgs e)
+        private void fScenario_Load(object sender, EventArgs e)
         {
             // load data scenario
-            await LoadScenario();
+            LoadScenList();
         }
 
         // Add Scenario
-        private async void btnDetail_Click(object sender, EventArgs e)
+        private void btnDetail_Click(object sender, EventArgs e)
         {
             FormAddScen faddScen = new FormAddScen();
             faddScen.create();
 
             if (faddScen.DialogResult == DialogResult.OK)
             {
-                await LoadScenario();
+                LoadScenList();
             }
         }
         #endregion
