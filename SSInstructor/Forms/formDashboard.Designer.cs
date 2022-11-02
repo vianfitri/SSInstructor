@@ -514,6 +514,7 @@ namespace SSInstructor
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SSInstructor";
             this.Load += new System.EventHandler(this.formDashboard_Load);
+            this.VisibleChanged += new System.EventHandler(this.formDashboard_VisibleChanged);
             this.pnlMainMenu.ResumeLayout(false);
             this.pnlUserSubmenu.ResumeLayout(false);
             this.pnlMasterDataSubmenu.ResumeLayout(false);

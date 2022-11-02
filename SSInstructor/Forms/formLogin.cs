@@ -25,6 +25,7 @@ namespace SSInstructor
 
         private string configDir =
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\ShipStab";
+        
         #endregion
 
         #region "Constructor"
@@ -87,7 +88,7 @@ namespace SSInstructor
                 return;
             }
 
-            this.Cursor = Cursors.WaitCursor;
+            //this.Cursor = Cursors.WaitCursor;
 
             // Check MySQL State
             if (!mysqlDBConn.GetDBStatus())
@@ -128,7 +129,9 @@ namespace SSInstructor
                     //    "\r\nPassword : " + uPass);
                     this._parent.DBConn = mysqlDBConn;
                     this._parent.LoginId = logId;
-                    
+
+                    txtUsername.Texts = "";
+                    txtPassword.Texts = "";
                 } 
                 else
                 {
@@ -151,6 +154,7 @@ namespace SSInstructor
             }
 
             // Goto Main Form if success
+            this._parent.fDash.IsLogin = true;
             this._parent.openChildForm(this._parent.fDash);
 
         }
