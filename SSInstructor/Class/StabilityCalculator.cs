@@ -591,8 +591,16 @@ public static class StabilityCalculator {
         T2D_kflData = (double[,])kflData_2D_BC.Clone();
 
         T1D_drfData = (double[])drfData_BC.Clone();
-        T1D_helData = (double[])heel_KMT_BC.Clone();
-        T1D_dspData = (double[])disp_KMT_BC.Clone();
+
+        if (ship_type == 0)
+        {
+            T1D_helData = (double[])heel_KMT_BC.Clone();
+            T1D_dspData = (double[])disp_KMT_BC.Clone();
+        } else if (ship_type == 1 || ship_type == 2)
+        {
+            T1D_helData = (double[])heel_KMT_GC.Clone();
+            T1D_dspData = (double[])disp_KMT_GC.Clone();
+        }
         T1D_trmData = (double[])trim_KML_BC.Clone();
         T1D_wtiData = (double[])wtiData_BC.Clone(); // 20150901
         T1D_mttData = (double[])mttData_BC.Clone(); // 20150901
