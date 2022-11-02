@@ -16,9 +16,32 @@ namespace SSInstructor.Forms
 {
     public partial class FormAddScen : Form
     {
+        #region "Fields"
+        #endregion
+
+        #region "Constructor"
         public FormAddScen()
         {
             InitializeComponent();
+        }
+        #endregion
+
+        #region "Properties"
+        #endregion
+
+        #region "Method"
+        private void AddScenario()
+        {
+            string scen_name = txtScenarioName.Text;
+            int vessel_type = cbVesselType.SelectedIndex;
+            string db_scen_name = "ss_" + scen_name.ToLower().Replace(' ', '_') + DateTime.Now.ToString("yyyyMMdd");
+            string db_from = "shp_master";
+
+
+            if(ConnectorDB.MySQLConn.DuplicateDB(db_from, db_scen_name))
+            {
+
+            }
         }
 
         private async Task CreateScenario()
@@ -79,5 +102,6 @@ namespace SSInstructor.Forms
         {
             ShowDialog();
         }
+        #endregion
     }
 }
