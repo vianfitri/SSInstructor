@@ -231,10 +231,11 @@ namespace SSInstructor.Forms
             // 
             // pnlAddScenario
             // 
-            this.pnlAddScenario.Location = new System.Drawing.Point(1307, 102);
+            this.pnlAddScenario.Location = new System.Drawing.Point(1306, 60);
             this.pnlAddScenario.Name = "pnlAddScenario";
             this.pnlAddScenario.Size = new System.Drawing.Size(659, 403);
             this.pnlAddScenario.TabIndex = 21;
+            this.pnlAddScenario.Visible = false;
             // 
             // fScenario
             // 
