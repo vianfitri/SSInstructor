@@ -599,7 +599,11 @@ public static class StabilityCalculator {
         T1D_cobData = (double[])cobData_BC.Clone(); // 20150907
         T1D_copData = (double[])copData_BC.Clone(); // 20150907
 
-        dX0Val = LCG_BC;
+        if (ship_type == 0)
+            dX0Val = LCG_BC;
+        else if (ship_type == 1 || ship_type == 2)
+            dX0Val = LCG_GC;
+
 
         // initialize ship longitudinal plane 
         shippointslon_init = (Point2D[])shippointslon_BC.Clone();
