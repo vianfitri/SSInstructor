@@ -94,18 +94,18 @@ namespace SSInstructor.Forms
 
         private void dgv_InstructorList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int idCell = e.RowIndex;
             if (dgv_InstructorList.Columns[e.ColumnIndex].Name == "Delete")
             {
                 if (MessageBox.Show("Are you sure want to delete this instructor data?", "Delete Instructor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Delete Succesfully");
+                    RemoveData(dgv_InstructorList["instID", idCell].Value.ToString());
                 }
             }
 
             if(dgv_InstructorList.Columns[e.ColumnIndex].Name == "Edit")
             {
                 formMode = 1;
-                int idCell = e.RowIndex;
 
                 idData = dgv_InstructorList["instID", idCell].Value.ToString();
                 txtName.Text = dgv_InstructorList["InstName", idCell].Value.ToString();
@@ -188,6 +188,18 @@ namespace SSInstructor.Forms
             txtName.Text = "";
             txtEmail.Text = "";
             rbMale.Checked = true;
+        }
+
+        private void RemoveData(string ucId)
+        {
+            string qDeleteSubject = "DELETE FROM `shp_assets`.`ss_subject` WHERE `uc`='" + ucId + "';";
+            string qDeleteUser = "DELETE FROM `shp_assets`.`ss_user` WHERE `uc`='" + ucId + "';";
+            string qCombine = qDeleteSubject + qDeleteUser;
+
+            if (MySQLConn.SetCommand(qCombine))
+            {
+                MessageBox.Show("Instructor data deleted successfully!!!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         #endregion
 
