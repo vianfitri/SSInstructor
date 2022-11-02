@@ -2681,6 +2681,7 @@ namespace SSInstructor.Forms
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(420, 167);
             this.tabControl2.TabIndex = 0;
+            this.tabControl2.Visible = false;
             // 
             // tabGraphTransversal
             // 
