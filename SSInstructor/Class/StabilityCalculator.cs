@@ -39,9 +39,10 @@ public static class StabilityCalculator {
     // Hold Hydrostatic data for General Cargo and container
 
     public static double[] disp_KMT_BC = new double[16] { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80 };
+    public static double[] disp_KMT_GC = new double[10] { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 };
     //double[] heel_KMT_BC = new double[13] { 0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90 };
     public static double[] heel_KMT_BC = new double[28] { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 }; // 20160113
-
+    public static double[] heel_KMT_GC = new double[8] { 0, 5, 10, 15, 20, 25, 30, 40 };
     // trim angle (deg), new Bulk Carrier model scale 1:87, 20150827
     public static double[] trim_KML_BC = new double[11] { -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10 };
 
@@ -51,6 +52,7 @@ public static class StabilityCalculator {
     //double KG_BC_LS = 100;    // mm, light-ship KG (INCLINING TEST DATA, 20151230); 
     //double KG_BC_REAL = 100;  // mm from Keel (INCLINING TEST DATA, 20160102); 
     public static double LCG_BC = 1096.5;   // mm from AP = X0 (CATIA DATA, 20160102); 
+    public static double LCG_GC = 958;
     public static double KG_BC_ORCA3D = 0;  // mm from Keel (vertical position of Zero point in ORCA3D, 20160102); 
 
     // knt = KN at Transversal Mode
@@ -521,31 +523,60 @@ public static class StabilityCalculator {
     }
 
     // Initialize Ship Data
-    public static void InitializeShipData()
+    public static void InitializeShipData(int ship_type = 0)
     {
-        ReadCSV_HS_Data(Application.StartupPath + "\\Data\\HS_BC.csv", 81);
-
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KN_BC.csv", 28, 16, ref kntData_2D_BC);
-
-        for (int j = 0; j < heel_KMT_BC.Count(); j++)
+        if (ship_type == 0)
         {
-            for (int i = 0; i < disp_KMT_BC.Count(); i++)
-            {
-                kntData_2D_BC[j, i] = -kntData_2D_BC[j, i];
-            }
-        }
+            ReadCSV_HS_Data(Application.StartupPath + "\\Data\\HS_BC.csv", 81);
 
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCB_BC.csv", 28, 16, ref lbtData_2D_BC); // not used
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\TCB_BC.csv", 28, 16, ref tbtData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCB_BC.csv", 28, 16, ref vbtData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KMT_BC.csv", 28, 16, ref kmtData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BMT_BC.csv", 28, 16, ref bmtData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KML_BC.csv", 11, 16, ref kmlData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BML_BC.csv", 11, 16, ref bmlData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LBL_BC.csv", 11, 16, ref lblData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VBL_BC.csv", 11, 16, ref vblData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCF_BC.csv", 11, 16, ref lflData_2D_BC);
-        ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCF_BC.csv", 11, 16, ref kflData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KN_BC.csv", 28, 16, ref kntData_2D_BC);
+
+            for (int j = 0; j < heel_KMT_BC.Count(); j++)
+            {
+                for (int i = 0; i < disp_KMT_BC.Count(); i++)
+                {
+                    kntData_2D_BC[j, i] = -kntData_2D_BC[j, i];
+                }
+            }
+
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCB_BC.csv", 28, 16, ref lbtData_2D_BC); // not used
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\TCB_BC.csv", 28, 16, ref tbtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCB_BC.csv", 28, 16, ref vbtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KMT_BC.csv", 28, 16, ref kmtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BMT_BC.csv", 28, 16, ref bmtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KML_BC.csv", 11, 16, ref kmlData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BML_BC.csv", 11, 16, ref bmlData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LBL_BC.csv", 11, 16, ref lblData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VBL_BC.csv", 11, 16, ref vblData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCF_BC.csv", 11, 16, ref lflData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCF_BC.csv", 11, 16, ref kflData_2D_BC);
+        } 
+        else if(ship_type == 1 || ship_type == 2)
+        {
+            ReadCSV_HS_Data(Application.StartupPath + "\\Data\\HS_GC.csv", 41);
+
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KN_GC.csv", 28, 16, ref kntData_2D_BC);
+
+            for (int j = 0; j < heel_KMT_BC.Count(); j++)
+            {
+                for (int i = 0; i < disp_KMT_BC.Count(); i++)
+                {
+                    kntData_2D_BC[j, i] = -kntData_2D_BC[j, i];
+                }
+            }
+
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCB_GC.csv", 28, 16, ref lbtData_2D_BC); // not used
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\TCB_GC.csv", 28, 16, ref tbtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCB_GC.csv", 28, 16, ref vbtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KMT_GC.csv", 28, 16, ref kmtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BMT_GC.csv", 28, 16, ref bmtData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\KML_GC.csv", 11, 16, ref kmlData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\BML_GC.csv", 11, 16, ref bmlData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LBL_GC.csv", 11, 16, ref lblData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VBL_GC.csv", 11, 16, ref vblData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\LCF_GC.csv", 11, 16, ref lflData_2D_BC);
+            ReadCSV_2D_Data(Application.StartupPath + "\\Data\\VCF_GC.csv", 11, 16, ref kflData_2D_BC);
+        }
 
         T2D_kntData = (double[,])kntData_2D_BC.Clone();
         T2D_tbtData = (double[,])tbtData_2D_BC.Clone();
@@ -572,6 +603,8 @@ public static class StabilityCalculator {
 
         // initialize ship longitudinal plane 
         shippointslon_init = (Point2D[])shippointslon_BC.Clone();
+
+        shippointsgclon_init = (Point2D[])shippointsgclon_GC.Clone();
     }
 
     // Read Hydrostatic Data CSV File
