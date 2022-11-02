@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\ApiHelper.cs" />
+    <Compile Include="Class\ConnectorDB.cs" />
     <Compile Include="Class\Container.cs" />
     <Compile Include="Class\ControlExtensions.cs" />
     <Compile Include="Class\DB.cs" />
