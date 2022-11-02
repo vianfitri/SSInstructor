@@ -9,7 +9,8 @@ namespace SSInstructor.Class
     public static class UserController
     {
         #region "Fields"
-        static int currentUser = 0;
+        public static bool isLogin = false;
+        public static string currentUcUser = "";
         #endregion
 
         #region "Properties"

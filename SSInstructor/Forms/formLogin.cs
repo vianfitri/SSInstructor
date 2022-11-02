@@ -128,7 +128,8 @@ namespace SSInstructor
                     //    "\r\nUsername : " + uName +
                     //    "\r\nPassword : " + uPass);
                     this._parent.DBConn = mysqlDBConn;
-                    this._parent.LoginId = logId;
+                    UserController.isLogin = true;
+                    UserController.currentUcUser = logId;
 
                     txtUsername.Texts = "";
                     txtPassword.Texts = "";
@@ -154,7 +155,6 @@ namespace SSInstructor
             }
 
             // Goto Main Form if success
-            this._parent.fDash.IsLogin = true;
             this._parent.openChildForm(this._parent.fDash);
 
         }

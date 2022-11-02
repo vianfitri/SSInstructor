@@ -19,8 +19,6 @@ namespace SSInstructor.Forms
         #region "Fields"
 
         private Form activeForm = null;
-        private String loginUsername = "";
-        private string loginId = "";
         private DB mysqlDbConn;
         public formLogin fLogin = null;
         public formDashboard fDash = null;
@@ -38,16 +36,6 @@ namespace SSInstructor.Forms
         #endregion
 
         #region Properties
-        public string LoginUsername {
-            get { return loginUsername; }
-            set { loginUsername = value; }
-        }
-
-        public string LoginId {
-            get { return loginId; }
-            set { loginId = value; }
-        }
-
         public DB DBConn
         {
             get { return mysqlDbConn; }
@@ -95,7 +83,7 @@ namespace SSInstructor.Forms
             // Initialize API Client
             ApiHelper.InitializeClient();
 
-            if (string.IsNullOrEmpty(loginId))
+            if (!UserController.isLogin)
             {
                 openChildForm(fLogin);
             }

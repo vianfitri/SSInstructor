@@ -20,8 +20,6 @@ namespace SSInstructor
         formMain _parent;
         private Form activeForm = null;
         private DB mysqlDbConn = null;
-
-        private bool isLogin = false;
         #endregion
 
         #region "Constructor"
@@ -38,12 +36,6 @@ namespace SSInstructor
         {
             get { return mysqlDbConn; }
             set { mysqlDbConn = value; }
-        }
-
-        public bool IsLogin
-        {
-            get { return isLogin; }
-            set { isLogin = value; }
         }
         #endregion
 
@@ -152,8 +144,8 @@ namespace SSInstructor
         {
             if (MessageBox.Show("Are you sure to logout ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                isLogin = false;
-                this._parent.LoginId = "";
+                UserController.isLogin = false;
+                UserController.currentUcUser = "";
                 this._parent.openChildForm(this._parent.fLogin);
                 openChildForm(new formWelcome());
             }
@@ -185,9 +177,7 @@ namespace SSInstructor
             MySQLConn = this._parent.DBConn;
 
             // fetch login user information
-            string currentLogId = this._parent.LoginId;
-
-            loadLoginInfo(currentLogId);
+            loadLoginInfo(UserController.currentUcUser);
 
             hideSubmenu();
         }
@@ -250,9 +240,9 @@ namespace SSInstructor
 
         private void formDashboard_VisibleChanged(object sender, EventArgs e)
         {
-            if(isLogin)
+            if(UserController.isLogin)
             {
-                loadLoginInfo(this._parent.LoginId);
+                loadLoginInfo(UserController.currentUcUser);
             }
         }
         #endregion
