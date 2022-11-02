@@ -55,7 +55,7 @@ namespace SSInstructor.Forms
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtNIP = new System.Windows.Forms.TextBox();
+            this.txtNIT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -201,6 +201,7 @@ namespace SSInstructor.Forms
             this.dgv_TraineeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_TraineeList.Size = new System.Drawing.Size(577, 366);
             this.dgv_TraineeList.TabIndex = 22;
+            this.dgv_TraineeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TraineeList_CellContentClick);
             // 
             // No
             // 
@@ -275,7 +276,7 @@ namespace SSInstructor.Forms
             this.pnlAddTrainee.Controls.Add(this.rbFemale);
             this.pnlAddTrainee.Controls.Add(this.rbMale);
             this.pnlAddTrainee.Controls.Add(this.txtName);
-            this.pnlAddTrainee.Controls.Add(this.txtNIP);
+            this.pnlAddTrainee.Controls.Add(this.txtNIT);
             this.pnlAddTrainee.Controls.Add(this.label7);
             this.pnlAddTrainee.Controls.Add(this.label6);
             this.pnlAddTrainee.Controls.Add(this.label5);
@@ -306,6 +307,7 @@ namespace SSInstructor.Forms
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextColor = System.Drawing.Color.White;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label8
             // 
@@ -336,6 +338,7 @@ namespace SSInstructor.Forms
             this.btnSaveTrainee.Text = "Save";
             this.btnSaveTrainee.TextColor = System.Drawing.Color.White;
             this.btnSaveTrainee.UseVisualStyleBackColor = false;
+            this.btnSaveTrainee.Click += new System.EventHandler(this.btnSaveTrainee_Click);
             // 
             // txtEmail
             // 
@@ -376,13 +379,13 @@ namespace SSInstructor.Forms
             this.txtName.Size = new System.Drawing.Size(281, 22);
             this.txtName.TabIndex = 13;
             // 
-            // txtNIP
+            // txtNIT
             // 
-            this.txtNIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIP.Location = new System.Drawing.Point(171, 87);
-            this.txtNIP.Name = "txtNIP";
-            this.txtNIP.Size = new System.Drawing.Size(222, 22);
-            this.txtNIP.TabIndex = 12;
+            this.txtNIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIT.Location = new System.Drawing.Point(171, 87);
+            this.txtNIT.Name = "txtNIT";
+            this.txtNIT.Size = new System.Drawing.Size(222, 22);
+            this.txtNIT.TabIndex = 12;
             // 
             // label7
             // 
@@ -481,7 +484,7 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtNIP;
+        private System.Windows.Forms.TextBox txtNIT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

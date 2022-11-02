@@ -19,7 +19,6 @@ namespace SSInstructor.Forms
         #region "Fields"
 
         private Form activeForm = null;
-        private DB mysqlDbConn;
         public formLogin fLogin = null;
         public formDashboard fDash = null;
         private static Semaphore Pool = new Semaphore(0, 10);
@@ -36,11 +35,6 @@ namespace SSInstructor.Forms
         #endregion
 
         #region Properties
-        public DB DBConn
-        {
-            get { return mysqlDbConn; }
-            set { mysqlDbConn = value; }
-        }
         #endregion
 
         #region Method
