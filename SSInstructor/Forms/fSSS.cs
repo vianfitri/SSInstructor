@@ -17,7 +17,6 @@ namespace SSInstructor.Forms
         #region "Fields"
 
         formDashboard _parent;
-        private DB mysqlConn = null;
         ASCIIEncoding encoder = new ASCIIEncoding();
 
         #region "Scen Variables To Save"
@@ -217,19 +216,11 @@ namespace SSInstructor.Forms
         #endregion
 
         #region "Properties"
-        public DB MySQLConn
-        {
-            get { return mysqlConn; }
-            set { mysqlConn = value; }
-        }
         #endregion
 
         #region "Method"
         private void fSSS_Load(object sender, EventArgs e)
         {
-            // Set MySQL Connector
-            MySQLConn = this._parent.MySQLConn;
-
             if (ParamsGlobal.CurrentScenario != null)
             {
                 btnSaveScen.Visible = true;
@@ -2355,7 +2346,7 @@ namespace SSInstructor.Forms
             // Get Current Scenario for Set
             string dbNameUse = "";
             string qData = "SELECT * FROM shp_assets.ss_scenario";
-            if (MySQLConn.GetData(qData, "db_name", ref dbNameUse))
+            if (ConnectorDB.MySQLConn.GetData(qData, "db_name", ref dbNameUse))
             {
                 // Insert database with value init
                 string qScenSet = "INSERT INTO `" + dbNameUse + "`.`ss_practicum`" +
@@ -2364,7 +2355,7 @@ namespace SSInstructor.Forms
                     "VALUES (" + tmmb_weight + ", " + tmmb_pos + ", " + tmmd_weight + ", " + tmmd_pos +
                     ", " + tkk_weight + ", " + tkk_pos + ", " + tnt_weight + ", " + tnt_pos + ", 0)";
 
-                if (MySQLConn.SetCommand(qScenSet))
+                if (ConnectorDB.MySQLConn.SetCommand(qScenSet))
                 {
                     btnSaveScen.Visible = false;
                 }
