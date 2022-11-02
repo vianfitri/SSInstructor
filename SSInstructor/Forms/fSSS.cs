@@ -1907,7 +1907,8 @@ namespace SSInstructor.Forms
                     StabilityCalculator.Rotate_point(ref shippoints[i].x, ref shippoints[i].y, cX, cY, dHeelVal);
                     lat_shipform_series.Points.AddXY(shippoints[i].x, shippoints[i].y);
                 }
-            } else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
+            } 
+            else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
             {
                 StabilityCalculator.Point2D[] shippoints = (StabilityCalculator.Point2D[])StabilityCalculator.shippointsgc_init.Clone();
                 for (int i = 0; i < shippoints.Length; i++)
