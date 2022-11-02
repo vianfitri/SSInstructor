@@ -89,7 +89,6 @@ namespace SSInstructor
                     //MessageBox.Show("LoginID :" + logId.ToString() + 
                     //    "\r\nUsername : " + uName +
                     //    "\r\nPassword : " + uPass);
-                    this._parent.DBConn = ConnectorDB.MySQLConn;
                     UserController.isLogin = true;
                     UserController.currentUcUser = logId;
 

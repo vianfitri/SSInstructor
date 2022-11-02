@@ -14,34 +14,23 @@ namespace SSInstructor.Forms
     public partial class fInstructorData : Form
     {
         #region "Fields"
-        formDashboard _parent;
-        private DB mysqlConn = null;
         int formMode = 0; // 0 = Add, 1 = Edit
         string idData = "";
         #endregion
 
         #region "Constructor"
-        public fInstructorData(formDashboard parent)
+        public fInstructorData()
         {
             InitializeComponent();
-            this._parent = parent;
         }
         #endregion
 
         #region "Properties"
-        public DB MySQLConn
-        {
-            get { return mysqlConn; }
-            set { mysqlConn = value; }
-        }
         #endregion
 
         #region "Method"
         private void fInstructorData_Load(object sender, EventArgs e)
         {
-            // Set MySQL Connector
-            MySQLConn = this._parent.MySQLConn;
-
             // Load Instructor List Data
             LoadInstructorListData();
         }
@@ -60,7 +49,7 @@ namespace SSInstructor.Forms
                 "ON b.type = c.id " +
                 "WHERE b.type = 2";
 
-            if(MySQLConn.GetTableData(qListInst, ref dtInstructor)){
+            if(ConnectorDB.MySQLConn.GetTableData(qListInst, ref dtInstructor)){
                 // Reset Rows First
                 dgv_InstructorList.Rows.Clear();
 
@@ -168,7 +157,7 @@ namespace SSInstructor.Forms
                 qCombine = qUpdateSubject + qUpdateLogin;
             }
 
-            if (MySQLConn.SetCommand(qCombine))
+            if (ConnectorDB.MySQLConn.SetCommand(qCombine))
             {
                 pnlAddInstructor.Visible = false;
                 txtName.Text = string.Empty;
@@ -196,7 +185,7 @@ namespace SSInstructor.Forms
             string qDeleteUser = "DELETE FROM `shp_assets`.`ss_user` WHERE `uc`='" + ucId + "';";
             string qCombine = qDeleteSubject + qDeleteUser;
 
-            if (MySQLConn.SetCommand(qCombine))
+            if (ConnectorDB.MySQLConn.SetCommand(qCombine))
             {
                 MessageBox.Show("Instructor data deleted successfully!!!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

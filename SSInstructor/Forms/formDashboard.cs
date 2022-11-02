@@ -19,7 +19,6 @@ namespace SSInstructor
         #region "Fields"
         formMain _parent;
         private Form activeForm = null;
-        private DB mysqlDbConn = null;
         #endregion
 
         #region "Constructor"
@@ -32,11 +31,6 @@ namespace SSInstructor
         #endregion
 
         #region "Properties"
-        public DB MySQLConn
-        {
-            get { return mysqlDbConn; }
-            set { mysqlDbConn = value; }
-        }
         #endregion
 
         #region "Methods"
@@ -83,7 +77,7 @@ namespace SSInstructor
                 "ON b.type = c.id " +
                 "WHERE a.uc = '" + logId + "' LIMIT 0, 1";
 
-            if(mysqlDbConn.GetTableData(qrStr, ref dtLoginInfo))
+            if(ConnectorDB.MySQLConn.GetTableData(qrStr, ref dtLoginInfo))
             {
                 lblUsername.Text = dtLoginInfo.Rows[0]["first_name"].ToString();
                 lblPriviledge.Text = dtLoginInfo.Rows[0]["typename"].ToString();
@@ -173,9 +167,6 @@ namespace SSInstructor
             // Load default content
             openChildForm(new formWelcome());
 
-            // set mysql data connector
-            MySQLConn = this._parent.DBConn;
-
             // fetch login user information
             loadLoginInfo(UserController.currentUcUser);
 
@@ -201,7 +192,7 @@ namespace SSInstructor
         private void btnInstructor_Click(object sender, EventArgs e)
         {
             // Load Instructor Data
-            openChildForm(new fInstructorData(this));
+            openChildForm(new fInstructorData());
 
             hideSubmenu();
         }

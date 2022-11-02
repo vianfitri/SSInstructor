@@ -92,9 +92,6 @@ namespace SSInstructor.Forms
         #region "Events"
         private async void fScenario_Load(object sender, EventArgs e)
         {
-            // Set MySQL Connector
-            MySQLConn = this._parent.MySQLConn;
-
             // load data scenario
             await LoadScenario();
         }
