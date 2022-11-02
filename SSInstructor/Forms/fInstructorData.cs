@@ -84,7 +84,6 @@ namespace SSInstructor.Forms
             }
         }
 
-
         private void btnAddInstructor_Click(object sender, EventArgs e)
         {
             formMode = 0;
