@@ -56,60 +56,9 @@ namespace SSInstructor.Forms
             }
         }
 
-        private async Task CreateScenario()
-        {
-            string uri = "http://localhost/s3-api/api/scenario/StoreSce";
-
-            string payload = JsonConvert.SerializeObject(new
-            {
-                scenario_name = txtScenName.Texts
-            });
-            var content = new StringContent(payload, Encoding.UTF8, "application/json");
-
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsync(uri, content))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    string resp = await response.Content.ReadAsStringAsync();
-
-                    Dictionary<string, object> respdict = JsonConvert.DeserializeObject<Dictionary<string, object>>(resp);
-
-                    if(respdict.ContainsKey("status") && (bool)respdict["status"] == true)
-                    {
-                        ParamsGlobal.CurrentScenario = txtScenName.Texts;
-                        DialogResult = DialogResult.OK;
-                    }
-                }
-                else
-                {
-                    //throw new Exception(response.ReasonPhrase);
-                    Console.WriteLine(response.ReasonPhrase);
-                }
-            }
-        }
-
-        private async void btnAdd_Click(object sender, EventArgs e)
-        {
-            await CreateScenario();
-
-            Close();
-        }
-
-        private bool IsTextNotEmpty()
-        {
-            return txtScenName.Texts != string.Empty;
-        }
-
         private void FormAddScen_Load(object sender, EventArgs e)
         {
-            btnAdd.Enabled = IsTextNotEmpty();
-
             btnScenSave.Enabled = IsNotEmptyTextName();
-        }
-
-        private void txtScenName__TextChanged(object sender, EventArgs e)
-        {
-            btnAdd.Enabled = IsTextNotEmpty();
         }
 
         private void btnScenSave_Click(object sender, EventArgs e)
