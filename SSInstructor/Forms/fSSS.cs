@@ -2858,6 +2858,10 @@ namespace SSInstructor.Forms
             if (ConnectorDB.MySQLConn.SetCommand(qScenSet))
             {
                 btnSaveScen.Visible = false;
+            } 
+            else
+            {
+                Console.WriteLine(ConnectorDB.MySQLConn.ErrorMessage);
             }
             
         }
