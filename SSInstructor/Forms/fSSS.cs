@@ -221,7 +221,8 @@ namespace SSInstructor.Forms
         #region "Method"
         private void fSSS_Load(object sender, EventArgs e)
         {
-            if (ParamsGlobal.CurrentScenario != null)
+            // Validate If Exercise Reason to Edit Scenario
+            if(ExerciseController.Reason == 1)
             {
                 btnSaveScen.Visible = true;
             }
@@ -2895,6 +2896,10 @@ namespace SSInstructor.Forms
             tnt_pos = (float)nudPosisiTNT.Value;
         }
 
+        private void LoadCurrentScenario()
+        {
+            string qDBScenName = "SELECT * FROM `shp_assets`.`ss_scenario` WHERE uc = '" + ExerciseController.CurrentUCScen + "'";
+        }
         #endregion
 
         
