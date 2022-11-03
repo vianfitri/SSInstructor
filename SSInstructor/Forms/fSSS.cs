@@ -862,7 +862,7 @@ namespace SSInstructor.Forms
                     );
                 }
             }
-            else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 0)
+            else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
             {
                 for (int i = 0; i < StabilityCalculator.shippointsgcTopView_GC.Length; i++)
                 {
