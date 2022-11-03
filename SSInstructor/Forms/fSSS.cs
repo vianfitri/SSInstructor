@@ -226,7 +226,6 @@ namespace SSInstructor.Forms
             if(ExerciseController.Reason == 1)
             {
                 btnSaveScen.Visible = true;
-                LoadCurrentScenario();
             }
 
             if (ExerciseController.VesselType == 0)
@@ -995,6 +994,11 @@ namespace SSInstructor.Forms
             }
             cbbHSLineSelect.SelectedIndex = 0;
             cbxUseDispOrDraftReal.Checked = true;
+
+            if(ExerciseController.Reason == 1)
+            {
+                LoadCurrentScenario();
+            }
         }
 
         private void crtLoadSideView_PrePaint(object sender, ChartPaintEventArgs e)
