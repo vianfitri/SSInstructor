@@ -74,6 +74,9 @@ namespace SSInstructor.Forms
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControlInput = new System.Windows.Forms.TabControl();
             this.tabMovingLoad = new System.Windows.Forms.TabPage();
+            this.lblMinute = new System.Windows.Forms.Label();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.txtDuration = new System.Windows.Forms.TextBox();
             this.btn3D = new System.Windows.Forms.Button();
             this.btnSaveScen = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -271,9 +274,6 @@ namespace SSInstructor.Forms
             this.cbbHSLineSelect = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.txtDuration = new System.Windows.Forms.TextBox();
-            this.lblDuration = new System.Windows.Forms.Label();
-            this.lblMinute = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcShipStability)).BeginInit();
             this.spcShipStability.Panel1.SuspendLayout();
             this.spcShipStability.Panel2.SuspendLayout();
@@ -894,6 +894,39 @@ namespace SSInstructor.Forms
             this.tabMovingLoad.Size = new System.Drawing.Size(412, 636);
             this.tabMovingLoad.TabIndex = 0;
             this.tabMovingLoad.Text = "Shear Load";
+            // 
+            // lblMinute
+            // 
+            this.lblMinute.AutoSize = true;
+            this.lblMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinute.Location = new System.Drawing.Point(217, 494);
+            this.lblMinute.Name = "lblMinute";
+            this.lblMinute.Size = new System.Drawing.Size(45, 15);
+            this.lblMinute.TabIndex = 181;
+            this.lblMinute.Text = "minute";
+            this.lblMinute.Visible = false;
+            // 
+            // lblDuration
+            // 
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDuration.Location = new System.Drawing.Point(42, 494);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(107, 15);
+            this.lblDuration.TabIndex = 180;
+            this.lblDuration.Text = "Target Duration";
+            this.lblDuration.Visible = false;
+            // 
+            // txtDuration
+            // 
+            this.txtDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuration.Location = new System.Drawing.Point(162, 491);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(46, 21);
+            this.txtDuration.TabIndex = 179;
+            this.txtDuration.Text = "0";
+            this.txtDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDuration.Visible = false;
             // 
             // btn3D
             // 
@@ -1528,7 +1561,7 @@ namespace SSInstructor.Forms
             this.tabStabilityInput.Location = new System.Drawing.Point(4, 22);
             this.tabStabilityInput.Name = "tabStabilityInput";
             this.tabStabilityInput.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStabilityInput.Size = new System.Drawing.Size(412, 584);
+            this.tabStabilityInput.Size = new System.Drawing.Size(412, 636);
             this.tabStabilityInput.TabIndex = 1;
             this.tabStabilityInput.Text = "Hydrostatic Calculation";
             // 
@@ -1944,7 +1977,7 @@ namespace SSInstructor.Forms
             this.tabHSData.Controls.Add(this.tabHydroModel);
             this.tabHSData.Controls.Add(this.tabHydroReal);
             this.tabHSData.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabHSData.Location = new System.Drawing.Point(3, 333);
+            this.tabHSData.Location = new System.Drawing.Point(3, 385);
             this.tabHSData.Name = "tabHSData";
             this.tabHSData.SelectedIndex = 0;
             this.tabHSData.Size = new System.Drawing.Size(406, 210);
@@ -2535,7 +2568,7 @@ namespace SSInstructor.Forms
             this.txbGZInfo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txbGZInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbGZInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGZInfo.Location = new System.Drawing.Point(3, 543);
+            this.txbGZInfo.Location = new System.Drawing.Point(3, 595);
             this.txbGZInfo.Name = "txbGZInfo";
             this.txbGZInfo.ReadOnly = true;
             this.txbGZInfo.Size = new System.Drawing.Size(406, 38);
@@ -2563,7 +2596,7 @@ namespace SSInstructor.Forms
             this.tabInfo.Location = new System.Drawing.Point(4, 22);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfo.Size = new System.Drawing.Size(412, 584);
+            this.tabInfo.Size = new System.Drawing.Size(412, 636);
             this.tabInfo.TabIndex = 2;
             this.tabInfo.Text = "Info";
             // 
@@ -2908,7 +2941,7 @@ namespace SSInstructor.Forms
             this.tabGraphHSCurve.Location = new System.Drawing.Point(4, 22);
             this.tabGraphHSCurve.Name = "tabGraphHSCurve";
             this.tabGraphHSCurve.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGraphHSCurve.Size = new System.Drawing.Size(412, 141);
+            this.tabGraphHSCurve.Size = new System.Drawing.Size(412, 89);
             this.tabGraphHSCurve.TabIndex = 1;
             this.tabGraphHSCurve.Text = "Hydrostatic Curve Graph Setting";
             this.tabGraphHSCurve.UseVisualStyleBackColor = true;
@@ -3042,36 +3075,6 @@ namespace SSInstructor.Forms
             this.label31.Size = new System.Drawing.Size(27, 13);
             this.label31.TabIndex = 68;
             this.label31.Text = "Line";
-            // 
-            // txtDuration
-            // 
-            this.txtDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.Location = new System.Drawing.Point(162, 491);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(46, 21);
-            this.txtDuration.TabIndex = 179;
-            this.txtDuration.Text = "120";
-            this.txtDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblDuration
-            // 
-            this.lblDuration.AutoSize = true;
-            this.lblDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuration.Location = new System.Drawing.Point(42, 494);
-            this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(107, 15);
-            this.lblDuration.TabIndex = 180;
-            this.lblDuration.Text = "Target Duration";
-            // 
-            // lblMinute
-            // 
-            this.lblMinute.AutoSize = true;
-            this.lblMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinute.Location = new System.Drawing.Point(217, 494);
-            this.lblMinute.Name = "lblMinute";
-            this.lblMinute.Size = new System.Drawing.Size(45, 15);
-            this.lblMinute.TabIndex = 181;
-            this.lblMinute.Text = "minute";
             // 
             // fSSS
             // 
