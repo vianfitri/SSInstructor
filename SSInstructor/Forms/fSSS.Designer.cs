@@ -74,6 +74,7 @@ namespace SSInstructor.Forms
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControlInput = new System.Windows.Forms.TabControl();
             this.tabMovingLoad = new System.Windows.Forms.TabPage();
+            this.btn3D = new System.Windows.Forms.Button();
             this.btnSaveScen = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txbGy = new System.Windows.Forms.TextBox();
@@ -227,7 +228,6 @@ namespace SSInstructor.Forms
             this.txbGZInfo = new System.Windows.Forms.TextBox();
             this.tabInfo = new System.Windows.Forms.TabPage();
             this.label82 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label80 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
@@ -270,7 +270,7 @@ namespace SSInstructor.Forms
             this.cbbHSLineSelect = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.btn3D = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcShipStability)).BeginInit();
             this.spcShipStability.Panel1.SuspendLayout();
             this.spcShipStability.Panel2.SuspendLayout();
@@ -323,13 +323,13 @@ namespace SSInstructor.Forms
             this.tabHydroModel.SuspendLayout();
             this.tabHydroReal.SuspendLayout();
             this.tabInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabGraphTransversal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMarkerSize)).BeginInit();
             this.tabGraphHSCurve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // spcShipStability
@@ -889,13 +889,25 @@ namespace SSInstructor.Forms
             this.tabMovingLoad.TabIndex = 0;
             this.tabMovingLoad.Text = "Shear Load";
             // 
+            // btn3D
+            // 
+            this.btn3D.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3D.Location = new System.Drawing.Point(245, 482);
+            this.btn3D.Name = "btn3D";
+            this.btn3D.Size = new System.Drawing.Size(125, 27);
+            this.btn3D.TabIndex = 178;
+            this.btn3D.Text = "3D VIEW";
+            this.btn3D.UseVisualStyleBackColor = true;
+            this.btn3D.Click += new System.EventHandler(this.btn3D_Click);
+            // 
             // btnSaveScen
             // 
+            this.btnSaveScen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveScen.Location = new System.Drawing.Point(51, 482);
             this.btnSaveScen.Name = "btnSaveScen";
             this.btnSaveScen.Size = new System.Drawing.Size(136, 27);
             this.btnSaveScen.TabIndex = 177;
-            this.btnSaveScen.Text = "Save Scenario Settings";
+            this.btnSaveScen.Text = "Save Settings";
             this.btnSaveScen.UseVisualStyleBackColor = true;
             this.btnSaveScen.Visible = false;
             this.btnSaveScen.Click += new System.EventHandler(this.btnSaveScen_Click);
@@ -2529,7 +2541,6 @@ namespace SSInstructor.Forms
             // 
             this.tabInfo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tabInfo.Controls.Add(this.label82);
-            this.tabInfo.Controls.Add(this.pictureBox1);
             this.tabInfo.Controls.Add(this.label80);
             this.tabInfo.Controls.Add(this.label79);
             this.tabInfo.Controls.Add(this.label78);
@@ -2542,6 +2553,7 @@ namespace SSInstructor.Forms
             this.tabInfo.Controls.Add(this.label56);
             this.tabInfo.Controls.Add(this.label35);
             this.tabInfo.Controls.Add(this.label34);
+            this.tabInfo.Controls.Add(this.pictureBox1);
             this.tabInfo.Location = new System.Drawing.Point(4, 22);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.Padding = new System.Windows.Forms.Padding(3);
@@ -2557,16 +2569,6 @@ namespace SSInstructor.Forms
             this.label82.Size = new System.Drawing.Size(226, 13);
             this.label82.TabIndex = 106;
             this.label82.Text = ".:.....................................................................:.";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SSInstructor.Properties.Resources.PIP_SEMARANG_LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 271);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 168);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 100;
-            this.pictureBox1.TabStop = false;
             // 
             // label80
             // 
@@ -3025,16 +3027,15 @@ namespace SSInstructor.Forms
             this.label31.TabIndex = 68;
             this.label31.Text = "Line";
             // 
-            // btn3D
+            // pictureBox1
             // 
-            this.btn3D.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3D.Location = new System.Drawing.Point(245, 482);
-            this.btn3D.Name = "btn3D";
-            this.btn3D.Size = new System.Drawing.Size(125, 27);
-            this.btn3D.TabIndex = 178;
-            this.btn3D.Text = "3D VIEW";
-            this.btn3D.UseVisualStyleBackColor = true;
-            this.btn3D.Click += new System.EventHandler(this.btn3D_Click);
+            this.pictureBox1.Image = global::SSInstructor.Properties.Resources.PIP_SEMARANG_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 271);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 168);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 100;
+            this.pictureBox1.TabStop = false;
             // 
             // fSSS
             // 
@@ -3105,7 +3106,6 @@ namespace SSInstructor.Forms
             this.tabHydroReal.PerformLayout();
             this.tabInfo.ResumeLayout(false);
             this.tabInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabGraphTransversal.ResumeLayout(false);
             this.tabGraphTransversal.PerformLayout();
@@ -3114,6 +3114,7 @@ namespace SSInstructor.Forms
             this.tabGraphHSCurve.ResumeLayout(false);
             this.tabGraphHSCurve.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
