@@ -180,7 +180,11 @@ namespace SSInstructor.Forms
 
         private void dgv_ScenList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int idCell = e.RowIndex;
+            if (dgv_ScenList.Columns[e.ColumnIndex].Name == "scenAction")
+            {
 
+            }
         }
         #endregion
 
