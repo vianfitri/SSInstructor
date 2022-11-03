@@ -118,6 +118,7 @@ namespace SSInstructor.Forms
         {
             if(rbTraining.Checked == true)
             {
+                cbVesselSelect.SelectedIndex = ExerciseController.VesselType;
                 if (ConnectorDB.MySQLConn.SetCommand("UPDATE `shp_assets`.`ss_exercise` SET mode = 0 WHERE uc = '111-11111-11'"))
                 {
                     ExerciseController.EMode = ExerciseController.ExerciseMode.Training;
