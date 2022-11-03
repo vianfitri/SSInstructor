@@ -183,7 +183,20 @@ namespace SSInstructor.Forms
             int idCell = e.RowIndex;
             if (dgv_ScenList.Columns[e.ColumnIndex].Name == "scenAction")
             {
+                string ucScen = dgv_ScenList["scenid", idCell].Value.ToString();
 
+                string qUpdateInactive = "UPDATE `shp_assets`.`ss_scenario` SET is_active = 0 WHERE is_active = 1;";
+                string qUpdateActive = "UPDATE `shp_assets`.`ss_scenario` SET is_active = 1 WHERE uc='"+ucScen+"';";
+                string qCombine = qUpdateInactive + qUpdateActive;
+
+                if (ConnectorDB.MySQLConn.SetCommand(qCombine))
+                {
+                    LoadScenList();
+                }
+                else
+                {
+                    Console.WriteLine(ConnectorDB.MySQLConn.ErrorMessage);
+                }
             }
         }
         #endregion
