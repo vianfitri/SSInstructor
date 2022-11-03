@@ -2916,6 +2916,11 @@ namespace SSInstructor.Forms
                     }
                 }
                 btnSaveScen.Visible = false;
+                ExerciseController.CurrentDBName = "";
+                ExerciseController.CurrentUCScen = "";
+                ExerciseController.Reason = 0;
+                ExerciseController.VesselType = 0;
+                this._parent.btnScenario_Click(null, null);
             } 
             else
             {
