@@ -226,6 +226,9 @@ namespace SSInstructor.Forms
             if(ExerciseController.Reason == 1)
             {
                 btnSaveScen.Visible = true;
+                lblDuration.Visible = true;
+                txtDuration.Visible = true;
+                lblMinute.Visible = true;
             }
 
             if (ExerciseController.VesselType == 0)
@@ -2916,6 +2919,9 @@ namespace SSInstructor.Forms
                     }
                 }
                 btnSaveScen.Visible = false;
+                lblDuration.Visible = false;
+                txtDuration.Visible = false;
+                lblMinute.Visible = false;
                 ExerciseController.CurrentDBName = "";
                 ExerciseController.CurrentUCScen = "";
                 ExerciseController.Reason = 0;
@@ -2957,6 +2963,7 @@ namespace SSInstructor.Forms
             tmmd_pos = (float)nudPosisiTMMD.Value;
             tkk_pos = (float)nudPosisiTKK.Value;
             tnt_pos = (float)nudPosisiTNT.Value;
+            time_duration_max = float.Parse(txtDuration.Text);
         }
 
         private void LoadCurrentScenario()
@@ -2981,7 +2988,7 @@ namespace SSInstructor.Forms
                         nudPosisiTMMD.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmd_position"].ToString());
                         nudPosisiTKK.Value = decimal.Parse(dtSetPrac.Rows[0]["tkk_position"].ToString());
                         nudPosisiTNT.Value = decimal.Parse(dtSetPrac.Rows[0]["tnt_position"].ToString());
-                        time_duration_max = float.Parse(dtSetPrac.Rows[0]["duration"].ToString());
+                        txtDuration.Text = dtSetPrac.Rows[0]["duration"].ToString();
                     }
                 }
             }
