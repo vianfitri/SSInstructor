@@ -173,6 +173,7 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ScenList.Size = new System.Drawing.Size(1236, 502);
             this.dgv_ScenList.TabIndex = 20;
+            this.dgv_ScenList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ScenList_CellContentClick);
             this.dgv_ScenList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ScenList_CellDoubleClick);
             // 
             // No

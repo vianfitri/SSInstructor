@@ -177,6 +177,11 @@ namespace SSInstructor.Forms
                 this._parent.btnStability_Click(null, null);
             }
         }
+
+        private void dgv_ScenList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         #endregion
 
 
