@@ -2847,7 +2847,7 @@ namespace SSInstructor.Forms
         {
             // Get Current Scenario for Set
             string dbNameUse = "";
-            string qData = "SELECT * FROM shp_assets.ss_scenario";
+            string qData = "SELECT * FROM `shp_assets`.`ss_scenario`";
             if (ConnectorDB.MySQLConn.GetData(qData, "db_name", ref dbNameUse))
             {
                 // Insert database with value init
