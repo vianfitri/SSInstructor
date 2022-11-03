@@ -2850,9 +2850,9 @@ namespace SSInstructor.Forms
         {
             // Insert database with value init
             string qScenSet = "INSERT INTO `" + ExerciseController.CurrentDBName + "`.`ss_practicum`" +
-                "(`tmmb_weight`, `tmmb_position`, `tmmd_wight`, `tmmd_position`," +
+                "(`uc`,`id_vessel`,`tmmb_weight`, `tmmb_position`, `tmmd_wight`, `tmmd_position`," +
                 "`tkk_weight`, `tkk_position`, `tnt_weight`, `tnt_position`, `duration`) " +
-                "VALUES (" + tmmb_weight + ", " + tmmb_pos + ", " + tmmd_weight + ", " + tmmd_pos +
+                "VALUES ('"+ ExerciseController.CurrentUCScen +"',"+ExerciseController.VesselType+"," + tmmb_weight + ", " + tmmb_pos + ", " + tmmd_weight + ", " + tmmd_pos +
                 ", " + tkk_weight + ", " + tkk_pos + ", " + tnt_weight + ", " + tnt_pos + ", "+ time_duration_max +")";
 
             if (ConnectorDB.MySQLConn.SetCommand(qScenSet))
