@@ -2867,6 +2867,18 @@ namespace SSInstructor.Forms
         private void btn3D_Click(object sender, EventArgs e)
         {
             // Get Type Vessel First
+            if(ExerciseController.VesselType == 0)
+            {
+                // Call Bulk Carrier 3D view
+            }
+            else if(ExerciseController.VesselType == 1)
+            {
+                // Call General Cargo 3D View
+            }
+            else if(ExerciseController.VesselType == 2)
+            {
+                // Call Container 3D View
+            }
         }
 
         // Set Value For Scenario
