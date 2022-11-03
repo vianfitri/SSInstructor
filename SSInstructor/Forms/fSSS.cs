@@ -226,6 +226,7 @@ namespace SSInstructor.Forms
             if(ExerciseController.Reason == 1)
             {
                 btnSaveScen.Visible = true;
+                LoadCurrentScenario();
             }
 
             if (ExerciseController.VesselType == 0)
@@ -2847,23 +2848,18 @@ namespace SSInstructor.Forms
 
         private void btnSaveScen_Click(object sender, EventArgs e)
         {
-            // Get Current Scenario for Set
-            string dbNameUse = "";
-            string qData = "SELECT * FROM `shp_assets`.`ss_scenario`";
-            if (ConnectorDB.MySQLConn.GetData(qData, "db_name", ref dbNameUse))
-            {
-                // Insert database with value init
-                string qScenSet = "INSERT INTO `" + dbNameUse + "`.`ss_practicum`" +
-                    "(`tmmb_weight`, `tmmb_position`, `tmmd_wight`, `tmmd_position`," +
-                    "`tkk_weight`, `tkk_position`, `tnt_weight`, `tnt_position`, `duration`) " +
-                    "VALUES (" + tmmb_weight + ", " + tmmb_pos + ", " + tmmd_weight + ", " + tmmd_pos +
-                    ", " + tkk_weight + ", " + tkk_pos + ", " + tnt_weight + ", " + tnt_pos + ", 0)";
+            // Insert database with value init
+            string qScenSet = "INSERT INTO `" + ExerciseController.CurrentDBName + "`.`ss_practicum`" +
+                "(`tmmb_weight`, `tmmb_position`, `tmmd_wight`, `tmmd_position`," +
+                "`tkk_weight`, `tkk_position`, `tnt_weight`, `tnt_position`, `duration`) " +
+                "VALUES (" + tmmb_weight + ", " + tmmb_pos + ", " + tmmd_weight + ", " + tmmd_pos +
+                ", " + tkk_weight + ", " + tkk_pos + ", " + tnt_weight + ", " + tnt_pos + ", "+ time_duration_max +")";
 
-                if (ConnectorDB.MySQLConn.SetCommand(qScenSet))
-                {
-                    btnSaveScen.Visible = false;
-                }
+            if (ConnectorDB.MySQLConn.SetCommand(qScenSet))
+            {
+                btnSaveScen.Visible = false;
             }
+            
         }
 
         private void btn3D_Click(object sender, EventArgs e)
@@ -2900,21 +2896,34 @@ namespace SSInstructor.Forms
         private void LoadCurrentScenario()
         {
             string qScenData = "SELECT * FROM `"+ExerciseController.CurrentDBName+"`.`ss_practicum` WHERE uc = '"+ExerciseController.CurrentUCScen+"'";
+            int totRow = 0;
 
-            DataTable dtSetPrac = new DataTable();
-            if (ConnectorDB.MySQLConn.GetTableData(qScenData, ref dtSetPrac))
+            if(ConnectorDB.MySQLConn.GetTotalRow(qScenData, ref totRow))
             {
-                nudBebanTMMB.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmb_weight"].ToString());
-                nudBebanTMMD.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmd_wight"].ToString());
-                nudBebanTKK.Value = decimal.Parse(dtSetPrac.Rows[0]["tkk_weight"].ToString());
-                nudBebanTNT.Value = decimal.Parse(dtSetPrac.Rows[0]["tnt_weight"].ToString());
+                // If Available Data
+                if(totRow > 0)
+                {
+                    DataTable dtSetPrac = new DataTable();
+                    if (ConnectorDB.MySQLConn.GetTableData(qScenData, ref dtSetPrac))
+                    {
+                        nudBebanTMMB.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmb_weight"].ToString());
+                        nudBebanTMMD.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmd_wight"].ToString());
+                        nudBebanTKK.Value = decimal.Parse(dtSetPrac.Rows[0]["tkk_weight"].ToString());
+                        nudBebanTNT.Value = decimal.Parse(dtSetPrac.Rows[0]["tnt_weight"].ToString());
 
-                nudPosisiTMMB.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmb_position"].ToString());
-                nudPosisiTMMD.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmd_position"].ToString());
-                nudPosisiTKK.Value = decimal.Parse(dtSetPrac.Rows[0]["tkk_position"].ToString());
-                nudPosisiTNT.Value = decimal.Parse(dtSetPrac.Rows[0]["tnt_position"].ToString());
-                time_duration_max = float.Parse(dtSetPrac.Rows[0]["duration"].ToString());
+                        nudPosisiTMMB.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmb_position"].ToString());
+                        nudPosisiTMMD.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmd_position"].ToString());
+                        nudPosisiTKK.Value = decimal.Parse(dtSetPrac.Rows[0]["tkk_position"].ToString());
+                        nudPosisiTNT.Value = decimal.Parse(dtSetPrac.Rows[0]["tnt_position"].ToString());
+                        time_duration_max = float.Parse(dtSetPrac.Rows[0]["duration"].ToString());
+                    }
+                }
             }
+            else
+            {
+                Console.WriteLine(ConnectorDB.MySQLConn.ErrorMessage);
+            }
+            
         }
         #endregion
 
