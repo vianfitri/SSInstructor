@@ -435,5 +435,14 @@
   <ItemGroup>
     <None Include="Resources\GC3650.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

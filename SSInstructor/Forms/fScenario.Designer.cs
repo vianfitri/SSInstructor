@@ -29,24 +29,14 @@ namespace SSInstructor.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fScenario));
             this.label1 = new System.Windows.Forms.Label();
             this.btnDetail = new ViControls.ViButton();
             this.dgv_ScenList = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scenid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dbname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shiptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
-            this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlAddScenario = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,10 +48,20 @@ namespace SSInstructor.Forms
             this.lblAddScen = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbTraining = new System.Windows.Forms.RadioButton();
-            this.rbTest = new System.Windows.Forms.RadioButton();
-            this.cbVesselSelect = new System.Windows.Forms.ComboBox();
             this.lblVesselSelect = new System.Windows.Forms.Label();
+            this.cbVesselSelect = new System.Windows.Forms.ComboBox();
+            this.rbTest = new System.Windows.Forms.RadioButton();
+            this.rbTraining = new System.Windows.Forms.RadioButton();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scenid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dbname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shiptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
+            this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).BeginInit();
             this.pnlAddScenario.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -107,13 +107,13 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.AllowUserToDeleteRows = false;
             this.dgv_ScenList.AllowUserToResizeColumns = false;
             this.dgv_ScenList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_ScenList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_ScenList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ScenList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -122,15 +122,15 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ScenList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_ScenList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ScenList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ScenList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ScenList.ColumnHeadersHeight = 40;
             this.dgv_ScenList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ScenList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -144,15 +144,15 @@ namespace SSInstructor.Forms
             this.isexist,
             this.scenAction,
             this.scenDelete});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ScenList.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ScenList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ScenList.EnableHeadersVisualStyles = false;
             this.dgv_ScenList.Location = new System.Drawing.Point(48, 235);
             this.dgv_ScenList.MultiSelect = false;
@@ -161,92 +161,17 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_ScenList.RowHeadersVisible = false;
             this.dgv_ScenList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_ScenList.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_ScenList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ScenList.RowTemplate.Height = 40;
             this.dgv_ScenList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ScenList.Size = new System.Drawing.Size(1236, 502);
             this.dgv_ScenList.TabIndex = 20;
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.FillWeight = 80F;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 80;
-            // 
-            // scenid
-            // 
-            this.scenid.HeaderText = "id";
-            this.scenid.Name = "scenid";
-            this.scenid.ReadOnly = true;
-            this.scenid.Visible = false;
-            // 
-            // scenname
-            // 
-            this.scenname.FillWeight = 64.52919F;
-            this.scenname.HeaderText = "Scenario Name";
-            this.scenname.Name = "scenname";
-            this.scenname.ReadOnly = true;
-            // 
-            // dbname
-            // 
-            this.dbname.HeaderText = "Database Name";
-            this.dbname.Name = "dbname";
-            this.dbname.ReadOnly = true;
-            this.dbname.Visible = false;
-            // 
-            // shiptype
-            // 
-            this.shiptype.HeaderText = "Vessel Type";
-            this.shiptype.Name = "shiptype";
-            this.shiptype.ReadOnly = true;
-            // 
-            // createtime
-            // 
-            this.createtime.FillWeight = 64.52919F;
-            this.createtime.HeaderText = "Create Time";
-            this.createtime.Name = "createtime";
-            this.createtime.ReadOnly = true;
-            // 
-            // isactive
-            // 
-            this.isactive.HeaderText = "IsActive";
-            this.isactive.Name = "isactive";
-            this.isactive.ReadOnly = true;
-            this.isactive.Visible = false;
-            // 
-            // isexist
-            // 
-            this.isexist.HeaderText = "IsExist";
-            this.isexist.Name = "isexist";
-            this.isexist.ReadOnly = true;
-            this.isexist.Visible = false;
-            // 
-            // scenAction
-            // 
-            this.scenAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.scenAction.FillWeight = 64.52919F;
-            this.scenAction.HeaderText = "";
-            this.scenAction.Name = "scenAction";
-            this.scenAction.ReadOnly = true;
-            this.scenAction.Width = 17;
-            // 
-            // scenDelete
-            // 
-            this.scenDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.scenDelete.HeaderText = "";
-            this.scenDelete.Image = ((System.Drawing.Image)(resources.GetObject("scenDelete.Image")));
-            this.scenDelete.Name = "scenDelete";
-            this.scenDelete.ReadOnly = true;
-            this.scenDelete.Width = 17;
             // 
             // dataGridViewImageColumn1
             // 
@@ -377,31 +302,15 @@ namespace SSInstructor.Forms
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
-            // rbTraining
+            // lblVesselSelect
             // 
-            this.rbTraining.AutoSize = true;
-            this.rbTraining.Checked = true;
-            this.rbTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTraining.Location = new System.Drawing.Point(25, 39);
-            this.rbTraining.Name = "rbTraining";
-            this.rbTraining.Size = new System.Drawing.Size(126, 20);
-            this.rbTraining.TabIndex = 0;
-            this.rbTraining.TabStop = true;
-            this.rbTraining.Text = "Mode Training";
-            this.rbTraining.UseVisualStyleBackColor = true;
-            this.rbTraining.CheckedChanged += new System.EventHandler(this.rbTraining_CheckedChanged);
-            // 
-            // rbTest
-            // 
-            this.rbTest.AutoSize = true;
-            this.rbTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTest.Location = new System.Drawing.Point(195, 39);
-            this.rbTest.Name = "rbTest";
-            this.rbTest.Size = new System.Drawing.Size(100, 20);
-            this.rbTest.TabIndex = 1;
-            this.rbTest.Text = "Mode Test";
-            this.rbTest.UseVisualStyleBackColor = true;
-            this.rbTest.CheckedChanged += new System.EventHandler(this.rbTest_CheckedChanged);
+            this.lblVesselSelect.AutoSize = true;
+            this.lblVesselSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVesselSelect.Location = new System.Drawing.Point(459, 41);
+            this.lblVesselSelect.Name = "lblVesselSelect";
+            this.lblVesselSelect.Size = new System.Drawing.Size(96, 16);
+            this.lblVesselSelect.TabIndex = 28;
+            this.lblVesselSelect.Text = "Vessel Type";
             // 
             // cbVesselSelect
             // 
@@ -417,15 +326,107 @@ namespace SSInstructor.Forms
             this.cbVesselSelect.TabIndex = 27;
             this.cbVesselSelect.SelectedIndexChanged += new System.EventHandler(this.cbVesselSelect_SelectedIndexChanged);
             // 
-            // lblVesselSelect
+            // rbTest
             // 
-            this.lblVesselSelect.AutoSize = true;
-            this.lblVesselSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVesselSelect.Location = new System.Drawing.Point(459, 41);
-            this.lblVesselSelect.Name = "lblVesselSelect";
-            this.lblVesselSelect.Size = new System.Drawing.Size(96, 16);
-            this.lblVesselSelect.TabIndex = 28;
-            this.lblVesselSelect.Text = "Vessel Type";
+            this.rbTest.AutoSize = true;
+            this.rbTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTest.Location = new System.Drawing.Point(195, 39);
+            this.rbTest.Name = "rbTest";
+            this.rbTest.Size = new System.Drawing.Size(100, 20);
+            this.rbTest.TabIndex = 1;
+            this.rbTest.Text = "Mode Test";
+            this.rbTest.UseVisualStyleBackColor = true;
+            this.rbTest.CheckedChanged += new System.EventHandler(this.rbTest_CheckedChanged);
+            // 
+            // rbTraining
+            // 
+            this.rbTraining.AutoSize = true;
+            this.rbTraining.Checked = true;
+            this.rbTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTraining.Location = new System.Drawing.Point(25, 39);
+            this.rbTraining.Name = "rbTraining";
+            this.rbTraining.Size = new System.Drawing.Size(126, 20);
+            this.rbTraining.TabIndex = 0;
+            this.rbTraining.TabStop = true;
+            this.rbTraining.Text = "Mode Training";
+            this.rbTraining.UseVisualStyleBackColor = true;
+            this.rbTraining.CheckedChanged += new System.EventHandler(this.rbTraining_CheckedChanged);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.FillWeight = 80F;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 80;
+            // 
+            // scenid
+            // 
+            this.scenid.HeaderText = "id";
+            this.scenid.Name = "scenid";
+            this.scenid.ReadOnly = true;
+            this.scenid.Visible = false;
+            // 
+            // scenname
+            // 
+            this.scenname.FillWeight = 64.52919F;
+            this.scenname.HeaderText = "Scenario Name";
+            this.scenname.Name = "scenname";
+            this.scenname.ReadOnly = true;
+            // 
+            // dbname
+            // 
+            this.dbname.HeaderText = "Database Name";
+            this.dbname.Name = "dbname";
+            this.dbname.ReadOnly = true;
+            this.dbname.Visible = false;
+            // 
+            // shiptype
+            // 
+            this.shiptype.HeaderText = "Vessel Type";
+            this.shiptype.Name = "shiptype";
+            this.shiptype.ReadOnly = true;
+            // 
+            // createtime
+            // 
+            this.createtime.FillWeight = 64.52919F;
+            this.createtime.HeaderText = "Create Time";
+            this.createtime.Name = "createtime";
+            this.createtime.ReadOnly = true;
+            // 
+            // isactive
+            // 
+            this.isactive.HeaderText = "IsActive";
+            this.isactive.Name = "isactive";
+            this.isactive.ReadOnly = true;
+            this.isactive.Visible = false;
+            // 
+            // isexist
+            // 
+            this.isexist.HeaderText = "IsExist";
+            this.isexist.Name = "isexist";
+            this.isexist.ReadOnly = true;
+            this.isexist.Visible = false;
+            // 
+            // scenAction
+            // 
+            this.scenAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.scenAction.FillWeight = 64.52919F;
+            this.scenAction.HeaderText = "";
+            this.scenAction.Image = global::SSInstructor.Properties.Resources.inactive;
+            this.scenAction.Name = "scenAction";
+            this.scenAction.ReadOnly = true;
+            this.scenAction.Width = 17;
+            // 
+            // scenDelete
+            // 
+            this.scenDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.scenDelete.HeaderText = "";
+            this.scenDelete.Image = global::SSInstructor.Properties.Resources.delete;
+            this.scenDelete.Name = "scenDelete";
+            this.scenDelete.ReadOnly = true;
+            this.scenDelete.Width = 17;
             // 
             // fScenario
             // 
@@ -461,16 +462,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridView dgv_ScenList;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Panel pnlAddScenario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scenid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scenname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dbname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shiptype;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createtime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isactive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isexist;
-        private System.Windows.Forms.DataGridViewImageColumn scenAction;
-        private System.Windows.Forms.DataGridViewImageColumn scenDelete;
         private System.Windows.Forms.Label lblAddScen;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -484,5 +475,15 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.RadioButton rbTest;
         private System.Windows.Forms.Label lblVesselSelect;
         private System.Windows.Forms.ComboBox cbVesselSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scenid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scenname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dbname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shiptype;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createtime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isactive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isexist;
+        private System.Windows.Forms.DataGridViewImageColumn scenAction;
+        private System.Windows.Forms.DataGridViewImageColumn scenDelete;
     }
 }
