@@ -161,6 +161,19 @@ namespace SSInstructor.Forms
         private void dgv_ScenList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Use for setting scenario
+            string ucScen = dgv_ScenList["id", e.RowIndex].ToString();
+
+            // get vessel type
+            string qScen = "SELECT * FROM `shp_assets`.`ss_scenario` WHERE uc = '" + ucScen + "'";
+            int vessel_type = 0;
+
+            if(ConnectorDB.MySQLConn.GetData(qScen, "vessel_type", ref vessel_type))
+            {
+                ExerciseController.CurrentUCScen = ucScen;
+                ExerciseController.VesselType = vessel_type;
+                ExerciseController.Reason = 1;
+            }
+
         }
         #endregion
 
