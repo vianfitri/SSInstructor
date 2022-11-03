@@ -240,6 +240,7 @@ namespace SSInstructor.Forms
             this.label56 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabGraphTransversal = new System.Windows.Forms.TabPage();
             this.label38 = new System.Windows.Forms.Label();
@@ -270,7 +271,8 @@ namespace SSInstructor.Forms
             this.cbbHSLineSelect = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtDuration = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcShipStability)).BeginInit();
             this.spcShipStability.Panel1.SuspendLayout();
             this.spcShipStability.Panel2.SuspendLayout();
@@ -323,13 +325,13 @@ namespace SSInstructor.Forms
             this.tabHydroModel.SuspendLayout();
             this.tabHydroReal.SuspendLayout();
             this.tabInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabGraphTransversal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMarkerSize)).BeginInit();
             this.tabGraphHSCurve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // spcShipStability
@@ -808,7 +810,7 @@ namespace SSInstructor.Forms
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Size = new System.Drawing.Size(420, 782);
-            this.splitContainer1.SplitterDistance = 610;
+            this.splitContainer1.SplitterDistance = 662;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -821,12 +823,14 @@ namespace SSInstructor.Forms
             this.tabControlInput.Location = new System.Drawing.Point(0, 0);
             this.tabControlInput.Name = "tabControlInput";
             this.tabControlInput.SelectedIndex = 0;
-            this.tabControlInput.Size = new System.Drawing.Size(420, 610);
+            this.tabControlInput.Size = new System.Drawing.Size(420, 662);
             this.tabControlInput.TabIndex = 0;
             // 
             // tabMovingLoad
             // 
             this.tabMovingLoad.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabMovingLoad.Controls.Add(this.label83);
+            this.tabMovingLoad.Controls.Add(this.txtDuration);
             this.tabMovingLoad.Controls.Add(this.btn3D);
             this.tabMovingLoad.Controls.Add(this.btnSaveScen);
             this.tabMovingLoad.Controls.Add(this.label9);
@@ -885,14 +889,14 @@ namespace SSInstructor.Forms
             this.tabMovingLoad.Location = new System.Drawing.Point(4, 22);
             this.tabMovingLoad.Name = "tabMovingLoad";
             this.tabMovingLoad.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMovingLoad.Size = new System.Drawing.Size(412, 584);
+            this.tabMovingLoad.Size = new System.Drawing.Size(412, 636);
             this.tabMovingLoad.TabIndex = 0;
             this.tabMovingLoad.Text = "Shear Load";
             // 
             // btn3D
             // 
             this.btn3D.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3D.Location = new System.Drawing.Point(245, 482);
+            this.btn3D.Location = new System.Drawing.Point(258, 539);
             this.btn3D.Name = "btn3D";
             this.btn3D.Size = new System.Drawing.Size(125, 27);
             this.btn3D.TabIndex = 178;
@@ -903,7 +907,7 @@ namespace SSInstructor.Forms
             // btnSaveScen
             // 
             this.btnSaveScen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveScen.Location = new System.Drawing.Point(51, 482);
+            this.btnSaveScen.Location = new System.Drawing.Point(43, 540);
             this.btnSaveScen.Name = "btnSaveScen";
             this.btnSaveScen.Size = new System.Drawing.Size(136, 27);
             this.btnSaveScen.TabIndex = 177;
@@ -1446,7 +1450,7 @@ namespace SSInstructor.Forms
             this.txbInfoMuatan.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txbInfoMuatan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbInfoMuatan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbInfoMuatan.Location = new System.Drawing.Point(3, 521);
+            this.txbInfoMuatan.Location = new System.Drawing.Point(3, 573);
             this.txbInfoMuatan.Name = "txbInfoMuatan";
             this.txbInfoMuatan.ReadOnly = true;
             this.txbInfoMuatan.Size = new System.Drawing.Size(406, 30);
@@ -1458,7 +1462,7 @@ namespace SSInstructor.Forms
             this.txbBobotTotal.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txbBobotTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbBobotTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBobotTotal.Location = new System.Drawing.Point(3, 551);
+            this.txbBobotTotal.Location = new System.Drawing.Point(3, 603);
             this.txbBobotTotal.Name = "txbBobotTotal";
             this.txbBobotTotal.ReadOnly = true;
             this.txbBobotTotal.Size = new System.Drawing.Size(406, 30);
@@ -2675,6 +2679,16 @@ namespace SSInstructor.Forms
             this.label34.TabIndex = 93;
             this.label34.Text = "(2) Sudut Trim (deg), Positif Menunduk, Negatif Mendongak";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SSInstructor.Properties.Resources.PIP_SEMARANG_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 271);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 168);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 100;
+            this.pictureBox1.TabStop = false;
+            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabGraphTransversal);
@@ -2683,7 +2697,7 @@ namespace SSInstructor.Forms
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(420, 167);
+            this.tabControl2.Size = new System.Drawing.Size(420, 115);
             this.tabControl2.TabIndex = 0;
             this.tabControl2.Visible = false;
             // 
@@ -2706,7 +2720,7 @@ namespace SSInstructor.Forms
             this.tabGraphTransversal.Location = new System.Drawing.Point(4, 22);
             this.tabGraphTransversal.Name = "tabGraphTransversal";
             this.tabGraphTransversal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGraphTransversal.Size = new System.Drawing.Size(412, 141);
+            this.tabGraphTransversal.Size = new System.Drawing.Size(412, 89);
             this.tabGraphTransversal.TabIndex = 0;
             this.tabGraphTransversal.Text = "Transversal Diagram Graph Setting";
             this.tabGraphTransversal.UseVisualStyleBackColor = true;
@@ -3027,15 +3041,23 @@ namespace SSInstructor.Forms
             this.label31.TabIndex = 68;
             this.label31.Text = "Line";
             // 
-            // pictureBox1
+            // txtDuration
             // 
-            this.pictureBox1.Image = global::SSInstructor.Properties.Resources.PIP_SEMARANG_LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 271);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 168);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 100;
-            this.pictureBox1.TabStop = false;
+            this.txtDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuration.Location = new System.Drawing.Point(162, 491);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(66, 21);
+            this.txtDuration.TabIndex = 179;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label83.Location = new System.Drawing.Point(42, 492);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(107, 15);
+            this.label83.TabIndex = 180;
+            this.label83.Text = "Target Duration";
             // 
             // fSSS
             // 
@@ -3106,6 +3128,7 @@ namespace SSInstructor.Forms
             this.tabHydroReal.PerformLayout();
             this.tabInfo.ResumeLayout(false);
             this.tabInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabGraphTransversal.ResumeLayout(false);
             this.tabGraphTransversal.PerformLayout();
@@ -3114,7 +3137,6 @@ namespace SSInstructor.Forms
             this.tabGraphHSCurve.ResumeLayout(false);
             this.tabGraphHSCurve.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSLineWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3347,5 +3369,7 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnSaveScen;
         private System.Windows.Forms.Button btn3D;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.TextBox txtDuration;
     }
 }
