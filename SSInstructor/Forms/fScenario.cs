@@ -72,12 +72,12 @@ namespace SSInstructor.Forms
                         vessel_type = "Containership 4180 DWT";
 
                     Bitmap status = null;
-                    if(int.Parse(row["is_active"].ToString()) == 0)
+                    if (Convert.ToInt32(row["is_active"]) == 0)
                     {
                         status = Properties.Resources.inactive;
                     }
-                    else if(int.Parse(row["is_active"].ToString()) == 1)
-                    {
+                    else if(Convert.ToInt32(row["is_active"]) == 1)
+                    { 
                         status = Properties.Resources.active;
                     }
 
