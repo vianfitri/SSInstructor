@@ -172,6 +172,7 @@ namespace SSInstructor.Forms
                 ExerciseController.CurrentUCScen = ucScen;
                 ExerciseController.VesselType = vessel_type;
                 ExerciseController.Reason = 1;
+                this._parent.btnStability_Click(null, null);
             }
 
         }
