@@ -2947,8 +2947,9 @@ namespace SSInstructor.Forms
             if(ExerciseController.VesselType == 0)
             {
                 // Call Bulk Carrier 3D view
-                ProcessStartInfo start = new ProcessStartInfo();
-                start.FileName = Application.StartupPath + "\\3D\\bulkcarrier.exe";
+                Process start = new Process();
+                start.StartInfo.FileName = Application.StartupPath + "\\3D\\bulkcarrier.exe";
+                start.Start();
 
             }
             else if(ExerciseController.VesselType == 1)
