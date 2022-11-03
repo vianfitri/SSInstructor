@@ -162,6 +162,7 @@ namespace SSInstructor.Forms
         {
             // Use for setting scenario
             string ucScen = dgv_ScenList["scenid", e.RowIndex].ToString();
+            string dbName = dgv_ScenList["dbname", e.RowIndex].ToString();
 
             // get vessel type
             string qScen = "SELECT * FROM `shp_assets`.`ss_scenario` WHERE uc = '" + ucScen + "'";
@@ -170,6 +171,7 @@ namespace SSInstructor.Forms
             if (ConnectorDB.MySQLConn.GetData(qScen, "vessel_type", ref vessel_type))
             {
                 ExerciseController.CurrentUCScen = ucScen;
+                ExerciseController.CurrentDBName = dbName;
                 ExerciseController.VesselType = vessel_type;
                 ExerciseController.Reason = 1;
                 this._parent.btnStability_Click(null, null);

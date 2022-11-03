@@ -2898,7 +2898,9 @@ namespace SSInstructor.Forms
 
         private void LoadCurrentScenario()
         {
-            string qDBScenName = "SELECT * FROM `shp_assets`.`ss_scenario` WHERE uc = '" + ExerciseController.CurrentUCScen + "'";
+            string qScenData = "SELECT * FROM `"+ExerciseController.CurrentDBName+"`.`ss_practicum` WHERE uc = '"+ExerciseController.CurrentUCScen+"'";
+
+
         }
         #endregion
 
