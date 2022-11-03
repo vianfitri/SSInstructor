@@ -2848,22 +2848,75 @@ namespace SSInstructor.Forms
 
         private void btnSaveScen_Click(object sender, EventArgs e)
         {
-            // Insert database with value init
-            string qScenSet = "INSERT INTO `" + ExerciseController.CurrentDBName + "`.`ss_practicum`" +
-                "(`uc`,`id_vessel`,`tmmb_weight`, `tmmb_position`, `tmmd_wight`, `tmmd_position`," +
-                "`tkk_weight`, `tkk_position`, `tnt_weight`, `tnt_position`, `duration`) " +
-                "VALUES ('"+ ExerciseController.CurrentUCScen +"',"+ExerciseController.VesselType+"," + tmmb_weight + ", " + tmmb_pos + ", " + tmmd_weight + ", " + tmmd_pos +
-                ", " + tkk_weight + ", " + tkk_pos + ", " + tnt_weight + ", " + tnt_pos + ", "+ time_duration_max +")";
+            // Check if available
+            string qGetRow = "SELECT * FROM `"+ ExerciseController.CurrentDBName +"`.`ss_practicum` WHERE uc = '"+ ExerciseController.CurrentUCScen +"'";
+            int totRow = 0;
 
-            if (ConnectorDB.MySQLConn.SetCommand(qScenSet))
+            if(ConnectorDB.MySQLConn.GetTotalRow(qGetRow, ref totRow))
             {
+                if(totRow > 0)
+                {
+                    // Update data
+                    string qScenSetUpdate = "UPDATE `" + ExerciseController.CurrentDBName + "`.`ss_practicum` SET " +
+                        "id_vessel="+ ExerciseController.VesselType + "," +
+                        "tmmb_weight =" + tmmb_weight + "," +
+                        "tmmb_position =" + tmmb_pos + "," +
+                        "tmmd_wight =" + tmmd_weight + "," +
+                        "tmmd_position=" + tmmd_pos + "," +
+                        "tkk_weight=" + tkk_weight + "," +
+                        "tkk_position=" + tkk_pos + "," +
+                        "tnt_weight=" + tnt_weight + "," +
+                        "tnt_position=" + tnt_pos + "," +
+                        "duration=" + time_duration_max + " " +
+                        "WHERE uc='" + ExerciseController.CurrentUCScen + "'";
+
+                    if (ConnectorDB.MySQLConn.SetCommand(qScenSetUpdate))
+                    {
+
+                    }
+                } 
+                else
+                {
+                    // Insert New Row
+                    // Insert database with value init
+                    string qScenSet = "INSERT INTO `" + ExerciseController.CurrentDBName + "`.`ss_practicum`" +
+                        "("+"" +
+                        "`uc`," +
+                        "`id_vessel`," +
+                        "`tmmb_weight`," +
+                        "`tmmb_position`," +
+                        "`tmmd_wight`," +
+                        "`tmmd_position`," +
+                        "`tkk_weight`," +
+                        "`tkk_position`," +
+                        "`tnt_weight`," +
+                        "`tnt_position`," +
+                        "`duration`" +
+                        ") VALUES (" +
+                        "'" + ExerciseController.CurrentUCScen + "'," + 
+                        ExerciseController.VesselType + "," + 
+                        tmmb_weight + ", " + 
+                        tmmb_pos + ", " + 
+                        tmmd_weight + ", " + 
+                        tmmd_pos + ", " + 
+                        tkk_weight + ", " + 
+                        tkk_pos + ", " + 
+                        tnt_weight + ", " + 
+                        tnt_pos + ", " + 
+                        time_duration_max + 
+                        ")";
+
+                    if (ConnectorDB.MySQLConn.SetCommand(qScenSet))
+                    {
+
+                    }
+                }
                 btnSaveScen.Visible = false;
             } 
             else
             {
                 Console.WriteLine(ConnectorDB.MySQLConn.ErrorMessage);
-            }
-            
+            }           
         }
 
         private void btn3D_Click(object sender, EventArgs e)
