@@ -2864,6 +2864,11 @@ namespace SSInstructor.Forms
             }
         }
 
+        private void btn3D_Click(object sender, EventArgs e)
+        {
+            // Get Type Vessel First
+        }
+
         // Set Value For Scenario
         private void SetScenValue()
         {
@@ -2877,8 +2882,9 @@ namespace SSInstructor.Forms
             tkk_pos = (float)nudPosisiTKK.Value;
             tnt_pos = (float)nudPosisiTNT.Value;
         }
+
         #endregion
 
-
+        
     }
 }

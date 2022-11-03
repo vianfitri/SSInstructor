@@ -270,6 +270,7 @@ namespace SSInstructor.Forms
             this.cbbHSLineSelect = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btn3D = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spcShipStability)).BeginInit();
             this.spcShipStability.Panel1.SuspendLayout();
             this.spcShipStability.Panel2.SuspendLayout();
@@ -826,6 +827,7 @@ namespace SSInstructor.Forms
             // tabMovingLoad
             // 
             this.tabMovingLoad.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabMovingLoad.Controls.Add(this.btn3D);
             this.tabMovingLoad.Controls.Add(this.btnSaveScen);
             this.tabMovingLoad.Controls.Add(this.label9);
             this.tabMovingLoad.Controls.Add(this.txbGy);
@@ -889,9 +891,9 @@ namespace SSInstructor.Forms
             // 
             // btnSaveScen
             // 
-            this.btnSaveScen.Location = new System.Drawing.Point(139, 486);
+            this.btnSaveScen.Location = new System.Drawing.Point(51, 482);
             this.btnSaveScen.Name = "btnSaveScen";
-            this.btnSaveScen.Size = new System.Drawing.Size(136, 23);
+            this.btnSaveScen.Size = new System.Drawing.Size(136, 27);
             this.btnSaveScen.TabIndex = 177;
             this.btnSaveScen.Text = "Save Scenario Settings";
             this.btnSaveScen.UseVisualStyleBackColor = true;
@@ -3023,6 +3025,17 @@ namespace SSInstructor.Forms
             this.label31.TabIndex = 68;
             this.label31.Text = "Line";
             // 
+            // btn3D
+            // 
+            this.btn3D.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3D.Location = new System.Drawing.Point(245, 482);
+            this.btn3D.Name = "btn3D";
+            this.btn3D.Size = new System.Drawing.Size(125, 27);
+            this.btn3D.TabIndex = 178;
+            this.btn3D.Text = "3D VIEW";
+            this.btn3D.UseVisualStyleBackColor = true;
+            this.btn3D.Click += new System.EventHandler(this.btn3D_Click);
+            // 
             // fSSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3332,5 +3345,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnSaveScen;
+        private System.Windows.Forms.Button btn3D;
     }
 }
