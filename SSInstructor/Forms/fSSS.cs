@@ -1435,7 +1435,7 @@ namespace SSInstructor.Forms
             CalculateTransverseHydrostatic();
             CalculateLongitudinalHydrostatic();
             DrawGZandKNCurves(); // 20150908
-
+            SendShipDataTo3D();
             //Kirim();
         }
 
@@ -1453,7 +1453,7 @@ namespace SSInstructor.Forms
             scbHeelVal.Value = (int)(dHeelVal * 100);
             CalculateTransverseHydrostatic();
             DrawGZandKNCurves(); // 20150908
-
+            SendShipDataTo3D();
             //Kirim();
         }
 
@@ -1984,6 +1984,8 @@ namespace SSInstructor.Forms
                 {
                     StabilityCalculator.Rotate_point(ref shippoints[i].x, ref shippoints[i].y, cX, cY, dHeelVal);
                     lat_shipform_series.Points.AddXY(shippoints[i].x, shippoints[i].y);
+
+                    SendShipDataTo3D();
                 }
             } 
             else if(ExerciseController.VesselType == 1 || ExerciseController.VesselType == 2)
@@ -1993,6 +1995,8 @@ namespace SSInstructor.Forms
                 {
                     StabilityCalculator.Rotate_point(ref shippoints[i].x, ref shippoints[i].y, cX, cY, dHeelVal);
                     lat_shipform_series.Points.AddXY(shippoints[i].x, shippoints[i].y);
+
+                    SendShipDataTo3D();
                 }
             }
 
@@ -2171,6 +2175,7 @@ namespace SSInstructor.Forms
                 {
                     StabilityCalculator.Rotate_point(ref shippointslon[i].x, ref shippointslon[i].y, 0, dDraftVal, -dTrimVal);
                     crtLongitudinal.Series[0].Points.AddXY(shippointslon[i].x, shippointslon[i].y);
+                    SendShipDataTo3D();
                     // Kirim();
                 }
             }
@@ -2181,6 +2186,7 @@ namespace SSInstructor.Forms
                 {
                     StabilityCalculator.Rotate_point(ref shippointslon[i].x, ref shippointslon[i].y, 0, dDraftVal, -dTrimVal);
                     crtLongitudinal.Series[0].Points.AddXY(shippointslon[i].x, shippointslon[i].y);
+                    SendShipDataTo3D();
                     // Kirim();
                 }
             }
@@ -2998,8 +3004,16 @@ namespace SSInstructor.Forms
             }
             
         }
+
+        private void SendShipDataTo3D()
+        {
+            string message = "att$" + heel_angle.ToString("F2") + "," +
+                trim_angle.ToString("F2") + "," + dWeightTotalShip.ToString("F2") + "#";
+
+            VisualServer.visualconn.Send(message);
+        }
         #endregion
 
-        
+
     }
 }
