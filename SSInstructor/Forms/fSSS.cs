@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -2946,6 +2947,9 @@ namespace SSInstructor.Forms
             if(ExerciseController.VesselType == 0)
             {
                 // Call Bulk Carrier 3D view
+                ProcessStartInfo start = new ProcessStartInfo();
+                start.FileName = Application.StartupPath + "\\3D\\bulkcarrier.exe";
+
             }
             else if(ExerciseController.VesselType == 1)
             {
