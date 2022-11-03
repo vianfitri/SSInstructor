@@ -28,6 +28,7 @@ namespace SSInstructor.Forms
         float tkk_pos = 0f;
         float tnt_weight = 0f;
         float tnt_pos = 0f;
+        float time_duration_max = 0f;
         #endregion
 
         #region "Load"
@@ -2900,7 +2901,20 @@ namespace SSInstructor.Forms
         {
             string qScenData = "SELECT * FROM `"+ExerciseController.CurrentDBName+"`.`ss_practicum` WHERE uc = '"+ExerciseController.CurrentUCScen+"'";
 
+            DataTable dtSetPrac = new DataTable();
+            if (ConnectorDB.MySQLConn.GetTableData(qScenData, ref dtSetPrac))
+            {
+                nudBebanTMMB.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmb_weight"].ToString());
+                nudBebanTMMD.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmd_wight"].ToString());
+                nudBebanTKK.Value = decimal.Parse(dtSetPrac.Rows[0]["tkk_weight"].ToString());
+                nudBebanTNT.Value = decimal.Parse(dtSetPrac.Rows[0]["tnt_weight"].ToString());
 
+                nudPosisiTMMB.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmb_position"].ToString());
+                nudPosisiTMMD.Value = decimal.Parse(dtSetPrac.Rows[0]["tmmd_position"].ToString());
+                nudPosisiTKK.Value = decimal.Parse(dtSetPrac.Rows[0]["tkk_position"].ToString());
+                nudPosisiTNT.Value = decimal.Parse(dtSetPrac.Rows[0]["tnt_position"].ToString());
+                time_duration_max = float.Parse(dtSetPrac.Rows[0]["duration"].ToString());
+            }
         }
         #endregion
 
