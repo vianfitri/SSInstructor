@@ -37,6 +37,16 @@ namespace SSInstructor.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.btnDetail = new ViControls.ViButton();
             this.dgv_ScenList = new System.Windows.Forms.DataGridView();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scenid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dbname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shiptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
+            this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlAddScenario = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnScenSave = new ViControls.ViButton();
@@ -51,18 +61,8 @@ namespace SSInstructor.Forms
             this.cbVesselSelect = new System.Windows.Forms.ComboBox();
             this.rbTest = new System.Windows.Forms.RadioButton();
             this.rbTraining = new System.Windows.Forms.RadioButton();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scenid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dbname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shiptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
-            this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).BeginInit();
             this.pnlAddScenario.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -173,7 +173,83 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ScenList.Size = new System.Drawing.Size(1236, 502);
             this.dgv_ScenList.TabIndex = 20;
-            this.dgv_ScenList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ScenList_CellContentDoubleClick);
+            this.dgv_ScenList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ScenList_CellDoubleClick);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.FillWeight = 80F;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 80;
+            // 
+            // scenid
+            // 
+            this.scenid.HeaderText = "id";
+            this.scenid.Name = "scenid";
+            this.scenid.ReadOnly = true;
+            this.scenid.Visible = false;
+            // 
+            // scenname
+            // 
+            this.scenname.FillWeight = 64.52919F;
+            this.scenname.HeaderText = "Scenario Name";
+            this.scenname.Name = "scenname";
+            this.scenname.ReadOnly = true;
+            // 
+            // dbname
+            // 
+            this.dbname.HeaderText = "Database Name";
+            this.dbname.Name = "dbname";
+            this.dbname.ReadOnly = true;
+            this.dbname.Visible = false;
+            // 
+            // shiptype
+            // 
+            this.shiptype.HeaderText = "Vessel Type";
+            this.shiptype.Name = "shiptype";
+            this.shiptype.ReadOnly = true;
+            // 
+            // createtime
+            // 
+            this.createtime.FillWeight = 64.52919F;
+            this.createtime.HeaderText = "Create Time";
+            this.createtime.Name = "createtime";
+            this.createtime.ReadOnly = true;
+            // 
+            // isactive
+            // 
+            this.isactive.HeaderText = "IsActive";
+            this.isactive.Name = "isactive";
+            this.isactive.ReadOnly = true;
+            this.isactive.Visible = false;
+            // 
+            // isexist
+            // 
+            this.isexist.HeaderText = "IsExist";
+            this.isexist.Name = "isexist";
+            this.isexist.ReadOnly = true;
+            this.isexist.Visible = false;
+            // 
+            // scenAction
+            // 
+            this.scenAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.scenAction.FillWeight = 64.52919F;
+            this.scenAction.HeaderText = "";
+            this.scenAction.Image = global::SSInstructor.Properties.Resources.inactive;
+            this.scenAction.Name = "scenAction";
+            this.scenAction.ReadOnly = true;
+            this.scenAction.Width = 17;
+            // 
+            // scenDelete
+            // 
+            this.scenDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.scenDelete.HeaderText = "";
+            this.scenDelete.Image = global::SSInstructor.Properties.Resources.delete;
+            this.scenDelete.Name = "scenDelete";
+            this.scenDelete.ReadOnly = true;
+            this.scenDelete.Width = 17;
             // 
             // pnlAddScenario
             // 
@@ -347,63 +423,6 @@ namespace SSInstructor.Forms
             this.rbTraining.UseVisualStyleBackColor = true;
             this.rbTraining.CheckedChanged += new System.EventHandler(this.rbTraining_CheckedChanged);
             // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.FillWeight = 80F;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 80;
-            // 
-            // scenid
-            // 
-            this.scenid.HeaderText = "id";
-            this.scenid.Name = "scenid";
-            this.scenid.ReadOnly = true;
-            this.scenid.Visible = false;
-            // 
-            // scenname
-            // 
-            this.scenname.FillWeight = 64.52919F;
-            this.scenname.HeaderText = "Scenario Name";
-            this.scenname.Name = "scenname";
-            this.scenname.ReadOnly = true;
-            // 
-            // dbname
-            // 
-            this.dbname.HeaderText = "Database Name";
-            this.dbname.Name = "dbname";
-            this.dbname.ReadOnly = true;
-            this.dbname.Visible = false;
-            // 
-            // shiptype
-            // 
-            this.shiptype.HeaderText = "Vessel Type";
-            this.shiptype.Name = "shiptype";
-            this.shiptype.ReadOnly = true;
-            // 
-            // createtime
-            // 
-            this.createtime.FillWeight = 64.52919F;
-            this.createtime.HeaderText = "Create Time";
-            this.createtime.Name = "createtime";
-            this.createtime.ReadOnly = true;
-            // 
-            // isactive
-            // 
-            this.isactive.HeaderText = "IsActive";
-            this.isactive.Name = "isactive";
-            this.isactive.ReadOnly = true;
-            this.isactive.Visible = false;
-            // 
-            // isexist
-            // 
-            this.isexist.HeaderText = "IsExist";
-            this.isexist.Name = "isexist";
-            this.isexist.ReadOnly = true;
-            this.isexist.Visible = false;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -411,7 +430,6 @@ namespace SSInstructor.Forms
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 17;
             // 
             // dataGridViewImageColumn2
             // 
@@ -419,26 +437,6 @@ namespace SSInstructor.Forms
             this.dataGridViewImageColumn2.HeaderText = "";
             this.dataGridViewImageColumn2.Image = global::SSInstructor.Properties.Resources.delete;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 17;
-            // 
-            // scenAction
-            // 
-            this.scenAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.scenAction.FillWeight = 64.52919F;
-            this.scenAction.HeaderText = "";
-            this.scenAction.Image = global::SSInstructor.Properties.Resources.inactive;
-            this.scenAction.Name = "scenAction";
-            this.scenAction.ReadOnly = true;
-            this.scenAction.Width = 17;
-            // 
-            // scenDelete
-            // 
-            this.scenDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.scenDelete.HeaderText = "";
-            this.scenDelete.Image = global::SSInstructor.Properties.Resources.delete;
-            this.scenDelete.Name = "scenDelete";
-            this.scenDelete.ReadOnly = true;
-            this.scenDelete.Width = 17;
             // 
             // fScenario
             // 
