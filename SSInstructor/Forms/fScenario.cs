@@ -71,6 +71,16 @@ namespace SSInstructor.Forms
                     else if (row["vessel_type"].ToString() == "2")
                         vessel_type = "Containership 4180 DWT";
 
+                    Bitmap status = null;
+                    if((int)row["is_active"] == 0)
+                    {
+                        status = Properties.Resources.inactive;
+                    }
+                    else if((int)row["is_active"] == 1)
+                    {
+                        status = Properties.Resources.active;
+                    }
+
                     idData++;
                     dgv_ScenList.Rows.Add(
                         new object[]
@@ -83,7 +93,7 @@ namespace SSInstructor.Forms
                             row["create_time"],
                             row["is_active"],
                             row["is_exist"],
-                            null,
+                            status,
                             null
                         }
                     );
