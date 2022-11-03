@@ -33,6 +33,23 @@ namespace SSInstructor.Forms
         #endregion
 
         #region "Method"
+        private void LoadExercise()
+        {
+            string qExerc = "SELECT * FROM `shp_assets`.`ss_exercise` WHERE uc = '111-11111-11'";
+            int exerciseMode = 0;
+            
+            if(ConnectorDB.MySQLConn.GetData(qExerc, "mode", ref exerciseMode))
+            {
+                if(exerciseMode == 0)
+                {
+                    rbTraining.Checked = true;
+                }
+                else if(exerciseMode == 1)
+                {
+                    rbTest.Checked = true;
+                }
+            }
+        }
 
         private void LoadScenList()
         {
@@ -78,6 +95,9 @@ namespace SSInstructor.Forms
         #region "Events"
         private void fScenario_Load(object sender, EventArgs e)
         {
+            // Load Exercise Mode
+            LoadExercise();
+
             // load data scenario
             LoadScenList();
         }
@@ -93,6 +113,40 @@ namespace SSInstructor.Forms
                 LoadScenList();
             }
         }
+
+        private void rbTraining_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbTraining.Checked == true)
+            {
+                if (ConnectorDB.MySQLConn.SetCommand("UPDATE `shp_assets`.`ss_exercise` SET mode = 0 WHERE uc = '111-11111-11'"))
+                {
+                    ExerciseController.EMode = ExerciseController.ExerciseMode.Training;
+                    lblVesselSelect.Visible = true;
+                    cbVesselSelect.Visible = true;
+                }
+
+            }
+        }
+
+        private void rbTest_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTest.Checked == true)
+            {
+                if (ConnectorDB.MySQLConn.SetCommand("UPDATE `shp_assets`.`ss_exercise` SET mode = 1 WHERE uc = '111-11111-11'"))
+                {
+                    ExerciseController.EMode = ExerciseController.ExerciseMode.Test;
+                    cbVesselSelect.SelectedIndex = 0;
+                    lblVesselSelect.Visible = false;
+                    cbVesselSelect.Visible = false;
+                }
+            }
+        }
+
+        private void cbVesselSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ExerciseController.VesselType = cbVesselSelect.SelectedIndex;
+        }
+
         #endregion
     }
 }

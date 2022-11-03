@@ -37,8 +37,6 @@ namespace SSInstructor.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.btnDetail = new ViControls.ViButton();
             this.dgv_ScenList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pnlAddScenario = new System.Windows.Forms.Panel();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,23 +47,32 @@ namespace SSInstructor.Forms
             this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
             this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblAddScen = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pnlAddScenario = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnScenSave = new ViControls.ViButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnScenSave = new ViControls.ViButton();
+            this.lblAddScen = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbTraining = new System.Windows.Forms.RadioButton();
+            this.rbTest = new System.Windows.Forms.RadioButton();
+            this.cbVesselSelect = new System.Windows.Forms.ComboBox();
+            this.lblVesselSelect = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).BeginInit();
             this.pnlAddScenario.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 35);
+            this.label1.Location = new System.Drawing.Point(44, 189);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 24);
@@ -147,7 +154,7 @@ namespace SSInstructor.Forms
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_ScenList.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_ScenList.EnableHeadersVisualStyles = false;
-            this.dgv_ScenList.Location = new System.Drawing.Point(48, 91);
+            this.dgv_ScenList.Location = new System.Drawing.Point(48, 235);
             this.dgv_ScenList.MultiSelect = false;
             this.dgv_ScenList.Name = "dgv_ScenList";
             this.dgv_ScenList.ReadOnly = true;
@@ -163,25 +170,8 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_ScenList.RowTemplate.Height = 40;
             this.dgv_ScenList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ScenList.Size = new System.Drawing.Size(1236, 646);
+            this.dgv_ScenList.Size = new System.Drawing.Size(1236, 502);
             this.dgv_ScenList.TabIndex = 20;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // pnlAddScenario
-            // 
-            this.pnlAddScenario.Controls.Add(this.groupBox1);
-            this.pnlAddScenario.Controls.Add(this.lblAddScen);
-            this.pnlAddScenario.Location = new System.Drawing.Point(181, 185);
-            this.pnlAddScenario.Name = "pnlAddScenario";
-            this.pnlAddScenario.Size = new System.Drawing.Size(690, 403);
-            this.pnlAddScenario.TabIndex = 21;
-            this.pnlAddScenario.Visible = false;
             // 
             // No
             // 
@@ -258,16 +248,22 @@ namespace SSInstructor.Forms
             this.scenDelete.ReadOnly = true;
             this.scenDelete.Width = 17;
             // 
-            // lblAddScen
+            // dataGridViewImageColumn1
             // 
-            this.lblAddScen.AutoSize = true;
-            this.lblAddScen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddScen.Location = new System.Drawing.Point(44, 35);
-            this.lblAddScen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAddScen.Name = "lblAddScen";
-            this.lblAddScen.Size = new System.Drawing.Size(160, 24);
-            this.lblAddScen.TabIndex = 18;
-            this.lblAddScen.Text = "Create Scenario";
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // pnlAddScenario
+            // 
+            this.pnlAddScenario.Controls.Add(this.groupBox1);
+            this.pnlAddScenario.Controls.Add(this.lblAddScen);
+            this.pnlAddScenario.Location = new System.Drawing.Point(439, 495);
+            this.pnlAddScenario.Name = "pnlAddScenario";
+            this.pnlAddScenario.Size = new System.Drawing.Size(690, 403);
+            this.pnlAddScenario.TabIndex = 21;
+            this.pnlAddScenario.Visible = false;
             // 
             // groupBox1
             // 
@@ -284,6 +280,27 @@ namespace SSInstructor.Forms
             this.groupBox1.Size = new System.Drawing.Size(596, 265);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
+            // 
+            // btnScenSave
+            // 
+            this.btnScenSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnScenSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnScenSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
+            this.btnScenSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnScenSave.BorderRadius = 10;
+            this.btnScenSave.BorderSize = 0;
+            this.btnScenSave.FlatAppearance.BorderSize = 0;
+            this.btnScenSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScenSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScenSave.ForeColor = System.Drawing.Color.White;
+            this.btnScenSave.Location = new System.Drawing.Point(35, 155);
+            this.btnScenSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnScenSave.Name = "btnScenSave";
+            this.btnScenSave.Size = new System.Drawing.Size(121, 32);
+            this.btnScenSave.TabIndex = 27;
+            this.btnScenSave.Text = "Save";
+            this.btnScenSave.TextColor = System.Drawing.Color.White;
+            this.btnScenSave.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
@@ -326,32 +343,97 @@ namespace SSInstructor.Forms
             this.label2.TabIndex = 23;
             this.label2.Text = "Scenario Name";
             // 
-            // btnScenSave
+            // lblAddScen
             // 
-            this.btnScenSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnScenSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnScenSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(184)))), ((int)(((byte)(249)))));
-            this.btnScenSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnScenSave.BorderRadius = 10;
-            this.btnScenSave.BorderSize = 0;
-            this.btnScenSave.FlatAppearance.BorderSize = 0;
-            this.btnScenSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScenSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScenSave.ForeColor = System.Drawing.Color.White;
-            this.btnScenSave.Location = new System.Drawing.Point(35, 155);
-            this.btnScenSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnScenSave.Name = "btnScenSave";
-            this.btnScenSave.Size = new System.Drawing.Size(121, 32);
-            this.btnScenSave.TabIndex = 27;
-            this.btnScenSave.Text = "Save";
-            this.btnScenSave.TextColor = System.Drawing.Color.White;
-            this.btnScenSave.UseVisualStyleBackColor = false;
+            this.lblAddScen.AutoSize = true;
+            this.lblAddScen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddScen.Location = new System.Drawing.Point(44, 35);
+            this.lblAddScen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddScen.Name = "lblAddScen";
+            this.lblAddScen.Size = new System.Drawing.Size(160, 24);
+            this.lblAddScen.TabIndex = 18;
+            this.lblAddScen.Text = "Create Scenario";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(44, 35);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 24);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Exercise Mode";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblVesselSelect);
+            this.groupBox2.Controls.Add(this.cbVesselSelect);
+            this.groupBox2.Controls.Add(this.rbTest);
+            this.groupBox2.Controls.Add(this.rbTraining);
+            this.groupBox2.Location = new System.Drawing.Point(48, 62);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(798, 100);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            // 
+            // rbTraining
+            // 
+            this.rbTraining.AutoSize = true;
+            this.rbTraining.Checked = true;
+            this.rbTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTraining.Location = new System.Drawing.Point(25, 39);
+            this.rbTraining.Name = "rbTraining";
+            this.rbTraining.Size = new System.Drawing.Size(126, 20);
+            this.rbTraining.TabIndex = 0;
+            this.rbTraining.TabStop = true;
+            this.rbTraining.Text = "Mode Training";
+            this.rbTraining.UseVisualStyleBackColor = true;
+            this.rbTraining.CheckedChanged += new System.EventHandler(this.rbTraining_CheckedChanged);
+            // 
+            // rbTest
+            // 
+            this.rbTest.AutoSize = true;
+            this.rbTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTest.Location = new System.Drawing.Point(195, 39);
+            this.rbTest.Name = "rbTest";
+            this.rbTest.Size = new System.Drawing.Size(100, 20);
+            this.rbTest.TabIndex = 1;
+            this.rbTest.Text = "Mode Test";
+            this.rbTest.UseVisualStyleBackColor = true;
+            this.rbTest.CheckedChanged += new System.EventHandler(this.rbTest_CheckedChanged);
+            // 
+            // cbVesselSelect
+            // 
+            this.cbVesselSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVesselSelect.FormattingEnabled = true;
+            this.cbVesselSelect.Items.AddRange(new object[] {
+            "Bulk Carrier 50000 DWT",
+            "General Cargo 3650 DWT",
+            "Containership 4180 DWT"});
+            this.cbVesselSelect.Location = new System.Drawing.Point(578, 32);
+            this.cbVesselSelect.Name = "cbVesselSelect";
+            this.cbVesselSelect.Size = new System.Drawing.Size(195, 32);
+            this.cbVesselSelect.TabIndex = 27;
+            this.cbVesselSelect.SelectedIndexChanged += new System.EventHandler(this.cbVesselSelect_SelectedIndexChanged);
+            // 
+            // lblVesselSelect
+            // 
+            this.lblVesselSelect.AutoSize = true;
+            this.lblVesselSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVesselSelect.Location = new System.Drawing.Point(459, 41);
+            this.lblVesselSelect.Name = "lblVesselSelect";
+            this.lblVesselSelect.Size = new System.Drawing.Size(96, 16);
+            this.lblVesselSelect.TabIndex = 28;
+            this.lblVesselSelect.Text = "Vessel Type";
             // 
             // fScenario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 841);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pnlAddScenario);
             this.Controls.Add(this.dgv_ScenList);
             this.Controls.Add(this.btnDetail);
@@ -365,6 +447,8 @@ namespace SSInstructor.Forms
             this.pnlAddScenario.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,5 +478,11 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private ViControls.ViButton btnScenSave;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbTraining;
+        private System.Windows.Forms.RadioButton rbTest;
+        private System.Windows.Forms.Label lblVesselSelect;
+        private System.Windows.Forms.ComboBox cbVesselSelect;
     }
 }

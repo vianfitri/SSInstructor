@@ -2422,7 +2422,7 @@ namespace SSInstructor.Forms
                     gzcrosspoint_series = new Series[StabilityCalculator.disp_KMT_GC.Count()];
                     crtGZCrossCurve.ChartAreas[0].AxisX.Title = "Heel (deg)";
 
-                    for (int i = 0; i < StabilityCalculator.disp_KMT_BC.Count(); i++)
+                    for (int i = 0; i < StabilityCalculator.disp_KMT_GC.Count(); i++)
                     {
                         Series lineSeries = new Series();
                         Color clr = Color.FromArgb(5 * i, 0, 255 - 5 * i);

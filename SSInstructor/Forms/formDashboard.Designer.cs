@@ -173,7 +173,7 @@ namespace SSInstructor
             this.btnStability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStability.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStability.ForeColor = System.Drawing.Color.White;
-            this.btnStability.IconChar = FontAwesome.Sharp.IconChar.Scroll;
+            this.btnStability.IconChar = FontAwesome.Sharp.IconChar.Adjust;
             this.btnStability.IconColor = System.Drawing.Color.White;
             this.btnStability.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStability.IconSize = 24;
