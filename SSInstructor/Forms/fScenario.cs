@@ -158,6 +158,12 @@ namespace SSInstructor.Forms
             ExerciseController.VesselType = cbVesselSelect.SelectedIndex;
         }
 
+        private void dgv_ScenList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Use for setting scenario
+        }
         #endregion
+
+
     }
 }

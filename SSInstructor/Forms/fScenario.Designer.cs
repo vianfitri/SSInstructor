@@ -37,7 +37,6 @@ namespace SSInstructor.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.btnDetail = new ViControls.ViButton();
             this.dgv_ScenList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlAddScenario = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnScenSave = new ViControls.ViButton();
@@ -60,6 +59,8 @@ namespace SSInstructor.Forms
             this.createtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.scenAction = new System.Windows.Forms.DataGridViewImageColumn();
             this.scenDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScenList)).BeginInit();
@@ -172,13 +173,7 @@ namespace SSInstructor.Forms
             this.dgv_ScenList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ScenList.Size = new System.Drawing.Size(1236, 502);
             this.dgv_ScenList.TabIndex = 20;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dgv_ScenList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ScenList_CellContentDoubleClick);
             // 
             // pnlAddScenario
             // 
@@ -409,6 +404,23 @@ namespace SSInstructor.Forms
             this.isexist.ReadOnly = true;
             this.isexist.Visible = false;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.FillWeight = 64.52919F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 17;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::SSInstructor.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 17;
+            // 
             // scenAction
             // 
             this.scenAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -485,5 +497,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn isexist;
         private System.Windows.Forms.DataGridViewImageColumn scenAction;
         private System.Windows.Forms.DataGridViewImageColumn scenDelete;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
