@@ -3034,7 +3034,5 @@ namespace SSInstructor.Forms
             SetScenValue();
         }
         #endregion
-
-
     }
 }
