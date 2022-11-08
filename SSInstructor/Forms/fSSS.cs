@@ -2948,17 +2948,26 @@ namespace SSInstructor.Forms
             {
                 // Call Bulk Carrier 3D view
                 Process start = new Process();
-                start.StartInfo.FileName = Application.StartupPath + "\\3D\\bulkcarrier.exe";
+                string path = Application.StartupPath + "\\3D\\";
+                start.StartInfo.FileName = path + "bulkcarrier.exe";
                 start.Start();
 
             }
             else if(ExerciseController.VesselType == 1)
             {
                 // Call General Cargo 3D View
+                Process start = new Process();
+                string path = Application.StartupPath + "\\3D\\";
+                start.StartInfo.FileName = path + "generalcargo.exe";
+                start.Start();
             }
             else if(ExerciseController.VesselType == 2)
             {
                 // Call Container 3D View
+                Process start = new Process();
+                string path = Application.StartupPath + "\\3D\\";
+                start.StartInfo.FileName = path + "container.exe";
+                start.Start();
             }
         }
 
