@@ -31,26 +31,26 @@ namespace SSInstructor
         {
             this.pnlMainMenu = new System.Windows.Forms.Panel();
             this.hiddenPannel = new System.Windows.Forms.Panel();
+            this.pnlUserSubmenu = new System.Windows.Forms.Panel();
+            this.pnlMasterDataSubmenu = new System.Windows.Forms.Panel();
+            this.pnlUserPic = new System.Windows.Forms.Panel();
+            this.lblPriviledge = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnClientList = new FontAwesome.Sharp.IconButton();
             this.btnReport = new FontAwesome.Sharp.IconButton();
             this.btnStability = new FontAwesome.Sharp.IconButton();
             this.btnScenario = new FontAwesome.Sharp.IconButton();
-            this.pnlUserSubmenu = new System.Windows.Forms.Panel();
             this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.btnTrainee = new FontAwesome.Sharp.IconButton();
             this.btnInstructor = new FontAwesome.Sharp.IconButton();
             this.btnUsers = new FontAwesome.Sharp.IconButton();
-            this.pnlMasterDataSubmenu = new System.Windows.Forms.Panel();
             this.btnCargoData = new FontAwesome.Sharp.IconButton();
             this.btnShipData = new FontAwesome.Sharp.IconButton();
             this.btnMasterData = new FontAwesome.Sharp.IconButton();
-            this.pnlUserPic = new System.Windows.Forms.Panel();
             this.btnLogout = new ViControls.ViButton();
-            this.lblPriviledge = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
             this.userPic = new ViControls.CircularPicture();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlMainMenu.SuspendLayout();
             this.pnlUserSubmenu.SuspendLayout();
             this.pnlMasterDataSubmenu.SuspendLayout();
@@ -88,6 +88,76 @@ namespace SSInstructor
             this.hiddenPannel.Size = new System.Drawing.Size(250, 18);
             this.hiddenPannel.TabIndex = 23;
             this.hiddenPannel.Click += new System.EventHandler(this.hiddenPannel_Click_1);
+            // 
+            // pnlUserSubmenu
+            // 
+            this.pnlUserSubmenu.Controls.Add(this.btnAccount);
+            this.pnlUserSubmenu.Controls.Add(this.btnTrainee);
+            this.pnlUserSubmenu.Controls.Add(this.btnInstructor);
+            this.pnlUserSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUserSubmenu.Location = new System.Drawing.Point(0, 259);
+            this.pnlUserSubmenu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUserSubmenu.Name = "pnlUserSubmenu";
+            this.pnlUserSubmenu.Size = new System.Drawing.Size(250, 134);
+            this.pnlUserSubmenu.TabIndex = 16;
+            // 
+            // pnlMasterDataSubmenu
+            // 
+            this.pnlMasterDataSubmenu.Controls.Add(this.btnCargoData);
+            this.pnlMasterDataSubmenu.Controls.Add(this.btnShipData);
+            this.pnlMasterDataSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMasterDataSubmenu.Location = new System.Drawing.Point(0, 125);
+            this.pnlMasterDataSubmenu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMasterDataSubmenu.Name = "pnlMasterDataSubmenu";
+            this.pnlMasterDataSubmenu.Size = new System.Drawing.Size(250, 89);
+            this.pnlMasterDataSubmenu.TabIndex = 2;
+            // 
+            // pnlUserPic
+            // 
+            this.pnlUserPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.pnlUserPic.Controls.Add(this.btnLogout);
+            this.pnlUserPic.Controls.Add(this.lblPriviledge);
+            this.pnlUserPic.Controls.Add(this.lblUsername);
+            this.pnlUserPic.Controls.Add(this.userPic);
+            this.pnlUserPic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUserPic.Location = new System.Drawing.Point(0, 0);
+            this.pnlUserPic.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUserPic.Name = "pnlUserPic";
+            this.pnlUserPic.Size = new System.Drawing.Size(250, 80);
+            this.pnlUserPic.TabIndex = 0;
+            // 
+            // lblPriviledge
+            // 
+            this.lblPriviledge.AutoSize = true;
+            this.lblPriviledge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriviledge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.lblPriviledge.Location = new System.Drawing.Point(76, 39);
+            this.lblPriviledge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPriviledge.Name = "lblPriviledge";
+            this.lblPriviledge.Size = new System.Drawing.Size(76, 15);
+            this.lblPriviledge.TabIndex = 3;
+            this.lblPriviledge.Text = "super admin";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(76, 20);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(88, 20);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "username";
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(250, 0);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1334, 821);
+            this.pnlContent.TabIndex = 1;
             // 
             // btnSettings
             // 
@@ -163,7 +233,6 @@ namespace SSInstructor
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Visible = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnStability
@@ -215,18 +284,6 @@ namespace SSInstructor
             this.btnScenario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnScenario.UseVisualStyleBackColor = true;
             this.btnScenario.Click += new System.EventHandler(this.btnScenario_Click);
-            // 
-            // pnlUserSubmenu
-            // 
-            this.pnlUserSubmenu.Controls.Add(this.btnAccount);
-            this.pnlUserSubmenu.Controls.Add(this.btnTrainee);
-            this.pnlUserSubmenu.Controls.Add(this.btnInstructor);
-            this.pnlUserSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUserSubmenu.Location = new System.Drawing.Point(0, 259);
-            this.pnlUserSubmenu.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlUserSubmenu.Name = "pnlUserSubmenu";
-            this.pnlUserSubmenu.Size = new System.Drawing.Size(250, 134);
-            this.pnlUserSubmenu.TabIndex = 16;
             // 
             // btnAccount
             // 
@@ -329,17 +386,6 @@ namespace SSInstructor
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
-            // pnlMasterDataSubmenu
-            // 
-            this.pnlMasterDataSubmenu.Controls.Add(this.btnCargoData);
-            this.pnlMasterDataSubmenu.Controls.Add(this.btnShipData);
-            this.pnlMasterDataSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMasterDataSubmenu.Location = new System.Drawing.Point(0, 125);
-            this.pnlMasterDataSubmenu.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlMasterDataSubmenu.Name = "pnlMasterDataSubmenu";
-            this.pnlMasterDataSubmenu.Size = new System.Drawing.Size(250, 89);
-            this.pnlMasterDataSubmenu.TabIndex = 2;
-            // 
             // btnCargoData
             // 
             this.btnCargoData.Dock = System.Windows.Forms.DockStyle.Top;
@@ -416,20 +462,6 @@ namespace SSInstructor
             this.btnMasterData.UseVisualStyleBackColor = true;
             this.btnMasterData.Click += new System.EventHandler(this.btnMasterData_Click);
             // 
-            // pnlUserPic
-            // 
-            this.pnlUserPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.pnlUserPic.Controls.Add(this.btnLogout);
-            this.pnlUserPic.Controls.Add(this.lblPriviledge);
-            this.pnlUserPic.Controls.Add(this.lblUsername);
-            this.pnlUserPic.Controls.Add(this.userPic);
-            this.pnlUserPic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUserPic.Location = new System.Drawing.Point(0, 0);
-            this.pnlUserPic.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlUserPic.Name = "pnlUserPic";
-            this.pnlUserPic.Size = new System.Drawing.Size(250, 80);
-            this.pnlUserPic.TabIndex = 0;
-            // 
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -452,30 +484,6 @@ namespace SSInstructor
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // lblPriviledge
-            // 
-            this.lblPriviledge.AutoSize = true;
-            this.lblPriviledge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriviledge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.lblPriviledge.Location = new System.Drawing.Point(76, 39);
-            this.lblPriviledge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPriviledge.Name = "lblPriviledge";
-            this.lblPriviledge.Size = new System.Drawing.Size(76, 15);
-            this.lblPriviledge.TabIndex = 3;
-            this.lblPriviledge.Text = "super admin";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(76, 20);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(88, 20);
-            this.lblUsername.TabIndex = 2;
-            this.lblUsername.Text = "username";
-            // 
             // userPic
             // 
             this.userPic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -492,15 +500,6 @@ namespace SSInstructor
             this.userPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userPic.TabIndex = 1;
             this.userPic.TabStop = false;
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(250, 0);
-            this.pnlContent.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1334, 821);
-            this.pnlContent.TabIndex = 1;
             // 
             // formDashboard
             // 
