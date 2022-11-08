@@ -1001,6 +1001,8 @@ namespace SSInstructor.Forms
 
             if(ExerciseController.Reason == 1)
             {
+                cbxUseHeelReal.Checked = true;
+                cbxUseTrimReal.Checked = true;
                 LoadCurrentScenario();
             }
         }
@@ -3025,6 +3027,11 @@ namespace SSInstructor.Forms
                 trim_angle.ToString("F2") + "," + dWeightTotalShip.ToString("F2") + "#";
 
             VisualServer.visualconn.Send(message);
+        }
+
+        private void txtDuration_TextChanged(object sender, EventArgs e)
+        {
+            SetScenValue();
         }
         #endregion
 
