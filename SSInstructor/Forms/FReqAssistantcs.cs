@@ -49,6 +49,7 @@ namespace SSInstructor.Forms
         private void btnReqAssEnable_Click(object sender, EventArgs e)
         {
             this._parent.Reqenabled = true;
+            this._parent.Send("en$");
             btnReqAssSilent.Enabled = true;
             btnReqAssEnable.Enabled = false;
         }
@@ -56,6 +57,7 @@ namespace SSInstructor.Forms
         private void btnReqAssSilent_Click(object sender, EventArgs e)
         {
             this._parent.Reqenabled = false;
+            this._parent.Send("dis$");
             btnReqAssSilent.Enabled = false;
             btnReqAssEnable.Enabled = true;
         }
