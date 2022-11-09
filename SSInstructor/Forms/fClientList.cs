@@ -154,6 +154,15 @@ namespace SSInstructor.Forms
                 if (machine.Status == Machine.StatusCodes.Online)
                     clientObj.PowerState = true;
 
+                foreach(var item in ShutdownServer.svrShutdown.clients)
+                {
+                    if(machine.IP == item.Value.ToString())
+                    {
+                        clientObj.RemoteState = true;
+                        break;
+                    }
+                }
+
                 flowLayoutPanel1.Controls.Add(clientObj);
             }
         }
