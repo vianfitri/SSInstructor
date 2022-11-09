@@ -350,9 +350,10 @@ namespace SSInstructor.Forms
             // 
             this.spcShipStability.Panel2.Controls.Add(this.splitContainer1);
             this.spcShipStability.Size = new System.Drawing.Size(1334, 782);
-            this.spcShipStability.SplitterDistance = 909;
+            this.spcShipStability.SplitterDistance = 908;
             this.spcShipStability.SplitterWidth = 5;
             this.spcShipStability.TabIndex = 0;
+            this.spcShipStability.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.spcShipStability_SplitterMoved);
             // 
             // tabControlGraph
             // 
@@ -367,7 +368,7 @@ namespace SSInstructor.Forms
             this.tabControlGraph.Multiline = true;
             this.tabControlGraph.Name = "tabControlGraph";
             this.tabControlGraph.SelectedIndex = 0;
-            this.tabControlGraph.Size = new System.Drawing.Size(909, 782);
+            this.tabControlGraph.Size = new System.Drawing.Size(908, 782);
             this.tabControlGraph.TabIndex = 0;
             this.tabControlGraph.SelectedIndexChanged += new System.EventHandler(this.tabControlGraph_SelectedIndexChanged);
             // 
@@ -377,7 +378,7 @@ namespace SSInstructor.Forms
             this.tabLoad.Location = new System.Drawing.Point(4, 22);
             this.tabLoad.Name = "tabLoad";
             this.tabLoad.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLoad.Size = new System.Drawing.Size(901, 756);
+            this.tabLoad.Size = new System.Drawing.Size(900, 756);
             this.tabLoad.TabIndex = 0;
             this.tabLoad.Text = "Shear Load";
             this.tabLoad.UseVisualStyleBackColor = true;
@@ -396,7 +397,7 @@ namespace SSInstructor.Forms
             // spcLoad1.Panel2
             // 
             this.spcLoad1.Panel2.Controls.Add(this.crtLoadTopView);
-            this.spcLoad1.Size = new System.Drawing.Size(895, 750);
+            this.spcLoad1.Size = new System.Drawing.Size(894, 750);
             this.spcLoad1.SplitterDistance = 289;
             this.spcLoad1.TabIndex = 0;
             // 
@@ -416,8 +417,8 @@ namespace SSInstructor.Forms
             // 
             this.spcLoad2.Panel2.Controls.Add(this.crtLoadFrontView);
             this.spcLoad2.Panel2MinSize = 100;
-            this.spcLoad2.Size = new System.Drawing.Size(895, 289);
-            this.spcLoad2.SplitterDistance = 507;
+            this.spcLoad2.Size = new System.Drawing.Size(894, 289);
+            this.spcLoad2.SplitterDistance = 506;
             this.spcLoad2.TabIndex = 0;
             // 
             // crtLoadSideView
@@ -438,7 +439,7 @@ namespace SSInstructor.Forms
             this.crtLoadSideView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtLoadSideView.Location = new System.Drawing.Point(0, 0);
             this.crtLoadSideView.Name = "crtLoadSideView";
-            this.crtLoadSideView.Size = new System.Drawing.Size(507, 289);
+            this.crtLoadSideView.Size = new System.Drawing.Size(506, 289);
             this.crtLoadSideView.TabIndex = 73;
             this.crtLoadSideView.Text = "Load, Side View";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -492,7 +493,7 @@ namespace SSInstructor.Forms
             this.crtLoadTopView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtLoadTopView.Location = new System.Drawing.Point(0, 0);
             this.crtLoadTopView.Name = "crtLoadTopView";
-            this.crtLoadTopView.Size = new System.Drawing.Size(895, 457);
+            this.crtLoadTopView.Size = new System.Drawing.Size(894, 457);
             this.crtLoadTopView.TabIndex = 73;
             this.crtLoadTopView.Text = "Load, Top View";
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -507,7 +508,7 @@ namespace SSInstructor.Forms
             this.tabTransversal.Location = new System.Drawing.Point(4, 22);
             this.tabTransversal.Name = "tabTransversal";
             this.tabTransversal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTransversal.Size = new System.Drawing.Size(901, 756);
+            this.tabTransversal.Size = new System.Drawing.Size(900, 756);
             this.tabTransversal.TabIndex = 1;
             this.tabTransversal.Text = "Transversal Diagram";
             this.tabTransversal.UseVisualStyleBackColor = true;
@@ -530,7 +531,7 @@ namespace SSInstructor.Forms
             this.crtTransversal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtTransversal.Location = new System.Drawing.Point(3, 3);
             this.crtTransversal.Name = "crtTransversal";
-            this.crtTransversal.Size = new System.Drawing.Size(895, 750);
+            this.crtTransversal.Size = new System.Drawing.Size(894, 750);
             this.crtTransversal.TabIndex = 70;
             this.crtTransversal.Text = "chart1";
             title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -545,7 +546,7 @@ namespace SSInstructor.Forms
             this.tabLongitudinal.Location = new System.Drawing.Point(4, 22);
             this.tabLongitudinal.Name = "tabLongitudinal";
             this.tabLongitudinal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLongitudinal.Size = new System.Drawing.Size(901, 756);
+            this.tabLongitudinal.Size = new System.Drawing.Size(900, 756);
             this.tabLongitudinal.TabIndex = 2;
             this.tabLongitudinal.Text = "Longitudinal Diagram";
             this.tabLongitudinal.UseVisualStyleBackColor = true;
@@ -567,7 +568,7 @@ namespace SSInstructor.Forms
             this.crtLongitudinal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtLongitudinal.Location = new System.Drawing.Point(3, 3);
             this.crtLongitudinal.Name = "crtLongitudinal";
-            this.crtLongitudinal.Size = new System.Drawing.Size(895, 750);
+            this.crtLongitudinal.Size = new System.Drawing.Size(894, 750);
             this.crtLongitudinal.TabIndex = 71;
             this.crtLongitudinal.Text = "Chart Longitudinal";
             title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -582,7 +583,7 @@ namespace SSInstructor.Forms
             this.tabHydrostaticCurve.Location = new System.Drawing.Point(4, 22);
             this.tabHydrostaticCurve.Name = "tabHydrostaticCurve";
             this.tabHydrostaticCurve.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHydrostaticCurve.Size = new System.Drawing.Size(901, 756);
+            this.tabHydrostaticCurve.Size = new System.Drawing.Size(900, 756);
             this.tabHydrostaticCurve.TabIndex = 3;
             this.tabHydrostaticCurve.Text = "Hydrostatic Curve";
             this.tabHydrostaticCurve.UseVisualStyleBackColor = true;
@@ -610,7 +611,7 @@ namespace SSInstructor.Forms
             this.crtHydrostaticCurve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtHydrostaticCurve.Location = new System.Drawing.Point(3, 3);
             this.crtHydrostaticCurve.Name = "crtHydrostaticCurve";
-            this.crtHydrostaticCurve.Size = new System.Drawing.Size(895, 750);
+            this.crtHydrostaticCurve.Size = new System.Drawing.Size(894, 750);
             this.crtHydrostaticCurve.TabIndex = 71;
             this.crtHydrostaticCurve.Text = "chart1";
             title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -625,7 +626,7 @@ namespace SSInstructor.Forms
             this.tabGZCrossCurve.Location = new System.Drawing.Point(4, 22);
             this.tabGZCrossCurve.Name = "tabGZCrossCurve";
             this.tabGZCrossCurve.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGZCrossCurve.Size = new System.Drawing.Size(901, 756);
+            this.tabGZCrossCurve.Size = new System.Drawing.Size(900, 756);
             this.tabGZCrossCurve.TabIndex = 4;
             this.tabGZCrossCurve.Text = "GZ Cross Curve";
             this.tabGZCrossCurve.UseVisualStyleBackColor = true;
@@ -699,7 +700,7 @@ namespace SSInstructor.Forms
             this.crtGZCrossCurve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtGZCrossCurve.Location = new System.Drawing.Point(3, 3);
             this.crtGZCrossCurve.Name = "crtGZCrossCurve";
-            this.crtGZCrossCurve.Size = new System.Drawing.Size(895, 750);
+            this.crtGZCrossCurve.Size = new System.Drawing.Size(894, 750);
             this.crtGZCrossCurve.TabIndex = 72;
             this.crtGZCrossCurve.Text = "chart1";
             title7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -714,7 +715,7 @@ namespace SSInstructor.Forms
             this.tabKNCrossCurve.Location = new System.Drawing.Point(4, 22);
             this.tabKNCrossCurve.Name = "tabKNCrossCurve";
             this.tabKNCrossCurve.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKNCrossCurve.Size = new System.Drawing.Size(901, 756);
+            this.tabKNCrossCurve.Size = new System.Drawing.Size(900, 756);
             this.tabKNCrossCurve.TabIndex = 5;
             this.tabKNCrossCurve.Text = "KN Cross Curve";
             this.tabKNCrossCurve.UseVisualStyleBackColor = true;
@@ -788,7 +789,7 @@ namespace SSInstructor.Forms
             this.crtKNCrossCurve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crtKNCrossCurve.Location = new System.Drawing.Point(3, 3);
             this.crtKNCrossCurve.Name = "crtKNCrossCurve";
-            this.crtKNCrossCurve.Size = new System.Drawing.Size(895, 750);
+            this.crtKNCrossCurve.Size = new System.Drawing.Size(894, 750);
             this.crtKNCrossCurve.TabIndex = 73;
             this.crtKNCrossCurve.Text = "chart1";
             title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -810,7 +811,7 @@ namespace SSInstructor.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(420, 782);
+            this.splitContainer1.Size = new System.Drawing.Size(421, 782);
             this.splitContainer1.SplitterDistance = 662;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
@@ -824,7 +825,7 @@ namespace SSInstructor.Forms
             this.tabControlInput.Location = new System.Drawing.Point(0, 0);
             this.tabControlInput.Name = "tabControlInput";
             this.tabControlInput.SelectedIndex = 0;
-            this.tabControlInput.Size = new System.Drawing.Size(420, 662);
+            this.tabControlInput.Size = new System.Drawing.Size(421, 662);
             this.tabControlInput.TabIndex = 0;
             // 
             // tabMovingLoad
@@ -891,7 +892,7 @@ namespace SSInstructor.Forms
             this.tabMovingLoad.Location = new System.Drawing.Point(4, 22);
             this.tabMovingLoad.Name = "tabMovingLoad";
             this.tabMovingLoad.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMovingLoad.Size = new System.Drawing.Size(412, 636);
+            this.tabMovingLoad.Size = new System.Drawing.Size(413, 636);
             this.tabMovingLoad.TabIndex = 0;
             this.tabMovingLoad.Text = "Shear Load";
             // 
@@ -1489,7 +1490,7 @@ namespace SSInstructor.Forms
             this.txbInfoMuatan.Location = new System.Drawing.Point(3, 573);
             this.txbInfoMuatan.Name = "txbInfoMuatan";
             this.txbInfoMuatan.ReadOnly = true;
-            this.txbInfoMuatan.Size = new System.Drawing.Size(406, 30);
+            this.txbInfoMuatan.Size = new System.Drawing.Size(407, 30);
             this.txbInfoMuatan.TabIndex = 126;
             this.txbInfoMuatan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1501,7 +1502,7 @@ namespace SSInstructor.Forms
             this.txbBobotTotal.Location = new System.Drawing.Point(3, 603);
             this.txbBobotTotal.Name = "txbBobotTotal";
             this.txbBobotTotal.ReadOnly = true;
-            this.txbBobotTotal.Size = new System.Drawing.Size(406, 30);
+            this.txbBobotTotal.Size = new System.Drawing.Size(407, 30);
             this.txbBobotTotal.TabIndex = 125;
             this.txbBobotTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1562,7 +1563,7 @@ namespace SSInstructor.Forms
             this.tabStabilityInput.Location = new System.Drawing.Point(4, 22);
             this.tabStabilityInput.Name = "tabStabilityInput";
             this.tabStabilityInput.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStabilityInput.Size = new System.Drawing.Size(412, 636);
+            this.tabStabilityInput.Size = new System.Drawing.Size(413, 636);
             this.tabStabilityInput.TabIndex = 1;
             this.tabStabilityInput.Text = "Hydrostatic Calculation";
             // 
@@ -1981,7 +1982,7 @@ namespace SSInstructor.Forms
             this.tabHSData.Location = new System.Drawing.Point(3, 385);
             this.tabHSData.Name = "tabHSData";
             this.tabHSData.SelectedIndex = 0;
-            this.tabHSData.Size = new System.Drawing.Size(406, 210);
+            this.tabHSData.Size = new System.Drawing.Size(407, 210);
             this.tabHSData.TabIndex = 86;
             // 
             // tabHydroModel
@@ -2018,7 +2019,7 @@ namespace SSInstructor.Forms
             this.tabHydroModel.Location = new System.Drawing.Point(4, 22);
             this.tabHydroModel.Name = "tabHydroModel";
             this.tabHydroModel.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHydroModel.Size = new System.Drawing.Size(398, 184);
+            this.tabHydroModel.Size = new System.Drawing.Size(399, 184);
             this.tabHydroModel.TabIndex = 1;
             this.tabHydroModel.Text = "Kapal Model";
             // 
@@ -2308,7 +2309,7 @@ namespace SSInstructor.Forms
             this.tabHydroReal.Location = new System.Drawing.Point(4, 22);
             this.tabHydroReal.Name = "tabHydroReal";
             this.tabHydroReal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHydroReal.Size = new System.Drawing.Size(398, 184);
+            this.tabHydroReal.Size = new System.Drawing.Size(399, 184);
             this.tabHydroReal.TabIndex = 0;
             this.tabHydroReal.Text = "Kapal Asli";
             // 
@@ -2572,7 +2573,7 @@ namespace SSInstructor.Forms
             this.txbGZInfo.Location = new System.Drawing.Point(3, 595);
             this.txbGZInfo.Name = "txbGZInfo";
             this.txbGZInfo.ReadOnly = true;
-            this.txbGZInfo.Size = new System.Drawing.Size(406, 38);
+            this.txbGZInfo.Size = new System.Drawing.Size(407, 38);
             this.txbGZInfo.TabIndex = 59;
             this.txbGZInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbGZInfo.Visible = false;
@@ -2597,7 +2598,7 @@ namespace SSInstructor.Forms
             this.tabInfo.Location = new System.Drawing.Point(4, 22);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfo.Size = new System.Drawing.Size(412, 636);
+            this.tabInfo.Size = new System.Drawing.Size(413, 636);
             this.tabInfo.TabIndex = 2;
             this.tabInfo.Text = "Info";
             // 
@@ -2733,7 +2734,7 @@ namespace SSInstructor.Forms
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(420, 115);
+            this.tabControl2.Size = new System.Drawing.Size(421, 115);
             this.tabControl2.TabIndex = 0;
             this.tabControl2.Visible = false;
             // 
@@ -2756,7 +2757,7 @@ namespace SSInstructor.Forms
             this.tabGraphTransversal.Location = new System.Drawing.Point(4, 22);
             this.tabGraphTransversal.Name = "tabGraphTransversal";
             this.tabGraphTransversal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGraphTransversal.Size = new System.Drawing.Size(412, 89);
+            this.tabGraphTransversal.Size = new System.Drawing.Size(413, 89);
             this.tabGraphTransversal.TabIndex = 0;
             this.tabGraphTransversal.Text = "Transversal Diagram Graph Setting";
             this.tabGraphTransversal.UseVisualStyleBackColor = true;
@@ -2942,7 +2943,7 @@ namespace SSInstructor.Forms
             this.tabGraphHSCurve.Location = new System.Drawing.Point(4, 22);
             this.tabGraphHSCurve.Name = "tabGraphHSCurve";
             this.tabGraphHSCurve.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGraphHSCurve.Size = new System.Drawing.Size(412, 89);
+            this.tabGraphHSCurve.Size = new System.Drawing.Size(413, 89);
             this.tabGraphHSCurve.TabIndex = 1;
             this.tabGraphHSCurve.Text = "Hydrostatic Curve Graph Setting";
             this.tabGraphHSCurve.UseVisualStyleBackColor = true;
