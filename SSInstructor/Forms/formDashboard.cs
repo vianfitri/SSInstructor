@@ -332,6 +332,10 @@ namespace SSInstructor
                                     // add PC Name to todo list
                                     pc_name.Add(m.Name);
 
+                                    // Change Icon color
+                                    btnReqAss.IconColor = Color.Yellow;
+                                    btnReqAss.ForeColor = Color.Yellow;
+
                                     // show popup notification
                                     
                                     // break searcing pc name
