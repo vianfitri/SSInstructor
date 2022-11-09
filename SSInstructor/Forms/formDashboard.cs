@@ -331,6 +331,10 @@ namespace SSInstructor
                                 {
                                     // add PC Name to todo list
                                     pc_name.Add(m.Name);
+
+                                    // show popup notification
+
+                                    break;
                                 }
                             }
                         }
