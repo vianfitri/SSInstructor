@@ -471,6 +471,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cargo-ship.ico" />
+    <None Include="Resources\information.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
