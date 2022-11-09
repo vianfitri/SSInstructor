@@ -338,6 +338,7 @@ namespace SSInstructor
 
                                     // show popup notification
                                     
+
                                     // break searcing pc name
                                     break;
                                 }
