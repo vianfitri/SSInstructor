@@ -242,7 +242,7 @@ namespace SSInstructor.Forms
             }
 
             // SplitContainer Setting
-            spcShipStability.SplitterDistance = Screen.PrimaryScreen.Bounds.Width - 920;
+            spcShipStability.SplitterDistance = Screen.PrimaryScreen.Bounds.Width - 925;
 
             // initialize amidship points, then translate each point 
             StabilityCalculator.shippoints_init = (StabilityCalculator.Point2D[])StabilityCalculator.shippoints_BC.Clone();
