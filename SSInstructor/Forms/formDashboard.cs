@@ -333,7 +333,8 @@ namespace SSInstructor
                                     pc_name.Add(m.Name);
 
                                     // show popup notification
-                                    hhh
+                                    
+                                    // break searcing pc name
                                     break;
                                 }
                             }
