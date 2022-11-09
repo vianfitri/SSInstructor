@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace SSInstructor.Forms
 {
@@ -80,8 +81,22 @@ namespace SSInstructor.Forms
                 );
             }
         }
+
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PopupNotifier popup = new PopupNotifier();
+            popup.Image = Properties.Resources.information;
+            popup.BodyColor = Color.FromArgb(255, 193, 7);
+            popup.TitleText = "Info";
+            popup.TitleColor = Color.White;
+            popup.TitleFont = new Font("Century Gothic", 15, FontStyle.Bold);
 
+            popup.ContentText = m.Name + " need an Assistant";
+            popup.ContentColor = Color.White;
+            popup.ContentFont = new Font("Century Gothic", 12);
+            popup.Popup();
+        }
     }
 }
