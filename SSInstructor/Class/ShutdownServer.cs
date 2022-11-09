@@ -396,6 +396,11 @@ namespace SSInstructor.Class
             }
             else if (listener == null || !listener.IsAlive)
             {
+                string hostName = Dns.GetHostName();
+
+                // Get the IP from GetHostByName method of dns class.
+                //IPHostEntry iPHostEntry = Dns.GetHostEntry(hostName);
+               
                 string address = "192.168.10.200";
                 string number = "9000";
                 bool error = false;
@@ -403,7 +408,10 @@ namespace SSInstructor.Class
 
                 try
                 {
-                    ip = Dns.Resolve(address).AddressList[0];
+                    IPAddress[] ipA = Dns.GetHostEntry(hostName).AddressList;
+                    ip = ipA[ipA.Length - 1];
+                    Console.WriteLine(ip.ToString());
+                    //ip = Dns.Resolve(address).AddressList[0];
                 }
                 catch
                 {
