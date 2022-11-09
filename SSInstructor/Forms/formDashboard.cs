@@ -347,7 +347,7 @@ namespace SSInstructor
 
                                     // show popup notification
                                     PopupNotifier popup = new PopupNotifier();
-                                    popup.Image = null;
+                                    popup.Image = Properties.Resources.information;
                                     popup.BodyColor = Color.FromArgb(255, 193, 7);
                                     popup.TitleText = "Info";
                                     popup.TitleColor = Color.White;
