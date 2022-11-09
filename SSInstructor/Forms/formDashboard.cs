@@ -320,7 +320,10 @@ namespace SSInstructor
                     {
                         string msg = string.Format("{0}: {1}", obj.ipaddress, obj.data);
                         Console.WriteLine("Read : " + msg);
-                        Send(msg, obj.id);
+                        
+                        // If message contain rh$ add todo list for ack
+
+                        //Send(msg, obj.id);
                         obj.data.Clear();
                         obj.handle.Set();
                     }
