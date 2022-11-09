@@ -22,6 +22,10 @@ namespace SSInstructor
 {
     public partial class formDashboard : Form
     {
+        #region "Delegate"
+        public delegate void AlertHelpEventHandler(string name);
+        #endregion
+
         #region "Fields"
         formMain _parent;
         private Form activeForm = null;
@@ -209,6 +213,8 @@ namespace SSInstructor
             // Start Assistant Server
             StartServer();
 
+            AlertHelp += ShowPopup;
+
             // Reset All Menu View
             hideSubmenu();
         }
@@ -346,7 +352,7 @@ namespace SSInstructor
                                     btnReqAss.ForeColor = Color.Yellow;
 
                                     // show popup notification
-                                    ShowPopup(m.Name);
+                                    AlertHelp?.Invoke(m.Name);
 
                                     // break searcing pc name
                                     break;
@@ -733,6 +739,8 @@ namespace SSInstructor
 
         #endregion
 
-        
+        #region "Event"
+        public event AlertHelpEventHandler AlertHelp;
+        #endregion
     }
 }
