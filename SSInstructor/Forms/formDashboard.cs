@@ -327,7 +327,7 @@ namespace SSInstructor
                         {
                             if(m.IP == obj.ipaddress.ToString())
                             {
-
+                                // add PC Name to todo list
                             }
                         }
                         //Send(msg, obj.id);
