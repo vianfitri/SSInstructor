@@ -605,7 +605,7 @@ namespace SSInstructor
             }
         }
 
-        public void StartServer()
+        private void StartServer()
         {
             if (active)
             {
@@ -649,7 +649,7 @@ namespace SSInstructor
             }
         }
 
-        public void ClosingServer()
+        private void ClosingServer()
         {
             exit = true;
             active = false;
