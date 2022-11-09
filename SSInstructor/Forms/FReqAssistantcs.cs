@@ -93,7 +93,7 @@ namespace SSInstructor.Forms
             popup.TitleColor = Color.White;
             popup.TitleFont = new Font("Century Gothic", 15, FontStyle.Bold);
 
-            popup.ContentText = m.Name + " need an Assistant";
+            popup.ContentText = "I need an Assistant";
             popup.ContentColor = Color.White;
             popup.ContentFont = new Font("Century Gothic", 12);
             popup.Popup();
