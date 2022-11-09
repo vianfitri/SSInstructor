@@ -15,6 +15,7 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using SSInstructor.Forms;
 using SSInstructor.Class;
+using Tulpep.NotificationWindow;
 using Machines;
 
 namespace SSInstructor
@@ -345,7 +346,17 @@ namespace SSInstructor
                                     btnReqAss.ForeColor = Color.Yellow;
 
                                     // show popup notification
-                                    
+                                    PopupNotifier popup = new PopupNotifier();
+                                    popup.Image = null;
+                                    popup.BodyColor = Color.FromArgb(255, 193, 7);
+                                    popup.TitleText = "Info";
+                                    popup.TitleColor = Color.White;
+                                    popup.TitleFont = new Font("Century Gothic", 15, FontStyle.Bold);
+
+                                    popup.ContentText = m.Name + " need an Assistant";
+                                    popup.ContentColor = Color.White;
+                                    popup.ContentFont = new Font("Century Gothic", 12);
+                                    popup.Popup();
 
                                     // break searcing pc name
                                     break;
