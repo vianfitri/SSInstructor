@@ -39,6 +39,13 @@ namespace SSInstructor
             public StringBuilder data;
             public EventWaitHandle handle;
         };
+
+        public struct AskedClient
+        {
+            public long id;
+            public string ipaddress;
+        };
+
         public ConcurrentDictionary<long, MyClient> clients = new ConcurrentDictionary<long, MyClient>();
         private Task send = null;
         private Thread disconnect = null;
