@@ -27,6 +27,7 @@ namespace SSInstructor
 
         #region "Requestable Assistant"
         private bool active = false;
+        private bool enabled = false;
         private Thread listener = null;
         private long id = 0;
         public struct MyClient
