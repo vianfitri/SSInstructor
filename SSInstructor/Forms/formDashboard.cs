@@ -47,6 +47,7 @@ namespace SSInstructor
             public string PCName;
         };
 
+        public List<string> pc_name = new List<string>();
         public ConcurrentDictionary<long, MyClient> clients = new ConcurrentDictionary<long, MyClient>();
         private Task send = null;
         private Thread disconnect = null;
