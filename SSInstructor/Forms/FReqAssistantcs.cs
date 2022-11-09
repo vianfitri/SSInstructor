@@ -43,8 +43,29 @@ namespace SSInstructor.Forms
             }
 
             // Load List Of Trainee Need Help
+            LoadTraineeNeedHelp();
+        }
+
+        private void btnReqAssEnable_Click(object sender, EventArgs e)
+        {
+            this._parent.Reqenabled = true;
+            btnReqAssSilent.Enabled = true;
+            btnReqAssEnable.Enabled = false;
+        }
+
+        private void btnReqAssSilent_Click(object sender, EventArgs e)
+        {
+            this._parent.Reqenabled = false;
+            btnReqAssSilent.Enabled = false;
+            btnReqAssEnable.Enabled = true;
+        }
+
+        private void LoadTraineeNeedHelp()
+        {
+            dgv_ReqAssList.Rows.Clear();
+
             int idNo = 0;
-            foreach(string pcName in _parent.pc_name)
+            foreach (string pcName in _parent.pc_name)
             {
                 idNo++;
                 dgv_ReqAssList.Rows.Add(
