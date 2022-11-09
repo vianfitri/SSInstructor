@@ -460,6 +460,16 @@ namespace SSInstructor
             {
                 clients.TryAdd(obj.id, obj);
                 //StatusChange?.Invoke(true, obj.ipaddress.ToString());
+
+                // Send Status of ReqAss
+                if(enabled)
+                {
+                    Send("en$");
+                } 
+                else
+                {
+                    Send("dis$");
+                }
                 string msg = string.Format("Machine {0} has connected", obj.ipaddress);
                 Console.WriteLine(msg);
 
