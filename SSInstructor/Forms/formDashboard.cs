@@ -332,7 +332,7 @@ namespace SSInstructor
                         Console.WriteLine("Read : " + msg);
 
                         // If message contain rh$ add todo list for ack
-                        if (obj.data.ToString().Contains("rh"))
+                        if (obj.data.ToString().Contains("rh$"))
                         {
                             foreach (Machine m in MachineModule.Machines)
                             {
