@@ -321,14 +321,17 @@ namespace SSInstructor
                     {
                         string msg = string.Format("{0}: {1}", obj.ipaddress, obj.data);
                         Console.WriteLine("Read : " + msg);
-                        
+
                         // If message contain rh$ add todo list for ack
-                        foreach(Machine m in MachineModule.Machines)
+                        if (obj.data.ToString().Contains("rh"))
                         {
-                            if(m.IP == obj.ipaddress.ToString())
+                            foreach (Machine m in MachineModule.Machines)
                             {
-                                // add PC Name to todo list
-                                pc_name.Add(m.Name);
+                                if (m.IP == obj.ipaddress.ToString())
+                                {
+                                    // add PC Name to todo list
+                                    pc_name.Add(m.Name);
+                                }
                             }
                         }
                         //Send(msg, obj.id);
