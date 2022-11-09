@@ -346,17 +346,7 @@ namespace SSInstructor
                                     btnReqAss.ForeColor = Color.Yellow;
 
                                     // show popup notification
-                                    PopupNotifier popup = new PopupNotifier();
-                                    popup.Image = Properties.Resources.information;
-                                    popup.BodyColor = Color.FromArgb(255, 193, 7);
-                                    popup.TitleText = "Info";
-                                    popup.TitleColor = Color.White;
-                                    popup.TitleFont = new Font("Century Gothic", 15, FontStyle.Bold);
-
-                                    popup.ContentText = m.Name + " need an Assistant";
-                                    popup.ContentColor = Color.White;
-                                    popup.ContentFont = new Font("Century Gothic", 12);
-                                    popup.Popup();
+                                    ShowPopup(m.Name);
 
                                     // break searcing pc name
                                     break;
@@ -725,6 +715,20 @@ namespace SSInstructor
             Disconnect();
         }
 
+        private void ShowPopup(string name)
+        {
+            PopupNotifier popup = new PopupNotifier();
+            popup.Image = Properties.Resources.information;
+            popup.BodyColor = Color.FromArgb(255, 193, 7);
+            popup.TitleText = "Info";
+            popup.TitleColor = Color.White;
+            popup.TitleFont = new Font("Century Gothic", 15, FontStyle.Bold);
+
+            popup.ContentText = name + " need an Assistant";
+            popup.ContentColor = Color.White;
+            popup.ContentFont = new Font("Century Gothic", 12);
+            popup.Popup();
+        }
         #endregion
 
         #endregion
