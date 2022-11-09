@@ -323,7 +323,13 @@ namespace SSInstructor
                         Console.WriteLine("Read : " + msg);
                         
                         // If message contain rh$ add todo list for ack
+                        foreach(Machine m in MachineModule.Machines)
+                        {
+                            if(m.IP == obj.ipaddress.ToString())
+                            {
 
+                            }
+                        }
                         //Send(msg, obj.id);
                         obj.data.Clear();
                         obj.handle.Set();
