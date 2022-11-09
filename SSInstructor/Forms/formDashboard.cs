@@ -27,7 +27,7 @@ namespace SSInstructor
 
         #region "Requestable Assistant"
         private bool active = false;
-        private bool enabled = false;
+        public bool Reqenabled = false;
         private Thread listener = null;
         private long id = 0;
         public struct MyClient
@@ -276,6 +276,14 @@ namespace SSInstructor
             }
         }
 
+        private void btnReqAss_Click(object sender, EventArgs e)
+        {
+            // Load Form Requestable Assistant
+            openChildForm(new FReqAssistantcs(this));
+
+            hideSubmenu();
+        }
+
         #region "Requestable Assistant"
         private void Active(bool status)
         {
@@ -462,7 +470,7 @@ namespace SSInstructor
                 //StatusChange?.Invoke(true, obj.ipaddress.ToString());
 
                 // Send Status of ReqAss
-                if(enabled)
+                if(Reqenabled)
                 {
                     Send("en$");
                 } 
@@ -698,10 +706,11 @@ namespace SSInstructor
             active = false;
             Disconnect();
         }
-        #endregion
 
         #endregion
 
+        #endregion
 
+        
     }
 }

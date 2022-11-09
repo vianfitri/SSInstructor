@@ -30,6 +30,7 @@ namespace SSInstructor
         private void InitializeComponent()
         {
             this.pnlMainMenu = new System.Windows.Forms.Panel();
+            this.btnReqAss = new FontAwesome.Sharp.IconButton();
             this.hiddenPannel = new System.Windows.Forms.Panel();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnClientList = new FontAwesome.Sharp.IconButton();
@@ -51,7 +52,6 @@ namespace SSInstructor
             this.lblUsername = new System.Windows.Forms.Label();
             this.userPic = new ViControls.CircularPicture();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.btnReqAss = new FontAwesome.Sharp.IconButton();
             this.pnlMainMenu.SuspendLayout();
             this.pnlUserSubmenu.SuspendLayout();
             this.pnlMasterDataSubmenu.SuspendLayout();
@@ -80,6 +80,31 @@ namespace SSInstructor
             this.pnlMainMenu.Name = "pnlMainMenu";
             this.pnlMainMenu.Size = new System.Drawing.Size(250, 821);
             this.pnlMainMenu.TabIndex = 0;
+            // 
+            // btnReqAss
+            // 
+            this.btnReqAss.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnReqAss.FlatAppearance.BorderSize = 0;
+            this.btnReqAss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReqAss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReqAss.ForeColor = System.Drawing.Color.White;
+            this.btnReqAss.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.btnReqAss.IconColor = System.Drawing.Color.White;
+            this.btnReqAss.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReqAss.IconSize = 24;
+            this.btnReqAss.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReqAss.Location = new System.Drawing.Point(0, 758);
+            this.btnReqAss.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReqAss.Name = "btnReqAss";
+            this.btnReqAss.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btnReqAss.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnReqAss.Size = new System.Drawing.Size(250, 45);
+            this.btnReqAss.TabIndex = 24;
+            this.btnReqAss.Text = "Help Trainee";
+            this.btnReqAss.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReqAss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReqAss.UseVisualStyleBackColor = true;
+            this.btnReqAss.Click += new System.EventHandler(this.btnReqAss_Click);
             // 
             // hiddenPannel
             // 
@@ -502,30 +527,6 @@ namespace SSInstructor
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1334, 821);
             this.pnlContent.TabIndex = 1;
-            // 
-            // btnReqAss
-            // 
-            this.btnReqAss.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnReqAss.FlatAppearance.BorderSize = 0;
-            this.btnReqAss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReqAss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReqAss.ForeColor = System.Drawing.Color.White;
-            this.btnReqAss.IconChar = FontAwesome.Sharp.IconChar.Info;
-            this.btnReqAss.IconColor = System.Drawing.Color.White;
-            this.btnReqAss.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReqAss.IconSize = 24;
-            this.btnReqAss.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReqAss.Location = new System.Drawing.Point(0, 758);
-            this.btnReqAss.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReqAss.Name = "btnReqAss";
-            this.btnReqAss.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.btnReqAss.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnReqAss.Size = new System.Drawing.Size(250, 45);
-            this.btnReqAss.TabIndex = 24;
-            this.btnReqAss.Text = "Settings";
-            this.btnReqAss.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReqAss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReqAss.UseVisualStyleBackColor = true;
             // 
             // formDashboard
             // 
