@@ -156,7 +156,7 @@ namespace SSInstructor.Forms
 
                 foreach(var item in ShutdownServer.svrShutdown.clients)
                 {
-                    if(machine.IP == item.Value.ToString())
+                    if(machine.IP == item.Value.ipaddress.ToString())
                     {
                         clientObj.RemoteState = true;
                         break;
