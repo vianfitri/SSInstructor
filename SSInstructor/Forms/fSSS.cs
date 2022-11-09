@@ -2952,6 +2952,7 @@ namespace SSInstructor.Forms
                 Process start = new Process();
                 string path = Application.StartupPath + "\\3D\\";
                 start.StartInfo.FileName = path + "bulkcarrier.exe";
+                start.StartInfo.Arguments = "--single-instance";
                 start.Start();
 
             }
@@ -2961,6 +2962,7 @@ namespace SSInstructor.Forms
                 Process start = new Process();
                 string path = Application.StartupPath + "\\3D\\";
                 start.StartInfo.FileName = path + "generalcargo.exe";
+                start.StartInfo.Arguments = "--single-instance";
                 start.Start();
             }
             else if(ExerciseController.VesselType == 2)
@@ -2969,6 +2971,7 @@ namespace SSInstructor.Forms
                 Process start = new Process();
                 string path = Application.StartupPath + "\\3D\\";
                 start.StartInfo.FileName = path + "container.exe";
+                start.StartInfo.Arguments = "--single-instance";
                 start.Start();
             }
         }
