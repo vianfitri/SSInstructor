@@ -44,7 +44,7 @@ namespace SSInstructor
         public struct AskedClient
         {
             public long id;
-            public string ipaddress;
+            public string PCName;
         };
 
         public ConcurrentDictionary<long, MyClient> clients = new ConcurrentDictionary<long, MyClient>();
