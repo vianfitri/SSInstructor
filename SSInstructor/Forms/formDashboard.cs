@@ -334,6 +334,7 @@ namespace SSInstructor
                                 }
                             }
                         }
+
                         //Send(msg, obj.id);
                         obj.data.Clear();
                         obj.handle.Set();
