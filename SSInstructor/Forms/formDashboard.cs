@@ -481,10 +481,17 @@ namespace SSInstructor
                 //StatusChange?.Invoke(true, obj.ipaddress.ToString());
 
                 // Send Status of ReqAss
-                if(Reqenabled)
+                if (ExerciseController.EMode == ExerciseController.ExerciseMode.Training)
                 {
-                    Send("en$");
-                } 
+                    if (Reqenabled)
+                    {
+                        Send("en$");
+                    }
+                    else
+                    {
+                        Send("dis$");
+                    }
+                }
                 else
                 {
                     Send("dis$");
