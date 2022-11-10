@@ -205,6 +205,7 @@ namespace SSInstructor.Forms
         }
         private void LoadTestResult(string ucScen)
         {
+            DataTable dtTestResult = new DataTable();
 
         }
 
