@@ -206,7 +206,10 @@ namespace SSInstructor.Forms
         private void LoadTestResult(string ucScen)
         {
             DataTable dtTestResult = new DataTable();
-
+            string qTestRes = "SELECT a.*, b.first_name FROM `shp_assets`.`ss_scoring` a " +
+                "INNER JOIN `shp_assets`.`ss_subject` b " +
+                "ON a.uc_student = b.uc " +
+                "WHERE `uc_scenario` = '" + ucScen + "'";
         }
 
         private void FScore_Load(object sender, EventArgs e)
