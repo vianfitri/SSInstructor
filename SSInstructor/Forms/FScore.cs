@@ -213,7 +213,40 @@ namespace SSInstructor.Forms
 
             if(ConnectorDB.MySQLConn.GetTableData(qTestRes, ref dtTestResult))
             {
+                dgv_ScoreList.Rows.Clear();
 
+                int idx = 0;
+                foreach(DataRow drow in dtTestResult.Rows)
+                {
+                    string status = "Failed";
+                    idx++;
+
+                    if(int.Parse(drow["is_accomplished"].ToString()) == 1 && float.Parse(drow["final_score"].ToString()) >= 70)
+                    {
+                        status = "Passed";
+                    } 
+                    else
+                    {
+                        status = "Failed";
+                    }
+
+                    dgv_ScoreList.Rows.Add(
+                        new object[]
+                        {
+                            idx,
+                            drow["uc_student"].ToString(),
+                            drow["first_name"].ToString(),
+                            drow["angle_heel_score"],
+                            drow["angle_trim_score"],
+                            drow["draft_aft_score"],
+                            drow["draft_fwd_score"],
+                            drow["time_elapsed_score"],
+                            drow["accomplished_score"],
+                            drow["final_score"],
+                            status
+                        }
+                    );
+                }
             }
         }
 
