@@ -210,6 +210,11 @@ namespace SSInstructor.Forms
                 "INNER JOIN `shp_assets`.`ss_subject` b " +
                 "ON a.uc_student = b.uc " +
                 "WHERE `uc_scenario` = '" + ucScen + "'";
+
+            if(ConnectorDB.MySQLConn.GetTableData(qTestRes, ref dtTestResult))
+            {
+
+            }
         }
 
         private void FScore_Load(object sender, EventArgs e)
