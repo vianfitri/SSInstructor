@@ -1410,13 +1410,13 @@ namespace SSInstructor.Forms
         {
             if (cbxUseHeelReal.Checked)
             {
-                if ((heel_angle * 100) > 90000)
+                if ((heel_angle * 100) > 9000)
                 {
-                    scbHeelVal.Value = 90000;
+                    scbHeelVal.Value = 9000;
                 }
-                else if ((heel_angle * 100 < -90000))
+                else if ((heel_angle * 100 < -9000))
                 {
-                    scbHeelVal.Value = -90000;
+                    scbHeelVal.Value = -9000;
                 }
                 else
                 {
@@ -1466,13 +1466,13 @@ namespace SSInstructor.Forms
                 dHeelVal = (double)nudHeelVal.Value;
             }
 
-            if ((dHeelVal * 100) > 90000)
+            if ((dHeelVal * 100) > 9000)
             {
-                scbHeelVal.Value = 90000;
+                scbHeelVal.Value = 9000;
             }
-            else if ((dHeelVal * 100 < -90000))
+            else if ((dHeelVal * 100 < -9000))
             {
-                scbHeelVal.Value = -90000;
+                scbHeelVal.Value = -9000;
             }
             else
             {
@@ -1490,7 +1490,18 @@ namespace SSInstructor.Forms
         {
             if (cbxUseTrimReal.Checked)
             {
-                scbTrimVal.Value = (int)(trim_angle * 100);
+                if ((trim_angle * 100) > 1000)
+                {
+                    scbTrimVal.Value = 1000;
+                }
+                else if ((trim_angle * 100) < -1000)
+                {
+                    scbTrimVal.Value = -1000;
+                }
+                else
+                {
+                    scbTrimVal.Value = (int)(trim_angle * 100);
+                }
                 dTrimVal = trim_angle;
             }
             else
@@ -1512,7 +1523,19 @@ namespace SSInstructor.Forms
             {
                 dTrimVal = (double)nudTrimVal.Value;
             }
-            scbTrimVal.Value = (int)(dTrimVal * 100);
+
+            if ((dTrimVal * 100) > 1000)
+            {
+                scbTrimVal.Value = 1000;
+            }
+            else if ((dTrimVal * 100) < -1000)
+            {
+                scbTrimVal.Value = -1000;
+            }
+            else
+            {
+                scbTrimVal.Value = (int)(dTrimVal * 100);
+            }
             CalculateLongitudinalHydrostatic();
         }
 
@@ -1818,13 +1841,13 @@ namespace SSInstructor.Forms
 
             if (cbxUseHeelReal.Checked)
             {
-                if ((heel_angle * 100) > 90000)
+                if ((heel_angle * 100) > 9000)
                 {
-                    scbHeelVal.Value = 90000;
+                    scbHeelVal.Value = 9000;
                 }
-                else if ((heel_angle * 100 < -90000))
+                else if ((heel_angle * 100 < -9000))
                 {
-                    scbHeelVal.Value = -90000;
+                    scbHeelVal.Value = -9000;
                 }
                 else
                 {
@@ -1835,7 +1858,18 @@ namespace SSInstructor.Forms
 
             if (cbxUseTrimReal.Checked)
             {
-                scbTrimVal.Value = (int)(trim_angle * 100);
+                if ((trim_angle * 100) > 1000)
+                {
+                    scbTrimVal.Value = 1000;
+                }
+                else if ((trim_angle * 100) < -1000)
+                {
+                    scbTrimVal.Value = -1000;
+                }
+                else
+                {
+                    scbTrimVal.Value = (int)(trim_angle * 100);
+                }
                 nudTrimVal.Value = (decimal)(trim_angle);
             }
 
