@@ -263,18 +263,17 @@ namespace SSInstructor.Forms
             if(vessel_type == 0)
             {
                 lblVesselType.Text = "Bulk Carrier 50000 DWT";
-                DummyDataBulk();
             }
             else if(vessel_type == 1)
             {
                 lblVesselType.Text = "General Cargo 3650 DWT";
-                DummyDataGencar();
             }
             else if(vessel_type == 2)
             {
                 lblVesselType.Text = "Container 4180 DWT";
-                DummyDataCont();
             }
+
+            LoadTestResult(dtScenList.Rows[cbScenName.SelectedIndex]["uc"].ToString());
         }
         #endregion
     }
