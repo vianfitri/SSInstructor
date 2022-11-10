@@ -1410,7 +1410,19 @@ namespace SSInstructor.Forms
         {
             if (cbxUseHeelReal.Checked)
             {
-                scbHeelVal.Value = (int)(heel_angle * 100);
+                if ((heel_angle * 100) > 90000)
+                {
+                    scbHeelVal.Value = 90000;
+                }
+                else if ((heel_angle * 100 < -90000))
+                {
+                    scbHeelVal.Value = -90000;
+                }
+                else
+                {
+                    scbHeelVal.Value = (int)(heel_angle * 100);
+                }
+                //scbHeelVal.Value = (int)(heel_angle * 100);
                 dHeelVal = heel_angle;
             }
             else
@@ -1453,7 +1465,21 @@ namespace SSInstructor.Forms
             {
                 dHeelVal = (double)nudHeelVal.Value;
             }
-            scbHeelVal.Value = (int)(dHeelVal * 100);
+
+            if ((dHeelVal * 100) > 90000)
+            {
+                scbHeelVal.Value = 90000;
+            }
+            else if ((dHeelVal * 100 < -90000))
+            {
+                scbHeelVal.Value = -90000;
+            }
+            else
+            {
+                scbHeelVal.Value = (int)(dHeelVal * 100);
+            }
+            //scbHeelVal.Value = (int)(dHeelVal * 100);
+
             CalculateTransverseHydrostatic();
             DrawGZandKNCurves(); // 20150908
             SendShipDataTo3D();
@@ -1792,7 +1818,18 @@ namespace SSInstructor.Forms
 
             if (cbxUseHeelReal.Checked)
             {
-                scbHeelVal.Value = (int)(heel_angle * 100);
+                if ((heel_angle * 100) > 90000)
+                {
+                    scbHeelVal.Value = 90000;
+                }
+                else if ((heel_angle * 100 < -90000))
+                {
+                    scbHeelVal.Value = -90000;
+                }
+                else
+                {
+                    scbHeelVal.Value = (int)(heel_angle * 100);
+                }
                 nudHeelVal.Value = (decimal)(heel_angle);
             }
 

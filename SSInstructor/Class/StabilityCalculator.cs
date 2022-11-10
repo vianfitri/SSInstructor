@@ -52,7 +52,7 @@ public static class StabilityCalculator {
     //double KG_BC_LS = 100;    // mm, light-ship KG (INCLINING TEST DATA, 20151230); 
     //double KG_BC_REAL = 100;  // mm from Keel (INCLINING TEST DATA, 20160102); 
     public static double LCG_BC = 1096.5;   // mm from AP = X0 (CATIA DATA, 20160102); 
-    public static double LCG_GC = 1096;
+    public static double LCG_GC = 958;
     public static double KG_BC_ORCA3D = 0;  // mm from Keel (vertical position of Zero point in ORCA3D, 20160102); 
 
     // knt = KN at Transversal Mode
