@@ -203,6 +203,11 @@ namespace SSInstructor.Forms
                 }
             );
         }
+        private void LoadTestResult(string ucScen)
+        {
+
+        }
+
         private void FScore_Load(object sender, EventArgs e)
         {
             // Load Scen Name List To Combobox
