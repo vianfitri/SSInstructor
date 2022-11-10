@@ -221,13 +221,16 @@ namespace SSInstructor.Forms
                     string status = "Failed";
                     idx++;
 
-                    if(int.Parse(drow["is_accomplished"].ToString()) == 1 && float.Parse(drow["final_score"].ToString()) >= 70)
+                    if (float.Parse(drow["final_score"].ToString()) >= 70)
                     {
-                        status = "Passed";
-                    } 
-                    else
-                    {
-                        status = "Failed";
+                        if (bool.Parse(drow["is_accomplished"].ToString()) == true)
+                        {
+                            status = "Passed";
+                        }
+                        else
+                        {
+                            status = "Failed";
+                        }
                     }
 
                     dgv_ScoreList.Rows.Add(
