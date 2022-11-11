@@ -1508,7 +1508,9 @@ namespace SSInstructor.Forms
             {
                 dTrimVal = (double)scbTrimVal.Value / 100;
             }
-            nudTrimVal.Value = (decimal)dTrimVal;
+            if (dTrimVal > 10) { nudTrimVal.Value = 10; }
+            else if (dTrimVal < -10) { nudTrimVal.Value = -10; }
+            else { nudTrimVal.Value = (decimal)dTrimVal; }
             CalculateLongitudinalHydrostatic();
         }
 
@@ -1516,7 +1518,9 @@ namespace SSInstructor.Forms
         {
             if (cbxUseTrimReal.Checked)
             {
-                nudTrimVal.Value = (decimal)(trim_angle);
+                if (trim_angle > 10) { nudTrimVal.Value = 10; }
+                else if (trim_angle < -10) { nudTrimVal.Value = -10; }
+                else { nudTrimVal.Value = (decimal)(trim_angle); }
                 dTrimVal = trim_angle;
             }
             else
@@ -1870,7 +1874,9 @@ namespace SSInstructor.Forms
                 {
                     scbTrimVal.Value = (int)(trim_angle * 100);
                 }
-                nudTrimVal.Value = (decimal)(trim_angle);
+                if (trim_angle > 10) { nudTrimVal.Value = 10; }
+                else if (trim_angle < -10) { nudTrimVal.Value = -10; }
+                else { nudTrimVal.Value = (decimal)(trim_angle); }
             }
 
             if (cbxUseKGReal.Checked)
