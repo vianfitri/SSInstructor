@@ -103,6 +103,7 @@
     <Compile Include="Class\ReadWriteFile.cs" />
     <Compile Include="Class\ShipData.cs" />
     <Compile Include="Class\ShutdownServer.cs" />
+    <Compile Include="Class\SSReport.cs" />
     <Compile Include="Class\Stability.cs" />
     <Compile Include="Class\StabilityCalculator.cs" />
     <Compile Include="Class\UserController.cs" />
