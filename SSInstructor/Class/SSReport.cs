@@ -63,6 +63,15 @@ namespace SSInstructor.Class
         #endregion
 
         #region "Properties"
+        public Bitmap ReportLogo
+        {
+            set { oReportLogo = value; }
+        }
+
+        public Icon PrintingIcon
+        {
+            set { oIcon = value; }
+        }
         #endregion
 
         #region "Method"
@@ -81,7 +90,7 @@ namespace SSInstructor.Class
             oPrintDoc.DefaultPageSettings = oStoredPageSettings;
 
             // Draw report page
-            // DrawReport();
+            DrawReport();
 
             try
             {
@@ -123,12 +132,256 @@ namespace SSInstructor.Class
                 g.InterpolationMode = InterpolationMode.HighQualityBilinear;
                 g.DrawImage(bm, new Rectangle(0, 0, width, height), new Rectangle(0, 0, bm.Width, bm.Height), GraphicsUnit.Pixel);
 
-                thumb.Save("", ImageFormat.Tiff);
+                string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                string filename = "Rep_" + DateTime.Now.ToString("yyyyMMdd") + "_" + x.ToString() + ".tiff";
+                string filepath = mydocpath + filename;
+                thumb.Save(filepath, ImageFormat.Tiff);
 
                 g.Dispose();
                 thumb.Dispose();
                 bm.Dispose();
             }
+        }
+
+        private bool DrawReport()
+        {
+            Bitmap mybitmap = new Bitmap(1240, 1754);
+            Pen pPen;
+            Rectangle pBox;
+            Point pLine1, pLine2;
+
+            Font pFont;
+            Rectangle layoutRect = new Rectangle();
+            StringFormat stringFormat = new StringFormat();
+            PointF stringPos = new PointF();
+            SizeF stringSize = new SizeF();
+
+            string teks;
+            bool stat = true;
+
+            try
+            {
+                Rectangle rect = new Rectangle(0, 0, mybitmap.Width, mybitmap.Height);
+                Graphics displayGraphics = Graphics.FromImage(mybitmap);
+                Brush pBrush = Brushes.White;
+
+                oImage = new Bitmap(rect.Width, rect.Height, displayGraphics);
+                Graphics imageGraphics = Graphics.FromImage(oImage);
+
+                imageGraphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                imageGraphics.FillRectangle(pBrush, rect);
+
+                // Print Box and Line
+                pPen = new Pen(Color.White, 1);
+                pBox = new Rectangle(rect.Left + 1, rect.Top + 1, rect.Width - 2, rect.Height - 2);
+                imageGraphics.DrawRectangle(pPen, pBox);
+
+                pPen = new Pen(Color.Black, 2);
+                pLine1 = new Point(pBox.Left + 50, pBox.Top + 200);
+                pLine2 = new Point(pBox.Right - 50, pBox.Top + 200);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pPen = new Pen(Color.Black, 3);
+                pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 100, (35 * 21));
+                imageGraphics.DrawRectangle(pPen, pBox);
+
+                pPen = new Pen(Color.Black, 3);
+                pLine1 = new Point(pBox.Left, pBox.Top + 35);
+                pLine2 = new Point(pBox.Right, pBox.Top + 35);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pPen = new Pen(Color.Black, 3);
+                for(int i = 2; i < 20; i++)
+                {
+                    if(i % 2 == 0)
+                    {
+                        pLine1 = new Point(pBox.Left, pBox.Top + 35 + (35 * i));
+                        pLine2 = new Point(pBox.Right, pBox.Top + 35 + (35 * i));
+                        imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                    }
+                }
+
+                pLine1 = new Point(pBox.Left + 40, pBox.Top);
+                pLine2 = new Point(pBox.Left + 40, pBox.Bottom);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left + 450, pBox.Top);
+                pLine2 = new Point(pBox.Left + 450, pBox.Bottom);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left + 1020, pBox.Top);
+                pLine2 = new Point(pBox.Left + 1020, pBox.Bottom);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pPen = new Pen(Color.Black, 3);
+                pLine1 = new Point(pBox.Left + 40, pBox.Top);
+                pLine2 = new Point(pBox.Left + 40, pBox.Top + 35);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left + 450, pBox.Top);
+                pLine2 = new Point(pBox.Left + 450, pBox.Top + 35);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left + 1020, pBox.Top);
+                pLine2 = new Point(pBox.Left + 1020, pBox.Top + 35);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+
+                // Print String and Data
+                pBox = new Rectangle(rect.Left + 1, rect.Top + 1, rect.Width - 2, rect.Height - 2);
+
+                if (oReportLogo != null) {
+                    Rectangle pPicBox = new Rectangle(rect.Left + 45, rect.Top + 37, 155, 138);
+                    imageGraphics.DrawImage(oReportLogo, pPicBox);
+                }
+
+                pFont = new Font("Microsoft Sans Serif", 22, FontStyle.Bold);
+                teks = "Laboratorium Ship Stability Simulator";
+                //stringSize = imageGraphics.MeasureString(teks, pFont)
+                stringPos = new Point(300, pBox.Top + 30);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                pFont = new Font("Times New Roman", 18, FontStyle.Bold);
+                teks = "JURUSAN NAUTIKA - PIP SEMARANG";
+                //stringSize = imageGraphics.MeasureString(teks, pFont)
+                stringPos = new Point(300, pBox.Top + 75);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "POLITEKNIK ILMU PELAYARAN SEMARANG";
+                //stringSize = imageGraphics.MeasureString(teks, pFont)
+                stringPos = new Point(300, pBox.Top + 110);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "Jl. Singosari No. 2A, Kota Semarang, Jawa Tengah, Indonesia 50242";
+                //stringSize = imageGraphics.MeasureString(teks, pFont)
+                stringPos = new Point(300, pBox.Top + 145);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                pFont = new Font("Microsoft Sans Serif", 18, FontStyle.Bold | FontStyle.Underline);
+                teks = "NILAI UJIAN SHIP STABILITY";
+                stringSize = imageGraphics.MeasureString(teks, pFont);
+                stringPos = new Point((int)(pBox.Right - stringSize.Width) / 2, pBox.Top + 250);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+
+                pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
+                teks = "Peserta :";
+                //stringSize = imageGraphics.MeasureString(teks, pFont)
+                stringPos = new Point(50, pBox.Top + 370);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                teks = "a.";
+                stringPos = new Point(175, pBox.Top + 370);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "(Dummy No)  Dummy Name";
+                stringPos = new Point(205, pBox.Top + 370);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                teks = "b.";
+                stringPos = new Point(175, pBox.Top + 405);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "(Dummy No)  Dummy Name";
+                stringPos = new Point(205, pBox.Top + 405);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                teks = "c.";
+                stringPos = new Point(175, pBox.Top + 440);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "(Dummy No)  Dummy Name";
+                stringPos = new Point(205, pBox.Top + 440);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                teks = "d.";
+                stringPos = new Point(175, pBox.Top + 475);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "(Dummy No)  Dummy Name";
+                stringPos = new Point(205, pBox.Top + 475);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                teks = "e.";
+                stringPos = new Point(175, pBox.Top + 510);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "(Dummy No)  Dummy Name";
+                stringPos = new Point(205, pBox.Top + 510);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+
+                pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
+                teks = "MATERI PENGUJIAN";
+                //stringSize = imageGraphics.MeasureString(teks, pFont)
+                stringPos = new Point(50, pBox.Top + 580);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                teks = "Tgl.  " + DateTime.Now.ToString("dd / MM / yyyy");
+                stringSize = imageGraphics.MeasureString(teks, pFont);
+                stringPos = new Point((int)(pBox.Right - 50 - stringSize.Width), pBox.Top + 580);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+
+                pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 120, (35 * 21));
+
+                pFont = new Font("Arial", 12, FontStyle.Bold);
+
+                stringFormat.FormatFlags = StringFormatFlags.LineLimit;
+                stringFormat.Trimming = StringTrimming.EllipsisCharacter;
+                stringFormat.Alignment = StringAlignment.Center;
+                stringFormat.LineAlignment = StringAlignment.Center;
+
+                teks = "No.";
+                layoutRect = new Rectangle(pBox.Left, pBox.Top, 40, 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "S K E N A R I O";
+                layoutRect = new Rectangle(pBox.Left + 40, pBox.Top, 410, 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "M A L F U N G S I";
+                layoutRect = new Rectangle(pBox.Left + 450, pBox.Top, 570, 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "N I L A I";
+                layoutRect = new Rectangle(pBox.Left + 1020, pBox.Top, pBox.Right - (pBox.Left + 1000), 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+
+                pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
+                teks = "NILAI AKHIR   : ";
+                stringSize = imageGraphics.MeasureString(teks, pFont);
+                stringPos = new Point(pBox.Left, pBox.Bottom + 35);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                pPen = new Pen(Color.Black, 1);
+                pBox = new Rectangle((int)(pBox.Left + stringSize.Width + 15), pBox.Bottom + 25, 100, 50);
+                imageGraphics.DrawRectangle(pPen, pBox);
+
+                pFont = new Font("Arial", 20, FontStyle.Bold);
+                teks = "Dummy TotalScore";
+                layoutRect = pBox;
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+
+                pBox = new Rectangle(rect.Left + 1, rect.Top + 1, rect.Width - 2, rect.Height - 2);
+                pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 120, (35 * 21));
+
+                pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
+                teks = "Semarang, " + DateTime.Now.ToString("d  MMMM  yyyy", new System.Globalization.CultureInfo("Id-ID"));
+                layoutRect = new Rectangle(pBox.Right - 330, pBox.Bottom + 100, 330, 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "Dummy Instructor Name";
+                layoutRect = new Rectangle(pBox.Right - 330, pBox.Bottom + 263, 330, 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                pPen = new Pen(Color.Black, 1);
+                imageGraphics.DrawLine(pPen, pBox.Right - 330, pBox.Bottom + 300, pBox.Right, pBox.Bottom + 300);
+
+                teks = "I n s t r u k t u r";
+                layoutRect = new Rectangle(pBox.Right - 330, pBox.Bottom + 300, 330, 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+            }
+            catch(Exception ex)
+            {
+                stat = false;
+                MessageBox.Show(ex.Message, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return stat;
         }
         #endregion
     }

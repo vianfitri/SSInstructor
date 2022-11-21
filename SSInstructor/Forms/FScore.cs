@@ -16,6 +16,7 @@ namespace SSInstructor.Forms
 
         #region "Fields"
         DataTable dtScenList = new DataTable();
+        SSReport rpt;
         #endregion
 
         #region "Constructor"
@@ -96,6 +97,9 @@ namespace SSInstructor.Forms
         {
             // Load Scen Name List To Combobox
             LoadScenNameList();
+
+            // Report Test
+            rpt = new SSReport();
         }
 
         private void cbScenName_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,5 +122,12 @@ namespace SSInstructor.Forms
             LoadTestResult(dtScenList.Rows[cbScenName.SelectedIndex]["uc"].ToString());
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rpt.ReportLogo = Properties.Resources.PIP_SEMARANG_LOGO;
+            rpt.PrintingIcon = this.Icon;
+            rpt.ShowReport();
+        }
     }
 }
