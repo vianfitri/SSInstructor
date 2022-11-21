@@ -77,7 +77,7 @@ namespace SSInstructor.Forms
                         new object[]
                         {
                             idx,
-                            drow["uc_student"].ToString(),
+                            drow["id_number"].ToString(),
                             drow["first_name"].ToString(),
                             drow["angle_heel_score"],
                             drow["angle_trim_score"],
