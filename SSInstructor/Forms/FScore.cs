@@ -46,7 +46,7 @@ namespace SSInstructor.Forms
         private void LoadTestResult(string ucScen)
         {
             DataTable dtTestResult = new DataTable();
-            string qTestRes = "SELECT a.*, b.first_name FROM `shp_assets`.`ss_scoring` a " +
+            string qTestRes = "SELECT a.*, b.first_name, b.id_number FROM `shp_assets`.`ss_scoring` a " +
                 "INNER JOIN `shp_assets`.`ss_subject` b " +
                 "ON a.uc_student = b.uc " +
                 "WHERE `uc_scenario` = '" + ucScen + "'";
