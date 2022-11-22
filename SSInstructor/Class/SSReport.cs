@@ -384,13 +384,12 @@ namespace SSInstructor.Class
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
                 pPen = new Pen(Color.Black, 1);
-                pBox = new Rectangle(230, pBox.Bottom + 25, 100, 50);
+                pBox = new Rectangle(230, pBox.Bottom + 25, 150, 50);
                 Console.WriteLine(pBox.Left + stringSize.Width + 15);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
                 float final_score = float.Parse(tableScore.Rows[rowId]["final_score"].ToString());
-                final_score = 60f;
                 teks = final_score.ToString("F1");
                 layoutRect = pBox;
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
@@ -402,7 +401,7 @@ namespace SSInstructor.Class
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
                 pPen = new Pen(Color.Black, 1);
-                pBox = new Rectangle(230, pBox.Bottom + 25, 100, 50);
+                pBox = new Rectangle(230, pBox.Bottom + 25, 150, 50);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
