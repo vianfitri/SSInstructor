@@ -227,8 +227,8 @@ namespace SSInstructor.Class
                     }
                 }
 
-                pLine1 = new Point(pBox.Left + 40, pBox.Top);
-                pLine2 = new Point(pBox.Left + 40, pBox.Bottom);
+                pLine1 = new Point(pBox.Left + 80, pBox.Top);
+                pLine2 = new Point(pBox.Left + 80, pBox.Bottom);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
                 pLine1 = new Point(pBox.Left + 450, pBox.Top);
@@ -239,7 +239,7 @@ namespace SSInstructor.Class
                 pLine2 = new Point(pBox.Left + 1020, pBox.Bottom);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
-                pPen = new Pen(Color.Black, 3);
+                pPen = new Pen(Color.Red, 3);
                 pLine1 = new Point(pBox.Left + 40, pBox.Top);
                 pLine2 = new Point(pBox.Left + 40, pBox.Top + 35);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
@@ -377,16 +377,31 @@ namespace SSInstructor.Class
                 stringPos = new Point(pBox.Left, pBox.Bottom + 35);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
-                pPen = new Pen(Color.Black, 1);
+                pPen = new Pen(Color.Green, 1);
                 pBox = new Rectangle((int)(pBox.Left + stringSize.Width + 15), pBox.Bottom + 25, 100, 50);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
-                //teks = "Dummy TotalScore";
                 float final_score = float.Parse(tableScore.Rows[rowId]["final_score"].ToString());
                 teks = final_score.ToString("F1");
                 layoutRect = pBox;
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
+                teks = "STATUS        : ";
+                stringSize = imageGraphics.MeasureString(teks, pFont);
+                stringPos = new Point(50, pBox.Bottom + 35);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                pPen = new Pen(Color.Yellow, 1);
+                pBox = new Rectangle((int)(50 + stringSize.Width + 15), pBox.Bottom + 25, 100, 50);
+                imageGraphics.DrawRectangle(pPen, pBox);
+
+                pFont = new Font("Arial", 20, FontStyle.Bold);
+                teks = "PASSED";
+                layoutRect = pBox;
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
 
                 pBox = new Rectangle(rect.Left + 1, rect.Top + 1, rect.Width - 2, rect.Height - 2);
                 pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 120, (35 * 21));
