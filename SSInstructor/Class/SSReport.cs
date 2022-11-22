@@ -358,7 +358,7 @@ namespace SSInstructor.Class
                 layoutRect = new Rectangle(pBox.Left, pBox.Top, 40, 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
-                teks = "S K E N A R I O";
+                teks = "A S P E K";
                 layoutRect = new Rectangle(pBox.Left + 40, pBox.Top, 410, 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
