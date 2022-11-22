@@ -239,18 +239,18 @@ namespace SSInstructor.Class
                 pLine2 = new Point(pBox.Left + 1020, pBox.Bottom);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
-                pPen = new Pen(Color.Red, 3);
-                pLine1 = new Point(pBox.Left + 40, pBox.Top);
-                pLine2 = new Point(pBox.Left + 40, pBox.Top + 35);
-                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                //pPen = new Pen(Color.Red, 3);
+                //pLine1 = new Point(pBox.Left + 40, pBox.Top);
+                //pLine2 = new Point(pBox.Left + 40, pBox.Top + 35);
+                //imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
-                pLine1 = new Point(pBox.Left + 450, pBox.Top);
-                pLine2 = new Point(pBox.Left + 450, pBox.Top + 35);
-                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                //pLine1 = new Point(pBox.Left + 450, pBox.Top);
+                //pLine2 = new Point(pBox.Left + 450, pBox.Top + 35);
+                //imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
-                pLine1 = new Point(pBox.Left + 1020, pBox.Top);
-                pLine2 = new Point(pBox.Left + 1020, pBox.Top + 35);
-                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                //pLine1 = new Point(pBox.Left + 1020, pBox.Top);
+                //pLine2 = new Point(pBox.Left + 1020, pBox.Top + 35);
+                //imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
 
                 // Print String and Data
@@ -355,7 +355,7 @@ namespace SSInstructor.Class
                 stringFormat.LineAlignment = StringAlignment.Center;
 
                 teks = "No.";
-                layoutRect = new Rectangle(pBox.Left, pBox.Top, 40, 37);
+                layoutRect = new Rectangle(pBox.Left + 18, pBox.Top, 40, 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
                 teks = "A S P E K";
@@ -377,13 +377,14 @@ namespace SSInstructor.Class
                 stringPos = new Point(pBox.Left, pBox.Bottom + 35);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
-                pPen = new Pen(Color.Green, 1);
-                pBox = new Rectangle((int)(pBox.Left + stringSize.Width + 15), pBox.Bottom + 25, 100, 50);
+                pPen = new Pen(Color.Black, 1);
+                pBox = new Rectangle(230, pBox.Bottom + 25, 100, 50);
                 Console.WriteLine(pBox.Left + stringSize.Width + 15);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
                 float final_score = float.Parse(tableScore.Rows[rowId]["final_score"].ToString());
+                final_score = 60f;
                 teks = final_score.ToString("F1");
                 layoutRect = pBox;
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
@@ -394,14 +395,28 @@ namespace SSInstructor.Class
                 stringPos = new Point(50, pBox.Bottom + 35);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
-                pPen = new Pen(Color.Yellow, 1);
-                pBox = new Rectangle(406, pBox.Bottom + 25, 100, 50);
+                pPen = new Pen(Color.Black, 1);
+                pBox = new Rectangle(230, pBox.Bottom + 25, 100, 50);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
-                teks = "PASSED";
+                Brush brush = Brushes.Red;
+                teks = "FAILED";
+                if (final_score >= 70)
+                {
+                    if (bool.Parse(tableScore.Rows[rowId]["is_accomplished"].ToString()) == true)
+                    {
+                        brush = Brushes.Green;
+                        teks = "PASSED";
+                    }
+                    else
+                    {
+                        brush = Brushes.Red;
+                        teks = "FAILED";
+                    }
+                }
                 layoutRect = pBox;
-                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+                imageGraphics.DrawString(teks, pFont, brush, layoutRect, stringFormat);
 
 
                 pBox = new Rectangle(rect.Left + 1, rect.Top + 1, rect.Width - 2, rect.Height - 2);
