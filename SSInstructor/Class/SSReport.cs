@@ -202,11 +202,13 @@ namespace SSInstructor.Class
                 pBox = new Rectangle(rect.Left + 1, rect.Top + 1, rect.Width - 2, rect.Height - 2);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
+                // Header Underline
                 pPen = new Pen(Color.Black, 2);
                 pLine1 = new Point(pBox.Left + 50, pBox.Top + 200);
                 pLine2 = new Point(pBox.Right - 50, pBox.Top + 200);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
+                // Value Table
                 pPen = new Pen(Color.Black, 3);
                 pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 100, (35 * 21));
                 imageGraphics.DrawRectangle(pPen, pBox);
