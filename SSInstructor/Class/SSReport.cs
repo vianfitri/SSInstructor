@@ -236,14 +236,17 @@ namespace SSInstructor.Class
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
                 // colum separator
-                pLine1 = new Point(pBox.Left + 450, pBox.Top);
-                pLine2 = new Point(pBox.Left + 450, pBox.Bottom);
+                //pLine1 = new Point(pBox.Left + 450, pBox.Top);
+                //pLine2 = new Point(pBox.Left + 450, pBox.Bottom);
+                //imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                pLine1 = new Point(pBox.Left + 950, pBox.Top);
+                pLine2 = new Point(pBox.Left + 950, pBox.Bottom);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
                 // colum separator
-                pLine1 = new Point(pBox.Left + 1020, pBox.Top);
-                pLine2 = new Point(pBox.Left + 1020, pBox.Bottom);
-                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                //pLine1 = new Point(pBox.Left + 1020, pBox.Top);
+                //pLine2 = new Point(pBox.Left + 1020, pBox.Bottom);
+                //imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
                 //pPen = new Pen(Color.Red, 3);
                 //pLine1 = new Point(pBox.Left + 40, pBox.Top);
@@ -365,12 +368,12 @@ namespace SSInstructor.Class
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
                 teks = "A S P E K";
-                layoutRect = new Rectangle(pBox.Left + 40, pBox.Top, 410, 37);
+                layoutRect = new Rectangle(pBox.Left + 80, pBox.Top, 870, 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
-                teks = "M A L F U N G S I";
-                layoutRect = new Rectangle(pBox.Left + 450, pBox.Top, 570, 37);
-                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+                //teks = "M A L F U N G S I";
+                //layoutRect = new Rectangle(pBox.Left + 450, pBox.Top, 570, 37);
+                //imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
                 teks = "N I L A I";
                 layoutRect = new Rectangle(pBox.Left + 1020, pBox.Top, pBox.Right - (pBox.Left + 1000), 37);
