@@ -17,6 +17,7 @@ namespace SSInstructor.Forms
         #region "Fields"
         DataTable dtScenList = new DataTable();
         SSReport rpt;
+        int rowIdSelected = 0;
         #endregion
 
         #region "Constructor"
@@ -45,6 +46,8 @@ namespace SSInstructor.Forms
 
         private void LoadTestResult(string ucScen)
         {
+            btnPrint.Enabled = false;
+
             DataTable dtTestResult = new DataTable();
             string qTestRes = "SELECT a.*, b.first_name, b.id_number FROM `shp_assets`.`ss_scoring` a " +
                 "INNER JOIN `shp_assets`.`ss_subject` b " +
@@ -90,6 +93,11 @@ namespace SSInstructor.Forms
                         }
                     );
                 }
+
+                if(idx > 0)
+                {
+                    btnPrint.Enabled = true;
+                }
             }
         }
 
@@ -127,15 +135,28 @@ namespace SSInstructor.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            // reload test result to datatable
+            DataTable dtTestResult = new DataTable();
+            string qTestRes = "SELECT a.*, b.first_name, b.id_number FROM `shp_assets`.`ss_scoring` a " +
+                "INNER JOIN `shp_assets`.`ss_subject` b " +
+                "ON a.uc_student = b.uc " +
+                "WHERE `uc_scenario` = '" + dtScenList.Rows[cbScenName.SelectedIndex]["uc"].ToString() + "'";
+
             rpt.ReportLogo = Properties.Resources.PIP_SEMARANG_LOGO;
             rpt.PrintingIcon = this.Icon;
             rpt.ScenName = cbScenName.Items[cbScenName.SelectedIndex].ToString();
+            rpt.TypeVessel = int.Parse(dtScenList.Rows[cbScenName.SelectedIndex]["vessel_type"].ToString());
+            rpt.RowId = rowIdSelected;
+            if(ConnectorDB.MySQLConn.GetTableData(qTestRes, ref dtTestResult))
+            {
+                rpt.TableScore = dtTestResult;
+            }
             rpt.ShowReport();
         }
 
         private void dgv_ScoreList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            rowIdSelected = e.RowIndex;
         }
         #endregion
 

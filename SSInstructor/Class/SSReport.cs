@@ -294,7 +294,8 @@ namespace SSInstructor.Class
                 teks = ":";
                 stringPos = new Point(305, pBox.Top + 370);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "12345678/N";
+                //teks = "12345678/N";
+                teks = tableScore.Rows[rowId]["id_number"].ToString();
                 stringPos = new Point(325, pBox.Top + 370);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
@@ -304,7 +305,8 @@ namespace SSInstructor.Class
                 teks = ":";
                 stringPos = new Point(305, pBox.Top + 405);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "Student1";
+                //teks = "Student1";
+                teks = tableScore.Rows[rowId]["first_name"].ToString();
                 stringPos = new Point(325, pBox.Top + 405);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
@@ -314,7 +316,7 @@ namespace SSInstructor.Class
                 teks = ":";
                 stringPos = new Point(305, pBox.Top + 440);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "Test Gencar";
+                teks = scenName;
                 stringPos = new Point(325, pBox.Top + 440);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
@@ -324,7 +326,9 @@ namespace SSInstructor.Class
                 teks = ":";
                 stringPos = new Point(305, pBox.Top + 475);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "General Cargo 3650 DWT";
+                if(vesselType == 0) { teks = "Bulk Carrier 50000 DWT"; }
+                else if(vesselType == 1) { teks = "General Cargo 3650 DWT"; }
+                else if(vesselType == 2) { teks = "Container 4180 DWT"; }
                 stringPos = new Point(325, pBox.Top + 475);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
@@ -378,7 +382,8 @@ namespace SSInstructor.Class
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
-                teks = "Dummy TotalScore";
+                //teks = "Dummy TotalScore";
+                teks = tableScore.Rows[rowId]["final_score"].ToString();
                 layoutRect = pBox;
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
