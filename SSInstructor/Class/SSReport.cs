@@ -379,6 +379,7 @@ namespace SSInstructor.Class
 
                 pPen = new Pen(Color.Green, 1);
                 pBox = new Rectangle((int)(pBox.Left + stringSize.Width + 15), pBox.Bottom + 25, 100, 50);
+                Console.WriteLine(pBox.Left + stringSize.Width + 15);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
@@ -394,7 +395,7 @@ namespace SSInstructor.Class
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
                 pPen = new Pen(Color.Yellow, 1);
-                pBox = new Rectangle((int)(50 + stringSize.Width + 15), pBox.Bottom + 25, 100, 50);
+                pBox = new Rectangle(406, pBox.Bottom + 25, 100, 50);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
