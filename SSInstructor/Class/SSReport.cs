@@ -213,6 +213,7 @@ namespace SSInstructor.Class
                 pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 100, (35 * 21));
                 imageGraphics.DrawRectangle(pPen, pBox);
 
+                // Value Table Header Line
                 pPen = new Pen(Color.Black, 3);
                 pLine1 = new Point(pBox.Left, pBox.Top + 35);
                 pLine2 = new Point(pBox.Right, pBox.Top + 35);
