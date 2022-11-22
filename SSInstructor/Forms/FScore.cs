@@ -98,6 +98,9 @@ namespace SSInstructor.Forms
             // Load Scen Name List To Combobox
             LoadScenNameList();
 
+            // set default index for combobox
+            cbScenName.SelectedIndex = 0;
+
             // Report Test
             rpt = new SSReport();
         }
@@ -121,13 +124,21 @@ namespace SSInstructor.Forms
 
             LoadTestResult(dtScenList.Rows[cbScenName.SelectedIndex]["uc"].ToString());
         }
-        #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
             rpt.ReportLogo = Properties.Resources.PIP_SEMARANG_LOGO;
             rpt.PrintingIcon = this.Icon;
+            rpt.ScenName = cbScenName.Items[cbScenName.SelectedIndex].ToString();
             rpt.ShowReport();
         }
+
+        private void dgv_ScoreList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        #endregion
+
+
     }
 }

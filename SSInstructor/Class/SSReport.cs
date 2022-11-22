@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
@@ -21,9 +22,14 @@ namespace SSInstructor.Class
         private PrintPreviewDialog oPrintPrevDlg = new PrintPreviewDialog();
         private PageSettings oStoredPageSettings = new PageSettings();
 
+        private DataTable tableScore;
+
         private Bitmap oReportLogo;
         private Icon oIcon;
         private Image oImage;
+        private int rowId = 0;
+        private int vesselType = 0;
+        private string scenName = "";
         #endregion
 
         #region "Constructor"
@@ -71,6 +77,26 @@ namespace SSInstructor.Class
         public Icon PrintingIcon
         {
             set { oIcon = value; }
+        }
+
+        public int RowId
+        {
+            set { rowId = value; }
+        }
+
+        public DataTable TableScore
+        {
+            set { tableScore = value; }
+        }
+
+        public int TypeVessel
+        {
+            set { vesselType = value; }
+        }
+
+        public string ScenName
+        {
+            set { scenName = value; }
         }
         #endregion
 
@@ -262,49 +288,49 @@ namespace SSInstructor.Class
 
 
                 pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
-                teks = "Peserta :";
-                //stringSize = imageGraphics.MeasureString(teks, pFont)
+                teks = "NIT";
                 stringPos = new Point(50, pBox.Top + 370);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-
-                teks = "a.";
-                stringPos = new Point(175, pBox.Top + 370);
+                teks = ":";
+                stringPos = new Point(305, pBox.Top + 370);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "(Dummy No)  Dummy Name";
-                stringPos = new Point(205, pBox.Top + 370);
-                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-
-                teks = "b.";
-                stringPos = new Point(175, pBox.Top + 405);
-                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "(Dummy No)  Dummy Name";
-                stringPos = new Point(205, pBox.Top + 405);
+                teks = "12345678/N";
+                stringPos = new Point(325, pBox.Top + 370);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
-                teks = "c.";
-                stringPos = new Point(175, pBox.Top + 440);
+                teks = "Trainee Name";
+                stringPos = new Point(50, pBox.Top + 405);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "(Dummy No)  Dummy Name";
-                stringPos = new Point(205, pBox.Top + 440);
+                teks = ":";
+                stringPos = new Point(305, pBox.Top + 405);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-
-                teks = "d.";
-                stringPos = new Point(175, pBox.Top + 475);
-                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "(Dummy No)  Dummy Name";
-                stringPos = new Point(205, pBox.Top + 475);
+                teks = "Student1";
+                stringPos = new Point(325, pBox.Top + 405);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
-                teks = "e.";
-                stringPos = new Point(175, pBox.Top + 510);
+                teks = "Scenario Name";
+                stringPos = new Point(50, pBox.Top + 440);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
-                teks = "(Dummy No)  Dummy Name";
-                stringPos = new Point(205, pBox.Top + 510);
+                teks = ":";
+                stringPos = new Point(305, pBox.Top + 440);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "Test Gencar";
+                stringPos = new Point(325, pBox.Top + 440);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+
+                teks = "Vessel Type";
+                stringPos = new Point(50, pBox.Top + 475);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = ":";
+                stringPos = new Point(305, pBox.Top + 475);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
+                teks = "General Cargo 3650 DWT";
+                stringPos = new Point(325, pBox.Top + 475);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
 
                 pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
-                teks = "MATERI PENGUJIAN";
+                teks = "ASPEK PENILAIAN";
                 //stringSize = imageGraphics.MeasureString(teks, pFont)
                 stringPos = new Point(50, pBox.Top + 580);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
