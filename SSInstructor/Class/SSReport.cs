@@ -230,14 +230,17 @@ namespace SSInstructor.Class
                     }
                 }
 
+                // colum separator
                 pLine1 = new Point(pBox.Left + 80, pBox.Top);
                 pLine2 = new Point(pBox.Left + 80, pBox.Bottom);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
+                // colum separator
                 pLine1 = new Point(pBox.Left + 450, pBox.Top);
                 pLine2 = new Point(pBox.Left + 450, pBox.Bottom);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
+                // colum separator
                 pLine1 = new Point(pBox.Left + 1020, pBox.Top);
                 pLine2 = new Point(pBox.Left + 1020, pBox.Bottom);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
