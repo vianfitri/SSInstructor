@@ -375,10 +375,15 @@ namespace SSInstructor.Class
                 //layoutRect = new Rectangle(pBox.Left + 450, pBox.Top, 570, 37);
                 //imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
+                //teks = "N I L A I";
+                //layoutRect = new Rectangle(pBox.Left + 1020, pBox.Top, pBox.Right - (pBox.Left + 1000), 37);
+                //imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
                 teks = "N I L A I";
-                layoutRect = new Rectangle(pBox.Left + 1020, pBox.Top, pBox.Right - (pBox.Left + 1000), 37);
+                layoutRect = new Rectangle(pBox.Left + 950, pBox.Top, pBox.Right - (pBox.Left + 930), 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
+                // Aspek nilai
 
                 pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
                 teks = "NILAI AKHIR   : ";
