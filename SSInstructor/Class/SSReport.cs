@@ -210,7 +210,7 @@ namespace SSInstructor.Class
 
                 // Value Table
                 pPen = new Pen(Color.Black, 3);
-                pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 100, (35 * 21));
+                pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 100, 335);
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 // Value Table Header Line
@@ -219,16 +219,35 @@ namespace SSInstructor.Class
                 pLine2 = new Point(pBox.Right, pBox.Top + 35);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
-                pPen = new Pen(Color.Blue, 3);
-                for(int i = 2; i < 20; i++)
-                {
-                    if(i % 2 == 0)
-                    {
-                        pLine1 = new Point(pBox.Left, pBox.Top + 35 + (35 * i));
-                        pLine2 = new Point(pBox.Right, pBox.Top + 35 + (35 * i));
-                        imageGraphics.DrawLine(pPen, pLine1, pLine2);
-                    }
-                }
+                pPen = new Pen(Color.Black, 2);
+                pLine1 = new Point(pBox.Left, pBox.Top + 35 + 50);
+                pLine2 = new Point(pBox.Right, pBox.Top + 35 + 50);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left, pBox.Top + 35 + 100);
+                pLine2 = new Point(pBox.Right, pBox.Top + 35 + 100);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left, pBox.Top + 35 + 150);
+                pLine2 = new Point(pBox.Right, pBox.Top + 35 + 150);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left, pBox.Top + 35 + 200);
+                pLine2 = new Point(pBox.Right, pBox.Top + 35 + 200);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+
+                pLine1 = new Point(pBox.Left, pBox.Top + 35 + 250);
+                pLine2 = new Point(pBox.Right, pBox.Top + 35 + 250);
+                imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                //for(int i = 2; i < 20; i++)
+                //{
+                //    if(i % 2 == 0)
+                //    {
+                //        pLine1 = new Point(pBox.Left, pBox.Top + 35 + (35 * i));
+                //        pLine2 = new Point(pBox.Right, pBox.Top + 35 + (35 * i));
+                //        imageGraphics.DrawLine(pPen, pLine1, pLine2);
+                //    }
+                //}
 
                 // colum separator
                 pLine1 = new Point(pBox.Left + 80, pBox.Top);
@@ -449,6 +468,61 @@ namespace SSInstructor.Class
 
                 teks = "I n s t r u k t u r";
                 layoutRect = new Rectangle(pBox.Right - 330, pBox.Bottom + 300, 330, 37);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                // Data
+                pFont = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+
+                teks = "1.";
+                stringFormat.Alignment = StringAlignment.Center;
+                stringFormat.LineAlignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left, pBox.Top + 35, 58, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "2.";
+                layoutRect = new Rectangle(pBox.Left, pBox.Top + 35 + 50, 58, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "3.";
+                layoutRect = new Rectangle(pBox.Left, pBox.Top + 35 + 100, 58, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "4.";
+                layoutRect = new Rectangle(pBox.Left, pBox.Top + 35 + 150, 58, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "5.";
+                layoutRect = new Rectangle(pBox.Left, pBox.Top + 35 + 200, 58, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "6.";
+                layoutRect = new Rectangle(pBox.Left, pBox.Top + 35 + 250, 58, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "object Payload Positioning";
+                stringFormat.Alignment = StringAlignment.Near;
+                stringFormat.LineAlignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35, 850, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "Weight and Balance";
+                layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35 + 50, 850, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "Stability on Rolling and Pitching";
+                layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35 + 100, 850, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "Simulation Accomplishing";
+                layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35 + 150, 850, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "Decision Making of Object Payload Positioning";
+                layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35 + 200, 850, 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = "Volume and Dimension";
+                layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35 + 250, 850, 49);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
             }
             catch(Exception ex)
