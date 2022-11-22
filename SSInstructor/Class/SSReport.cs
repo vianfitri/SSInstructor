@@ -216,7 +216,7 @@ namespace SSInstructor.Class
                 pLine2 = new Point(pBox.Right, pBox.Top + 35);
                 imageGraphics.DrawLine(pPen, pLine1, pLine2);
 
-                pPen = new Pen(Color.Black, 3);
+                pPen = new Pen(Color.Blue, 3);
                 for(int i = 2; i < 20; i++)
                 {
                     if(i % 2 == 0)
@@ -383,10 +383,10 @@ namespace SSInstructor.Class
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
                 //teks = "Dummy TotalScore";
-                teks = tableScore.Rows[rowId]["final_score"].ToString();
+                float final_score = float.Parse(tableScore.Rows[rowId]["final_score"].ToString());
+                teks = final_score.ToString("F1");
                 layoutRect = pBox;
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
-
 
                 pBox = new Rectangle(rect.Left + 1, rect.Top + 1, rect.Width - 2, rect.Height - 2);
                 pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 120, (35 * 21));
@@ -396,7 +396,7 @@ namespace SSInstructor.Class
                 layoutRect = new Rectangle(pBox.Right - 330, pBox.Bottom + 100, 330, 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
-                teks = "Dummy Instructor Name";
+                teks = "";
                 layoutRect = new Rectangle(pBox.Right - 330, pBox.Bottom + 263, 330, 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
