@@ -373,7 +373,7 @@ namespace SSInstructor.Class
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
 
-                pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 120, (35 * 21));
+                pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 120, 335);
 
                 pFont = new Font("Arial", 12, FontStyle.Bold);
 
