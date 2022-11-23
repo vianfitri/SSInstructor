@@ -144,7 +144,15 @@ namespace SSInstructor.Class
 
             try
             {
+                oPrintDoc.DocumentName = "ShipStability Report";
+                printDlg.Document = oPrintDoc;
+                printDlg.AllowSelection = true;
+                printDlg.AllowSomePages = true;
 
+                if(printDlg.ShowDialog() == DialogResult.OK)
+                {
+                    oPrintDoc.Print();
+                }
             }
             catch (Exception ex)
             {

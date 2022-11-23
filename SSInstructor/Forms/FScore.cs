@@ -243,6 +243,7 @@ namespace SSInstructor.Forms
             {
                 rpt.TableScore = dtTestResult;
             }
+            rpt.PrintReport();
         }
 
         private void dgv_ScoreList_CellClick(object sender, DataGridViewCellEventArgs e)
