@@ -401,6 +401,81 @@ namespace SSInstructor.Class
                 layoutRect = new Rectangle(pBox.Left + 950, pBox.Top, pBox.Right - (pBox.Left + 930), 37);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
+                // Calculate Score
+                //-----------------------------------------------------
+                // calculate score
+                float objPayloadPos_score = 0;
+                float WeightBalance_score = 0;
+                float RollPitch_score = 0;
+                float accomplished_score = 0;
+                float decisioMaking_score = 0;
+                float vol_dim_score = 0;
+                float final_score = 0;
+                string status = "Failed";
+
+                float heel = float.Parse(tableScore.Rows[rowId]["angle_heel"].ToString());
+                float trim = float.Parse(tableScore.Rows[rowId]["angle_trim"].ToString());
+
+                // Obj Payload Pos Score
+                if (heel < 1 && trim < 1)
+                {
+                    objPayloadPos_score = 100;
+                }
+                else if (heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
+                {
+                    objPayloadPos_score = 80;
+                }
+                else if (heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
+                {
+                    objPayloadPos_score = 70;
+                }
+                else
+                {
+                    objPayloadPos_score = 60;
+                }
+
+                // Weight balance score
+                if (heel < 1 && trim < 1)
+                {
+                    WeightBalance_score = 100;
+                }
+                else if (heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
+                {
+                    WeightBalance_score = 80;
+                }
+                else if (heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
+                {
+                    WeightBalance_score = 70;
+                }
+                else
+                {
+                    WeightBalance_score = 60;
+                }
+
+                // Roll Pitch Score
+                float angle_heel_score = float.Parse(tableScore.Rows[rowId]["angle_heel_score"].ToString());
+                float angle_trim_score = float.Parse(tableScore.Rows[rowId]["angle_trim_score"].ToString());
+
+                RollPitch_score = (angle_heel_score + angle_trim_score) / 2;
+
+                // accomplished score
+                if (bool.Parse(tableScore.Rows[rowId]["is_accomplished"].ToString()) == true)
+                {
+                    accomplished_score = 100;
+                }
+
+                // decision making score
+                decisioMaking_score = float.Parse(tableScore.Rows[rowId]["time_elapsed_score"].ToString());
+
+                // voldim score
+                float drAftScr = float.Parse(tableScore.Rows[rowId]["draft_aft_score"].ToString());
+                float drFwdScr = float.Parse(tableScore.Rows[rowId]["draft_fwd_score"].ToString());
+                vol_dim_score = (drAftScr + drFwdScr) / 2;
+
+                // final score
+                final_score = (objPayloadPos_score + WeightBalance_score + RollPitch_score + accomplished_score + decisioMaking_score + vol_dim_score) / 6;
+                //-----------------------------------------------------
+
                 // Aspek nilai
 
                 pFont = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
@@ -415,7 +490,6 @@ namespace SSInstructor.Class
                 imageGraphics.DrawRectangle(pPen, pBox);
 
                 pFont = new Font("Arial", 20, FontStyle.Bold);
-                float final_score = float.Parse(tableScore.Rows[rowId]["final_score"].ToString());
                 teks = final_score.ToString("F1");
                 layoutRect = pBox;
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
@@ -524,11 +598,37 @@ namespace SSInstructor.Class
                 layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35 + 250, 850, 49);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
+                
                 // Nilai
                 pFont = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
-                teks = "100";
+                teks = objPayloadPos_score.ToString("F1");
                 stringFormat.Alignment = StringAlignment.Center;
                 layoutRect = new Rectangle(pBox.Left + 970, pBox.Top + 35, pBox.Right - (pBox.Left + 950), 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = WeightBalance_score.ToString("F1");
+                stringFormat.Alignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left + 970, pBox.Top + 35 + 50, pBox.Right - (pBox.Left + 950), 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = RollPitch_score.ToString("F1");
+                stringFormat.Alignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left + 970, pBox.Top + 35 + 100, pBox.Right - (pBox.Left + 950), 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = accomplished_score.ToString("F1");
+                stringFormat.Alignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left + 970, pBox.Top + 35 + 150, pBox.Right - (pBox.Left + 950), 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = decisioMaking_score.ToString("F1");
+                stringFormat.Alignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left + 970, pBox.Top + 35 + 200, pBox.Right - (pBox.Left + 950), 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                teks = vol_dim_score.ToString("F1");
+                stringFormat.Alignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left + 970, pBox.Top + 35 + 250, pBox.Right - (pBox.Left + 950), 49);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
 
                 imageGraphics.Dispose();

@@ -77,10 +77,46 @@ namespace SSInstructor.Forms
                     float trim = float.Parse(drow["angle_trim"].ToString());
 
                     // Obj Payload Pos Score
+                    if(heel < 1 && trim < 1)
+                    {
+                        objPayloadPos_score = 100;
+                    } 
+                    else if(heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
+                    {
+                        objPayloadPos_score = 80;
+                    } 
+                    else if(heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
+                    {
+                        objPayloadPos_score = 70;
+                    } 
+                    else
+                    {
+                        objPayloadPos_score = 60;
+                    }
 
                     // Weight balance score
-                    
+                    if (heel < 1 && trim < 1)
+                    {
+                        WeightBalance_score = 100;
+                    }
+                    else if (heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
+                    {
+                        WeightBalance_score = 80;
+                    }
+                    else if (heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
+                    {
+                        WeightBalance_score = 70;
+                    }
+                    else
+                    {
+                        WeightBalance_score = 60;
+                    }
+
                     // Roll Pitch Score
+                    float angle_heel_score = float.Parse(drow["angle_heel_score"].ToString());
+                    float angle_trim_score = float.Parse(drow["angle_trim_score"].ToString());
+
+                    RollPitch_score = (angle_heel_score + angle_trim_score) / 2;
 
                     // accomplished score
                     if (bool.Parse(drow["is_accomplished"].ToString()) == true)
@@ -97,6 +133,7 @@ namespace SSInstructor.Forms
                     vol_dim_score = (drAftScr + drFwdScr) / 2;
 
                     // final score
+                    final_score = (objPayloadPos_score + WeightBalance_score + RollPitch_score + accomplished_score + decisioMaking_score + vol_dim_score) / 6;
 
                     // status
                     if (final_score >= 70)
@@ -117,11 +154,11 @@ namespace SSInstructor.Forms
                             idx,
                             drow["id_number"].ToString(),
                             drow["first_name"].ToString(),
-                            drow["angle_heel_score"],
-                            drow["angle_trim_score"],
-                            drow["draft_aft_score"],
+                            objPayloadPos_score,
+                            WeightBalance_score,
+                            RollPitch_score,
                             accomplished_score,
-                            drow["time_elapsed_score"],
+                            decisioMaking_score,
                             vol_dim_score,
                             final_score,
                             status
