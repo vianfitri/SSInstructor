@@ -423,15 +423,15 @@ namespace SSInstructor.Class
                 }
                 else if (heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
                 {
-                    objPayloadPos_score = 80;
+                    objPayloadPos_score = 60;
                 }
                 else if (heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
                 {
-                    objPayloadPos_score = 70;
+                    objPayloadPos_score = 40;
                 }
                 else
                 {
-                    objPayloadPos_score = 60;
+                    objPayloadPos_score = 0;
                 }
 
                 // Weight balance score
@@ -441,15 +441,15 @@ namespace SSInstructor.Class
                 }
                 else if (heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
                 {
-                    WeightBalance_score = 80;
+                    WeightBalance_score = 60;
                 }
                 else if (heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
                 {
-                    WeightBalance_score = 70;
+                    WeightBalance_score = 40;
                 }
                 else
                 {
-                    WeightBalance_score = 60;
+                    WeightBalance_score = 0;
                 }
 
                 // Roll Pitch Score
