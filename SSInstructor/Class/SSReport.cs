@@ -20,6 +20,7 @@ namespace SSInstructor.Class
         private PreviewPrintController oPrevPrintCtrl = new PreviewPrintController();
         private PrintDocument oPrintDoc = new PrintDocument();
         private PrintPreviewDialog oPrintPrevDlg = new PrintPreviewDialog();
+        private PrintDialog printDlg = new PrintDialog();
         private PageSettings oStoredPageSettings = new PageSettings();
 
         private DataTable tableScore;
@@ -129,6 +130,23 @@ namespace SSInstructor.Class
                 oPrintPrevDlg.ShowDialog();
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void PrintReport()
+        {
+            oPrintDoc.DefaultPageSettings = oStoredPageSettings;
+
+            // Draw report
+            DrawReport();
+
+            try
+            {
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
