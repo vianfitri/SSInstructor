@@ -417,15 +417,15 @@ namespace SSInstructor.Class
                 float trim = float.Parse(tableScore.Rows[rowId]["angle_trim"].ToString());
 
                 // Obj Payload Pos Score
-                if (heel < 1 && trim < 1)
+                if (Math.Abs(heel) < 1 && Math.Abs(trim) < 1)
                 {
                     objPayloadPos_score = 100;
                 }
-                else if (heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
+                else if (Math.Abs(heel) >= 1 && Math.Abs(heel) < 2 && Math.Abs(trim) >= 1 && Math.Abs(trim) < 2)
                 {
                     objPayloadPos_score = 60;
                 }
-                else if (heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
+                else if (Math.Abs(heel) >= 2 && Math.Abs(heel) < 3 && Math.Abs(trim) >= 2 && Math.Abs(trim) < 3)
                 {
                     objPayloadPos_score = 40;
                 }
@@ -435,15 +435,15 @@ namespace SSInstructor.Class
                 }
 
                 // Weight balance score
-                if (heel < 1 && trim < 1)
+                if (Math.Abs(heel) < 1 && Math.Abs(trim) < 1)
                 {
                     WeightBalance_score = 100;
                 }
-                else if (heel >= 1 && heel < 2 && trim >= 1 && trim < 2)
+                else if (Math.Abs(heel) >= 1 && Math.Abs(heel) < 2 && Math.Abs(trim) >= 1 && Math.Abs(trim) < 2)
                 {
                     WeightBalance_score = 60;
                 }
-                else if (heel >= 2 && heel < 3 && trim >= 2 && trim < 3)
+                else if (Math.Abs(heel) >= 2 && Math.Abs(heel) < 3 && Math.Abs(trim) >= 2 && Math.Abs(trim) < 3)
                 {
                     WeightBalance_score = 40;
                 }
