@@ -35,11 +35,6 @@ namespace SSInstructor.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_ScoreList = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblVesselType = new System.Windows.Forms.Label();
-            this.cbScenName = new System.Windows.Forms.ComboBox();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTrainee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +46,12 @@ namespace SSInstructor.Forms
             this.scVolAnDim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblVesselType = new System.Windows.Forms.Label();
+            this.cbScenName = new System.Windows.Forms.ComboBox();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ScoreList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,57 +140,6 @@ namespace SSInstructor.Forms
             this.dgv_ScoreList.TabIndex = 21;
             this.dgv_ScoreList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ScoreList_CellClick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 20);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Scenario Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Vessel Type";
-            // 
-            // lblVesselType
-            // 
-            this.lblVesselType.AutoSize = true;
-            this.lblVesselType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVesselType.Location = new System.Drawing.Point(194, 126);
-            this.lblVesselType.Name = "lblVesselType";
-            this.lblVesselType.Size = new System.Drawing.Size(180, 20);
-            this.lblVesselType.TabIndex = 24;
-            this.lblVesselType.Text = "Bulk Carrier 50000 DWT";
-            // 
-            // cbScenName
-            // 
-            this.cbScenName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbScenName.FormattingEnabled = true;
-            this.cbScenName.Location = new System.Drawing.Point(198, 83);
-            this.cbScenName.Name = "cbScenName";
-            this.cbScenName.Size = new System.Drawing.Size(337, 26);
-            this.cbScenName.TabIndex = 25;
-            this.cbScenName.SelectedIndexChanged += new System.EventHandler(this.cbScenName_SelectedIndexChanged);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Location = new System.Drawing.Point(1159, 702);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(110, 35);
-            this.btnPrint.TabIndex = 26;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // No
             // 
             this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -259,6 +209,61 @@ namespace SSInstructor.Forms
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 20);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Scenario Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(44, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Vessel Type";
+            // 
+            // lblVesselType
+            // 
+            this.lblVesselType.AutoSize = true;
+            this.lblVesselType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVesselType.Location = new System.Drawing.Point(194, 126);
+            this.lblVesselType.Name = "lblVesselType";
+            this.lblVesselType.Size = new System.Drawing.Size(180, 20);
+            this.lblVesselType.TabIndex = 24;
+            this.lblVesselType.Text = "Bulk Carrier 50000 DWT";
+            // 
+            // cbScenName
+            // 
+            this.cbScenName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbScenName.FormattingEnabled = true;
+            this.cbScenName.Location = new System.Drawing.Point(198, 83);
+            this.cbScenName.Name = "cbScenName";
+            this.cbScenName.Size = new System.Drawing.Size(337, 26);
+            this.cbScenName.TabIndex = 25;
+            this.cbScenName.SelectedIndexChanged += new System.EventHandler(this.cbScenName_SelectedIndexChanged);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Location = new System.Drawing.Point(1159, 702);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(110, 35);
+            this.btnPrint.TabIndex = 26;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // FScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,5 +305,6 @@ namespace SSInstructor.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn scVolAnDim;
         private System.Windows.Forms.DataGridViewTextBoxColumn scFinal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
