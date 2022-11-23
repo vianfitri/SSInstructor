@@ -226,12 +226,32 @@ namespace SSInstructor.Forms
             rpt.ShowReport();
         }
 
+        private void btnPrinting_Click(object sender, EventArgs e)
+        {
+            DataTable dtTestResult = new DataTable();
+            string qTestRes = "SELECT a.*, b.first_name, b.id_number FROM `shp_assets`.`ss_scoring` a " +
+                "INNER JOIN `shp_assets`.`ss_subject` b " +
+                "ON a.uc_student = b.uc " +
+                "WHERE `uc_scenario` = '" + dtScenList.Rows[cbScenName.SelectedIndex]["uc"].ToString() + "'";
+
+            rpt.ReportLogo = Properties.Resources.PIP_SEMARANG_LOGO;
+            rpt.PrintingIcon = this.Icon;
+            rpt.ScenName = cbScenName.Items[cbScenName.SelectedIndex].ToString();
+            rpt.TypeVessel = int.Parse(dtScenList.Rows[cbScenName.SelectedIndex]["vessel_type"].ToString());
+            rpt.RowId = rowIdSelected;
+            if (ConnectorDB.MySQLConn.GetTableData(qTestRes, ref dtTestResult))
+            {
+                rpt.TableScore = dtTestResult;
+            }
+        }
+
         private void dgv_ScoreList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             rowIdSelected = e.RowIndex;
         }
+
         #endregion
 
-
+        
     }
 }
