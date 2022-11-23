@@ -154,13 +154,13 @@ namespace SSInstructor.Forms
                             idx,
                             drow["id_number"].ToString(),
                             drow["first_name"].ToString(),
-                            objPayloadPos_score,
-                            WeightBalance_score,
-                            RollPitch_score,
-                            accomplished_score,
-                            decisioMaking_score,
-                            vol_dim_score,
-                            final_score,
+                            objPayloadPos_score.ToString("F1"),
+                            WeightBalance_score.ToString("F1"),
+                            RollPitch_score.ToString("F1"),
+                            accomplished_score.ToString("F1"),
+                            decisioMaking_score.ToString("F1"),
+                            vol_dim_score.ToString("F1"),
+                            final_score.ToString("F1"),
                             status
                         }
                     );
