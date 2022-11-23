@@ -61,10 +61,45 @@ namespace SSInstructor.Forms
                 int idx = 0;
                 foreach(DataRow drow in dtTestResult.Rows)
                 {
-                    string status = "Failed";
                     idx++;
 
-                    if (float.Parse(drow["final_score"].ToString()) >= 70)
+                    // calculate score
+                    float objPayloadPos_score = 0;
+                    float WeightBalance_score = 0;
+                    float RollPitch_score = 0;
+                    float accomplished_score = 0;
+                    float decisioMaking_score = 0;
+                    float vol_dim_score = 0;
+                    float final_score = 0;
+                    string status = "Failed";
+
+                    float heel = float.Parse(drow["angle_heel"].ToString());
+                    float trim = float.Parse(drow["angle_trim"].ToString());
+
+                    // Obj Payload Pos Score
+
+                    // Weight balance score
+                    
+                    // Roll Pitch Score
+
+                    // accomplished score
+                    if (bool.Parse(drow["is_accomplished"].ToString()) == true)
+                    {
+                        accomplished_score = 100;
+                    }
+
+                    // decision making score
+                    decisioMaking_score = float.Parse(drow["time_elapsed_score"].ToString());
+
+                    // voldim score
+                    float drAftScr = float.Parse(drow["draft_aft_score"].ToString());
+                    float drFwdScr = float.Parse(drow["draft_fwd_score"].ToString());
+                    vol_dim_score = (drAftScr + drFwdScr) / 2;
+
+                    // final score
+
+                    // status
+                    if (final_score >= 70)
                     {
                         if (bool.Parse(drow["is_accomplished"].ToString()) == true)
                         {
@@ -85,10 +120,10 @@ namespace SSInstructor.Forms
                             drow["angle_heel_score"],
                             drow["angle_trim_score"],
                             drow["draft_aft_score"],
-                            drow["draft_fwd_score"],
+                            accomplished_score,
                             drow["time_elapsed_score"],
-                            drow["accomplished_score"],
-                            drow["final_score"],
+                            vol_dim_score,
+                            final_score,
                             status
                         }
                     );

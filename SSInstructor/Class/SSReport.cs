@@ -372,7 +372,6 @@ namespace SSInstructor.Class
                 stringPos = new Point((int)(pBox.Right - 50 - stringSize.Width), pBox.Top + 580);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, stringPos);
 
-
                 pBox = new Rectangle(50, pBox.Top + 620, pBox.Right - 120, 335);
 
                 pFont = new Font("Arial", 12, FontStyle.Bold);
@@ -524,6 +523,16 @@ namespace SSInstructor.Class
                 teks = "Volume and Dimension";
                 layoutRect = new Rectangle(pBox.Left + 100, pBox.Top + 35 + 250, 850, 49);
                 imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                // Nilai
+                pFont = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+                teks = "100";
+                stringFormat.Alignment = StringAlignment.Center;
+                layoutRect = new Rectangle(pBox.Left + 970, pBox.Top + 35, pBox.Right - (pBox.Left + 950), 49);
+                imageGraphics.DrawString(teks, pFont, Brushes.Black, layoutRect, stringFormat);
+
+                imageGraphics.Dispose();
+                displayGraphics.Dispose();
             }
             catch(Exception ex)
             {

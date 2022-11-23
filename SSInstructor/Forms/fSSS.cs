@@ -491,7 +491,7 @@ namespace SSInstructor.Forms
             tmmb_xy_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tmmb_xy_point_series.MarkerStyle = MarkerStyle.Circle;
             tmmb_xy_point_series.MarkerSize = 15;
-            tmmb_xy_point_series.Label = "TMMB";
+            tmmb_xy_point_series.Label = "PL1";
             tmmb_xy_point_series.LabelForeColor = tmmb_xy_point_series.Color;
             tmmb_xy_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -500,7 +500,7 @@ namespace SSInstructor.Forms
             tmmb_xz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tmmb_xz_point_series.MarkerStyle = MarkerStyle.Circle;
             tmmb_xz_point_series.MarkerSize = 15;
-            tmmb_xz_point_series.Label = "TMMB";
+            tmmb_xz_point_series.Label = "PL1";
             tmmb_xz_point_series.LabelForeColor = tmmb_xz_point_series.Color;
             tmmb_xz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -509,7 +509,7 @@ namespace SSInstructor.Forms
             tmmb_yz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tmmb_yz_point_series.MarkerStyle = MarkerStyle.Circle;
             tmmb_yz_point_series.MarkerSize = 15;
-            tmmb_yz_point_series.Label = "TMMB";
+            tmmb_yz_point_series.Label = "PL1";
             tmmb_yz_point_series.LabelForeColor = tmmb_yz_point_series.Color;
             tmmb_yz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -518,7 +518,7 @@ namespace SSInstructor.Forms
             tmmd_xy_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tmmd_xy_point_series.MarkerStyle = MarkerStyle.Circle;
             tmmd_xy_point_series.MarkerSize = 15;
-            tmmd_xy_point_series.Label = "TMMD";
+            tmmd_xy_point_series.Label = "PL2";
             tmmd_xy_point_series.LabelForeColor = tmmd_xy_point_series.Color;
             tmmd_xy_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -527,7 +527,7 @@ namespace SSInstructor.Forms
             tmmd_xz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tmmd_xz_point_series.MarkerStyle = MarkerStyle.Circle;
             tmmd_xz_point_series.MarkerSize = 15;
-            tmmd_xz_point_series.Label = "TMMD";
+            tmmd_xz_point_series.Label = "PL2";
             tmmd_xz_point_series.LabelForeColor = tmmd_xz_point_series.Color;
             tmmd_xz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -536,7 +536,7 @@ namespace SSInstructor.Forms
             tmmd_yz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tmmd_yz_point_series.MarkerStyle = MarkerStyle.Circle;
             tmmd_yz_point_series.MarkerSize = 15;
-            tmmd_yz_point_series.Label = "TMMD";
+            tmmd_yz_point_series.Label = "PL2";
             tmmd_yz_point_series.LabelForeColor = tmmd_yz_point_series.Color;
             tmmd_yz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -545,7 +545,7 @@ namespace SSInstructor.Forms
             tkk_xy_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tkk_xy_point_series.MarkerStyle = MarkerStyle.Circle;
             tkk_xy_point_series.MarkerSize = 15;
-            tkk_xy_point_series.Label = "TKK";
+            tkk_xy_point_series.Label = "PL3";
             tkk_xy_point_series.LabelForeColor = tkk_xy_point_series.Color;
             tkk_xy_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -554,7 +554,7 @@ namespace SSInstructor.Forms
             tkk_xz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tkk_xz_point_series.MarkerStyle = MarkerStyle.Circle;
             tkk_xz_point_series.MarkerSize = 15;
-            tkk_xz_point_series.Label = "TKK";
+            tkk_xz_point_series.Label = "PL3";
             tkk_xz_point_series.LabelForeColor = tkk_xz_point_series.Color;
             tkk_xz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -563,7 +563,7 @@ namespace SSInstructor.Forms
             tkk_yz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tkk_yz_point_series.MarkerStyle = MarkerStyle.Circle;
             tkk_yz_point_series.MarkerSize = 15;
-            tkk_yz_point_series.Label = "TKK";
+            tkk_yz_point_series.Label = "PL3";
             tkk_yz_point_series.LabelForeColor = tkk_yz_point_series.Color;
             tkk_yz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -572,7 +572,7 @@ namespace SSInstructor.Forms
             tnt_xy_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tnt_xy_point_series.MarkerStyle = MarkerStyle.Circle;
             tnt_xy_point_series.MarkerSize = 15;
-            tnt_xy_point_series.Label = "TNT";
+            tnt_xy_point_series.Label = "PL4";
             tnt_xy_point_series.LabelForeColor = tnt_xy_point_series.Color;
             tnt_xy_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -581,7 +581,7 @@ namespace SSInstructor.Forms
             tnt_xz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tnt_xz_point_series.MarkerStyle = MarkerStyle.Circle;
             tnt_xz_point_series.MarkerSize = 15;
-            tnt_xz_point_series.Label = "TNT";
+            tnt_xz_point_series.Label = "PL4";
             tnt_xz_point_series.LabelForeColor = tnt_xz_point_series.Color;
             tnt_xz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
@@ -590,7 +590,7 @@ namespace SSInstructor.Forms
             tnt_yz_point_series.ChartType = SeriesChartType.Line; // Fast Point and Line can show marker! ssw, 20130619 
             tnt_yz_point_series.MarkerStyle = MarkerStyle.Circle;
             tnt_yz_point_series.MarkerSize = 15;
-            tnt_yz_point_series.Label = "TNT";
+            tnt_yz_point_series.Label = "PL4";
             tnt_yz_point_series.LabelForeColor = tnt_yz_point_series.Color;
             tnt_yz_point_series.Font = new Font("Microsoft Sans Serif", 14);
 
